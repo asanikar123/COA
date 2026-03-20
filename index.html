@@ -255,8 +255,8 @@ a:hover { color: var(--red-dark); }
   display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;
   align-items: center;
 }
-.origin-img { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.4); }
-.origin-img img { width: 100%; display: block; }
+.origin-img { border-radius: 16px; overflow: hidden; box-shadow: 0 12px 48px rgba(0,0,0,.4); min-height: 480px; }
+.origin-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 480px; }
 .origin-text .section-eyebrow { text-align: left; }
 .origin-text h2 {
   font-family: var(--serif); font-size: 2.2rem; font-weight: 700;
@@ -457,6 +457,7 @@ a:hover { color: var(--red-dark); }
 }
 .wm-dot.on { background: var(--gold); transform: scale(1.5); }
 .wm-counter { margin-left: auto; font-size: .8rem; color: rgba(255,255,255,.3); }
+.wm-tooltip { font-family: var(--sans); font-size: .78rem; font-weight: 600; }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 768px) {
@@ -627,7 +628,7 @@ a:hover { color: var(--red-dark); }
   <div class="container">
     <div class="origin-grid">
       <div class="origin-img">
-        <img src="https://cityofasylum.org/wp-content/uploads/2021/05/HPsized.jpeg" alt="Salman Rushdie, Huang Xiang, and Henry Reese at House Poem" onerror="this.style.opacity='0'">
+        <img src="https://cityofasylum.org/wp-content/uploads/2021/10/house_poem_new.jpeg" alt="House Poem on Sampsonia Way, Pittsburgh" onerror="this.style.opacity='0'">
       </div>
       <div class="origin-text">
         <span class="section-eyebrow">Our Story</span>
@@ -635,10 +636,6 @@ a:hover { color: var(--red-dark); }
         <p>In 1997, Salman Rushdie gave a talk in Pittsburgh and mentioned the Cities of Asylum network in Europe — cities that protected writers whose lives were in danger. Diane Samuels and Henry Reese were in the audience. They were immediately drawn to this mission.</p>
         <p>They wrote to Cities of Asylum in Europe. They heard nothing. They kept writing for six years — until in 2003 they connected with author Russell Banks, who was expanding the network to the U.S.</p>
         <p>In 2004, Huang Xiang arrived — a Chinese poet who had been imprisoned and tortured seven times for his writing. He painted his poetry in massive calligraphy across the facade of his new home on Sampsonia Way. That single act of creative defiance defined everything that came after.</p>
-        <blockquote class="origin-quote">
-          "The first person who ran to defend me was Henry Reese&hellip; If it had not been for these people, I most certainly would not be standing here today."
-          <cite>— Salman Rushdie, PEN Gala, 2023</cite>
-        </blockquote>
         <blockquote class="origin-quote">
           "You would expect people to run away, but they ran forward. It's a metaphor — the physical embodiment of what the City of Asylum community stands for."
           <cite>— Henry Reese, Co-Founder, on Chautauqua</cite>
@@ -802,55 +799,61 @@ a:hover { color: var(--red-dark); }
 <script>
 (function () {
   var WRITERS = [
-    {
-      writer: 'Huang Xiang', country: 'China', flag: '🇨🇳',
-      lat: 30.6, lng: 114.3, zoom: 5,
-      note: "City of Asylum's first writer-in-residence. Imprisoned and tortured seven times in China for his writing, Huang Xiang painted his banned poetry in sweeping calligraphy across the facade of his home on Sampsonia Way — creating the first House Poem, and defining everything that came after."
-    },
-    {
-      writer: 'Wole Soyinka', country: 'Nigeria', flag: '🇳🇬',
-      lat: 7.4, lng: 3.9, zoom: 5,
-      note: "Nobel Laureate Wole Soyinka reads on Sampsonia Way as City of Asylum's Northside block begins its transformation into a literary corridor. A collaboration between Soyinka and Pittsburgh sculptor Thaddeus Mosley — the Spiritual Wings installation — adorns a facade on the block."
-    },
-    {
-      writer: 'Khet Mar', country: 'Myanmar', flag: '🇲🇲',
-      lat: 19.7, lng: 96.1, zoom: 5,
-      note: "Burmese writer Khet Mar and her husband Than Htay Maung create the Burma-Pittsburgh House mural on Sampsonia Way — depicting the Pittsburgh skyline as imagined from afar, surrounded by suffering and dreaming of a safe city. The New Yorker publishes 'A Safe Street in Pittsburgh.'"
-    },
-    {
-      writer: 'Mai Khôi', country: 'Vietnam', flag: '🇻🇳',
-      lat: 21.0, lng: 105.8, zoom: 5,
-      note: "Vietnam's most outspoken dissident musician. After nominating herself for the National Assembly on a pro-democracy platform and meeting President Obama, she was persecuted — concerts raided, evicted from her home. Recipient of the Václav Havel Prize for Creative Dissent and the Four Freedoms Award."
-    },
-    {
-      writer: 'Rania Mamoun', country: 'Sudan', flag: '🇸🇩',
-      lat: 15.5, lng: 32.5, zoom: 5,
-      note: "Sudanese journalist and activist who was censured, beaten, and arrested for her resistance against President al-Bashir. During the pandemic she collaborated with co-founder Diane Samuels on a 100-day poetry project — a poem a day — which became the book Thirteen Months of Sunrise."
-    },
-    {
-      writer: 'Ukrainian Fellowship', country: 'Ukraine', flag: '🇺🇦',
-      lat: 50.4, lng: 30.5, zoom: 5,
-      note: "In response to Russia's invasion, City of Asylum created a special fellowship for three writers: Olena Boryshpolets, Oleksandr Frazé-Frazénko, and Volodymyr Rafeyenko — enabling them to keep writing and publishing from Pittsburgh despite the ongoing war."
-    }
+    { writer: 'Huang Xiang', country: 'China', flag: '🇨🇳', lat: 30.6, lng: 114.3,
+      note: "City of Asylum's first writer-in-residence. Imprisoned and tortured seven times in China for his writing, Huang Xiang painted his banned poetry in sweeping calligraphy across the facade of his home on Sampsonia Way — creating the first House Poem." },
+    { writer: 'Horacio Castellanos Moya', country: 'El Salvador', flag: '🇸🇻', lat: 13.7, lng: -89.2,
+      note: "Salvadoran novelist whose fiction about civil war and political violence forced him into exile after death threats. Author of Senselessness and The She-Devil in the Mirror, he found a writing home on Sampsonia Way." },
+    { writer: 'Israel Centeno', country: 'Venezuela', flag: '🇻🇪', lat: 8.0, lng: -66.0,
+      note: "Venezuelan novelist and essayist who left his country after years of political pressure and censorship under the Chávez government. His fiction explores violence, memory, and the fragility of democracy." },
+    { writer: 'Osama Alomar', country: 'Syria', flag: '🇸🇾', lat: 34.8, lng: 38.9,
+      note: "Syrian writer and musician who fled civil war and political repression. Known for his flash fiction and short stories that distill the absurdity of authoritarian life into a single sharp image." },
+    { writer: 'Yaghoub Yadali', country: 'Iran', flag: '🇮🇷', lat: 32.0, lng: 53.0,
+      note: "Iranian novelist whose book Rituals of Restlessness was banned in Iran. He was interrogated and pressured by authorities before coming to Pittsburgh, where he continued writing in exile." },
+    { writer: 'Bewketu Seyoum', country: 'Ethiopia', flag: '🇪🇹', lat: 9.0, lng: 40.0,
+      note: "Ethiopian poet and author, one of the most celebrated writers of his generation, who lived under threat for his satirical writing challenging the Ethiopian government's authoritarianism." },
+    { writer: 'Khet Mar', country: 'Myanmar', flag: '🇲🇲', lat: 19.7, lng: 96.1,
+      note: "Burmese writer who created the Burma-Pittsburgh House mural on Sampsonia Way — depicting the Pittsburgh skyline as imagined from afar, surrounded by suffering and dreaming of a safe city. The New Yorker published 'A Safe Street in Pittsburgh.'" },
+    { writer: 'Simten Coşar', country: 'Turkey', flag: '🇹🇷', lat: 39.0, lng: 35.0,
+      note: "Turkish academic and writer who faced persecution for her political writings and activism in Turkey. She continued her scholarly and literary work from Pittsburgh, contributing to the growing community of resident writers." },
+    { writer: 'Aunel Kimbembe Makaya', country: 'DR Congo', flag: '🇨🇩', lat: -4.0, lng: 21.0,
+      note: "Writer from the Democratic Republic of Congo who sought refuge after persecution for his creative work. His writing draws on the turbulent history and vivid cultural life of Central Africa." },
+    { writer: 'Tuhin Das', country: 'Bangladesh', flag: '🇧🇩', lat: 23.7, lng: 90.4,
+      note: "Bangladeshi poet who faced death threats from religious extremists for his secular, humanist writing. He continued writing and publishing poetry from his home on Sampsonia Way." },
+    { writer: 'Jorge Olivera Castillo', country: 'Cuba', flag: '🇨🇺', lat: 21.5, lng: -79.0,
+      note: "Cuban dissident poet and human rights activist who was imprisoned during the 2003 Black Spring crackdown. A founding member of the Havana-based human rights group Corriente Agramontista." },
+    { writer: 'Anouar Rahmani', country: 'Algeria', flag: '🇩🇿', lat: 28.0, lng: 2.0,
+      note: "Algerian writer and journalist who faced censorship and threats for his reporting and creative work challenging Algeria's authoritarian government. His writing gives voice to a generation seeking freedom of expression." },
+    { writer: 'Rania Mamoun', country: 'Sudan', flag: '🇸🇩', lat: 15.5, lng: 32.5,
+      note: "Sudanese journalist and activist who was censured, beaten, and arrested for her resistance against President al-Bashir. During the pandemic she collaborated on a 100-day poetry project that became Thirteen Months of Sunrise." },
+    { writer: 'Mai Khôi', country: 'Vietnam', flag: '🇻🇳', lat: 21.0, lng: 105.8,
+      note: "Vietnam's most outspoken dissident musician. After nominating herself for the National Assembly on a pro-democracy platform, she was persecuted — concerts raided, evicted from her home. Recipient of the Václav Havel Prize and the Four Freedoms Award." },
+    { writer: 'Ukrainian Fellowship', country: 'Ukraine', flag: '🇺🇦', lat: 50.4, lng: 30.5,
+      note: "In response to Russia's invasion, City of Asylum created a special fellowship for three writers: Olena Boryshpolets, Oleksandr Frazé-Frazénko, and Volodymyr Rafeyenko — enabling them to keep writing and publishing from Pittsburgh despite the ongoing war." }
   ];
 
   var map = L.map('wm-map', {
     zoomControl: false, attributionControl: true,
     scrollWheelZoom: false, dragging: true, doubleClickZoom: false, touchZoom: false
-  }).setView([30.6, 114.3], 5);
+  }).setView([20, 10], 2);
 
   L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
     subdomains: 'abcd', maxZoom: 19,
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
   }).addTo(map);
 
-  var goldIcon = L.divIcon({
-    className: '',
-    html: '<div style="width:18px;height:18px;background:#c9a227;border-radius:50%;border:3px solid #fff;box-shadow:0 0 0 5px rgba(201,162,39,.3),0 4px 14px rgba(0,0,0,.35);"></div>',
-    iconSize: [18, 18], iconAnchor: [9, 9]
+  // Create all markers upfront
+  var markers = WRITERS.map(function (w, i) {
+    var m = L.circleMarker([w.lat, w.lng], {
+      radius: i === 0 ? 10 : 5,
+      fillColor: '#c9a227',
+      fillOpacity: i === 0 ? 1 : 0.35,
+      color: i === 0 ? '#fff' : 'rgba(201,162,39,.6)',
+      weight: i === 0 ? 3 : 1.5
+    }).addTo(map);
+    m.bindTooltip(w.writer + ' · ' + w.country, { permanent: false, direction: 'top', className: 'wm-tooltip' });
+    m.on('click', function () { goTo(i); });
+    return m;
   });
-
-  var marker = L.marker([30.6, 114.3], { icon: goldIcon }).addTo(map);
 
   var slideEl   = document.getElementById('wm-slide');
   var writerEl  = document.getElementById('wm-writer');
@@ -874,8 +877,19 @@ a:hover { color: var(--red-dark); }
   function render(i, animate) {
     var w = WRITERS[i];
     if (animate) slideEl.classList.add('wm-out');
-    map.flyTo([w.lat, w.lng], w.zoom, { duration: 1.4, easeLinearity: 0.35 });
-    marker.setLatLng([w.lat, w.lng]);
+
+    // Update all marker styles
+    markers.forEach(function (m, j) {
+      var active = j === i;
+      m.setStyle({
+        radius: active ? 10 : 5,
+        fillOpacity: active ? 1 : 0.3,
+        color: active ? '#fff' : 'rgba(201,162,39,.5)',
+        weight: active ? 3 : 1.5
+      });
+      if (active) m.bringToFront();
+    });
+
     setTimeout(function () {
       writerEl.textContent  = w.writer;
       flagEl.textContent    = w.flag;
