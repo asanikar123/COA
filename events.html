@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Events & Festivals — City of Asylum</title>
+<meta name="description" content="Explore free literary readings, concerts, films, and festivals at City of Asylum's Alphabet City stage in Pittsburgh's Northside.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep:#0f1419;--charcoal:#1a1f2e;--slate:#2d3548;
+  --red:#c23b2e;--red-dark:#8b1a1a;--gold:#c9a227;--gold-light:#e0c660;
+  --cream:#f5f0e8;--warm-white:#faf8f5;--white:#ffffff;--green:#2d8a4e;
+  --muted:#6b7280;--text-dark:#1a1a1a;--text-body:#3d3d3d;--border:#e5e7eb;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter','Segoe UI',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-body);line-height:1.7;background:var(--warm-white)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--red);text-decoration:none;transition:color .2s}
+a:hover{color:var(--red-dark)}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+/* NAV */
+.site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:72px}
+.nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
+.nav-logo img{height:48px;width:auto}
+.nav-logo span{font-family:var(--serif);font-weight:700;font-size:1.15rem}
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-links a{color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .85rem;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
+.nav-links a.active{color:var(--gold)}
+.nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+
+/* PAGE HERO */
+.page-hero{position:relative;padding:6rem 0 5rem;overflow:hidden;background:var(--deep)}
+.page-hero-bg{position:absolute;inset:0}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.2) saturate(.6)}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,20,25,.88),rgba(26,31,46,.7))}
+.page-hero-content{position:relative;z-index:2}
+.page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.page-hero h1{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--white);margin-bottom:1rem;max-width:750px}
+.page-hero h1 em{font-style:italic;color:var(--gold-light)}
+.page-hero p{color:rgba(255,255,255,.65);font-size:1.15rem;max-width:650px;line-height:1.8}
+.hero-stats{display:flex;gap:3rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.hero-stats .stat .num{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--gold)}
+.hero-stats .stat .label{font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:.15rem}
+
+/* SECTION HELPERS */
+.section-eyebrow{display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.section-title{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:1rem}
+.section-subtitle{text-align:center;color:var(--muted);font-size:1.05rem;max-width:650px;margin:0 auto 3.5rem}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:1rem;padding:.9rem 2rem;border-radius:8px;border:none;cursor:pointer;transition:all .25s}
+.btn-primary{background:var(--red);color:var(--white)}
+.btn-primary:hover{background:var(--red-dark);color:var(--white);transform:translateY(-1px)}
+.btn-secondary{background:transparent;color:var(--text-dark);border:2px solid var(--border)}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:var(--deep);font-weight:700;padding:1rem 2.5rem;border-radius:8px;font-size:1.1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s;border:none;cursor:pointer}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--deep)}
+
+/* PROGRAM TYPES */
+.program-types{padding:6rem 0;background:var(--white)}
+.type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
+.type-card{background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:2.5rem 1.75rem;text-align:center;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
+.type-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.type-card:nth-child(1)::before{background:var(--red)}
+.type-card:nth-child(2)::before{background:var(--gold)}
+.type-card:nth-child(3)::before{background:var(--green)}
+.type-card:nth-child(4)::before{background:#6366f1}
+.type-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.type-icon{font-size:2rem;margin-bottom:1rem}
+.type-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--text-dark);margin-bottom:.75rem}
+.type-card p{font-size:.9rem;color:var(--muted);line-height:1.7}
+
+/* UPCOMING EVENTS */
+.upcoming{padding:6rem 0;background:var(--cream)}
+.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
+.event-card{border-radius:16px;overflow:hidden;background:var(--white);border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
+.event-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.event-img{position:relative;height:220px;overflow:hidden;background:var(--charcoal)}
+.event-img img{width:100%;height:100%;object-fit:cover}
+.event-tag{position:absolute;top:1rem;left:1rem;background:rgba(15,20,25,.8);backdrop-filter:blur(8px);color:var(--white);font-size:.7rem;font-weight:700;padding:.3rem .75rem;border-radius:20px;letter-spacing:.05em;text-transform:uppercase}
+.event-body{padding:1.5rem}
+.event-date{font-size:.75rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
+.event-body h4{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);line-height:1.4;margin-bottom:.5rem}
+.event-body p{font-size:.875rem;color:var(--muted);line-height:1.6}
+.event-meta{display:flex;align-items:center;gap:.75rem;margin-top:1rem;font-size:.8rem;color:var(--muted)}
+.event-meta span{display:flex;align-items:center;gap:.3rem}
+
+/* FLAGSHIP FESTIVALS */
+.festivals{padding:6rem 0;background:var(--white)}
+.festival-feature{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1200px;margin:0 auto 3rem;background:var(--warm-white);border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid var(--border)}
+.festival-feature:nth-child(even) .festival-img{order:2}
+.festival-feature:nth-child(even) .festival-text{order:1}
+.festival-img{position:relative;min-height:400px;background:var(--charcoal)}
+.festival-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.festival-badge{position:absolute;top:1.5rem;left:1.5rem;background:var(--red);color:var(--white);font-size:.7rem;font-weight:700;padding:.4rem 1rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase}
+.festival-text{padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
+.festival-text h3{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
+.festival-when{font-size:.85rem;color:var(--gold);font-weight:600;margin-bottom:1.25rem;letter-spacing:.03em}
+.festival-text p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:1rem}
+.festival-highlights{list-style:none;padding:0;margin:1rem 0 1.5rem}
+.festival-highlights li{font-size:.9rem;color:var(--text-body);padding:.35rem 0;padding-left:1.5rem;position:relative}
+.festival-highlights li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:.75rem}
+
+/* VENUE SECTION */
+.venue{padding:6rem 0;background:var(--deep);color:var(--white)}
+.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+.venue-img{border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.4)}
+.venue-img img{width:100%;display:block}
+.venue-text .section-eyebrow{text-align:left}
+.venue-text h2{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:1.5rem;text-align:left}
+.venue-text p{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.8;margin-bottom:1.25rem}
+.venue-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
+.venue-feat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.25rem}
+.venue-feat h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--gold);margin-bottom:.35rem}
+.venue-feat p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.5}
+
+/* COMMUNITY CTA */
+.community-cta{padding:6rem 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);text-align:center;color:var(--white)}
+.community-cta h2{font-family:var(--serif);font-size:2.4rem;font-weight:700;margin-bottom:1rem}
+.community-cta p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 2rem}
+
+/* NEWSLETTER */
+.newsletter{padding:4rem 0;background:var(--deep);text-align:center;color:var(--white)}
+.newsletter h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;margin-bottom:.5rem}
+.newsletter p{color:rgba(255,255,255,.6);margin-bottom:1.5rem}
+.newsletter-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto}
+.newsletter-form input{flex:1;padding:.85rem 1.25rem;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--white);font-size:.95rem;font-family:var(--sans)}
+.newsletter-form input::placeholder{color:rgba(255,255,255,.35)}
+.newsletter-form button{background:var(--gold);color:var(--deep);font-weight:700;padding:.85rem 1.5rem;border-radius:8px;border:none;cursor:pointer;font-family:var(--sans);font-size:.9rem}
+
+/* FOOTER */
+.site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:4rem 0 2rem;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand p{font-size:.9rem;line-height:1.7;max-width:280px;margin-top:.75rem}
+.footer-col h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:1rem}
+.footer-col a{display:block;color:rgba(255,255,255,.5);font-size:.875rem;padding:.25rem 0}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.8rem}
+.footer-bottom a{color:rgba(255,255,255,.4)}
+
+@media(max-width:768px){
+  .page-hero h1{font-size:2.2rem}
+  .type-grid{grid-template-columns:1fr 1fr}
+  .events-grid{grid-template-columns:1fr}
+  .festival-feature{grid-template-columns:1fr}
+  .festival-img{min-height:280px}
+  .venue-grid{grid-template-columns:1fr}
+  .venue-features{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .hero-stats{flex-wrap:wrap;gap:1.5rem}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum">
+      <span>City of Asylum</span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="about.html">About Us <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="about.html">Our Mission</a>
+          <a href="about.html">Our Founders</a>
+          <a href="about.html">Our History</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="writers.html">Writers &amp; Residencies <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="writers.html">Residency Program</a>
+          <a href="writers.html">Current Residents</a>
+          <a href="writers.html">Ukrainian Fellowship</a>
+          <a href="writers.html">Alumni</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="events.html" class="active">Free Arts &amp; Culture <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="events.html">Upcoming Programs</a>
+          <a href="events.html">Literary Readings</a>
+          <a href="events.html">Thursday Night Jazz</a>
+          <a href="events.html">Annual Festivals</a>
+        </div>
+      </div>
+      <a href="placemaking.html">Placemaking</a>
+      <div class="nav-item">
+        <a href="visit.html">Campus <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="visit.html">City Books</a>
+          <a href="visit.html">Cucina Alfabeto</a>
+          <a href="visit.html">Programs &amp; Events</a>
+          <a href="visit.html">Sampsonia Way</a>
+          <a href="visit.html">Directions</a>
+        </div>
+      </div>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg">
+    <img src="https://cityofasylum.org/wp-content/uploads/2023/07/city-of-asylum-bookstore.png" alt="Alphabet City Stage" onerror="this.parentElement.style.background='linear-gradient(135deg, #1a1f2e, #0f1419)'">
+  </div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <span class="eyebrow">Free Arts &amp; Culture</span>
+    <h1>Where Literature, Music &amp; Ideas <em>Come Alive</em></h1>
+    <p>City of Asylum hosts over 200 free programs each year — literary readings, concerts, films, and festivals — all designed to celebrate creative expression and build bridges across cultures.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="num">200+</div><div class="label">Free Programs Yearly</div></div>
+      <div class="stat"><div class="num">3–4</div><div class="label">Events Most Weeks</div></div>
+      <div class="stat"><div class="num">100%</div><div class="label">Free &amp; Open to All</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAM TYPES -->
+<section class="program-types">
+  <div class="container">
+    <span class="section-eyebrow">What We Host</span>
+    <h2 class="section-title">Programs That Connect Communities</h2>
+    <p class="section-subtitle">Our programming bridges cultures through four creative pillars — each one free, open to the public, and grounded in the belief that art builds understanding.</p>
+    <div class="type-grid">
+      <div class="type-card">
+        <div class="type-icon">📖</div>
+        <h3>Literary Readings</h3>
+        <p>Hear from exiled writers, acclaimed novelists, and emerging voices. Our World Literature series features authors from every continent sharing stories of resilience, identity, and home.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">🎵</div>
+        <h3>Music &amp; Performance</h3>
+        <p>Thursday Night Jazz, global sounds, and solo performances. Our stage hosts musicians whose work crosses borders — jazz, classical, world, folk, and experimental sound.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">🎬</div>
+        <h3>Film &amp; Conversation</h3>
+        <p>Documentary screenings, short films, and director Q&amp;As exploring human rights, migration, and creative freedom — stories you won't find at the multiplex.</p>
+      </div>
+      <div class="type-card">
+        <div class="type-icon">🎉</div>
+        <h3>Festivals</h3>
+        <p>Our flagship festivals bring together hundreds of artists, writers, and community members for multi-day celebrations of free expression and cultural exchange.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPCOMING EVENTS -->
+<section class="upcoming">
+  <div class="container">
+    <span class="section-eyebrow">Coming Up</span>
+    <h2 class="section-title">Upcoming Programs</h2>
+    <p class="section-subtitle">All events are free and open to the public. Held at Alphabet City, 40 W. North Avenue, Pittsburgh.</p>
+    <div class="events-grid">
+      <div class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/02/HUGO-CRUZ-03192026-800x440.jpg" alt="Hugo Cruz & Caminos" onerror="this.style.opacity='0'">
+          <span class="event-tag">Music</span>
+        </div>
+        <div class="event-body">
+          <div class="event-date">Thursday, March 19, 2026 &middot; 8:00 PM</div>
+          <h4>Thursday Night Jazz: Hugo Cruz &amp; Caminos</h4>
+          <p>Performing the music of Art Blakey &amp; the Jazz Messengers with a vibrant Cuban twist on the Alphabet City stage.</p>
+          <div class="event-meta">
+            <span>📍 Alphabet City</span>
+            <span>🎟️ Free</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/02/BERTONY-LOUIS-03222026-800x440.jpg" alt="Bertony Louis" onerror="this.style.opacity='0'">
+          <span class="event-tag">Literature</span>
+        </div>
+        <div class="event-body">
+          <div class="event-date">Sunday, March 22, 2026 &middot; 3:00 PM</div>
+          <h4>World Literature: Poet Bertony Louis</h4>
+          <p>A reading by our newest writer-in-residence from the Caribbean — poetry of exile, memory, and belonging.</p>
+          <div class="event-meta">
+            <span>📍 Alphabet City</span>
+            <span>🎟️ Free</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/02/CRISTINA-RIVERA-GARZA-03242026-800x440.jpg" alt="Cristina Rivera Garza" onerror="this.style.opacity='0'">
+          <span class="event-tag">Literature</span>
+        </div>
+        <div class="event-body">
+          <div class="event-date">Tuesday, March 24, 2026 &middot; 7:00 PM</div>
+          <h4>World Literature: Cristina Rivera Garza</h4>
+          <p>"Autobiography of Cotton" — a reading from Mexico's celebrated author and Pulitzer Prize winner.</p>
+          <div class="event-meta">
+            <span>📍 Alphabet City</span>
+            <span>🎟️ Free</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-img">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--charcoal),var(--slate));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem">🎵</div>
+          <span class="event-tag">Music</span>
+        </div>
+        <div class="event-body">
+          <div class="event-date">Thursday, March 26, 2026 &middot; 8:00 PM</div>
+          <h4>Thursday Night Jazz</h4>
+          <p>Our beloved weekly jazz series continues — a different ensemble every Thursday on the Alphabet City stage.</p>
+          <div class="event-meta">
+            <span>📍 Alphabet City</span>
+            <span>🎟️ Free</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-img">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--charcoal),var(--slate));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem">🎬</div>
+          <span class="event-tag">Film</span>
+        </div>
+        <div class="event-body">
+          <div class="event-date">Saturday, March 28, 2026 &middot; 7:00 PM</div>
+          <h4>Human Rights Film Night</h4>
+          <p>A documentary screening exploring freedom of expression, followed by a moderated conversation with local advocates.</p>
+          <div class="event-meta">
+            <span>📍 Alphabet City</span>
+            <span>🎟️ Free</span>
+          </div>
+        </div>
+      </div>
+      <div class="event-card">
+        <div class="event-img">
+          <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--charcoal),var(--slate));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem">📖</div>
+          <span class="event-tag">Literature</span>
+        </div>
+        <div class="event-body">
+          <div class="event-date">Sunday, March 29, 2026 &middot; 3:00 PM</div>
+          <h4>Writer-in-Residence Reading</h4>
+          <p>Monthly showcase featuring readings and conversation from our current cohort of exiled writers and artists.</p>
+          <div class="event-meta">
+            <span>📍 Alphabet City</span>
+            <span>🎟️ Free</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem">
+      <a href="#" class="btn btn-secondary">View Full Calendar &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- FLAGSHIP FESTIVALS -->
+<section class="festivals">
+  <div class="container">
+    <span class="section-eyebrow">Signature Festivals</span>
+    <h2 class="section-title">Annual Celebrations of Creative Freedom</h2>
+    <p class="section-subtitle">Our flagship festivals bring together writers, musicians, filmmakers, and audiences from across the globe for multi-day celebrations.</p>
+
+    <div class="festival-feature">
+      <div class="festival-img">
+        <img src="https://cityofasylum.org/wp-content/uploads/2023/07/city-of-asylum-bookstore.png" alt="City of Asylum Jazz Poetry Concert" onerror="this.style.opacity='0'">
+        <span class="festival-badge">Flagship</span>
+      </div>
+      <div class="festival-text">
+        <h3>City of Asylum Jazz Poetry Concert</h3>
+        <div class="festival-when">Annual &middot; Spring</div>
+        <p>Our signature event merges the spontaneity of jazz with the depth of poetry. Exiled writers read their work accompanied by world-class musicians, creating a one-of-a-kind experience that celebrates the universal language of artistic expression.</p>
+        <ul class="festival-highlights">
+          <li>Live jazz-poetry collaborations on the Alphabet City stage</li>
+          <li>Featured readings by City of Asylum writers-in-residence</li>
+          <li>Open to the public, completely free of charge</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="festival-feature">
+      <div class="festival-text">
+        <h3>Exiled Writers Festival</h3>
+        <div class="festival-when">Annual &middot; Fall</div>
+        <p>A multi-day celebration dedicated to the voices of writers in exile. Panels, readings, and performances spotlight the courage of writers who continue creating despite persecution — and the communities that protect them.</p>
+        <ul class="festival-highlights">
+          <li>Panel discussions on free expression and human rights</li>
+          <li>Readings by ICORN writers from around the world</li>
+          <li>Workshops on literary activism and translation</li>
+        </ul>
+      </div>
+      <div class="festival-img">
+        <img src="https://cityofasylum.org/wp-content/uploads/2021/05/HPsized.jpeg" alt="Writers at City of Asylum" onerror="this.style.opacity='0'">
+        <span class="festival-badge">Signature</span>
+      </div>
+    </div>
+
+    <div class="festival-feature">
+      <div class="festival-img">
+        <img src="https://cityofasylum.org/wp-content/uploads/2023/07/visit-city-of-asylum-pittsburgh.png" alt="Alphabet City Cultural Fest" onerror="this.style.opacity='0'">
+        <span class="festival-badge">Community</span>
+      </div>
+      <div class="festival-text">
+        <h3>Alphabet City Cultural Fest</h3>
+        <div class="festival-when">Annual &middot; Summer</div>
+        <p>Our Northside neighborhood comes alive with an outdoor celebration of the cultures represented by our writers-in-residence. Enjoy food, music, art installations, and performances from traditions spanning five continents.</p>
+        <ul class="festival-highlights">
+          <li>International food from our Cucina Alfabeto kitchen</li>
+          <li>Outdoor stage with global music performances</li>
+          <li>Children's workshops, art-making, and community mural projects</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VENUE -->
+<section class="venue">
+  <div class="container">
+    <div class="venue-grid">
+      <div class="venue-img">
+        <img src="https://cityofasylum.org/wp-content/uploads/2023/07/visit-city-of-asylum-pittsburgh.png" alt="Alphabet City" onerror="this.style.opacity='0'">
+      </div>
+      <div class="venue-text">
+        <span class="section-eyebrow" style="text-align:left">Our Stage</span>
+        <h2>Alphabet City — Pittsburgh's Living Room for the World</h2>
+        <p>All of our programs take place at Alphabet City, our vibrant cultural hub on Pittsburgh's Northside. The space was designed to feel welcoming, intimate, and alive — a place where art meets community every single week.</p>
+        <div class="venue-features">
+          <div class="venue-feat">
+            <h4>Performance Stage</h4>
+            <p>Intimate 150-seat venue with world-class acoustics for readings, concerts, and films.</p>
+          </div>
+          <div class="venue-feat">
+            <h4>City Books</h4>
+            <p>Browse our multilingual bookstore featuring works by our writers and global literature.</p>
+          </div>
+          <div class="venue-feat">
+            <h4>Cucina Alfabeto</h4>
+            <p>Enjoy Italian-inspired dishes in our on-site restaurant before or after events.</p>
+          </div>
+          <div class="venue-feat">
+            <h4>Gallery Spaces</h4>
+            <p>Rotating art exhibitions celebrating free expression and cultural diversity.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMMUNITY CTA -->
+<section class="community-cta">
+  <div class="container">
+    <h2>Every Program Is Free. Your Support Makes That Possible.</h2>
+    <p>City of Asylum's events are free and open to all because of generous donors. Help us continue bringing world-class literature, music, and film to Pittsburgh.</p>
+    <a href="donate.html" class="btn-gold">Support Our Programs &rarr;</a>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="container">
+    <h2>Never Miss a Program</h2>
+    <p>Get our weekly events email — readings, concerts, films, and festivals delivered to your inbox.</p>
+    <form class="newsletter-form" onsubmit="event.preventDefault()">
+      <input type="email" placeholder="Your email address">
+      <button type="submit">Subscribe</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:.5rem">
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:40px">
+          <span style="color:#fff;font-family:var(--serif);font-weight:700;">City of Asylum</span>
+        </a>
+        <p>Protecting and celebrating freedom of creative expression since 2004. The world's largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="writers.html">Writers &amp; Residencies</a>
+        <a href="events.html">Free Arts &amp; Culture</a>
+        <a href="placemaking.html">Placemaking</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <a href="visit.html">Alphabet City</a>
+        <a href="#">Bookstore</a>
+        <a href="#">Cucina Alfabeto</a>
+        <a href="#">Directions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="donate.html">Donate</a>
+        <a href="#">Volunteer</a>
+        <a href="#">Sponsor</a>
+        <a href="#">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

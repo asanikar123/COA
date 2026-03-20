@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — City of Asylum</title>
+<meta name="description" content="Learn about City of Asylum's history, mission, and how two Pittsburgh residents built the world's largest sanctuary for persecuted writers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep:#0f1419;--charcoal:#1a1f2e;--slate:#2d3548;
+  --red:#c23b2e;--red-dark:#8b1a1a;--gold:#c9a227;--gold-light:#e0c660;
+  --cream:#f5f0e8;--warm-white:#faf8f5;--white:#ffffff;
+  --muted:#6b7280;--text-dark:#1a1a1a;--text-body:#3d3d3d;--border:#e5e7eb;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter','Segoe UI',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-body);line-height:1.7;background:var(--warm-white)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--red);text-decoration:none;transition:color .2s}
+a:hover{color:var(--red-dark)}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+.site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:72px}
+.nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
+.nav-logo img{height:48px;width:auto}
+.nav-logo span{font-family:var(--serif);font-weight:700;font-size:1.15rem}
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-links a{color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .85rem;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
+.nav-links a.active{color:var(--gold)}
+.nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+
+/* PAGE HERO */
+.page-hero{background:var(--deep);padding:5rem 0 4rem;position:relative;overflow:hidden}
+.page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.page-hero h1{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--white);margin-bottom:1rem;max-width:700px}
+.page-hero p{color:rgba(255,255,255,.65);font-size:1.15rem;max-width:650px;line-height:1.8}
+
+/* MISSION SECTION */
+.mission-section{padding:5rem 0;background:var(--white)}
+.mission-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem}
+.mission-card{background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem;position:relative;overflow:hidden}
+.mission-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.mission-card:nth-child(1)::before{background:var(--red)}
+.mission-card:nth-child(2)::before{background:var(--gold)}
+.mission-card:nth-child(3)::before{background:var(--green)}
+.mission-card h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--text-dark);margin-bottom:.75rem}
+.mission-card p{font-size:.95rem;color:var(--muted);line-height:1.7}
+.section-eyebrow{display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.section-title{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.5rem}
+.section-sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto}
+
+/* TIMELINE */
+.timeline-section{padding:6rem 0;background:var(--cream)}
+.timeline{max-width:800px;margin:3rem auto 0;position:relative}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--border);transform:translateX(-50%)}
+.timeline-item{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3rem;position:relative}
+.timeline-item::after{
+  content:'';position:absolute;left:50%;top:1.2rem;
+  width:14px;height:14px;border-radius:50%;
+  background:var(--gold);border:3px solid var(--cream);
+  transform:translateX(-50%);z-index:1;
+}
+.timeline-year{
+  font-family:var(--serif);font-size:1.6rem;font-weight:900;
+  color:var(--gold);text-align:right;padding-right:2rem;padding-top:.2rem;
+}
+.timeline-content{padding-left:2rem}
+.timeline-content h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
+.timeline-content p{font-size:.9rem;color:var(--muted);line-height:1.7}
+
+/* FOUNDERS */
+.founders-section{padding:6rem 0;background:var(--deep);color:var(--white)}
+.founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3rem}
+.founders-img{border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.4)}
+.founders-img img{width:100%;display:block}
+.founders-text h2{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--white);margin-bottom:1.25rem}
+.founders-text p{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.8;margin-bottom:1rem}
+.founders-text .quote-block{
+  border-left:3px solid var(--gold);padding-left:1.25rem;margin:1.5rem 0;
+  font-family:var(--serif);font-style:italic;font-size:1.15rem;color:rgba(255,255,255,.85);line-height:1.7;
+}
+
+/* WHAT MAKES US DIFFERENT */
+.different-section{padding:5rem 0;background:var(--white)}
+.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto}
+.diff-card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:2rem;display:flex;gap:1.25rem}
+.diff-icon{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
+.diff-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:.35rem}
+.diff-card p{font-size:.875rem;color:var(--muted);line-height:1.6}
+
+/* CTA */
+.about-cta{padding:5rem 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);text-align:center;color:var(--white)}
+.about-cta h2{font-family:var(--serif);font-size:2.2rem;font-weight:700;margin-bottom:1rem}
+.about-cta p{font-size:1.05rem;opacity:.9;max-width:550px;margin:0 auto 2rem}
+.btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-weight:700;padding:.9rem 2rem;border-radius:8px;font-size:1rem;transition:all .25s}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--deep)}
+
+.site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:3rem 0 2rem;color:rgba(255,255,255,.5)}
+.footer-bottom{display:flex;justify-content:space-between;font-size:.8rem}
+.footer-bottom a{color:rgba(255,255,255,.4)}
+
+@media(max-width:768px){
+  .page-hero h1{font-size:2.2rem}
+  .mission-grid,.diff-grid{grid-template-columns:1fr}
+  .founders-grid{grid-template-columns:1fr}
+  .timeline-item{grid-template-columns:1fr;gap:.5rem}
+  .timeline::before{left:0}
+  .timeline-item::after{left:0}
+  .timeline-year{text-align:left;padding-right:0;padding-left:1.5rem}
+  .timeline-content{padding-left:1.5rem}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum">
+      <span>City of Asylum</span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="about.html" class="active">About Us <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="about.html">Our Mission</a>
+          <a href="about.html">Our Founders</a>
+          <a href="about.html">Our History</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="writers.html">Writers &amp; Residencies <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="writers.html">Residency Program</a>
+          <a href="writers.html">Current Residents</a>
+          <a href="writers.html">Ukrainian Fellowship</a>
+          <a href="writers.html">Alumni</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="events.html">Free Arts &amp; Culture <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="events.html">Upcoming Programs</a>
+          <a href="events.html">Literary Readings</a>
+          <a href="events.html">Thursday Night Jazz</a>
+          <a href="events.html">Annual Festivals</a>
+        </div>
+      </div>
+      <a href="placemaking.html">Placemaking</a>
+      <div class="nav-item">
+        <a href="visit.html">Campus <span class="nav-chevron">▾</span></a>
+        <div class="nav-dropdown">
+          <a href="visit.html">City Books</a>
+          <a href="visit.html">Cucina Alfabeto</a>
+          <a href="visit.html">Programs &amp; Events</a>
+          <a href="visit.html">Sampsonia Way</a>
+          <a href="visit.html">Directions</a>
+        </div>
+      </div>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">About City of Asylum</span>
+    <h1>A grassroots safe haven, built by community.</h1>
+    <p>Founded in 2004 by two Pittsburgh residents, City of Asylum grew from a single act of courage into the world's largest program for persecuted writers — powered entirely by individuals and foundations, not governments.</p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section class="mission-section">
+  <div class="container">
+    <span class="section-eyebrow">Our Mission</span>
+    <h2 class="section-title">Protecting and Celebrating Freedom of Creative Expression</h2>
+    <p class="section-sub">City of Asylum builds a just community through three interconnected commitments.</p>
+    <div class="mission-grid">
+      <div class="mission-card">
+        <h3>Provide Safe Haven</h3>
+        <p>We give endangered writers and artists a safe home so they can continue to create and their voices are not silenced. For two years or more, residents receive housing, stipends, legal counsel, and medical benefits.</p>
+      </div>
+      <div class="mission-card">
+        <h3>Celebrate Creative Expression</h3>
+        <p>We offer a broad range of free literary, arts, and humanities programs in a community setting to build social equity through cultural exchange — over 200 programs each year.</p>
+      </div>
+      <div class="mission-card">
+        <h3>Transform Neighborhoods</h3>
+        <p>By converting dilapidated properties into homes for our programs and writers, we anchor neighborhood economic development on Pittsburgh's Northside.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOUNDERS -->
+<section class="founders-section">
+  <div class="container">
+    <div class="founders-grid">
+      <div class="founders-img">
+        <img src="https://cityofasylum.org/wp-content/uploads/2021/05/HPsized.jpeg" alt="Salman Rushdie, Huang Xiang, and Henry Reese in front of House Poem" onerror="this.style.opacity='0'">
+      </div>
+      <div class="founders-text">
+        <span class="section-eyebrow" style="text-align:left;color:var(--gold);">Our Founders</span>
+        <h2>Diane Samuels &amp; Henry Reese</h2>
+        <p>In 1997, Salman Rushdie gave a talk in Pittsburgh and briefly mentioned the Cities of Asylum network — European cities that protected writers whose lives were in danger. Diane Samuels and Henry Reese were in the audience, and they were immediately drawn to this mission.</p>
+        <div class="quote-block">"Most endangered writers come from circumstances where they have neither fame nor resources. We wanted to change that."</div>
+        <p>They wrote to Cities of Asylum in Europe about starting a chapter in Pittsburgh. Getting no response, they kept writing — until in 2003 they connected with author Russell Banks, who was expanding the network to the U.S. In 2004, they welcomed Huang Xiang as their first writer.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <span class="section-eyebrow">Our History</span>
+    <h2 class="section-title">20 Years of Safe Haven</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">1997</div>
+        <div class="timeline-content">
+          <h3>A Spark in the Audience</h3>
+          <p>Diane Samuels and Henry Reese attend a Salman Rushdie talk in Pittsburgh. He mentions the Cities of Asylum network in Europe, and an idea is born.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2004</div>
+        <div class="timeline-content">
+          <h3>First Writer Arrives</h3>
+          <p>Huang Xiang, China's pre-eminent post-Cultural Revolution poet, arrives as the first writer-in-residence. He creates "House Poem" on the facade of 408 Sampsonia Way.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2006</div>
+        <div class="timeline-content">
+          <h3>A Growing Safe Haven</h3>
+          <p>Additional writers arrive from around the world. The Sampsonia Way neighborhood begins its transformation into a literary corridor.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2018</div>
+        <div class="timeline-content">
+          <h3>Alphabet City Opens</h3>
+          <p>City of Asylum opens its permanent home at 40 W. North Avenue — Alphabet City — a cultural hub with a stage, bookstore, and restaurant.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-content">
+          <h3>Ukrainian Fellowship Launched</h3>
+          <p>In response to Russia's invasion of Ukraine, City of Asylum creates a special fellowship bringing three Ukrainian writers to Pittsburgh.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2026</div>
+        <div class="timeline-content">
+          <h3>18 Writers and Growing</h3>
+          <p>Today, City of Asylum has hosted 18 writers from 15+ countries — nearly 10% of all exiled writers in the 80-city International Cities of Refuge Network.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="different-section">
+  <div class="container">
+    <span class="section-eyebrow">What Makes Us Different</span>
+    <h2 class="section-title">A Model Like No Other</h2>
+    <p class="section-sub">City of Asylum operates differently from every other safe haven in the world.</p>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <div class="diff-icon">🏠</div>
+        <div>
+          <h4>Long-Term, Not Temporary</h4>
+          <p>Most cities of asylum provide emergency relief for a year. We commit to two years or more — helping writers build a permanent new life.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🌱</div>
+        <div>
+          <h4>Grassroots, Not Government</h4>
+          <p>We are the only program in the world not funded by governments or universities. We are entirely community-supported.</p>
+          <p style="font-size:.8rem;color:var(--muted);font-style:italic;margin-top:.6rem;">Supported by the Ford Foundation, Heinz Endowments, the Pittsburgh Foundation, the NEA, and 11 other foundations.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">📖</div>
+        <div>
+          <h4>Every Writer Creates</h4>
+          <p>Every writer or artist hosted has created a full-length work while in residence — and has been able to continue creating after.</p>
+        </div>
+      </div>
+      <div class="diff-card">
+        <div class="diff-icon">🤝</div>
+        <div>
+          <h4>Community Integration</h4>
+          <p>Writers become part of Pittsburgh's fabric through university partnerships, school visits, festivals, and free public programming.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="about-cta">
+  <div class="container">
+    <h2>Join the Movement</h2>
+    <p>Your support directly protects a writer's life and enables them to keep creating. Be part of the world's most important literary safe haven.</p>
+    <a href="donate.html" class="btn-gold">Donate Now &rarr;</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
+      <a href="index.html" style="color:var(--gold);">Back to Home</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
