@@ -199,51 +199,71 @@ a:hover { color: var(--red-dark); }
 }
 .pillar-card p { font-size: .95rem; color: var(--muted); line-height: 1.7; }
 
-/* ─── WRITER SPOTLIGHTS ─── */
+/* ─── WRITER SPOTLIGHTS CAROUSEL ─── */
 .writers-section {
   padding: 6rem 0;
   background: var(--cream);
 }
-.writer-spotlight {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 0;
-  max-width: 1200px; margin: 0 auto 3rem;
+.carousel-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 3.5rem;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  gap: 1.5rem;
+}
+.writer-card-home {
+  flex: 0 0 calc((100% - 3rem) / 3);
   background: var(--white);
-  border-radius: 20px; overflow: hidden;
-  box-shadow: 0 8px 40px rgba(0,0,0,.08);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform .3s, box-shadow .3s;
 }
-.writer-spotlight:nth-child(even) .writer-img { order: 2; }
-.writer-spotlight:nth-child(even) .writer-story { order: 1; }
-.writer-img { position: relative; min-height: 420px; }
-.writer-img img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
-.writer-country {
-  position: absolute; top: 1.5rem; left: 1.5rem; z-index: 2;
+.writer-card-home:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
+.wc-img { position: relative; height: 280px; overflow: hidden; }
+.wc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.writer-card-home:hover .wc-img img { transform: scale(1.05); }
+.wc-country {
+  position: absolute; top: 1rem; left: 1rem;
   background: rgba(15,20,25,.75); backdrop-filter: blur(8px);
-  color: var(--white); font-size: .75rem; font-weight: 600;
-  padding: .35rem .9rem; border-radius: 20px;
-  letter-spacing: .04em;
+  color: var(--white); font-size: .7rem; font-weight: 600;
+  padding: .3rem .75rem; border-radius: 16px; letter-spacing: .04em;
 }
-.writer-story {
-  padding: 3rem 2.5rem;
-  display: flex; flex-direction: column; justify-content: center;
+.wc-body { padding: 1.5rem; }
+.wc-body h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--text-dark); margin-bottom: .25rem; }
+.wc-role { font-size: .8rem; color: var(--gold); font-weight: 600; margin-bottom: .75rem; }
+.wc-bio { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+.carousel-btn {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--deep); color: var(--white); border: none;
+  font-size: 1.2rem; cursor: pointer; display: flex;
+  align-items: center; justify-content: center;
+  transition: background .2s, opacity .2s;
+  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+  z-index: 2;
 }
-.writer-story h3 {
-  font-family: var(--serif); font-size: 1.6rem; font-weight: 700;
-  color: var(--text-dark); margin-bottom: .25rem;
+.carousel-btn:hover { background: var(--red); }
+.carousel-btn:disabled { opacity: .3; cursor: default; background: var(--muted); }
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+.carousel-dots {
+  display: flex; justify-content: center; gap: .5rem; margin-top: 1.5rem;
 }
-.writer-role { font-size: .85rem; color: var(--gold); font-weight: 600; margin-bottom: 1.25rem; letter-spacing: .03em; }
-.writer-quote {
-  font-family: var(--serif); font-style: italic; font-size: 1.15rem;
-  color: var(--text-dark); line-height: 1.7;
-  border-left: 3px solid var(--gold);
-  padding-left: 1.25rem; margin-bottom: 1.25rem;
+.carousel-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: var(--border); border: none; cursor: pointer;
+  transition: background .2s, transform .2s;
 }
-.writer-subtitle { font-size: .8rem; font-family: var(--sans); font-weight: 500; color: var(--gold); letter-spacing: .05em; text-transform: uppercase; margin-bottom: .6rem; }
-.writer-bio { font-size: .95rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.5rem; }
-.read-more {
-  font-weight: 600; font-size: .9rem; color: var(--red);
-  display: inline-flex; align-items: center; gap: .4rem;
+.carousel-dot.active { background: var(--gold); transform: scale(1.3); }
+@media (max-width: 768px) {
+  .writer-card-home { flex: 0 0 100%; }
+  .carousel-wrapper { padding: 0 2.5rem; }
 }
-.read-more:hover { gap: .6rem; }
 
 /* ─── ORIGIN STORY ─── */
 .origin {
@@ -572,152 +592,103 @@ a:hover { color: var(--red-dark); }
   </div>
 </section>
 
-<!-- ═══════ WRITER SPOTLIGHTS (random 3 on each page load) ═══════ -->
+<!-- ═══════ WRITER SPOTLIGHTS CAROUSEL ═══════ -->
 <section class="writers-section">
   <div class="container">
     <span class="section-eyebrow">Writer Spotlights</span>
     <h2 class="section-title">The Human Stories Behind Our Mission</h2>
     <p class="section-subtitle">Every writer at City of Asylum carries a story of courage. Here are a few.</p>
   </div>
-  <div id="spotlight-container"></div>
+  <div class="carousel-wrapper">
+    <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous">&larr;</button>
+    <div class="carousel-track" id="carousel-track"></div>
+    <button class="carousel-btn next" id="carousel-next" aria-label="Next">&rarr;</button>
+  </div>
+  <div class="carousel-dots" id="carousel-dots"></div>
 </section>
 <script>
 (function() {
   var writers = [
-    {
-      name: "Rania Mamoun",
-      country: "Sudan",
-      subtitle: "Sudan \u00b7 Novelist, Poet \u00b7 Shortlisted, Warwick Prize for Women in Translation",
-      role: "Writer-in-Residence since 2019 \u00b7 Novelist, Poet, Activist",
-      quote: "\u201cCity of Asylum gave me a home \u2014 and the freedom to write under my own name for the first time.\u201d",
-      bio: "A Sudanese journalist and fiction writer, Rania was censured, beaten, and arrested for her work in the resistance against President Omar al-Bashir. She arrived in Pittsburgh in 2019. During the pandemic, she collaborated with Diane Samuels on a 100-day poetry project \u2014 a poem a day \u2014 which became the book <em>Thirteen Months of Sunrise</em>. After years of writing under a pen name, the book\u2019s launch at City of Asylum was the first time her name was publicly associated with her work.",
-      img: "https://cityofasylum.org/wp-content/uploads/2025/02/Rania.jpeg"
-    },
-    {
-      name: "Mai Kh\u00f4i",
-      country: "Vietnam",
-      subtitle: "Vietnam \u00b7 Musician, Activist \u00b7 V\u00e1clav Havel Prize for Creative Dissent \u00b7 Four Freedoms Award",
-      role: "Artist-in-Residence 2020\u20132023 \u00b7 Musician, Activist",
-      quote: "\u201cPerforming Bad Activist around the world is the way I protest and raise awareness about Vietnam\u2019s human rights situation and the power of art in activism.\u201d",
-      bio: "Mai Kh\u00f4i rose to stardom in Vietnam before becoming a dissident artist. After nominating herself for the National Assembly on a pro-democracy platform and meeting Barack Obama, she was persecuted \u2014 concerts raided, evicted from her home. In Pittsburgh she wrote the lyrics, libretto, and music for a rock opera about her struggle for creative freedom, which has been performed nationally.",
-      img: "https://cityofasylum.org/wp-content/uploads/2021/11/Untitled-design-scaled.jpg"
-    },
-    {
-      name: "Volodymyr Rafeyenko",
-      country: "Ukraine",
-      subtitle: "Ukraine \u00b7 Novelist \u00b7 Visegrad Literary Award \u00b7 Taras Shevchenko Prize shortlist",
-      role: "Writer-in-Exile \u00b7 Ukrainian Fellowship \u00b7 Novelist",
-      quote: "\u201cIn three years at City of Asylum, I wrote more than in the previous ten.\u201d",
-      bio: "A Ukrainian novelist displaced by Russia\u2019s 2022 invasion. His novel Mondegreen was his first written in Ukrainian \u2014 an act of linguistic resistance against a country trying to erase Ukrainian identity. He departs Pittsburgh in March 2026 for a residency at Harvard University.",
-      img: "https://cityofasylum.org/wp-content/uploads/2023/07/Volodymyr-Rafeyenko-2.png"
-    },
-    {
-      name: "Bertony Louis",
-      country: "Caribbean",
-      subtitle: "Caribbean \u00b7 Poet",
-      role: "Writer-in-Residence \u00b7 Poet",
-      quote: "",
-      bio: "Our newest writer-in-residence, Bertony brings Caribbean poetic traditions to Pittsburgh\u2019s literary community.",
-      img: "https://cityofasylum.org/wp-content/uploads/2025/10/EDIT-Bertony-Louis1.jpg.webp"
-    },
-    {
-      name: "Olena Boryshpolets",
-      country: "Ukraine",
-      subtitle: "Ukraine \u00b7 Writer \u00b7 Ukrainian Fellowship",
-      role: "Writer \u00b7 Ukrainian Fellowship",
-      quote: "",
-      bio: "Ukrainian writer and fellow, researching and publishing despite the ongoing war in her homeland.",
-      img: "https://cityofasylum.org/wp-content/uploads/2023/05/IMG_20240215_183656_629-1-1-scaled.jpg"
-    },
-    {
-      name: "Oleksandr Fraz\u00e9-Fraz\u00e9nko",
-      country: "Ukraine",
-      subtitle: "Ukraine \u00b7 Writer \u00b7 Ukrainian Fellowship",
-      role: "Writer \u00b7 Ukrainian Fellowship",
-      quote: "",
-      bio: "Ukrainian writer who arrived in Pittsburgh in 2023, settling on the Northside with his family.",
-      img: "https://cityofasylum.org/wp-content/uploads/2023/05/KUJICAM_2023-06-06-19-36-27_developed-1-scaled.jpg"
-    },
-    {
-      name: "Jorge Olivera Castillo",
-      country: "Cuba",
-      subtitle: "Cuba \u00b7 Writer \u00b7 2021\u20132024",
-      role: "Writer-in-Residence 2021\u20132024",
-      quote: "",
-      bio: "Cuban writer who found a safe haven at City of Asylum and continued creating despite years of persecution.",
-      img: "https://cityofasylum.org/wp-content/uploads/2021/12/DSC08184_20211111_Rosensteel-scaled.jpg"
-    },
-    {
-      name: "Tuhin Das",
-      country: "Bangladesh",
-      subtitle: "Bangladesh \u00b7 Poet \u00b7 2016\u20132021",
-      role: "Writer-in-Residence 2016\u20132021 \u00b7 Poet",
-      quote: "",
-      bio: "Bangladeshi poet who shares his experiences of persecution and exile through powerful verse.",
-      img: "https://cityofasylum.org/wp-content/uploads/2021/05/tuhin.png"
-    },
-    {
-      name: "Bewketu Seyoum",
-      country: "Ethiopia",
-      subtitle: "Ethiopia \u00b7 Poet, Novelist, Essayist \u00b7 2019\u20132021",
-      role: "Writer-in-Residence 2019\u20132021",
-      quote: "",
-      bio: "Ethiopia\u2019s Best Novelist of the Year (2008), known for using humor to broach politically taboo subjects. Assaulted in 2011 for his writing.",
-      img: "https://cityofasylum.org/wp-content/uploads/2021/05/resize-bewketu-scaled.jpeg"
-    },
-    {
-      name: "Osama Alomar",
-      country: "Syria",
-      subtitle: "Syria \u00b7 Writer \u00b7 2017\u20132019",
-      role: "Writer-in-Residence 2017\u20132019",
-      quote: "",
-      bio: "Syrian writer whose work reflects the experience of exile and the search for creative freedom.",
-      img: "https://cityofasylum.org/wp-content/uploads/2021/06/20170305_Rosensteel_0002-1024x683-1.jpeg"
-    },
-    {
-      name: "Khet Mar",
-      country: "Myanmar",
-      subtitle: "Myanmar \u00b7 Writer \u00b7 2009\u20132012",
-      role: "Writer-in-Residence 2009\u20132012",
-      quote: "",
-      bio: "Burmese writer who fled persecution in Myanmar to find safety and creative safe haven in Pittsburgh.",
-      img: "https://cityofasylum.org/wp-content/uploads/2021/06/KhetMarBig.jpeg"
-    },
-    {
-      name: "Huang Xiang",
-      country: "China",
-      subtitle: "China \u00b7 Poet \u00b7 First Writer, 2004\u20132006",
-      role: "First Writer-in-Residence 2004\u20132006 \u00b7 Poet",
-      quote: "",
-      bio: "China\u2019s pre-eminent post-Cultural Revolution poet. Imprisoned and tortured, he became City of Asylum\u2019s first writer and created the iconic \u201cHouse Poem.\u201d",
-      img: "https://cityofasylum.org/wp-content/uploads/2021/06/xwbig.jpeg"
-    }
+    { name:"Rania Mamoun", country:"Sudan", role:"Writer-in-Residence since 2019", bio:"Bestselling Sudanese author. Shortlisted for the Warwick Prize for Women in Translation.", img:"https://cityofasylum.org/wp-content/uploads/2025/02/Rania.jpeg" },
+    { name:"Mai Kh\u00f4i", country:"Vietnam", role:"Artist-in-Residence 2020\u20132023", bio:"Vietnamese musician and activist. V\u00e1clav Havel Prize for Creative Dissent. Four Freedoms Award.", img:"https://cityofasylum.org/wp-content/uploads/2021/11/Untitled-design-scaled.jpg" },
+    { name:"Volodymyr Rafeyenko", country:"Ukraine", role:"Ukrainian Fellowship \u00b7 Novelist", bio:"Ukrainian novelist displaced by the 2022 invasion. Visegrad Literary Award winner.", img:"https://cityofasylum.org/wp-content/uploads/2023/07/Volodymyr-Rafeyenko-2.png" },
+    { name:"Bertony Louis", country:"Caribbean", role:"Writer-in-Residence \u00b7 Poet", bio:"Our newest writer-in-residence, bringing Caribbean poetic traditions to Pittsburgh.", img:"https://cityofasylum.org/wp-content/uploads/2025/10/EDIT-Bertony-Louis1.jpg.webp" },
+    { name:"Olena Boryshpolets", country:"Ukraine", role:"Ukrainian Fellowship", bio:"Ukrainian writer and fellow, researching and publishing despite the ongoing war.", img:"https://cityofasylum.org/wp-content/uploads/2023/05/IMG_20240215_183656_629-1-1-scaled.jpg" },
+    { name:"Oleksandr Fraz\u00e9-Fraz\u00e9nko", country:"Ukraine", role:"Ukrainian Fellowship", bio:"Ukrainian writer who arrived in Pittsburgh in 2023 with his family.", img:"https://cityofasylum.org/wp-content/uploads/2023/05/KUJICAM_2023-06-06-19-36-27_developed-1-scaled.jpg" },
+    { name:"Jorge Olivera Castillo", country:"Cuba", role:"Writer-in-Residence 2021\u20132024", bio:"Cuban writer who continued creating despite years of persecution.", img:"https://cityofasylum.org/wp-content/uploads/2021/12/DSC08184_20211111_Rosensteel-scaled.jpg" },
+    { name:"Tuhin Das", country:"Bangladesh", role:"Writer-in-Residence 2016\u20132021", bio:"Bangladeshi poet sharing experiences of persecution and exile through powerful verse.", img:"https://cityofasylum.org/wp-content/uploads/2021/05/tuhin.png" },
+    { name:"Bewketu Seyoum", country:"Ethiopia", role:"Writer-in-Residence 2019\u20132021", bio:"Ethiopia\u2019s Best Novelist of the Year (2008). Assaulted in 2011 for his writing.", img:"https://cityofasylum.org/wp-content/uploads/2021/05/resize-bewketu-scaled.jpeg" },
+    { name:"Osama Alomar", country:"Syria", role:"Writer-in-Residence 2017\u20132019", bio:"Syrian writer whose work reflects the experience of exile and creative freedom.", img:"https://cityofasylum.org/wp-content/uploads/2021/06/20170305_Rosensteel_0002-1024x683-1.jpeg" },
+    { name:"Khet Mar", country:"Myanmar", role:"Writer-in-Residence 2009\u20132012", bio:"Burmese writer who fled persecution in Myanmar to find safety in Pittsburgh.", img:"https://cityofasylum.org/wp-content/uploads/2021/06/KhetMarBig.jpeg" },
+    { name:"Huang Xiang", country:"China", role:"First Writer 2004\u20132006", bio:"China\u2019s pre-eminent post-Cultural Revolution poet. Created the iconic \u201cHouse Poem.\u201d", img:"https://cityofasylum.org/wp-content/uploads/2021/06/xwbig.jpeg" }
   ];
 
-  // Shuffle and pick 3
+  // Shuffle all writers randomly
   for (var i = writers.length - 1; i > 0; i--) {
     var j = Math.floor(Math.random() * (i + 1));
     var tmp = writers[i]; writers[i] = writers[j]; writers[j] = tmp;
   }
-  var selected = writers.slice(0, 3);
 
-  var container = document.getElementById('spotlight-container');
-  selected.forEach(function(w, idx) {
-    var flip = idx % 2 === 1;
-    var html = '<div class="container"' + (idx > 0 ? ' style="margin-top:3rem"' : '') + '>' +
-      '<div class="writer-spotlight">' +
-        (flip ? '' : '<div class="writer-img"><span class="writer-country">' + w.country + '</span><img src="' + w.img + '" alt="' + w.name + '" onerror="this.style.opacity=\'0\'"></div>') +
-        '<div class="writer-story">' +
-          '<h3>' + w.name + '</h3>' +
-          '<div class="writer-subtitle">' + w.subtitle + '</div>' +
-          '<div class="writer-role">' + w.role + '</div>' +
-          (w.quote ? '<blockquote class="writer-quote">' + w.quote + '</blockquote>' : '') +
-          '<p class="writer-bio">' + w.bio + '</p>' +
-        '</div>' +
-        (flip ? '<div class="writer-img"><span class="writer-country">' + w.country + '</span><img src="' + w.img + '" alt="' + w.name + '" onerror="this.style.opacity=\'0\'"></div>' : '') +
-      '</div></div>';
-    container.insertAdjacentHTML('beforeend', html);
+  // Build cards
+  var track = document.getElementById('carousel-track');
+  writers.forEach(function(w) {
+    track.insertAdjacentHTML('beforeend',
+      '<div class="writer-card-home">' +
+        '<div class="wc-img"><span class="wc-country">' + w.country + '</span>' +
+        '<img src="' + w.img + '" alt="' + w.name + '" onerror="this.style.opacity=\'0\'"></div>' +
+        '<div class="wc-body"><h3>' + w.name + '</h3>' +
+        '<div class="wc-role">' + w.role + '</div>' +
+        '<p class="wc-bio">' + w.bio + '</p></div></div>'
+    );
   });
+
+  // Carousel logic — show 3 at a time, scroll by 3
+  var page = 0;
+  var perPage = window.innerWidth <= 768 ? 1 : 3;
+  var totalPages = Math.ceil(writers.length / perPage);
+  var prevBtn = document.getElementById('carousel-prev');
+  var nextBtn = document.getElementById('carousel-next');
+  var dotsContainer = document.getElementById('carousel-dots');
+
+  // Build dots
+  for (var d = 0; d < totalPages; d++) {
+    var dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (d === 0 ? ' active' : '');
+    dot.dataset.page = d;
+    dot.setAttribute('aria-label', 'Page ' + (d + 1));
+    dotsContainer.appendChild(dot);
+  }
+
+  function updateCarousel() {
+    var cardWidth = track.querySelector('.writer-card-home').offsetWidth;
+    var gap = 24; // 1.5rem
+    var offset = page * perPage * (cardWidth + gap);
+    track.style.transition = 'transform .4s ease';
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    prevBtn.disabled = page === 0;
+    nextBtn.disabled = page >= totalPages - 1;
+    dotsContainer.querySelectorAll('.carousel-dot').forEach(function(dot, i) {
+      dot.classList.toggle('active', i === page);
+    });
+  }
+
+  prevBtn.addEventListener('click', function() { if (page > 0) { page--; updateCarousel(); } });
+  nextBtn.addEventListener('click', function() { if (page < totalPages - 1) { page++; updateCarousel(); } });
+  dotsContainer.addEventListener('click', function(e) {
+    if (e.target.classList.contains('carousel-dot')) {
+      page = parseInt(e.target.dataset.page);
+      updateCarousel();
+    }
+  });
+
+  window.addEventListener('resize', function() {
+    perPage = window.innerWidth <= 768 ? 1 : 3;
+    totalPages = Math.ceil(writers.length / perPage);
+    if (page >= totalPages) page = totalPages - 1;
+    updateCarousel();
+  });
+
+  updateCarousel();
 })();
 </script>
 
