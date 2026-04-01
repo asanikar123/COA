@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Campus — City of Asylum</title>
+<meta name="description" content="Explore City of Asylum's seven-block campus on Pittsburgh's Northside — Alphabet City, Sampsonia Way house publications, the Alphabet Reading Garden, and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep:#0f1419;--charcoal:#1a1f2e;--slate:#2d3548;
+  --red:#c23b2e;--red-dark:#8b1a1a;--gold:#c9a227;--gold-light:#e0c660;
+  --cream:#f5f0e8;--warm-white:#faf8f5;--white:#ffffff;--green:#2d8a4e;
+  --muted:#6b7280;--text-dark:#1a1a1a;--text-body:#3d3d3d;--border:#e5e7eb;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Inter','Segoe UI',sans-serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-body);line-height:1.7;background:var(--warm-white)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--red);text-decoration:none;transition:color .2s}
+a:hover{color:var(--red-dark)}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+/* NAV */
+.site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
+.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:72px}
+.nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
+.nav-logo img{height:48px;width:auto}
+.nav-logo span{font-family:var(--serif);font-weight:700;font-size:1.15rem}
+.nav-links{display:flex;align-items:center;gap:.25rem}
+.nav-links a{color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .85rem;border-radius:6px;transition:all .2s}
+.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
+.nav-links a.active{color:var(--gold)}
+.nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+
+/* HERO */
+.page-hero{position:relative;padding:7rem 0 6rem;overflow:hidden;background:var(--deep)}
+.page-hero::after{content:'';position:absolute;right:-10%;bottom:-30%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.06) 0%,transparent 70%);pointer-events:none}
+.page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.page-hero h1{font-family:var(--serif);font-size:3.2rem;font-weight:900;color:var(--white);margin-bottom:1.25rem;max-width:700px}
+.page-hero p{color:rgba(255,255,255,.6);font-size:1.2rem;max-width:800px;line-height:1.8;font-family:var(--serif);font-style:italic}
+
+/* SECTION HELPERS */
+.section-eyebrow{display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
+.section-title{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:1rem}
+.section-subtitle{text-align:center;color:var(--muted);font-size:1.05rem;max-width:650px;margin:0 auto 3.5rem}
+.btn-gold{background:var(--gold);color:var(--deep);font-weight:700;padding:1rem 2.5rem;border-radius:8px;font-size:1.1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s;border:none;cursor:pointer}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--deep)}
+
+/* TIMELINE */
+.timeline-section{padding:6rem 0;background:var(--cream)}
+.timeline{max-width:800px;margin:3rem auto 0;position:relative}
+.timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--gold),var(--red));transform:translateX(-50%);border-radius:3px}
+.timeline-item{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3.5rem;position:relative}
+.timeline-item::after{
+  content:'';position:absolute;left:50%;top:1.2rem;
+  width:16px;height:16px;border-radius:50%;
+  background:var(--gold);border:4px solid var(--cream);
+  transform:translateX(-50%);z-index:1;
+  box-shadow:0 0 0 3px rgba(201,162,39,.3);
+}
+.timeline-year{
+  font-family:var(--serif);font-size:2rem;font-weight:900;
+  color:var(--gold);text-align:right;padding-right:2.5rem;padding-top:.1rem;
+}
+.timeline-content{padding-left:2.5rem}
+.timeline-content h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
+.timeline-content p{font-size:.92rem;color:var(--muted);line-height:1.7}
+
+/* WHAT'S HERE NOW */
+.locations-section{padding:6rem 0;background:var(--white)}
+.locations-photo{width:100%;max-height:400px;object-fit:cover;border-radius:16px;margin-bottom:3.5rem;background:var(--charcoal);overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.08)}
+.locations-photo img{width:100%;height:100%;object-fit:cover}
+.locations-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.location-card{background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.location-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
+.location-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.location-card:nth-child(1)::before{background:var(--red)}
+.location-card:nth-child(2)::before{background:var(--gold)}
+.location-card:nth-child(3)::before{background:var(--green)}
+.location-card:nth-child(4)::before{background:var(--slate)}
+.location-card h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text-dark);margin-bottom:.35rem}
+.location-address{font-size:.8rem;font-weight:600;color:var(--gold);letter-spacing:.03em;margin-bottom:1rem}
+.location-card p{font-size:.92rem;color:var(--muted);line-height:1.7}
+.location-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
+.location-tags span{font-size:.75rem;font-weight:600;color:var(--text-dark);background:var(--cream);padding:.3rem .75rem;border-radius:20px}
+
+/* DIGITAL SANCTUARIES */
+.app-section{padding:6rem 0;background:var(--deep);color:var(--white);text-align:center}
+.app-section h2{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:.75rem}
+.app-section p{color:rgba(255,255,255,.6);font-size:1.05rem;max-width:550px;margin:0 auto 2.5rem}
+.app-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.app-btn{display:inline-flex;align-items:center;gap:.6rem;padding:.85rem 1.8rem;border-radius:10px;font-weight:700;font-size:.95rem;transition:all .25s;border:2px solid rgba(255,255,255,.2);color:var(--white)}
+.app-btn:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.app-btn svg{width:22px;height:22px;fill:currentColor}
+
+/* IMPACT STATS */
+.impact-section{padding:5rem 0;background:var(--charcoal)}
+.impact-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center}
+.impact-item .num{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--gold)}
+.impact-item .label{font-size:.85rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem}
+
+/* CTA */
+.campus-cta{padding:6rem 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);text-align:center;color:var(--white)}
+.campus-cta h2{font-family:var(--serif);font-size:2.4rem;font-weight:700;margin-bottom:1rem}
+.campus-cta p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 2rem}
+
+/* FOOTER */
+.site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:4rem 0 2rem;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand p{font-size:.9rem;line-height:1.7;max-width:280px;margin-top:.75rem}
+.footer-col h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:1rem}
+.footer-col a{display:block;color:rgba(255,255,255,.5);font-size:.875rem;padding:.25rem 0}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.8rem}
+.footer-bottom a{color:rgba(255,255,255,.4)}
+
+@media(max-width:768px){
+  .page-hero h1{font-size:2.2rem}
+  .timeline-item{grid-template-columns:1fr;gap:.5rem}
+  .timeline::before{left:0}
+  .timeline-item::after{left:0}
+  .timeline-year{text-align:left;padding-right:0;padding-left:1.5rem}
+  .timeline-content{padding-left:1.5rem}
+  .locations-grid{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum">
+      <span>City of Asylum</span>
+    </a>
+    <div class="nav-links">
+      <div class="nav-item">
+        <a href="about.html">About Us <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href="about.html">Our Mission</a>
+          <a href="about.html">Our Founders</a>
+          <a href="about.html">Our History</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="writers.html">Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href="writers.html">Residency Program</a>
+          <a href="writers.html">Current Residents</a>
+          <a href="writers.html">Ukrainian Fellowship</a>
+          <a href="writers.html">Alumni</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="events.html">Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href="events.html">Upcoming Programs</a>
+          <a href="events.html">Literary Readings</a>
+          <a href="events.html">Thursday Night Jazz</a>
+          <a href="events.html">Annual Festivals</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="campus.html" class="active">Campus <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href="campus.html">Alphabet City</a>
+          <a href="campus.html">House Publications</a>
+          <a href="campus.html">Reading Garden</a>
+          <a href="campus.html">Audio Tour</a>
+        </div>
+      </div>
+      <a href="media-archive.html">Media &amp; Archive</a>
+      <a href="donate.html" class="nav-donate">Donate</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="container">
+    <span class="eyebrow">The Campus</span>
+    <h1>Seven blocks transformed</h1>
+    <p>It started with one poet painting his words on a house. Now it's a neighborhood.</p>
+  </div>
+</section>
+
+<!-- SCROLL-DRIVEN NARRATIVE TIMELINE -->
+<section class="timeline-section">
+  <div class="container">
+    <span class="section-eyebrow">How It Grew</span>
+    <h2 class="section-title">From One House to a Neighborhood</h2>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-year">2004</div>
+        <div class="timeline-content">
+          <h3>The First House Poem</h3>
+          <p>Huang Xiang paints his "House Poem" — the first house publication on Sampsonia Way. A single act of creative defiance that would define an entire neighborhood.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2014</div>
+        <div class="timeline-content">
+          <h3>River of Words</h3>
+          <p>140 neighbors mount words on their homes. River of Words stretches half a mile across the Northside, making the entire community a canvas for free expression.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2015</div>
+        <div class="timeline-content">
+          <h3>Alphabet Reading Garden</h3>
+          <p>A nuisance bar becomes the Alphabet Reading Garden — a public space with plants A to Z and the alphabet in 70 writing systems.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2017</div>
+        <div class="timeline-content">
+          <h3>Alphabet City Opens</h3>
+          <p>Alphabet City opens at 40 W. North Ave. — a cultural hub with a performance space, bookstore, and Cucina Alfabeto restaurant.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-content">
+          <h3>Seven Writer Residences</h3>
+          <p>City of Asylum now hosts 7 writer families at once — the largest sanctuary for persecuted writers anywhere in the world.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S HERE NOW -->
+<section class="locations-section">
+  <div class="container">
+    <span class="section-eyebrow">What's Here Now</span>
+    <h2 class="section-title">A Campus Built for Creative Freedom</h2>
+    <p class="section-subtitle">Four interconnected spaces across Pittsburgh's Central Northside, all open to the public.</p>
+
+    <div class="locations-photo" style="height:400px;display:flex;align-items:center;justify-content:center;background:var(--charcoal);color:rgba(255,255,255,.3);font-size:1rem;letter-spacing:.1em;text-transform:uppercase;">
+      Campus aerial photo placeholder
+    </div>
+
+    <div class="locations-grid">
+      <div class="location-card">
+        <h3>Alphabet City</h3>
+        <div class="location-address">40 W. North Ave.</div>
+        <p>The cultural heart of the campus — a performance space, independent bookstore, and the Cucina Alfabeto restaurant, all under one roof. Available for private event rental (35 to 100 guests).</p>
+        <div class="location-tags">
+          <span>Performance space</span>
+          <span>Bookstore</span>
+          <span>Restaurant</span>
+          <span>Event rental</span>
+        </div>
+      </div>
+      <div class="location-card">
+        <h3>Sampsonia Way House Publications</h3>
+        <div class="location-address">308 &ndash; 408 Sampsonia Way</div>
+        <p>A walkable outdoor gallery featuring 7 large-scale collaborations between exiled writers and visual artists. Each house facade tells a story of resilience and creative freedom.</p>
+        <div class="location-tags">
+          <span>Outdoor gallery</span>
+          <span>7 collaborations</span>
+          <span>Writer &amp; artist</span>
+        </div>
+      </div>
+      <div class="location-card">
+        <h3>Alphabet Reading Garden</h3>
+        <div class="location-address">3 blocks from house publications</div>
+        <p>A public green space where a nuisance bar once stood. Plants from A to Z, the alphabet rendered in 70 writing systems, and a quiet place for reading and reflection.</p>
+        <div class="location-tags">
+          <span>Plants A&ndash;Z</span>
+          <span>70 writing systems</span>
+          <span>Public park</span>
+        </div>
+      </div>
+      <div class="location-card">
+        <h3>River of Words</h3>
+        <div class="location-address">Across 140 Northside homes</div>
+        <p>140 words mounted on 140 homes across the Northside, stretching half a mile. Created by Venezuelan writer Israel Centeno in 2014, it is the largest community-authored public art project in Pittsburgh.</p>
+        <div class="location-tags">
+          <span>140 homes</span>
+          <span>Israel Centeno, 2014</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIGITAL SANCTUARIES APP -->
+<section class="app-section">
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--gold)">Digital Sanctuaries</span>
+    <h2>Self-guided audio tour of the campus. Download free.</h2>
+    <p>Explore every house publication, installation, and landmark at your own pace with narrated stories from the writers themselves.</p>
+    <div class="app-buttons">
+      <a href="https://play.google.com/store/apps/details?id=com.tb.tb212&hl=en" class="app-btn" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302-2.593-2.302 2.593-2.302zM5.864 2.658L16.8 9.49l-2.302 2.302L5.864 2.658z"/></svg>
+        Google Play
+      </a>
+      <a href="#" class="app-btn">
+        <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        App Store
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT STATS -->
+<section class="impact-section">
+  <div class="container">
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="num">$13M</div>
+        <div class="label">Invested in the Northside</div>
+      </div>
+      <div class="impact-item">
+        <div class="num">$25M</div>
+        <div class="label">Adjacent investment catalyzed</div>
+      </div>
+      <div class="impact-item">
+        <div class="num">25,000+</div>
+        <div class="label">Annual visitors</div>
+      </div>
+      <div class="impact-item">
+        <div class="num">7</div>
+        <div class="label">Writer residences</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="campus-cta">
+  <div class="container">
+    <h2>Help build arts as essential infrastructure</h2>
+    <p>Every transformed space starts with your support. Help City of Asylum continue reimagining what a neighborhood can be.</p>
+    <a href="donate.html" class="btn-gold">Donate Now &rarr;</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:.5rem">
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:40px">
+          <span style="color:#fff;font-family:var(--serif);font-weight:700;">City of Asylum</span>
+        </a>
+        <p>Protecting and celebrating freedom of creative expression since 2004. The world's largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href="about.html">About Us</a>
+        <a href="writers.html">Writers &amp; Residencies</a>
+        <a href="events.html">Free Arts &amp; Culture</a>
+        <a href="campus.html">Campus</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <a href="campus.html">Alphabet City</a>
+        <a href="campus.html">Bookstore</a>
+        <a href="campus.html">Cucina Alfabeto</a>
+        <a href="campus.html">Audio Tour</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href="donate.html">Donate</a>
+        <a href="#">Volunteer</a>
+        <a href="#">Sponsor</a>
+        <a href="mailto:info@cityofasylum.org">Contact Us</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
+      <a href="#">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

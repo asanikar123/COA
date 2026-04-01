@@ -416,16 +416,12 @@ a:hover { color: var(--red-dark); }
 /* ─── WRITERS MAP SECTION ─── */
 .writers-map-section { padding: 6rem 0; background: var(--deep); }
 .wm-panel {
-  display: grid; grid-template-columns: 3fr 2fr; gap: 0;
   margin-top: 3rem; border-radius: 20px; overflow: hidden;
   border: 1px solid rgba(255,255,255,.1); box-shadow: 0 24px 80px rgba(0,0,0,.5);
 }
-.wm-map-container { height: 520px; position: relative; }
+.wm-map-container { height: 600px; position: relative; }
 #wm-map { width: 100%; height: 100%; }
-.wm-card {
-  background: var(--charcoal); padding: 3rem 2.5rem;
-  display: flex; flex-direction: column; justify-content: space-between; min-height: 520px;
-}
+.wm-card { display: none; }
 .wm-slide { flex: 1; transition: opacity .35s ease, transform .35s ease; }
 .wm-slide.wm-out { opacity: 0; transform: translateY(12px); }
 .wm-writer {
@@ -470,9 +466,7 @@ a:hover { color: var(--red-dark); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .hero-stat-row { flex-wrap: wrap; gap: 1.5rem; }
   .nav-links { display: none; }
-  .wm-panel { grid-template-columns: 1fr; }
-  .wm-map-container { height: 300px; }
-  .wm-card { min-height: unset; padding: 2rem 1.5rem; }
+  .wm-map-container { height: 400px; }
 }
 </style>
 </head>
@@ -512,17 +506,16 @@ a:hover { color: var(--red-dark); }
           <a href="events.html">Annual Festivals</a>
         </div>
       </div>
-      <a href="placemaking.html">Placemaking</a>
       <div class="nav-item">
-        <a href="visit.html">Campus <span class="nav-chevron">▾</span></a>
+        <a href="campus.html">Campus <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="visit.html">City Books</a>
-          <a href="visit.html">Cucina Alfabeto</a>
-          <a href="visit.html">Programs &amp; Events</a>
-          <a href="visit.html">Sampsonia Way</a>
-          <a href="visit.html">Directions</a>
+          <a href="campus.html">Alphabet City</a>
+          <a href="campus.html">House Publications</a>
+          <a href="campus.html">Reading Garden</a>
+          <a href="campus.html">Audio Tour</a>
         </div>
       </div>
+      <a href="media-archive.html">Media &amp; Archive</a>
       <a href="donate.html" class="nav-donate">Donate</a>
     </div>
   </div>
@@ -537,17 +530,18 @@ a:hover { color: var(--red-dark); }
   <div class="hero-content">
     <span class="hero-eyebrow">The World's Largest Safe Haven for Exiled Writers</span>
     <h1>When writers are silenced, <em>we give them a home in exile.</em></h1>
-    <p class="hero-sub">City of Asylum protects persecuted writers from around the world, giving them safety, community, and the freedom to create — right here in Pittsburgh.</p>
+    <p class="hero-sub">City of Asylum protects persecuted writers from around the world, giving them safety, community, and the freedom to create — in Pittsburgh.</p>
     <div class="hero-actions">
-      <a href="writers.html" class="btn btn-primary">Meet Our Writers &rarr;</a>
+      <a href="writers.html" class="btn btn-primary">Meet the Writers &rarr;</a>
       <a href="donate.html" class="btn btn-secondary">Support the Mission</a>
     </div>
     <div class="hero-stat-row">
-      <div class="hero-stat"><div class="num">18</div><div class="label">Writers &amp; Artists Protected</div></div>
-      <div class="hero-stat"><div class="num">10%</div><div class="label">Of All ICORN Writers in Pittsburgh</div></div>
-      <div class="hero-stat"><div class="num">200+</div><div class="label">Free Programs Each Year</div></div>
-      <div class="hero-stat"><div class="num">10+</div><div class="label">International Awards Won</div></div>
+      <div class="hero-stat"><div class="num">21</div><div class="label">Writers Protected</div></div>
+      <div class="hero-stat"><div class="num">10%</div><div class="label">Of All ICORN Writers in Pittsburgh*</div></div>
+      <div class="hero-stat"><div class="num">120+</div><div class="label">Free Arts &amp; Culture Programs Each Year</div></div>
       <div class="hero-stat"><div class="num">2004</div><div class="label">Founded by Diane &amp; Henry</div></div>
+    </div>
+    <div style="margin-top:1rem;font-size:.7rem;color:rgba(255,255,255,.35);">* International Cities of Refuge Network</div>
     </div>
   </div>
 </section>
@@ -562,84 +556,170 @@ a:hover { color: var(--red-dark); }
       <div class="pillar-card">
         <div class="pillar-icon">🛡️</div>
         <h3>Protect</h3>
-        <p>We provide a safe haven for writers and artists living in exile under threat of persecution — a safe home, legal support, medical benefits, and the freedom to keep creating.</p>
+        <p>We provide a safe haven for writers (and families) living in exile under threat of persecution — a safe home, legal support, medical benefits, and the freedom to keep writing and publishing.</p>
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">✨</div>
         <h3>Celebrate</h3>
-        <p>Through free literary readings, concerts, films, and festivals, we celebrate the power of creative expression and build bridges across cultures in our Pittsburgh community.</p>
+        <p>Through free literary readings, concerts, films, and festivals, we celebrate the power of creative expression and build cultural bridges that connect people.</p>
       </div>
       <div class="pillar-card">
         <div class="pillar-icon">🏡</div>
         <h3>Transform</h3>
-        <p>By transforming properties into homes for writers and vibrant cultural spaces, we anchor neighborhood development on Pittsburgh's Northside — where art meets activism.</p>
+        <p>By transforming dilapidated properties into homes for writers and vibrant cultural spaces, we anchor neighborhood development on Pittsburgh's Northside — where art meets activism.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ═══════ WRITER SPOTLIGHTS ═══════ -->
+<!-- ═══════ WRITER SPOTLIGHTS (random 3 on each page load) ═══════ -->
 <section class="writers-section">
   <div class="container">
     <span class="section-eyebrow">Writer Spotlights</span>
     <h2 class="section-title">The Human Stories Behind Our Mission</h2>
-    <p class="section-subtitle">Every writer at City of Asylum carries a story of courage. Here are two of the people whose voices we're helping protect.</p>
+    <p class="section-subtitle">Every writer at City of Asylum carries a story of courage. Here are a few.</p>
   </div>
-
-  <!-- Writer 1: Rania Mamoun -->
-  <div class="container">
-    <div class="writer-spotlight">
-      <div class="writer-img">
-        <span class="writer-country">Sudan</span>
-        <img src="https://cityofasylum.org/wp-content/uploads/2025/02/Rania.jpeg" alt="Rania Mamoun" onerror="this.style.opacity='0'">
-      </div>
-      <div class="writer-story">
-        <h3>Rania Mamoun</h3>
-        <div class="writer-subtitle">Sudan &middot; Novelist, Poet &middot; Shortlisted, Warwick Prize for Women in Translation</div>
-        <div class="writer-role">Writer-in-Residence since 2019 &middot; Novelist, Poet, Activist</div>
-        <blockquote class="writer-quote">"Diane and Henry are life changers."</blockquote>
-        <p class="writer-bio">A Sudanese journalist and fiction writer, Rania was censured, beaten, and arrested for her work in the resistance against President Omar al-Bashir. She arrived in Pittsburgh in 2019. During the pandemic, she collaborated with Diane Samuels on a 100-day poetry project — a poem a day — which became the book <em>Thirteen Months of Sunrise</em>. After years of writing under a pen name, her Pittsburgh book launch was the first time her name was publicly associated with her work.</p>
-        <a href="writers.html" class="read-more">Read Rania's full story &rarr;</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Writer 2: Mai Khôi -->
-  <div class="container" style="margin-top: 3rem;">
-    <div class="writer-spotlight">
-      <div class="writer-story">
-        <h3>Mai Kh&ocirc;i</h3>
-        <div class="writer-subtitle">Vietnam &middot; Musician, Activist &middot; V&aacute;clav Havel Prize for Creative Dissent &middot; Four Freedoms Award</div>
-        <div class="writer-role">Artist-in-Residence 2020–2022 &middot; Musician, Activist</div>
-        <blockquote class="writer-quote">"Performing Bad Activist around the world is the way I protest and raise awareness about Vietnam's human rights situation and the power of art in activism."</blockquote>
-        <p class="writer-bio">Mai Kh&ocirc;i rose to stardom in Vietnam before becoming a dissident artist. After nominating herself for the National Assembly on a pro-democracy platform and meeting Barack Obama, she was persecuted — concerts raided, evicted from her home. She received the Vaclav Havel Prize for Creative Dissent.</p>
-        <a href="writers.html" class="read-more">Read Mai Kh&ocirc;i's full story &rarr;</a>
-      </div>
-      <div class="writer-img">
-        <span class="writer-country">Vietnam</span>
-        <img src="https://cityofasylum.org/wp-content/uploads/2021/11/Untitled-design-scaled.jpg" alt="Mai Khôi" onerror="this.style.opacity='0'">
-      </div>
-    </div>
-  </div>
-
-  <!-- Writer 3: Volodymyr Rafeyenko -->
-  <div class="container" style="margin-top: 3rem;">
-    <div class="writer-spotlight">
-      <div class="writer-img">
-        <span class="writer-country">Ukraine</span>
-        <img src="https://cityofasylum.org/wp-content/uploads/2023/07/Volodymyr-Rafeyenko-2.png" alt="Volodymyr Rafeyenko" onerror="this.style.opacity='0'">
-      </div>
-      <div class="writer-story">
-        <h3>Volodymyr Rafeyenko</h3>
-        <div class="writer-subtitle">Ukraine &middot; Novelist &middot; Visegrad Literary Award &middot; Taras Shevchenko Prize shortlist</div>
-        <div class="writer-role">Writer-in-Exile &middot; Ukrainian Fellowship &middot; Novelist</div>
-        <blockquote class="writer-quote">"In three years at City of Asylum, I wrote more than in the previous ten."</blockquote>
-        <p class="writer-bio">A Ukrainian novelist displaced by Russia's 2022 invasion. His novel Mondegreen was his first written in Ukrainian — an act of linguistic resistance against a country trying to erase Ukrainian identity. He departs Pittsburgh in March 2026 for a residency at Harvard University.</p>
-        <a href="writers.html" class="read-more">Read Volodymyr's full story &rarr;</a>
-      </div>
-    </div>
-  </div>
+  <div id="spotlight-container"></div>
 </section>
+<script>
+(function() {
+  var writers = [
+    {
+      name: "Rania Mamoun",
+      country: "Sudan",
+      subtitle: "Sudan \u00b7 Novelist, Poet \u00b7 Shortlisted, Warwick Prize for Women in Translation",
+      role: "Writer-in-Residence since 2019 \u00b7 Novelist, Poet, Activist",
+      quote: "\u201cCity of Asylum gave me a home \u2014 and the freedom to write under my own name for the first time.\u201d",
+      bio: "A Sudanese journalist and fiction writer, Rania was censured, beaten, and arrested for her work in the resistance against President Omar al-Bashir. She arrived in Pittsburgh in 2019. During the pandemic, she collaborated with Diane Samuels on a 100-day poetry project \u2014 a poem a day \u2014 which became the book <em>Thirteen Months of Sunrise</em>. After years of writing under a pen name, the book\u2019s launch at City of Asylum was the first time her name was publicly associated with her work.",
+      img: "https://cityofasylum.org/wp-content/uploads/2025/02/Rania.jpeg"
+    },
+    {
+      name: "Mai Kh\u00f4i",
+      country: "Vietnam",
+      subtitle: "Vietnam \u00b7 Musician, Activist \u00b7 V\u00e1clav Havel Prize for Creative Dissent \u00b7 Four Freedoms Award",
+      role: "Artist-in-Residence 2020\u20132023 \u00b7 Musician, Activist",
+      quote: "\u201cPerforming Bad Activist around the world is the way I protest and raise awareness about Vietnam\u2019s human rights situation and the power of art in activism.\u201d",
+      bio: "Mai Kh\u00f4i rose to stardom in Vietnam before becoming a dissident artist. After nominating herself for the National Assembly on a pro-democracy platform and meeting Barack Obama, she was persecuted \u2014 concerts raided, evicted from her home. In Pittsburgh she wrote the lyrics, libretto, and music for a rock opera about her struggle for creative freedom, which has been performed nationally.",
+      img: "https://cityofasylum.org/wp-content/uploads/2021/11/Untitled-design-scaled.jpg"
+    },
+    {
+      name: "Volodymyr Rafeyenko",
+      country: "Ukraine",
+      subtitle: "Ukraine \u00b7 Novelist \u00b7 Visegrad Literary Award \u00b7 Taras Shevchenko Prize shortlist",
+      role: "Writer-in-Exile \u00b7 Ukrainian Fellowship \u00b7 Novelist",
+      quote: "\u201cIn three years at City of Asylum, I wrote more than in the previous ten.\u201d",
+      bio: "A Ukrainian novelist displaced by Russia\u2019s 2022 invasion. His novel Mondegreen was his first written in Ukrainian \u2014 an act of linguistic resistance against a country trying to erase Ukrainian identity. He departs Pittsburgh in March 2026 for a residency at Harvard University.",
+      img: "https://cityofasylum.org/wp-content/uploads/2023/07/Volodymyr-Rafeyenko-2.png"
+    },
+    {
+      name: "Bertony Louis",
+      country: "Caribbean",
+      subtitle: "Caribbean \u00b7 Poet",
+      role: "Writer-in-Residence \u00b7 Poet",
+      quote: "",
+      bio: "Our newest writer-in-residence, Bertony brings Caribbean poetic traditions to Pittsburgh\u2019s literary community.",
+      img: "https://cityofasylum.org/wp-content/uploads/2025/10/EDIT-Bertony-Louis1.jpg.webp"
+    },
+    {
+      name: "Olena Boryshpolets",
+      country: "Ukraine",
+      subtitle: "Ukraine \u00b7 Writer \u00b7 Ukrainian Fellowship",
+      role: "Writer \u00b7 Ukrainian Fellowship",
+      quote: "",
+      bio: "Ukrainian writer and fellow, researching and publishing despite the ongoing war in her homeland.",
+      img: "https://cityofasylum.org/wp-content/uploads/2023/05/IMG_20240215_183656_629-1-1-scaled.jpg"
+    },
+    {
+      name: "Oleksandr Fraz\u00e9-Fraz\u00e9nko",
+      country: "Ukraine",
+      subtitle: "Ukraine \u00b7 Writer \u00b7 Ukrainian Fellowship",
+      role: "Writer \u00b7 Ukrainian Fellowship",
+      quote: "",
+      bio: "Ukrainian writer who arrived in Pittsburgh in 2023, settling on the Northside with his family.",
+      img: "https://cityofasylum.org/wp-content/uploads/2023/05/KUJICAM_2023-06-06-19-36-27_developed-1-scaled.jpg"
+    },
+    {
+      name: "Jorge Olivera Castillo",
+      country: "Cuba",
+      subtitle: "Cuba \u00b7 Writer \u00b7 2021\u20132024",
+      role: "Writer-in-Residence 2021\u20132024",
+      quote: "",
+      bio: "Cuban writer who found a safe haven at City of Asylum and continued creating despite years of persecution.",
+      img: "https://cityofasylum.org/wp-content/uploads/2021/12/DSC08184_20211111_Rosensteel-scaled.jpg"
+    },
+    {
+      name: "Tuhin Das",
+      country: "Bangladesh",
+      subtitle: "Bangladesh \u00b7 Poet \u00b7 2016\u20132021",
+      role: "Writer-in-Residence 2016\u20132021 \u00b7 Poet",
+      quote: "",
+      bio: "Bangladeshi poet who shares his experiences of persecution and exile through powerful verse.",
+      img: "https://cityofasylum.org/wp-content/uploads/2021/05/tuhin.png"
+    },
+    {
+      name: "Bewketu Seyoum",
+      country: "Ethiopia",
+      subtitle: "Ethiopia \u00b7 Poet, Novelist, Essayist \u00b7 2019\u20132021",
+      role: "Writer-in-Residence 2019\u20132021",
+      quote: "",
+      bio: "Ethiopia\u2019s Best Novelist of the Year (2008), known for using humor to broach politically taboo subjects. Assaulted in 2011 for his writing.",
+      img: "https://cityofasylum.org/wp-content/uploads/2021/05/resize-bewketu-scaled.jpeg"
+    },
+    {
+      name: "Osama Alomar",
+      country: "Syria",
+      subtitle: "Syria \u00b7 Writer \u00b7 2017\u20132019",
+      role: "Writer-in-Residence 2017\u20132019",
+      quote: "",
+      bio: "Syrian writer whose work reflects the experience of exile and the search for creative freedom.",
+      img: "https://cityofasylum.org/wp-content/uploads/2021/06/20170305_Rosensteel_0002-1024x683-1.jpeg"
+    },
+    {
+      name: "Khet Mar",
+      country: "Myanmar",
+      subtitle: "Myanmar \u00b7 Writer \u00b7 2009\u20132012",
+      role: "Writer-in-Residence 2009\u20132012",
+      quote: "",
+      bio: "Burmese writer who fled persecution in Myanmar to find safety and creative safe haven in Pittsburgh.",
+      img: "https://cityofasylum.org/wp-content/uploads/2021/06/KhetMarBig.jpeg"
+    },
+    {
+      name: "Huang Xiang",
+      country: "China",
+      subtitle: "China \u00b7 Poet \u00b7 First Writer, 2004\u20132006",
+      role: "First Writer-in-Residence 2004\u20132006 \u00b7 Poet",
+      quote: "",
+      bio: "China\u2019s pre-eminent post-Cultural Revolution poet. Imprisoned and tortured, he became City of Asylum\u2019s first writer and created the iconic \u201cHouse Poem.\u201d",
+      img: "https://cityofasylum.org/wp-content/uploads/2021/06/xwbig.jpeg"
+    }
+  ];
+
+  // Shuffle and pick 3
+  for (var i = writers.length - 1; i > 0; i--) {
+    var j = Math.floor(Math.random() * (i + 1));
+    var tmp = writers[i]; writers[i] = writers[j]; writers[j] = tmp;
+  }
+  var selected = writers.slice(0, 3);
+
+  var container = document.getElementById('spotlight-container');
+  selected.forEach(function(w, idx) {
+    var flip = idx % 2 === 1;
+    var html = '<div class="container"' + (idx > 0 ? ' style="margin-top:3rem"' : '') + '>' +
+      '<div class="writer-spotlight">' +
+        (flip ? '' : '<div class="writer-img"><span class="writer-country">' + w.country + '</span><img src="' + w.img + '" alt="' + w.name + '" onerror="this.style.opacity=\'0\'"></div>') +
+        '<div class="writer-story">' +
+          '<h3>' + w.name + '</h3>' +
+          '<div class="writer-subtitle">' + w.subtitle + '</div>' +
+          '<div class="writer-role">' + w.role + '</div>' +
+          (w.quote ? '<blockquote class="writer-quote">' + w.quote + '</blockquote>' : '') +
+          '<p class="writer-bio">' + w.bio + '</p>' +
+        '</div>' +
+        (flip ? '<div class="writer-img"><span class="writer-country">' + w.country + '</span><img src="' + w.img + '" alt="' + w.name + '" onerror="this.style.opacity=\'0\'"></div>' : '') +
+      '</div></div>';
+    container.insertAdjacentHTML('beforeend', html);
+  });
+})();
+</script>
 
 <!-- ═══════ ORIGIN STORY ═══════ -->
 <section class="origin">
@@ -653,7 +733,7 @@ a:hover { color: var(--red-dark); }
           <h2>Born from a Single Moment of Inspiration</h2>
           <p>In the 1990s, Diane Samuels and Henry Reese learned about the Cities of Asylum network in Europe — cities that protected writers whose lives were in danger. They were immediately drawn to this mission and saw how it could transform Pittsburgh.</p>
           <p>They wrote to Cities of Asylum in Europe. They heard nothing. They kept writing for six years — until in 2003 they connected with author Russell Banks, who was expanding the network to the U.S.</p>
-          <p>In 2004, Huang Xiang arrived — a Chinese poet who had been imprisoned and tortured seven times for his writing. He painted his poetry in massive calligraphy across the facade of his new home on Sampsonia Way. That single act of creative defiance defined everything that came after.</p>
+          <p>In 2004, Huang Xiang arrived — a Chinese poet who had been Imprisoned for twelve years and tortured because of his writing. He painted his poetry in massive calligraphy across the facade of his new home on Sampsonia Way. That single act of creative defiance defined everything that came after at City of Asylum.</p>
           <blockquote class="origin-quote">
             "You would expect people to run away, but they ran forward. It's a metaphor — the physical embodiment of what the City of Asylum community stands for."
             <cite>— Henry Reese, Co-Founder, on Chautauqua</cite>
@@ -668,8 +748,8 @@ a:hover { color: var(--red-dark); }
 <section class="writers-map-section">
   <div class="container">
     <span class="section-eyebrow">Around the World</span>
-    <h2 class="section-title" style="color:var(--white)">Writers From 15+ Countries</h2>
-    <p class="section-subtitle" style="color:rgba(255,255,255,.55)">City of Asylum has welcomed writers and artists from across the globe. Each one arrived under threat. Each one found a home — and kept creating.</p>
+    <h2 class="section-title" style="color:var(--white)">Writers From 18 Countries</h2>
+    <p class="section-subtitle" style="color:rgba(255,255,255,.55)">City of Asylum has welcomed writers from across the globe. Each one arrived under threat. Each one found a home — and kept creating.</p>
     <div class="wm-panel">
       <div class="wm-map-container">
         <div id="wm-map"></div>
@@ -698,7 +778,7 @@ a:hover { color: var(--red-dark); }
 <section class="donate-cta">
   <div class="container">
     <h2>Pittsburgh Is the Only Safe Haven Not Funded by Governments</h2>
-    <p>Unlike every other city in the network, City of Asylum is entirely funded by individuals and foundations. Your donation directly protects a writer's life and freedom.</p>
+    <p>Unlike every other city in the 90-city International Cities of Asylum Network, City of Asylum is entirely funded by individuals and foundations. Your donation helps protect a writer's life and freedom.</p>
     <p style="font-size:.95rem; opacity:.75; max-width:620px; margin: -1rem auto 2rem;">Our writers have received the V&aacute;clav Havel Prize, the Four Freedoms Award, and nominations for Ukraine's highest literary honor. They don't need fame to deserve protection — but the world has noticed.</p>
     <a href="donate.html" class="btn-gold">Donate Now &rarr;</a>
   </div>
@@ -709,7 +789,11 @@ a:hover { color: var(--red-dark); }
   <div class="container">
     <span class="section-eyebrow">What's Happening</span>
     <h2 class="section-title">Upcoming Programs</h2>
-    <p class="section-subtitle">We host 3–4 free readings, concerts, and films most weeks at our Alphabet City stage.</p>
+    <p class="section-subtitle">We present 3 free readings, concerts, and films most weeks at our Alphabet City stage.</p>
+    <div style="display:flex;justify-content:center;gap:3rem;margin-bottom:3rem;">
+      <div style="text-align:center;"><span style="font-family:var(--serif);font-size:2.4rem;font-weight:900;color:var(--gold);">120+</span><div style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;">Free Arts &amp; Culture Programs</div></div>
+      <div style="text-align:center;"><span style="font-family:var(--serif);font-size:2.4rem;font-weight:900;color:var(--gold);">98%</span><div style="font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;margin-top:.25rem;">Audience Rating of Programming Importance</div></div>
+    </div>
     <div class="events-grid">
       <div class="event-card">
         <img src="https://cityofasylum.org/wp-content/uploads/2026/02/HUGO-CRUZ-03192026-800x440.jpg" alt="Hugo Cruz & Caminos" onerror="this.style.opacity='0'">
@@ -739,24 +823,6 @@ a:hover { color: var(--red-dark); }
   </div>
 </section>
 
-<!-- ═══════ VISIT STRIP ═══════ -->
-<section class="visit-strip">
-  <div class="container">
-    <div class="visit-inner">
-      <div class="visit-img">
-        <img src="https://cityofasylum.org/wp-content/uploads/2023/07/visit-city-of-asylum-pittsburgh.png" alt="Alphabet City building" onerror="this.style.opacity='0'">
-      </div>
-      <div class="visit-text">
-        <span class="section-eyebrow" style="text-align:left;">Campus</span>
-        <h2>Alphabet City — Our Home on the Northside</h2>
-        <p>Drop by to browse our bookstore, stay for dinner at Cucina Alfabeto, and catch a reading, concert, or film on the Alphabet City stage.</p>
-        <p class="address">40 W. North Avenue, Pittsburgh, PA 15212</p>
-        <p>Bookstore Hours: Monday – Sunday, 12pm – 6pm</p>
-        <a href="visit.html" class="btn btn-primary" style="margin-top:1rem; display:inline-flex;">Plan Your Visit &rarr;</a>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ═══════ NEWSLETTER ═══════ -->
 <section class="newsletter">
@@ -813,12 +879,11 @@ a:hover { color: var(--red-dark); }
         <a href="about.html">About Us</a>
         <a href="writers.html">Writers &amp; Residencies</a>
         <a href="events.html">Free Arts &amp; Culture</a>
-        <a href="placemaking.html">Placemaking</a>
         <a href="#">2025 Impact Report</a>
       </div>
       <div class="footer-col">
         <h4>Visit</h4>
-        <a href="visit.html">Alphabet City</a>
+        <a href="campus.html">Alphabet City</a>
         <a href="#">Bookstore</a>
         <a href="#">Cucina Alfabeto</a>
         <a href="#">Directions</a>
@@ -828,7 +893,7 @@ a:hover { color: var(--red-dark); }
         <a href="donate.html">Donate</a>
         <a href="#">Volunteer</a>
         <a href="#">Sponsor</a>
-        <a href="#">Contact Us</a>
+        <a href="mailto:info@cityofasylum.org">Contact Us</a>
       </div>
     </div>
     <div class="footer-bottom">
@@ -844,7 +909,7 @@ a:hover { color: var(--red-dark); }
 (function () {
   var WRITERS = [
     { writer: 'Huang Xiang', country: 'China', flag: '🇨🇳', lat: 30.6, lng: 114.3,
-      note: "City of Asylum's first writer-in-residence. Imprisoned and tortured seven times in China for his writing, Huang Xiang painted his banned poetry in sweeping calligraphy across the facade of his home on Sampsonia Way — creating the first House Poem." },
+      note: "City of Asylum's first writer-in-residence. Imprisoned for twelve years and tortured because of his writing, Huang Xiang painted his banned poetry in sweeping calligraphy across the facade of his home on Sampsonia Way — creating the first House Poem." },
     { writer: 'Horacio Castellanos Moya', country: 'El Salvador', flag: '🇸🇻', lat: 13.7, lng: -89.2,
       note: "Salvadoran novelist whose fiction about civil war and political violence forced him into exile after death threats. Author of Senselessness and The She-Devil in the Mirror, he found a writing home on Sampsonia Way." },
     { writer: 'Israel Centeno', country: 'Venezuela', flag: '🇻🇪', lat: 8.0, lng: -66.0,

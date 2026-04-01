@@ -94,6 +94,18 @@ a:hover{color:var(--red-dark)}
 .diff-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:.35rem}
 .diff-card p{font-size:.875rem;color:var(--muted);line-height:1.6}
 
+/* STAFF/TEAM */
+.staff-section{padding:5rem 0;background:var(--cream)}
+.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto}
+.staff-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;text-align:center}
+.staff-card .staff-icon{width:64px;height:64px;border-radius:50%;background:var(--deep);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;font-weight:700;margin:0 auto 1rem}
+.staff-card h4{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:.35rem}
+.staff-card p{font-size:.875rem;color:var(--muted);line-height:1.5}
+
+@media(max-width:768px){
+  .staff-grid{grid-template-columns:1fr}
+}
+
 /* CTA */
 .about-cta{padding:5rem 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);text-align:center;color:var(--white)}
 .about-cta h2{font-family:var(--serif);font-size:2.2rem;font-weight:700;margin-bottom:1rem}
@@ -153,17 +165,16 @@ a:hover{color:var(--red-dark)}
           <a href="events.html">Annual Festivals</a>
         </div>
       </div>
-      <a href="placemaking.html">Placemaking</a>
       <div class="nav-item">
-        <a href="visit.html">Campus <span class="nav-chevron">▾</span></a>
+        <a href="campus.html">Campus <span class="nav-chevron">▾</span></a>
         <div class="nav-dropdown">
-          <a href="visit.html">City Books</a>
-          <a href="visit.html">Cucina Alfabeto</a>
-          <a href="visit.html">Programs &amp; Events</a>
-          <a href="visit.html">Sampsonia Way</a>
-          <a href="visit.html">Directions</a>
+          <a href="campus.html">Alphabet City</a>
+          <a href="campus.html">House Publications</a>
+          <a href="campus.html">Reading Garden</a>
+          <a href="campus.html">Audio Tour</a>
         </div>
       </div>
+      <a href="media-archive.html">Media &amp; Archive</a>
       <a href="donate.html" class="nav-donate">Donate</a>
     </div>
   </div>
@@ -173,7 +184,7 @@ a:hover{color:var(--red-dark)}
   <div class="container">
     <span class="eyebrow">About City of Asylum</span>
     <h1>A grassroots safe haven, built by community.</h1>
-    <p>Founded in 2004 by two Pittsburgh residents, City of Asylum grew from a single act of courage into the world's largest program for persecuted writers — powered entirely by individuals and foundations, not governments.</p>
+    <p>Founded in 2004 by two Pittsburgh residents, City of Asylum has grown from a single act of courage into the world's largest program for persecuted writers — powered entirely by individuals and foundations, not governments.</p>
   </div>
 </section>
 
@@ -185,16 +196,16 @@ a:hover{color:var(--red-dark)}
     <p class="section-sub">City of Asylum builds a just community through three interconnected commitments.</p>
     <div class="mission-grid">
       <div class="mission-card">
-        <h3>Provide Safe Haven</h3>
-        <p>We give endangered writers and artists a safe home so they can continue to create and their voices are not silenced. For two years or more, residents receive housing, stipends, legal counsel, and medical benefits.</p>
+        <h3>A Safe Haven</h3>
+        <p>We provide writers with a safe home so they can continue to create and their voices are not silenced. For three years or more, writers receive housing, stipends, translation/publication, legal counsel, and medical benefits.</p>
       </div>
       <div class="mission-card">
-        <h3>Celebrate Creative Expression</h3>
-        <p>We offer a broad range of free literary, arts, and humanities programs in a community setting to build social equity through cultural exchange — over 200 programs each year.</p>
+        <h3>Free Arts &amp; Culture Programs</h3>
+        <p>We offer a broad range of free literary, arts, and humanities programs in a community setting to build social equity through cultural exchange — 120 programs each year.</p>
       </div>
       <div class="mission-card">
-        <h3>Transform Neighborhoods</h3>
-        <p>By converting dilapidated properties into homes for our programs and writers, we anchor neighborhood economic development on Pittsburgh's Northside.</p>
+        <h3>A Neighborhood and a City Transformed</h3>
+        <p>By converting dilapidated properties into homes for our programs and writers, we anchor neighborhood economic development on Pittsburgh's Northside. Our impact is now regional.</p>
       </div>
     </div>
   </div>
@@ -222,7 +233,7 @@ a:hover{color:var(--red-dark)}
 <section class="timeline-section">
   <div class="container">
     <span class="section-eyebrow">Our History</span>
-    <h2 class="section-title">20 Years of Safe Haven</h2>
+    <h2 class="section-title">20 Years of Protecting and Celebrating Freedom of Creative Expression</h2>
     <div class="timeline">
       <div class="timeline-item">
         <div class="timeline-year">1997</div>
@@ -235,7 +246,7 @@ a:hover{color:var(--red-dark)}
         <div class="timeline-year">2004</div>
         <div class="timeline-content">
           <h3>First Writer Arrives</h3>
-          <p>Huang Xiang, China's pre-eminent post-Cultural Revolution poet, arrives as the first writer-in-residence. He creates "House Poem" on the facade of 408 Sampsonia Way.</p>
+          <p>First Writer arrives. Chinese poet Huang Xiang paints calligraphies of his poetry on the fa&ccedil;ade of his Sampsonia Way residency house. His "House Poem" inspires our "house publication" project.</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -260,10 +271,24 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="timeline-item">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-content">
+          <h3>UNESCO City of Literature</h3>
+          <p>The Mayor selects City of Asylum to lead and organize Pittsburgh's application.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2025</div>
+        <div class="timeline-content">
+          <h3>Bridges Creative Summit</h3>
+          <p>City of Asylum hosts writers and leaders of the 90-city International Cities of Refuge Network in Pittsburgh.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
         <div class="timeline-year">2026</div>
         <div class="timeline-content">
-          <h3>18 Writers and Growing</h3>
-          <p>Today, City of Asylum has hosted 18 writers from 15+ countries — nearly 10% of all exiled writers in the 80-city International Cities of Refuge Network.</p>
+          <h3>Model for the World</h3>
+          <p>Salman Rushdie calls City of Asylum the "model for the world."</p>
         </div>
       </div>
     </div>
@@ -275,20 +300,20 @@ a:hover{color:var(--red-dark)}
   <div class="container">
     <span class="section-eyebrow">What Makes Us Different</span>
     <h2 class="section-title">A Model Like No Other</h2>
-    <p class="section-sub">City of Asylum operates differently from every other safe haven in the world.</p>
+    <p class="section-sub">What sets City of Asylum apart from every other safe haven in the world.</p>
     <div class="diff-grid">
       <div class="diff-card">
         <div class="diff-icon">🏠</div>
         <div>
           <h4>Long-Term, Not Temporary</h4>
-          <p>Most cities of asylum provide emergency relief for a year. We commit to two years or more — helping writers build a permanent new life.</p>
+          <p>Most cities of asylum provide emergency relief for a year. We commit to three years or more — helping writers build a permanent new life.</p>
         </div>
       </div>
       <div class="diff-card">
         <div class="diff-icon">🌱</div>
         <div>
           <h4>Grassroots, Not Government</h4>
-          <p>We are the only program in the world not funded by governments or universities. We are entirely community-supported.</p>
+          <p>Unlike other cities in the International Cities of Refuge Network, our exiled writers program is entirely community-supported.</p>
           <p style="font-size:.8rem;color:var(--muted);font-style:italic;margin-top:.6rem;">Supported by the Ford Foundation, Heinz Endowments, the Pittsburgh Foundation, the NEA, and 11 other foundations.</p>
         </div>
       </div>
@@ -296,15 +321,41 @@ a:hover{color:var(--red-dark)}
         <div class="diff-icon">📖</div>
         <div>
           <h4>Every Writer Creates</h4>
-          <p>Every writer or artist hosted has created a full-length work while in residence — and has been able to continue creating after.</p>
+          <p>Every writer has written at least one full-length work while in residence — and has been able to continue writing after.</p>
         </div>
       </div>
       <div class="diff-card">
         <div class="diff-icon">🤝</div>
         <div>
           <h4>Community Integration</h4>
-          <p>Writers become part of Pittsburgh's fabric through university partnerships, school visits, festivals, and free public programming.</p>
+          <p>Writers live in the community as neighbors. They also become part of the cultural fabric, through school visits, community readings, and university partnerships.</p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF/TEAM -->
+<section class="staff-section">
+  <div class="container">
+    <span class="section-eyebrow">Our Team</span>
+    <h2 class="section-title">Staff &amp; Leadership</h2>
+    <p class="section-sub">The people who keep City of Asylum running every day.</p>
+    <div class="staff-grid">
+      <div class="staff-card">
+        <div class="staff-icon">AF</div>
+        <h4>Andr&eacute;s Franco</h4>
+        <p>Executive Director</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon">HE</div>
+        <h4>Hannah East</h4>
+        <p>Acting Director of Finance</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon">AT</div>
+        <h4>Anderson Tepper</h4>
+        <p>World Literature Programming Consultant</p>
       </div>
     </div>
   </div>
@@ -313,8 +364,8 @@ a:hover{color:var(--red-dark)}
 <!-- CTA -->
 <section class="about-cta">
   <div class="container">
-    <h2>Join the Movement</h2>
-    <p>Your support directly protects a writer's life and enables them to keep creating. Be part of the world's most important literary safe haven.</p>
+    <h2>Together, We Make a Difference</h2>
+    <p>Your support protects a writer's life and enables them to keep creating. Be part of the world's most important literary safe haven.</p>
     <a href="donate.html" class="btn-gold">Donate Now &rarr;</a>
   </div>
 </section>
