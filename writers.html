@@ -109,6 +109,20 @@ a:hover { color: var(--red-dark); }
 .sort-pill.active, .sort-pill:hover {
   background:var(--gold); color:var(--deep); border-color:var(--gold);
 }
+.sort-divider {
+  width:1px; height:24px; background:var(--border); margin:0 .5rem;
+}
+.country-dropdown {
+  padding:.35rem 1rem; border-radius:16px;
+  background:var(--white); border:1px solid var(--border);
+  font-size:.8rem; font-weight:500; color:var(--muted);
+  cursor:pointer; transition:all .2s;
+  font-family:var(--sans);
+  appearance:auto;
+}
+.country-dropdown:focus {
+  border-color:var(--gold); outline:none;
+}
 .writers-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
 }
@@ -292,6 +306,11 @@ a:hover { color: var(--red-dark); }
       <span class="sort-pill active" data-sort="year-asc">Oldest First</span>
       <span class="sort-pill" data-sort="alpha">A &ndash; Z</span>
       <span class="sort-pill" data-sort="country">Country</span>
+      <span class="sort-divider"></span>
+      <span class="sort-label">Filter:</span>
+      <select id="country-filter" class="country-dropdown">
+        <option value="">All Countries</option>
+      </select>
     </div>
 
     <div class="writers-grid" id="writers-grid">
@@ -464,7 +483,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <div class="writer-card" data-year="2005" data-country="Unknown" data-name="Aunel Arneth" data-status="past">
+      <div class="writer-card" data-year="2005" data-country="" data-name="Aunel Arneth" data-status="past">
         <div class="writer-card-img">
           <img src="" alt="Aunel Arneth" onerror="this.style.opacity='0'">
           <span class="writer-card-country"></span>
@@ -573,6 +592,26 @@ a:hover { color: var(--red-dark); }
       pills.forEach(function(p) { p.classList.remove('active'); });
       pill.classList.add('active');
       sortGrid(pill.dataset.sort);
+    });
+  });
+
+  // Country filter dropdown
+  var dropdown = document.getElementById('country-filter');
+  var countries = [];
+  grid.querySelectorAll('.writer-card').forEach(function(card) {
+    var c = card.dataset.country;
+    if (c && c !== 'Unknown' && countries.indexOf(c) === -1) countries.push(c);
+  });
+  countries.sort();
+  countries.forEach(function(c) {
+    var opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    dropdown.appendChild(opt);
+  });
+  dropdown.addEventListener('change', function() {
+    var val = dropdown.value;
+    grid.querySelectorAll('.writer-card').forEach(function(card) {
+      card.style.display = (!val || card.dataset.country === val) ? '' : 'none';
     });
   });
 
