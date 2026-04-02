@@ -98,18 +98,6 @@ a:hover { color: var(--red-dark); }
 
 /* WRITERS GRID */
 .writers-grid-section { padding: 6rem 0; background: var(--warm-white); }
-.filter-tabs {
-  display: flex; gap: .5rem; justify-content: center; margin-bottom: 3rem; flex-wrap: wrap;
-}
-.filter-tab {
-  padding: .5rem 1.25rem; border-radius: 20px;
-  background: var(--white); border: 1px solid var(--border);
-  font-size: .85rem; font-weight: 500; color: var(--muted);
-  cursor: pointer; transition: all .2s;
-}
-.filter-tab.active, .filter-tab:hover {
-  background: var(--deep); color: var(--white); border-color: var(--deep);
-}
 .sort-row { display:flex; align-items:center; justify-content:center; gap:.5rem; margin-bottom:2rem; flex-wrap:wrap; }
 .sort-label { font-size:.8rem; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; }
 .sort-pill {
@@ -297,13 +285,6 @@ a:hover { color: var(--red-dark); }
     <span class="section-eyebrow" style="display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;">City of Asylum Writers</span>
     <h2 style="font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.75rem;">21 Writers. 18 Countries. One Safe Haven.</h2>
     <p style="text-align:center;color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto 2.5rem;">Click on a writer to learn their full story — what they fled, what they created, and how City of Asylum changed their life.</p>
-
-    <div class="filter-tabs">
-      <span class="filter-tab active">All Writers</span>
-      <span class="filter-tab">Current Writers</span>
-      <span class="filter-tab">Ukrainian Fellowship</span>
-      <span class="filter-tab">Past Writers</span>
-    </div>
 
     <div class="sort-row">
       <span class="sort-label">Sort by:</span>
@@ -568,8 +549,6 @@ a:hover { color: var(--red-dark); }
 (function() {
   var grid = document.getElementById('writers-grid');
   var pills = document.querySelectorAll('.sort-pill');
-  var filterTabs = document.querySelectorAll('.filter-tab');
-
   function sortGrid(mode) {
     var cards = Array.from(grid.querySelectorAll('.writer-card'));
     cards.sort(function(a, b) {
@@ -594,23 +573,6 @@ a:hover { color: var(--red-dark); }
       pills.forEach(function(p) { p.classList.remove('active'); });
       pill.classList.add('active');
       sortGrid(pill.dataset.sort);
-    });
-  });
-
-  // Filter tabs: show/hide based on status
-  filterTabs.forEach(function(tab) {
-    tab.addEventListener('click', function() {
-      filterTabs.forEach(function(t) { t.classList.remove('active'); });
-      tab.classList.add('active');
-      var label = tab.textContent.trim();
-      var cards = grid.querySelectorAll('.writer-card');
-      cards.forEach(function(card) {
-        var show = true;
-        if (label === 'Current Writers') show = card.dataset.status === 'current';
-        else if (label === 'Past Writers') show = card.dataset.status === 'past';
-        else if (label === 'Ukrainian Fellowship') show = card.dataset.country === 'Ukraine';
-        card.style.display = show ? '' : 'none';
-      });
     });
   });
 
