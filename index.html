@@ -240,6 +240,13 @@ a:hover { color: var(--red-dark); }
 .wc-body h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--text-dark); margin-bottom: .25rem; }
 .wc-role { font-size: .8rem; color: var(--gold); font-weight: 600; margin-bottom: .75rem; }
 .wc-bio { font-size: .875rem; color: var(--muted); line-height: 1.65; }
+.wc-initials {
+  display: flex; align-items: center; justify-content: center;
+  width: 100%; height: 100%; position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--charcoal), var(--slate));
+  color: var(--gold); font-family: var(--serif); font-size: 3rem;
+  font-weight: 700; letter-spacing: .05em;
+}
 .carousel-btn {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 44px; height: 44px; border-radius: 50%;
@@ -623,7 +630,16 @@ a:hover { color: var(--red-dark); }
     { name:"Bewketu Seyoum", country:"Ethiopia", role:"Writer-in-Residence 2019\u20132021", bio:"Ethiopia\u2019s Best Novelist of the Year (2008). Assaulted in 2011 for his writing.", img:"https://cityofasylum.org/wp-content/uploads/2021/05/resize-bewketu-scaled.jpeg" },
     { name:"Osama Alomar", country:"Syria", role:"Writer-in-Residence 2017\u20132019", bio:"Syrian writer whose work reflects the experience of exile and creative freedom.", img:"https://cityofasylum.org/wp-content/uploads/2021/06/20170305_Rosensteel_0002-1024x683-1.jpeg" },
     { name:"Khet Mar", country:"Myanmar", role:"Writer-in-Residence 2009\u20132012", bio:"Burmese writer who fled persecution in Myanmar to find safety in Pittsburgh.", img:"https://cityofasylum.org/wp-content/uploads/2021/06/KhetMarBig.jpeg" },
-    { name:"Huang Xiang", country:"China", role:"First Writer 2004\u20132006", bio:"China\u2019s pre-eminent post-Cultural Revolution poet. Created the iconic \u201cHouse Poem.\u201d", img:"https://cityofasylum.org/wp-content/uploads/2021/06/xwbig.jpeg" }
+    { name:"Huang Xiang", country:"China", role:"First Writer 2004\u20132006", bio:"China\u2019s pre-eminent post-Cultural Revolution poet. Created the iconic \u201cHouse Poem.\u201d", img:"https://cityofasylum.org/wp-content/uploads/2021/06/xwbig.jpeg" },
+    { name:"Horacio Castellanos Moya", country:"El Salvador", role:"Writer-in-Residence 2006\u20132011", bio:"Salvadoran novelist and journalist who found refuge after receiving death threats for his writing.", img:"" },
+    { name:"Israel Centeno", country:"Venezuela", role:"Writer-in-Residence 2011\u20132018", bio:"Venezuelan novelist and essayist. Creator of River of Words, a half-mile public art poem.", img:"" },
+    { name:"Aunel Arneth", country:"", role:"Writer-in-Residence", bio:"Writer who found safety and creative freedom during their residency at City of Asylum.", img:"" },
+    { name:"Orlando Pardo Lazo", country:"Cuba", role:"Writer-in-Residence 2013", bio:"Cuban writer and photographer who found refuge after facing persecution for his work.", img:"" },
+    { name:"Sabreen Kadhim", country:"Iraq", role:"Writer-in-Residence 2016", bio:"Iraqi writer who continued creating during their residency at City of Asylum.", img:"" },
+    { name:"Simten Cosar", country:"Turkey", role:"Writer-in-Residence 2020\u20132022", bio:"Turkish writer who found safety and continued her literary work at City of Asylum.", img:"" },
+    { name:"Yaghoub Yadali", country:"Iran", role:"Writer-in-Residence 2013\u20132015", bio:"Iranian writer who found refuge and creative freedom during his residency.", img:"" },
+    { name:"Anouar Rahmani", country:"Algeria", role:"Writer-in-Residence 2020\u20132024", bio:"Algerian writer who continued his literary work during his residency at City of Asylum.", img:"" },
+    { name:"Amir Valle", country:"Cuba", role:"Writer-in-Residence 2007\u20132009", bio:"Cuban novelist and journalist, one of Cuba\u2019s most prominent literary voices in exile.", img:"" }
   ];
 
   // Shuffle all writers randomly
@@ -635,10 +651,15 @@ a:hover { color: var(--red-dark); }
   // Build cards
   var track = document.getElementById('carousel-track');
   writers.forEach(function(w) {
+    var initials = w.name.split(' ').map(function(n){ return n[0] }).join('');
+    var imgHtml = w.img
+      ? '<img src="' + w.img + '" alt="' + w.name + '" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'">' +
+        '<div class="wc-initials" style="display:none">' + initials + '</div>'
+      : '<div class="wc-initials">' + initials + '</div>';
     track.insertAdjacentHTML('beforeend',
       '<div class="writer-card-home">' +
-        '<div class="wc-img"><span class="wc-country">' + w.country + '</span>' +
-        '<img src="' + w.img + '" alt="' + w.name + '" onerror="this.style.opacity=\'0\'"></div>' +
+        '<div class="wc-img"><span class="wc-country">' + (w.country || '') + '</span>' +
+        imgHtml + '</div>' +
         '<div class="wc-body"><h3>' + w.name + '</h3>' +
         '<div class="wc-role">' + w.role + '</div>' +
         '<p class="wc-bio">' + w.bio + '</p></div></div>'
