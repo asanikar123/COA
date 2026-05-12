@@ -3,179 +3,646 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Media &amp; Archive — City of Asylum</title>
-<meta name="description" content="1,000+ videos, images, press coverage, and documents spanning 20 years of City of Asylum.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Media & Archive | City of Asylum</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --deep:#0f1419;--charcoal:#1a1f2e;--slate:#2d3548;
-  --red:#c23b2e;--red-dark:#8b1a1a;--gold:#c9a227;--gold-light:#e0c660;
-  --cream:#f5f0e8;--warm-white:#faf8f5;--white:#ffffff;--green:#2d8a4e;
-  --muted:#6b7280;--text-dark:#1a1a1a;--text-body:#3d3d3d;--border:#e5e7eb;
-  --serif:'Playfair Display',Georgia,serif;--sans:'Inter','Segoe UI',sans-serif;
+  --deep: #0f1419;
+  --charcoal: #1a1f2e;
+  --slate: #2d3548;
+  --red: #c23b2e;
+  --red-dark: #8b1a1a;
+  --gold: #c9a227;
+  --gold-light: #e0c660;
+  --cream: #f5f0e8;
+  --warm-white: #faf8f5;
+  --white: #ffffff;
+  --muted: #6b7280;
+  --text-dark: #1a1a1a;
+  --text-body: #3d3d3d;
+  --border: #e5e7eb;
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);color:var(--text-body);line-height:1.7;background:var(--warm-white)}
-img{max-width:100%;height:auto;display:block}
-a{color:var(--red);text-decoration:none;transition:color .2s}
-a:hover{color:var(--red-dark)}
-.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--sans); color: var(--text-body); line-height: 1.7; background: var(--warm-white); }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--red); text-decoration: none; transition: color .2s; }
+a:hover { color: var(--red-dark); }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-.site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:72px}
-.nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
-.nav-logo img{height:48px;width:auto}
-.nav-logo span{font-family:var(--serif);font-weight:700;font-size:1.15rem}
-.nav-links{display:flex;align-items:center;gap:.25rem}
-.nav-links a{color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .85rem;border-radius:6px;transition:all .2s}
-.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
-.nav-links a.active{color:var(--gold)}
-.nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
-.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+/* NAV */
+.site-nav { position: sticky; top: 0; z-index: 100; background: var(--deep); border-bottom: 3px solid var(--gold); }
+.nav-inner{ max-width:1440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 98px; }
+.nav-logo { display: flex; align-items: center; gap: .75rem; color: var(--white); text-decoration: none; }
+.nav-logo img { height: 70px; }
+.nav-logo span { font-family:var(--sans); font-weight: 700; font-size: 1.15rem; line-height:1.1;}
+.nav-links{display:flex;align-items:center;gap:.25rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap; color: rgba(255,255,255,.8); font-size: .875rem; font-weight: 500; padding:.5rem .35rem; border-radius: 6px; transition: all .2s; }
+.nav-links a:hover { color: var(--white); background: rgba(255,255,255,.08); }
+.nav-links a.active { color: var(--gold); }
+.nav-donate { background: var(--red) !important; color: var(--white) !important; font-weight: 700 !important; padding: .55rem 1.4rem !important; }
+
+/* Nav dropdowns */
+.nav-item { position: relative; display: inline-flex; align-items: center; }
+.nav-chevron { font-size: .6rem; margin-left: .25rem; opacity: .55; transition: transform .2s; }
+.nav-item:hover .nav-chevron { transform: rotate(180deg); }
+.nav-dropdown { position: absolute; top: calc(100% + 6px); left: 0; background: var(--deep); border: 1px solid rgba(255,255,255,.12); border-top: 2px solid var(--gold); border-radius: 0 0 10px 10px; min-width: 230px; padding: .5rem 0; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-6px); transition: all .2s; z-index: 300; box-shadow: 0 10px 32px rgba(0,0,0,.5); }
+.nav-item:hover .nav-dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}
+.nav-dropdown a { display: block !important; padding: .55rem 1.2rem !important; color: rgba(255,255,255,.65) !important; font-size: .8rem !important; font-weight: 500 !important; }
+.nav-dropdown a:hover { color: var(--gold) !important; background: rgba(255,255,255,.05) !important; padding-left: 1.5rem !important; }
 
 /* PAGE HERO */
-.page-hero{background:var(--deep);padding:5rem 0 4rem;position:relative;overflow:hidden}
-.page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.page-hero h1{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--white);margin-bottom:1rem;max-width:700px}
-.page-hero p{color:rgba(255,255,255,.65);font-size:1.15rem;max-width:650px;line-height:1.8}
+.page-hero { background: var(--deep); color: var(--white); padding: calc(5rem - 3in/8) 0 calc(4rem - 1in/4); text-align: center; border-bottom: 3px solid var(--gold); position: relative; overflow: hidden; }
+.page-hero .eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1rem; }
+.page-hero h1 { font-family: var(--serif); font-size: 2.4rem; font-weight: 700; line-height: 1.25; color: var(--white); margin-bottom: 1rem; }
+.page-hero p { font-size: 1.15rem; color: rgba(255,255,255,.75); max-width: 750px; margin: 0 auto; }
 
-/* SECTIONS */
-.section-eyebrow{display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.section-title{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.5rem}
-.section-sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto}
+/* CONTENT SECTIONS */
+.content-section { padding: 3rem 0; background: var(--warm-white); }
+.content-section:nth-child(even) { background: var(--cream); }
+.section-eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: .5rem; text-align: center; }
+.section-title { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--text-dark); text-align: center; margin-bottom: 1.5rem; }
 
-.media-section{padding:5rem 0}
-.media-section:nth-child(even){background:var(--cream)}
-.media-section:nth-child(odd){background:var(--white)}
+/* Press List */
+.press-list { max-width: 900px; margin: 0 auto; }
+.press-item { display: grid; grid-template-columns: 50px 80px 1fr; gap: .75rem; padding: .35rem 0; border-bottom: 1px solid var(--border); align-items: center; }
+.press-year { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--gold); }
+.press-logo { width: 72px; height: 28px; object-fit: contain; object-position: left center; background: #fff; }
+.press-link { color: var(--text-dark); font-size: .85rem; word-break: break-word; line-height: 1.3; }
+.press-link:hover { color: var(--red); text-decoration: underline; }
 
-.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;margin-top:2.5rem}
-.video-card{background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem;position:relative;overflow:hidden}
-.video-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
-.video-card:nth-child(1)::before{background:var(--red)}
-.video-card:nth-child(2)::before{background:var(--gold)}
-.video-card h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--text-dark);margin-bottom:.75rem}
-.video-card .label{display:inline-block;font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
-.video-card p{font-size:.95rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+/* Placeholder */
+.placeholder-box { max-width: 700px; margin: 0 auto; padding: 3rem; background: rgba(0,0,0,.03); border: 2px dashed rgba(0,0,0,.15); border-radius: 12px; text-align: center; color: var(--muted); font-style: italic; }
 
-.btn-outline{display:inline-block;padding:.7rem 1.6rem;border:2px solid var(--red);color:var(--red);font-weight:600;font-size:.9rem;border-radius:8px;transition:all .2s}
-.btn-outline:hover{background:var(--red);color:var(--white)}
+/* Publications */
+.pub-feature { max-width: 900px; margin: 0 auto 3rem; background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.pub-feature h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--text-dark); margin-bottom: .75rem; }
+.pub-feature p { color: var(--text-body); font-size: .95rem; line-height: 1.7; margin-bottom: .75rem; }
+.pub-feature a { color: var(--red); font-weight: 600; }
+.book-list { max-width: 900px; margin: 0 auto; }
+.book-list h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1rem; text-align: center; }
+.book-list ul { list-style: none; padding: 0; }
+.book-list li { padding: .75rem 1rem; border-bottom: 1px solid var(--border); font-size: .95rem; color: var(--text-body); display:flex; align-items:center; gap:.75rem; }
+.book-list li img.book-cover { width:42px; height:auto; flex:0 0 auto; border-radius:2px; box-shadow:0 1px 4px rgba(0,0,0,.18); }
 
-.placeholder-box{border:2px dashed var(--border);border-radius:16px;padding:3rem 2rem;text-align:center;color:var(--muted);font-size:.95rem;margin-top:2.5rem;background:var(--warm-white)}
+/* Archive */
+.archive-grid { max-width: 1000px; margin: 0 auto; display: grid; gap: 1.5rem; }
+.archive-card { background: var(--white); border-radius: 12px; padding: 1.5rem 2rem; border-left: 4px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.archive-card h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--text-dark); margin-bottom: .25rem; }
+.archive-card a.archive-link { color: var(--red); font-size: .85rem; word-break: break-word; }
+.archive-card p { color: var(--text-body); font-size: .9rem; margin-top: .5rem; line-height: 1.6; }
 
-.site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:3rem 0 2rem;color:rgba(255,255,255,.5)}
-.footer-bottom{display:flex;justify-content:space-between;font-size:.8rem}
-.footer-bottom a{color:rgba(255,255,255,.4)}
+/* FOOTER */
+.site-footer { background: var(--deep); color: rgba(255,255,255,.6); padding: 4rem 0 2rem; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem 3rem; }
+.footer-brand p { font-size: .9rem; line-height: 1.7; max-width: 280px; margin-top: .75rem; }
+.footer-col h4 { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
+.footer-col a { display: block; color: rgba(255,255,255,.5); font-size: .875rem; padding: .25rem 0; }
+.footer-col a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 1.5rem; display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 1.5rem 2rem 0; font-size: .8rem; }
+.footer-bottom a { color: rgba(255,255,255,.4); }
 
-@media(max-width:768px){
-  .page-hero h1{font-size:2.2rem}
-  .video-grid{grid-template-columns:1fr}
-  .nav-links{display:none}
+@media (max-width: 768px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .press-item { grid-template-columns: 50px 60px 1fr; gap: .5rem; }
+  .press-logo { width: 56px; height: 22px; }
+}
+/* ===== Selected Photos carousel ===== */
+.photo-carousel-wrapper { position: relative; padding: 0 3.5rem; overflow: hidden; }
+.photo-carousel-track { display: flex; gap: 1.25rem; transition: transform .4s ease; }
+.photo-carousel-card { flex: 0 0 calc((100% - 1.25rem) / 2); display: flex; flex-direction: column; }
+.photo-carousel-card .pc-caption { font-weight: 700; text-align: center; margin-bottom: .5rem; color: var(--text-dark); }
+.photo-carousel-card a { display: block; aspect-ratio: 4/3; overflow: hidden; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.15); }
+.photo-carousel-card a img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.pc-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: var(--deep); color: var(--white); border: none; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,.2); z-index: 2; transition: background .2s, opacity .2s; }
+.pc-btn:hover { background: var(--red); }
+.pc-btn:disabled { opacity: .3; cursor: default; background: var(--muted); }
+.pc-btn.prev { left: 0; }
+.pc-btn.next { right: 0; }
+.pc-dots { display: flex; justify-content: center; gap: .5rem; margin-top: 1.5rem; }
+.pc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; transition: background .2s, transform .2s; }
+.pc-dot.active { background: var(--gold); transform: scale(1.3); }
+@media (max-width: 768px) {
+  .photo-carousel-card { flex: 0 0 100%; }
+  .photo-carousel-wrapper { padding: 0 2.5rem; }
 }
 </style>
+<link rel="stylesheet" href="mobile.css?v=3">
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum">
+    <a class='nav-logo' href='index.html'>
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#0f1419;">
       <span>City of Asylum</span>
     </a>
-    <div class="nav-links">
+            <div class="nav-links">
       <div class="nav-item">
-        <a href="about.html">About Us <span class="nav-chevron">▾</span></a>
+        <a href='about.html' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="about.html">Our Mission</a>
-          <a href="about.html">Our Founders</a>
-          <a href="about.html">Our History</a>
+          <a href='about.html'>Our Mission</a>
+          <a href='about.html#history'>History</a>
+          <a href='about.html#model'>Our Model</a>
+          <a href='about.html#staff'>Staff</a>
+          <a href='about.html#board'>Board of Directors</a>
+          <a href='about.html#jobs'>Jobs</a>
+          <a href='about.html#subscribe'>Subscribe</a>
+          <a href='about.html#inquiries'>Other Inquiries</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="writers.html">Writers &amp; Residencies <span class="nav-chevron">▾</span></a>
+        <a href='writers.html' style='line-height:1;display:inline-block;'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="writers.html">Residency Program</a>
-          <a href="writers.html">Current Residents</a>
-          <a href="writers.html">Ukrainian Fellowship</a>
-          <a href="writers.html">Alumni</a>
+          <a href='writers.html#residency-program'>Residency Program</a>
+          <a href='writers.html#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="events.html">Free Arts &amp; Culture <span class="nav-chevron">▾</span></a>
+        <a href='free-arts.html' style='line-height:1;display:inline-block;'>Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="events.html">Upcoming Programs</a>
-          <a href="events.html">Literary Readings</a>
-          <a href="events.html">Thursday Night Jazz</a>
-          <a href="events.html">Annual Festivals</a>
+          <a href='free-arts.html#what-we-host'>What We Host</a>
+          <a href='free-arts.html#why-free'>Why Our Programs Are Free</a>
+          <a href='events.html'>Upcoming Programs</a>
+          <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">Full Calendar</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="campus.html">Campus <span class="nav-chevron">▾</span></a>
+        <a href='campus.html' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="campus.html">Alphabet City</a>
-          <a href="campus.html">House Publications</a>
-          <a href="campus.html">Reading Garden</a>
-          <a href="campus.html">Audio Tour</a>
+          <a href='campus.html'>Community as Campus</a>
+          <a href='campus.html#how-it-grew'>How It Grew</a>
+          <a href='campus.html#whats-here'>What&#8217;s Here Now</a>
+          <a href='campus.html#walking-tour'>Walking Tour App</a>
+          <a href='campus.html#becoming'>Starting a New City</a>
         </div>
       </div>
-      <a href="media-archive.html" class="active">Media &amp; Archive</a>
-      <a href="donate.html" class="nav-donate">Donate</a>
+      <div class="nav-item">
+        <a class='active' href='media-archive.html' style='line-height:1;display:inline-block;'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='media-archive.html#press'>Selected Press</a>
+          <a href='media-archive.html#video'>Selected Video &amp; Photos</a>
+          <a href='media-archive.html#publications'>Selected Books</a>
+          <a href='media-archive.html#archive'>Media Archive</a>
+        </div>
+      </div>
+
+      <a href='bookstore-restaurant.html' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <div class="nav-item">
+        <a class='nav-donate' href='donate.html'>Donate</a>
+        <div class="nav-dropdown">
+          <a href='donate.html#other-ways'>Other Ways to Help</a>
+          <a href='donate.html#foundations'>Foundations</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
 
-<!-- ═══════ PAGE HERO ═══════ -->
 <section class="page-hero">
-  <div class="container">
+  <img src="COA%20Bookcovers.jpg" alt="" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);width:100%;height:auto;filter:brightness(.5) saturate(.75);z-index:0;">
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(15,20,25,.6) 50%, rgba(15,20,25,.8) 100%);z-index:1;"></div>
+  <div class="container" style="position:relative;z-index:2;">
     <span class="eyebrow">Explore Our Collection</span>
     <h1>Media &amp; Archive</h1>
-    <p>1,000+ videos, images, press coverage, and documents spanning 20 years of City of Asylum.</p>
+    <p>1,000+ videos, images, press coverage, publications, and documents spanning decades of freedom of creative expression.</p>
   </div>
 </section>
 
-<!-- ═══════ VIDEOS ═══════ -->
-<section class="media-section">
+
+
+<!-- PRESS -->
+<section class="content-section" id="press">
+  <div class="container">
+    <span class="section-eyebrow">In the News</span>
+    <h2 class="section-title">Selected Press</h2>
+    <div class="press-list">
+      <div class="press-item">
+        <div class="press-year">2004</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/news/world/2004/11/16/The-right-to-write-City-gives-safe-harbor-to-exiled-Chinese-poet-and-his-work/stories/200411160174" target="_blank">Pittsburgh Post-Gazette &mdash; The Right to Write: City Gives Safe Harbor</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2006</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/ae/bob-hoover/2006/09/17/Asylum-writers-teach-Americans-a-lesson/stories/200609170243?cid=search" target="_blank">Pittsburgh Post-Gazette &mdash; Asylum Writers Teach Americans a Lesson</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2007</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/ae/2007/09/05/international-lineup-lets-freedom-ring-for-city-of-asylum-concert/stories/200709050243" target="_blank">Pittsburgh Post-Gazette &mdash; International Lineup Lets Freedom Ring</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2008</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/ae/2008/09/16/Literary-Reviews-Exceptional-work-emerges-here-at-special-events/stories/200809160176" target="_blank">Pittsburgh Post-Gazette &mdash; Exceptional Work Emerges</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2009</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=newyorker.com" alt="newyorker.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.newyorker.com/news/george-packer/a-safe-street-in-pittsburgh" target="_blank">The New Yorker &mdash; A Safe Street in Pittsburgh</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2010</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=pbs.org" alt="pbs.org logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.pbs.org/newshour/arts/thursday-on-the-newshour-pittsburghcity-of-asylum" target="_blank">PBS NewsHour &mdash; Pittsburgh's City of Asylum</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2011</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=pittsburghmagazine.com" alt="pittsburghmagazine.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.pittsburghmagazine.com/city-of-asylum-meet-the-new-neighbors/" target="_blank">Pittsburgh Magazine &mdash; Creative, Quirky, and Caring, Pittsburgh's Sampsonia Way</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2014</div>
+        <div><img class="press-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Seal_of_Pittsburgh%2C_Pennsylvania.png/250px-Seal_of_Pittsburgh%2C_Pennsylvania.png" alt="City of Pittsburgh seal" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.linkedin.com/company/city-of-pittsburgh/" target="_blank">Mayor, City of Pittsburgh &mdash; City of Asylum Pittsburgh Day</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2014</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=ourtownsfoundation.org" alt="ourtownsfoundation.org logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.ourtownsfoundation.org/pittsburghs-city-of-asylum/" target="_blank">Our Towns Foundation &mdash; Pittsburgh's City of Asylum</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2015</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/ae/music/2015/07/08/Preview-City-of-Asylum-invites-all-to-its-North-Side-Stoop/stories/201507080021?cid=search" target="_blank">Pittsburgh Post-Gazette &mdash; City of Asylum Invites All to Its North Side &lsquo;Stoop&rsquo;</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2016</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=arts.gov" alt="arts.gov logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.arts.gov/stories/blog/2016/finding-literary-asylum-pittsburgh" target="_blank">National Endowment for the Arts &mdash; Finding Literary Asylum in Pittsburgh</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2017</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=voanews.com" alt="voanews.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.voanews.com/a/tuhin-das-poet-activist-and-writer-in-exile/3726764.html" target="_blank">Voice of America &mdash; Tuhin Das: Poet, Activist, and Writer in Exile</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2019</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=theatlantic.com" alt="theatlantic.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.theatlantic.com/ideas/archive/2019/10/big-little-ideas-river-words/622140/" target="_blank">The Atlantic &mdash; Big Little Ideas: River of Words</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2020</div>
+        <div><img class="press-logo" src="COOL%20Cover.jpg" alt="Cool Is Everywhere book cover" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="COA%20Cool%20Is.pdf" target="_blank">Abrams Books &mdash; Cool is Everywhere</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2020</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=bloomberg.com" alt="bloomberg.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.bloomberg.com/news/articles/2020-05-26/small-arts-organizations-quickly-adapt-to-survive" target="_blank">Bloomberg &mdash; Small Arts Organizations Quickly Adapt to Survive</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2021</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/opinion/editorials/2021/12/18/city-of-asylum-does-the-steel-city-proud/stories/202112160050" target="_blank">Pittsburgh Post-Gazette &mdash; City of Asylum Does the Steel City Proud</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2022</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=theatlantic.com" alt="theatlantic.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.theatlantic.com/books/archive/2022/08/salman-rushdie-henry-reese-city-of-asylum/671156/" target="_blank">The Atlantic &mdash; Free Speech Can’t Survive as an Abstraction</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2022</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=nytimes.com" alt="nytimes.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.nytimes.com/2022/09/02/opinion/salman-rushdie-free-speech-writers.html" target="_blank">The New York Times &mdash; A Community of Readers</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2023</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=pittsburghmagazine.com" alt="pittsburghmagazine.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.pittsburghmagazine.com/restoring-their-voices-pittsburghs-vital-sanctuary-for-exiled-writers/" target="_blank">Pittsburgh Magazine &mdash; Restoring Their Voices: Pittsburgh's Vital Sanctuary for Exiled Writers</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2024</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="Post-Gazette%20Youth%20Poet%20Laureate.pdf" target="_blank">Pittsburgh Post-Gazette &mdash; City of Asylum&rsquo;s Youth Poet Laureate Program</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2025</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=on-the-move.org" alt="on-the-move.org logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://on-the-move.org/sites/default/files/2025-07/At-risk_Vol3_Chapter2.pdf" target="_blank">On the Move &mdash; At-Risk Artists</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2025</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=theguardian.com" alt="theguardian.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.theguardian.com/commentisfree/2025/feb/15/salman-rushdie-stabbing-reader-effect" target="_blank">The Guardian &mdash; Hospitality in Programming</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2026</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/opinion/insight/2026/02/08/polariation-democracy-division-arts-literature-city-asylum-r-h-reese/stories/202602080049" target="_blank">Pittsburgh Post-Gazette &mdash; Polarization, Democracy, Division, Arts, Literature</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2026</div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/ae/theater-dance/2026/03/30/city-of-asylum-pittsburgh-executive-director/stories/202603240081" target="_blank">Pittsburgh Post-Gazette &mdash; Andr&eacute;s Franco Returns as Executive Director</a></div>
+      </div>
+      <div class="press-item">
+        <div class="press-year">2026</div>
+        <div></div><div><a class="press-link" href="media-archive.html#" target="_blank">Empowered by Meg Ryan Features City of Asylum</a> <em style="font-size:.75rem;color:var(--muted);">(link to come)</em></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    document.querySelectorAll('#press .press-link').forEach(function(a){
+      var text = a.innerHTML;
+      var idx = text.indexOf('—');
+      if (idx === -1) return;
+      a.innerHTML = text.substring(0, idx + 1) + '<em>' + text.substring(idx + 1) + '</em>';
+    });
+  </script>
+</section>
+
+<!-- VIDEO -->
+<section class="content-section" id="video">
   <div class="container">
     <span class="section-eyebrow">Watch</span>
-    <h2 class="section-title">Videos</h2>
-    <div class="video-grid">
-      <div class="video-card">
-        <span class="label">Programs On Demand</span>
-        <h3>Vimeo</h3>
-        <p>Every program at Alphabet City is recorded and available to watch free on demand.</p>
-        <a href="https://vimeo.com/cityofasylum" class="btn-outline" target="_blank" rel="noopener">Watch on Vimeo &rarr;</a>
+    <h2 class="section-title">Selected Video</h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem;">
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=ygTOMBLj3Kg" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/ygTOMBLj3Kg/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Sanctuary: The Writers of City of Asylum (2019)</p>
       </div>
-      <div class="video-card">
-        <span class="label">Archive</span>
-        <h3>YouTube</h3>
-        <p>Interviews with writers, pre-Alphabet City programs, and historical footage dating back to our founding.</p>
-        <a href="https://www.youtube.com/user/coapgh" class="btn-outline" target="_blank" rel="noopener">Watch on YouTube &rarr;</a>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=IsMl4hDv0DQ" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/IsMl4hDv0DQ/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">What City of Asylum Has Meant to Me (Andr&eacute;s Franco, Executive Director)</p>
       </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=9wXb1E7e6WY" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/9wXb1E7e6WY/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Why Do We Use Alphabets Across Our Projects?</p>
+      </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=D1TaEZXlPk8" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/D1TaEZXlPk8/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Hospitality, Architecture to Programming</p>
+      </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=voSFP6z5R_4" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/voSFP6z5R_4/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Celebrating 15 Years with City of Asylum (2019)</p>
+      </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;background:var(--charcoal);">
+          <video controls preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <source src="Pittsburgh-Defends-Freedom.mp4" type="video/mp4">
+            Your browser does not support inline video. <a href="Pittsburgh-Defends-Freedom.mp4" download>Download the video</a>.
+          </video>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Pittsburgh Defends Freedom of Creative Expression, Annual Ceremony at City of Asylum</p>
+      </div>
+
     </div>
   </div>
 </section>
 
-<!-- ═══════ IMAGES ═══════ -->
-<section class="media-section">
+<!-- PHOTOS -->
+<section class="content-section" id="photos">
   <div class="container">
     <span class="section-eyebrow">Browse</span>
-    <h2 class="section-title">Images</h2>
-    <div class="placeholder-box">
-      <!-- Designer: image library goes here. Consider a filterable grid by year, writer, or event. -->
-      <p>Image library coming soon — filterable by year, writer, or event.</p>
+    <h2 class="section-title">Selected Photos</h2>
+    <div class="photo-carousel-wrapper">
+      <button class="pc-btn prev" id="pc-prev" aria-label="Previous">&larr;</button>
+      <div class="photo-carousel-track" id="pc-track"></div>
+      <button class="pc-btn next" id="pc-next" aria-label="Next">&rarr;</button>
+    </div>
+    <div class="pc-dots" id="pc-dots"></div>
+    <div style="margin-top:2.5rem;">
+      <div style="font-weight:700;text-align:center;margin-bottom:.5rem;color:var(--text-dark);">Alphabet City Kickoff with Mayor and County Commissioner&mdash;Let Construction Begin! (2015)</div>
+      <a href="AC%20Press%20conf.jpg" target="_blank" rel="noopener" style="display:block;overflow:hidden;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.15);">
+        <img src="AC%20Press%20conf.jpg" alt="Alphabet City Kickoff with Mayor and County Commissioner — Let Construction Begin!" loading="lazy" style="width:100%;height:auto;display:block;">
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var photos = [
+    { src:"ASL%202.jpg",                                                                                            caption:"ASL Program Series" },
+    { src:"Burma%20Rosensteel_20090924_9499.jpg",                                                                    caption:"17 Burmese Monks in Residence During G-20 (2009)" },
+    { src:"Micro2.png",                                                                                              caption:"A (micro) History of World Economics Danced<br>Pascal Rambert (2015)" },
+    { src:"wallenda.jpg",                                                                                            caption:"Flying Wallendas &amp; Audio of Salman Rushdie Reading from <em>The Ground Beneath Her Feet</em> (Jazz Poetry 2011)" },
+    { src:"SvetlanaYoungcrop.JPG",                                                                                   caption:"Nobel Laureate Svetlana Alexievich Meets with Young Pittsburgh Authors (2016)" },
+    { src:"Poetry%20reading%20(Cave%20Canem%20poets)%20on%20closed%20street%20(C)%20Renee%20Rosensteel.jpg",        caption:"Pre-Alphabet City, Cave Canem Poetry Reading (2011)" },
+    { src:"PHotos%20History/Cave%20canems%202013%20group.jpg",                                                        caption:"Annual Workshops of Cave Canem Poets and Faculty (2013)" },
+    { src:"2%20Alley%20set%20up%20w%20chairs%20Rosensteel_20090912_1095.jpg",                                       caption:"Setup for Jazz Poetry on Sampsonia Way (2009)" },
+    { src:"Naturalization.jpg",                                                                                      caption:"Alphabet City Officially Opened January 13, 2017 with a Naturalization Ceremony" },
+    { src:"Jasiri.jpg",                                                                                              caption:"Jasiri X with Melong Band, Exiled Voices of China (2013)" },
+    { src:"PHotos%20History/Randy.jpg",                                                                               caption:"Writers in the Gardens Finale at Randyland (2010)" }
+  ];
+
+  var track = document.getElementById('pc-track');
+  photos.forEach(function(p) {
+    track.insertAdjacentHTML('beforeend',
+      '<div class="photo-carousel-card">' +
+        '<div class="pc-caption">' + p.caption + '</div>' +
+        '<a href="https://coa-website-may-10.netlify.app/' + p.src + '" target="_blank" rel="noopener">' +
+          '<img src="https://coa-website-may-10.netlify.app/' + p.src + '" alt="' + p.caption.replace(/<[^>]+>/g,'').replace(/&[a-z]+;/g,'') + '" loading="lazy">' +
+        '</a>' +
+      '</div>'
+    );
+  });
+
+  var page = 0;
+  var perPage = window.innerWidth <= 768 ? 1 : 2;
+  var totalPages = Math.ceil(photos.length / perPage);
+  var prevBtn = document.getElementById('pc-prev');
+  var nextBtn = document.getElementById('pc-next');
+  var dotsContainer = document.getElementById('pc-dots');
+
+  for (var d = 0; d < totalPages; d++) {
+    var dot = document.createElement('button');
+    dot.className = 'pc-dot' + (d === 0 ? ' active' : '');
+    dot.dataset.page = d;
+    dot.setAttribute('aria-label', 'Page ' + (d + 1));
+    dotsContainer.appendChild(dot);
+  }
+
+  function update() {
+    var card = track.querySelector('.photo-carousel-card');
+    if (!card) return;
+    var cardWidth = card.offsetWidth;
+    var gap = 20; // 1.25rem
+    var offset = page * perPage * (cardWidth + gap);
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    prevBtn.disabled = page === 0;
+    nextBtn.disabled = page >= totalPages - 1;
+    dotsContainer.querySelectorAll('.pc-dot').forEach(function(dot, i) {
+      dot.classList.toggle('active', i === page);
+    });
+  }
+
+  prevBtn.addEventListener('click', function() { if (page > 0) { page--; update(); } });
+  nextBtn.addEventListener('click', function() { if (page < totalPages - 1) { page++; update(); } });
+  dotsContainer.addEventListener('click', function(e) {
+    if (e.target.classList.contains('pc-dot')) { page = parseInt(e.target.dataset.page); update(); }
+  });
+  window.addEventListener('resize', function() {
+    perPage = window.innerWidth <= 768 ? 1 : 2;
+    totalPages = Math.ceil(photos.length / perPage);
+    if (page >= totalPages) page = totalPages - 1;
+    // Rebuild dots
+    dotsContainer.innerHTML = '';
+    for (var d = 0; d < totalPages; d++) {
+      var dot = document.createElement('button');
+      dot.className = 'pc-dot' + (d === page ? ' active' : '');
+      dot.dataset.page = d;
+      dotsContainer.appendChild(dot);
+    }
+    update();
+  });
+  update();
+})();
+</script>
+
+<!-- PUBLICATIONS -->
+<section class="content-section" id="publications">
+  <div class="container">
+    <span class="section-eyebrow">Read</span>
+    <h2 class="section-title">Selected Publications</h2>
+
+    <div class="pub-feature" style="display:grid;grid-template-columns:240px 1fr;gap:2rem;align-items:center;">
+      <a href="https://cityofasylum.org/wp-content/uploads/2022/09/Pittsburgh_Live-Ability-1.pdf" target="_blank" style="display:block;">
+        <img src="Pittsburgh-LiveAbility.jpg" alt="Pittsburgh Live/Ability cover" style="width:100%;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.15);">
+      </a>
+      <div>
+        <h3>Pittsburgh Live/Ability</h3>
+        <p>What is it like to live in Pittsburgh with a disability? The creative culmination of two years of work between 11 multilingual, multiply disabled, and multiply abled Pittsburgh writers and 11 Pittsburghers with disabilities.</p>
+        <p><a href="https://cityofasylum.org/wp-content/uploads/2022/09/Pittsburgh_Live-Ability-1.pdf" target="_blank"><strong>Free online PDF</strong></a> (133 pages, also downloadable)</p>
+        <p style="font-size:.85rem;color:var(--muted);margin-top:.5rem;">Also available on Spotify, Anchor, Amazon, and Apple.</p>
+      </div>
+    </div>
+
+    <div class="book-gallery" style="display:grid;grid-template-columns:repeat(7,1fr);gap:.75rem;margin-top:3rem;margin-bottom:2rem;">
+      <a href="https://cityofasylumbooks.org/book/9781939419996" target="_blank" rel="noopener" title="The Conspiracy" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Conspiracy.jpg" alt="The Conspiracy cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/product/exile-poems-labyrinth-homesickness" target="_blank" rel="noopener" title="Exile Poems" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://cityofasylum.org/wp-content/uploads/2022/05/ExilePoems_rectangle-e1652287873992.jpeg" alt="Exile Poems cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9781494221799" target="_blank" rel="noopener" title="Generation Zero" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/799/221/9781494221799.jpg" alt="Generation Zero cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9781905233380" target="_blank" rel="noopener" title="In Search of Fat" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/380/233/9781905233380.jpg" alt="In Search of Fat cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9781557290960" target="_blank" rel="noopener" title="A Lifetime is a Promise to Keep" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Lifetime.jpg" alt="A Lifetime is a Promise to Keep cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9781502759559" target="_blank" rel="noopener" title="Night Birds and Other Stories" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/559/759/9781502759559.jpg" alt="Night Birds cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9798282281446" target="_blank" rel="noopener" title="Nothing is Under Control" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/446/281/9798282281446.jpg" alt="Nothing is Under Control cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9798990473300" target="_blank" rel="noopener" title="Orpheus and Eurydice in New York" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Orpheus.jpg" alt="Orpheus and Eurydice in New York cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9781939419828" target="_blank" rel="noopener" title="Rituals of Restlessness" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/828/419/9781939419828.jpg" alt="Rituals of Restlessness cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9780811217071" target="_blank" rel="noopener" title="Senselessness" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Senselessness.jpg" alt="Senselessness cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9780674302662" target="_blank" rel="noopener" title="Signals of Being" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/662/302/9780674302662.jpg" alt="Signals of Being cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9780900575181" target="_blank" rel="noopener" title="Something Evergreen Called Life" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Something%20Evergreen.jpg" alt="Something Evergreen Called Life cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9780811226073" target="_blank" rel="noopener" title="The Teeth of the Comb &amp; Other Stories" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/073/226/9780811226073.jpg" alt="The Teeth of the Comb cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+      <a href="https://cityofasylumbooks.org/book/9781502745804" target="_blank" rel="noopener" title="The Thunder of Deep Thought" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/804/745/9781502745804.jpg" alt="The Thunder of Deep Thought cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
+    </div>
+
+    <div class="book-list">
+      <h3>Selected Books by City of Asylum exiled writers-in-residence:<br>all available in City of Asylum <a href="https://cityofasylumbooks.org/" target="_blank" rel="noopener">Bookstore</a></h3>
+      <ul>
+        <li><img class="book-cover" src="Conspiracy.jpg" alt="The Conspiracy cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781939419996" target="_blank" rel="noopener"><em>The Conspiracy</em></a> &mdash; Israel Centeno, tr. Guillermo Parra</span></li>
+        <li><img class="book-cover" src="https://cityofasylum.org/wp-content/uploads/2022/05/ExilePoems_rectangle-e1652287873992.jpeg" alt="Exile Poems cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/product/exile-poems-labyrinth-homesickness" target="_blank" rel="noopener"><em>Exile Poems</em></a> &mdash; Tuhin Das, tr. Arunava Sinha</span></li>
+        <li><img class="book-cover" src="https://images.booksense.com/images/799/221/9781494221799.jpg" alt="Generation Zero cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781494221799" target="_blank" rel="noopener"><em>Generation Zero: An Anthology of New Cuban Fiction</em></a> &mdash; ed. Orlando Pardo</span></li>
+        <li><img class="book-cover" src="https://images.booksense.com/images/380/233/9781905233380.jpg" alt="In Search of Fat cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781905233380" target="_blank" rel="noopener"><em>In Search of Fat</em></a> &mdash; Bewketu Seyoum, tr. Chris Beckett</span></li>
+        <li><img class="book-cover" src="Lifetime.jpg" alt="A Lifetime is a Promise to Keep cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781557290960" target="_blank" rel="noopener"><em>A Lifetime is a Promise to Keep</em></a> &mdash; Huang Xiang, tr. Michelle Yeh</span></li>
+        <li><img class="book-cover" src="https://images.booksense.com/images/559/759/9781502759559.jpg" alt="Night Birds cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781502759559" target="_blank" rel="noopener"><em>Night Birds and Other Stories</em></a> &mdash; Khet Mar, tr. Maung Maung Myint</span></li>
+        <li><img class="book-cover" src="https://images.booksense.com/images/446/281/9798282281446.jpg" alt="Nothing is Under Control cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9798282281446" target="_blank" rel="noopener"><em>Nothing is Under Control</em></a> &mdash; Oleksandr Fraze-Frazenko</span></li>
+        <li><img class="book-cover" src="Orpheus.jpg" alt="Orpheus and Eurydice in New York cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9798990473300" target="_blank" rel="noopener"><em>Orpheus and Eurydice in New York</em></a> &mdash; Olena Boryshpolets, tr. Oleksandr Fraze-Frazenko</span></li>
+        <li><img class="book-cover" src="https://images.booksense.com/images/828/419/9781939419828.jpg" alt="Rituals of Restlessness cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781939419828" target="_blank" rel="noopener"><em>Rituals of Restlessness</em></a> &mdash; Yaghoub Yadali, tr. Sara Khalili</span></li>
+        <li><img class="book-cover" src="Senselessness.jpg" alt="Senselessness cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9780811217071" target="_blank" rel="noopener"><em>Senselessness</em></a> &mdash; Horacio Castellanos Moya, tr. Katherine Silver</span></li>
+        <li><img class="book-cover" src="https://images.booksense.com/images/662/302/9780674302662.jpg" alt="Signals of Being cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9780674302662" target="_blank" rel="noopener"><em>Signals of Being, or Verbum Caro Factum Est: A Play in Three Acts</em></a> &mdash; Volodymyr Rafeyenko, tr. Mark Andryczyk</span></li>
+        <li><img class="book-cover" src="Something%20Evergreen.jpg" alt="Something Evergreen Called Life cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9780900575181" target="_blank" rel="noopener"><em>Something Evergreen Called Life</em></a> &mdash; Rania Mamoun, tr. Yasmine Seale</span></li>
+        <li><img class="book-cover" src="https://images.booksense.com/images/073/226/9780811226073.jpg" alt="The Teeth of the Comb cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9780811226073" target="_blank" rel="noopener"><em>The Teeth of the Comb &amp; Other Stories</em></a> &mdash; Osama Alomar, tr. C.J. Collins</span></li>
+        <li><img class="book-cover" src="https://images.booksense.com/images/804/745/9781502745804.jpg" alt="The Thunder of Deep Thought cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781502745804" target="_blank" rel="noopener"><em>The Thunder of Deep Thought</em></a> &mdash; Huang Xiang, tr. Teresa Zimmerman-Liu</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ARCHIVE -->
+<section class="content-section" id="archive">
+  <div class="container">
+    <span class="section-eyebrow">Explore</span>
+    <h2 class="section-title">Archive</h2>
+    <div class="archive-grid">
+      <div class="archive-card">
+        <h3>Vimeo</h3>
+        <a class="archive-link" href="https://vimeo.com/cityofasylum/videos" target="_blank">vimeo.com/cityofasylum</a>
+        <p>900+ videos featuring literary readings, concerts, and other performances at Alphabet City. Includes City of Asylum and partner programs.</p>
+      </div>
+      <div class="archive-card">
+        <h3>YouTube Channel</h3>
+        <a class="archive-link" href="https://www.youtube.com/user/coapgh" target="_blank">youtube.com/user/coapgh</a>
+        <p>283 videos of pre-Alphabet City concerts and readings, plus video interviews from <em>Sampsonia Way Magazine</em>.</p>
+      </div>
+      <div class="archive-card">
+        <h3><em>Sampsonia Way Magazine</em></h3>
+        <a class="archive-link" href="http://archive.sampsoniaway.org/" target="_blank">archive.sampsoniaway.org</a>
+        <p>City of Asylum's online magazine for literature, free speech, and social justice (2009&ndash;2021).</p>
+      </div>
     </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class='nav-logo' href='index.html' style='margin-bottom:.5rem'>
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:70px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+          <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
+        </a>
+        <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href='about.html'>About Us</a>
+        <a href='writers.html'>Writers &amp; Residencies</a>
+        <a href='free-arts.html'>Free Arts &amp; Culture</a>
+        <a href='media-archive.html'>Media &amp; Archive</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <a href='free-arts.html'>Alphabet City</a>
+        <a href='bookstore-restaurant.html'>Bookstore</a>
+        <a href='bookstore-restaurant.html'>Restaurant</a>
+        <a href='about.html#directions'>Directions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href='donate.html'>Donate</a>
+        <a href='about.html#inquiries'>Volunteer</a>
+        <a href='about.html#inquiries'>Free Tour</a>
+        <a href='about.html#inquiries'>Book a Writer</a>
+        <a href='about.html#inquiries'>Contact Us</a>
+      </div>
+    </div>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
-      <a href="index.html" style="color:var(--gold);">Back to Home</a>
+      <a href="media-archive.html#" onclick="document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Privacy Policy</a>
     </div>
   </div>
 </footer>
 
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:1000;align-items:flex-start;justify-content:center;padding:3rem 1rem;overflow-y:auto;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow='';}">
+  <div style="max-width:700px;width:100%;text-align:left;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem 2.5rem;position:relative;">
+    <button type="button" aria-label="Close" onclick="document.getElementById('privacy-modal').style.display='none';document.body.style.overflow='';" style="position:absolute;top:.5rem;right:.75rem;background:transparent;border:0;color:rgba(255,255,255,.7);font-size:1.75rem;line-height:1;cursor:pointer;padding:.25rem .5rem;">&times;</button>
+    <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:0 0 1.5rem;">Privacy Policy for City of Asylum Pittsburgh</h3>
+    <p style="font-size:.85rem;color:var(--red);font-style:italic;margin-bottom:1.5rem;">(This is stubbed in; current policy requested)</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">1. Information We Collect</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We only collect information that you voluntarily provide to us. For our email subscriber list, this typically includes your name and email address.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">2. How We Use Your Information</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We use your information strictly to send you information about programs and organization, for occasional invitations to support our mission through donations, and to respond to questions. For City of Asylum Bookstore privacy policy: <a href="https://cityofasylumbooks.org/privacy-policy" target="_blank" style="color:var(--gold);">cityofasylumbooks.org/privacy-policy</a></p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">3. Sharing Your Information</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We value your trust. We do not sell, rent, or trade our subscriber list with third parties. We only share information with trusted service providers like our email platforms, who help us send our communications and are legally bound to keep your data secure.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">4. Opting Out</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">Most emails include an &ldquo;Unsubscribe&rdquo; link at the bottom. You can also contact us at <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a> to ask us to update or delete your information from our records.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">5. Security</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We take reasonable steps to protect your data from unauthorized access. However, no method of online transmission is 100% secure, and providing your information is at your own risk.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">6. Contact Us</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:0;">If you have questions about this policy, please reach out to us:<br><br>
+    <strong style="color:var(--white);">City of Asylum</strong><br>
+    40 W. North Avenue<br>
+    Pittsburgh, PA 15212<br>
+    Phone: 412-435-1110<br>
+    Email: <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a></p>
+  </div>
+</div>
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('privacy-modal');if(m&&m.style.display==='flex'){m.style.display='none';document.body.style.overflow='';}}});</script>
+
+<script>
+document.querySelectorAll('.nav-dropdown a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    this.blur();
+    this.closest('.nav-item').blur();
+  });
+});
+</script>
+<script src="mobile.js?v=3" defer></script>
 </body>
 </html>

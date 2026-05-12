@@ -3,11 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About Us — City of Asylum</title>
-<meta name="description" content="Learn about City of Asylum's history, mission, and how two Pittsburgh residents built the world's largest sanctuary for persecuted writers.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>About Us &mdash; City of Asylum</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
+
 :root {
   --deep:#0f1419;--charcoal:#1a1f2e;--slate:#2d3548;
   --red:#c23b2e;--red-dark:#8b1a1a;--gold:#c9a227;--gold-light:#e0c660;
@@ -24,21 +23,22 @@ a:hover{color:var(--red-dark)}
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
 
 .site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:72px}
+.nav-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:98px}
 .nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
-.nav-logo img{height:48px;width:auto}
-.nav-logo span{font-family:var(--serif);font-weight:700;font-size:1.15rem}
-.nav-links{display:flex;align-items:center;gap:.25rem}
-.nav-links a{color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .85rem;border-radius:6px;transition:all .2s}
+.nav-logo img{height:70px;width:auto}
+.nav-logo span{font-family:var(--sans);font-weight:700;font-size:1.15rem;line-height:1.1;}
+.nav-links{display:flex;align-items:center;gap:.25rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap;color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .35rem;border-radius:6px;transition:all .2s}
 .nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
 .nav-links a.active{color:var(--gold)}
 .nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
-.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+.nav-item:last-child .nav-dropdown{left:auto;right:0}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
 
 /* PAGE HERO */
 .page-hero{background:var(--deep);padding:5rem 0 4rem;position:relative;overflow:hidden}
 .page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.page-hero h1{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--white);margin-bottom:1rem;max-width:700px}
+.page-hero h1{font-family:var(--serif);font-size:3.8rem;font-weight:900;color:var(--white);margin-bottom:1rem;max-width:none}
 .page-hero p{color:rgba(255,255,255,.65);font-size:1.15rem;max-width:650px;line-height:1.8}
 
 /* MISSION SECTION */
@@ -56,7 +56,7 @@ a:hover{color:var(--red-dark)}
 .section-sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto}
 
 /* TIMELINE */
-.timeline-section{padding:6rem 0;background:var(--cream)}
+.timeline-section{padding:6rem 0;background:linear-gradient(rgba(255,255,255,.40),rgba(255,255,255,.40)), url('03Alphas30.jpg') top center/825px auto repeat, var(--cream);}
 .timeline{max-width:800px;margin:3rem auto 0;position:relative}
 .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--border);transform:translateX(-50%)}
 .timeline-item{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3rem;position:relative}
@@ -89,16 +89,18 @@ a:hover{color:var(--red-dark)}
 /* WHAT MAKES US DIFFERENT */
 .different-section{padding:5rem 0;background:var(--white)}
 .diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto}
-.diff-card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:2rem;display:flex;gap:1.25rem}
+.diff-card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:2rem;display:flex;flex-direction:column;gap:.75rem}
+.diff-card-header{display:flex;align-items:center;gap:1rem}
 .diff-icon{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
-.diff-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:.35rem}
-.diff-card p{font-size:.875rem;color:var(--muted);line-height:1.6}
+.diff-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--text-dark);margin:0}
+.diff-card p{font-size:.875rem;color:var(--muted);line-height:1.6;margin:0}
 
 /* STAFF/TEAM */
 .staff-section{padding:5rem 0;background:var(--cream)}
 .staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto}
 .staff-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;text-align:center}
-.staff-card .staff-icon{width:64px;height:64px;border-radius:50%;background:var(--deep);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;font-weight:700;margin:0 auto 1rem}
+.staff-card .staff-icon{width:96px;height:96px;border-radius:50%;background:var(--deep);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;font-weight:700;margin:0 auto 1rem;overflow:hidden}
+.staff-card .staff-icon img{width:100%;height:100%;object-fit:cover;display:block}
 .staff-card h4{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:.35rem}
 .staff-card p{font-size:.875rem;color:var(--muted);line-height:1.5}
 
@@ -113,8 +115,13 @@ a:hover{color:var(--red-dark)}
 .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-weight:700;padding:.9rem 2rem;border-radius:8px;font-size:1rem;transition:all .25s}
 .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--deep)}
 
-.site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:3rem 0 2rem;color:rgba(255,255,255,.5)}
-.footer-bottom{display:flex;justify-content:space-between;font-size:.8rem}
+.site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:4rem 0 2rem;color:rgba(255,255,255,.5)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand p{font-size:.9rem;line-height:1.7;max-width:280px;margin-top:.75rem}
+.footer-col h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:1rem}
+.footer-col a{display:block;color:rgba(255,255,255,.5);font-size:.875rem;padding:.25rem 0}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.8rem}
 .footer-bottom a{color:rgba(255,255,255,.4)}
 
 @media(max-width:768px){
@@ -126,127 +133,206 @@ a:hover{color:var(--red-dark)}
   .timeline-item::after{left:0}
   .timeline-year{text-align:left;padding-right:0;padding-left:1.5rem}
   .timeline-content{padding-left:1.5rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
 }
+
+
+/* BOARD */
+.board-section{padding:5rem 0;background:linear-gradient(rgba(255,255,255,.40),rgba(255,255,255,.40)), url('03Alphas30.jpg') top center/825px auto repeat, var(--white);}
+.board-group{max-width:800px;margin:2rem auto 0;text-align:center}
+.board-group h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text-dark);margin:2.5rem 0 1rem;padding-top:1.5rem;border-top:1px solid var(--border)}
+.board-group h3:first-child{border-top:none;padding-top:0}
+.board-officers{margin-bottom:1.5rem}
+.board-officers p{font-size:1rem;color:var(--text-body);line-height:1.8}
+.board-officers strong{color:var(--text-dark)}
+.board-members{display:flex;flex-wrap:wrap;justify-content:center;gap:.25rem .75rem;font-size:.95rem;color:var(--text-body);line-height:2}
+.board-members span{white-space:nowrap}
+
+/* JOBS */
+.jobs-section{padding:5rem 0;background:var(--cream)}
+.jobs-inner{max-width:700px;margin:0 auto;text-align:center}
+.jobs-inner p{font-size:1.05rem;color:var(--text-body);line-height:1.8;margin-bottom:1rem}
+
+/* SUBSCRIBE */
+.subscribe-section{padding:5rem 0;background:var(--charcoal);color:var(--white);text-align:center}
+.subscribe-section h2{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--white);margin-bottom:.75rem}
+.subscribe-section p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:600px;margin:0 auto 2rem}
+.subscribe-options{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-bottom:2rem}
+.subscribe-option{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:.6rem 1.25rem;color:rgba(255,255,255,.8);font-size:.9rem;cursor:pointer;transition:all .2s;user-select:none}
+.subscribe-option:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3)}
+.subscribe-option.active{background:var(--gold) !important;color:var(--deep) !important;border-color:var(--gold) !important;font-weight:600}
+.subscribe-form{display:flex;gap:.75rem;max-width:624px;margin:0 auto}
+.subscribe-form input{flex:1;padding:.85rem 1.25rem;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--white);font-size:.95rem;font-family:var(--sans)}
+.subscribe-form input::placeholder{color:rgba(255,255,255,.35)}
+.subscribe-form button{background:var(--gold);color:var(--deep);font-weight:700;padding:.85rem 1.5rem;border-radius:8px;border:none;cursor:pointer;font-family:var(--sans);font-size:.9rem}
+
+/* MISSION TEXT */
+.mission-text{max-width:820px;margin:0 auto;padding:0 2rem}
+.mission-text p{font-size:1.1rem;color:var(--text-body);line-height:1.8;margin-bottom:1.5rem}
+
+@media(max-width:768px){
+  .staff-grid{grid-template-columns:1fr}
+  .diff-grid{grid-template-columns:1fr}
+  .subscribe-form{flex-direction:column}
+}
 </style>
+<link rel="stylesheet" href="mobile.css?v=3">
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum">
+    <a class='nav-logo' href='index.html'>
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#0f1419;">
       <span>City of Asylum</span>
     </a>
-    <div class="nav-links">
+            <div class="nav-links">
       <div class="nav-item">
-        <a href="about.html" class="active">About Us <span class="nav-chevron">▾</span></a>
+        <a class='active' href='about.html' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="about.html">Our Mission</a>
-          <a href="about.html">Our Founders</a>
-          <a href="about.html">Our History</a>
+          <a href='about.html'>Our Mission</a>
+          <a href='about.html#history'>History</a>
+          <a href='about.html#model'>Our Model</a>
+          <a href='about.html#staff'>Staff</a>
+          <a href='about.html#board'>Board of Directors</a>
+          <a href='about.html#jobs'>Jobs</a>
+          <a href='about.html#subscribe'>Subscribe</a>
+          <a href='about.html#inquiries'>Other Inquiries</a>
+          <a href='about.html#directions'>Directions</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="writers.html">Writers &amp; Residencies <span class="nav-chevron">▾</span></a>
+        <a href='writers.html' style='line-height:1;display:inline-block;'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="writers.html">Residency Program</a>
-          <a href="writers.html">Current Residents</a>
-          <a href="writers.html">Ukrainian Fellowship</a>
-          <a href="writers.html">Alumni</a>
+          <a href='writers.html#residency-program'>Residency Program</a>
+          <a href='writers.html#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="events.html">Free Arts &amp; Culture <span class="nav-chevron">▾</span></a>
+        <a href='free-arts.html' style='line-height:1;display:inline-block;'>Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="events.html">Upcoming Programs</a>
-          <a href="events.html">Literary Readings</a>
-          <a href="events.html">Thursday Night Jazz</a>
-          <a href="events.html">Annual Festivals</a>
+          <a href='free-arts.html#what-we-host'>What We Host</a>
+          <a href='free-arts.html#why-free'>Why Our Programs Are Free</a>
+          <a href='events.html'>Upcoming Programs</a>
+          <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">Full Calendar</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="campus.html">Campus <span class="nav-chevron">▾</span></a>
+        <a href='campus.html' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="campus.html">Alphabet City</a>
-          <a href="campus.html">House Publications</a>
-          <a href="campus.html">Reading Garden</a>
-          <a href="campus.html">Audio Tour</a>
+          <a href='campus.html'>Community as Campus</a>
+          <a href='campus.html#how-it-grew'>How It Grew</a>
+          <a href='campus.html#whats-here'>What&#8217;s Here Now</a>
+          <a href='campus.html#walking-tour'>Walking Tour App</a>
+          <a href='campus.html#becoming'>Starting a New City</a>
         </div>
       </div>
-      <a href="media-archive.html">Media &amp; Archive</a>
-      <a href="donate.html" class="nav-donate">Donate</a>
+      <div class="nav-item">
+        <a href='media-archive.html' style='line-height:1;display:inline-block;'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='media-archive.html#press'>Selected Press</a>
+          <a href='media-archive.html#video'>Selected Video &amp; Photos</a>
+          <a href='media-archive.html#publications'>Selected Books</a>
+          <a href='media-archive.html#archive'>Media Archive</a>
+        </div>
+      </div>
+
+      <a href='bookstore-restaurant.html' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <div class="nav-item">
+        <a class='nav-donate' href='donate.html'>Donate</a>
+        <div class="nav-dropdown">
+          <a href='donate.html#other-ways'>Other Ways to Help</a>
+          <a href='donate.html#foundations'>Foundations</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
 
-<section class="page-hero">
-  <div class="container">
-    <span class="eyebrow">About City of Asylum</span>
-    <h1>A grassroots safe haven, built by community.</h1>
-    <p>Founded in 2004 by two Pittsburgh residents, City of Asylum has grown from a single act of courage into the world's largest program for persecuted writers — powered entirely by individuals and foundations, not governments.</p>
+<!-- HERO / MISSION -->
+<section class="page-hero" id="mission">
+  <div style="position:absolute;inset:0;"><img src="PHotos%20History/Alley1.JPG" alt="" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.724) saturate(.7);"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(26,31,46,.6) 50%, rgba(15,20,25,.75) 100%);"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <span class="eyebrow">Our Mission</span>
+    <h1 style="font-family:var(--serif);font-size:3.8rem;font-weight:900;line-height:1.1;color:var(--white);margin-bottom:1.5rem;">A grassroots safe haven,<span style="display:block;text-align:left;color:var(--gold);font-style:italic;">built by community.</span></h1>
+    <p style="margin:0 0 1rem;text-align:left;color:rgba(255,255,255,.75);font-size:1.25rem;font-weight:700;line-height:1.7;white-space:nowrap;"><span style="display:block;">City of Asylum builds a just community by protecting and celebrating</span><span style="display:block;">freedom of creative expression.</span></p>
+    <ul style="margin-top:1rem;color:rgba(255,255,255,.8);font-size:1.05rem;line-height:1.8;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
+      <li style="position:relative;padding-left:1.25rem;"><span style="position:absolute;left:0;top:0;">&bull;</span>We provide <span style="color:var(--gold);font-weight:700;">sanctuary</span> to endangered literary writers and artists, so that they can continue to create and their voices are not silenced.</li>
+      <li style="position:relative;padding-left:1.25rem;"><span style="position:absolute;left:0;top:0;">&bull;</span>We offer a broad range of free literary, arts, and humanities programs in a <span style="color:var(--gold);font-weight:700;">community setting</span> to build social equity through cultural exchange.</li>
+      <li style="position:relative;padding-left:1.25rem;"><span style="position:absolute;left:0;top:0;">&bull;</span>And by transforming blighted properties into homes for our programs, we <span style="color:var(--gold);font-weight:700;">anchor neighborhood</span> economic development.</li>
+    </ul>
   </div>
 </section>
 
-<!-- MISSION -->
-<section class="mission-section">
-  <div class="container">
-    <span class="section-eyebrow">Our Mission</span>
-    <h2 class="section-title">Protecting and Celebrating Freedom of Creative Expression</h2>
-    <p class="section-sub">City of Asylum builds a just community through three interconnected commitments.</p>
-    <div class="mission-grid">
-      <div class="mission-card">
-        <h3>A Safe Haven</h3>
-        <p>We provide writers with a safe home so they can continue to create and their voices are not silenced. For three years or more, writers receive housing, stipends, translation/publication, legal counsel, and medical benefits.</p>
-      </div>
-      <div class="mission-card">
-        <h3>Free Arts &amp; Culture Programs</h3>
-        <p>We offer a broad range of free literary, arts, and humanities programs in a community setting to build social equity through cultural exchange — 120 programs each year.</p>
-      </div>
-      <div class="mission-card">
-        <h3>A Neighborhood and a City Transformed</h3>
-        <p>By converting dilapidated properties into homes for our programs and writers, we anchor neighborhood economic development on Pittsburgh's Northside. Our impact is now regional.</p>
-      </div>
-    </div>
-    <div style="display:flex;justify-content:center;margin-top:2.5rem;">
-      <div style="text-align:center;background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:1.5rem 2.5rem;">
-        <div style="font-family:var(--serif);font-size:2.4rem;font-weight:900;color:var(--gold);">94%</div>
-        <div style="font-size:.95rem;font-weight:600;color:var(--text-dark);">Rating of Mission Effectiveness</div>
-        <div style="font-size:.8rem;color:var(--muted);font-style:italic;margin-top:.35rem;">*Annual survey</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOUNDERS -->
-<section class="founders-section">
-  <div class="container">
-    <div class="founders-grid">
-      <div class="founders-img">
-        <img src="https://cityofasylum.org/wp-content/uploads/2021/05/HPsized.jpeg" alt="Salman Rushdie, Huang Xiang, and Henry Reese in front of House Poem" onerror="this.style.opacity='0'">
-      </div>
-      <div class="founders-text">
-        <span class="section-eyebrow" style="text-align:left;color:var(--gold);">Our Founders</span>
-        <h2>Diane Samuels &amp; Henry Reese</h2>
-        <p>In 1997, Salman Rushdie gave a talk in Pittsburgh and briefly mentioned the Cities of Asylum network — European cities that protected writers whose lives were in danger. Diane Samuels and Henry Reese were in the audience, and they were immediately drawn to this mission.</p>
-        <div class="quote-block">"Most endangered writers come from circumstances where they have neither fame nor resources. We wanted to change that."</div>
-        <p>They wrote to Cities of Asylum in Europe about starting a chapter in Pittsburgh. Getting no response, they kept writing — until in 2003 they connected with author Russell Banks, who was expanding the network to the U.S. In 2004, they welcomed Huang Xiang as their first writer.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- TIMELINE / HISTORY -->
+<div id="history">
 <!-- TIMELINE -->
 <section class="timeline-section">
   <div class="container">
     <span class="section-eyebrow">Our History</span>
-    <h2 class="section-title">20 Years of Protecting and Celebrating Freedom of Creative Expression</h2>
-    <div class="timeline">
+    <h2 class="section-title">22 Years of Protecting and Celebrating<br>Freedom of Creative Expression</h2>
+    <div class="timeline" id="our-history-timeline">
+      <!-- Photo strip: 20 slots (1 per timeline row), each 1/20 of timeline height with 1/16in gaps. -->
+      <div class="photo-strip" style="position:absolute;top:0;bottom:0;display:flex;flex-direction:column;overflow:visible;z-index:2;">
+        <img class="hp" src="PHotos%20History/Rushdie%20Pitt.png" alt="1997 — Salman Rushdie at Pitt" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/HX%20scaffold.JPG" alt="2004 — Huang Xiang on scaffold" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/Parade.jpg" alt="2005 — Parade" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/Thad3.jpg" alt="2006 — Thad" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/Test%20HCM1.JPG" alt="2007 — HCM 1" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/test%20HCM4.JPG" alt="2009 — HCM 4" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/324%20Cropped.JPG" alt="2010 — 324 (Pittsburgh-Burma House)" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/320%20cropped.JPG" alt="2012 — 320 (Jazz House)" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/Iran%20.jpg" alt="2012 — Exiled Voices of Iran festival" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/SOS4.JPG" alt="SOS 4" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/ROW1.JPG" alt="2014 — River of Words" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/arg5.JPG" alt="arg5" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/ICORN%20.JPG" alt="ICORN" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/Grand%20Opening.jpg" alt="Grand Opening" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/Show%20logo%204.jpg" alt="Show logo" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/show%20abby.jpg" alt="Show Abby" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-top:-0.4375in;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/comma3.JPG" alt="Comma" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/Gainey.jpg" alt="Gainey" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/icorn%205.PNG" alt="ICORN 5" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="PHotos%20History/Torrea%20silhouette.jpg" alt="Torrea (anonymized)" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+      </div>
+      <script>
+      (function alignAboutPhotoStrip(){
+        function setup(){
+          var timeline = document.getElementById('our-history-timeline');
+          if(!timeline) return;
+          var strip = timeline.querySelector('.photo-strip');
+          if(!strip) return;
+          var firstImg = strip.querySelector('img');
+          if(!firstImg) return;
+          function apply(){
+            var firstYear = timeline.querySelector('.timeline-year');
+            if(!firstYear) return;
+            var range = document.createRange();
+            range.selectNodeContents(firstYear);
+            var yearRect = range.getBoundingClientRect();
+            var tlRect = timeline.getBoundingClientRect();
+            var halfInchPx = 24; // 0.25in at 96dpi
+            var rightOffset = tlRect.right - yearRect.left + halfInchPx;
+            strip.style.right = rightOffset + 'px';
+            strip.style.left = 'auto';
+            strip.style.width = firstImg.offsetWidth + 'px';
+          }
+          if(firstImg.complete && firstImg.naturalWidth){ apply(); }
+          else { firstImg.addEventListener('load', apply); }
+          window.addEventListener('resize', apply);
+        }
+        if(document.readyState === 'loading'){
+          document.addEventListener('DOMContentLoaded', setup);
+        } else { setup(); }
+      })();
+      </script>
       <div class="timeline-item">
         <div class="timeline-year">1997</div>
         <div class="timeline-content">
           <h3>A Spark in the Audience</h3>
-          <p>Diane Samuels and Henry Reese attend a Salman Rushdie talk in Pittsburgh. He mentions the Cities of Asylum network in Europe, and an idea is born.</p>
+          <p>Diane Samuels and Henry Reese attend a Salman Rushdie talk at the University of Pittsburgh. He mentions the Cities of Asylum network in Europe, and an idea is born.</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -267,67 +353,67 @@ a:hover{color:var(--red-dark)}
         <div class="timeline-year">2006</div>
         <div class="timeline-content">
           <h3>A Growing Safe Haven</h3>
-          <p>Additional writers arrive from around the world. The Sampsonia Way neighborhood begins its transformation into a literary corridor.</p>
+          <p>Winged House&mdash;a collaboration between artist Thaddeus Mosley, Laura Jean McLaughlin, Bob Ziller, and Nobel Literature Laureate Wole Soyinka&mdash;is created as the residence of our second writer. Sampsonia Way begins its transformation into a literary corridor.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2007</div>
         <div class="timeline-content">
           <h3>Our First Reading</h3>
-          <p>Horacio Castellanos Moya, the second writer in residence, presents his novel Senselessness in the founders' home, the first of 73 programs in their house.</p>
+          <p>Horacio Castellanos Moya, the second writer-in-residence, presents his novel <em>Senselessness</em> in the founders' home, the first of 73 programs in their house.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2009</div>
         <div class="timeline-content">
           <h3>Pittsburgh-Burma House</h3>
-          <p>Text in Burmese by Khet Mar, our third writer in residence, and with art by her husband Than Htay Maung.</p>
+          <p>Text in Burmese by Khet Mar, our third writer-in-residence, and with art by her husband Than Htay Maung.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2010</div>
         <div class="timeline-content">
           <h3>Jazz House</h3>
-          <p>Created by Oliver Lake and Than Htay Maung. In addition to text and art, it incorporates sound.</p>
+          <p>Created by Oliver Lake and executed by Than Htay Maung. In addition to text and art, it incorporates sound.</p>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-year">2011</div>
+        <div class="timeline-year">2012</div>
         <div class="timeline-content">
           <h3>Our First Festival</h3>
-          <p>"Exiled Voices of Iran," to prepare Pittsburgh for Iranian author Yaghoub Yadali, our next writer-in-residence.</p>
+          <p>"Exiled Voices of Iran," to prepare Pittsburgh for Iranian author Yaghoub Yadali, our next writer-in-residence. Finale was a concert by The Casualty Process, an Iranian electronica rock band in exile.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2013</div>
         <div class="timeline-content">
           <h3>Free Arts Programming Expands</h3>
-          <p>"Summer on Sampsonia" is launched in a tent on vacant lots.</p>
+          <p>"Summer on Sampsonia" is launched in a tent on vacant lots. It quickly becomes a community space that helps us shape our future.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2014</div>
         <div class="timeline-content">
           <h3>A River of Words</h3>
-          <p>140 neighbors each mount and protect a word on their facades, honoring our protection of writers.</p>
+          <p>140 neighbors each mount and protect a word on their facades, honoring our protection of writers. A project of writer-in-residence Israel Centeno and Venezuelan artists Carolina Arnal and Gisela Romero.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2015</div>
         <div class="timeline-content">
           <h3>Alphabet Reading Garden</h3>
-          <p>City of Asylum transforms the site of a nuisance bar into a park for the community.</p>
+          <p>Landscape architect Joel Le Gall and artist Laura Jean McLaughlin help City of Asylum transform the site of a nuisance bar into a park for the community.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2015</div>
         <div class="timeline-content">
           <h3>International Recognition</h3>
-          <p>City of Asylum Pittsburgh chosen as the U.S. hub for the 90-city International Cities of Refuge Network.</p>
+          <p>City of Asylum Pittsburgh chosen as the U.S. headquarters for the 90-city International Cities of Refuge Network.</p>
         </div>
       </div>
       <div class="timeline-item">
-        <div class="timeline-year">2018</div>
+        <div class="timeline-year">2017</div>
         <div class="timeline-content">
           <h3>Alphabet City Opens</h3>
           <p>City of Asylum opens its permanent home at 40 W. North Avenue — Alphabet City — a cultural hub with a stage, bookstore, and restaurant.</p>
@@ -337,7 +423,7 @@ a:hover{color:var(--red-dark)}
         <div class="timeline-year">2020</div>
         <div class="timeline-content">
           <h3>Responding to COVID</h3>
-          <p>City of Asylum creates "The Show Must Go On(line) Pittsburgh," streaming our programming and hosting 21 other Pittsburgh arts organizations.</p>
+          <p>City of Asylum creates "The Show Must Go On(line) Pittsburgh," streaming our programming and hosting 21 other Pittsburgh arts organizations. We now stream all programs.</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -358,7 +444,7 @@ a:hover{color:var(--red-dark)}
         <div class="timeline-year">2024</div>
         <div class="timeline-content">
           <h3>UNESCO City of Literature</h3>
-          <p>The Mayor selects City of Asylum to lead and organize Pittsburgh's application.</p>
+          <p>Mayor Ed Gainey selects City of Asylum to lead and organize Pittsburgh's application.</p>
         </div>
       </div>
       <div class="timeline-item">
@@ -371,123 +457,496 @@ a:hover{color:var(--red-dark)}
       <div class="timeline-item">
         <div class="timeline-year">2026</div>
         <div class="timeline-content">
-          <h3>Model for the World</h3>
-          <p>Salman Rushdie calls City of Asylum the "model for the world."</p>
+          <h3>Newest Writer Arrives</h3>
+          <p>Arrival of most recent endangered writer, who remains anonymous for their safety.</p>
         </div>
       </div>
     </div>
   </div>
+  <div style="text-align:center;padding:2rem 1rem 1rem;margin-top:-0.5in;position:relative;z-index:2;">
+    <p style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:#000;margin:0;">&ldquo;City of Asylum Pittsburgh is a model&rdquo; &mdash; Salman Rushdie</p>
+  </div>
 </section>
+</div>
 
 <!-- WHAT MAKES US DIFFERENT -->
-<section class="different-section">
+<!-- WHAT MAKES US DIFFERENT -->
+<section class="different-section" id="model">
   <div class="container">
     <span class="section-eyebrow">What Makes Us Different</span>
     <h2 class="section-title">A Model Like No Other</h2>
     <p class="section-sub">What sets City of Asylum apart from every other safe haven in the world.</p>
     <div class="diff-grid">
       <div class="diff-card">
-        <div class="diff-icon">🏠</div>
-        <div>
+        <div class="diff-card-header">
+          <div class="diff-icon">⏳</div>
           <h4>Long-Term, Not Temporary</h4>
-          <p>Most cities of asylum provide emergency relief for a year. We commit to three years or more — helping writers build a permanent new life.</p>
         </div>
+        <p>Other safe haven cities provide emergency relief. We commit to three years or more of protection&mdash;and helping writers build a new life in exile if they cannot return to their country safely.</p>
       </div>
       <div class="diff-card">
-        <div class="diff-icon">🌱</div>
-        <div>
+        <div class="diff-card-header">
+          <div class="diff-icon">🌱</div>
           <h4>Grassroots, Not Government</h4>
-          <p>Unlike other cities in the International Cities of Refuge Network, our exiled writers program is entirely community-supported.</p>
-          <p style="font-size:.8rem;color:var(--muted);font-style:italic;margin-top:.6rem;">Supported by the Ford Foundation, Heinz Endowments, the Pittsburgh Foundation, the NEA, and 11 other foundations.</p>
         </div>
+        <p>Our exiled writer residency program is entirely community-supported, unlike other cities in the International Cities of Refuge Network.</p>
       </div>
       <div class="diff-card">
-        <div class="diff-icon">📖</div>
-        <div>
+        <div class="diff-card-header">
+          <div class="diff-icon">📖</div>
           <h4>Every Writer Creates</h4>
-          <p>Every writer has written at least one full-length work while in residence — and has been able to continue writing after.</p>
         </div>
+        <p>Every writer has written and published while in residence&mdash;most a full-length work&mdash;and re-established their careers despite exile.</p>
       </div>
       <div class="diff-card">
-        <div class="diff-icon">🤝</div>
-        <div>
+        <div class="diff-card-header">
+          <div class="diff-icon">🤝</div>
           <h4>Community Integration</h4>
-          <p>Writers live in the community as neighbors. They also become part of the cultural fabric, through school visits, community readings, and university partnerships.</p>
         </div>
+        <p>Writers live in the community as neighbors. They become part of the cultural fabric, through school visits, community readings, and university partnerships.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STAFF/TEAM -->
-<section class="staff-section">
+<!-- STAFF -->
+<section class="staff-section" id="staff">
   <div class="container">
     <span class="section-eyebrow">Our Team</span>
-    <h2 class="section-title">Staff &amp; Leadership</h2>
-    <p class="section-sub">The people who keep City of Asylum running every day.</p>
+    <h2 class="section-title">Staff</h2>
     <div class="staff-grid">
       <div class="staff-card">
-        <div class="staff-icon">AF</div>
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/04/Emily-1024x1024.png" alt="Emily Cook"></div>
+        <h4>Emily Cook</h4>
+        <p>Institutional Partnerships Manager</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/13-1024x1024.png" alt="Tuhin Das"></div>
+        <h4>Tuhin Das</h4>
+        <p>Accountant</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/06/Untitled-design-1024x1024.png" alt="Hannah East"></div>
+        <h4>Hannah East</h4>
+        <p>Chief Operating Officer</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/11-1024x1024.png" alt="Dylan Falk"></div>
+        <h4>Dylan Falk</h4>
+        <p>Development &amp; Database Manager</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/05/MG_1957-edited-scaled.jpeg" alt="Andr&eacute;s Franco"></div>
         <h4>Andr&eacute;s Franco</h4>
         <p>Executive Director</p>
       </div>
       <div class="staff-card">
-        <div class="staff-icon">HE</div>
-        <h4>Hannah East</h4>
-        <p>Acting Director of Finance</p>
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/6-1024x1024.png" alt="Alexis Jabour"></div>
+        <h4>Alexis Jabour</h4>
+        <p>Community Engagement Manager</p>
       </div>
       <div class="staff-card">
-        <div class="staff-icon">AT</div>
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/04/Kino-1024x1024.png" alt="K. Kino"></div>
+        <h4>K. Kino</h4>
+        <p>Production Coordinator</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/04/Darin-1024x1024.png" alt="Darin Lee"></div>
+        <h4>Darin Lee</h4>
+        <p>Director of Public Programming</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/1-1024x1024.png" alt="Rania Mamoun"></div>
+        <h4>Rania Mamoun</h4>
+        <p>Residency Assistant</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/5-1024x1024.png" alt="Caeley McCagh"></div>
+        <h4>Caeley McCagh</h4>
+        <p>Special Projects Manager</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/04/Jenna-1024x1024.png" alt="Jenna Peng"></div>
+        <h4>Jenna Peng</h4>
+        <p>Program Coordinator</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/3-1024x1024.png" alt="Kate Rempe"></div>
+        <h4>Kate Rempe</h4>
+        <p>Content Marketing Coordinator</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/10-1024x1024.png" alt="Catherine Skolnicki"></div>
+        <h4>Catherine Skolnicki</h4>
+        <p>Residency Manager</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/12-1024x1024.png" alt="Phoenix Tefel"></div>
+        <h4>Phoenix Tefel</h4>
+        <p>Bookstore Manager</p>
+      </div>
+
+    </div>
+
+    <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--text-dark);text-align:center;margin-top:3rem;">Curatorial Advisors</h3>
+    <div class="staff-grid" style="grid-template-columns:repeat(3,1fr);max-width:750px;margin-top:1.5rem;">
+      <div class="staff-card">
+        <div class="staff-icon"><img src="Anderson%20Tepper.png" alt="Anderson Tepper"></div>
         <h4>Anderson Tepper</h4>
-        <p>World Literature Programming Consultant</p>
+        <p>World Literature</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon">?</div>
+        <h4>Name To Come</h4>
+        <p>Poetry</p>
+      </div>
+      <div class="staff-card">
+        <div class="staff-icon"><img src="Oliver%20Lake.jpg" alt="Oliver Lake" style="object-position:top;transform:scale(1.08) translateX(10%);"></div>
+        <h4>Oliver Lake</h4>
+        <p>Emeritus Jazz Curator</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="about-cta">
+<!-- BOARD -->
+<section class="board-section" id="board">
   <div class="container">
-    <h2>Together, We Make a Difference</h2>
-    <p>Your support protects a writer's life and enables them to keep creating. Be part of the world's most important literary safe haven.</p>
-    <a href="donate.html" class="btn-gold">Donate Now &rarr;</a>
-  </div>
-</section>
+    <span class="section-eyebrow">City of Asylum Governance</span>
+    <h2 class="section-title">Board of Directors</h2>
+    <style>
+    .board-name{cursor:pointer;color:var(--text-body);transition:color .2s}
+    .board-name:hover{color:var(--red);text-decoration:underline}
+    .board-bio{display:none;background:var(--cream);border:1px solid var(--border);border-radius:10px;padding:1.25rem 1.5rem;margin:.75rem auto;max-width:650px;text-align:left;font-size:.9rem;color:var(--text-body);line-height:1.7}
+    .board-bio strong{color:var(--text-dark)}
+    </style>
+    <div class="board-group">
+      <div class="board-officers">
+        <p><strong class="board-name" onclick="toggleBio('bio-mckeegan')">Kevin McKeegan</strong>, Chair</p>
+        <div class="board-bio" id="bio-mckeegan"><strong>Kevin F. McKeegan</strong> is a partner at the Pittsburgh law firm of Meyer, Unkovic &amp; Scott LLP, where he served as Managing Partner from 2006 to 2011. He was formerly the chair of Allegheny County&rsquo;s Board of Property Assessment Appeals and Review. He currently serves as vice-chair of the Allegheny County Community College Educational Foundation Board. He and his wife Sybil are the parents of three adult children and grandparents to four granddaughters.</div>
+        <p><strong class="board-name" onclick="toggleBio('bio-lackner')">Anne Billiet Lackner</strong>, Vice-Chair</p>
+        <div class="board-bio" id="bio-lackner"><strong>Anne Billiet Lackner</strong> is a native of Belgium and former lawyer. She is the Honorary Consul of Belgium and co-founder of The Lackner Group, Inc., a software company for trust and estate administration. She is a member of the external advisory board at the University of Pittsburgh&rsquo;s EU Center of Excellence/European Studies Center.</div>
+        <p><strong class="board-name" onclick="toggleBio('bio-talerico')">Barbara Talerico</strong>, Secretary</p>
+        <div class="board-bio" id="bio-talerico"><strong>Barbara Talerico</strong> retired from BNY Mellon as Information Technology Project Manager. She is a former Certified Financial Planner with 16 years of volunteer service including Past President of Allegheny City Central Association and Mexican War Streets Society.</div>
+        <p><strong class="board-name" onclick="toggleBio('bio-ohanlon')">Charles F. O&rsquo;Hanlon III</strong>, Treasurer</p>
+        <div class="board-bio" id="bio-ohanlon"><strong>Charles F. O&rsquo;Hanlon III</strong> is an independent consultant to the biotechnology and pharmaceutical industry. He is the former President and CEO of Celsense, Inc. and previously spent 29 years in commercial banking and financial services.</div>
+      </div>
+      <div class="board-members">
+        <span class="board-name" onclick="toggleBio('bio-bednarek')">Heather Bednarek*</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-dunham')">Craig Dunham</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-finegold')">David Finegold</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-hinniker')">Alexandra Hinniker</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-moorer')">Gwendolyn Moorer*</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-peris')">Irina Peris</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-phillips')">Caryl Phillips</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-reese')">Henry Reese* (Co-Founder)</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-samuels')">Diane Samuels* (Co-Founder)</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-sarbaugh')">Janet Sarbaugh</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-sharma')">Akhil Sharma</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-simmonds')">Lea Simonds</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-young')">Damon Young*</span> <span>&middot;</span>
+        <span>Sandra Kniess* (Emeritus)</span>
+      </div>
+      <p style="text-align:center;font-size:.85rem;color:var(--muted);margin-top:1rem;font-style:italic;">* Northside Resident</p>
+      <div id="bio-bednarek" class="board-bio"><strong>Heather Bednarek</strong> is senior counsel at Highmark Inc. and lead attorney for Affordable Care Act implementation. She is a member of the Carnegie Museum of Natural History Advisory Board and past chair of the Allegheny County Bar Association Health Law Section.</div>
+      <div id="bio-dunham" class="board-bio"><strong>Craig Dunham</strong> has three decades managing commercial, residential, hospitality, sports, and institutional projects. He holds a Master&rsquo;s Degree in Architecture from Southern California Institute of Architecture and is the founder of Dunham reGroup LLC and former Pittsburgh Penguins SVP.</div>
+      <div id="bio-finegold" class="board-bio"><strong>David Finegold</strong> is a program officer for Golub Capital&rsquo;s impact philanthropy and Chief Sustainability Officer for Torrgreen. He is the founding Executive Director of National College Transfer Network and former President of Chatham University.</div>
+      <div id="bio-hinniker" class="board-bio"><strong>Alexandra Hinniker</strong> is Director of Sustainability Initiative at Carnegie Mellon University and on the steering committee of the university&rsquo;s and the U.S. steering committee of Artists and Scholars at Risk. Previously, she oversaw New York City&rsquo;s Global Goals program at the Mayor&rsquo;s Office for International Affairs. She served as Representative to the United Nations, focusing on the protection of civilians in Syria, Iraq, and South Sudan.</div>
+      <div id="bio-moorer" class="board-bio"><strong>Gwendolyn Moorer</strong> is a Northside resident, Financial Systems and Project Manager at City of Pittsburgh, owner of a Northside Rita&rsquo;s Water Ices franchise, and Development Board member of Central Northside Neighborhood Council.</div>
+      <div id="bio-peris" class="board-bio"><strong>Irina Peris</strong> is a bilingual immigrant from the former Soviet Union, volunteer Russian-language teacher at Carnegie Library of Pittsburgh, and board member of International Poetry Forum.</div>
+      <div id="bio-phillips" class="board-bio"><strong>Caryl Phillips</strong> is a St. Kittian-born English novelist, playwright, and screenwriter. His awards include the Martin Luther King Memorial Prize, Guggenheim Fellowship, and James Tait Black Memorial Prize. He has been Professor of English at Yale University for over 20 years and is a member of the American Academy of Arts and Sciences.</div>
+      <div id="bio-reese" class="board-bio"><strong>Henry Reese</strong> is an entrepreneur and co-founder of City of Asylum. He is former principal in Reese Brothers and Communications &amp; Commerce, former Treasurer of Cave Canem, and Board member of International Cities of Refuge Network.</div>
+      <div id="bio-samuels" class="board-bio"><strong>Diane Samuels</strong> is a visual artist with studio and public art practices. Her permanent site-specific artworks include <em>Luminous Manuscript</em>, <em>Lines of Sight</em>, and <em>The Alphabet Garden</em>. She was formerly on the boards of Carnegie Museum of Art, Mattress Factory Museum, and the National Holocaust Museum at Seton Hill University. She also created <em>Pandemic: Albert Camus, Frantz Fanon, and Rania Mamoun</em>, a monumental artwork opposite Alphabet City on the Malta Building.</div>
+      <div id="bio-sarbaugh" class="board-bio"><strong>Janet Sarbaugh</strong> is retired Vice President for Creativity Programs at The Heinz Endowments. Her board service includes Chorus America, Americans for the Arts, and Grantmakers in the Arts.</div>
+      <div id="bio-sharma" class="board-bio"><strong>Akhil Sharma</strong> is the author of <em>A Life of Adventure and Delight</em>, <em>An Obedient Father</em>, and <em>Family Life</em>. He is a winner of the IMPAC International Dublin Literary Award, The Folio Prize, and PEN/Hemingway Prize. He is the Adele Schiff Professor at Duke University.</div>
+      <div id="bio-simmonds" class="board-bio"><strong>Juliet Lea Hillman Simonds</strong> is Chair of The Hillman Family Foundations, Trustee of Carnegie Museums of Pittsburgh and Carnegie Mellon University, and board member of National Poetry Series and Pittsburgh Chamber Music Society.</div>
+      <div id="bio-young" class="board-bio"><strong>Damon Young</strong> is a Pittsburgh author and Northside resident, winner of the Thurber Prize for American Humor, founder of VerySmartBrothas blog, contributing columnist for the Washington Post and New York Times, and inaugural writer-in-residence at the University of Pittsburgh.</div>
+      <script>
+      function toggleBio(id) {
+        var el = document.getElementById(id);
+        document.querySelectorAll('.board-bio').forEach(function(b) {
+          if (b.id !== id) b.style.display = 'none';
+        });
+        el.style.display = el.style.display === 'block' ? 'none' : 'block';
+      }
+      function closeAllPopups() {
+        document.querySelectorAll('.board-bio').forEach(function(b) { b.style.display = 'none'; });
+        var pp = document.getElementById('privacy-policy');
+        if (pp) pp.style.display = 'none';
+      }
+      // Close popups when clicking any nav link
+      document.querySelectorAll('.nav-links a, .nav-dropdown a').forEach(function(a) {
+        a.addEventListener('click', closeAllPopups);
+      });
+      // Close popups when scrolling away
+      window.addEventListener('scroll', closeAllPopups);
+      </script>
 
-<!-- SUPPORTED BY -->
-<section style="padding:5rem 0;background:var(--cream);text-align:center;">
-  <div class="container">
-    <span class="section-eyebrow">Our Supporters</span>
-    <h2 class="section-title">Foundations That Make This Work Possible</h2>
-    <p class="section-subtitle">City of Asylum is funded entirely by foundations and individuals — never governments.</p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1rem;margin-top:2.5rem;max-width:860px;margin-left:auto;margin-right:auto;">
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Ford Foundation</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Heinz Endowments</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">The Pittsburgh Foundation</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">National Endowment for the Arts</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Pennsylvania Council on the Arts</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">RAD</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Benter Foundation</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Posner Foundation</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">FISA Foundation</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Opportunity Fund</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Hawthornden Foundation</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Mid-Atlantic Arts</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Roy A. Hunt Foundation</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Buncher Foundation</span><span style="color:var(--muted);">·</span>
-      <span style="font-family:var(--serif);color:var(--gold);font-size:1rem;">Irene Chernandez Foundation</span>
+      <h3>Founding North American Board</h3>
+      <div class="board-members">
+        <span>Russell Banks</span> <span>&middot;</span>
+        <span>Dionne Brand</span> <span>&middot;</span>
+        <span>Carolyn Forch&eacute;</span> <span>&middot;</span>
+        <span>Michael Ondaatje</span> <span>&middot;</span>
+        <span>Caryl Phillips</span> <span>&middot;</span>
+        <span>Salman Rushdie</span> <span>&middot;</span>
+        <span>Wole Soyinka</span> <span>&middot;</span>
+        <span>Derek Walcott</span> <span>&middot;</span>
+        <span>Richard Wiley</span>
+      </div>
+
+      <h3>Advisory Board</h3>
+      <div class="board-members">
+        <span>Pheeroan akLaff</span> <span>&middot;</span>
+        <span>Mia Alvar</span> <span>&middot;</span>
+        <span>Jill Bialosky</span> <span>&middot;</span>
+        <span>Angie Cruz</span> <span>&middot;</span>
+        <span>Amy Finnerty</span> <span>&middot;</span>
+        <span>Michael Formanek</span> <span>&middot;</span>
+        <span>John Freeman</span> <span>&middot;</span>
+        <span>Tomas Fujiwara</span> <span>&middot;</span>
+        <span>Mary Halvorson</span> <span>&middot;</span>
+        <span>Oliver Lake</span> <span>&middot;</span>
+        <span>Claire Messud</span> <span>&middot;</span>
+        <span>Viet Thanh Nguyen</span> <span>&middot;</span>
+        <span>Marc Nieson</span> <span>&middot;</span>
+        <span>George Packer</span> <span>&middot;</span>
+        <span>Richard Powers</span> <span>&middot;</span>
+        <span>Yasmine Seale</span> <span>&middot;</span>
+        <span>Laura Secor</span> <span>&middot;</span>
+        <span>Kamila Shamsie</span> <span>&middot;</span>
+        <span>Anderson Tepper</span> <span>&middot;</span>
+        <span>James Wood</span>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- JOBS -->
+<section class="jobs-section" id="jobs">
+  <div class="container">
+    <span class="section-eyebrow">Careers</span>
+    <h2 class="section-title">Jobs</h2>
+    <div class="jobs-inner">
+      <p>Job openings are posted on this page, with links to full job descriptions and application instructions.</p>
+      <p style="font-weight:600;color:var(--text-dark);">Currently there are no openings.</p>
+      <p style="font-size:.95rem;color:var(--muted);font-style:italic;">We are committed to the value of diversity and the importance of writers and artists in building our organization. Applications and inquiries will be treated confidentially.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="subscribe-section" id="subscribe">
+  <div class="container">
+    <h2>A World of Free Programs in Your Inbox</h2>
+    <p>Stay up to date on upcoming free programs and the newest books. Select your subscription preference. Choose the topics that interest you. You may select more than one.</p>
+    <div class="subscribe-options" id="sub-options">
+      <div class="subscribe-option active">All</div>
+      <div class="subscribe-option">Literary Programs</div>
+      <div class="subscribe-option">Concerts</div>
+      <div class="subscribe-option">Bookstore</div>
+    </div>
+    <script>
+    document.getElementById('sub-options').addEventListener('click', function(e) {
+      if (e.target.classList.contains('subscribe-option')) {
+        e.target.classList.toggle('active');
+      }
+    });
+    </script>
+    <form class="subscribe-form" onsubmit="event.preventDefault()">
+      <input type="email" placeholder="Enter your email">
+      <button type="submit">Sign Up</button>
+    </form>
+    <p style="font-size:.85rem;color:rgba(255,255,255,.55);max-width:500px;margin:1.5rem auto 0;line-height:1.6;">For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="about.html#" onclick="document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';return false;" style="color:var(--gold);text-decoration:underline;cursor:pointer;">Privacy Policy</a>.</p>
+  </div>
+</section>
+
+<!-- OTHER INQUIRIES -->
+<section style="padding:5rem 0;background:var(--warm-white);" id="inquiries">
+  <div class="container">
+    <span class="section-eyebrow">Contact</span>
+    <h2 class="section-title">Other Inquiries</h2>
+    <div style="max-width:600px;margin:2rem auto 0;font-size:1.05rem;line-height:2;color:var(--text-body);">
+      <p><strong>General Inquiries:</strong> <a href="mailto:contact@cityofasylumpittsburgh.org">contact@cityofasylumpittsburgh.org</a></p>
+      <p><strong>Performer Inquiries:</strong> <a href="mailto:dlee@cityofasylum.org">dlee@cityofasylum.org</a></p>
+      <p><strong>Volunteer:</strong> <a href="mailto:ajabour@cityofasylumpittsburgh.org">ajabour@cityofasylumpittsburgh.org</a></p>
+      <p><strong>Free Tour:</strong> <em>(contact to come)</em></p>
+      <p><strong>Book a Writer for Your Organization:</strong> <em>(contact to come)</em></p>
+      <p><strong>Residency Inquiries:</strong> <a href="https://www.icorn.org/apply" target="_blank">icorn.org/apply</a></p>
+      <p><strong>Interest in Starting a City of Asylum:</strong> <em>(contact to come)</em></p>
+      <p><strong>Foundations Contact:</strong> <a href="mailto:afranco@cityofasylum.org">afranco@cityofasylum.org</a></p>
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
+        <p style="font-weight:700;color:var(--text-dark);">City of Asylum</p>
+        <p>40 W. North Avenue<br>Pittsburgh, PA 15212<br>Phone: 412-435-1110</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIRECTIONS -->
+<section style="padding:5rem 0;background:var(--cream);" id="directions">
+  <div class="container">
+    <span class="section-eyebrow">Visit</span>
+    <h2 class="section-title">Directions to Alphabet City</h2>
+    <div style="max-width:700px;margin:2rem auto 0;font-size:1.05rem;line-height:1.8;color:var(--text-body);">
+      <p style="font-weight:700;color:var(--text-dark);font-size:1.15rem;">40 W. North Avenue, Pittsburgh, PA 15212</p>
+      <p style="color:var(--muted);margin-bottom:2rem;">(next to the Garden Theater)<br>For hours, see <a href='bookstore-restaurant.html'>Bookstore and Restaurant</a></p>
+
+      <h3 style="font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text-dark);margin-bottom:.75rem;">Car</h3>
+      <p>In addition to on-street parking, there is parking at the Federal North Garage (1307 Federal St.)</p>
+
+      <h3 style="font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text-dark);margin-top:2rem;margin-bottom:.75rem;">Bike</h3>
+      <p>Healthy Ride Pittsburgh station at the corner of Federal &amp; North Avenue, approximately one block away.</p>
+      <p style="margin-top:.75rem;"><a href="https://bikepgh.org/resources/maps-guides-more/map-routes/" target="_blank" style="color:var(--red);">Bike route map &rarr;</a></p>
+
+      <h3 style="font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text-dark);margin-top:2rem;margin-bottom:.75rem;">Bus</h3>
+      <p style="margin-bottom:1.5rem;"><a href="https://www.rideprt.org/schedule-finder/" target="_blank" style="color:var(--red);">PRT Schedule Finder &rarr;</a></p>
+      <div style="margin-bottom:1.5rem;">
+        <p><strong>From the East End:</strong><br>From various points in East End, catch 54C or 54D to North Ave at Federal St, walk 1 min to 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+        <p style="margin-top:.5rem;">Or&hellip; P1 EAST BUSWAY to Downtown: then proceed to get on 16 BRIGHTON TO AVALON LOOP, Bus Stop: Liberty Ave at 6th St. Get off at the stop W. North Ave at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <p><strong>From Downtown:</strong><br>8 PERRYSVILLE TO WEST VIEW: Bus stop: 7th St at Penn Ave, Get off at North Ave. at Federal St., Walk to 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+        <p style="margin-top:.5rem;">Or&hellip; 16 BRIGHTON TO AVALON LOOP: Bus Stop: Liberty Ave at 6th St, Get off at the stop W. North Ave at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+        <p style="margin-top:.5rem;">Or&hellip; 13 BELLEVUE TO WEST VIEW: Bus Stop: Liberty Ave at 6th St, Get off at the stop W. North Ave at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <p><strong>From North Hills:</strong><br>12 MCKNIGHT ROAD: Get off downtown at the Bus Stop: Liberty Ave at 7th St, then proceed to get on 16 BRIGHTON TO AVALON LOOP, Bus Stop: Liberty Ave at 6th St. Get off at the stop W. North Ave at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+      </div>
+
+      <div style="margin-bottom:1.5rem;">
+        <p><strong>From the Southside:</strong><br>Routes 54C or 54D to North Ave at Federal St.</p>
+        <p style="margin-top:.5rem;">Or&hellip; 48 ARLINGTON: Get off downtown at Sixth Ave at Smithfield St, then proceed to get on any northside bus such as: 16 BRIGHTON TO AVALON LOOP: Bus Stop: Liberty Ave at 6th St, Get off at W. North Ave at Reddour St. directly in front of Alphabet City.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class='nav-logo' href='index.html' style='margin-bottom:.5rem'>
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:70px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+          <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
+        </a>
+        <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href='about.html'>About Us</a>
+        <a href='writers.html'>Writers &amp; Residencies</a>
+        <a href='free-arts.html'>Free Arts &amp; Culture</a>
+        <a href='media-archive.html'>Media &amp; Archive</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <a href='free-arts.html'>Alphabet City</a>
+        <a href='bookstore-restaurant.html'>Bookstore</a>
+        <a href='bookstore-restaurant.html'>Restaurant</a>
+        <a href='about.html#directions'>Directions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href='donate.html'>Donate</a>
+        <a href='about.html#inquiries'>Volunteer</a>
+        <a href='about.html#inquiries'>Free Tour</a>
+        <a href='about.html#inquiries'>Book a Writer</a>
+        <a href='about.html#inquiries'>Contact Us</a>
+      </div>
+    </div>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
-      <a href="index.html" style="color:var(--gold);">Back to Home</a>
+      <a href='index.html' style='color:var(--gold);'>Return to Home</a>
     </div>
   </div>
 </footer>
 
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:1000;align-items:flex-start;justify-content:center;padding:3rem 1rem;overflow-y:auto;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow='';}">
+  <div style="max-width:700px;width:100%;text-align:left;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem 2.5rem;position:relative;">
+    <button type="button" aria-label="Close" onclick="document.getElementById('privacy-modal').style.display='none';document.body.style.overflow='';" style="position:absolute;top:.5rem;right:.75rem;background:transparent;border:0;color:rgba(255,255,255,.7);font-size:1.75rem;line-height:1;cursor:pointer;padding:.25rem .5rem;">&times;</button>
+    <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:0 0 1.5rem;">Privacy Policy for City of Asylum Pittsburgh</h3>
+    <p style="font-size:.85rem;color:var(--red);font-style:italic;margin-bottom:1.5rem;">(This is stubbed in; current policy requested)</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">1. Information We Collect</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We only collect information that you voluntarily provide to us. For our email subscriber list, this typically includes your name and email address.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">2. How We Use Your Information</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We use your information strictly to send you information about programs and organization, for occasional invitations to support our mission through donations, and to respond to questions. For City of Asylum Bookstore privacy policy: <a href="https://cityofasylumbooks.org/privacy-policy" target="_blank" style="color:var(--gold);">cityofasylumbooks.org/privacy-policy</a></p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">3. Sharing Your Information</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We value your trust. We do not sell, rent, or trade our subscriber list with third parties. We only share information with trusted service providers like our email platforms, who help us send our communications and are legally bound to keep your data secure.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">4. Opting Out</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">Most emails include an &ldquo;Unsubscribe&rdquo; link at the bottom. You can also contact us at <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a> to ask us to update or delete your information from our records.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">5. Security</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We take reasonable steps to protect your data from unauthorized access. However, no method of online transmission is 100% secure, and providing your information is at your own risk.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">6. Contact Us</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:0;">If you have questions about this policy, please reach out to us:<br><br>
+    <strong style="color:var(--white);">City of Asylum</strong><br>
+    40 W. North Avenue<br>
+    Pittsburgh, PA 15212<br>
+    Phone: 412-435-1110<br>
+    Email: <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a></p>
+  </div>
+</div>
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('privacy-modal');if(m&&m.style.display==='flex'){m.style.display='none';document.body.style.overflow='';}}});</script>
+
+<script>
+document.querySelectorAll('.nav-dropdown a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    this.blur();
+    this.closest('.nav-item').blur();
+  });
+});
+</script>
+
+<!-- Photo lightbox -->
+<div id="photo-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
+  <button type="button" aria-label="Close" id="photo-lightbox-close" style="position:absolute;top:20px;right:24px;width:44px;height:44px;border:none;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;">&times;</button>
+  <img id="photo-lightbox-img" src="about.html" alt="" style="max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow:0 12px 60px rgba(0,0,0,.5);cursor:default;">
+</div>
+<script>
+(function(){
+  var box = document.getElementById('photo-lightbox');
+  var img = document.getElementById('photo-lightbox-img');
+  var btn = document.getElementById('photo-lightbox-close');
+  function openLB(src){ img.src = src; box.style.display = 'flex'; }
+  function closeLB(){ box.style.display = 'none'; img.src = ''; }
+  box.addEventListener('click', function(e){ if (e.target === box) closeLB(); });
+  btn.addEventListener('click', closeLB);
+  img.addEventListener('click', function(e){ e.stopPropagation(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.style.display === 'flex') closeLB(); });
+
+  function makeIcon(size){
+    var iconSize = Math.max(10, Math.round(size * 0.6));
+    var span = document.createElement('span');
+    span.setAttribute('aria-hidden','true');
+    span.style.cssText = 'position:absolute;bottom:4px;right:4px;width:'+size+'px;height:'+size+'px;background:rgba(0,0,0,.6);border-radius:4px;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5;';
+    span.innerHTML = '<svg width="'+iconSize+'" height="'+iconSize+'" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>';
+    return span;
+  }
+
+  var skipSrcSubstrings = ['Show%20logo', 'show%20abby', 'Gainey', 'Torrea%20silhouette'];
+  var styleEl = document.createElement('style');
+  styleEl.textContent = '.photo-strip img.zoomable-strip{cursor:zoom-in !important;pointer-events:auto !important;}';
+  document.head.appendChild(styleEl);
+  document.querySelectorAll('.photo-strip img').forEach(function(im){
+    var src = im.getAttribute('src') || '';
+    if (skipSrcSubstrings.some(function(s){ return src.indexOf(s) !== -1; })) return;
+    im.classList.add('zoomable-strip');
+  });
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if (t && t.classList && t.classList.contains('zoomable-strip')) {
+      e.preventDefault();
+      e.stopPropagation();
+      openLB(t.src);
+    }
+  }, true);
+})();
+</script>
+<script src="mobile.js?v=3" defer></script>
 </body>
 </html>

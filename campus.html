@@ -25,33 +25,34 @@ a:hover{color:var(--red-dark)}
 
 /* NAV */
 .site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:72px}
+.nav-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:98px}
 .nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
-.nav-logo img{height:48px;width:auto}
-.nav-logo span{font-family:var(--serif);font-weight:700;font-size:1.15rem}
-.nav-links{display:flex;align-items:center;gap:.25rem}
-.nav-links a{color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .85rem;border-radius:6px;transition:all .2s}
+.nav-logo img{height:70px;width:auto}
+.nav-logo span{font-family:var(--sans);font-weight:700;font-size:1.15rem;line-height:1.1;}
+.nav-links{display:flex;align-items:center;gap:.25rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap;color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .35rem;border-radius:6px;transition:all .2s}
 .nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
 .nav-links a.active{color:var(--gold)}
 .nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
-.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+.nav-item:last-child .nav-dropdown{left:auto;right:0}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
 
 /* HERO */
 .page-hero{position:relative;padding:7rem 0 6rem;overflow:hidden;background:var(--deep)}
 .page-hero::after{content:'';position:absolute;right:-10%;bottom:-30%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(201,162,39,.06) 0%,transparent 70%);pointer-events:none}
 .page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.page-hero h1{font-family:var(--serif);font-size:3.2rem;font-weight:900;color:var(--white);margin-bottom:1.25rem;max-width:700px}
+.page-hero h1{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--white);margin-bottom:1.25rem;max-width:800px}
 .page-hero p{color:rgba(255,255,255,.6);font-size:1.2rem;max-width:800px;line-height:1.8;font-family:var(--serif);font-style:italic}
 
 /* SECTION HELPERS */
 .section-eyebrow{display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 .section-title{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:1rem}
-.section-subtitle{text-align:center;color:var(--muted);font-size:1.05rem;max-width:650px;margin:0 auto 3.5rem}
+.section-subtitle{text-align:center;color:var(--muted);font-size:1.05rem;max-width:900px;margin:0 auto 3.5rem}
 .btn-gold{background:var(--gold);color:var(--deep);font-weight:700;padding:1rem 2.5rem;border-radius:8px;font-size:1.1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s;border:none;cursor:pointer}
 .btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--deep)}
 
 /* TIMELINE */
-.timeline-section{padding:6rem 0;background:var(--cream)}
+.timeline-section{padding:6rem 0;background:linear-gradient(rgba(255,255,255,.40),rgba(255,255,255,.40)), url('03Alphas30.jpg') top center/825px auto repeat;}
 .timeline{max-width:800px;margin:3rem auto 0;position:relative}
 .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--gold),var(--red));transform:translateX(-50%);border-radius:3px}
 .timeline-item{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3.5rem;position:relative}
@@ -64,7 +65,8 @@ a:hover{color:var(--red-dark)}
 }
 .timeline-year{
   font-family:var(--serif);font-size:2rem;font-weight:900;
-  color:var(--gold);text-align:right;padding-right:2.5rem;padding-top:.1rem;
+  color:var(--gold);text-align:right;padding-right:.5rem;padding-top:.1rem;
+  position:relative;z-index:3;
 }
 .timeline-content{padding-left:2.5rem}
 .timeline-content h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
@@ -103,6 +105,16 @@ a:hover{color:var(--red-dark)}
 .impact-item .num{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--gold)}
 .impact-item .label{font-size:.85rem;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.08em;margin-top:.25rem}
 
+/* ===== Northside campus interactive map (live Google Map with photo callouts and pins) ===== */
+.map-wrap{position:relative;max-width:1100px;margin:10rem auto 3rem;background:#fff;border-radius:8px;box-shadow:0 4px 24px rgba(0,0,0,.15)}
+#map{width:100%;aspect-ratio:11/6;border-radius:8px}
+.map-wrap .lines{position:absolute;inset:0;pointer-events:none;overflow:visible}
+.map-wrap .callout{position:absolute;width:90px;text-align:center;transform:translate(-50%,-50%);z-index:2;text-decoration:none}
+.map-wrap .callout img{width:100%;height:auto;border-radius:4px;border:2px solid #fff;box-shadow:0 2px 10px rgba(0,0,0,.3);display:block}
+.map-wrap .callout .label{font-size:.7rem;font-weight:700;color:#222;background:#fff;padding:2px 5px;border-radius:3px;margin-top:3px;box-shadow:0 1px 3px rgba(0,0,0,.2);display:inline-block;text-transform:none;letter-spacing:0}
+.map-wrap .pin{position:absolute;width:10px;height:10px;background:#c23b2e;border:2px solid #fff;border-radius:50%;transform:translate(-50%,-50%);box-shadow:0 0 0 1px rgba(0,0,0,.3);z-index:1}
+.map-wrap .map-label{position:absolute;font-family:system-ui,sans-serif;font-size:.7rem;font-weight:700;color:#222;transform:translate(-50%,-50%);z-index:2;pointer-events:none;white-space:nowrap}
+
 /* CTA */
 .campus-cta{padding:6rem 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);text-align:center;color:var(--white)}
 .campus-cta h2{font-family:var(--serif);font-size:2.4rem;font-weight:700;margin-bottom:1rem}
@@ -130,107 +142,281 @@ a:hover{color:var(--red-dark)}
   .footer-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
 }
+.photo-strip img { cursor: zoom-in !important; pointer-events: auto !important; }
 </style>
+<link rel="stylesheet" href="mobile.css?v=3">
 </head>
 <body>
 
 <!-- NAV -->
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum">
+    <a class='nav-logo' href='index.html'>
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#0f1419;">
       <span>City of Asylum</span>
     </a>
-    <div class="nav-links">
+            <div class="nav-links">
       <div class="nav-item">
-        <a href="about.html">About Us <span class="nav-chevron">&#9662;</span></a>
+        <a href='about.html' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="about.html">Our Mission</a>
-          <a href="about.html">Our Founders</a>
-          <a href="about.html">Our History</a>
+          <a href='about.html'>Our Mission</a>
+          <a href='about.html#history'>History</a>
+          <a href='about.html#model'>Our Model</a>
+          <a href='about.html#staff'>Staff</a>
+          <a href='about.html#board'>Board of Directors</a>
+          <a href='about.html#jobs'>Jobs</a>
+          <a href='about.html#subscribe'>Subscribe</a>
+          <a href='about.html#inquiries'>Other Inquiries</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="writers.html">Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <a href='writers.html' style='line-height:1;display:inline-block;'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="writers.html">Residency Program</a>
-          <a href="writers.html">Current Residents</a>
-          <a href="writers.html">Ukrainian Fellowship</a>
-          <a href="writers.html">Alumni</a>
+          <a href='writers.html#residency-program'>Residency Program</a>
+          <a href='writers.html#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="events.html">Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
+        <a href='free-arts.html' style='line-height:1;display:inline-block;'>Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="events.html">Upcoming Programs</a>
-          <a href="events.html">Literary Readings</a>
-          <a href="events.html">Thursday Night Jazz</a>
-          <a href="events.html">Annual Festivals</a>
+          <a href='free-arts.html#what-we-host'>What We Host</a>
+          <a href='free-arts.html#why-free'>Why Our Programs Are Free</a>
+          <a href='events.html'>Upcoming Programs</a>
+          <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">Full Calendar</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="campus.html" class="active">Campus <span class="nav-chevron">&#9662;</span></a>
+        <a class='active' href='campus.html' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="campus.html">Alphabet City</a>
-          <a href="campus.html">House Publications</a>
-          <a href="campus.html">Reading Garden</a>
-          <a href="campus.html">Audio Tour</a>
+          <a href='campus.html'>Community as Campus</a>
+          <a href='campus.html#how-it-grew'>How It Grew</a>
+          <a href='campus.html#whats-here'>What&#8217;s Here Now</a>
+          <a href='campus.html#walking-tour'>Walking Tour App</a>
+          <a href='campus.html#becoming'>Starting a New City</a>
         </div>
       </div>
-      <a href="media-archive.html">Media &amp; Archive</a>
-      <a href="donate.html" class="nav-donate">Donate</a>
+      <div class="nav-item">
+        <a href='media-archive.html' style='line-height:1;display:inline-block;'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='media-archive.html#press'>Selected Press</a>
+          <a href='media-archive.html#video'>Selected Video &amp; Photos</a>
+          <a href='media-archive.html#publications'>Selected Books</a>
+          <a href='media-archive.html#archive'>Media Archive</a>
+        </div>
+      </div>
+
+      <a href='bookstore-restaurant.html' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <div class="nav-item">
+        <a class='nav-donate' href='donate.html'>Donate</a>
+        <div class="nav-dropdown">
+          <a href='donate.html#other-ways'>Other Ways to Help</a>
+          <a href='donate.html#foundations'>Foundations</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
 
 <!-- HERO -->
-<section class="page-hero">
-  <div class="container">
-    <span class="eyebrow">The Campus</span>
-    <h1>Seven blocks transformed</h1>
-    <p>It started with one poet painting his words on a house. Now it's a neighborhood.</p>
+<section class="page-hero" style="margin-top:-0.5in;">
+  <img src="PHotos%20History/HX%20scaffold.JPG" alt="" style="position:absolute;right:0;top:0;bottom:0;height:100%;width:auto;object-fit:cover;filter:brightness(.575) saturate(.8);z-index:0;">
+  <div style="position:absolute;inset:0;background:linear-gradient(90deg, rgba(15,20,25,.95) 0%, rgba(15,20,25,.85) 50%, rgba(15,20,25,.55) 100%);z-index:1;"></div>
+  <div class="container" style="position:relative;z-index:2;">
+    <span class="eyebrow">The Community Is Our Campus</span>
+    <h1>A Community Connected<br>Through Freedom of Creative Expression</h1>
+    <p>It started with one exiled poet painting his poems on a house.</p>
+    <div class="impact-grid" style="max-width:900px;margin:2.5rem auto 0;padding-top:2rem;border-top:1px solid rgba(255,255,255,.12);">
+      <div class="impact-item">
+        <div class="num" style="font-size:2.2rem;">$13M</div>
+        <div class="label">Invested in the Northside</div>
+      </div>
+      <div class="impact-item">
+        <div class="num" style="font-size:2.2rem;">$30M</div>
+        <div class="label">Adjacent investment catalyzed</div>
+      </div>
+      <div class="impact-item">
+        <div class="num" style="font-size:2.2rem;">25,000+</div>
+        <div class="label">Annual visitors</div>
+      </div>
+      <div class="impact-item" style="display:flex;align-items:center;justify-content:center;">
+        <img src="coa-logo.jpg" alt="City of Asylum logo" style="max-width:121px;max-height:121px;border-radius:6px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- SCROLL-DRIVEN NARRATIVE TIMELINE -->
-<section class="timeline-section">
+<section class="timeline-section" id="how-it-grew">
   <div class="container">
     <span class="section-eyebrow">How It Grew</span>
     <h2 class="section-title">From One House to a Neighborhood</h2>
-    <div class="timeline">
+    <div class="timeline" style="position:relative;">
+      <!-- Experimental photo strip: sized as if there will be 15 photos
+           (each ~1/15 of the timeline height with 1/16in gaps).
+           Currently only 3 photos populated; remaining 12 slots are empty
+           so the existing photos appear at the top of the strip and we can
+           judge proportions before adding more. -->
+      <div class="photo-strip" style="position:absolute;top:0;bottom:0;display:flex;flex-direction:column;overflow:visible;z-index:10;">
+        <img class="hp" src="HP%20408.jpg" alt="2004 — HP 408" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="parade" src="20005%20Parade.jpg" alt="2005 — Parade" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;transform-origin:right center;transform:scale(0.85);">
+        <img class="hp" src="402ANGLE.jpg" alt="2006 — 402 Winged House (angle)" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="wig" src="WIG.jpg" alt="2007 — Writers in the Gardens" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;transform-origin:right center;transform:scale(0.85);">
+        <img class="hp" src="HP%20324.jpg" alt="2009 — HP 324 Pittsburgh-Burma House" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="hp" src="HP%20320.jpg" alt="2010 — HP 320 Jazz House" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="event" src="I-Dont-Know.jpg" alt="2011 — I Don't Know What I'd Do, If I Couldn't Speak My Mind" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;transform-origin:right center;transform:scale(0.85);">
+        <img class="event" src="PHotos%20History/COA%20PG.jpg" alt="2013 — Creative Placemaking Awards (NEA)" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="event" src="Summer%20on%20Samp.jpg" alt="2013 — Summer on Sampsonia" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;transform-origin:right center;transform:scale(0.85);">
+        <img class="event" src="NEA4.png" alt="2014 — River of Words" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;transform-origin:right center;transform:scale(0.85);">
+        <img class="event" src="2%20phone%20DigitalSanc.jpg" alt="2014 — Digital Sanctuaries" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+        <img class="event" src="reading-garden-web.jpg" alt="2015 — Alphabet Reading Garden" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;transform-origin:right center;transform:scale(0.85);">
+        <img class="event" src="Masonic%20Opening.jpg" alt="2017 — Masonic Opening" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;transform-origin:right center;transform:scale(0.85);">
+        <img class="hp" src="map/308comma%20house.jpg" alt="2021 — HP 308 Comma House" style="display:block;height:calc((100% - 14*0.0625in)/15);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+      </div>
+      <script>
+      (function alignPhotoStrip(){
+        function setup(){
+          var section = document.getElementById('how-it-grew');
+          if(!section) return;
+          var title = section.querySelector('.section-title');
+          var timeline = section.querySelector('.timeline');
+          var strip = section.querySelector('.photo-strip');
+          if(!title || !timeline || !strip || !title.firstChild) return;
+          var firstHP = strip.querySelector('img.hp');
+          if(!firstHP) return;
+          function apply(){
+            // Position the strip so its right edge sits 0.5in to the
+            // left of the year text (e.g., "2004" digits) on the first row.
+            var firstYear = section.querySelector('.timeline-year');
+            if (!firstYear) return;
+            var range = document.createRange();
+            range.selectNodeContents(firstYear);
+            var yearRect = range.getBoundingClientRect();
+            var tlRect = timeline.getBoundingClientRect();
+            var halfInchPx = 24; // 0.25 inch at 96 dpi
+            // Distance from timeline's right edge -> strip's right edge
+            var rightOffset = tlRect.right - yearRect.left + halfInchPx;
+            strip.style.right = rightOffset + 'px';
+            strip.style.left = 'auto';
+            // Strip width = HP 408's rendered width so HP photos are
+            // flush-right within the strip and Parade (wider) overflows
+            // to the left when right-aligned via align-self:flex-end.
+            strip.style.width = firstHP.offsetWidth + 'px';
+          }
+          if(firstHP.complete && firstHP.naturalWidth){
+            apply();
+          } else {
+            firstHP.addEventListener('load', apply);
+          }
+          window.addEventListener('resize', apply);
+        }
+        if(document.readyState === 'loading'){
+          document.addEventListener('DOMContentLoaded', setup);
+        } else { setup(); }
+      })();
+      </script>
       <div class="timeline-item">
         <div class="timeline-year">2004</div>
         <div class="timeline-content">
-          <h3>The First House Poem</h3>
+          <h3>The First House Publication</h3>
           <p>Huang Xiang paints his "House Poem" — the first house publication on Sampsonia Way. A single act of creative defiance that would define an entire neighborhood.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2005</div>
+        <div class="timeline-content">
+          <h3>Our Street Made Into A Stage</h3>
+          <p>Jazz Poetry Concert held on Sampsonia Way, our first free public program.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2006</div>
+        <div class="timeline-content">
+          <h3>Winged House</h3>
+          <p>Inspired by Huang Xiang, sculptor Thaddeus Mosley and artists Laura Jean McLaughlin and Robert Ziller create our second house publication&mdash;based on a text of Wole Soyinka, who came for the dedication.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2007</div>
+        <div class="timeline-content">
+          <h3>Writers in the Gardens</h3>
+          <p>Gist Street Reading Series curates and neighbor Sandra Kniess organizes our annual walking tour to 5 different neighbors&rsquo; gardens, with a writer in each reading a short poem or story.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2009</div>
+        <div class="timeline-content">
+          <h3>Pittsburgh-Burma House</h3>
+          <p>Text in Burmese by Khet Mar, our third writer-in-residence, and with art by her husband Than Htay Maung.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2010</div>
+        <div class="timeline-content">
+          <h3>Jazz House</h3>
+          <p>With images and jazz of Oliver Lake and muralized by Than Htay Maung, it covers the entire house and incorporates sound.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2011</div>
+        <div class="timeline-content">
+          <h3>I Don&rsquo;t Know What I&rsquo;d Do, If I Couldn&rsquo;t Speak My Mind</h3>
+          <p>Neighbor Adel Fougnies inspires and helps us organize a celebration of free creative expression in which writers of all ages &mdash; from kids to published authors &mdash; read a text that responds to the theme.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2013</div>
+        <div class="timeline-content">
+          <h3>Creative Placemaking Awards Spur Growth</h3>
+          <p>Awards from ArtPlace America and the Our Town program of the National Endowment for the Arts enable us to expand our community-based projects and programming.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2013</div>
+        <div class="timeline-content">
+          <h3>Summer on Sampsonia</h3>
+          <p>In a tent on vacant lots, we present 40 free programs, with a grand opening month-long performance residency by All Star Refugee Band and Archa Theater from the Czech Republic.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2014</div>
         <div class="timeline-content">
           <h3>River of Words</h3>
-          <p>140 neighbors mount words on their homes. River of Words stretches half a mile across the Northside, making the entire community a canvas for free expression.</p>
+          <p>140 neighbors mount words on their homes. River of Words stretches half a mile across the Northside, making the entire community a canvas for free expression. A project of Venezuelan writer-in-residence Israel Centeno and Venezuelan artists Carolina Arnal and Gisela Romero.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2014</div>
+        <div class="timeline-content">
+          <h3>Digital Sanctuaries</h3>
+          <p>A self-guided walking tour of the community, featuring site-specific poetry and music.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2015</div>
         <div class="timeline-content">
           <h3>Alphabet Reading Garden</h3>
-          <p>A nuisance bar becomes the Alphabet Reading Garden — a public space with plants A to Z and the alphabet in 70 writing systems.</p>
+          <p>A nuisance bar becomes the Alphabet Reading Garden — a public space with plants whose names span A to Z. The pavers are incised with hand-written letters written by neighbors in 70 different writing systems. Designed by landscape architect Joel Le Gall and artists Diane Samuels and Laura Jean McLaughlin.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2017</div>
         <div class="timeline-content">
           <h3>Alphabet City Opens</h3>
-          <p>Alphabet City opens at 40 W. North Ave. — a cultural hub with a performance space, bookstore, and Cucina Alfabeto restaurant.</p>
+          <p>Alphabet City opens at 40 W. North Ave. — a cultural hub with a performance space, City of Asylum bookstore, and a restaurant.</p>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-year">2021</div>
+        <div class="timeline-content">
+          <h3>Comma House</h3>
+          <p>Bangladeshi writer-in-residence Tuhin Das completes &ldquo;Comma House,&rdquo; the fifth house publication on Sampsonia Way, each with multi-lingual text-based art on the fa&ccedil;ade.</p>
         </div>
       </div>
       <div class="timeline-item">
         <div class="timeline-year">2022</div>
         <div class="timeline-content">
-          <h3>Seven Writer Residences</h3>
-          <p>City of Asylum now hosts 7 writer families at once — the largest sanctuary for persecuted writers anywhere in the world.</p>
+          <h3>Seventh Writers Residence (Unpublished)</h3>
+          <p>City of Asylum can now host 7 writer families at once — the largest sanctuary for persecuted writers anywhere in the world.</p>
         </div>
       </div>
     </div>
@@ -238,110 +424,165 @@ a:hover{color:var(--red-dark)}
 </section>
 
 <!-- WHAT'S HERE NOW -->
-<section class="locations-section">
+<section class="locations-section" id="whats-here">
   <div class="container">
     <span class="section-eyebrow">What's Here Now</span>
-    <h2 class="section-title">A Campus Built for Creative Freedom</h2>
-    <p class="section-subtitle">Four interconnected spaces across Pittsburgh's Central Northside, all open to the public.</p>
+    <h2 class="section-title">A Bricks and Mortar Campus Built from Freedom of Creative Expression</h2>
+    <p class="section-subtitle">Spaces and public art across Pittsburgh's Central Northside, all open to the public.</p>
 
-    <div class="locations-photo" style="height:400px;display:flex;align-items:center;justify-content:center;background:var(--charcoal);color:rgba(255,255,255,.3);font-size:1rem;letter-spacing:.1em;text-transform:uppercase;">
-      Campus aerial photo placeholder
+    <div class="map-wrap" id="mw">
+      <div id="map"></div>
+
+      <!-- SVG lines connecting callouts (above/below map) to pins on the map. x2/y2 are overwritten by the projector once the map loads. -->
+      <svg class="lines" viewBox="0 0 1000 600" preserveAspectRatio="none">
+        <line id="line-garden"  x1="80"  y1="-42" x2="280" y2="162" data-dx="5.25" data-dx1="4.5" data-shorten="18.75" data-extend="12" stroke="#c23b2e" stroke-width="1.5"/>
+        <line id="line-poem"    x1="240" y1="-42" x2="430" y2="180" data-dx="10.5" data-shorten="16.5" stroke="#c23b2e" stroke-width="1.5"/>
+        <line id="line-winged"  x1="390" y1="-42" x2="450" y2="198" data-dx="-1.5" data-shorten="13.5" stroke="#c23b2e" stroke-width="1.5"/>
+        <line id="line-burma"   x1="550" y1="-42" x2="470" y2="216" data-dx="-5.25" data-dy="-12" data-shorten="6" stroke="#c23b2e" stroke-width="1.5"/>
+        <line id="line-jazz"    x1="700" y1="-42" x2="475" y2="220" data-dy="-15.75" stroke="#c23b2e" stroke-width="1.5"/>
+        <line id="line-comma"   x1="860" y1="-42" x2="490" y2="240" data-dy="-14.625" data-shorten="3" stroke="#c23b2e" stroke-width="1.5"/>
+        <line id="line-acity"   x1="740" y1="294" x2="700" y2="450" data-dx="4.5" data-shorten="30" data-extend-top="-24" stroke="#c23b2e" stroke-width="1.5"/>
+      </svg>
+
+      <!-- Pins on the map (locked to real lat/lng — projector positions them on map redraw). -->
+      <div class="pin" id="pin-garden" data-lat="40.45703363560767"   data-lng="-80.01324887402322" data-dx="-12"></div>
+      <div class="pin" id="pin-poem"   data-lat="40.45702139036579"   data-lng="-80.01170928605535"></div>
+      <div class="pin" id="pin-winged" data-lat="40.457066289574264"  data-lng="-80.01155371793315"></div>
+      <div class="pin" id="pin-burma"  data-lat="40.457104492802955"  data-lng="-80.01127723892999"></div>
+      <div class="pin" id="pin-jazz"   data-lat="40.45712997348733"   data-lng="-80.01109863668941"></div>
+      <div class="pin" id="pin-comma"  data-lat="40.45719225956407"   data-lng="-80.01068189812804"></div>
+      <div class="pin" id="pin-acity"  data-lat="40.45538889"          data-lng="-80.00755556"></div>
+
+      <!-- Map-anchored text labels (rendered via projector). -->
+      <div class="map-label" id="label-1406" data-lat="40.45703363560767" data-lng="-80.01324887402322" data-dx="-12" data-dy="-2">1406 Monterey</div>
+      <div class="map-label" id="label-poem" data-lat="40.45702139036579" data-lng="-80.01170928605535" data-dx="-46" data-dy="-2">408 Sampsonia</div>
+
+      <!-- Photo callouts. Top row sits at top:-7% so it bells above the map; bottom callout at top:107% bells below. -->
+      <a class="callout" href="map/Alphabet%20Reading%20Garden.jpg" target="_blank" style="left:8%;top:-7%">
+        <img src="map/Alphabet%20Reading%20Garden.jpg" alt="Alphabet Reading Garden">
+        <span class="label" style="line-height:1;padding:6px 5px;">Alphabet Reading Garden</span>
+      </a>
+      <a class="callout" href="map/408House%20Poem.jpg" target="_blank" style="left:24%;top:-7%">
+        <img src="map/408House%20Poem.jpg" alt="House Poem">
+        <span class="label">House Poem</span>
+      </a>
+      <a class="callout" href="map/402Winged%20House.jpg" target="_blank" style="left:39%;top:-7%">
+        <img src="map/402Winged%20House.jpg" alt="Winged House">
+        <span class="label" style="line-height:1;padding:6px 5px;">Winged House</span>
+      </a>
+      <a class="callout" href="map/324Pittsburgh%20Burma.jpg" target="_blank" style="left:55%;top:-7%">
+        <img src="map/324Pittsburgh%20Burma.jpg" alt="Pittsburgh-Burma House">
+        <span class="label" style="line-height:1;padding:6px 5px;">Pittsburgh-Burma House</span>
+      </a>
+      <a class="callout" href="map/320Jazz%20House.jpg" target="_blank" style="left:70%;top:-7%">
+        <img src="map/320Jazz%20House.jpg" alt="Jazz House">
+        <span class="label">Jazz House</span>
+      </a>
+      <a class="callout" href="map/308comma%20house.jpg" target="_blank" style="left:86%;top:-7%">
+        <img src="map/308comma%20house.jpg" alt="Comma House">
+        <span class="label">Comma House</span>
+      </a>
+      <a class="callout" href="map/Alphabt%20City.jpg" target="_blank" style="left:73.98%;top:50.75%">
+        <img src="map/Alphabt%20City.jpg" alt="Alphabet City">
+        <span class="label">Alphabet City</span>
+      </a>
     </div>
+
+    <!-- Map photo lightbox -->
+    <div id="map-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
+      <button type="button" aria-label="Close" id="map-lightbox-close" style="position:absolute;top:20px;right:24px;width:44px;height:44px;border:none;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;">&times;</button>
+      <img id="map-lightbox-img" src="campus.html" alt="" style="max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow:0 12px 60px rgba(0,0,0,.5);cursor:default;">
+    </div>
+    <script>
+    (function(){
+      var box = document.getElementById('map-lightbox');
+      var img = document.getElementById('map-lightbox-img');
+      var btn = document.getElementById('map-lightbox-close');
+      function open(src){ img.src = src; box.style.display = 'flex'; }
+      function close(){ box.style.display = 'none'; img.src = ''; }
+      document.querySelectorAll('a.callout').forEach(function(a){
+        a.addEventListener('click', function(e){
+          e.preventDefault();
+          open(a.getAttribute('href'));
+        });
+        a.removeAttribute('target');
+      });
+      box.addEventListener('click', function(e){ if (e.target === box) close(); });
+      btn.addEventListener('click', close);
+      img.addEventListener('click', function(e){ e.stopPropagation(); });
+      document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && box.style.display === 'flex') close();
+      });
+    })();
+    </script>
 
     <div class="locations-grid">
       <div class="location-card">
         <h3>Alphabet City</h3>
-        <div class="location-address">40 W. North Ave.</div>
-        <p>The cultural heart of the campus — a performance space, independent bookstore, and the Cucina Alfabeto restaurant, all under one roof. Available for private event rental (35 to 100 guests).</p>
-        <div class="location-tags">
-          <span>Performance space</span>
-          <span>Bookstore</span>
-          <span>Restaurant</span>
-          <span>Event rental</span>
-        </div>
+        <div class="location-address">40 W. North Avenue</div>
+        <p>The cultural heart of the campus &mdash; a <a href='free-arts.html'>performance space</a>, independent <a href="https://cityofasylumbooks.org/" target="_blank" rel="noopener">bookstore</a>, and the Cucina Alfabeto <a href="https://cucinaalfabeto.com/" target="_blank" rel="noopener">restaurant</a>, all under one roof. Available for private event <a href="https://cucinaalfabeto.com/book-us" target="_blank" rel="noopener">rental</a> (20 to 100 guests).</p>
+        <img src="alphabet-city-web.jpg" alt="Alphabet City exterior" style="width:100%;margin-top:1rem;border-radius:8px;display:block;">
       </div>
       <div class="location-card">
         <h3>Sampsonia Way House Publications</h3>
-        <div class="location-address">308 &ndash; 408 Sampsonia Way</div>
-        <p>A walkable outdoor gallery featuring 7 large-scale collaborations between exiled writers and visual artists. Each house facade tells a story of resilience and creative freedom.</p>
-        <div class="location-tags">
-          <span>Outdoor gallery</span>
-          <span>7 collaborations</span>
-          <span>Writer &amp; artist</span>
+        <div class="location-address">408 &ndash; 308 Sampsonia Way</div>
+        <p>A walkable outdoor gallery featuring 5 collaborations between exiled writers and visual artists. Each house facade tells a story of resilience and creative freedom.</p>
+        <img src="house-publications-web.jpg" alt="Sampsonia Way House Publications" style="width:100%;margin-top:1rem;border-radius:8px;display:block;">
+        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:.5rem;text-align:center;margin-top:.5rem;">
+          <div><div style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:.95rem;">408</div><div style="font-size:.75rem;color:var(--muted);line-height:1.3;">House Poem</div></div>
+          <div><div style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:.95rem;">402</div><div style="font-size:.75rem;color:var(--muted);line-height:1.3;">Winged House</div></div>
+          <div><div style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:.95rem;">324</div><div style="font-size:.75rem;color:var(--muted);line-height:1.3;">Pittsburgh-Burma House</div></div>
+          <div><div style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:.95rem;">320</div><div style="font-size:.75rem;color:var(--muted);line-height:1.3;">Jazz House</div></div>
+          <div><div style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:.95rem;">308</div><div style="font-size:.75rem;color:var(--muted);line-height:1.3;">Comma House</div></div>
         </div>
       </div>
       <div class="location-card">
         <h3>Alphabet Reading Garden</h3>
-        <div class="location-address">3 blocks from house publications</div>
-        <p>A public green space where a nuisance bar once stood. Plants from A to Z, the alphabet rendered in 70 writing systems, and a quiet place for reading and reflection.</p>
-        <div class="location-tags">
-          <span>Plants A&ndash;Z</span>
-          <span>70 writing systems</span>
-          <span>Public park</span>
-        </div>
+        <div class="location-address">1406 &ndash; 1410 Monterey Street<br>(2 blocks from House Publications, around the corner)</div>
+        <p>A public green space where a nuisance bar once stood. Plants whose names span A to Z, pavers incised with handwritten letters from 70 different writing systems contributed by neighbors, and seating areas.</p>
+        <img src="reading-garden-web.jpg" alt="Alphabet Reading Garden" style="width:100%;margin-top:1rem;border-radius:8px;display:block;">
       </div>
       <div class="location-card">
         <h3>River of Words</h3>
         <div class="location-address">Across 140 Northside homes</div>
-        <p>140 words mounted on 140 homes across the Northside, stretching half a mile. Created by Venezuelan writer Israel Centeno in 2014, it is the largest community-authored public art project in Pittsburgh.</p>
-        <div class="location-tags">
-          <span>140 homes</span>
-          <span>Israel Centeno, 2014</span>
-        </div>
+        <p>140 words mounted on 140 homes across the Northside, stretching half a mile. Created in 2014 by Venezuelan writer-in-residence Israel Centeno and Venezuelan artists Gisela Romero and Carolina Arnal. <a href="River%20of%20Words%20map2.jpg" target="_blank" rel="noopener" onclick="var w=window.open(this.href,'mapwin','popup=yes,width=1240,height=820,resizable,scrollbars');if(w){w.focus();return false;}return true;">Map</a>.</p>
+        <img src="river-of-words-web.jpg" alt="River of Words composite" style="width:100%;margin-top:1rem;border-radius:8px;display:block;">
       </div>
     </div>
   </div>
 </section>
 
 <!-- DIGITAL SANCTUARIES APP -->
-<section class="app-section">
+<!-- TODO (Reese): Google Play no longer has it. Checking. -->
+<section class="app-section" id="walking-tour">
   <div class="container">
     <span class="section-eyebrow" style="color:var(--gold)">Digital Sanctuaries</span>
-    <h2>Self-guided audio tour of the campus. Download free.</h2>
-    <p>Explore every house publication, installation, and landmark at your own pace with narrated stories from the writers themselves.</p>
+    <h2>Self-guided audio tour of the campus.<br>Download it free.</h2>
+    <p>While you walk, you can listen to site-specific music and poetry, with stops at neighborhood gems like the Ferris House (inventor of the Ferris Wheel) and the National Aviary, as well as City of Asylum locations. The app geolocates and allows users to remix the music while they listen. Music was created for each site by Electric Kulintang (Susie Ibarra and Roberto Juan Rodriguez).</p>
     <div class="app-buttons">
-      <a href="https://play.google.com/store/apps/details?id=com.tb.tb212&hl=en" class="app-btn" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302-2.593-2.302 2.593-2.302zM5.864 2.658L16.8 9.49l-2.302 2.302L5.864 2.658z"/></svg>
-        Google Play
-      </a>
-      <a href="#" class="app-btn">
+      <div style="display:flex;flex-direction:column;align-items:center;gap:.4rem;">
+        <a href="https://play.google.com/store/apps/details?id=com.tb.tb212&hl=en" class="app-btn" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 0 1-.61-.92V2.734a1 1 0 0 1 .609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.302 2.302-2.302 2.302-2.593-2.302 2.593-2.302zM5.864 2.658L16.8 9.49l-2.302 2.302L5.864 2.658z"/></svg>
+          Google Play
+        </a>
+        <span style="font-size:10pt;color:var(--muted);font-style:italic;">Google Play not active</span>
+      </div>
+      <a href="https://apps.apple.com/us/app/digital-sanctuaries-pittsburgh/id1464445937" class="app-btn" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         App Store
       </a>
     </div>
-  </div>
-</section>
-
-<!-- IMPACT STATS -->
-<section class="impact-section">
-  <div class="container">
-    <div class="impact-grid">
-      <div class="impact-item">
-        <div class="num">$13M</div>
-        <div class="label">Invested in the Northside</div>
-      </div>
-      <div class="impact-item">
-        <div class="num">$25M</div>
-        <div class="label">Adjacent investment catalyzed</div>
-      </div>
-      <div class="impact-item">
-        <div class="num">25,000+</div>
-        <div class="label">Annual visitors</div>
-      </div>
-      <div class="impact-item">
-        <div class="num">7</div>
-        <div class="label">Writer residences</div>
-      </div>
-    </div>
+    <div style="background:#fffbcc;color:#7a5a00;border:1px dashed #c4b500;border-radius:6px;padding:.6rem 1rem;margin-top:1.5rem;font-size:.85rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;">TODO: Google Play no longer has it. Checking.</div>
   </div>
 </section>
 
 <!-- CLOSING CTA -->
-<section class="campus-cta">
+<section class="campus-cta" id="becoming">
   <div class="container">
-    <h2>Help build arts as essential infrastructure</h2>
-    <p>Every transformed space starts with your support. Help City of Asylum continue reimagining what a neighborhood can be.</p>
-    <a href="donate.html" class="btn-gold">Donate Now &rarr;</a>
+    <h2>Art is Infrastructure. Help Us Build It.</h2>
+    <p style="max-width:760px;">What began with one house and one exiled writer is now transforming a city.<br>Help us continue re-imagining.</p>
+    <a class='btn-gold' href='donate.html'>Donate Now &rarr;</a>
+    <p style="margin-top:2rem;font-size:1rem;color:rgba(255,255,255,.7);">Help start a City of Asylum in your city. <a href='about.html#inquiries' style='color:var(--gold);text-decoration:underline;'>Contact us for more information.</a></p>
   </div>
 </section>
 
@@ -350,40 +591,291 @@ a:hover{color:var(--red-dark)}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="margin-bottom:.5rem">
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:40px">
-          <span style="color:#fff;font-family:var(--serif);font-weight:700;">City of Asylum</span>
+        <a class='nav-logo' href='index.html' style='margin-bottom:.5rem'>
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:70px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+          <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
         </a>
-        <p>Protecting and celebrating freedom of creative expression since 2004. The world's largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+        <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href="about.html">About Us</a>
-        <a href="writers.html">Writers &amp; Residencies</a>
-        <a href="events.html">Free Arts &amp; Culture</a>
-        <a href="campus.html">Campus</a>
+        <a href='about.html'>About Us</a>
+        <a href='writers.html'>Writers &amp; Residencies</a>
+        <a href='free-arts.html'>Free Arts &amp; Culture</a>
+        <a href='media-archive.html'>Media &amp; Archive</a>
       </div>
       <div class="footer-col">
         <h4>Visit</h4>
-        <a href="campus.html">Alphabet City</a>
-        <a href="campus.html">Bookstore</a>
-        <a href="campus.html">Cucina Alfabeto</a>
-        <a href="campus.html">Audio Tour</a>
+        <a href='free-arts.html'>Alphabet City</a>
+        <a href='bookstore-restaurant.html'>Bookstore</a>
+        <a href='bookstore-restaurant.html'>Restaurant</a>
+        <a href='about.html#directions'>Directions</a>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
-        <a href="donate.html">Donate</a>
-        <a href="#">Volunteer</a>
-        <a href="#">Sponsor</a>
-        <a href="mailto:info@cityofasylum.org">Contact Us</a>
+        <a href='donate.html'>Donate</a>
+        <a href='about.html#inquiries'>Volunteer</a>
+        <a href='about.html#inquiries'>Free Tour</a>
+        <a href='about.html#inquiries'>Book a Writer</a>
+        <a href='about.html#inquiries'>Contact Us</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
-      <a href="#">Privacy Policy</a>
+      <a href="campus.html#" onclick="document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Privacy Policy</a>
     </div>
   </div>
 </footer>
 
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:1000;align-items:flex-start;justify-content:center;padding:3rem 1rem;overflow-y:auto;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow='';}">
+  <div style="max-width:700px;width:100%;text-align:left;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem 2.5rem;position:relative;">
+    <button type="button" aria-label="Close" onclick="document.getElementById('privacy-modal').style.display='none';document.body.style.overflow='';" style="position:absolute;top:.5rem;right:.75rem;background:transparent;border:0;color:rgba(255,255,255,.7);font-size:1.75rem;line-height:1;cursor:pointer;padding:.25rem .5rem;">&times;</button>
+    <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:0 0 1.5rem;">Privacy Policy for City of Asylum Pittsburgh</h3>
+    <p style="font-size:.85rem;color:var(--red);font-style:italic;margin-bottom:1.5rem;">(This is stubbed in; current policy requested)</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">1. Information We Collect</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We only collect information that you voluntarily provide to us. For our email subscriber list, this typically includes your name and email address.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">2. How We Use Your Information</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We use your information strictly to send you information about programs and organization, for occasional invitations to support our mission through donations, and to respond to questions. For City of Asylum Bookstore privacy policy: <a href="https://cityofasylumbooks.org/privacy-policy" target="_blank" style="color:var(--gold);">cityofasylumbooks.org/privacy-policy</a></p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">3. Sharing Your Information</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We value your trust. We do not sell, rent, or trade our subscriber list with third parties. We only share information with trusted service providers like our email platforms, who help us send our communications and are legally bound to keep your data secure.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">4. Opting Out</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">Most emails include an &ldquo;Unsubscribe&rdquo; link at the bottom. You can also contact us at <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a> to ask us to update or delete your information from our records.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">5. Security</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We take reasonable steps to protect your data from unauthorized access. However, no method of online transmission is 100% secure, and providing your information is at your own risk.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">6. Contact Us</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:0;">If you have questions about this policy, please reach out to us:<br><br>
+    <strong style="color:var(--white);">City of Asylum</strong><br>
+    40 W. North Avenue<br>
+    Pittsburgh, PA 15212<br>
+    Phone: 412-435-1110<br>
+    Email: <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a></p>
+  </div>
+</div>
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('privacy-modal');if(m&&m.style.display==='flex'){m.style.display='none';document.body.style.overflow='';}}});</script>
+
+<script>
+document.querySelectorAll('.nav-dropdown a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    this.blur();
+    this.closest('.nav-item').blur();
+  });
+});
+</script>
+
+<!-- ===== Northside campus interactive map ===== -->
+<script>
+  // Four corners of the campus rectangle (Jacksonia/Monterey TL, W.North/Monterey BL, W.North/Federal BR, Jacksonia/Federal TR).
+  // Top edge bears ~76.5° from north, so heading 346.55° rotates the rectangle to horizontal on screen.
+  function initMap() {
+    const corners = [
+      {lat: 40.45718057831807,  lng: -80.01352782376449},
+      {lat: 40.45430289146069,  lng: -80.01258368619534},
+      {lat: 40.455372344090726, lng: -80.00659699568247},
+      {lat: 40.458254066817545, lng: -80.00762159952174}
+    ];
+    const center = {
+      lat: corners.reduce((s,c) => s + c.lat, 0) / corners.length,
+      lng: corners.reduce((s,c) => s + c.lng, 0) / corners.length
+    };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      center: center,
+      zoom: 17,
+      heading: 346.55,
+      tilt: 0,
+      mapId: "DEMO_MAP_ID",
+      disableDefaultUI: true,
+      gestureHandling: "cooperative",
+      clickableIcons: false
+    });
+
+    const mapEl = document.getElementById("map");
+    const SAMPSONIA_ROW = ["pin-poem","pin-winged","pin-burma","pin-jazz","pin-comma"];
+    const SAMPSONIA_Y_OFFSET = -12;
+    const SAMPSONIA_LEFT_OFFSET = 20;
+    const SAMPSONIA_RIGHT_OFFSET = -1.5;
+    class PinProjector extends google.maps.OverlayView {
+      onAdd() {}
+      onRemove() {}
+      draw() {
+        const proj = this.getProjection();
+        if (!proj) return;
+        const w = mapEl.clientWidth, h = mapEl.clientHeight;
+        if (!w || !h) return;
+        const data = [];
+        document.querySelectorAll(".pin[data-lat]").forEach(pin => {
+          const ll = new google.maps.LatLng(+pin.dataset.lat, +pin.dataset.lng);
+          const px = proj.fromLatLngToContainerPixel(ll);
+          if (px) {
+            const pdx = +(pin.dataset.dx || 0), pdy = +(pin.dataset.dy || 0);
+            data.push({ pin, x: px.x + pdx, y: px.y + pdy });
+          }
+        });
+        data.forEach(d => {
+          const line = document.getElementById("line-" + d.pin.id.replace(/^pin-/, ""));
+          if (!line) return;
+          const extend = +(line.dataset.extend || 0);
+          if (!extend) return;
+          if (!line.dataset.x1Base) {
+            line.dataset.x1Base = line.getAttribute("x1");
+            line.dataset.y1Base = line.getAttribute("y1");
+          }
+          const dx1 = +(line.dataset.dx1 || 0), dy1 = +(line.dataset.dy1 || 0);
+          const x1Px = (+line.dataset.x1Base / 1000) * w + dx1;
+          const y1Px = (+line.dataset.y1Base / 600)  * h + dy1;
+          const vx = d.x - x1Px, vy = d.y - y1Px, len = Math.hypot(vx, vy);
+          if (len > 0) { d.x += (vx / len) * extend; d.y += (vy / len) * extend; }
+        });
+        const row = data.filter(d => SAMPSONIA_ROW.includes(d.pin.id));
+        if (row.length) {
+          const baseY = row.reduce((s,d) => s + d.y, 0) / row.length + SAMPSONIA_Y_OFFSET;
+          const xs = row.map(d => d.x);
+          const xMin = Math.min(...xs), xMax = Math.max(...xs), span = xMax - xMin;
+          row.forEach(d => {
+            const t = span > 0 ? (d.x - xMin) / span : 0;
+            d.y = baseY + SAMPSONIA_LEFT_OFFSET + t * (SAMPSONIA_RIGHT_OFFSET - SAMPSONIA_LEFT_OFFSET);
+          });
+        }
+        document.querySelectorAll(".map-label[data-lat]").forEach(el => {
+          const ll = new google.maps.LatLng(+el.dataset.lat, +el.dataset.lng);
+          const px = proj.fromLatLngToContainerPixel(ll);
+          if (!px) return;
+          const dx = +(el.dataset.dx || 0), dy = +(el.dataset.dy || 0);
+          el.style.left = (px.x + dx) + "px";
+          el.style.top  = (px.y + dy) + "px";
+        });
+        data.forEach(({ pin, x, y }) => {
+          pin.style.left = x + "px";
+          pin.style.top  = y + "px";
+          const line = document.getElementById("line-" + pin.id.replace(/^pin-/, ""));
+          if (!line) return;
+          if (!line.dataset.x1Base) {
+            line.dataset.x1Base = line.getAttribute("x1");
+            line.dataset.y1Base = line.getAttribute("y1");
+          }
+          const dx  = +(line.dataset.dx  || 0);
+          const dy  = +(line.dataset.dy  || 0);
+          const dx1 = +(line.dataset.dx1 || 0);
+          const dy1 = +(line.dataset.dy1 || 0);
+          const shorten = +(line.dataset.shorten || 0);
+          const extendTop = +(line.dataset.extendTop || 0);
+          let x1Px = (+line.dataset.x1Base / 1000) * w + dx1;
+          let y1Px = (+line.dataset.y1Base / 600)  * h + dy1;
+          if (extendTop) {
+            const tvx = x1Px - x, tvy = y1Px - y, tlen = Math.hypot(tvx, tvy);
+            if (tlen > 0) { x1Px += (tvx / tlen) * extendTop; y1Px += (tvy / tlen) * extendTop; }
+          }
+          let nx = x + dx, ny = y + dy;
+          if (shorten) {
+            const vx = nx - x1Px, vy = ny - y1Px, len = Math.hypot(vx, vy);
+            if (len > 0) { nx -= (vx / len) * shorten; ny -= (vy / len) * shorten; }
+          }
+          line.setAttribute("x1", (x1Px / w) * 1000);
+          line.setAttribute("y1", (y1Px / h) * 600);
+          line.setAttribute("x2", (nx / w) * 1000);
+          line.setAttribute("y2", (ny / h) * 600);
+        });
+      }
+    }
+    const projector = new PinProjector();
+    projector.setMap(map);
+    google.maps.event.addListener(map, "tilesloaded", () => projector.draw());
+    google.maps.event.addListener(map, "idle",        () => projector.draw());
+  }
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCwuUDgxO16ow3HjjKWmOYjfFrCSbHK6L0&callback=initMap&v=weekly"></script>
+<script>
+(function setupZoomEverywhere(){
+  function ready(fn){
+    if (document.readyState !== 'loading') fn();
+    else document.addEventListener('DOMContentLoaded', fn);
+  }
+  ready(function(){
+    var lightbox = document.getElementById('map-lightbox');
+    var lightboxImg = document.getElementById('map-lightbox-img');
+    if (!lightbox || !lightboxImg) return;
+    function openLB(src){ lightboxImg.src = src; lightbox.style.display = 'flex'; }
+
+    function makeIcon(size, position){
+      position = position || 'bottom-right';
+      var iconSize = Math.max(10, Math.round(size * 0.6));
+      var span = document.createElement('span');
+      span.setAttribute('aria-hidden','true');
+      span.setAttribute('data-zoom-icon','1');
+      var anchor = position === 'top-right' ? 'top:4px;right:4px;' : 'bottom:4px;right:4px;';
+      span.style.cssText = 'position:absolute;'+anchor+'width:'+size+'px;height:'+size+'px;background:rgba(0,0,0,.6);border-radius:4px;display:flex;align-items:center;justify-content:center;pointer-events:none;z-index:5;';
+      span.innerHTML = '<svg width="'+iconSize+'" height="'+iconSize+'" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>';
+      return span;
+    }
+
+    // 1. Map callouts (existing lightbox handler already attached). Add cursor + icon at TOP-right so it doesn't cover the caption beneath the photo.
+    document.querySelectorAll('a.callout').forEach(function(a){
+      a.style.cursor = 'zoom-in';
+      if (!a.querySelector('[data-zoom-icon]')) a.appendChild(makeIcon(20, 'top-right'));
+    });
+
+    // 2. Photo strip images — CSS rule + delegated click handler (mirrors about.html). Plus magnifier icons positioned via JS.
+    var styleEl = document.createElement('style');
+    styleEl.textContent = '.photo-strip img.zoomable-strip{cursor:zoom-in !important;pointer-events:auto !important;}';
+    document.head.appendChild(styleEl);
+    document.querySelectorAll('.photo-strip img').forEach(function(im){
+      im.classList.add('zoomable-strip');
+    });
+    document.addEventListener('click', function(e){
+      var t = e.target;
+      if (t && t.classList && t.classList.contains('zoomable-strip')) {
+        e.preventDefault();
+        e.stopPropagation();
+        openLB(t.src);
+      }
+    }, true);
+
+    // Magnifier icons overlaid on each strip photo (pointer-events:none so clicks pass through)
+    var stripIcons = [];
+    document.querySelectorAll('.photo-strip').forEach(function(strip){
+      strip.querySelectorAll('img').forEach(function(img){
+        var icon = makeIcon(16);
+        strip.appendChild(icon);
+        stripIcons.push({img: img, icon: icon, strip: strip});
+      });
+    });
+    function placeStripIcons(){
+      stripIcons.forEach(function(p){
+        var w = p.img.offsetWidth, h = p.img.offsetHeight;
+        if (w === 0 || h === 0) { p.icon.style.display = 'none'; return; }
+        p.icon.style.display = 'flex';
+        p.icon.style.position = 'absolute';
+        p.icon.style.bottom = '';
+        p.icon.style.right = '';
+        p.icon.style.left = (p.img.offsetLeft + w - 20) + 'px';
+        p.icon.style.top = (p.img.offsetTop + h - 20) + 'px';
+      });
+    }
+    placeStripIcons();
+    stripIcons.forEach(function(p){ p.img.addEventListener('load', placeStripIcons); });
+    window.addEventListener('load', function(){ placeStripIcons(); setTimeout(placeStripIcons, 300); });
+    window.addEventListener('resize', placeStripIcons);
+
+    // 3. Larger content images: location cards and other map-section photos
+    document.querySelectorAll('.location-card img, .locations-grid img, .map-section img').forEach(function(img){
+      if (img.dataset.zoomWrapped === '1') return;
+      if (img.parentElement && img.parentElement.classList.contains('zoom-wrap')) return;
+      // Skip callout images (already handled via anchor)
+      if (img.closest('a.callout')) return;
+      var wrap = document.createElement('div');
+      wrap.className = 'zoom-wrap';
+      wrap.style.cssText = 'position:relative;display:block;cursor:zoom-in;width:100%;';
+      if (img.style.marginTop) { wrap.style.marginTop = img.style.marginTop; img.style.marginTop = ''; }
+      if (img.style.marginBottom) { wrap.style.marginBottom = img.style.marginBottom; img.style.marginBottom = ''; }
+      img.parentNode.insertBefore(wrap, img);
+      wrap.appendChild(img);
+      wrap.appendChild(makeIcon(28));
+      wrap.addEventListener('click', function(){ openLB(img.src); });
+      img.dataset.zoomWrapped = '1';
+    });
+  });
+})();
+</script>
+<script src="mobile.js?v=3" defer></script>
 </body>
 </html>

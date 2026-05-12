@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Events & Festivals — City of Asylum</title>
-<meta name="description" content="Explore free literary readings, concerts, films, and festivals at City of Asylum's Alphabet City stage in Pittsburgh's Northside.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Upcoming Programs &mdash; City of Asylum</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="mobile.css?v=3">
 <style>
+
 :root {
   --deep:#0f1419;--charcoal:#1a1f2e;--slate:#2d3548;
   --red:#c23b2e;--red-dark:#8b1a1a;--gold:#c9a227;--gold-light:#e0c660;
@@ -25,438 +25,449 @@ a:hover{color:var(--red-dark)}
 
 /* NAV */
 .site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
-.nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:72px}
+.nav-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:98px}
 .nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
-.nav-logo img{height:48px;width:auto}
-.nav-logo span{font-family:var(--serif);font-weight:700;font-size:1.15rem}
-.nav-links{display:flex;align-items:center;gap:.25rem}
-.nav-links a{color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .85rem;border-radius:6px;transition:all .2s}
+.nav-logo img{height:70px;width:auto}
+.nav-logo span{font-family:var(--sans);font-weight:700;font-size:1.15rem;line-height:1.1;}
+.nav-links{display:flex;align-items:center;gap:.25rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap;color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .35rem;border-radius:6px;transition:all .2s}
 .nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
 .nav-links a.active{color:var(--gold)}
 .nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
-.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+.nav-item:last-child .nav-dropdown{left:auto;right:0}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
 
 /* PAGE HERO */
-.page-hero{position:relative;padding:6rem 0 5rem;overflow:hidden;background:var(--deep)}
+.page-hero{position:relative;padding:5.25rem 0 3.5rem;overflow:hidden;background:var(--deep)}
 .page-hero-bg{position:absolute;inset:0}
-.page-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.2) saturate(.6)}
-.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,20,25,.88),rgba(26,31,46,.7))}
+.page-hero-bg img{width:100%;height:100%;object-fit:cover;filter:brightness(.22) saturate(.5)}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(15,20,25,.9),rgba(26,31,46,.72))}
 .page-hero-content{position:relative;z-index:2}
 .page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 .page-hero h1{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--white);margin-bottom:1rem;max-width:750px}
 .page-hero h1 em{font-style:italic;color:var(--gold-light)}
 .page-hero p{color:rgba(255,255,255,.65);font-size:1.15rem;max-width:650px;line-height:1.8}
-.hero-stats{display:flex;gap:3rem;margin-top:2.5rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
-.hero-stats .stat .num{font-family:var(--serif);font-size:2rem;font-weight:900;color:var(--gold)}
-.hero-stats .stat .label{font-size:.75rem;color:rgba(255,255,255,.5);text-transform:uppercase;letter-spacing:.06em;margin-top:.15rem}
 
 /* SECTION HELPERS */
-.section-eyebrow{display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.section-title{font-family:var(--serif);font-size:2.4rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:1rem}
-.section-subtitle{text-align:center;color:var(--muted);font-size:1.05rem;max-width:650px;margin:0 auto 3.5rem}
-.btn{display:inline-flex;align-items:center;gap:.5rem;font-family:var(--sans);font-weight:600;font-size:1rem;padding:.9rem 2rem;border-radius:8px;border:none;cursor:pointer;transition:all .25s}
-.btn-primary{background:var(--red);color:var(--white)}
-.btn-primary:hover{background:var(--red-dark);color:var(--white);transform:translateY(-1px)}
-.btn-secondary{background:transparent;color:var(--text-dark);border:2px solid var(--border)}
-.btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
-.btn-gold{background:var(--gold);color:var(--deep);font-weight:700;padding:1rem 2.5rem;border-radius:8px;font-size:1.1rem;display:inline-flex;align-items:center;gap:.5rem;transition:all .25s;border:none;cursor:pointer}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--deep)}
+.section-eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
 
-/* PROGRAM TYPES */
-.program-types{padding:6rem 0;background:var(--white)}
-.type-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem}
-.type-card{background:var(--warm-white);border:1px solid var(--border);border-radius:16px;padding:2.5rem 1.75rem;text-align:center;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
-.type-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
-.type-card:nth-child(1)::before{background:var(--red)}
-.type-card:nth-child(2)::before{background:var(--gold)}
-.type-card:nth-child(3)::before{background:var(--green)}
-.type-card:nth-child(4)::before{background:#6366f1}
-.type-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.type-icon{font-size:2rem;margin-bottom:1rem}
-.type-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--text-dark);margin-bottom:.75rem}
-.type-card p{font-size:.9rem;color:var(--muted);line-height:1.7}
+/* EVENTS SECTION */
+.events-section{padding:4rem 0 5rem;background:var(--warm-white)}
+.events-section .container{max-width:900px}
 
-/* UPCOMING EVENTS */
-.upcoming{padding:6rem 0;background:var(--cream)}
-.events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
-.event-card{border-radius:16px;overflow:hidden;background:var(--white);border:1px solid var(--border);transition:transform .3s,box-shadow .3s}
-.event-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.event-img{position:relative;height:220px;overflow:hidden;background:var(--charcoal)}
-.event-img img{width:100%;height:100%;object-fit:cover}
-.event-tag{position:absolute;top:1rem;left:1rem;background:rgba(15,20,25,.8);backdrop-filter:blur(8px);color:var(--white);font-size:.7rem;font-weight:700;padding:.3rem .75rem;border-radius:20px;letter-spacing:.05em;text-transform:uppercase}
-.event-body{padding:1.5rem}
-.event-date{font-size:.75rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
-.event-body h4{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);line-height:1.4;margin-bottom:.5rem}
-.event-body p{font-size:.875rem;color:var(--muted);line-height:1.6}
-.event-meta{display:flex;align-items:center;gap:.75rem;margin-top:1rem;font-size:.8rem;color:var(--muted)}
-.event-meta span{display:flex;align-items:center;gap:.3rem}
+.month-group{margin-bottom:3.5rem}
+.month-label{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text-dark);padding-bottom:.75rem;margin-bottom:1.75rem;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:.75rem}
+.month-label::before{content:'';display:inline-block;width:4px;height:1.4rem;background:var(--gold);border-radius:2px}
 
-/* FLAGSHIP FESTIVALS */
-.festivals{padding:6rem 0;background:var(--white)}
-.festival-feature{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1200px;margin:0 auto 3rem;background:var(--warm-white);border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid var(--border)}
-.festival-feature:nth-child(even) .festival-img{order:2}
-.festival-feature:nth-child(even) .festival-text{order:1}
-.festival-img{position:relative;min-height:400px;background:var(--charcoal)}
-.festival-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.festival-badge{position:absolute;top:1.5rem;left:1.5rem;background:var(--red);color:var(--white);font-size:.7rem;font-weight:700;padding:.4rem 1rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase}
-.festival-text{padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
-.festival-text h3{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
-.festival-when{font-size:.85rem;color:var(--gold);font-weight:600;margin-bottom:1.25rem;letter-spacing:.03em}
-.festival-text p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:1rem}
-.festival-highlights{list-style:none;padding:0;margin:1rem 0 1.5rem}
-.festival-highlights li{font-size:.9rem;color:var(--text-body);padding:.35rem 0;padding-left:1.5rem;position:relative}
-.festival-highlights li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:.75rem}
+.event-card{display:grid;grid-template-columns:180px 1fr;gap:0;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:1.25rem;border:1px solid var(--border);transition:box-shadow .2s,transform .2s}
+.event-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.12);transform:translateY(-2px)}
+.event-img{position:relative;overflow:hidden}
+.event-img img{width:100%;height:100%;object-fit:cover;min-height:160px}
+.event-date-badge{position:absolute;top:0;left:0;background:var(--deep);color:var(--white);text-align:center;padding:.5rem .75rem;min-width:52px}
+.event-date-badge .day{font-family:var(--serif);font-size:1.8rem;font-weight:900;line-height:1;display:block}
+.event-date-badge .dow{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);display:block;margin-top:.1rem}
+.event-body{padding:1.4rem 1.6rem;display:flex;flex-direction:column;justify-content:space-between}
+.event-meta{font-size:.78rem;color:var(--muted);margin-bottom:.5rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
+.event-meta .time{display:flex;align-items:center;gap:.3rem}
+.event-meta .location{display:flex;align-items:center;gap:.3rem}
+.event-title{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);line-height:1.35;margin-bottom:.6rem}
+.event-desc{font-size:.9rem;color:var(--text-body);line-height:1.65;flex:1;margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.event-tickets{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
+.ticket-btn{display:inline-flex;align-items:center;gap:.35rem;font-size:.78rem;font-weight:600;padding:.45rem 1rem;border-radius:6px;border:none;cursor:pointer;text-decoration:none;transition:all .15s;white-space:nowrap}
+.ticket-btn-primary{background:var(--deep);color:var(--white)}
+.ticket-btn-primary:hover{background:var(--charcoal);color:var(--white)}
+.ticket-btn-secondary{background:transparent;color:var(--deep);border:1.5px solid var(--deep)}
+.ticket-btn-secondary:hover{background:var(--deep);color:var(--white)}
+.ticket-btn-capacity{background:#fee2e2;color:#991b1b;border:1.5px solid #fecaca;cursor:default}
+.ticket-btn svg{width:13px;height:13px;flex-shrink:0}
 
-/* VENUE SECTION */
-.venue{padding:6rem 0;background:var(--deep);color:var(--white)}
-.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.venue-img{border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.4)}
-.venue-img img{width:100%;display:block}
-.venue-text .section-eyebrow{text-align:left}
-.venue-text h2{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--white);margin-bottom:1.5rem;text-align:left}
-.venue-text p{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.8;margin-bottom:1.25rem}
-.venue-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
-.venue-feat{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:1.25rem}
-.venue-feat h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--gold);margin-bottom:.35rem}
-.venue-feat p{font-size:.85rem;color:rgba(255,255,255,.55);line-height:1.5}
-
-/* COMMUNITY CTA */
-.community-cta{padding:6rem 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);text-align:center;color:var(--white)}
-.community-cta h2{font-family:var(--serif);font-size:2.4rem;font-weight:700;margin-bottom:1rem}
-.community-cta p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 2rem}
-
-/* NEWSLETTER */
-.newsletter{padding:4rem 0;background:var(--deep);text-align:center;color:var(--white)}
-.newsletter h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;margin-bottom:.5rem}
-.newsletter p{color:rgba(255,255,255,.6);margin-bottom:1.5rem}
-.newsletter-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto}
-.newsletter-form input{flex:1;padding:.85rem 1.25rem;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--white);font-size:.95rem;font-family:var(--sans)}
-.newsletter-form input::placeholder{color:rgba(255,255,255,.35)}
-.newsletter-form button{background:var(--gold);color:var(--deep);font-weight:700;padding:.85rem 1.5rem;border-radius:8px;border:none;cursor:pointer;font-family:var(--sans);font-size:.9rem}
+/* CTA STRIP */
+.events-cta{background:var(--deep);padding:3.5rem 0;text-align:center}
+.events-cta h2{font-family:var(--serif);font-size:1.9rem;font-weight:700;color:var(--white);margin-bottom:.75rem}
+.events-cta p{color:rgba(255,255,255,.65);font-size:1.05rem;margin-bottom:1.75rem}
+.events-cta a{display:inline-block;background:var(--gold);color:var(--deep);font-weight:700;font-size:.95rem;padding:.85rem 2rem;border-radius:8px;transition:all .2s}
+.events-cta a:hover{background:var(--gold-light);color:var(--deep);transform:translateY(-1px)}
 
 /* FOOTER */
-.site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:4rem 0 2rem;color:rgba(255,255,255,.5)}
-.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.footer-brand p{font-size:.9rem;line-height:1.7;max-width:280px;margin-top:.75rem}
-.footer-col h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--white);margin-bottom:1rem}
-.footer-col a{display:block;color:rgba(255,255,255,.5);font-size:.875rem;padding:.25rem 0}
-.footer-col a:hover{color:var(--gold)}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;font-size:.8rem}
-.footer-bottom a{color:rgba(255,255,255,.4)}
+.site-footer{background:var(--deep);padding:3.5rem 0 2rem;color:rgba(255,255,255,.7)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;margin-bottom:2.5rem}
+.footer-brand p{font-size:.9rem;line-height:1.7;margin-top:.75rem;color:rgba(255,255,255,.55)}
+.footer-col h4{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--gold);margin-bottom:1rem}
+.footer-col a{display:block;color:rgba(255,255,255,.6);font-size:.875rem;margin-bottom:.5rem;transition:color .2s}
+.footer-col a:hover{color:var(--white)}
+.footer-bottom{display:flex;justify-content:space-between;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.08);font-size:.8rem;color:rgba(255,255,255,.4)}
 
 @media(max-width:768px){
-  .page-hero h1{font-size:2.2rem}
-  .type-grid{grid-template-columns:1fr 1fr}
-  .events-grid{grid-template-columns:1fr}
-  .festival-feature{grid-template-columns:1fr}
-  .festival-img{min-height:280px}
-  .venue-grid{grid-template-columns:1fr}
-  .venue-features{grid-template-columns:1fr}
+  .event-card{grid-template-columns:1fr}
+  .event-img{max-height:200px}
+  .event-img img{min-height:200px}
+  .event-body{padding:1.1rem 1.25rem}
+  .event-title{font-size:1.05rem}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .hero-stats{flex-wrap:wrap;gap:1.5rem}
-  .nav-links{display:none}
 }
+
 </style>
 </head>
 <body>
 
-<!-- NAV -->
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum">
+    <a class='nav-logo' href='index.html'>
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#0f1419;">
       <span>City of Asylum</span>
     </a>
     <div class="nav-links">
       <div class="nav-item">
-        <a href="about.html">About Us <span class="nav-chevron">▾</span></a>
+        <a href='about.html' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="about.html">Our Mission</a>
-          <a href="about.html">Our Founders</a>
-          <a href="about.html">Our History</a>
+          <a href='about.html'>Our Mission</a>
+          <a href='about.html#history'>History</a>
+          <a href='about.html#model'>Our Model</a>
+          <a href='about.html#staff'>Staff</a>
+          <a href='about.html#board'>Board of Directors</a>
+          <a href='about.html#jobs'>Jobs</a>
+          <a href='about.html#subscribe'>Subscribe</a>
+          <a href='about.html#inquiries'>Other Inquiries</a>
+          <a href='about.html#directions'>Directions</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="writers.html">Writers &amp; Residencies <span class="nav-chevron">▾</span></a>
+        <a href='writers.html' style='line-height:1;display:inline-block;'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="writers.html">Residency Program</a>
-          <a href="writers.html">Current Residents</a>
-          <a href="writers.html">Ukrainian Fellowship</a>
-          <a href="writers.html">Alumni</a>
+          <a href='writers.html#residency-program'>Residency Program</a>
+          <a href='writers.html#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="events.html" class="active">Free Arts &amp; Culture <span class="nav-chevron">▾</span></a>
+        <a href='free-arts.html' style='line-height:1;display:inline-block;'>Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="events.html">Upcoming Programs</a>
-          <a href="events.html">Literary Readings</a>
-          <a href="events.html">Thursday Night Jazz</a>
-          <a href="events.html">Annual Festivals</a>
+          <a href='free-arts.html#what-we-host'>What We Host</a>
+          <a href='free-arts.html#why-free'>Why Our Programs Are Free</a>
+          <a href='free-arts.html#upcoming'>Upcoming Programs</a>
+          <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">Full Calendar</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="campus.html">Campus <span class="nav-chevron">▾</span></a>
+        <a href='campus.html' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="campus.html">Alphabet City</a>
-          <a href="campus.html">House Publications</a>
-          <a href="campus.html">Reading Garden</a>
-          <a href="campus.html">Audio Tour</a>
+          <a href='campus.html'>Community as Campus</a>
+          <a href='campus.html#how-it-grew'>How It Grew</a>
+          <a href='campus.html#whats-here'>What&#8217;s Here Now</a>
+          <a href='campus.html#walking-tour'>Walking Tour App</a>
+          <a href='campus.html#becoming'>Starting a New City</a>
         </div>
       </div>
-      <a href="media-archive.html">Media &amp; Archive</a>
-      <a href="donate.html" class="nav-donate">Donate</a>
+      <div class="nav-item">
+        <a href='media-archive.html' style='line-height:1;display:inline-block;'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='media-archive.html#press'>Selected Press</a>
+          <a href='media-archive.html#video'>Selected Video &amp; Photos</a>
+          <a href='media-archive.html#publications'>Selected Books</a>
+          <a href='media-archive.html#archive'>Media Archive</a>
+        </div>
+      </div>
+      <a class='active' href='events.html' style='line-height:1;display:inline-block;'>Events</a>
+      <a href='bookstore-restaurant.html' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <div class="nav-item">
+        <a class='nav-donate' href='donate.html'>Donate</a>
+        <div class="nav-dropdown">
+          <a href='donate.html#other-ways'>Other Ways to Help</a>
+          <a href='donate.html#foundations'>Foundations</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
 
-<!-- PAGE HERO -->
+<!-- HERO -->
 <section class="page-hero">
   <div class="page-hero-bg">
-    <img src="https://cityofasylum.org/wp-content/uploads/2023/07/city-of-asylum-bookstore.png" alt="Alphabet City Stage" onerror="this.parentElement.style.background='linear-gradient(135deg, #1a1f2e, #0f1419)'">
+    <img src="https://cityofasylum.org/wp-content/uploads/2026/01/JAMES-BRANDON-LEWIS-05072026-1-1.jpg" alt="City of Asylum Programs">
   </div>
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
-    <span class="eyebrow">Free Arts &amp; Culture</span>
-    <h1>Where Literature, Music &amp; Ideas <em>Come Alive</em></h1>
-    <p>At Alphabet City, City of Asylum presents 120+ free programs each year — globally-focused literary readings, concerts, films, and festivals. All programs are also live-streamed free.</p>
-    <div class="hero-stats">
-      <div class="stat"><div class="num">120+</div><div class="label">Free Programs Yearly</div></div>
-      <div class="stat"><div class="num">98%</div><div class="label">Audience Rating of Programming Importance</div></div>
-      <div class="stat"><div class="num">100%</div><div class="label">Free &amp; Open to All</div></div>
-    </div>
+    <span class="eyebrow">Free &amp; Open to All</span>
+    <h1>Upcoming <em>Programs</em></h1>
+    <p>All events at Alphabet City &mdash; 40 W. North Avenue, Pittsburgh, PA. Free in-person and livestream tickets available.</p>
   </div>
 </section>
 
-<!-- PROGRAM TYPES -->
-<section class="program-types">
+<!-- EVENTS LIST -->
+<section class="events-section">
   <div class="container">
-    <span class="section-eyebrow">What We Host</span>
-    <h2 class="section-title">Programs That Connect Communities</h2>
-    <p class="section-subtitle">Our programming bridges cultures through four creative pillars — each one free, open to the public, and grounded in the belief that art builds understanding.</p>
-    <div class="type-grid">
-      <div class="type-card">
-        <div class="type-icon">📖</div>
-        <h3>Literary Readings</h3>
-        <p>Acclaimed and emerging writers in all genres, with a special focus on authors in translation. 4 Nobel Laureates in Literature, 12 Pulitzer Prize Winners, 8 National Book Awardees, 11 MacArthur Fellows, and 4 U.S. Poet Laureates.</p>
-      </div>
-      <div class="type-card">
-        <div class="type-icon">🎵</div>
-        <h3>Music &amp; Performance</h3>
-        <p>Thursday Night Jazz by Pittsburgh's finest musicians debuting new work, national and international jazz groups on tour, world music, and a bit of classical/new music.</p>
-      </div>
-      <div class="type-card">
-        <div class="type-icon">🎬</div>
-        <h3>Home for Others</h3>
-        <p>At no cost we provide Alphabet City to arts organizations who share our mission and have no facility of their own. A potpourri of films, poetry, jazz, and surprises.</p>
-      </div>
-      <div class="type-card">
-        <div class="type-icon">🎉</div>
-        <h3>Unique to City of Asylum</h3>
-        <p>Multi-lingual Jazz-Poetry collaborations, Allegheny County Poet Laureate &amp; Youth Poet Laureate programs, Festivals, ASL Poetry and more.</p>
-      </div>
-    </div>
+
+    <!-- MAY 2026 -->
+    <div class="month-group">
+      <div class="month-label">May 2026</div>
+
+      <article class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/03/STORY-CLUB-2025.jpg" alt="Story Club PGH Presents: Story Slam! (Unraveled)" loading="lazy">
+          <div class="event-date-badge">
+            <span class="dow">Tue</span>
+            <span class="day">5</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div>
+            <div class="event-meta">
+              <span class="time">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                7:00 pm &ndash; 8:30 pm EDT
+              </span>
+              <span class="location">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Alphabet City
+              </span>
+            </div>
+            <h2 class="event-title">Story Club PGH Presents: Story Slam! (Unraveled)</h2>
+            <p class="event-desc">Everything that comes together will someday come apart. Share your story this May at Story Club PGH&rsquo;s Story Slam, for the chance to win prizes and storytelling glory!</p>
+          </div>
+          <div class="event-tickets">
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-primary">
+              <svg viewBox="0 0 16 16" fill="currentColor"><path d="M2 2a2 2 0 0 0-2 2v1a1 1 0 0 0 1 1 1 1 0 0 1 0 2 1 1 0 0 0-1 1v1a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-1a1 1 0 0 0-1-1 1 1 0 0 1 0-2 1 1 0 0 0 1-1V4a2 2 0 0 0-2-2H2z"/></svg>
+              Free In-Person Tickets
+            </a>
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-secondary">Free Livestream Tickets</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/01/JAMES-BRANDON-LEWIS-05072026-1-1.jpg" alt="Jazz Poetry 2026: The Messthetics & James Brandon Lewis" loading="lazy">
+          <div class="event-date-badge">
+            <span class="dow">Thu</span>
+            <span class="day">7</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div>
+            <div class="event-meta">
+              <span class="time">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                7:00 pm &ndash; 9:00 pm EDT
+              </span>
+              <span class="location">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Alphabet City
+              </span>
+            </div>
+            <h2 class="event-title">Jazz Poetry 2026: The Messthetics &amp; James Brandon Lewis with Mark Andryczyk, Rania Mamoun &amp; Volodymyr Rafeyenko</h2>
+            <p class="event-desc">Six-time Jazz Poetry Month headliner James Brandon Lewis takes to the stage with his punk-jazz fusion band, the Messthetics, and poets Mark Andryczyk, Rania Mamoun, and Volodymyr Rafeyenko to herald in another month of poetry and improvisational jazz collaboration.</p>
+          </div>
+          <div class="event-tickets">
+            <span class="ticket-btn ticket-btn-capacity">In-Person: AT CAPACITY</span>
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-secondary">Free Livestream Tickets</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/04/MARTA-SANCHEZ-05142026-1-1.jpg" alt="Jazz Poetry 2026: Spanish Pianist Marta Sánchez" loading="lazy">
+          <div class="event-date-badge">
+            <span class="dow">Thu</span>
+            <span class="day">14</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div>
+            <div class="event-meta">
+              <span class="time">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                7:00 pm &ndash; 9:00 pm EDT
+              </span>
+              <span class="location">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Alphabet City
+              </span>
+            </div>
+            <h2 class="event-title">Jazz Poetry 2026: Spanish Pianist Marta S&aacute;nchez&rsquo;s &ldquo;For the Space You Left&rdquo; with Olena Boryshpolets, Oleksandr Fraz&eacute;-Fraz&eacute;nko, Bertony Louis &amp; Mukhtar Shehata</h2>
+            <p class="event-desc">Jazz Poetry 2026 welcomes Marta S&aacute;nchez for a stunning solo-piano album release, with compositions inspired by themes of isolation and solitude, as well as intimate, improvisational poetry collaborations with four City of Asylum Writers-in-Residence.</p>
+          </div>
+          <div class="event-tickets">
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-primary">Free In-Person Tickets</a>
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-secondary">Free Livestream Tickets</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/04/ERIKA-DENAE-J-05212026.jpg" alt="Jazz Poetry 2026: Poet-Vocalist Erika Denae J" loading="lazy">
+          <div class="event-date-badge">
+            <span class="dow">Thu</span>
+            <span class="day">21</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div>
+            <div class="event-meta">
+              <span class="time">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                7:00 pm &ndash; 9:00 pm EDT
+              </span>
+              <span class="location">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Alphabet City
+              </span>
+            </div>
+            <h2 class="event-title">Jazz Poetry 2026: Poet-Vocalist Erika Denae J&rsquo;s &ldquo;In the Mood For&rdquo; (Book Launch &amp; Album Teaser)</h2>
+            <p class="event-desc">Innately fusion, this concert and book launch debuts poems by Erika Denae J that have leapt off the page and been adapted into musical compositions, brought to life with a 13-piece band including Jennifer Orchard, John Shannon, Theron Brown, Denzel Chismar-Oliver, James Johnson III, and more.</p>
+          </div>
+          <div class="event-tickets">
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-primary">Free In-Person Tickets</a>
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-secondary">Free Livestream Tickets</a>
+          </div>
+        </div>
+      </article>
+    </div><!-- /month-group May -->
+
+    <!-- JUNE 2026 -->
+    <div class="month-group">
+      <div class="month-label">June 2026</div>
+
+      <article class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/02/OLEKSANDR-FRAZE-FRAZENKO-03042026.jpg" alt="Artist in Exile: Oleksandr Frazé-Frazénko's Ceramic Knives" loading="lazy">
+          <div class="event-date-badge">
+            <span class="dow">Tue</span>
+            <span class="day">9</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div>
+            <div class="event-meta">
+              <span class="time">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                7:00 pm &ndash; 8:30 pm EDT
+              </span>
+              <span class="location">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Alphabet City
+              </span>
+            </div>
+            <h2 class="event-title">Artist in Exile: Oleksandr Fraz&eacute;-Fraz&eacute;nko&rsquo;s Ceramic Knives (Ukrainian Spring Songs)</h2>
+            <p class="event-desc">Writer-in-Residence Oleksandr Fraz&eacute;-Fraz&eacute;nko and wife Mari Fraz&eacute;-Fraz&eacute;nko bring the spellbinding sound of their folk-experimental duo &mdash; accompanied by fellow musicians Vsiudysvoia, Lesya Verba, and Hugo Cruz &mdash; to Alphabet City for a night of reimagined Eastern European songs.</p>
+          </div>
+          <div class="event-tickets">
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-primary">Free In-Person Tickets</a>
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-secondary">Free Livestream Tickets</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/04/THE-LEILA-06172026.jpg" alt="World of Music: The Leila" loading="lazy">
+          <div class="event-date-badge">
+            <span class="dow">Wed</span>
+            <span class="day">17</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div>
+            <div class="event-meta">
+              <span class="time">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                7:00 pm &ndash; 8:30 pm EDT
+              </span>
+              <span class="location">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Alphabet City
+              </span>
+            </div>
+            <h2 class="event-title">World of Music: The Leila (Moroccan Progressive Rock)</h2>
+            <p class="event-desc">Welcome rock band The Leila on their debut North American tour as they blend elements of rock, soul, and traditional Moroccan sounds in songs about self-expression, empowerment, and societal issues.</p>
+          </div>
+          <div class="event-tickets">
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-primary">Free In-Person Tickets</a>
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-secondary">Free Livestream Tickets</a>
+          </div>
+        </div>
+      </article>
+    </div><!-- /month-group June -->
+
+    <!-- JULY 2026 -->
+    <div class="month-group">
+      <div class="month-label">July 2026</div>
+
+      <article class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2025/12/ON-TOPIC-01252025-1.jpg" alt="On Topic: Free Expression" loading="lazy">
+          <div class="event-date-badge">
+            <span class="dow">Tue</span>
+            <span class="day">21</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div>
+            <div class="event-meta">
+              <span class="time">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                7:00 pm &ndash; 8:00 pm EDT
+              </span>
+              <span class="location">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Alphabet City
+              </span>
+            </div>
+            <h2 class="event-title">On Topic: Free Expression with Jacob Mchangama &amp; Nadine Strossen</h2>
+            <p class="event-desc">Our On Topic series continues with a moderated discussion among free speech experts, who will get into the weeds of current controversies and the role free expression plays in maintaining a democratic government.</p>
+          </div>
+          <div class="event-tickets">
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-primary">Free In-Person Tickets</a>
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-secondary">Free Livestream Tickets</a>
+          </div>
+        </div>
+      </article>
+    </div><!-- /month-group July -->
+
+    <!-- OCTOBER 2026 -->
+    <div class="month-group">
+      <div class="month-label">October 2026</div>
+
+      <article class="event-card">
+        <div class="event-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2026/02/Shelter-White.png" alt="PGHwrites: Andrew Swensen & Yan Pang's Shelter" loading="lazy" style="background:#1a1a2e">
+          <div class="event-date-badge">
+            <span class="dow">Tue</span>
+            <span class="day">27</span>
+          </div>
+        </div>
+        <div class="event-body">
+          <div>
+            <div class="event-meta">
+              <span class="time">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
+                7:00 pm &ndash; 9:00 pm EDT
+              </span>
+              <span class="location">
+                <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
+                Alphabet City
+              </span>
+            </div>
+            <h2 class="event-title">PGHwrites: Andrew Swensen &amp; Yan Pang&rsquo;s &ldquo;Shelter&rdquo; (Musical Theatre Production)</h2>
+            <p class="event-desc">From the minds of Andrew Swensen and Yan Pang, City of Asylum hosts an expanded showcase of &ldquo;Shelter,&rdquo; the story of scars carried from childhood into adulthood, how pain can distort our perception and damage our relationships, and how we find our strength through it.</p>
+          </div>
+          <div class="event-tickets">
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-primary">Free In-Person Tickets</a>
+            <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener" class="ticket-btn ticket-btn-secondary">Free Livestream Tickets</a>
+          </div>
+        </div>
+      </article>
+    </div><!-- /month-group October -->
+
   </div>
 </section>
 
-<!-- UPCOMING EVENTS -->
-<section class="upcoming">
+<!-- CTA STRIP -->
+<section class="events-cta">
   <div class="container">
-    <span class="section-eyebrow">Coming Up</span>
-    <h2 class="section-title">Upcoming Programs</h2>
-    <p class="section-subtitle">All events are free and open to the public. Held at Alphabet City, 40 W. North Avenue, Pittsburgh, PA 15212-4710. Alphabet City is an accessible facility.</p>
-    <div class="events-grid">
-      <div class="event-card">
-        <div class="event-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2026/02/HUGO-CRUZ-03192026-800x440.jpg" alt="Hugo Cruz & Caminos" onerror="this.style.opacity='0'">
-          <span class="event-tag">Music</span>
-        </div>
-        <div class="event-body">
-          <div class="event-date">Thursday, March 19, 2026 &middot; 8:00 PM – 9:30 PM</div>
-          <h4>Thursday Night Jazz: Hugo Cruz &amp; Caminos</h4>
-          <p>Performing the music of Art Blakey &amp; the Jazz Messengers with a vibrant Cuban twist on the Alphabet City stage.</p>
-          <div class="event-meta">
-            <span>📍 Alphabet City</span>
-            <span>🎟️ Free</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2026/02/BERTONY-LOUIS-03222026-800x440.jpg" alt="Bertony Louis" onerror="this.style.opacity='0'">
-          <span class="event-tag">Literature</span>
-        </div>
-        <div class="event-body">
-          <div class="event-date">Sunday, March 22, 2026 &middot; 3:00 PM – 4:30 PM</div>
-          <h4>World Literature: Poet Bertony Louis</h4>
-          <p>A reading by our newest writer-in-residence from the Caribbean — poetry of exile, memory, and belonging.</p>
-          <div class="event-meta">
-            <span>📍 Alphabet City</span>
-            <span>🎟️ Free</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2026/02/CRISTINA-RIVERA-GARZA-03242026-800x440.jpg" alt="Cristina Rivera Garza" onerror="this.style.opacity='0'">
-          <span class="event-tag">Literature</span>
-        </div>
-        <div class="event-body">
-          <div class="event-date">Tuesday, March 24, 2026 &middot; 7:00 PM – 8:30 PM</div>
-          <h4>World Literature: Cristina Rivera Garza</h4>
-          <p>"Autobiography of Cotton" — a reading from Mexico's celebrated author and Pulitzer Prize winner.</p>
-          <div class="event-meta">
-            <span>📍 Alphabet City</span>
-            <span>🎟️ Free</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-img">
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--charcoal),var(--slate));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem">🎵</div>
-          <span class="event-tag">Music</span>
-        </div>
-        <div class="event-body">
-          <div class="event-date">Thursday, March 26, 2026 &middot; 8:00 PM – 9:30 PM</div>
-          <h4>Thursday Night Jazz</h4>
-          <p>Our beloved weekly jazz series continues — a different ensemble every Thursday on the Alphabet City stage.</p>
-          <div class="event-meta">
-            <span>📍 Alphabet City</span>
-            <span>🎟️ Free</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-img">
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--charcoal),var(--slate));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem">🎬</div>
-          <span class="event-tag">Film</span>
-        </div>
-        <div class="event-body">
-          <div class="event-date">Saturday, March 28, 2026 &middot; 7:00 PM – 8:30 PM</div>
-          <h4>Human Rights Film Night</h4>
-          <p>A documentary screening exploring freedom of expression, followed by a moderated conversation with local advocates.</p>
-          <div class="event-meta">
-            <span>📍 Alphabet City</span>
-            <span>🎟️ Free</span>
-          </div>
-        </div>
-      </div>
-      <div class="event-card">
-        <div class="event-img">
-          <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--charcoal),var(--slate));display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:2.5rem">📖</div>
-          <span class="event-tag">Literature</span>
-        </div>
-        <div class="event-body">
-          <div class="event-date">Sunday, March 29, 2026 &middot; 3:00 PM – 4:30 PM</div>
-          <h4>Writer-in-Residence Reading</h4>
-          <p>Monthly showcase featuring readings and conversation from our current cohort of exiled writers.</p>
-          <div class="event-meta">
-            <span>📍 Alphabet City</span>
-            <span>🎟️ Free</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:3rem">
-      <a href="#" class="btn btn-secondary">View Full Calendar &rarr;</a>
-    </div>
-  </div>
-</section>
-
-<!-- FLAGSHIP FESTIVALS -->
-<section class="festivals">
-  <div class="container">
-    <span class="section-eyebrow">Signature Festivals</span>
-    <h2 class="section-title">Annual Celebrations of Creative Freedom</h2>
-    <p class="section-subtitle">Our flagship festivals bring together writers, musicians, filmmakers, and audiences from across the globe for multi-day celebrations.</p>
-
-    <div class="festival-feature">
-      <div class="festival-img">
-        <div style="background:#e5e7eb;min-height:300px;height:100%;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.9rem;width:100%;position:absolute;inset:0;"><!-- Designer: Jazz-poetry collaboration performance photo -->Jazz-Poetry Concert Image</div>
-        <span class="festival-badge">Flagship</span>
-      </div>
-      <div class="festival-text">
-        <h3>City of Asylum Jazz Poetry Concert</h3>
-        <div class="festival-when">Annual &middot; Spring</div>
-        <p>Our signature event merges the spontaneity of jazz with the depth of poetry. Exiled writers read their work accompanied by world-class musicians, creating a one-of-a-kind experience that celebrates the universal language of artistic expression.</p>
-        <ul class="festival-highlights">
-          <li>Live jazz-poetry collaborations on the Alphabet City stage</li>
-          <li>Featured readings by City of Asylum writers-in-residence</li>
-          <li>Open to the public, completely free of charge</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="festival-feature">
-      <div class="festival-img">
-        <img src="https://cityofasylum.org/wp-content/uploads/2023/07/visit-city-of-asylum-pittsburgh.png" alt="Alphabet City Cultural Fest" onerror="this.style.opacity='0'">
-        <span class="festival-badge">Community</span>
-      </div>
-      <div class="festival-text">
-        <h3>Alphabet City Cultural Fest</h3>
-        <div class="festival-when">Annual &middot; Summer</div>
-        <p>Our Northside neighborhood comes alive with an outdoor celebration of the cultures represented by our writers-in-residence. Enjoy food, music, art installations, and performances from traditions spanning five continents.</p>
-        <ul class="festival-highlights">
-          <li>International food from our Cucina Alfabeto kitchen</li>
-          <li>Outdoor stage with global music performances</li>
-          <li>Children's workshops, art-making, and community mural projects</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- VENUE -->
-<section class="venue">
-  <div class="container">
-    <div class="venue-grid">
-      <div class="venue-img">
-        <div style="background:#e5e7eb;border-radius:16px;min-height:300px;height:100%;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.9rem;"><!-- Designer: Interior photo of Alphabet City venue/stage -->Alphabet City Venue Image</div>
-      </div>
-      <div class="venue-text">
-        <span class="section-eyebrow" style="text-align:left">Our Stage</span>
-        <h2>Alphabet City — Pittsburgh's Living Room for the World</h2>
-        <p>Alphabet City was designed to feel welcoming, intimate, and alive — a place where art meets community every single week. There is nothing else like it.</p>
-        <div class="venue-features">
-          <div class="venue-feat">
-            <h4>Performance Stage</h4>
-            <p>Intimate 150-seat venue with world-class acoustics for readings, concerts, and performances.</p>
-          </div>
-          <div class="venue-feat">
-            <h4>City of Asylum Bookstore</h4>
-            <p>A bookstore unlike any other, specializing in translations. You can also shop online and order almost any book in print.</p>
-          </div>
-          <div class="venue-feat">
-            <h4>Cucina Alfabeto</h4>
-            <p>Enjoy Italian-inspired dishes in our on-site restaurant before, during, or after events.</p>
-          </div>
-          <div class="venue-feat">
-            <h4>Gallery Spaces</h4>
-            <p>Alphabet City spaces are available for business and private functions from 35–100.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMMUNITY CTA -->
-<section class="community-cta">
-  <div class="container">
-    <h2>Every Program Is Free. Your Support Makes That Possible.</h2>
-    <p>City of Asylum's events are free and open to all because of generous donors. Help us continue bringing world-class literature, music, and performances to Pittsburgh.</p>
-    <a href="donate.html" class="btn-gold">Support Our Programs &rarr;</a>
-  </div>
-</section>
-
-<!-- NEWSLETTER -->
-<section class="newsletter">
-  <div class="container">
-    <h2>Never Miss a Program</h2>
-    <p>Get our weekly events email — readings, concerts, films, and festivals delivered to your inbox.</p>
-    <form class="newsletter-form" onsubmit="event.preventDefault()">
-      <input type="email" placeholder="Your email address">
-      <button type="submit">Subscribe</button>
-    </form>
+    <h2>All Programs Are Free &amp; Open to Everyone</h2>
+    <p>City of Asylum believes culture belongs to all. Every event is free to attend in person or livestream.</p>
+    <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">View Full Calendar at CityofAsylum.org &rarr;</a>
   </div>
 </section>
 
@@ -465,39 +476,42 @@ a:hover{color:var(--red-dark)}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="margin-bottom:.5rem">
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:40px">
-          <span style="color:#fff;font-family:var(--serif);font-weight:700;">City of Asylum</span>
+        <a class='nav-logo' href='index.html' style='margin-bottom:.5rem'>
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:70px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+          <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
         </a>
-        <p>Protecting and celebrating freedom of creative expression since 2004. The world's largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+        <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href="about.html">About Us</a>
-        <a href="writers.html">Writers &amp; Residencies</a>
-        <a href="events.html">Free Arts &amp; Culture</a>
+        <a href='about.html'>About Us</a>
+        <a href='writers.html'>Writers &amp; Residencies</a>
+        <a href='free-arts.html'>Free Arts &amp; Culture</a>
+        <a href='media-archive.html'>Media &amp; Archive</a>
       </div>
       <div class="footer-col">
         <h4>Visit</h4>
-        <a href="campus.html">Alphabet City</a>
-        <a href="#">Bookstore</a>
-        <a href="#">Cucina Alfabeto</a>
-        <a href="#">Directions</a>
+        <a href='free-arts.html'>Alphabet City</a>
+        <a href='bookstore-restaurant.html'>Bookstore</a>
+        <a href='bookstore-restaurant.html'>Restaurant</a>
+        <a href='about.html#directions'>Directions</a>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
-        <a href="donate.html">Donate</a>
-        <a href="#">Volunteer</a>
-        <a href="#">Sponsor</a>
-        <a href="mailto:info@cityofasylum.org">Contact Us</a>
+        <a href='donate.html'>Donate</a>
+        <a href='about.html#inquiries'>Volunteer</a>
+        <a href='about.html#inquiries'>Free Tour</a>
+        <a href='about.html#inquiries'>Book a Writer</a>
+        <a href='about.html#inquiries'>Contact Us</a>
       </div>
     </div>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
-      <a href="#">Privacy Policy</a>
+      <a href='index.html' style='color:var(--gold);'>Return to Home</a>
     </div>
   </div>
 </footer>
 
+<script src="mobile.js?v=3" defer></script>
 </body>
 </html>

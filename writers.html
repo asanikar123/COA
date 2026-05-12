@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Writers & Residencies — City of Asylum</title>
-<meta name="description" content="Meet the 21 writers who have found a safe haven at City of Asylum, the world's largest exiled writer residency program.">
+<meta name="description" content="Meet the 22 writers who have found a safe haven at City of Asylum, the world's largest exiled writer residency program.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -28,20 +28,26 @@ a:hover { color: var(--red-dark); }
 
 /* NAV (same as homepage) */
 .site-nav { position:sticky; top:0; z-index:100; background:var(--deep); border-bottom:3px solid var(--gold); }
-.nav-inner { max-width:1200px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:72px; }
+.nav-inner{ max-width:1440px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:98px; }
 .nav-logo { display:flex; align-items:center; gap:.75rem; color:var(--white); text-decoration:none; }
-.nav-logo img { height:48px; width:auto; }
-.nav-logo span { font-family:var(--serif); font-weight:700; font-size:1.15rem; }
-.nav-links { display:flex; align-items:center; gap:.25rem; }
-.nav-links a { color:rgba(255,255,255,.8); font-size:.875rem; font-weight:500; padding:.5rem .85rem; border-radius:6px; transition:all .2s; }
+.nav-logo img { height:70px; width:auto; }
+.nav-logo span { font-family:var(--sans); font-weight:700; font-size:1.15rem; line-height:1.1;}
+.nav-links{display:flex;align-items:center;gap:.25rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap; color:rgba(255,255,255,.8); font-size:.875rem; font-weight:500; padding:.5rem .35rem; border-radius:6px; transition:all .2s; }
 .nav-links a:hover { color:var(--white); background:rgba(255,255,255,.08); }
 .nav-links a.active { color:var(--gold); }
 .nav-donate { background:var(--red)!important; color:var(--white)!important; font-weight:700!important; padding:.55rem 1.4rem!important; border-radius:6px; }
-.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:calc(100% + 6px);left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-6px);transition:opacity .2s,transform .2s,visibility .2s;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateY(0)}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
 
 /* PAGE HERO */
 .page-hero {
-  background: var(--deep); padding: 5rem 0 4rem;
+  background:
+    linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(26,31,46,.6) 50%, rgba(15,20,25,.75) 100%),
+    url('Yadali.jpg') left center / auto 105% no-repeat,
+    url('KhetMarBig.jpg') calc(50% - 40px) center / auto 100% no-repeat,
+    url('centeno_big.jpg') right center / auto 100% no-repeat,
+    var(--deep);
+  padding: 3rem 0 2rem;
   position: relative; overflow: hidden;
 }
 .page-hero::after {
@@ -63,7 +69,7 @@ a:hover { color: var(--red-dark); }
 }
 
 /* PROGRAM DESCRIPTION */
-.program-intro { padding: 5rem 0; background: var(--white); }
+.program-intro { padding: 3rem 0 5rem; background: linear-gradient(rgba(255,255,255,.40),rgba(255,255,255,.40)), url('03Alphas30.jpg') top center/825px auto repeat; }
 .program-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .program-text h2 {
   font-family:var(--serif); font-size:2rem; font-weight:700;
@@ -71,7 +77,7 @@ a:hover { color: var(--red-dark); }
 }
 .program-text p { font-size:1.05rem; color:var(--text-body); margin-bottom:1rem; line-height:1.8; }
 .program-highlights {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2.5rem;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem;
 }
 .highlight-box {
   background: var(--cream); border-radius: 12px; padding: 1.25rem 1.5rem;
@@ -162,8 +168,13 @@ a:hover { color: var(--red-dark); }
 .community-section p { color:rgba(255,255,255,.65); font-size:1.05rem; max-width:650px; margin:0 auto 2rem; }
 
 /* FOOTER (reused) */
-.site-footer { background:var(--deep); border-top:1px solid rgba(255,255,255,.08); padding:3rem 0 2rem; color:rgba(255,255,255,.5); }
-.footer-bottom { display:flex; justify-content:space-between; font-size:.8rem; }
+.site-footer { background:var(--deep); border-top:1px solid rgba(255,255,255,.08); padding:4rem 0 2rem; color:rgba(255,255,255,.5); }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; margin-bottom:3rem; }
+.footer-brand p { font-size:.9rem; line-height:1.7; max-width:280px; margin-top:.75rem; }
+.footer-col h4 { font-family:var(--serif); font-size:1rem; font-weight:700; color:var(--white); margin-bottom:1rem; }
+.footer-col a { display:block; color:rgba(255,255,255,.5); font-size:.875rem; padding:.25rem 0; }
+.footer-col a:hover { color:var(--gold); }
+.footer-bottom { border-top:1px solid rgba(255,255,255,.08); padding-top:1.5rem; display:flex; justify-content:space-between; align-items:center; font-size:.8rem; }
 .footer-bottom a { color:rgba(255,255,255,.4); }
 
 @media (max-width: 768px) {
@@ -171,56 +182,78 @@ a:hover { color: var(--red-dark); }
   .program-grid { grid-template-columns:1fr; }
   .writers-grid { grid-template-columns:1fr; }
   .program-highlights { grid-template-columns:1fr 1fr; }
+  .footer-grid { grid-template-columns:1fr 1fr; }
   .nav-links { display:none; }
 }
 </style>
+<link rel="stylesheet" href="mobile.css?v=3">
 </head>
 <body>
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum">
+    <a class='nav-logo' href='index.html'>
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#0f1419;">
       <span>City of Asylum</span>
     </a>
-    <div class="nav-links">
+            <div class="nav-links">
       <div class="nav-item">
-        <a href="about.html">About Us <span class="nav-chevron">▾</span></a>
+        <a href='about.html' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="about.html">Our Mission</a>
-          <a href="about.html">Our Founders</a>
-          <a href="about.html">Our History</a>
+          <a href='about.html'>Our Mission</a>
+          <a href='about.html#history'>History</a>
+          <a href='about.html#model'>Our Model</a>
+          <a href='about.html#staff'>Staff</a>
+          <a href='about.html#board'>Board of Directors</a>
+          <a href='about.html#jobs'>Jobs</a>
+          <a href='about.html#subscribe'>Subscribe</a>
+          <a href='about.html#inquiries'>Other Inquiries</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="writers.html" class="active">Writers &amp; Residencies <span class="nav-chevron">▾</span></a>
+        <a class='active' href='writers.html' style='line-height:1;display:inline-block;'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="writers.html">Residency Program</a>
-          <a href="writers.html">Current Writers</a>
-          <a href="writers.html">Ukrainian Fellowship</a>
-          <a href="writers.html">Past Writers</a>
+          <a href='writers.html#residency-program'>Residency Program</a>
+          <a href='writers.html#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="events.html">Free Arts &amp; Culture <span class="nav-chevron">▾</span></a>
+        <a href='free-arts.html' style='line-height:1;display:inline-block;'>Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="events.html">Upcoming Programs</a>
-          <a href="events.html">Literary Readings</a>
-          <a href="events.html">Thursday Night Jazz</a>
-          <a href="events.html">Annual Festivals</a>
+          <a href='free-arts.html#what-we-host'>What We Host</a>
+          <a href='free-arts.html#why-free'>Why Our Programs Are Free</a>
+          <a href='events.html'>Upcoming Programs</a>
+          <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">Full Calendar</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href="campus.html">Campus <span class="nav-chevron">▾</span></a>
+        <a href='campus.html' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href="campus.html">Alphabet City</a>
-          <a href="campus.html">House Publications</a>
-          <a href="campus.html">Reading Garden</a>
-          <a href="campus.html">Audio Tour</a>
+          <a href='campus.html'>Community as Campus</a>
+          <a href='campus.html#how-it-grew'>How It Grew</a>
+          <a href='campus.html#whats-here'>What&#8217;s Here Now</a>
+          <a href='campus.html#walking-tour'>Walking Tour App</a>
+          <a href='campus.html#becoming'>Starting a New City</a>
         </div>
       </div>
-      <a href="media-archive.html">Media &amp; Archive</a>
-      <a href="donate.html" class="nav-donate">Donate</a>
+      <div class="nav-item">
+        <a href='media-archive.html' style='line-height:1;display:inline-block;'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='media-archive.html#press'>Selected Press</a>
+          <a href='media-archive.html#video'>Selected Video &amp; Photos</a>
+          <a href='media-archive.html#publications'>Selected Books</a>
+          <a href='media-archive.html#archive'>Media Archive</a>
+        </div>
+      </div>
+
+      <a href='bookstore-restaurant.html' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <div class="nav-item">
+        <a class='nav-donate' href='donate.html'>Donate</a>
+        <div class="nav-dropdown">
+          <a href='donate.html#other-ways'>Other Ways to Help</a>
+          <a href='donate.html#foundations'>Foundations</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
@@ -228,25 +261,17 @@ a:hover { color: var(--red-dark); }
 <!-- PAGE HERO -->
 <section class="page-hero">
   <div class="container">
-    <span class="section-eyebrow">Writers &amp; Residencies</span>
-    <h1>These are the voices the world tried to silence.</h1>
-    <p>City of Asylum hosts the largest residency program in the world for writers living in exile under threat of persecution. For three years or more, we provide each writer with a home, a stipend, legal counsel, medical benefits, and the freedom to create.</p>
+    <span class="section-eyebrow">The Exiled Writer Residency Program</span>
+    <h1>These are voices the world tried to silence.</h1>
   </div>
 </section>
 
-<!-- PROGRAM INTRO -->
-<section class="program-intro">
+<!-- PROGRAM HIGHLIGHTS -->
+<section class="program-intro" id="residency-program">
   <div class="container">
-    <div class="program-grid">
-      <div class="program-text">
-        <h2>The Exiled Writer &amp; Artist Residency Program</h2>
-        <p>Our residency is a long-term safe haven for literary writers who are in exile from their home countries and under threat of persecution because of their work. The goal is to enable each writer to continue writing while transitioning to life in exile, if it is not safe for them to return to their home country.</p>
-        <p>Our program is effective: every writer or artist hosted by City of Asylum has created a full-length work while in residence, and has been able to continue to create.</p>
-      </div>
-      <div>
-<div style="background:#e5e7eb;border-radius:16px;height:400px;display:flex;align-items:center;justify-content:center;color:#6b7280;font-size:.9rem;"><!-- Designer: photo of writer residency house or writer at work -->[Residency Photo Needed]</div>
-      </div>
-    </div>
+    <h2 style="font-family:var(--serif);font-style:italic;font-size:3rem;font-weight:900;color:var(--text-dark);line-height:1.2;max-width:800px;margin-bottom:1rem;">But at City of Asylum, those voices<br>are heard.</h2>
+    <p style="font-size:1.15rem;color:var(--text-dark);line-height:1.8;max-width:700px;margin-top:calc(1in/16);margin-bottom:calc(2rem - 1in/15);">Every writer-in-residence has written and published despite exile &mdash; <span style="white-space:nowrap;">most a full-length work.</span></p>
+    <p style="text-align:center;font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-top:-0.125in;margin-bottom:1.5rem;">Our residency program provides:</p>
     <div class="program-highlights">
       <div class="highlight-box">
         <strong>Safe Home</strong>
@@ -270,11 +295,14 @@ a:hover { color: var(--red-dark); }
       </div>
       <div class="highlight-box">
         <strong>Social Services</strong>
-        <span>A full-time residency manager coordinates community integration</span>
+        <span>A full-time residency manager coordinates individual needs and community integration</span>
       </div>
       <div class="highlight-box">
         <strong>Long-term Safety</strong>
-        <span>More than emergency support</span>
+        <span>More than emergency support.</span>
+      </div>
+      <div style="padding:1.25rem 1.5rem;display:flex;align-items:center;">
+        <p style="font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--muted);line-height:1.5;margin:0;font-weight:700;">&ldquo;I admire what [City of Asylum] has done to accommodate the writers to an extraordinary degree after their residency<br>is up.&rdquo;<br><span style="font-style:normal;font-size:.8rem;font-weight:600;color:var(--text-dark);">&mdash; Russell Banks</span><br><span style="font-style:normal;font-size:.75rem;color:var(--muted);">Author, President International Parliament of Writers</span></p>
       </div>
     </div>
   </div>
@@ -284,7 +312,6 @@ a:hover { color: var(--red-dark); }
 <section class="ukraine-section">
   <div class="container">
     <div class="ukraine-inner">
-      <div class="ukraine-flag">🇺🇦</div>
       <div>
         <h3>Fellowship for Ukrainian Writers</h3>
         <p>In response to the 2022 invasion of Ukraine, City of Asylum launched a fellowship enabling three Ukrainian writers — Olena Boryshpolets, Oleksandr Frazé-Frazénko, and Volodymyr Rafeyenko — to come to Pittsburgh so they can continue to research, write, and publish despite the ongoing war.</p>
@@ -294,11 +321,11 @@ a:hover { color: var(--red-dark); }
 </section>
 
 <!-- WRITERS GRID -->
-<section class="writers-grid-section">
+<section class="writers-grid-section" id="writers-in-residence">
   <div class="container">
     <span class="section-eyebrow" style="display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;">City of Asylum Writers</span>
-    <h2 style="font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.75rem;">21 Writers. 18 Countries. One Safe Haven.</h2>
-    <p style="text-align:center;color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto 2.5rem;">Click on a writer to learn their full story — what they fled, what they created, and how City of Asylum changed their life.</p>
+    <h2 style="font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.75rem;">22 Writers. 19 Countries. One Safe Haven.</h2>
+    <p style="text-align:center;color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto 2.5rem;">Read the writers stories&mdash;what they fled, what they created,<br>and how City of Asylum changed their lives.</p>
 
     <div class="sort-row">
       <span class="sort-label">Sort by:</span>
@@ -314,94 +341,16 @@ a:hover { color: var(--red-dark); }
     </div>
 
     <div class="writers-grid" id="writers-grid">
-      <div class="writer-card" data-year="2025" data-country="Caribbean" data-name="Bertony Louis" data-status="current">
+      <div class="writer-card" data-year="2025" data-country="Haiti" data-name="Bertony Louis" data-status="current">
         <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2025/10/EDIT-Bertony-Louis1.jpg.webp" alt="Bertony Louis" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Caribbean</span>
+          <img src="Bertony%20Louis.jpg" alt="Bertony Louis" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Haiti</span>
           <span class="writer-card-status status-current">Current</span>
         </div>
         <div class="writer-card-body">
           <h3>Bertony Louis</h3>
-          <div class="writer-card-genre">Poet</div>
-          <p>Our newest writer-in-residence, Bertony brings Caribbean poetic traditions to Pittsburgh's literary community.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2019" data-country="Sudan" data-name="Rania Mamoun" data-status="current">
-        <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2025/02/Rania.jpeg" alt="Rania Mamoun" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Sudan</span>
-          <span class="writer-card-status status-current">Current</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Rania Mamoun</h3>
-          <div class="writer-card-genre">Novelist, Poet, Activist &middot; Since 2019</div>
-          <p>Bestselling Sudanese author whose short story collection was shortlisted for the Warwick Prize for Women in Translation.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2022" data-country="Ukraine" data-name="Volodymyr Rafeyenko" data-status="current">
-        <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/07/Volodymyr-Rafeyenko-2.png" alt="Volodymyr Rafeyenko" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Ukraine</span>
-          <span class="writer-card-status status-current">Current</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Volodymyr Rafeyenko</h3>
-          <div class="writer-card-genre">Novelist &middot; Ukrainian Fellowship</div>
-          <p>Ukrainian novelist displaced by the 2022 invasion, continuing his literary work in Pittsburgh.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2022" data-country="Ukraine" data-name="Olena Boryshpolets" data-status="current">
-        <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/05/IMG_20240215_183656_629-1-1-scaled.jpg" alt="Olena Boryshpolets" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Ukraine</span>
-          <span class="writer-card-status status-current">Current</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Olena Boryshpolets</h3>
-          <div class="writer-card-genre">Writer &middot; Ukrainian Fellowship</div>
-          <p>Ukrainian writer and fellow, researching and publishing despite the ongoing war in her homeland.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2023" data-country="Ukraine" data-name="Oleksandr Frazé-Frazénko" data-status="current">
-        <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/05/KUJICAM_2023-06-06-19-36-27_developed-1-scaled.jpg" alt="Oleksandr Frazé-Frazénko" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Ukraine</span>
-          <span class="writer-card-status status-current">Current</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Oleksandr Frazé-Frazénko</h3>
-          <div class="writer-card-genre">Writer &middot; Ukrainian Fellowship</div>
-          <p>Ukrainian writer who arrived in Pittsburgh in 2023, settling on the Northside with his family.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2021" data-country="Cuba" data-name="Jorge Olivera Castillo" data-status="past">
-        <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2021/12/DSC08184_20211111_Rosensteel-scaled.jpg" alt="Jorge Olivera Castillo" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Cuba</span>
-          <span class="writer-card-status status-alumni">Former</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Jorge Olivera Castillo</h3>
-          <div class="writer-card-genre">Writer &middot; 2021–2024</div>
-          <p>Cuban writer who found a safe haven at City of Asylum and continued creating despite years of persecution.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2016" data-country="Bangladesh" data-name="Tuhin Das" data-status="past">
-        <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2021/05/tuhin.png" alt="Tuhin Das" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Bangladesh</span>
-          <span class="writer-card-status status-alumni">Former</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Tuhin Das</h3>
-          <div class="writer-card-genre">Poet &middot; 2016–2021</div>
-          <p>Bangladeshi poet who shares his experiences of persecution and exile through powerful verse.</p>
+          <div class="writer-card-genre">Poet &middot; 2025</div>
+          <p>A poet, educator, and lawyer whose humanitarian work bridges cultures, languages, and continents. Winner of 13 international poetry awards. In exile due to the threats of a failed state.</p>
         </div>
       </div>
 
@@ -414,33 +363,111 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Bewketu Seyoum</h3>
           <div class="writer-card-genre">Poet, Novelist, Essayist &middot; 2019–2021</div>
-          <p>Ethiopia's Best Novelist of the Year (2008), known for using humor to broach politically taboo subjects. Assaulted in 2011 for his writing.</p>
+          <p>A novelist, poet, comedian who satirized political corruption and social injustice, he is one of the leading writers of his generation. He was honored as Ethiopian Best Novelist of the Year and Best Young Author.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2019" data-country="Sudan" data-name="Rania Mamoun" data-status="current">
+        <div class="writer-card-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2025/02/Rania.jpeg" alt="Rania Mamoun" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Sudan</span>
+          <span class="writer-card-status status-current">Current</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Rania Mamoun</h3>
+          <div class="writer-card-genre">Novelist, Poet, Activist &middot; Since 2019</div>
+          <p>Her journalism, fiction, poetry, and activism confronted issues of censorship, social justice, and women&rsquo;s rights. She was a leader in the Women&rsquo;s Parliament and the Sudanese resistance committee.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2023" data-country="Ukraine" data-name="Volodymyr Rafeyenko" data-status="past">
+        <div class="writer-card-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/07/Volodymyr-Rafeyenko-2.png" alt="Volodymyr Rafeyenko" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Ukraine</span>
+          <span class="writer-card-status status-alumni">Former</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Volodymyr Rafeyenko</h3>
+          <div class="writer-card-genre">Ukrainian Fellowship &middot; 2023&ndash;2026</div>
+          <p>An award-winning novelist, poet, translator, and literary critic, he wrote and published entirely in Russian until the Russian invasion of Donetsk. He now writes only in Ukrainian.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2023" data-country="Ukraine" data-name="Olena Boryshpolets" data-status="current">
+        <div class="writer-card-img">
+          <img src="Olena.jpg" alt="Olena Boryshpolets" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Ukraine</span>
+          <span class="writer-card-status status-current">Current</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Olena Boryshpolets</h3>
+          <div class="writer-card-genre">Ukrainian Fellowship &middot; 2023</div>
+          <p>Poet, writer, journalist, actress, and cultural organizer. Known for her vivid voice and interdisciplinary artistic work, which evokes the spirit and cultural memory of Odesa.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2023" data-country="Ukraine" data-name="Oleksandr Frazé-Frazénko" data-status="current">
+        <div class="writer-card-img">
+          <img src="Fraze2.jpg" alt="Oleksandr Frazé-Frazénko" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Ukraine</span>
+          <span class="writer-card-status status-current">Current</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Oleksandr Frazé-Frazénko</h3>
+          <div class="writer-card-genre">Ukrainian Fellowship &middot; 2023</div>
+          <p>A filmmaker, poet, musician, and translator, he is co-founder of OFF Laboratory, which publishes and translates voices silenced by war, exile, and censorship.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2021" data-country="Cuba" data-name="Jorge Olivera Castillo" data-status="past">
+        <div class="writer-card-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2021/12/DSC08184_20211111_Rosensteel-scaled.jpg" alt="Jorge Olivera Castillo" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Cuba</span>
+          <span class="writer-card-status status-alumni">Former</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Jorge Olivera Castillo</h3>
+          <div class="writer-card-genre">Writer &middot; 2021–2024</div>
+          <p>Poet, journalist, and dissident, his writing led to his arrest during Cuba&rsquo;s &ldquo;Black Spring&rdquo; crackdown. He spent 21 months in Guantanamo Prison, including 9 months in solitary, and re-arrested repeatedly.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2016" data-country="Bangladesh" data-name="Tuhin Das" data-status="past">
+        <div class="writer-card-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2021/05/tuhin.png" alt="Tuhin Das" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Bangladesh</span>
+          <span class="writer-card-status status-alumni">Former</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Tuhin Das</h3>
+          <div class="writer-card-genre">Poet &middot; 2016–2021</div>
+          <p>A poet and essayist whose secular writings made him a target of Al Qaeda-linked militants murdering writers in Bangladesh. Forced into hiding, he lived underground and wrote clandestinely.</p>
         </div>
       </div>
 
       <div class="writer-card" data-year="2017" data-country="Syria" data-name="Osama Alomar" data-status="past">
         <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2021/06/20170305_Rosensteel_0002-1024x683-1.jpeg" alt="Osama Alomar" onerror="this.style.opacity='0'">
+          <img src="Osama%20ADJ%20_20170305_Rosensteel_0049.jpg" alt="Osama Alomar" style="object-position:15% center;" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Syria</span>
           <span class="writer-card-status status-alumni">Former</span>
         </div>
         <div class="writer-card-body">
           <h3>Osama Alomar</h3>
           <div class="writer-card-genre">Writer &middot; 2017–2019</div>
-          <p>Syrian writer whose work reflects the experience of exile and the search for creative freedom.</p>
+          <p>One of the Arab world&rsquo;s most celebrated practitioners of the &ldquo;very short story&rdquo; &mdash; parable-like fictions that skewer authoritarianism with dark humor. Forced to flee by the Assad regime.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2009" data-country="Myanmar" data-name="Khet Mar" data-status="past">
+      <div class="writer-card" data-year="2009" data-country="Burma" data-name="Khet Mar" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/06/KhetMarBig.jpeg" alt="Khet Mar" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Myanmar</span>
+          <span class="writer-card-country">Burma</span>
           <span class="writer-card-status status-alumni">Former</span>
         </div>
         <div class="writer-card-body">
           <h3>Khet Mar</h3>
           <div class="writer-card-genre">Writer &middot; 2009–2012</div>
-          <p>Burmese writer who fled persecution in Myanmar to find safety and creative safe haven in Pittsburgh.</p>
+          <p>A revered Burmese journalist and writer with 31,000 Facebook followers, she was sentenced to ten years imprisonment and freed from death-row during an amnesty. People made pilgrimages to visit her on Sampsonia Way from all over the U.S.</p>
         </div>
       </div>
 
@@ -453,7 +480,7 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Huang Xiang</h3>
           <div class="writer-card-genre">Poet &middot; First Writer, 2004–2006</div>
-          <p>China's pre-eminent post-Cultural Revolution poet. Imprisoned and tortured, he became City of Asylum's first writer and created the iconic "House Poem."</p>
+          <p>Known as the Walt Whitman of China, he was imprisoned for 12 years and tortured, and all his publications were destroyed or repressed by the government. He created City of Asylum's iconic &ldquo;House Poem&rdquo; and helped us re-imagine our mission.</p>
         </div>
       </div>
 
@@ -466,7 +493,7 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Horacio Castellanos Moya</h3>
           <div class="writer-card-genre">Writer &middot; 2006–2011</div>
-          <p>Salvadoran novelist and journalist who found refuge at City of Asylum after receiving death threats for his writing.</p>
+          <p>His novel <em>Revulsion</em>, a furious satire of his native El Salvador, resulted in death threats. During his residency at City of Asylum he won one of the most significant literary awards&mdash;for lifetime achievement&mdash;in the Spanish-speaking world.</p>
         </div>
       </div>
 
@@ -479,20 +506,20 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Israel Centeno</h3>
           <div class="writer-card-genre">Writer &middot; 2011–2018</div>
-          <p>Venezuelan novelist and essayist who continued his literary work during his residency at City of Asylum.</p>
+          <p>One of Venezuela's most celebrated novelists and winner of the Federico Garc&iacute;a Lorca Award in Spain, he was forced into exile after his novel <em>The Conspiracy</em> drew threats and attacks from the Ch&aacute;vez regime.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2005" data-country="" data-name="Aunel Arneth" data-status="past">
+      <div class="writer-card" data-year="2021" data-country="Republic of Congo" data-name="Aunel Arneth" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/11/Aunel-Credit-Renee-Rosensteel.png" alt="Aunel Arneth" onerror="this.style.opacity='0'">
-          <span class="writer-card-country"></span>
+          <span class="writer-card-country">Republic of Congo</span>
           <span class="writer-card-status status-alumni">Former</span>
         </div>
         <div class="writer-card-body">
           <h3>Aunel Arneth</h3>
-          <div class="writer-card-genre">Writer</div>
-          <p>Writer who found safety and creative freedom during their residency at City of Asylum.</p>
+          <div class="writer-card-genre">Writer &middot; 2021&ndash;2022</div>
+          <p>A pro-democracy activist, journalist, and documentary filmmaker, his work exposed state crimes and government corruption. His documentary <em>Keep Quiet or Die</em> led to arrest warrants.</p>
         </div>
       </div>
 
@@ -505,33 +532,33 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Mai Khoi</h3>
           <div class="writer-card-genre">Writer &middot; 2020–2023</div>
-          <p>Vietnamese artist and activist who continued her creative work during her residency at City of Asylum.</p>
+          <p>A singer and composer&mdash;winner of international awards for art and activism&mdash;known as the &ldquo;Lady Gaga of Vietnam,&rdquo; she ran for the National Assembly on a pro-democracy platform. Police raids and evictions forced her into exile.</p>
         </div>
       </div>
 
       <div class="writer-card" data-year="2013" data-country="Cuba" data-name="Orlando Pardo Lazo" data-status="past">
         <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/01/OLPL06-e1673279301512.jpeg" alt="Orlando Pardo Lazo" onerror="this.style.opacity='0'">
+          <img src="Orlando.jpg" alt="Orlando Pardo Lazo" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Cuba</span>
           <span class="writer-card-status status-alumni">Former</span>
         </div>
         <div class="writer-card-body">
           <h3>Orlando Pardo Lazo</h3>
           <div class="writer-card-genre">Writer &middot; 2013</div>
-          <p>Cuban writer and photographer who found refuge at City of Asylum after facing persecution for his work.</p>
+          <p>Novelist, photographer, and dissident blogger, his novel <em>Boring Home</em> was censored by the Cuban government in 2009, after which he was arrested three times and under constant watch by Castro's secret police.</p>
         </div>
       </div>
 
       <div class="writer-card" data-year="2016" data-country="Iraq" data-name="Sabreen Kadhim" data-status="past">
         <div class="writer-card-img">
-          <img src="" alt="Sabreen Kadhim" onerror="this.style.opacity='0'">
+          <img src="Sabreen.jpg" alt="Sabreen Kadhim" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Iraq</span>
           <span class="writer-card-status status-alumni">Former</span>
         </div>
         <div class="writer-card-body">
           <h3>Sabreen Kadhim</h3>
           <div class="writer-card-genre">Writer &middot; 2016</div>
-          <p>Iraqi writer who continued creating during their residency at City of Asylum.</p>
+          <p>Poet and television journalist whose work bore witness to violence during the rise of militias in Baghdad. Winner of the 3rd UNESCO Poetry Contest and the Iraqi Youth Poetry Festival.</p>
         </div>
       </div>
 
@@ -544,7 +571,7 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Simten Cosar</h3>
           <div class="writer-card-genre">Writer &middot; 2020–2022</div>
-          <p>Turkish writer who found safety and continued her literary work at City of Asylum.</p>
+          <p>A feminist political scientist and scholarly editor, she was persecuted for signing the &ldquo;We Will Not Be a Party to this Crime&rdquo; declaration that opposed military violence against Kurds.</p>
         </div>
       </div>
 
@@ -557,7 +584,46 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Yaghoub Yadali</h3>
           <div class="writer-card-genre">Writer &middot; 2013–2015</div>
-          <p>Iranian writer who found refuge and creative freedom during his residency at City of Asylum.</p>
+          <p>An experienced TV director, his debut novel <em>Rituals of Restlessness</em> won Iran's most prestigious literary award. But subsequently&mdash;even though it had passed state censorship&mdash;it led to his imprisonment for depicting an adulterous affair.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2022" data-country="Algeria" data-name="Anouar Rahmani" data-status="past">
+        <div class="writer-card-img">
+          <img src="Rahmani.jpg" alt="Anouar Rahmani" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Algeria</span>
+          <span class="writer-card-status status-alumni">Former</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Anouar Rahmani</h3>
+          <div class="writer-card-genre">Writer &middot; 2022&ndash;2026</div>
+          <p>Novelist, journalist, and the first public advocate for legalization of same-sex marriage in Algeria, he was shortlisted for the Index on Censorship&rsquo;s Freedom of Expression Awards.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2024" data-country="Egypt" data-name="Mukhtar Shehata" data-status="current">
+        <div class="writer-card-img">
+          <img src="Mukhtar.jpg" alt="Mukhtar Shehata" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Egypt</span>
+          <span class="writer-card-status status-current">Current</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Mukhtar Shehata</h3>
+          <div class="writer-card-genre">Writer &middot; 2024</div>
+          <p>A novelist, ethnographer, and documentary filmmaker whose work explores social change, class, gender, and rural transformation in Egypt after the 2011 revolution and Arab identity.</p>
+        </div>
+      </div>
+
+      <div class="writer-card" data-year="2026" data-country="Mexico" data-name="Anonymous" data-status="current">
+        <div class="writer-card-img">
+          <img src="anonymous-placeholder.svg" alt="Anonymous" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Mexico</span>
+          <span class="writer-card-status status-current">Current</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Anonymous</h3>
+          <div class="writer-card-genre">Writer &middot; 2026</div>
+          <p>An acclaimed investigative journalist and author who has spent two decades covering narco- and human trafficking on the Mexico-U.S. border and its impact on marginalized communities.</p>
         </div>
       </div>
     </div>
@@ -577,7 +643,10 @@ a:hover { color: var(--red-dark); }
         case 'year-asc':
           return parseInt(a.dataset.year) - parseInt(b.dataset.year);
         case 'alpha':
-          return a.dataset.name.localeCompare(b.dataset.name);
+          // Sort by last name; for 3-word names (Spanish naming convention) use the 2nd word
+          var lastName = function(n){ var p = n.split(' '); return p.length >= 2 ? p[1] : p[0]; };
+          var c2 = lastName(a.dataset.name).localeCompare(lastName(b.dataset.name));
+          return c2 !== 0 ? c2 : a.dataset.name.localeCompare(b.dataset.name);
         case 'country':
           var c = a.dataset.country.localeCompare(b.dataset.country);
           return c !== 0 ? c : a.dataset.name.localeCompare(b.dataset.name);
@@ -620,23 +689,93 @@ a:hover { color: var(--red-dark); }
 })();
 </script>
 
-<!-- COMMUNITY -->
+<!-- DONATE CTA -->
 <section class="community-section">
   <div class="container">
-    <h2>Making a home, part of a community</h2>
-    <p>City of Asylum writers do talks and readings at schools and community groups throughout Pittsburgh—and beyond, in partnerships with universities, arts institutions, and literary festivals.</p>
-    <a href="donate.html" style="display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-weight:700;padding:.9rem 2rem;border-radius:8px;font-size:1rem;">Support a Writer's Residency &rarr;</a>
+    <h2>Making a home, and part of a community</h2>
+    <p>City of Asylum writers are available for talks and readings at schools and community groups throughout Pittsburgh &mdash; and beyond &mdash; in partnerships with universities, arts institutions, and literary festivals.</p>
+    <a href='donate.html' style='display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-weight:700;padding:.9rem 2rem;border-radius:8px;font-size:1rem;'>Support a Writer's Residency &rarr;</a>
+    <div style="margin-top:1rem;">
+      <a href='about.html#inquiries' style='display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-weight:700;padding:.9rem 2rem;border-radius:8px;font-size:1rem;'>Book a Writer for Your Organization &rarr;</a>
+    </div>
   </div>
 </section>
 
 <footer class="site-footer">
   <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class='nav-logo' href='index.html' style='margin-bottom:.5rem'>
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:70px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+          <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
+        </a>
+        <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <a href='about.html'>About Us</a>
+        <a href='writers.html'>Writers &amp; Residencies</a>
+        <a href='free-arts.html'>Free Arts &amp; Culture</a>
+        <a href='media-archive.html'>Media &amp; Archive</a>
+      </div>
+      <div class="footer-col">
+        <h4>Visit</h4>
+        <a href='free-arts.html'>Alphabet City</a>
+        <a href='bookstore-restaurant.html'>Bookstore</a>
+        <a href='bookstore-restaurant.html'>Restaurant</a>
+        <a href='about.html#directions'>Directions</a>
+      </div>
+      <div class="footer-col">
+        <h4>Support</h4>
+        <a href='donate.html'>Donate</a>
+        <a href='about.html#inquiries'>Volunteer</a>
+        <a href='about.html#inquiries'>Free Tour</a>
+        <a href='about.html#inquiries'>Book a Writer</a>
+        <a href='about.html#inquiries'>Contact Us</a>
+      </div>
+    </div>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
-      <a href="index.html" style="color:var(--gold);">Back to Home</a>
+      <a href="writers.html#" onclick="document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Privacy Policy</a>
     </div>
   </div>
 </footer>
 
+<!-- Privacy Policy Modal -->
+<div id="privacy-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:1000;align-items:flex-start;justify-content:center;padding:3rem 1rem;overflow-y:auto;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow='';}">
+  <div style="max-width:700px;width:100%;text-align:left;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem 2.5rem;position:relative;">
+    <button type="button" aria-label="Close" onclick="document.getElementById('privacy-modal').style.display='none';document.body.style.overflow='';" style="position:absolute;top:.5rem;right:.75rem;background:transparent;border:0;color:rgba(255,255,255,.7);font-size:1.75rem;line-height:1;cursor:pointer;padding:.25rem .5rem;">&times;</button>
+    <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:0 0 1.5rem;">Privacy Policy for City of Asylum Pittsburgh</h3>
+    <p style="font-size:.85rem;color:var(--red);font-style:italic;margin-bottom:1.5rem;">(This is stubbed in; current policy requested)</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">1. Information We Collect</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We only collect information that you voluntarily provide to us. For our email subscriber list, this typically includes your name and email address.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">2. How We Use Your Information</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We use your information strictly to send you information about programs and organization, for occasional invitations to support our mission through donations, and to respond to questions. For City of Asylum Bookstore privacy policy: <a href="https://cityofasylumbooks.org/privacy-policy" target="_blank" style="color:var(--gold);">cityofasylumbooks.org/privacy-policy</a></p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">3. Sharing Your Information</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We value your trust. We do not sell, rent, or trade our subscriber list with third parties. We only share information with trusted service providers like our email platforms, who help us send our communications and are legally bound to keep your data secure.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">4. Opting Out</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">Most emails include an &ldquo;Unsubscribe&rdquo; link at the bottom. You can also contact us at <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a> to ask us to update or delete your information from our records.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">5. Security</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We take reasonable steps to protect your data from unauthorized access. However, no method of online transmission is 100% secure, and providing your information is at your own risk.</p>
+    <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">6. Contact Us</h4>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:0;">If you have questions about this policy, please reach out to us:<br><br>
+    <strong style="color:var(--white);">City of Asylum</strong><br>
+    40 W. North Avenue<br>
+    Pittsburgh, PA 15212<br>
+    Phone: 412-435-1110<br>
+    Email: <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a></p>
+  </div>
+</div>
+<script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('privacy-modal');if(m&&m.style.display==='flex'){m.style.display='none';document.body.style.overflow='';}}});</script>
+
+<script>
+document.querySelectorAll('.nav-dropdown a').forEach(function(a) {
+  a.addEventListener('click', function() {
+    this.blur();
+    this.closest('.nav-item').blur();
+  });
+});
+</script>
+<script src="mobile.js?v=3" defer></script>
 </body>
 </html>
