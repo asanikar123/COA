@@ -67,9 +67,10 @@ a:hover{color:var(--red-dark)}
 .event-date-badge .day{font-family:var(--serif);font-size:1.8rem;font-weight:900;line-height:1;display:block}
 .event-date-badge .dow{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);display:block;margin-top:.1rem}
 .event-body{padding:1.4rem 1.6rem;display:flex;flex-direction:column;justify-content:space-between}
-.event-meta{font-size:.78rem;color:var(--muted);margin-bottom:.5rem;display:flex;align-items:center;gap:.6rem;flex-wrap:wrap}
-.event-meta .time{display:flex;align-items:center;gap:.3rem}
-.event-meta .location{display:flex;align-items:center;gap:.3rem}
+.event-meta{font-size:.78rem;color:var(--muted);margin-bottom:.5rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
+.event-meta .time{display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap}
+.event-meta .location{display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap;color:var(--muted);text-decoration:none;border-bottom:1px dotted transparent;transition:color .15s,border-color .15s}
+.event-meta .location:hover{color:var(--red);border-bottom-color:currentColor}
 .event-title{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);line-height:1.35;margin-bottom:.6rem}
 .event-desc{font-size:.9rem;color:var(--text-body);line-height:1.65;flex:1;margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .event-tickets{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
@@ -215,10 +216,10 @@ a:hover{color:var(--red-dark)}
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
                 7:00 pm &ndash; 8:30 pm EDT
               </span>
-              <span class="location">
+              <a class="location" href="https://www.google.com/maps/search/?api=1&amp;query=40+W+North+Avenue+Pittsburgh+PA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
                 Alphabet City
-              </span>
+              </a>
             </div>
             <h2 class="event-title">Story Club PGH Presents: Story Slam! (Unraveled)</h2>
             <p class="event-desc">Everything that comes together will someday come apart. Share your story this May at Story Club PGH&rsquo;s Story Slam, for the chance to win prizes and storytelling glory!</p>
@@ -248,10 +249,10 @@ a:hover{color:var(--red-dark)}
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
                 7:00 pm &ndash; 9:00 pm EDT
               </span>
-              <span class="location">
+              <a class="location" href="https://www.google.com/maps/search/?api=1&amp;query=40+W+North+Avenue+Pittsburgh+PA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
                 Alphabet City
-              </span>
+              </a>
             </div>
             <h2 class="event-title">Jazz Poetry 2026: The Messthetics &amp; James Brandon Lewis with Mark Andryczyk, Rania Mamoun &amp; Volodymyr Rafeyenko</h2>
             <p class="event-desc">Six-time Jazz Poetry Month headliner James Brandon Lewis takes to the stage with his punk-jazz fusion band, the Messthetics, and poets Mark Andryczyk, Rania Mamoun, and Volodymyr Rafeyenko to herald in another month of poetry and improvisational jazz collaboration.</p>
@@ -278,10 +279,10 @@ a:hover{color:var(--red-dark)}
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
                 7:00 pm &ndash; 9:00 pm EDT
               </span>
-              <span class="location">
+              <a class="location" href="https://www.google.com/maps/search/?api=1&amp;query=40+W+North+Avenue+Pittsburgh+PA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
                 Alphabet City
-              </span>
+              </a>
             </div>
             <h2 class="event-title">Jazz Poetry 2026: Spanish Pianist Marta S&aacute;nchez&rsquo;s &ldquo;For the Space You Left&rdquo; with Olena Boryshpolets, Oleksandr Fraz&eacute;-Fraz&eacute;nko, Bertony Louis &amp; Mukhtar Shehata</h2>
             <p class="event-desc">Jazz Poetry 2026 welcomes Marta S&aacute;nchez for a stunning solo-piano album release, with compositions inspired by themes of isolation and solitude, as well as intimate, improvisational poetry collaborations with four City of Asylum Writers-in-Residence.</p>
@@ -308,10 +309,10 @@ a:hover{color:var(--red-dark)}
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
                 7:00 pm &ndash; 9:00 pm EDT
               </span>
-              <span class="location">
+              <a class="location" href="https://www.google.com/maps/search/?api=1&amp;query=40+W+North+Avenue+Pittsburgh+PA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
                 Alphabet City
-              </span>
+              </a>
             </div>
             <h2 class="event-title">Jazz Poetry 2026: Poet-Vocalist Erika Denae J&rsquo;s &ldquo;In the Mood For&rdquo; (Book Launch &amp; Album Teaser)</h2>
             <p class="event-desc">Innately fusion, this concert and book launch debuts poems by Erika Denae J that have leapt off the page and been adapted into musical compositions, brought to life with a 13-piece band including Jennifer Orchard, John Shannon, Theron Brown, Denzel Chismar-Oliver, James Johnson III, and more.</p>
@@ -343,10 +344,10 @@ a:hover{color:var(--red-dark)}
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
                 7:00 pm &ndash; 8:30 pm EDT
               </span>
-              <span class="location">
+              <a class="location" href="https://www.google.com/maps/search/?api=1&amp;query=40+W+North+Avenue+Pittsburgh+PA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
                 Alphabet City
-              </span>
+              </a>
             </div>
             <h2 class="event-title">Artist in Exile: Oleksandr Fraz&eacute;-Fraz&eacute;nko&rsquo;s Ceramic Knives (Ukrainian Spring Songs)</h2>
             <p class="event-desc">Writer-in-Residence Oleksandr Fraz&eacute;-Fraz&eacute;nko and wife Mari Fraz&eacute;-Fraz&eacute;nko bring the spellbinding sound of their folk-experimental duo &mdash; accompanied by fellow musicians Vsiudysvoia, Lesya Verba, and Hugo Cruz &mdash; to Alphabet City for a night of reimagined Eastern European songs.</p>
@@ -373,10 +374,10 @@ a:hover{color:var(--red-dark)}
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
                 7:00 pm &ndash; 8:30 pm EDT
               </span>
-              <span class="location">
+              <a class="location" href="https://www.google.com/maps/search/?api=1&amp;query=40+W+North+Avenue+Pittsburgh+PA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
                 Alphabet City
-              </span>
+              </a>
             </div>
             <h2 class="event-title">World of Music: The Leila (Moroccan Progressive Rock)</h2>
             <p class="event-desc">Welcome rock band The Leila on their debut North American tour as they blend elements of rock, soul, and traditional Moroccan sounds in songs about self-expression, empowerment, and societal issues.</p>
@@ -408,10 +409,10 @@ a:hover{color:var(--red-dark)}
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
                 7:00 pm &ndash; 8:00 pm EDT
               </span>
-              <span class="location">
+              <a class="location" href="https://www.google.com/maps/search/?api=1&amp;query=40+W+North+Avenue+Pittsburgh+PA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
                 Alphabet City
-              </span>
+              </a>
             </div>
             <h2 class="event-title">On Topic: Free Expression with Jacob Mchangama &amp; Nadine Strossen</h2>
             <p class="event-desc">Our On Topic series continues with a moderated discussion among free speech experts, who will get into the weeds of current controversies and the role free expression plays in maintaining a democratic government.</p>
@@ -443,10 +444,10 @@ a:hover{color:var(--red-dark)}
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/><path d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16zm7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0z"/></svg>
                 7:00 pm &ndash; 9:00 pm EDT
               </span>
-              <span class="location">
+              <a class="location" href="https://www.google.com/maps/search/?api=1&amp;query=40+W+North+Avenue+Pittsburgh+PA" target="_blank" rel="noopener">
                 <svg viewBox="0 0 16 16" fill="currentColor"><path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
                 Alphabet City
-              </span>
+              </a>
             </div>
             <h2 class="event-title">PGHwrites: Andrew Swensen &amp; Yan Pang&rsquo;s &ldquo;Shelter&rdquo; (Musical Theatre Production)</h2>
             <p class="event-desc">From the minds of Andrew Swensen and Yan Pang, City of Asylum hosts an expanded showcase of &ldquo;Shelter,&rdquo; the story of scars carried from childhood into adulthood, how pain can distort our perception and damage our relationships, and how we find our strength through it.</p>
