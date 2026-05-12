@@ -59,18 +59,20 @@ a:hover{color:var(--red-dark)}
 .month-label{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text-dark);padding-bottom:.75rem;margin-bottom:1.75rem;border-bottom:2px solid var(--gold);display:flex;align-items:center;gap:.75rem}
 .month-label::before{content:'';display:inline-block;width:4px;height:1.4rem;background:var(--gold);border-radius:2px}
 
-.event-card{display:grid;grid-template-columns:180px 1fr;gap:0;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:1.25rem;border:1px solid var(--border);transition:box-shadow .2s,transform .2s}
+.event-card{display:grid;grid-template-columns:240px 1fr;gap:0;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.07);margin-bottom:1.25rem;border:1px solid var(--border);transition:box-shadow .2s,transform .2s}
 .event-card:hover{box-shadow:0 8px 28px rgba(0,0,0,.12);transform:translateY(-2px)}
-.event-img{position:relative;overflow:hidden}
-.event-img img{width:100%;height:100%;object-fit:cover;min-height:160px}
-.event-date-badge{position:absolute;top:0;left:0;background:var(--deep);color:var(--white);text-align:center;padding:.5rem .75rem;min-width:52px}
-.event-date-badge .day{font-family:var(--serif);font-size:1.8rem;font-weight:900;line-height:1;display:block}
-.event-date-badge .dow{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);display:block;margin-top:.1rem}
-.event-body{padding:1.4rem 1.6rem;display:flex;flex-direction:column;justify-content:space-between}
-.event-meta{font-size:.78rem;color:var(--muted);margin-bottom:.5rem;display:flex;align-items:center;gap:.9rem;flex-wrap:wrap}
-.event-meta .time{display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap}
-.event-meta .location{display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap;color:var(--muted);text-decoration:none;border-bottom:1px dotted transparent;transition:color .15s,border-color .15s}
+.event-img{position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--cream)}
+.event-img img{width:100%;height:100%;object-fit:cover;display:block}
+.event-date-badge{position:absolute;top:.75rem;left:.75rem;background:rgba(15,20,25,.92);color:var(--white);text-align:center;padding:.4rem .65rem;min-width:46px;border-radius:6px;backdrop-filter:blur(4px)}
+.event-date-badge .day{font-family:var(--serif);font-size:1.5rem;font-weight:900;line-height:1;display:block}
+.event-date-badge .dow{font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);display:block;margin-top:.15rem}
+.event-body{padding:1.5rem 1.75rem;display:flex;flex-direction:column;justify-content:space-between;min-width:0}
+.event-meta{font-size:.78rem;color:var(--muted);margin-bottom:.65rem;display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+.event-meta svg{width:14px;height:14px;flex-shrink:0;opacity:.7}
+.event-meta .time{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap}
+.event-meta .location{display:inline-flex;align-items:center;gap:.35rem;white-space:nowrap;color:var(--muted);text-decoration:none;border-bottom:1px dotted transparent;transition:color .15s,border-color .15s}
 .event-meta .location:hover{color:var(--red);border-bottom-color:currentColor}
+.event-meta .location:hover svg{opacity:1}
 .event-title{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);line-height:1.35;margin-bottom:.6rem}
 .event-desc{font-size:.9rem;color:var(--text-body);line-height:1.65;flex:1;margin-bottom:1rem;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .event-tickets{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:auto}
