@@ -50,16 +50,16 @@ a:hover{color:var(--red-dark)}
 .nav-logo{display:flex;align-items:center;gap:.1rem;color:var(--text-dark);text-decoration:none}
 .nav-logo img{height:70px;width:auto;margin-left:0.0625in}
 .nav-logo span{font-family:var(--sans);font-weight:700;font-size:1.15rem;line-height:1.1;text-align:right;}
-.nav-links{display:flex;align-items:center;gap:1.75rem;flex-wrap:nowrap}
+.nav-links{display:flex;align-items:center;gap:1rem;flex-wrap:nowrap}
 .nav-links a{white-space:nowrap;color:var(--text-dark);font-size:.875rem;font-weight:500;padding:.5rem .35rem;border-radius:6px;transition:all .2s}
-.nav-item > a{display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important}
+.nav-item > a{display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important}
 .nav-chevron{margin-left:0!important;line-height:1;font-size:.75rem!important}
 .nav-links a:hover{color:var(--red);background:rgba(0,0,0,.05)}
 .nav-links a.active{color:var(--gold)}
 .nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
 .nav-item:last-child .nav-dropdown{left:auto;right:0}
 .nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.75rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--white);border:1px solid rgba(0,0,0,.1);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.15)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:var(--text-dark)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--red)!important;background:rgba(0,0,0,.04)!important;padding-left:1.5rem!important}
-.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important;text-align:left}
+.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important;text-align:center;white-space:normal;text-wrap:balance;font-size:.82rem}
 .nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 
 /* HERO */
@@ -213,7 +213,7 @@ a:hover{color:var(--red-dark)}
       <!-- ADDED 2026-05-31: explicit Home link (revert by removing this line) -->
       <a href='/' style='line-height:1;display:inline-block;'>Home</a>
       <div class="nav-item">
-        <a href='/about'>About<br>Us <span class="nav-chevron">&#9662;</span></a>
+        <a href='/about'>About Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/about'>Our Mission</a>
           <a href='/about#history'>History</a>
@@ -226,14 +226,14 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="nav-item">
-        <a href='/writers'>Writers<br>&amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <a href='/writers'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/writers#residency-program'>Residency Program</a>
           <a href='/writers#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='/free-arts' style='line-height:1;display:inline-block;color:var(--red);font-weight:700;'>Free Programs<br>&amp; Tix <span class="nav-chevron">&#9662;</span></a>
+        <a href='/free-arts' style='line-height:1;display:inline-block;color:var(--red);font-weight:700;'>Free Programs &amp; Tix <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/free-arts#what-we-host'>What We Host</a>
           <a href='/free-arts#why-free'>Why Our Programs Are Free</a>
@@ -242,7 +242,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="nav-item">
-        <a class='active' href='/campus' style='line-height:1;display:inline-block;'>Community<br>Building <span class="nav-chevron">&#9662;</span></a>
+        <a class='active' href='/campus' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/campus'>Community as Campus</a>
           <a href='/campus#how-it-grew'>How It Grew</a>
@@ -252,7 +252,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="nav-item">
-        <a href='/media-archive'>Media<br>&amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <a href='/media-archive'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/media-archive#video'>Selected Video &amp; Photos</a>
           <a href='/media-archive#publications'>Selected Books</a>
@@ -261,7 +261,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
 
-      <a href='/bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore<br>&amp; Restaurant</a>
+      <a href='/bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
       <div class="nav-item">
         <a class='nav-donate' href='/donate'>Donate</a>
         <div class="nav-dropdown">

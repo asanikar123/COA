@@ -57,12 +57,12 @@ a:hover { color: var(--red-dark); }
 .nav-logo { display: flex; align-items: center; gap: .1rem; color: var(--text-dark); text-decoration: none; }
 .nav-logo img { height: 70px; width: auto; margin-left: 0.0625in; }
 .nav-logo span { font-family:var(--sans); font-weight: 700; font-size: 1.15rem; letter-spacing: .02em; line-height:1.1; text-align:right;}
-.nav-links{display:flex;align-items:center;gap:1.75rem;flex-wrap:nowrap}
+.nav-links{display:flex;align-items:center;gap:1rem;flex-wrap:nowrap}
 .nav-links a{white-space:nowrap;
   color: var(--text-dark); font-size: .875rem; font-weight: 500;
   padding: .5rem .35rem; border-radius: 6px; transition: all .2s;
 }
-.nav-item > a{display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important}
+.nav-item > a{display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important}
 .nav-chevron{margin-left:0!important;line-height:1;font-size:.75rem!important}
 .nav-links a:hover { color: var(--red); background: rgba(0,0,0,.05); }
 .nav-donate {
@@ -108,7 +108,7 @@ a:hover { color: var(--red-dark); }
 .nav-dropdown-light a { color: var(--text-dark) !important; }
 .nav-dropdown-light a:hover { color: var(--red) !important; background: rgba(0,0,0,.04) !important;
 }
-.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important;text-align:left}
+.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important;text-align:center;white-space:normal;text-wrap:balance;font-size:.82rem}
 .nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 
 /* GOLD STANDARD: gold-on-dark renders bright #f5d23a; gold-on-light keeps muted --gold (#c9a227).
@@ -588,7 +588,7 @@ a:hover { color: var(--red-dark); }
       <!-- ADDED 2026-05-31: explicit Home link. Gold styling indicates current page (only on index.html). -->
       <a href='/' style='line-height:1;display:inline-block;color:var(--gold);font-weight:700;'>Home</a>
       <div class="nav-item">
-        <a href='/about'>About<br>Us <span class="nav-chevron">&#9662;</span></a>
+        <a href='/about'>About Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown nav-dropdown-light">
           <a href='/about'>Our Mission</a>
           <a href='/about#history'>History</a>
@@ -601,14 +601,14 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
       <div class="nav-item">
-        <a href='/writers'>Writers<br>&amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <a href='/writers'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/writers#residency-program'>Residency Program</a>
           <a href='/writers#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='/free-arts' style='line-height:1;display:inline-block;color:var(--red);font-weight:700;'>Free Programs<br>&amp; Tix <span class="nav-chevron">&#9662;</span></a>
+        <a href='/free-arts' style='line-height:1;display:inline-block;color:var(--red);font-weight:700;'>Free Programs &amp; Tix <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/free-arts#what-we-host'>What We Host</a>
           <a href='/free-arts#why-free'>Why Our Programs Are Free</a>
@@ -617,7 +617,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
       <div class="nav-item">
-        <a href='/campus'>Community<br>Building <span class="nav-chevron">&#9662;</span></a>
+        <a href='/campus'>Community Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/campus'>Community as Campus</a>
           <a href='/campus#how-it-grew'>How It Grew</a>
@@ -627,7 +627,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
       <div class="nav-item">
-        <a href='/media-archive'>Media<br>&amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <a href='/media-archive'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
           <a href='/media-archive#video'>Selected Video &amp; Photos</a>
           <a href='/media-archive#publications'>Selected Books</a>
@@ -636,7 +636,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <a href='/bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore<br>&amp; Restaurant</a>
+      <a href='/bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
       <div class="nav-item">
         <a class='nav-donate' href='/donate'>Donate</a>
         <div class="nav-dropdown">
