@@ -1,4 +1,11 @@
 (function () {
+  // Build a clean text label from a nav link: <br> -> space, drop the dropdown chevron.
+  function cleanLabel(el) {
+    var t = el.cloneNode(true);
+    var c = t.querySelector('.nav-chevron'); if (c && c.parentNode) c.parentNode.removeChild(c);
+    t.innerHTML = t.innerHTML.replace(/<br\s*\/?>/gi, ' ');
+    return t.textContent.replace(/[▾▼]/g, '').replace(/\s+/g, ' ').trim();
+  }
   function init() {
     var nav = document.querySelector('.site-nav .nav-inner') || document.querySelector('.site-nav');
     var links = document.querySelector('.nav-links');
@@ -25,7 +32,7 @@
         var subLinks = node.querySelectorAll(':scope > .nav-dropdown a');
         if (!topLink) return;
 
-        var label = topLink.textContent.replace(/▾|▼|\s+$/g, '').trim();
+        var label = cleanLabel(topLink);
         var href = topLink.getAttribute('href');
         var isDonate = label.toLowerCase() === 'donate';
 
@@ -76,7 +83,7 @@
         var a2 = document.createElement('a');
         a2.href = node.getAttribute('href');
         a2.className = 'mm-top';
-        a2.textContent = node.textContent.trim();
+        a2.textContent = cleanLabel(node);
         panel.appendChild(a2);
       }
     });

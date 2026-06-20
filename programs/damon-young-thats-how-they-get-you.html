@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Damon Young | That&#x27;s How They Get You &mdash; City of Asylum</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --deep:#1c1a17;--charcoal:#2a2724;--slate:#54504a;
+  --red:#9c3f33;--red-dark:#7d3028;--gold:#6b6155;--gold-light:#8a7f70;
+  --cream:#f4efe7;--warm-white:#faf8f3;--white:#ffffff;
+  --muted:#7a7268;--text-dark:#1c1a17;--text-body:#37332e;--border:#e4ddd0;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Inter','Segoe UI',sans-serif;
+  /* Program-detail-page hero/footer — TEST: darker-than-process-blue */
+  --program-bg:#1a4d7e;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--text-body);line-height:1.7;background:var(--warm-white)}
+img{max-width:100%;height:auto;display:block}
+a{color:var(--red);text-decoration:none;transition:color .2s}
+a:hover{color:var(--red-dark)}
+.container{max-width:1200px;margin:0 auto;padding:0 2rem}
+
+/* Navigation */
+.site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
+.nav-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
+.nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
+.nav-logo img{height:60px;width:auto;display:block}
+.nav-logo span{font-family:var(--sans);font-weight:700;font-size:1.15rem}
+.nav-links{display:flex;align-items:center;gap:1rem}
+.nav-links a{color:rgba(255,255,255,.85);font-size:.9rem;font-weight:500}
+.nav-links a:hover{color:var(--gold)}
+.nav-donate{background:var(--red);color:var(--white)!important;font-weight:700;padding:.55rem 1.4rem;border-radius:6px}
+
+/* Hamburger button — hidden on desktop, shown on mobile */
+.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.8rem;line-height:1;cursor:pointer;padding:.3rem .55rem;border-radius:5px}
+.nav-toggle:hover{background:rgba(255,255,255,.08)}
+
+@media (max-width:700px){
+  .nav-toggle{display:inline-block}
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    right:0;
+    background:var(--deep);
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.25rem;
+    padding:.75rem 1.25rem 1rem;
+    border-top:1px solid rgba(255,255,255,.12);
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+  }
+  .nav-links.open{display:flex}
+  .nav-links a{width:100%;padding:.6rem .25rem;font-size:1rem}
+  .nav-links .nav-donate{width:auto;margin-top:.25rem}
+}
+
+/* Hero */
+.program-hero{
+  background:
+    linear-gradient(rgba(15,20,25,.55), rgba(15,20,25,.55)),
+    url('images/just-curtains.jpg') center/cover no-repeat;
+  background-color: var(--program-bg);
+  padding: 3.5rem 0 2.25rem;
+  color: var(--white);
+}
+.program-hero .eyebrow{display:block;font-size:1.55rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.program-hero h1{font-family:var(--serif);font-size:2.8rem;font-weight:900;line-height:1.15;margin-bottom:1.25rem;max-width:880px;color:var(--white)}
+.program-hero h1 em{font-style:italic;font-weight:700}
+.program-hero .meta{font-size:1.05rem;color:rgba(255,255,255,.75);margin-bottom:2rem}
+@media (max-width:600px){
+  .program-hero .meta .start-ampm{display:none}
+  /* Smaller program title on mobile */
+  .program-hero h1{font-size:1.8rem}
+  /* Keep eyebrow at the smaller mobile size */
+  .program-hero .eyebrow{font-size:1.25rem}
+}
+.hero-tickets{display:flex;align-items:flex-start;gap:.75rem;flex-wrap:wrap;flex:1 1 auto}
+.hero-actions{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.hero-partner{display:flex;flex-direction:column;align-items:flex-end;gap:.35rem;flex:0 0 auto;max-width:220px}
+.hero-partner-caption{font-size:.7rem;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:.08em;line-height:1.3;text-align:right}
+.hero-partner-logo{max-height:60px;max-width:200px;width:auto;height:auto;object-fit:contain;display:block}
+.hero-partner-name{font-family:var(--serif);font-size:1.3rem;color:var(--white);font-weight:700;text-align:right;line-height:1.2}
+@media (max-width:768px){.hero-actions{flex-direction:column;align-items:flex-start}.hero-partner{align-items:flex-start;max-width:none}.hero-partner-caption,.hero-partner-name{text-align:left}}
+.btn-red{display:inline-block;background:var(--red);color:var(--white)!important;font-weight:700;padding:.75rem 1.5rem;border-radius:6px;font-size:.95rem}
+.btn-red:hover{background:var(--red-dark);color:var(--white)!important}
+.btn-gold{display:inline-block;background:var(--gold);color:var(--deep)!important;font-weight:700;padding:.75rem 1.5rem;border-radius:6px;font-size:.95rem}
+.btn-gold:hover{background:var(--gold-light);color:var(--deep)!important}
+/* Smaller in-body ticket buttons (mirrors of the hero buttons, above "About the Author") */
+.body-tickets{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;justify-content:center}
+.btn-red-sm{display:inline-block;background:var(--gold);color:#000!important;font-weight:700;padding:.35rem .9rem;border-radius:5px;font-size:.95rem;text-align:center}
+.btn-red-sm:hover{background:var(--gold-light);color:#000!important}
+.order-group{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:.4rem;max-width:280px}
+.order-group .order-note{font-size:.78rem;color:rgba(255,255,255,.72);font-style:italic;line-height:1.35;text-align:right}
+@media (max-width:640px){.order-group{margin-left:0;align-items:flex-start}.order-group .order-note{text-align:left}}
+
+/* Main body */
+.program-body{
+  padding:2.75rem 0 4rem;
+  background:
+    url('images/just-curtains.jpg') top center / 100% auto no-repeat,
+    var(--warm-white);
+}
+.two-col{display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:start}
+@media (max-width:900px){
+  .two-col{grid-template-columns:1fr}
+  /* Mobile only: reorder sidebar so Restaurant appears above Venue */
+  .meta-col{display:flex;flex-direction:column}
+  .meta-col > *{margin-bottom:1.25rem!important}
+  .meta-col .hero-image       {order:1}
+  .meta-col .details-box      {order:2}
+  .meta-col .cucina-card      {order:3}  /* moved above Venue */
+  .meta-col .venue-box        {order:4}
+  .meta-col .organizer-box    {order:5}
+  .meta-col .accommodations-card {order:6}
+  .meta-col .share-block      {order:7}
+}
+
+.content-col section{margin-bottom:1.5rem}
+.content-col h2{font-family:var(--serif);font-weight:700;font-size:1.8rem;color:var(--deep);margin-bottom:1rem;border-bottom:2px solid var(--gold);padding-bottom:.4rem}
+.content-col h3{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--deep);margin-bottom:.75rem}
+.content-col p{margin-bottom:1rem;font-size:1.02rem}
+.content-col em{font-style:italic}
+.content-col strong{font-weight:700;color:var(--deep)}
+
+/* Make text-heavy sections into opaque cards so they read over the body background photo */
+.content-col .description{
+  background:#000;
+  border:1px solid #000;
+  border-radius:10px;
+  padding:1.4rem 1.5rem 1.2rem;
+  color:var(--white);
+}
+.content-col .description h2{color:var(--white);border-bottom-color:var(--gold)}
+.content-col .description p{color:var(--white);font-size:1.1rem}
+.content-col .description p + p{text-indent:2em}
+.content-col .description strong{color:var(--white)}
+.content-col .description em{color:var(--white)}
+/* Orange accent text — coordinates with warm orange backgrounds.
+   Adjust the hex below if you want a different shade. */
+.text-orange{color:#ea580c!important}
+.text-orange strong, .text-orange em{color:inherit!important}
+/* Inline button rendered from the btn-label-url markdown shortcode */
+.md-btn{display:inline-block;background:var(--red);color:#fff!important;font-weight:700;padding:.4rem .9rem;border-radius:5px;font-size:.9rem;text-decoration:none;margin:.2rem .15rem;line-height:1.3}
+.md-btn:hover{background:var(--red-dark);color:#fff!important}
+.content-col .performers{
+  background:white;
+  border:1px solid var(--border);
+  border-radius:10px;
+  padding:1.4rem 1.5rem 1.2rem;
+}
+
+.quotes{margin-bottom:1rem!important}
+.quotes blockquote{background:transparent;border:none;padding:.5rem 0;margin-bottom:.4rem;font-family:var(--sans);font-style:normal;font-weight:400;font-size:1.1rem;line-height:1.5;color:var(--white);}
+.quotes blockquote:last-child{margin-bottom:0}
+.quotes cite{font-style:normal;font-family:var(--sans);font-size:1.1rem;font-weight:400;color:rgba(255,255,255,.95);white-space:nowrap;}
+/* Override the generic `.content-col strong` dark color when bold appears inside quotes */
+.content-col .quotes strong, .content-col .quotes em{color:inherit;font-weight:700}
+.quotes cite.orphan{display:block;text-align:right}
+
+/* Mobile only: drop the body background photo; instead put the photo
+   inside each quote box, at natural size, cropped to the box. */
+@media (max-width:600px){
+  .program-body{background:var(--warm-white)}
+  .quotes blockquote{
+    background:url('images/just-curtains.jpg') center center / cover no-repeat #1a4d7e;
+    padding:.85rem 1rem;
+    border-radius:8px;
+    overflow:hidden;
+    margin-bottom:.6rem;
+  }
+}
+.why-chose{margin-top:0!important;margin-bottom:1.25rem!important}
+
+.order-block{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.5rem;text-align:center;margin-bottom:2rem}
+.order-note{font-size:.9rem;color:var(--muted);margin-top:.75rem;font-style:italic}
+
+.why-chose{background:var(--white);border-left: 3px solid var(--red);padding:1.25rem 1.5rem .5rem;border-radius:0 8px 8px 0}
+.why-chose h3{color:var(--red);margin-bottom:.75rem}
+.why-chose p{font-size:1.1rem}
+.why-chose p:last-child{margin-bottom:.25rem}
+
+.special-notes-inline{margin-top:.7rem;padding-top:.25rem;border-top:1px dashed var(--border);font-style:italic;color:var(--text-body)}
+.special-notes-inline p{font-style:italic;margin-top:.15rem;margin-bottom:.4rem}
+
+.performers .performer{display:block;margin-bottom:1.5rem;clear:both}
+.performers .performer::after{content:'';display:block;clear:both}
+.performers .performer:last-child{margin-bottom:0}
+.performers{margin-bottom:.5rem}
+/* Odd-numbered performers (1, 3, 5…): photo on LEFT, text wraps right */
+.performers .performer-photo-wrap{float:left;margin:0 1.25rem .6rem 0}
+/* Even-numbered performers (2, 4, 6…): photo on RIGHT, text right-aligned (ragged left).
+   Right-alignment naturally puts any widow/orphan line on the right edge. */
+.performers .performer:nth-of-type(even) .performer-photo-wrap{float:right;margin:0 0 .6rem 1.25rem}
+.performers .performer:nth-of-type(even) .performer-text{text-align:right}
+.performers .performer-photo{width:200px;height:200px;object-fit:cover;border-radius:8px;display:block}
+.performers h4{font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--deep);margin-bottom:.4rem}
+.performers .performer-role{font-family:var(--sans);font-weight:400;font-style:italic;color:var(--muted);font-size:.9rem}
+@media (max-width:600px){
+  .performers .performer-photo-wrap{float:none;margin:0 auto 1rem;text-align:center}
+  .performers .performer-photo{margin:0 auto;width:180px;height:180px}
+}
+
+/* Sidebar */
+.meta-col > div, .meta-col > figure{background:var(--white);border:1px solid var(--border);border-radius:10px;padding:1.25rem;margin-bottom:1.25rem}
+.meta-col h3{font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--deep);margin-bottom:.6rem;border-bottom:1px solid var(--border);padding-bottom:.35rem}
+.meta-col dl{font-size:.92rem}
+.meta-col dt{font-weight:600;color:var(--deep);margin-top:.5rem}
+.meta-col dt:first-child{margin-top:0}
+.meta-col dd{color:var(--text-body);margin-bottom:.35rem}
+.meta-col p{font-size:.92rem;margin-bottom:.4rem}
+
+.venue-map{margin-top:.75rem;margin-bottom:0;overflow:visible}
+.venue-map iframe{display:block!important;width:100%!important;max-width:100%!important;height:240px!important;min-height:240px!important;border:0!important;border-radius:6px;margin:0 0 .5rem!important;position:static!important}
+.venue-map a.map-link{display:block!important;margin-top:.4rem;font-size:.82rem;color:var(--red);text-decoration:none;line-height:1.4;clear:both;width:100%;text-align:left}
+.venue-box{overflow:visible}
+
+/* Music programs: splash image above the body content */
+.splash-image{margin:0 0 2rem;border-radius:10px;overflow:hidden;box-shadow:0 4px 18px rgba(0,0,0,.12)}
+.splash-image img{width:100%;height:auto;display:block;max-height:560px;object-fit:cover}
+.splash-image figcaption{padding:.55rem .9rem;font-size:.82rem;color:var(--muted);background:var(--cream);font-style:italic;text-align:center}
+
+/* Music programs (two-image): seamless splash — series logo + featured artist.
+   Both images sized to the same fixed height; widths are natural so they touch
+   without distortion. Card is no wider than the joined images, so the curtain
+   body background shows on either side if the pair is narrower than the column. */
+.splash-combined{
+  display:flex;
+  width:100%;
+  margin:0 0 2rem;
+  aspect-ratio:5/2;
+  gap:0;
+}
+.splash-combined .splash-half{
+  width:50%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+}
+@media (max-width:600px){
+  .splash-combined{aspect-ratio:2/1}
+}
+
+/* Music programs: compact list of band members (name — instrument) */
+.performer-list{list-style:none;padding:0;margin:1rem 0 0}
+.performer-list li{padding:.55rem .25rem;border-top:1px solid var(--border);font-size:1rem;color:var(--text-body)}
+.performer-list li:last-child{border-bottom:1px solid var(--border)}
+.performer-list-role{color:var(--muted);font-weight:400;font-style:italic;font-size:.92rem}
+.hero-image{padding:0!important;overflow:hidden;max-width:240px;margin-left:auto;margin-right:auto}
+.hero-image img{width:100%;display:block;max-height:360px;object-fit:cover}
+.hero-image figcaption{padding:.45rem .7rem;font-size:.75rem;color:var(--muted);background:var(--cream);font-style:italic}
+.performer-photo-wrap{display:inline-block;text-align:center}
+.performer-photo-credit{display:block;font-size:.72rem;color:var(--muted);font-style:italic;margin-top:.25rem}
+
+/* Make a night of it + Accommodations cards (now in the right sidebar) */
+.info-card{background:white;border:1px solid var(--border);border-radius:10px;padding:1.1rem 1rem;margin-bottom:1.25rem;text-align:center}
+.info-card h3{font-family:var(--serif);font-weight:700;font-size:1.1rem;color:var(--deep);margin-bottom:.45rem;border-bottom:none;padding-bottom:0}
+.info-card .info-body{font-size:.88rem;color:var(--text-body);margin:0 auto .85rem;line-height:1.55}
+.info-card .info-body p{margin-bottom:.4rem;font-size:.88rem}
+.info-card .btn-gold{display:inline-block;padding:.5rem 1rem;font-size:.85rem}
+
+/* Share — now sits inside the right sidebar as a card */
+.share-block{background:white;border:1px solid var(--border);border-radius:10px;padding:1rem 1.1rem;margin-bottom:1.25rem;text-align:center}
+.share-block h4{font-family:var(--serif);font-size:1.05rem;color:var(--deep);margin-bottom:.75rem;border-bottom:none;padding-bottom:0}
+.share-links{display:flex;gap:.6rem;justify-content:center}
+.share-btn{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--cream);color:var(--deep);transition:background .15s,color .15s,transform .1s}
+.share-btn:hover{background:var(--gold);color:var(--deep);}
+.share-btn:active{transform:translateY(0)}
+
+/* Site footer */
+.site-footer{background:#000;color:rgba(255,255,255,.7);padding:.3rem 0;font-size:.85rem}
+.site-footer .container{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.site-footer .footer-logo img{height:100px;width:auto;display:block}
+.site-footer .footer-text{flex:1;text-align:center;min-width:200px}
+.site-footer a{color:var(--gold)}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='/'>
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#1c1a17;">
+      <span>City of Asylum</span>
+    </a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
+    <div class="nav-links" id="nav-links">
+      <a href='/'>Home</a>
+      <a href='/programs/'>Programs</a>
+      <a class='subscribe-stub' href='/about#subscribe'>Subscribe</a>
+      <a class='nav-donate' href='/donate'>Donate</a>
+    </div>
+  </div>
+</nav>
+
+<section class="program-hero">
+  <div class="container">
+    <span class="eyebrow">PGHwrites</span>
+    <h1>Damon Young | <em>That&#x27;s How They Get You</em></h1>
+    <p class="meta">June 15, 2026 &middot; 7:00<span class="start-ampm"> PM</span> – 8:30 PM</p>
+    <div class="hero-actions">
+      <div class="hero-tickets"><a class="btn-red" href="https://cityofasylum.my.salesforce-sites.com/ticket/#/instances/a0FPa0000047VKvMAM" target="_blank" rel="noopener">Free In-Person Tickets &rarr;</a><a class="btn-red" href="https://cityofasylum.my.salesforce-sites.com/ticket/#/instances/a0FPa0000047VMXMA2" target="_blank" rel="noopener">Free Livestream Tickets &rarr;</a><div class="order-group"><a class="btn-gold" href="https://cityofasylumbooks.org/search?q=that%27s%20how%20they%20get%20you" target="_blank" rel="noopener">Order the book now &rarr;</a></div></div>
+      
+    </div>
+  </div>
+</section>
+
+
+<main class="program-body">
+  <div class="container">
+    
+    <div class="two-col">
+      <div class="content-col">
+
+        <section class="quotes"><blockquote>&ldquo;“Crackling, hilarious. . . . You won’t want to miss it.”&rdquo; <cite>&mdash; — <em>People</em></cite></blockquote><blockquote>&ldquo;“Completely absorbing.”&rdquo; <cite>&mdash; — <em>Amy Sedaris</em></cite></blockquote><blockquote>&ldquo;&quot;This extremely funny collection is a Damon Young house party where all the genres are invited.&quot;&rdquo; <cite>&mdash; — <em>Terrance Hayes</em></cite></blockquote></section>
+
+        
+
+        <section class="why-chose"><h3>Why I chose this book</h3><p>“It’s so great curling up with folks who again and again make me laugh out loud. So needed right now—and always.” — <em>Darin Lee</em></p></section>
+
+        <section class="description">
+          <h2>About the Book</h2>
+          <p>Long-time friend, neighbor, and City of Asylum Board Member Damon Young shares the paperback release of his anthology, <em>That’s How They Get You</em>, at Alphabet City. In a combination reading and inside scoop full of insights into his process, Damon runs the show to get as personal as possible with City of Asylum audiences and discuss the very subject that drove this hilarious and unique amalgam of Black voices: humor.</p>
+<p>In an interview with NPR, Damon remarked, “Black American humor is the best American humor. And I believe that because I believe that we have to be the most honest about America, about who America is, what America is, you know? And when you’re a people who have been vulnerable the entire time…you pay closer attention…That sort of clarity, that sort of honesty, that sort of reckoning—the best humor comes from that.”</p>
+<p>To understand just what Damon means, all you have to do is start reading <em>That’s How They Get You</em>. With words that roast, ignite, and burn while connecting to and coalescing around a singular thesis, the collection emphasizes how and why Black American humor is uniquely transfixing. It is a mixture of not just observational anxieties and stream-of-consciousness lucidities but also acute political clarity about America. Edited and with an introduction by Damon Young, the critically acclaimed author of <em>What Doesn’t Kill You Makes You Blacker</em>, the collection features new material from an all-star roster of contributors, including Hanif Abdurraqib, Mahogany L. Browne, Wyatt Cenac, Kiese Laymon, Deesha Philyaw, Roy Wood Jr., Nicola Yoon, and more.</p>
+          <div class="special-notes-inline"><p>There will be a public reception following the reading, with complimentary snacks and drinks, for attendees to mingle and discuss.</p></div>
+        </section>
+
+        <div class="body-tickets"><a class="btn-red-sm" href="https://cityofasylum.my.salesforce-sites.com/ticket/#/instances/a0FPa0000047VKvMAM" target="_blank" rel="noopener">Free In-Person Tickets &rarr;</a><a class="btn-red-sm" href="https://cityofasylum.my.salesforce-sites.com/ticket/#/instances/a0FPa0000047VMXMA2" target="_blank" rel="noopener">Free Livestream Tickets &rarr;</a></div>
+
+        <section class="performers"><h2>About the Author</h2><div class="performer"><div class="performer-photo-wrap"><img class="performer-photo" src="images/damon.jpg" alt="Photo of Damon Young"><span class="performer-photo-credit">Photo: WESA</span></div><div class="performer-text"><h4>Damon Young <span class="performer-role">&mdash; Anthology Editor/Author</span></h4><p>Damon Young’s debut memoir, <em>What Doesn’t Kill You Makes You Blacker: A Memoir in Essays</em> (Ecco), won the Thurber Prize for American Humor. Damon is also a founder of the culture blog Very Smart Brothas and was a contributing columnist for <em>The Washington Post Magazine</em>, a contributing opinion writer for <em>The New York Times</em>, a columnist for <em>GQ</em>, the creator and host of the Crooked Media podcast Stuck with Damon Young, and was the inaugural Writer-in-Residence at the University of Pittsburgh’s David C. Frederick Honors College. His anthology, <em>That’s How They Get You: An Unruly Anthology of Black American Humor</em> (Pantheon), celebrates its paperback release on June 9, 2026.</p></div></div></section>
+
+      </div>
+
+      <aside class="meta-col">
+        <figure class="hero-image"><img src="images/damonbook.jpg" alt=""></figure>
+
+        <div class="details-box">
+          <h3>Details</h3>
+          <dl>
+            <dt>Date</dt><dd>June 15, 2026</dd>
+            <dt>Time</dt><dd>7:00 PM – 8:30 PM</dd>
+            <dt>Category</dt><dd>Reading</dd>
+          </dl>
+        </div>
+
+        <div class="venue-box">
+          <h3>Venue</h3>
+          <p><strong>Alphabet City</strong></p>
+          <p>40 W. North Avenue<br>Pittsburgh, PA 15212</p>
+          <p>Phone: 412-435-1110</p>
+          <div class="venue-map">
+            <iframe
+              src="https://www.google.com/maps?q=40+W.+North+Avenue+Pittsburgh+PA+15212&output=embed"
+              width="100%" height="240"
+              style="border:0;border-radius:6px;"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Map showing 40 W. North Avenue, Pittsburgh, PA"></iframe>
+            <a class="map-link" href="https://maps.google.com/?q=40+W.+North+Avenue+Pittsburgh+PA+15212" target="_blank" rel="noopener">+ Open in Google Maps</a>
+          </div>
+        </div>
+
+        
+
+        <div class="info-card cucina-card"><div class="info-body"><p>Cucina Alfabeto is closed on Mondays and Tuesdays.</p></div></div>
+        <div class="info-card accommodations-card"><h3>Accommodations</h3><div class="info-body"><p>All floors of Alphabet City are wheelchair accessible and there is a reserved parking spot. Thanks to the generous support of RAD, we also have hearing assistive systems available for all programs, by advance request.</p><p>If you have questions or are in need of accommodations:</p></div><a class="btn-gold" href="mailto:ajabour@cityofasylumpittsburgh.org?subject=Accessibility%20Request">Accessibility Request &rarr;</a></div>
+        <section class="share-block"><h4>Share this</h4><div class="share-links"><a href="#" class="share-btn" data-share="facebook" aria-label="Share on Facebook" title="Share on Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" class="share-btn" data-share="x" aria-label="Share on X" title="Share on X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="#" class="share-btn" data-share="linkedin" aria-label="Share on LinkedIn" title="Share on LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="#" class="share-btn" data-share="email" aria-label="Share on Email" title="Share on Email"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a></div></section>
+      </aside>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <a class='footer-logo' href='/'>
+      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#000;">
+    </a>
+    <div class="footer-text">
+      <p>City of Asylum &middot; 40 W. North Avenue, Pittsburgh, PA 15212 &middot; <a href='/'>cityofasylum.org</a></p>
+      <p style="margin-top:.5rem">&copy; 2026 City of Asylum</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Smart-mail popup: shown when a .smart-mail link is clicked -->
+<div id="mail-chooser" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:10px;padding:1.5rem;max-width:340px;width:100%;font-family:var(--sans);">
+    <h3 style="margin:0 0 .85rem;font-family:var(--serif);font-size:1.15rem;color:var(--deep);">Send email via…</h3>
+    <div id="mail-options" style="display:flex;flex-direction:column;gap:.5rem;"></div>
+    <button id="mail-cancel" type="button" style="margin-top:1rem;background:none;border:none;color:#7a7268;cursor:pointer;font-family:inherit;font-size:.9rem;">Cancel</button>
+  </div>
+</div>
+
+<!-- Subscribe stub popup -->
+<div id="subscribe-stub-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;border-radius:10px;padding:1.5rem 1.75rem;max-width:420px;width:100%;font-family:var(--sans);">
+    <h3 style="margin:0 0 .75rem;font-family:var(--serif);font-size:1.2rem;color:var(--deep);">Subscribe</h3>
+    <p style="margin:0 0 1rem;font-size:.95rem;line-height:1.5;color:#37332e;">This will connect to the subscribe form on the About page, where you'll be able to choose topics (All, Literary Programs, Concerts, Bookstore) before sending. Coming soon.</p>
+    <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+      <a href='/about#subscribe' id='subscribe-stub-go' style='background:var(--red);color:white;font-weight:700;padding:.55rem 1rem;border-radius:6px;text-decoration:none;font-size:.9rem;'>Go to Subscribe page</a>
+      <button id="subscribe-stub-close" type="button" style="background:none;border:none;color:#7a7268;cursor:pointer;font-family:inherit;font-size:.9rem;padding:.55rem 1rem;">Close</button>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  // Mobile nav hamburger toggle with proper close behaviors
+  var toggle = document.querySelector('.nav-toggle');
+  var navLinks = document.getElementById('nav-links');
+  if (toggle && navLinks) {
+    function setOpen(open) {
+      navLinks.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', String(open));
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    // Hamburger button: toggle
+    toggle.addEventListener('click', function(e){
+      e.stopPropagation();  // don't trigger the "click outside" handler
+      setOpen(!navLinks.classList.contains('open'));
+    });
+    // Tap a link: close (so it doesn't stay open after navigating)
+    navLinks.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click', function(){ setOpen(false); });
+    });
+    // Tap anywhere outside the open menu: close
+    document.addEventListener('click', function(e){
+      if (!navLinks.classList.contains('open')) return;
+      if (navLinks.contains(e.target) || toggle.contains(e.target)) return;
+      setOpen(false);
+    });
+    // Escape key: close
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && navLinks.classList.contains('open')) setOpen(false);
+    });
+  }
+
+  // Subscribe stub popup (temporary — full topic-selection flow to come later)
+  var subModal = document.getElementById('subscribe-stub-modal');
+  var subClose = document.getElementById('subscribe-stub-close');
+  if (subModal) {
+    function closeSub(){ subModal.style.display = 'none'; }
+    document.querySelectorAll('a.subscribe-stub').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        subModal.style.display = 'flex';
+      });
+    });
+    if (subClose) subClose.addEventListener('click', closeSub);
+    subModal.addEventListener('click', function(e){
+      if (e.target === subModal) closeSub();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && subModal.style.display === 'flex') closeSub();
+    });
+  }
+
+  // Smart-mail popup chooser (Gmail / Outlook / Yahoo / Default app)
+  var mailChooser = document.getElementById('mail-chooser');
+  var mailOptions = document.getElementById('mail-options');
+  var mailCancel = document.getElementById('mail-cancel');
+  if (mailChooser && mailOptions) {
+    function closeMail(){ mailChooser.style.display = 'none'; }
+    function openMailChooser(email, subject, body){
+      var enc = encodeURIComponent;
+      var services = [
+        {label:'Gmail',     url:'https://mail.google.com/mail/?view=cm&to=' + enc(email) + '&su=' + enc(subject) + '&body=' + enc(body)},
+        {label:'Outlook',   url:'https://outlook.live.com/owa/?path=/mail/action/compose&to=' + enc(email) + '&subject=' + enc(subject) + '&body=' + enc(body)},
+        {label:'Yahoo',     url:'https://compose.mail.yahoo.com/?to=' + enc(email) + '&subject=' + enc(subject) + '&body=' + enc(body)},
+        {label:'Default mail app', url:'mailto:' + email + '?subject=' + enc(subject) + (body ? '&body=' + enc(body) : '')}
+      ];
+      mailOptions.innerHTML = '';
+      services.forEach(function(s){
+        var a = document.createElement('a');
+        a.href = s.url;
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = s.label;
+        a.style.cssText = 'display:block;padding:.65rem 1rem;background:#f4efe7;border-radius:6px;color:#1c1a17;text-decoration:none;font-weight:600;text-align:center;';
+        a.addEventListener('click', function(){ setTimeout(closeMail, 150); });
+        mailOptions.appendChild(a);
+      });
+      mailChooser.style.display = 'flex';
+    }
+    document.querySelectorAll('a.smart-mail').forEach(function(link){
+      link.addEventListener('click', function(e){
+        e.preventDefault();
+        var href = link.getAttribute('href') || '';
+        var raw = href.replace(/^mailto:/i, '');
+        var parts = raw.split('?');
+        var email = parts[0];
+        var params = new URLSearchParams(parts[1] || '');
+        openMailChooser(email, params.get('subject') || '', params.get('body') || '');
+      });
+    });
+    if (mailCancel) mailCancel.addEventListener('click', closeMail);
+    mailChooser.addEventListener('click', function(e){
+      if (e.target === mailChooser) closeMail();
+    });
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape' && mailChooser.style.display === 'flex') closeMail();
+    });
+  }
+
+  // Share buttons
+  document.querySelectorAll('.share-btn').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      e.preventDefault();
+      var u = encodeURIComponent(window.location.href);
+      var t = encodeURIComponent(document.title.replace(/\s+\u2014\s+City of Asylum\s*$/,''));
+      var urls = {
+        facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + u,
+        x:        'https://twitter.com/intent/tweet?url=' + u + '&text=' + t,
+        linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + u,
+        email:    'mailto:?subject=' + t + '&body=' + u
+      };
+      var dest = urls[btn.dataset.share];
+      if (!dest) return;
+      if (btn.dataset.share === 'email') window.location.href = dest;
+      else window.open(dest, '_blank', 'width=600,height=520,noopener');
+    });
+  });
+
+  // When a quote's <cite> attribution wraps to its own line (widow/orphan),
+  // right-align it. Inline by default, breaks to right when alone on a line.
+  function alignOrphanCites() {
+    document.querySelectorAll('.quotes blockquote cite').forEach(function(cite) {
+      cite.classList.remove('orphan');
+      var bq = cite.closest('blockquote');
+      var bqRect = bq.getBoundingClientRect();
+      var citeRect = cite.getBoundingClientRect();
+      var padLeft = parseFloat(getComputedStyle(bq).paddingLeft);
+      // If cite's left edge is at the blockquote content-area left edge, it's alone on its line.
+      if (Math.abs(citeRect.left - bqRect.left - padLeft) < 4) {
+        cite.classList.add('orphan');
+      }
+    });
+  }
+  if (document.readyState === 'complete') alignOrphanCites();
+  else window.addEventListener('load', alignOrphanCites);
+  window.addEventListener('resize', alignOrphanCites);
+})();
+</script>
+
+</body>
+</html>

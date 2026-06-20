@@ -3,18 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Writers & Residencies — City of Asylum</title>
+<title>Writers &amp; Residencies &mdash; City of Asylum</title>
 <meta name="description" content="Meet the 22 writers who have found a safe haven at City of Asylum, the world's largest exiled writer residency program.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --deep: #0f1419; --charcoal: #1a1f2e; --slate: #2d3548;
-  --red: #c23b2e; --red-dark: #8b1a1a;
-  --gold: #c9a227; --gold-light: #e0c660;
-  --cream: #f5f0e8; --warm-white: #faf8f5; --white: #ffffff;
-  --green: #2d8a4e; --muted: #6b7280;
-  --text-dark: #1a1a1a; --text-body: #3d3d3d; --border: #e5e7eb;
+  --deep: #1c1a17; --charcoal: #2a2724; --slate: #54504a;
+  --red: #9c3f33; --red-dark: #7d3028;
+  --gold: #6b6155; --gold-light: #8a7f70;
+  --cream: #f4efe7; --warm-white: #faf8f3; --white: #ffffff;
+  --green: #54504a; --muted: #7a7268;
+  --text-dark: #1c1a17; --text-body: #37332e; --border: #e4ddd0;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', 'Segoe UI', Calibri, sans-serif;
 }
@@ -27,27 +27,30 @@ a:hover { color: var(--red-dark); }
 .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
 
 /* NAV (same as homepage) */
-.site-nav { position:sticky; top:0; z-index:100; background:var(--deep); border-bottom:3px solid var(--gold); }
+.site-nav { position:sticky; top:0; z-index:100; background:var(--white); border-bottom:none; }
 .nav-inner{ max-width:1440px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:0 2rem; height:98px; }
-.nav-logo { display:flex; align-items:center; gap:.75rem; color:var(--white); text-decoration:none; }
-.nav-logo img { height:70px; width:auto; }
-.nav-logo span { font-family:var(--sans); font-weight:700; font-size:1.15rem; line-height:1.1;}
-.nav-links{display:flex;align-items:center;gap:.25rem;flex-wrap:nowrap}
-.nav-links a{white-space:nowrap; color:rgba(255,255,255,.8); font-size:.875rem; font-weight:500; padding:.5rem .35rem; border-radius:6px; transition:all .2s; }
-.nav-links a:hover { color:var(--white); background:rgba(255,255,255,.08); }
+.nav-logo { display:flex; align-items:center; gap:.1rem; color:var(--text-dark); text-decoration:none; }
+.nav-logo img { height:70px; width:auto; margin-left:0.0625in; }
+.nav-logo span { font-family:var(--sans); font-weight:700; font-size:1.15rem; line-height:1.1; text-align:right;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap; color:var(--text-dark); font-size:.875rem; font-weight:500; padding:.5rem .35rem; border-radius:6px; transition:all .2s; }
+.nav-item > a{display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important}
+.nav-chevron{margin-left:0!important;line-height:1;font-size:.75rem!important}
+.nav-links a:hover { color:var(--red); background:rgba(0,0,0,.05); }
 .nav-links a.active { color:var(--gold); }
 .nav-donate { background:var(--red)!important; color:var(--white)!important; font-weight:700!important; padding:.55rem 1.4rem!important; border-radius:6px; }
-.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.75rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--white);border:1px solid rgba(0,0,0,.1);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.15)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:var(--text-dark)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--red)!important;background:rgba(0,0,0,.04)!important;padding-left:1.5rem!important}
+.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important;text-align:left}
+.nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 
 /* PAGE HERO */
 .page-hero {
+  /* EXPERIMENT 2026-05-30: dark gradient overlay removed so the photo shows undimmed.
+     To revert, restore: linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(26,31,46,.6) 50%, rgba(15,20,25,.75) 100%), as the first background layer. */
   background:
-    linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(26,31,46,.6) 50%, rgba(15,20,25,.75) 100%),
-    url('Yadali.jpg') left center / auto 105% no-repeat,
-    url('KhetMarBig.jpg') calc(50% - 40px) center / auto 100% no-repeat,
-    url('centeno_big.jpg') right center / auto 100% no-repeat,
+    url('04HeroWritersPhoto.jpg') center calc(50% - 1in/6 - 1in/16) / cover no-repeat,
     var(--deep);
-  padding: 3rem 0 2rem;
+  padding: 5rem 0 calc(3in/8);
   position: relative; overflow: hidden;
 }
 .page-hero::after {
@@ -56,20 +59,36 @@ a:hover { color: var(--red-dark); }
   background: rgba(201,162,39,.04); pointer-events: none;
 }
 .page-hero .section-eyebrow {
-  display:block; text-align:left;
-  font-size:.75rem; font-weight:700; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--gold); margin-bottom:.75rem;
+  display:inline-block; text-align:left;
+  font-size:.9rem; font-weight:700; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--gold-light); background:rgba(0,0,0,.55);
+  padding:.4rem 1rem; border-radius:4px; border:1px solid rgba(201,162,39,.5);
+  margin-bottom:1.5rem;
 }
 .page-hero h1 {
   font-family:var(--serif); font-size:3rem; font-weight:900;
   color:var(--white); margin-bottom:1rem; max-width:700px;
+}
+/* Beats a global `section h2 { ... !important }` rule that was capping h2 size at 2.25rem */
+.matches-hero-h1 {
+  font-family:var(--serif) !important;
+  /* Same fluid clamp() used by .page-hero h1 (defined in mobile.css), so letter size matches at every viewport */
+  font-size:clamp(2rem, 5.2vw, 3.6rem) !important;
+  font-weight:900 !important;
+  font-style:italic !important;
+  color:#000 !important;
+  line-height:1.12 !important;
+  margin-top:calc(-1in/16) !important;
+  margin-bottom:1rem !important;
+  max-width:700px !important;
+  
 }
 .page-hero p {
   color:rgba(255,255,255,.65); font-size:1.15rem; max-width:650px; line-height:1.8;
 }
 
 /* PROGRAM DESCRIPTION */
-.program-intro { padding: 3rem 0 5rem; background: linear-gradient(rgba(255,255,255,.40),rgba(255,255,255,.40)), url('03Alphas30.jpg') top center/825px auto repeat; }
+.program-intro { padding: 2rem 0 calc(5rem - 1in/4); margin-top: 0; background: var(--warm-white); position: relative; z-index: 1; }
 .program-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
 .program-text h2 {
   font-family:var(--serif); font-size:2rem; font-weight:700;
@@ -77,18 +96,19 @@ a:hover { color: var(--red-dark); }
 }
 .program-text p { font-size:1.05rem; color:var(--text-body); margin-bottom:1rem; line-height:1.8; }
 .program-highlights {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 2rem;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: calc(1in/16);
 }
 .highlight-box {
-  background: var(--cream); border-radius: 12px; padding: 1.25rem 1.5rem;
-  border-left: 3px solid var(--gold);
+  background: var(--white);
+  border-radius: 16px; padding: 1.25rem 1.5rem;
+  border: 1px solid var(--border);
 }
-.highlight-box strong { display: block; font-family:var(--serif); font-size:1.1rem; color:var(--text-dark); margin-bottom:.25rem; }
-.highlight-box span { font-size:.85rem; color:var(--muted); }
+.highlight-box strong { display: block; text-align:center; font-family:var(--serif); font-size:1.1rem; color:var(--red); text-transform:uppercase; margin-bottom:.25rem; }
+.highlight-box span { font-size:.85rem; color:var(--text-body); }
 
 /* UKRAINE FELLOWSHIP */
 .ukraine-section {
-  padding: 4rem 0; background: #FFFBEB;
+  padding: calc(4rem - 1in/2) 0; background: #FFFBEB;
   border-top: 1px solid #FDE68A; border-bottom: 1px solid #FDE68A;
 }
 .ukraine-inner {
@@ -103,7 +123,7 @@ a:hover { color: var(--red-dark); }
 .ukraine-inner p { font-size:.95rem; color:var(--text-body); }
 
 /* WRITERS GRID */
-.writers-grid-section { padding: 6rem 0; background: var(--warm-white); }
+.writers-grid-section { padding: calc(6rem - 1in/2) 0 calc(6rem - 1in/2); background: linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)), url('03Alphas30.jpg') top center/825px auto repeat, var(--warm-white); }
 .sort-row { display:flex; align-items:center; justify-content:center; gap:.5rem; margin-bottom:2rem; flex-wrap:wrap; }
 .sort-label { font-size:.8rem; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; }
 .sort-pill {
@@ -129,21 +149,62 @@ a:hover { color: var(--red-dark); }
 .country-dropdown:focus {
   border-color:var(--gold); outline:none;
 }
-.writers-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+.current-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4.5rem; }
+.alumni-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
+
+.writers-subhead { font-family:var(--serif); font-size:1.5rem; font-weight:700; color:var(--text-dark); text-align:center; margin-bottom:.4rem; }
+.writers-subhead-note { text-align:center; color:var(--muted); font-size:.9rem; margin-bottom:2rem; }
+
+/* compact alumni card variant */
+.writer-card.compact { cursor: pointer; }
+.writer-card.compact .writer-card-img { height: 240px; position: relative; }
+.writer-card.compact .writer-card-img::after {
+  content: 'ⓘ';
+  position: absolute; bottom: 8px; right: 8px;
+  width: 28px; height: 28px;
+  background: rgba(15,20,25,.7); color: #fff;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; line-height: 1;
+  pointer-events: none; z-index: 3;
+  transition: background .2s;
 }
+.writer-card.compact:hover .writer-card-img::after { background: var(--gold); color: var(--deep); }
+.writer-card.compact .writer-card-body { padding: 1rem 1.25rem 1.25rem; }
+.writer-card.compact .writer-card-body h3 { font-size: 1.05rem; margin-bottom: .15rem; }
+.writer-card.compact .writer-card-body p { display: none; }
+.writer-card.compact .writer-card-status { display: none; }
+.writer-card.compact .writer-card-genre { margin-bottom: 0; font-size: .75rem; }
+
+/* WRITER BIO MODAL */
+.writer-modal { display:none; position:fixed; inset:0; background:rgba(15,20,25,.85); z-index:1000; align-items:flex-start; justify-content:center; padding:2rem 1rem; overflow-y:auto; }
+.writer-modal.open { display:flex; }
+.writer-modal-panel { background:var(--white); max-width:520px; width:100%; border-radius:16px; overflow:hidden; position:relative; box-shadow: 0 1px 3px rgba(0,0,0,.06); margin:auto; }
+.writer-modal-img { width:100%; height:320px; object-fit:cover; object-position:center top; display:block; background:var(--cream); }
+.writer-modal-close { position:absolute; top:.75rem; right:.75rem; width:44px; height:44px; border-radius:50%; background:rgba(15,20,25,.65); color:var(--white); border:0; font-size:1.6rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center;  z-index:2; transition:background .2s; }
+.writer-modal-close:hover { background:rgba(15,20,25,.9); }
+.writer-modal-prev, .writer-modal-next { position:fixed; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%; background:var(--white); border:0; cursor:pointer; font-size:1.5rem; color:var(--deep); box-shadow: 0 1px 3px rgba(0,0,0,.06); z-index:1001; display:flex; align-items:center; justify-content:center; transition:transform .2s, background .2s; }
+.writer-modal-prev:hover, .writer-modal-next:hover {  background:var(--gold); }
+.writer-modal-prev { left:1.25rem; }
+.writer-modal-next { right:1.25rem; }
+.writer-modal-body { padding:1.5rem 1.75rem 2rem; }
+.writer-modal-country { display:inline-block; background:var(--cream); color:var(--text-dark); font-size:.7rem; font-weight:700; letter-spacing:.04em; padding:.3rem .75rem; border-radius:16px; margin-bottom:.85rem; text-transform:uppercase; }
+.writer-modal-name { font-family:var(--serif); font-size:1.6rem; font-weight:700; color:var(--text-dark); margin-bottom:.25rem; }
+.writer-modal-gold { color:var(--gold); font-size:.9rem; font-weight:600; margin-bottom:1rem; }
+.writer-modal-bio { font-size:1rem; color:var(--text-body); line-height:1.75; }
+
 .writer-card {
   background: var(--white); border-radius: 16px;
   overflow: hidden; border: 1px solid var(--border);
   transition: transform .3s, box-shadow .3s;
 }
-.writer-card:hover { transform: translateY(-6px); box-shadow: 0 16px 48px rgba(0,0,0,.1); }
+.writer-card:hover {  box-shadow: 0 16px 48px rgba(0,0,0,.1); }
 .writer-card-img { position: relative; height: 320px; overflow: hidden; }
 .writer-card-img img { width:100%; height:100%; object-fit:cover; transition: transform .4s; }
-.writer-card:hover .writer-card-img img { transform: scale(1.05); }
+.writer-card:hover .writer-card-img img {  }
 .writer-card-country {
   position:absolute; top:1rem; left:1rem;
-  background:rgba(15,20,25,.75); backdrop-filter:blur(8px);
+  background:rgba(15,20,25,.75); 
   color:var(--white); font-size:.7rem; font-weight:600;
   padding:.3rem .75rem; border-radius:16px; letter-spacing:.04em;
 }
@@ -159,15 +220,19 @@ a:hover { color: var(--red-dark); }
   font-family:var(--serif); font-size:1.2rem; font-weight:700;
   color:var(--text-dark); margin-bottom:.25rem;
 }
-.writer-card-genre { font-size:.8rem; color:var(--gold); font-weight:600; margin-bottom:.75rem; }
+.writer-card-genre { font-size:.8rem; color:var(--red); font-weight:600; margin-bottom:.75rem; }
 .writer-card-body p { font-size:.875rem; color:var(--muted); line-height:1.65; }
 
 /* COMMUNITY */
-.community-section { padding: 5rem 0; background: var(--deep); color: var(--white); text-align: center; }
+.community-section  { padding: calc(5rem - 1in/2) 0 calc(5rem - 3in/8); background: var(--red); color: var(--white); text-align: center; }
 .community-section h2 { font-family:var(--serif); font-size:2rem; font-weight:700; margin-bottom:1rem; }
 .community-section p { color:rgba(255,255,255,.65); font-size:1.05rem; max-width:650px; margin:0 auto 2rem; }
+.community-section .btn-gold-lg { display:inline-block; max-width:100%; background:var(--white); color:var(--red); font-weight:700; padding:.9rem 2rem; border-radius:8px; font-size:1rem; text-decoration:none; transition:background .2s, transform .2s; }
+.community-section .btn-gold-lg:hover { background:var(--cream);  }
 
 /* FOOTER (reused) */
+/* GOLD STANDARD: bright #9c3f33 on dark regions; muted --gold (#6b6155) stays on light. */
+.page-hero,.highlight-box,.community-section,.site-footer,#privacy-modal{--gold:#9c3f33;--gold-light:#9c3f33;}
 .site-footer { background:var(--deep); border-top:1px solid rgba(255,255,255,.08); padding:4rem 0 2rem; color:rgba(255,255,255,.5); }
 .footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:3rem; margin-bottom:3rem; }
 .footer-brand p { font-size:.9rem; line-height:1.7; max-width:280px; margin-top:.75rem; }
@@ -179,11 +244,38 @@ a:hover { color: var(--red-dark); }
 
 @media (max-width: 768px) {
   .page-hero h1 { font-size:2.2rem; }
+  /* Matches the mobile clamp() used for .page-hero h1 in mobile.css */
+  .matches-hero-h1 { font-size:clamp(1.9rem, 8vw, 2.4rem) !important; line-height:1.15 !important; }
+  .page-hero {
+    background:
+      linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(26,31,46,.6) 50%, rgba(15,20,25,.75) 100%),
+      url('04HeroWritersPhoto.jpg') center calc(50% - 1in/6) / cover no-repeat,
+      var(--deep) !important;
+  }
+  .d-only-br { display: none; }
+  .voices-heard-line { white-space: nowrap; }
+  /* Swap Social Services (6th) and Long-term Safety (7th) on mobile to balance row lengths */
+  .program-highlights > *:nth-child(6) { order: 2; }
+  .program-highlights > *:nth-child(7) { order: 1; }
+  .program-highlights > *:nth-child(8) { order: 3; }
   .program-grid { grid-template-columns:1fr; }
-  .writers-grid { grid-template-columns:1fr; }
+  .current-grid { grid-template-columns:1fr; gap:1.5rem; margin-bottom:3rem; }
+  .alumni-grid { grid-template-columns:repeat(2, 1fr); gap:1rem; }
+  .writer-card.compact .writer-card-img { height: 200px; }
+  .writer-card.compact .wcg-sep { display: none; }
+  .writer-card.compact .wcg-year { display: block; }
+  .writer-card.compact .wcg-title-comma { display: none; }
+  .writer-card.compact .wcg-years { display: block; }
   .program-highlights { grid-template-columns:1fr 1fr; }
   .footer-grid { grid-template-columns:1fr 1fr; }
+  .footer-grid > div:nth-child(2){margin-top:8.35rem}
   .nav-links { display:none; }
+  .writer-modal { padding: 1rem .5rem; }
+  .writer-modal-img { height: 260px; }
+  .writer-modal-body { padding: 1.25rem 1.25rem 1.5rem; }
+  .writer-modal-name { font-size: 1.35rem; }
+  .writer-modal-prev { left: .5rem; width: 42px; height: 42px; }
+  .writer-modal-next { right: .5rem; width: 42px; height: 42px; }
 }
 </style>
 <link rel="stylesheet" href="mobile.css?v=3">
@@ -192,86 +284,103 @@ a:hover { color: var(--red-dark); }
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a class='nav-logo' href='index.html'>
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#0f1419;">
-      <span>City of Asylum</span>
+    <a class='nav-logo' href='/'>
+      <span>City of<br>Asylum</span>
+      <img src="xCofA_Logo_RGB.png" alt="City of Asylum">
     </a>
             <div class="nav-links">
+      <!-- TWO-LINE-NAV 2026-05-31: applied <br> in multi-word nav labels for vertical stacking. Revert by removing each <br> from nav link text. -->
+      <!-- ADDED 2026-05-31: explicit Home link (revert by removing this line) -->
+      <a href='/' style='line-height:1;display:inline-block;'>Home</a>
       <div class="nav-item">
-        <a href='about.html' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
+        <a href='/about'>About<br>Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='about.html'>Our Mission</a>
-          <a href='about.html#history'>History</a>
-          <a href='about.html#model'>Our Model</a>
-          <a href='about.html#staff'>Staff</a>
-          <a href='about.html#board'>Board of Directors</a>
-          <a href='about.html#jobs'>Jobs</a>
-          <a href='about.html#subscribe'>Subscribe</a>
-          <a href='about.html#inquiries'>Other Inquiries</a>
+          <a href='/about'>Our Mission</a>
+          <a href='/about#history'>History</a>
+          <a href='/about#model'>Our Model</a>
+          <a href='/about#staff'>Staff</a>
+          <a href='/about#board'>Board of Directors</a>
+          <a href='/about#jobs'>Jobs</a>
+          <a href='/about#subscribe'>Subscribe</a>
+          <a href='/about#inquiries'>Other Inquiries</a>
         </div>
       </div>
       <div class="nav-item">
-        <a class='active' href='writers.html' style='line-height:1;display:inline-block;'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <a class='active' href='/writers' style='line-height:1;display:inline-block;'>Writers<br>&amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='writers.html#residency-program'>Residency Program</a>
-          <a href='writers.html#writers-in-residence'>City of Asylum Writers</a>
+          <a href='/writers#residency-program'>Residency Program</a>
+          <a href='/writers#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='free-arts.html' style='line-height:1;display:inline-block;'>Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
+        <a href='/free-arts' style='line-height:1;display:inline-block;color:var(--red);font-weight:700;'>Free Programs<br>&amp; Tix <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='free-arts.html#what-we-host'>What We Host</a>
-          <a href='free-arts.html#why-free'>Why Our Programs Are Free</a>
-          <a href='events.html'>Upcoming Programs</a>
-          <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">Full Calendar</a>
+          <a href='/free-arts#what-we-host'>What We Host</a>
+          <a href='/free-arts#why-free'>Why Our Programs Are Free</a>
+          <a href='/programs/'>Upcoming Programs</a>
+          <a href='/programs/'>Full Calendar</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='campus.html' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
+        <a href='/campus'>Community<br>Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='campus.html'>Community as Campus</a>
-          <a href='campus.html#how-it-grew'>How It Grew</a>
-          <a href='campus.html#whats-here'>What&#8217;s Here Now</a>
-          <a href='campus.html#walking-tour'>Walking Tour App</a>
-          <a href='campus.html#becoming'>Starting a New City</a>
+          <a href='/campus'>Community as Campus</a>
+          <a href='/campus#how-it-grew'>How It Grew</a>
+          <a href='/campus#whats-here'>What&#8217;s Here Now</a>
+          <a href='/campus#walking-tour'>Walking Tour App</a>
+          <a href='/campus#becoming'>Starting a New City</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='media-archive.html' style='line-height:1;display:inline-block;'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <a href='/media-archive'>Media<br>&amp; Archive <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='media-archive.html#press'>Selected Press</a>
-          <a href='media-archive.html#video'>Selected Video &amp; Photos</a>
-          <a href='media-archive.html#publications'>Selected Books</a>
-          <a href='media-archive.html#archive'>Media Archive</a>
+          <a href='/media-archive#video'>Selected Video &amp; Photos</a>
+          <a href='/media-archive#publications'>Selected Books</a>
+          <a href='/media-archive#press'>Selected Press</a>
+          <a href='/media-archive#archive'>Media Archive</a>
         </div>
       </div>
 
-      <a href='bookstore-restaurant.html' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <a href='/bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore<br>&amp; Restaurant</a>
       <div class="nav-item">
-        <a class='nav-donate' href='donate.html'>Donate</a>
+        <a class='nav-donate' href='/donate'>Donate</a>
         <div class="nav-dropdown">
-          <a href='donate.html#other-ways'>Other Ways to Help</a>
-          <a href='donate.html#foundations'>Foundations</a>
+          <a href='/donate#other-ways'>Other Ways to Help</a>
+          <a href='/donate#foundations'>Foundations</a>
         </div>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
+<!-- HERO (triptych: 3 writer portraits + bottom headline band — designer master 490) -->
+<style>
+.hero { margin:0 0.25in; border-top:3px solid var(--gold); position:relative; overflow:hidden; container-type:inline-size; }
+.hero > img { width:100%; height:auto; display:block; }   /* full image always shows (band + period); height scales with width */
+.hero-eyebrow { position:absolute; top:1.39cqw; left:1.74cqw; z-index:3; font-size:.84cqw; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:#fff;  }   /* cqw so it scales with the image (baked line 1) at every width, incl. mobile */
+.hero-line2 { background:#fff; margin-top:-0.61cqw; display:flex; align-items:center; justify-content:center; padding:0.94cqw 1rem; border-left:4px solid #000; border-right:4px solid #000; border-bottom:4px solid #000; box-sizing:border-box; }   /* 2nd line; sized in cqw so it scales with the image (line 1) at every width, incl. mobile */
+.hero-line2 p { margin:0; color:#000; font-family:var(--serif); font-style:italic; font-weight:700; text-align:center; font-size:3.85cqw; line-height:1.1; white-space:nowrap; }   /* Playfair Display italic; "But at City of Asylum," black, gold span stays gold */
+@media (max-width:768px){ .hero { height:auto; } .hero > img { height:auto; } .hero-eyebrow { font-size:1.68cqw; top:1.5cqw; } }   /* mobile: 2x size so it stays readable, still scales via cqw */
+</style>
+<section class="hero">
+  <img src="490WritersHeroV2.jpg" alt="City of Asylum writers-in-residence — These are the voices the world tried to silence.">
+  <div class="hero-line2"><p>But at City of Asylum, <span style="color:#daa20c;font-family:var(--serif);font-style:italic;">those voices are heard.</span></p>
+  <span class="hero-eyebrow">The Exiled Writer Residency Program</span>
+</section>
+<section style="display:none;">
   <div class="container">
-    <span class="section-eyebrow">The Exiled Writer Residency Program</span>
-    <h1>These are voices the world tried to silence.</h1>
+    <span class="section-eyebrow" style="display:inline-block;font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:.4rem calc(1rem - 1in/16);border-radius:4px;border:1px solid rgba(201,162,39,.5);margin-bottom:1.5rem;position:relative;top:calc(-1in/2);">The Exiled Writer Residency Program</span>
+    <h1 style="font-family:'PT Serif',Georgia,serif;font-weight:700;font-size:48pt;line-height:130%;color:var(--white);max-width:none;"><span style="display:inline-block;transform:scale(1.192, 1.3);transform-origin:left center;">These are voices the world tried<br>to silence.</span></h1>
   </div>
 </section>
 
 <!-- PROGRAM HIGHLIGHTS -->
 <section class="program-intro" id="residency-program">
   <div class="container">
-    <h2 style="font-family:var(--serif);font-style:italic;font-size:3rem;font-weight:900;color:var(--text-dark);line-height:1.2;max-width:800px;margin-bottom:1rem;">But at City of Asylum, those voices<br>are heard.</h2>
-    <p style="font-size:1.15rem;color:var(--text-dark);line-height:1.8;max-width:700px;margin-top:calc(1in/16);margin-bottom:calc(2rem - 1in/15);">Every writer-in-residence has written and published despite exile &mdash; <span style="white-space:nowrap;">most a full-length work.</span></p>
-    <p style="text-align:center;font-size:1.1rem;font-weight:600;color:var(--text-dark);margin-top:-0.125in;margin-bottom:1.5rem;">Our residency program provides:</p>
+    <h2 class="matches-hero-h1" style="display:none !important;font-family:'PT Serif',Georgia,serif !important;font-weight:700 !important;font-style:italic !important;font-size:40pt !important;line-height:130% !important;color:#9c3f33 !important;max-width:none !important;-webkit-text-stroke:1.5px #000 !important;text-stroke:1.5px #000 !important;"><span style="display:inline-block;transform:scale(1.192, 1.3);transform-origin:left center;">But at City of Asylum, those voices<br>are heard.</span></h2>
+    <p style="margin:0;line-height:1.7;"><span style="display:block;padding:0.9em 0.75em;">
+      <span style="display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);">Our residency program provides</span>
+    </span></p>
     <div class="program-highlights">
       <div class="highlight-box">
         <strong>Safe Home</strong>
@@ -301,8 +410,8 @@ a:hover { color: var(--red-dark); }
         <strong>Long-term Safety</strong>
         <span>More than emergency support.</span>
       </div>
-      <div style="padding:1.25rem 1.5rem;display:flex;align-items:center;">
-        <p style="font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--muted);line-height:1.5;margin:0;font-weight:700;">&ldquo;I admire what [City of Asylum] has done to accommodate the writers to an extraordinary degree after their residency<br>is up.&rdquo;<br><span style="font-style:normal;font-size:.8rem;font-weight:600;color:var(--text-dark);">&mdash; Russell Banks</span><br><span style="font-style:normal;font-size:.75rem;color:var(--muted);">Author, President International Parliament of Writers</span></p>
+      <div style="padding:1.25rem 1.5rem;display:flex;align-items:center;background:var(--cream);border-left:3px solid var(--gold);border-radius:0;align-self:start;">
+        <p style="font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--muted);line-height:1.5;margin:0;font-weight:700;">&ldquo;I admire what <span style="white-space:nowrap;">[City of Asylum]</span> has done to accommodate the writers to an extraordinary degree after their residency is up.&rdquo;<br><span style="font-style:normal;font-size:.8rem;font-weight:600;color:var(--text-dark);">&mdash; <span style="white-space:nowrap;">Russell Banks</span></span><br><span style="font-style:normal;font-size:.75rem;color:var(--muted);"><span style="white-space:nowrap;">Author, President</span> International <span style="white-space:nowrap;">Parliament of Writers</span></span></p>
       </div>
     </div>
   </div>
@@ -313,8 +422,8 @@ a:hover { color: var(--red-dark); }
   <div class="container">
     <div class="ukraine-inner">
       <div>
-        <h3>Fellowship for Ukrainian Writers</h3>
-        <p>In response to the 2022 invasion of Ukraine, City of Asylum launched a fellowship enabling three Ukrainian writers — Olena Boryshpolets, Oleksandr Frazé-Frazénko, and Volodymyr Rafeyenko — to come to Pittsburgh so they can continue to research, write, and publish despite the ongoing war.</p>
+        <h3>Ukrainian Writers Fellowship</h3>
+        <p>In response to the 2022 invasion of Ukraine, City of Asylum launched a fellowship enabling three Ukrainian writers to come to Pittsburgh, so they can continue to research, write, and publish despite the ongoing war.</p>
       </div>
     </div>
   </div>
@@ -323,27 +432,30 @@ a:hover { color: var(--red-dark); }
 <!-- WRITERS GRID -->
 <section class="writers-grid-section" id="writers-in-residence">
   <div class="container">
-    <span class="section-eyebrow" style="display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;">City of Asylum Writers</span>
+    <span class="section-eyebrow" style="display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem;">City of Asylum Writers</span>
     <h2 style="font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.75rem;">22 Writers. 19 Countries. One Safe Haven.</h2>
-    <p style="text-align:center;color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto 2.5rem;">Read the writers stories&mdash;what they fled, what they created,<br>and how City of Asylum changed their lives.</p>
+    <p style="text-align:center;color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto 3rem;">Read the writers’ stories&mdash;what they fled, what they created,<br class="d-only-br"> and how City of Asylum changed their lives.</p>
 
-    <div class="sort-row">
-      <span class="sort-label">Sort by:</span>
-      <span class="sort-pill" data-sort="year-desc">Newest First</span>
-      <span class="sort-pill active" data-sort="year-asc">Oldest First</span>
-      <span class="sort-pill" data-sort="alpha">A &ndash; Z</span>
-      <span class="sort-pill" data-sort="country">Country</span>
-      <span class="sort-divider"></span>
-      <span class="sort-label">Filter:</span>
-      <select id="country-filter" class="country-dropdown">
-        <option value="">All Countries</option>
-      </select>
-    </div>
+    <h3 class="writers-subhead" style="margin-top:calc(-5in/32);">Currently in Residence</h3>
+    <p class="writers-subhead-note">Writers we are protecting right now.</p>
 
-    <div class="writers-grid" id="writers-grid">
+    <div class="current-grid" id="current-grid">
+      <div class="writer-card" data-year="2026" data-country="Mexico" data-name="Anonymous" data-status="current">
+        <div class="writer-card-img">
+          <img src="anonymous-placeholder.svg" alt="Anonymous" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Mexico</span>
+          <span class="writer-card-status status-current">Current</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Anonymous</h3>
+          <div class="writer-card-genre">Writer &middot; 2026</div>
+          <p>An acclaimed investigative journalist and author who has spent two decades covering narco- and human trafficking on the Mexico-U.S. border and its impact on marginalized communities.</p>
+        </div>
+      </div>
+
       <div class="writer-card" data-year="2025" data-country="Haiti" data-name="Bertony Louis" data-status="current">
         <div class="writer-card-img">
-          <img src="Bertony%20Louis.jpg" alt="Bertony Louis" onerror="this.style.opacity='0'">
+          <img src="Bertony.jpg" alt="Bertony Louis" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Haiti</span>
           <span class="writer-card-status status-current">Current</span>
         </div>
@@ -354,42 +466,16 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <div class="writer-card" data-year="2019" data-country="Ethiopia" data-name="Bewketu Seyoum" data-status="past">
+      <div class="writer-card" data-year="2024" data-country="Egypt" data-name="Mukhtar Shehata" data-status="current">
         <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2021/05/resize-bewketu-scaled.jpeg" alt="Bewketu Seyoum" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Ethiopia</span>
-          <span class="writer-card-status status-alumni">Former</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Bewketu Seyoum</h3>
-          <div class="writer-card-genre">Poet, Novelist, Essayist &middot; 2019–2021</div>
-          <p>A novelist, poet, comedian who satirized political corruption and social injustice, he is one of the leading writers of his generation. He was honored as Ethiopian Best Novelist of the Year and Best Young Author.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2019" data-country="Sudan" data-name="Rania Mamoun" data-status="current">
-        <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2025/02/Rania.jpeg" alt="Rania Mamoun" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Sudan</span>
+          <img src="Mukhtar.jpg" alt="Mukhtar Shehata" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Egypt</span>
           <span class="writer-card-status status-current">Current</span>
         </div>
         <div class="writer-card-body">
-          <h3>Rania Mamoun</h3>
-          <div class="writer-card-genre">Novelist, Poet, Activist &middot; Since 2019</div>
-          <p>Her journalism, fiction, poetry, and activism confronted issues of censorship, social justice, and women&rsquo;s rights. She was a leader in the Women&rsquo;s Parliament and the Sudanese resistance committee.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2023" data-country="Ukraine" data-name="Volodymyr Rafeyenko" data-status="past">
-        <div class="writer-card-img">
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/07/Volodymyr-Rafeyenko-2.png" alt="Volodymyr Rafeyenko" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Ukraine</span>
-          <span class="writer-card-status status-alumni">Former</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Volodymyr Rafeyenko</h3>
-          <div class="writer-card-genre">Ukrainian Fellowship &middot; 2023&ndash;2026</div>
-          <p>An award-winning novelist, poet, translator, and literary critic, he wrote and published entirely in Russian until the Russian invasion of Donetsk. He now writes only in Ukrainian.</p>
+          <h3>Mukhtar Shehata</h3>
+          <div class="writer-card-genre">Writer &middot; 2024</div>
+          <p>A novelist, ethnographer, and documentary filmmaker whose work explores social change, class, gender, and rural transformation in Egypt after the 2011 revolution and Arab identity.</p>
         </div>
       </div>
 
@@ -408,7 +494,7 @@ a:hover { color: var(--red-dark); }
 
       <div class="writer-card" data-year="2023" data-country="Ukraine" data-name="Oleksandr Frazé-Frazénko" data-status="current">
         <div class="writer-card-img">
-          <img src="Fraze2.jpg" alt="Oleksandr Frazé-Frazénko" onerror="this.style.opacity='0'">
+          <img src="Oleksandr%20Portrait2.jpg" alt="Oleksandr Frazé-Frazénko" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Ukraine</span>
           <span class="writer-card-status status-current">Current</span>
         </div>
@@ -419,7 +505,64 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <div class="writer-card" data-year="2021" data-country="Cuba" data-name="Jorge Olivera Castillo" data-status="past">
+      <div class="writer-card" data-year="2019" data-country="Sudan" data-name="Rania Mamoun" data-status="current">
+        <div class="writer-card-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2025/02/Rania.jpeg" alt="Rania Mamoun" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Sudan</span>
+          <span class="writer-card-status status-current">Current</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Rania Mamoun</h3>
+          <div class="writer-card-genre">Novelist, Poet, Activist &middot; 2019</div>
+          <p>Her journalism, fiction, poetry, and activism confront issues of censorship, social justice, and women&rsquo;s rights. She was a leader in the Women&rsquo;s Parliament and the Sudanese resistance committee.</p>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="writers-subhead">Alumni</h3>
+    <p class="writers-subhead-note">Writers who have completed their residency. Tap any card to read their story.</p>
+
+    <div class="sort-row">
+      <span class="sort-label">Sort by:</span>
+      <span class="sort-pill" data-sort="year-desc">Newest First</span>
+      <span class="sort-pill active" data-sort="year-asc">Oldest First</span>
+      <span class="sort-pill" data-sort="alpha">A &ndash; Z</span>
+      <span class="sort-pill" data-sort="country">Country</span>
+      <span class="sort-divider"></span>
+      <span class="sort-label">Filter:</span>
+      <select id="country-filter" class="country-dropdown">
+        <option value="">All Countries</option>
+      </select>
+    </div>
+
+    <div class="alumni-grid" id="alumni-grid">
+      <div class="writer-card compact" data-year="2019" data-country="Ethiopia" data-name="Bewketu Seyoum" data-status="past">
+        <div class="writer-card-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2021/05/resize-bewketu-scaled.jpeg" alt="Bewketu Seyoum" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Ethiopia</span>
+          <span class="writer-card-status status-alumni">Former</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Bewketu Seyoum</h3>
+          <div class="writer-card-genre">Poet, Novelist, Essayist &middot; 2019–2021</div>
+          <p>A novelist, poet, comedian who satirized political corruption and social injustice, he is one of the leading writers of his generation. He was honored as Ethiopian Best Novelist of the Year and Best Young Author.</p>
+        </div>
+      </div>
+
+      <div class="writer-card compact" data-year="2023" data-country="Ukraine" data-name="Volodymyr Rafeyenko" data-status="past">
+        <div class="writer-card-img">
+          <img src="https://cityofasylum.org/wp-content/uploads/2023/07/Volodymyr-Rafeyenko-2.png" alt="Volodymyr Rafeyenko" onerror="this.style.opacity='0'">
+          <span class="writer-card-country">Ukraine</span>
+          <span class="writer-card-status status-alumni">Former</span>
+        </div>
+        <div class="writer-card-body">
+          <h3>Volodymyr Rafeyenko</h3>
+          <div class="writer-card-genre">Ukrainian Fellowship &middot; 2023&ndash;2026</div>
+          <p>An award-winning novelist, poet, translator, and literary critic, he wrote and published entirely in Russian until the Russian invasion of Donetsk. He now writes only in Ukrainian.</p>
+        </div>
+      </div>
+
+      <div class="writer-card compact" data-year="2021" data-country="Cuba" data-name="Jorge Olivera Castillo" data-status="past" data-pos="center 21%">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/12/DSC08184_20211111_Rosensteel-scaled.jpg" alt="Jorge Olivera Castillo" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Cuba</span>
@@ -428,11 +571,11 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Jorge Olivera Castillo</h3>
           <div class="writer-card-genre">Writer &middot; 2021–2024</div>
-          <p>Poet, journalist, and dissident, his writing led to his arrest during Cuba&rsquo;s &ldquo;Black Spring&rdquo; crackdown. He spent 21 months in Guantanamo Prison, including 9 months in solitary, and re-arrested repeatedly.</p>
+          <p>Poet, journalist, and dissident, his writing led to his arrest during Cuba&rsquo;s &ldquo;Black Spring&rdquo; crackdown. He spent 21 months in Guantanamo Prison, including 9 months in solitary, and was re-arrested repeatedly.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2016" data-country="Bangladesh" data-name="Tuhin Das" data-status="past">
+      <div class="writer-card compact" data-year="2016" data-country="Bangladesh" data-name="Tuhin Das" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/05/tuhin.png" alt="Tuhin Das" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Bangladesh</span>
@@ -445,7 +588,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <div class="writer-card" data-year="2017" data-country="Syria" data-name="Osama Alomar" data-status="past">
+      <div class="writer-card compact" data-year="2017" data-country="Syria" data-name="Osama Alomar" data-status="past">
         <div class="writer-card-img">
           <img src="Osama%20ADJ%20_20170305_Rosensteel_0049.jpg" alt="Osama Alomar" style="object-position:15% center;" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Syria</span>
@@ -458,7 +601,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <div class="writer-card" data-year="2009" data-country="Burma" data-name="Khet Mar" data-status="past">
+      <div class="writer-card compact" data-year="2009" data-country="Burma" data-name="Khet Mar" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/06/KhetMarBig.jpeg" alt="Khet Mar" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Burma</span>
@@ -471,7 +614,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <div class="writer-card" data-year="2004" data-country="China" data-name="Huang Xiang" data-status="past">
+      <div class="writer-card compact" data-year="2004" data-country="China" data-name="Huang Xiang" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/06/xwbig.jpeg" alt="Huang Xiang" onerror="this.style.opacity='0'">
           <span class="writer-card-country">China</span>
@@ -479,12 +622,12 @@ a:hover { color: var(--red-dark); }
         </div>
         <div class="writer-card-body">
           <h3>Huang Xiang</h3>
-          <div class="writer-card-genre">Poet &middot; First Writer, 2004–2006</div>
+          <div class="writer-card-genre">Poet &middot; First City of Asylum Writer, 2004–2006</div>
           <p>Known as the Walt Whitman of China, he was imprisoned for 12 years and tortured, and all his publications were destroyed or repressed by the government. He created City of Asylum's iconic &ldquo;House Poem&rdquo; and helped us re-imagine our mission.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2006" data-country="El Salvador" data-name="Horacio Castellanos Moya" data-status="past">
+      <div class="writer-card compact" data-year="2006" data-country="El Salvador" data-name="Horacio Castellanos Moya" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/11/horacioBig.jpeg" alt="Horacio Castellanos Moya" onerror="this.style.opacity='0'">
           <span class="writer-card-country">El Salvador</span>
@@ -493,11 +636,11 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Horacio Castellanos Moya</h3>
           <div class="writer-card-genre">Writer &middot; 2006–2011</div>
-          <p>His novel <em>Revulsion</em>, a furious satire of his native El Salvador, resulted in death threats. During his residency at City of Asylum he won one of the most significant literary awards&mdash;for lifetime achievement&mdash;in the Spanish-speaking world.</p>
+          <p>His novel <em>Revulsion</em>, a furious satire of his native El Salvador, resulted in death threats. During his residency at City of Asylum he won the Premio Iberoamericano de Narrativa Manuel Rojas award for lifetime achievement in literature, one of the most prestigious awards for Spanish language authors.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2011" data-country="Venezuela" data-name="Israel Centeno" data-status="past">
+      <div class="writer-card compact" data-year="2011" data-country="Venezuela" data-name="Israel Centeno" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/11/centeno_big.jpeg" alt="Israel Centeno" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Venezuela</span>
@@ -506,11 +649,11 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Israel Centeno</h3>
           <div class="writer-card-genre">Writer &middot; 2011–2018</div>
-          <p>One of Venezuela's most celebrated novelists and winner of the Federico Garc&iacute;a Lorca Award in Spain, he was forced into exile after his novel <em>The Conspiracy</em> drew threats and attacks from the Ch&aacute;vez regime.</p>
+          <p>One of Venezuela's most celebrated novelists and winner of the Federico Garc&iacute;a Lorca Award in Spain. He was forced into exile after his novel <em>The Conspiracy</em> drew threats and attacks from the Ch&aacute;vez regime.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2021" data-country="Republic of Congo" data-name="Aunel Arneth" data-status="past">
+      <div class="writer-card compact" data-year="2021" data-country="Republic of Congo" data-name="Aunel Arneth" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/11/Aunel-Credit-Renee-Rosensteel.png" alt="Aunel Arneth" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Republic of Congo</span>
@@ -523,7 +666,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <div class="writer-card" data-year="2020" data-country="Vietnam" data-name="Mai Khoi" data-status="past">
+      <div class="writer-card compact" data-year="2020" data-country="Vietnam" data-name="Mai Khoi" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/11/Untitled-design-scaled.jpg" alt="Mai Khoi" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Vietnam</span>
@@ -531,27 +674,27 @@ a:hover { color: var(--red-dark); }
         </div>
         <div class="writer-card-body">
           <h3>Mai Khoi</h3>
-          <div class="writer-card-genre">Writer &middot; 2020–2023</div>
+          <div class="writer-card-genre">Composer/Singer &middot; 2020–2023</div>
           <p>A singer and composer&mdash;winner of international awards for art and activism&mdash;known as the &ldquo;Lady Gaga of Vietnam,&rdquo; she ran for the National Assembly on a pro-democracy platform. Police raids and evictions forced her into exile.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2013" data-country="Cuba" data-name="Orlando Pardo Lazo" data-status="past">
+      <div class="writer-card compact" data-year="2013" data-country="Cuba" data-name="Orlando Pardo Lazo" data-status="past">
         <div class="writer-card-img">
-          <img src="Orlando.jpg" alt="Orlando Pardo Lazo" onerror="this.style.opacity='0'">
+          <img src="Orlando2.jpg" alt="Orlando Pardo Lazo" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Cuba</span>
           <span class="writer-card-status status-alumni">Former</span>
         </div>
         <div class="writer-card-body">
           <h3>Orlando Pardo Lazo</h3>
           <div class="writer-card-genre">Writer &middot; 2013</div>
-          <p>Novelist, photographer, and dissident blogger, his novel <em>Boring Home</em> was censored by the Cuban government in 2009, after which he was arrested three times and under constant watch by Castro's secret police.</p>
+          <p>Novelist, photographer, and dissident blogger, his novel <em>Boring Home</em> was censored by the Cuban government in 2009. Subsequently, he was arrested three times and under constant watch by Castro's secret police.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2016" data-country="Iraq" data-name="Sabreen Kadhim" data-status="past">
+      <div class="writer-card compact" data-year="2016" data-country="Iraq" data-name="Sabreen Kadhim" data-status="past">
         <div class="writer-card-img">
-          <img src="Sabreen.jpg" alt="Sabreen Kadhim" onerror="this.style.opacity='0'">
+          <img src="SabreenBetter.jpg" alt="Sabreen Kadhim" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Iraq</span>
           <span class="writer-card-status status-alumni">Former</span>
         </div>
@@ -562,7 +705,7 @@ a:hover { color: var(--red-dark); }
         </div>
       </div>
 
-      <div class="writer-card" data-year="2020" data-country="Turkey" data-name="Simten Cosar" data-status="past">
+      <div class="writer-card compact" data-year="2020" data-country="Turkey" data-name="Simten Cosar" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/11/Screen-Shot-2021-11-22-at-3.55.00-PM.png" alt="Simten Cosar" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Turkey</span>
@@ -571,11 +714,11 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Simten Cosar</h3>
           <div class="writer-card-genre">Writer &middot; 2020–2022</div>
-          <p>A feminist political scientist and scholarly editor, she was persecuted for signing the &ldquo;We Will Not Be a Party to this Crime&rdquo; declaration that opposed military violence against Kurds.</p>
+          <p>A feminist political scientist and scholarly editor, she was persecuted for signing the &ldquo;We Will Not Be a Party to this Crime&rdquo; declaration that opposed military violence against Kurds. After her residency, she co-founded <em>Feminist Asylum: A Journal of Critical Interventions</em>.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2013" data-country="Iran" data-name="Yaghoub Yadali" data-status="past">
+      <div class="writer-card compact" data-year="2013" data-country="Iran" data-name="Yaghoub Yadali" data-status="past">
         <div class="writer-card-img">
           <img src="https://cityofasylum.org/wp-content/uploads/2021/06/yaghoub684_413.jpeg" alt="Yaghoub Yadali" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Iran</span>
@@ -584,11 +727,11 @@ a:hover { color: var(--red-dark); }
         <div class="writer-card-body">
           <h3>Yaghoub Yadali</h3>
           <div class="writer-card-genre">Writer &middot; 2013–2015</div>
-          <p>An experienced TV director, his debut novel <em>Rituals of Restlessness</em> won Iran's most prestigious literary award. But subsequently&mdash;even though it had passed state censorship&mdash;it led to his imprisonment for depicting an adulterous affair.</p>
+          <p>An experienced TV director, his debut novel <em>Rituals of Restlessness</em> won Iran's most prestigious literary award. But subsequently&mdash;even though it had passed state censorship&mdash;it led to his imprisonment for a scene implying an adulterous affair.</p>
         </div>
       </div>
 
-      <div class="writer-card" data-year="2022" data-country="Algeria" data-name="Anouar Rahmani" data-status="past">
+      <div class="writer-card compact" data-year="2022" data-country="Algeria" data-name="Anouar Rahmani" data-status="past">
         <div class="writer-card-img">
           <img src="Rahmani.jpg" alt="Anouar Rahmani" onerror="this.style.opacity='0'">
           <span class="writer-card-country">Algeria</span>
@@ -600,42 +743,50 @@ a:hover { color: var(--red-dark); }
           <p>Novelist, journalist, and the first public advocate for legalization of same-sex marriage in Algeria, he was shortlisted for the Index on Censorship&rsquo;s Freedom of Expression Awards.</p>
         </div>
       </div>
-
-      <div class="writer-card" data-year="2024" data-country="Egypt" data-name="Mukhtar Shehata" data-status="current">
-        <div class="writer-card-img">
-          <img src="Mukhtar.jpg" alt="Mukhtar Shehata" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Egypt</span>
-          <span class="writer-card-status status-current">Current</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Mukhtar Shehata</h3>
-          <div class="writer-card-genre">Writer &middot; 2024</div>
-          <p>A novelist, ethnographer, and documentary filmmaker whose work explores social change, class, gender, and rural transformation in Egypt after the 2011 revolution and Arab identity.</p>
-        </div>
-      </div>
-
-      <div class="writer-card" data-year="2026" data-country="Mexico" data-name="Anonymous" data-status="current">
-        <div class="writer-card-img">
-          <img src="anonymous-placeholder.svg" alt="Anonymous" onerror="this.style.opacity='0'">
-          <span class="writer-card-country">Mexico</span>
-          <span class="writer-card-status status-current">Current</span>
-        </div>
-        <div class="writer-card-body">
-          <h3>Anonymous</h3>
-          <div class="writer-card-genre">Writer &middot; 2026</div>
-          <p>An acclaimed investigative journalist and author who has spent two decades covering narco- and human trafficking on the Mexico-U.S. border and its impact on marginalized communities.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
 
+<!-- Writer Bio Modal -->
+<div id="writer-modal" class="writer-modal" role="dialog" aria-modal="true" aria-labelledby="writer-modal-name" onclick="if(event.target===this){this.classList.remove('open');document.body.style.overflow='';}">
+  <button type="button" class="writer-modal-prev" aria-label="Previous writer">&#8249;</button>
+  <button type="button" class="writer-modal-next" aria-label="Next writer">&#8250;</button>
+  <div class="writer-modal-panel">
+    <button type="button" class="writer-modal-close" aria-label="Close">&times;</button>
+    <img class="writer-modal-img" src="" alt="">
+    <div class="writer-modal-body">
+      <span class="writer-modal-country"></span>
+      <h3 class="writer-modal-name" id="writer-modal-name"></h3>
+      <div class="writer-modal-gold"></div>
+      <p class="writer-modal-bio"></p>
+    </div>
+  </div>
+</div>
+
 <script>
 (function() {
-  var grid = document.getElementById('writers-grid');
+  var alumniGrid = document.getElementById('alumni-grid');
   var pills = document.querySelectorAll('.sort-pill');
+
+  // Wrap year portion of each alumni card's genre line so mobile CSS can break it to a new line
+  alumniGrid.querySelectorAll('.writer-card-genre').forEach(function(el){
+    var html = el.innerHTML;
+    var parts = html.split(/\s*[·•]\s*/);
+    if (parts.length === 2) {
+      el.innerHTML = '<span class="wcg-role">' + parts[0] + '</span><span class="wcg-sep"> &middot; </span><span class="wcg-year">' + parts[1] + '</span>';
+    }
+  });
+  // For cards whose year span has "Title, YYYY-YYYY" (e.g. Huang Xiang), split title/years for mobile
+  alumniGrid.querySelectorAll('.wcg-year').forEach(function(el){
+    var html = el.innerHTML;
+    var m = html.match(/^(.+?),\s*(\d{4}.*)$/);
+    if (m) {
+      el.innerHTML = '<span class="wcg-title">' + m[1] + '</span><span class="wcg-title-comma">, </span><span class="wcg-years">' + m[2] + '</span>';
+    }
+  });
+
   function sortGrid(mode) {
-    var cards = Array.from(grid.querySelectorAll('.writer-card'));
+    var cards = Array.from(alumniGrid.querySelectorAll('.writer-card'));
     cards.sort(function(a, b) {
       switch(mode) {
         case 'year-desc':
@@ -643,7 +794,6 @@ a:hover { color: var(--red-dark); }
         case 'year-asc':
           return parseInt(a.dataset.year) - parseInt(b.dataset.year);
         case 'alpha':
-          // Sort by last name; for 3-word names (Spanish naming convention) use the 2nd word
           var lastName = function(n){ var p = n.split(' '); return p.length >= 2 ? p[1] : p[0]; };
           var c2 = lastName(a.dataset.name).localeCompare(lastName(b.dataset.name));
           return c2 !== 0 ? c2 : a.dataset.name.localeCompare(b.dataset.name);
@@ -653,7 +803,7 @@ a:hover { color: var(--red-dark); }
       }
       return 0;
     });
-    cards.forEach(function(card) { grid.appendChild(card); });
+    cards.forEach(function(card) { alumniGrid.appendChild(card); });
   }
 
   pills.forEach(function(pill) {
@@ -664,10 +814,10 @@ a:hover { color: var(--red-dark); }
     });
   });
 
-  // Country filter dropdown
+  // Country filter dropdown — alumni only
   var dropdown = document.getElementById('country-filter');
   var countries = [];
-  grid.querySelectorAll('.writer-card').forEach(function(card) {
+  alumniGrid.querySelectorAll('.writer-card').forEach(function(card) {
     var c = card.dataset.country;
     if (c && c !== 'Unknown' && countries.indexOf(c) === -1) countries.push(c);
   });
@@ -679,13 +829,78 @@ a:hover { color: var(--red-dark); }
   });
   dropdown.addEventListener('change', function() {
     var val = dropdown.value;
-    grid.querySelectorAll('.writer-card').forEach(function(card) {
+    alumniGrid.querySelectorAll('.writer-card').forEach(function(card) {
       card.style.display = (!val || card.dataset.country === val) ? '' : 'none';
     });
   });
 
-  // Default sort: chronological (oldest first — tells the story of growth)
+  // Default sort: oldest first — tells the story of the program's growth
   sortGrid('year-asc');
+
+  // BIO MODAL
+  var modal = document.getElementById('writer-modal');
+  var modalImg = modal.querySelector('.writer-modal-img');
+  var modalCountry = modal.querySelector('.writer-modal-country');
+  var modalName = modal.querySelector('.writer-modal-name');
+  var modalGold = modal.querySelector('.writer-modal-gold');
+  var modalBio = modal.querySelector('.writer-modal-bio');
+  var prevBtn = modal.querySelector('.writer-modal-prev');
+  var nextBtn = modal.querySelector('.writer-modal-next');
+  var closeBtn = modal.querySelector('.writer-modal-close');
+  var currentIndex = -1;
+
+  function getVisibleAlumni() {
+    return Array.from(alumniGrid.querySelectorAll('.writer-card')).filter(function(c) {
+      return c.style.display !== 'none';
+    });
+  }
+
+  function populateModal(card) {
+    var img = card.querySelector('.writer-card-img img');
+    modalImg.src = img.src;
+    modalImg.alt = img.alt;
+    modalImg.style.objectPosition = card.dataset.pos || 'center top';   // per-card crop framing
+    modalCountry.textContent = card.dataset.country;
+    modalName.textContent = card.querySelector('h3').textContent;
+    modalGold.textContent = card.querySelector('.writer-card-genre').textContent;
+    modalBio.innerHTML = card.querySelector('.writer-card-body p').innerHTML;
+  }
+
+  function openModal(card) {
+    var visible = getVisibleAlumni();
+    currentIndex = visible.indexOf(card);
+    populateModal(card);
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function navigate(delta) {
+    var visible = getVisibleAlumni();
+    if (visible.length === 0) return;
+    currentIndex = (currentIndex + delta + visible.length) % visible.length;
+    populateModal(visible[currentIndex]);
+  }
+
+  alumniGrid.addEventListener('click', function(e) {
+    var card = e.target.closest('.writer-card');
+    if (card) openModal(card);
+  });
+
+  closeBtn.addEventListener('click', function(e) { e.stopPropagation(); closeModal(); });
+  prevBtn.addEventListener('click', function(e) { e.stopPropagation(); navigate(-1); });
+  nextBtn.addEventListener('click', function(e) { e.stopPropagation(); navigate(1); });
+
+  document.addEventListener('keydown', function(e) {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape') closeModal();
+    else if (e.key === 'ArrowLeft') navigate(-1);
+    else if (e.key === 'ArrowRight') navigate(1);
+  });
 })();
 </script>
 
@@ -694,10 +909,8 @@ a:hover { color: var(--red-dark); }
   <div class="container">
     <h2>Making a home, and part of a community</h2>
     <p>City of Asylum writers are available for talks and readings at schools and community groups throughout Pittsburgh &mdash; and beyond &mdash; in partnerships with universities, arts institutions, and literary festivals.</p>
-    <a href='donate.html' style='display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-weight:700;padding:.9rem 2rem;border-radius:8px;font-size:1rem;'>Support a Writer's Residency &rarr;</a>
-    <div style="margin-top:1rem;">
-      <a href='about.html#inquiries' style='display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-weight:700;padding:.9rem 2rem;border-radius:8px;font-size:1rem;'>Book a Writer for Your Organization &rarr;</a>
-    </div>
+    <div><a class='btn-gold-lg' href='/donate'>Support a Writer's Residency&nbsp;&rarr;</a></div>
+    <div style="margin-top:1rem;"><a class='btn-gold-lg' href='/about#inquiries'>Book a Writer for Your Organization&nbsp;&rarr;</a></div>
   </div>
 </section>
 
@@ -705,38 +918,39 @@ a:hover { color: var(--red-dark); }
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class='nav-logo' href='index.html' style='margin-bottom:.5rem'>
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:70px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+        <a class='nav-logo' href='/' style='margin-bottom:.5rem'>
           <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
+          <img src="xCofA_Logo_RGB.png" alt="City of Asylum" style="height:70px;">
         </a>
         <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href='about.html'>About Us</a>
-        <a href='writers.html'>Writers &amp; Residencies</a>
-        <a href='free-arts.html'>Free Arts &amp; Culture</a>
-        <a href='media-archive.html'>Media &amp; Archive</a>
+        <a href='/about'>About Us</a>
+        <a href='/writers'>Writers &amp; Residencies</a>
+        <a href='/free-arts' style='color:var(--red);font-weight:700;'>Free Programs &amp; Tix</a>
+        <a href='/media-archive'>Media &amp; Archive</a>
       </div>
       <div class="footer-col">
         <h4>Visit</h4>
-        <a href='free-arts.html'>Alphabet City</a>
-        <a href='bookstore-restaurant.html'>Bookstore</a>
-        <a href='bookstore-restaurant.html'>Restaurant</a>
-        <a href='about.html#directions'>Directions</a>
+        <a href='/free-arts'>Alphabet City</a>
+        <a href='/bookstore-restaurant'>Bookstore</a>
+        <a href='/bookstore-restaurant'>Restaurant</a>
+        <a href='/about#directions'>Directions</a>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
-        <a href='donate.html'>Donate</a>
-        <a href='about.html#inquiries'>Volunteer</a>
-        <a href='about.html#inquiries'>Free Tour</a>
-        <a href='about.html#inquiries'>Book a Writer</a>
-        <a href='about.html#inquiries'>Contact Us</a>
+        <a href='/donate' style='background:var(--red);color:var(--white);font-weight:700;padding:.4rem 1rem;border-radius:6px;display:inline-block;margin-top:.15rem;'>Donate</a>
+        <a href='/about#inquiries'>Volunteer</a>
+        <a href='/about#inquiries'>Free Tour</a>
+        <a href='/about#inquiries'>Book a Writer</a>
+        <a href='/about#inquiries'>Contact Us</a>
       </div>
     </div>
+        <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:calc(-3in/8) 0 1.5rem;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
-      <a href="writers.html#" onclick="document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Privacy Policy</a>
+      <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -754,7 +968,7 @@ a:hover { color: var(--red-dark); }
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">3. Sharing Your Information</h4>
     <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We value your trust. We do not sell, rent, or trade our subscriber list with third parties. We only share information with trusted service providers like our email platforms, who help us send our communications and are legally bound to keep your data secure.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">4. Opting Out</h4>
-    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">Most emails include an &ldquo;Unsubscribe&rdquo; link at the bottom. You can also contact us at <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a> to ask us to update or delete your information from our records.</p>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">Most emails include an &ldquo;Unsubscribe&rdquo; link at the bottom. You can also contact us at <a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a> to ask us to update or delete your information from our records.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">5. Security</h4>
     <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We take reasonable steps to protect your data from unauthorized access. However, no method of online transmission is 100% secure, and providing your information is at your own risk.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">6. Contact Us</h4>
@@ -763,7 +977,7 @@ a:hover { color: var(--red-dark); }
     40 W. North Avenue<br>
     Pittsburgh, PA 15212<br>
     Phone: 412-435-1110<br>
-    Email: <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a></p>
+    Email: <a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a></p>
   </div>
 </div>
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('privacy-modal');if(m&&m.style.display==='flex'){m.style.display='none';document.body.style.overflow='';}}});</script>
@@ -777,5 +991,87 @@ document.querySelectorAll('.nav-dropdown a').forEach(function(a) {
 });
 </script>
 <script src="mobile.js?v=3" defer></script>
+<!-- Smart email chooser: intercepts mailto: clicks and offers Gmail / Outlook / default / copy -->
+<div id="mail-chooser" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;max-width:380px;width:100%;border-radius:12px;padding:1.5rem;box-shadow: 0 1px 3px rgba(0,0,0,.06);">
+    <h3 id="mc-title" style="margin:0 0 .25rem;font-family:var(--serif);font-size:1.2rem;color:var(--text-dark);">Send email to</h3>
+    <p id="mc-addr" style="margin:0 0 1.25rem;font-size:.95rem;color:var(--muted);word-break:break-all;"></p>
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <a id="mc-gmail" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Gmail (web)</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-outlook" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Outlook (web)</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-yahoo" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Yahoo Mail</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-default" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>My default email app</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <button id="mc-copy" type="button" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;border:none;cursor:pointer;font-family:inherit;width:100%;">
+        <span id="mc-copy-label">Copy email address</span><span aria-hidden="true">&rsaquo;</span>
+      </button>
+    </div>
+    <button id="mc-close" type="button" style="margin-top:1rem;width:100%;padding:.65rem;border:1px solid var(--border);border-radius:8px;background:white;color:var(--muted);font-size:.9rem;cursor:pointer;font-family:inherit;">Cancel</button>
+  </div>
+</div>
+<script>
+(function(){
+  var box = document.getElementById('mail-chooser');
+  var addrEl = document.getElementById('mc-addr');
+  var gmail = document.getElementById('mc-gmail');
+  var outlook = document.getElementById('mc-outlook');
+  var yahoo = document.getElementById('mc-yahoo');
+  var def = document.getElementById('mc-default');
+  var copyBtn = document.getElementById('mc-copy');
+  var copyLabel = document.getElementById('mc-copy-label');
+  var closeBtn = document.getElementById('mc-close');
+  var currentAddr = '';
+
+  function open(addr){
+    currentAddr = addr;
+    addrEl.textContent = addr;
+    gmail.href = 'https://mail.google.com/mail/?view=cm&to=' + encodeURIComponent(addr);
+    outlook.href = 'https://outlook.live.com/owa/?path=/mail/action/compose&to=' + encodeURIComponent(addr);
+    yahoo.href = 'https://compose.mail.yahoo.com/?to=' + encodeURIComponent(addr);
+    def.href = 'mailto:' + addr;
+    copyLabel.textContent = 'Copy email address';
+    box.style.display = 'flex';
+  }
+  function close(){ box.style.display = 'none'; }
+
+  document.querySelectorAll('a.smart-mail').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      open(a.href.replace(/^mailto:/, ''));
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.style.display === 'flex') close(); });
+
+  // After picking a web option, close the chooser
+  [gmail, outlook, yahoo, def].forEach(function(el){ el.addEventListener('click', function(){ setTimeout(close, 100); }); });
+
+  copyBtn.addEventListener('click', function(){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(currentAddr).then(function(){
+        copyLabel.textContent = 'Copied ✓';
+        setTimeout(close, 700);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = currentAddr;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); copyLabel.textContent = 'Copied ✓'; setTimeout(close, 700); } catch(_) {}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

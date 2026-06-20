@@ -3,24 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Media & Archive | City of Asylum</title>
+<title>Media &amp; Archive &mdash; City of Asylum</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --deep: #0f1419;
-  --charcoal: #1a1f2e;
-  --slate: #2d3548;
-  --red: #c23b2e;
-  --red-dark: #8b1a1a;
-  --gold: #c9a227;
-  --gold-light: #e0c660;
-  --cream: #f5f0e8;
-  --warm-white: #faf8f5;
+  --deep: #1c1a17;
+  --charcoal: #2a2724;
+  --slate: #54504a;
+  --red: #9c3f33;
+  --red-dark: #7d3028;
+  --gold: #6b6155;
+  --gold-light: #8a7f70;
+  --cream: #f4efe7;
+  --warm-white: #faf8f3;
   --white: #ffffff;
-  --muted: #6b7280;
-  --text-dark: #1a1a1a;
-  --text-body: #3d3d3d;
-  --border: #e5e7eb;
+  --muted: #7a7268;
+  --text-dark: #1c1a17;
+  --text-body: #37332e;
+  --border: #e4ddd0;
   --serif: 'Playfair Display', Georgia, serif;
   --sans: 'Inter', 'Segoe UI', Arial, sans-serif;
 }
@@ -33,37 +33,45 @@ a:hover { color: var(--red-dark); }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
 /* NAV */
-.site-nav { position: sticky; top: 0; z-index: 100; background: var(--deep); border-bottom: 3px solid var(--gold); }
+.site-nav { position: sticky; top: 0; z-index: 100; background: var(--white); border-bottom: none; }
 .nav-inner{ max-width:1440px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 98px; }
-.nav-logo { display: flex; align-items: center; gap: .75rem; color: var(--white); text-decoration: none; }
-.nav-logo img { height: 70px; }
+.nav-logo { display: flex; align-items: center; gap: .1rem; color: var(--text-dark); text-decoration: none; }
+.nav-logo img { height: 70px; margin-left: 0.0625in; }
 .nav-logo span { font-family:var(--sans); font-weight: 700; font-size: 1.15rem; line-height:1.1;}
-.nav-links{display:flex;align-items:center;gap:.25rem;flex-wrap:nowrap}
-.nav-links a{white-space:nowrap; color: rgba(255,255,255,.8); font-size: .875rem; font-weight: 500; padding:.5rem .35rem; border-radius: 6px; transition: all .2s; }
-.nav-links a:hover { color: var(--white); background: rgba(255,255,255,.08); }
+.nav-links{display:flex;align-items:center;gap:1.75rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap; color: var(--text-dark); font-size: .875rem; font-weight: 500; padding:.5rem .35rem; border-radius: 6px; transition: all .2s; }
+.nav-item > a{display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important}
+.nav-chevron{margin-left:0!important;line-height:1;font-size:.75rem!important}
+.nav-links a:hover { color: var(--red); background: rgba(0,0,0,.05); }
 .nav-links a.active { color: var(--gold); }
 .nav-donate { background: var(--red) !important; color: var(--white) !important; font-weight: 700 !important; padding: .55rem 1.4rem !important; }
 
 /* Nav dropdowns */
 .nav-item { position: relative; display: inline-flex; align-items: center; }
-.nav-chevron { font-size: .6rem; margin-left: .25rem; opacity: .55; transition: transform .2s; }
-.nav-item:hover .nav-chevron { transform: rotate(180deg); }
-.nav-dropdown { position: absolute; top: calc(100% + 6px); left: 0; background: var(--deep); border: 1px solid rgba(255,255,255,.12); border-top: 2px solid var(--gold); border-radius: 0 0 10px 10px; min-width: 230px; padding: .5rem 0; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-6px); transition: all .2s; z-index: 300; box-shadow: 0 10px 32px rgba(0,0,0,.5); }
-.nav-item:hover .nav-dropdown { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}
-.nav-dropdown a { display: block !important; padding: .55rem 1.2rem !important; color: rgba(255,255,255,.65) !important; font-size: .8rem !important; font-weight: 500 !important; }
+.nav-chevron { font-size: .75rem; margin-left: .25rem; opacity: .55; transition: transform .2s; }
+.nav-item:hover .nav-chevron {  }
+.nav-dropdown { position: absolute; top: calc(100% + 6px); left: 0; background: var(--white); border: 1px solid rgba(255,255,255,.12); border-top: 2px solid var(--gold); border-radius: 0 0 10px 10px; min-width: 230px; padding: .5rem 0; opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-6px); transition: all .2s; z-index: 300; box-shadow: 0 10px 32px rgba(0,0,0,.15); }
+.nav-item:hover .nav-dropdown { opacity: 1; visibility: visible; pointer-events: auto;  }.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}
+.nav-dropdown a { display: block !important; padding: .55rem 1.2rem !important; color: var(--text-dark) !important; font-size: .8rem !important; font-weight: 500 !important; }
 .nav-dropdown a:hover { color: var(--gold) !important; background: rgba(255,255,255,.05) !important; padding-left: 1.5rem !important; }
+.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important;text-align:left}
+.nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 
 /* PAGE HERO */
-.page-hero { background: var(--deep); color: var(--white); padding: calc(5rem - 3in/8) 0 calc(4rem - 1in/4); text-align: center; border-bottom: 3px solid var(--gold); position: relative; overflow: hidden; }
+.page-hero  { margin: 0 0.25in; background: #000; color: var(--white); padding: 0; text-align: center; border-top: 3px solid var(--gold); position: relative; overflow: hidden; }
+.page-hero > img { width: 100%; height: auto; display: block; }
 .page-hero .eyebrow { font-size: .75rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: 1rem; }
-.page-hero h1 { font-family: var(--serif); font-size: 2.4rem; font-weight: 700; line-height: 1.25; color: var(--white); margin-bottom: 1rem; }
+/* live eyebrow overlaid on the baked 791 hero (which has no eyebrow); % top so it scales with the image */
+.hero-overlay-eyebrow { position:absolute; top:6.3%; left:0; right:0; text-align:center; z-index:2; font-size:.62rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); pointer-events:none; }
+.page-hero h1 { font-family: var(--serif); font-size: 3rem; font-weight: 900; line-height: 1.25; color: var(--white); margin-bottom: 1rem; }
 .page-hero p { font-size: 1.15rem; color: rgba(255,255,255,.75); max-width: 750px; margin: 0 auto; }
 
 /* CONTENT SECTIONS */
 .content-section { padding: 3rem 0; background: var(--warm-white); }
 .content-section:nth-child(even) { background: var(--cream); }
 .section-eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); display: block; margin-bottom: .5rem; text-align: center; }
-.section-title { font-family: var(--serif); font-size: 2rem; font-weight: 700; color: var(--text-dark); text-align: center; margin-bottom: 1.5rem; }
+.section-title { font-family: var(--serif); font-size: 2.25rem; font-weight: 700; color: var(--text-dark); text-align: center; margin-bottom: 1.5rem; line-height: 1.18; }
+@media(max-width:768px){ .section-title { font-size: 1.7rem; } }
 
 /* Press List */
 .press-list { max-width: 900px; margin: 0 auto; }
@@ -72,30 +80,58 @@ a:hover { color: var(--red-dark); }
 .press-logo { width: 72px; height: 28px; object-fit: contain; object-position: left center; background: #fff; }
 .press-link { color: var(--text-dark); font-size: .85rem; word-break: break-word; line-height: 1.3; }
 .press-link:hover { color: var(--red); text-decoration: underline; }
+.press-controls { display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center; margin:1rem 0 1.75rem; }
+.press-sort-btn { background:transparent; border:1px solid var(--border); color:var(--text-dark); padding:.4rem .9rem; border-radius:6px; font-size:.85rem; cursor:pointer; font-family:var(--sans); }
+.press-sort-btn:hover { background:var(--cream); }
+.press-sort-btn.active { background:var(--deep); color:var(--white); border-color:var(--deep); }
+.press-toggle-wrap { text-align:center; margin-top:1.5rem; }
+.press-toggle { background:transparent; border:1px solid var(--border); color:var(--text-dark); padding:.5rem 1.2rem; border-radius:6px; font-size:.9rem; cursor:pointer; font-family:var(--sans); margin:0 .25rem; }
+.press-toggle:hover { background:var(--cream); }
+.press-toggle[hidden] { display:none; }
+.press-item[hidden] { display:none; }
 
 /* Placeholder */
 .placeholder-box { max-width: 700px; margin: 0 auto; padding: 3rem; background: rgba(0,0,0,.03); border: 2px dashed rgba(0,0,0,.15); border-radius: 12px; text-align: center; color: var(--muted); font-style: italic; }
 
 /* Publications */
-.pub-feature { max-width: 900px; margin: 0 auto 3rem; background: var(--white); border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.pub-feature { max-width: 900px; margin: 0 auto 3rem; background: var(--white); border-radius: 12px; padding: calc(2rem - 1in/16) 2rem calc(2rem - 3in/16); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
 .pub-feature h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--text-dark); margin-bottom: .75rem; }
 .pub-feature p { color: var(--text-body); font-size: .95rem; line-height: 1.7; margin-bottom: .75rem; }
 .pub-feature a { color: var(--red); font-weight: 600; }
+.pub-cover { float: left; width: 150px; margin: 0 1.75rem .85rem 0; display: block; }
+.pub-cover img { width: 100%; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.15); display: block; }
 .book-list { max-width: 900px; margin: 0 auto; }
-.book-list h3 { font-family: var(--serif); font-size: 1.3rem; color: var(--text-dark); margin-bottom: 1rem; text-align: center; }
+.book-list h3 { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: #000; line-height: 1.35; margin-bottom: 1rem; text-align: center; }
+/* Recurring gold mission line shown near the footer on every page */
+.coa-footer-mission { text-align: center; color: var(--gold); font-size: .875rem; padding: .25rem 0; margin: calc(-3in/8) 0 1.5rem; }
 .book-list ul { list-style: none; padding: 0; }
 .book-list li { padding: .75rem 1rem; border-bottom: 1px solid var(--border); font-size: .95rem; color: var(--text-body); display:flex; align-items:center; gap:.75rem; }
 .book-list li img.book-cover { width:42px; height:auto; flex:0 0 auto; border-radius:2px; box-shadow:0 1px 4px rgba(0,0,0,.18); }
+.book-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:1.75rem .65rem; max-width:1300px; margin:2rem auto 0; }
+.book-grid a { display:flex; flex-direction:column; align-items:center; text-align:center; text-decoration:none; color:inherit; transition:transform .2s; }
+.book-grid a:hover {  }
+.book-grid img { width:100%; height:auto; border-radius:2px; box-shadow: 0 1px 3px rgba(0,0,0,.06); margin-bottom:.5rem; transition:box-shadow .2s; }
+.book-grid a:hover img { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.book-grid-hint { text-align:center; font-size:.9rem; color:var(--muted); font-style:italic; margin:.75rem auto 0; }
+.book-grid .author { font-size:.78rem; font-weight:600; color:var(--text-dark); line-height:1.25; }
+.book-grid .translator { font-size:.72rem; color:var(--muted); line-height:1.25; margin-top:.1rem; }
+@media (max-width: 768px) {
+  .nav-links { display: none; }   /* match other pages: hide desktop nav on mobile (prevents horizontal overflow) */
+  .book-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem .5rem; }
+}
 
 /* Archive */
 .archive-grid { max-width: 1000px; margin: 0 auto; display: grid; gap: 1.5rem; }
-.archive-card { background: var(--white); border-radius: 12px; padding: 1.5rem 2rem; border-left: 4px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.archive-card { background: var(--white); border-radius: 12px; padding: 1.5rem 2rem; border: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
 .archive-card h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--text-dark); margin-bottom: .25rem; }
-.archive-card a.archive-link { color: var(--red); font-size: .85rem; word-break: break-word; }
+.archive-card a.archive-link { display:inline-block; margin-top:.4rem; background:var(--red); color:var(--white); font-weight:600; font-size:.85rem; padding:.5rem 1.1rem; border-radius:8px; text-decoration:none; word-break:break-word; transition:background .2s; }
+.archive-card a.archive-link:hover { background:var(--red-dark); color:var(--white); }
 .archive-card p { color: var(--text-body); font-size: .9rem; margin-top: .5rem; line-height: 1.6; }
 
 /* FOOTER */
-.site-footer { background: var(--deep); color: rgba(255,255,255,.6); padding: 4rem 0 2rem; }
+/* GOLD STANDARD: bright #9c3f33 on dark regions; muted --gold (#6b6155) stays on light. */
+.page-hero,.site-footer,#privacy-modal{--gold:#9c3f33;--gold-light:#9c3f33;}
+.site-footer  { background: var(--deep); color: rgba(255,255,255,.6); padding: 4rem 0 2rem; }
 .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem 3rem; }
 .footer-brand p { font-size: .9rem; line-height: 1.7; max-width: 280px; margin-top: .75rem; }
 .footer-col h4 { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 1rem; }
@@ -108,6 +144,7 @@ a:hover { color: var(--red-dark); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .press-item { grid-template-columns: 50px 60px 1fr; gap: .5rem; }
   .press-logo { width: 56px; height: 22px; }
+  .footer-grid > div:nth-child(2){margin-top:8.35rem}
 }
 /* ===== Selected Photos carousel ===== */
 .photo-carousel-wrapper { position: relative; padding: 0 3.5rem; overflow: hidden; }
@@ -115,18 +152,54 @@ a:hover { color: var(--red-dark); }
 .photo-carousel-card { flex: 0 0 calc((100% - 1.25rem) / 2); display: flex; flex-direction: column; }
 .photo-carousel-card .pc-caption { font-weight: 700; text-align: center; margin-bottom: .5rem; color: var(--text-dark); }
 .photo-carousel-card a { display: block; aspect-ratio: 4/3; overflow: hidden; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.15); }
-.photo-carousel-card a img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.pc-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: var(--deep); color: var(--white); border: none; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,.2); z-index: 2; transition: background .2s, opacity .2s; }
+.photo-carousel-card a img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s; }
+.photo-carousel-card a:hover img {  }
+.photo-carousel-card a { position: relative; cursor: zoom-in; }
+.photo-carousel-card a::after { content: '+'; position: absolute; right: .55rem; bottom: .55rem; width: 32px; height: 32px; border-radius: 50%; background: rgba(15,20,25,.7); color: #fff; font-size: 1.4rem; line-height: 1; font-weight: 300; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+.kickoff-feature a { position: relative; cursor: zoom-in; }
+.kickoff-feature a::after { content: '+'; position: absolute; right: .75rem; bottom: .75rem; width: 36px; height: 36px; border-radius: 50%; background: rgba(15,20,25,.7); color: #fff; font-size: 1.6rem; line-height: 1; font-weight: 300; display: flex; align-items: center; justify-content: center; pointer-events: none; }
+/* Lightbox modal */
+.lightbox { position: fixed; inset: 0; background: rgba(0,0,0,.94); z-index: 10000; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 3.5rem 1rem 2rem; }
+.lightbox[hidden] { display: none; }
+.lightbox-img-wrap { display: flex; align-items: center; justify-content: center; max-width: 95vw; max-height: 75vh; }
+.lightbox-img-wrap img { max-width: 100%; max-height: 75vh; object-fit: contain; display: block; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.lightbox-caption { color: rgba(255,255,255,.9); text-align: center; font-size: .95rem; max-width: 700px; margin-top: 1rem; padding: 0 1rem; line-height: 1.5; }
+.lightbox-btn { position: absolute; background: rgba(255,255,255,.12); color: #fff; border: 1px solid rgba(255,255,255,.2); width: 48px; height: 48px; border-radius: 50%; cursor: pointer; font-size: 1.6rem; line-height: 1; display: flex; align-items: center; justify-content: center; padding: 0; transition: background .2s; }
+.lightbox-btn:hover, .lightbox-btn:focus-visible { background: rgba(255,255,255,.25); outline: none; }
+.lightbox-close { top: 1rem; right: 1rem; font-size: 1.8rem; }
+.lightbox-prev { left: 1rem; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 1rem; top: 50%; transform: translateY(-50%); }
+.lightbox-counter { position: absolute; top: 1.25rem; left: 1.5rem; color: rgba(255,255,255,.65); font-size: .85rem; }
+@media (max-width: 768px) {
+  .lightbox-prev, .lightbox-next { width: 40px; height: 40px; font-size: 1.4rem; }
+  .lightbox-prev { left: .5rem; }
+  .lightbox-next { right: .5rem; }
+  .lightbox-img-wrap, .lightbox-img-wrap img { max-height: 60vh; }
+}
+.pc-btn  { position: absolute; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: var(--deep); color: var(--white); border: none; font-size: 1.2rem; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 1px 3px rgba(0,0,0,.06); z-index: 2; transition: background .2s, opacity .2s; }
 .pc-btn:hover { background: var(--red); }
 .pc-btn:disabled { opacity: .3; cursor: default; background: var(--muted); }
 .pc-btn.prev { left: 0; }
 .pc-btn.next { right: 0; }
 .pc-dots { display: flex; justify-content: center; gap: .5rem; margin-top: 1.5rem; }
 .pc-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border); border: none; cursor: pointer; transition: background .2s, transform .2s; }
-.pc-dot.active { background: var(--gold); transform: scale(1.3); }
+.pc-dot.active { background: var(--red); transform: scale(1.3); }
+.m-only-br, .m-only-text { display: none; }
+.d-only-text { display: inline; }
+
 @media (max-width: 768px) {
   .photo-carousel-card { flex: 0 0 100%; }
   .photo-carousel-wrapper { padding: 0 2.5rem; }
+  .pub-cover { float: none; width: 150px; margin: 0 auto 1.1rem; }
+  .pub-feature h3 { text-align: left; }
+  .page-hero .hero-img-desktop { display:none !important; }
+  .page-hero .hero-img-mobile { display:block !important; }
+  .hero-overlay-eyebrow { display:none !important; }
+  .hero-sub-mobile { display:block !important; }
+  .kickoff-feature { display:none !important; }
+  .m-only-br { display: inline; }
+  .m-only-text { display: inline; }
+  .d-only-text { display: none; }
 }
 </style>
 <link rel="stylesheet" href="mobile.css?v=3">
@@ -135,66 +208,69 @@ a:hover { color: var(--red-dark); }
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a class='nav-logo' href='index.html'>
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#0f1419;">
-      <span>City of Asylum</span>
+    <a class='nav-logo' href='/'>
+      <span>City of<br>Asylum</span>
+      <img src="xCofA_Logo_RGB.png" alt="City of Asylum">
     </a>
             <div class="nav-links">
+      <!-- TWO-LINE-NAV 2026-05-31: applied <br> in multi-word nav labels for vertical stacking. Revert by removing each <br> from nav link text. -->
+      <!-- ADDED 2026-05-31: explicit Home link (revert by removing this line) -->
+      <a href='/' style='line-height:1;display:inline-block;'>Home</a>
       <div class="nav-item">
-        <a href='about.html' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
+        <a href='/about'>About<br>Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='about.html'>Our Mission</a>
-          <a href='about.html#history'>History</a>
-          <a href='about.html#model'>Our Model</a>
-          <a href='about.html#staff'>Staff</a>
-          <a href='about.html#board'>Board of Directors</a>
-          <a href='about.html#jobs'>Jobs</a>
-          <a href='about.html#subscribe'>Subscribe</a>
-          <a href='about.html#inquiries'>Other Inquiries</a>
+          <a href='/about'>Our Mission</a>
+          <a href='/about#history'>History</a>
+          <a href='/about#model'>Our Model</a>
+          <a href='/about#staff'>Staff</a>
+          <a href='/about#board'>Board of Directors</a>
+          <a href='/about#jobs'>Jobs</a>
+          <a href='/about#subscribe'>Subscribe</a>
+          <a href='/about#inquiries'>Other Inquiries</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='writers.html' style='line-height:1;display:inline-block;'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <a href='/writers'>Writers<br>&amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='writers.html#residency-program'>Residency Program</a>
-          <a href='writers.html#writers-in-residence'>City of Asylum Writers</a>
+          <a href='/writers#residency-program'>Residency Program</a>
+          <a href='/writers#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='free-arts.html' style='line-height:1;display:inline-block;'>Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
+        <a href='/free-arts' style='line-height:1;display:inline-block;color:var(--red);font-weight:700;'>Free Programs<br>&amp; Tix <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='free-arts.html#what-we-host'>What We Host</a>
-          <a href='free-arts.html#why-free'>Why Our Programs Are Free</a>
-          <a href='events.html'>Upcoming Programs</a>
-          <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">Full Calendar</a>
+          <a href='/free-arts#what-we-host'>What We Host</a>
+          <a href='/free-arts#why-free'>Why Our Programs Are Free</a>
+          <a href='/programs/'>Upcoming Programs</a>
+          <a href='/programs/'>Full Calendar</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='campus.html' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
+        <a href='/campus'>Community<br>Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='campus.html'>Community as Campus</a>
-          <a href='campus.html#how-it-grew'>How It Grew</a>
-          <a href='campus.html#whats-here'>What&#8217;s Here Now</a>
-          <a href='campus.html#walking-tour'>Walking Tour App</a>
-          <a href='campus.html#becoming'>Starting a New City</a>
+          <a href='/campus'>Community as Campus</a>
+          <a href='/campus#how-it-grew'>How It Grew</a>
+          <a href='/campus#whats-here'>What&#8217;s Here Now</a>
+          <a href='/campus#walking-tour'>Walking Tour App</a>
+          <a href='/campus#becoming'>Starting a New City</a>
         </div>
       </div>
       <div class="nav-item">
-        <a class='active' href='media-archive.html' style='line-height:1;display:inline-block;'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <a class='active' href='/media-archive' style='line-height:1;display:inline-block;'>Media<br>&amp; Archive <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='media-archive.html#press'>Selected Press</a>
-          <a href='media-archive.html#video'>Selected Video &amp; Photos</a>
-          <a href='media-archive.html#publications'>Selected Books</a>
-          <a href='media-archive.html#archive'>Media Archive</a>
+          <a href='/media-archive#video'>Selected Video &amp; Photos</a>
+          <a href='/media-archive#publications'>Selected Books</a>
+          <a href='/media-archive#press'>Selected Press</a>
+          <a href='/media-archive#archive'>Media Archive</a>
         </div>
       </div>
 
-      <a href='bookstore-restaurant.html' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <a href='/bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore<br>&amp; Restaurant</a>
       <div class="nav-item">
-        <a class='nav-donate' href='donate.html'>Donate</a>
+        <a class='nav-donate' href='/donate'>Donate</a>
         <div class="nav-dropdown">
-          <a href='donate.html#other-ways'>Other Ways to Help</a>
-          <a href='donate.html#foundations'>Foundations</a>
+          <a href='/donate#other-ways'>Other Ways to Help</a>
+          <a href='/donate#foundations'>Foundations</a>
         </div>
       </div>
     </div>
@@ -202,22 +278,290 @@ a:hover { color: var(--red-dark); }
 </nav>
 
 <section class="page-hero">
-  <img src="COA%20Bookcovers.jpg" alt="" style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);width:100%;height:auto;filter:brightness(.5) saturate(.75);z-index:0;">
-  <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(15,20,25,.6) 50%, rgba(15,20,25,.8) 100%);z-index:1;"></div>
-  <div class="container" style="position:relative;z-index:2;">
-    <span class="eyebrow">Explore Our Collection</span>
-    <h1>Media &amp; Archive</h1>
-    <p>1,000+ videos, images, press coverage, publications, and documents spanning decades of freedom of creative expression.</p>
+  <!-- DESIGNER MASTER 791: book-cover collage with centered black text zone (title + subhead baked; eyebrow added live below) -->
+  <span class="hero-overlay-eyebrow">Explore our Collection</span>
+  <img class="hero-img-desktop" src="792MediaArchiveRaniaAdj.jpg" alt="Media &amp; Archive — 1000+ videos, images, press coverage, publications, and documents spanning decades of freedom of creative expression at City of Asylum">
+  <img class="hero-img-mobile" src="791MediaHeroMobile.jpg" alt="Media &amp; Archive" style="display:none;">
+</section>
+
+<!-- Mobile-only readable subhead (the baked subhead is unreadable at phone width, so it is blanked in the mobile image and shown here instead) -->
+<div class="hero-sub-mobile" style="display:none;padding:1.25rem 1.5rem;background:#000;">
+  <p style="text-align:center;color:#fff;font-size:1rem;line-height:1.6;max-width:none;margin:0 auto;">1000+ videos, images, press coverage, publications, and documents spanning decades of freedom of creative expression at City of Asylum.</p>
+</div>
+
+
+
+<!-- VIDEO -->
+<section class="content-section" id="video" style="background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),url('03Alphas30.jpg') top center/825px auto repeat,var(--warm-white);">
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--red);">Watch</span>
+    <h2 class="section-title">6 Short Videos<span style="display:block;font-family:var(--sans);font-size:.95rem;font-weight:400;color:var(--muted);margin-top:.4rem;letter-spacing:0;text-transform:none;">Selected from the<br class="m-only-br"> City of Asylum On-Demand Archive</span></h2>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem;">
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=ygTOMBLj3Kg" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/ygTOMBLj3Kg/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Sanctuary: The Writers of City of Asylum (2019)</p>
+      </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=IsMl4hDv0DQ" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/IsMl4hDv0DQ/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:69.6%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">What City of Asylum Has Meant to Me (Andr&eacute;s Franco, Executive Director)</p>
+      </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=9wXb1E7e6WY" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/9wXb1E7e6WY/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Why Do We Use Alphabets Across Our Projects?</p>
+      </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=D1TaEZXlPk8" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/D1TaEZXlPk8/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Hospitality, Architecture to Programming</p>
+      </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
+          <a href="https://www.youtube.com/watch?v=voSFP6z5R_4" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/voSFP6z5R_4/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Celebrating 15 Years with City of Asylum (2019)</p>
+      </div>
+
+      <div>
+        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;background:var(--charcoal);">
+          <video controls preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;">
+            <source src="Pittsburgh-Defends-Freedom.mp4" type="video/mp4">
+            Your browser does not support inline video. <a href="Pittsburgh-Defends-Freedom.mp4" download>Download the video</a>.
+          </video>
+        </div>
+        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Pittsburgh Defends Freedom of Creative Expression, Annual Ceremony at City of Asylum</p>
+      </div>
+
+    </div>
   </div>
 </section>
 
+<!-- PHOTOS -->
+<section class="content-section" id="photos">
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--red);">Browse</span>
+    <h2 class="section-title">Selected Photos</h2>
+    <p style="text-align:center;font-size:.875rem;color:var(--muted);margin:0 auto 1.5rem;">Tap a photo to enlarge.</p>
+    <div class="photo-carousel-wrapper">
+      <button class="pc-btn prev" id="pc-prev" aria-label="Previous">&larr;</button>
+      <div class="photo-carousel-track" id="pc-track"></div>
+      <button class="pc-btn next" id="pc-next" aria-label="Next">&rarr;</button>
+    </div>
+    <div class="pc-dots" id="pc-dots"></div>
+    <div class="kickoff-feature" style="margin-top:2.5rem;">
+      <div style="font-weight:700;text-align:center;margin-bottom:.5rem;color:var(--text-dark);">Alphabet City Kickoff with Mayor and County Commissioner&mdash;Let Construction Begin! (2015)</div>
+      <a href="AC%20Press%20conf.jpg" data-lightbox data-caption="Alphabet City Kickoff with Mayor and County Commissioner — Let Construction Begin! (2015)" style="display:block;overflow:hidden;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.15);">
+        <img src="AC%20Press%20conf.jpg" alt="Alphabet City Kickoff with Mayor and County Commissioner — Let Construction Begin!" loading="lazy" style="width:100%;height:auto;display:block;">
+      </a>
+    </div>
+  </div>
+</section>
 
+<script>
+(function() {
+  var photos = [
+    { src:"ASL%202.jpg",                                                                                            caption:"ASL Program Series" },
+    { src:"Burma%20Rosensteel_20090924_9499.jpg",                                                                    caption:"17 Burmese Monks in Residence During G-20 (2009)" },
+    { src:"Micro2.jpg",                                                                                              caption:"A (micro) History of World Economics Danced<br>Pascal Rambert (2015)" },
+    { src:"wallenda.jpg",                                                                                            caption:"Flying Wallendas &amp; Audio of Salman Rushdie Reading from <em>The Ground Beneath Her Feet</em> (Jazz Poetry 2011)" },
+    { src:"Duo%20with%20MCann.JPG", pos:"50% 25%",                                                                    caption:"Bridges Creative Summit: Bassam Aramin (Palestine) &amp; Rami Elhanan (Israel) with Colum McCann (2025)" },
+    { src:"HX%2C%20Rushdie.jpg",                                                                                      caption:"Salman Rushdie meets with Huang Xiang, then hosts City of Asylum's first fundraiser (2005)" },
+    { src:"SvetlanaYoungcrop.JPG",                                                                                   caption:"Nobel Laureate Svetlana Alexievich Meets with Young Pittsburgh Authors (2016)" },
+    { src:"Poetry%20reading%20(Cave%20Canem%20poets)%20on%20closed%20street%20(C)%20Renee%20Rosensteel.jpg",        caption:"Pre-Alphabet City, Cave Canem Poetry Reading (2011)" },
+    { src:"PHotos%20History/Cave%20canems%202013%20group.jpg",                                                        caption:"Annual Workshops of Cave Canem Poets and Faculty (2013)" },
+    { src:"2%20Alley%20set%20up%20w%20chairs%20Rosensteel_20090912_1095.jpg",                                       caption:"Setup for Jazz Poetry on Sampsonia Way (2009)" },
+    { src:"Naturalization.jpg",                                                                                      caption:"Alphabet City Officially Opened January 13, 2017 with a Naturalization Ceremony" },
+    { src:"Serpell.jpg",                                                                                              caption:"Namwali Serpell presents <em>On Morrison</em> (2026)" },
+    { src:"powers2.jpg",                                                                                              caption:"Richard Powers launches <em>Playground</em> at Alphabet City (2024)" },
+    { src:"Jasiri.jpg",                                                                                              caption:"Jasiri X with Melong Band, Exiled Voices of China (2013)" },
+    { src:"PHotos%20History/Randy.jpg",                                                                               caption:"Writers in the Gardens Finale at Randyland (2010)" }
+  ];
+
+  var track = document.getElementById('pc-track');
+  photos.forEach(function(p) {
+    var altText = p.caption.replace(/<[^>]+>/g,'').replace(/&[a-z]+;/g,'');
+    var posStyle = p.pos ? ' style="object-position:' + p.pos + ';"' : '';
+    track.insertAdjacentHTML('beforeend',
+      '<div class="photo-carousel-card">' +
+        '<div class="pc-caption">' + p.caption + '</div>' +
+        '<a href="' + p.src + '" data-lightbox data-caption="' + p.caption.replace(/"/g, '&quot;') + '">' +
+          '<img src="' + p.src + '" alt="' + altText + '" loading="lazy"' + posStyle + '>' +
+        '</a>' +
+      '</div>'
+    );
+  });
+
+  var page = 0;
+  var perPage = window.innerWidth <= 768 ? 1 : 2;
+  var totalPages = Math.ceil(photos.length / perPage);
+  var prevBtn = document.getElementById('pc-prev');
+  var nextBtn = document.getElementById('pc-next');
+  var dotsContainer = document.getElementById('pc-dots');
+
+  for (var d = 0; d < totalPages; d++) {
+    var dot = document.createElement('button');
+    dot.className = 'pc-dot' + (d === 0 ? ' active' : '');
+    dot.dataset.page = d;
+    dot.setAttribute('aria-label', 'Page ' + (d + 1));
+    dotsContainer.appendChild(dot);
+  }
+
+  function update() {
+    var card = track.querySelector('.photo-carousel-card');
+    if (!card) return;
+    var cardWidth = card.offsetWidth;
+    var gap = 20; // 1.25rem
+    var offset = page * perPage * (cardWidth + gap);
+    track.style.transform = 'translateX(-' + offset + 'px)';
+    prevBtn.disabled = page === 0;
+    nextBtn.disabled = page >= totalPages - 1;
+    dotsContainer.querySelectorAll('.pc-dot').forEach(function(dot, i) {
+      dot.classList.toggle('active', i === page);
+    });
+  }
+
+  prevBtn.addEventListener('click', function() { if (page > 0) { page--; update(); } });
+  nextBtn.addEventListener('click', function() { if (page < totalPages - 1) { page++; update(); } });
+  dotsContainer.addEventListener('click', function(e) {
+    if (e.target.classList.contains('pc-dot')) { page = parseInt(e.target.dataset.page); update(); }
+  });
+  window.addEventListener('resize', function() {
+    perPage = window.innerWidth <= 768 ? 1 : 2;
+    totalPages = Math.ceil(photos.length / perPage);
+    if (page >= totalPages) page = totalPages - 1;
+    // Rebuild dots
+    dotsContainer.innerHTML = '';
+    for (var d = 0; d < totalPages; d++) {
+      var dot = document.createElement('button');
+      dot.className = 'pc-dot' + (d === page ? ' active' : '');
+      dot.dataset.page = d;
+      dotsContainer.appendChild(dot);
+    }
+    update();
+  });
+  update();
+})();
+</script>
+
+<!-- PUBLICATIONS -->
+<section class="content-section" id="publications" style="padding-top:calc(3rem - 1in/4);background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),url('03Alphas30.jpg') top center/825px auto repeat,var(--cream);">
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--red);">Read</span>
+    <h2 class="section-title">Selected Publications</h2>
+
+<!-- The original double-row book gallery (covers only) was removed from this spot.
+     Markup preserved in book-gallery-backup.html if it needs to be restored. -->
+
+    <div class="book-list">
+      <h3>Selected Books<br class="m-only-br"><span class="d-only-text"> by City of Asylum exiled writers-in-residence:</span><span class="m-only-text"> by exiled writers-in-residence:</span><br>all available in City of Asylum <a href="https://cityofasylumbooks.org/" target="_blank" rel="noopener">Bookstore</a></h3>
+      <p class="book-grid-hint">Click any cover for details and to purchase.</p>
+      <div class="book-grid">
+        <a href="https://cityofasylumbooks.org/book/9781939419996" target="_blank" rel="noopener">
+          <img src="Conspiracy.jpg" alt="The Conspiracy cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Israel Centeno</span>
+          <span class="translator">tr. Guillermo Parra</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/product/exile-poems-labyrinth-homesickness" target="_blank" rel="noopener">
+          <img src="https://cityofasylum.org/wp-content/uploads/2022/05/ExilePoems_rectangle-e1652287873992.jpeg" alt="Exile Poems cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Tuhin Das</span>
+          <span class="translator">tr. Arunava Sinha</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9781494221799" target="_blank" rel="noopener">
+          <img src="https://images.booksense.com/images/799/221/9781494221799.jpg" alt="Generation Zero cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">ed. Orlando Pardo</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9781905233380" target="_blank" rel="noopener">
+          <img src="https://images.booksense.com/images/380/233/9781905233380.jpg" alt="In Search of Fat cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Bewketu Seyoum</span>
+          <span class="translator">tr. Chris Beckett</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9781557290960" target="_blank" rel="noopener">
+          <img src="Lifetime.jpg" alt="A Lifetime is a Promise to Keep cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Huang Xiang</span>
+          <span class="translator">tr. Michelle Yeh</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9781502759559" target="_blank" rel="noopener">
+          <img src="https://images.booksense.com/images/559/759/9781502759559.jpg" alt="Night Birds cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Khet Mar</span>
+          <span class="translator">tr. Maung Maung Myint</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9798282281446" target="_blank" rel="noopener">
+          <img src="https://images.booksense.com/images/446/281/9798282281446.jpg" alt="Nothing is Under Control cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Oleksandr Fraz&eacute;-Fraz&eacute;nko</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9798990473300" target="_blank" rel="noopener">
+          <img src="Orpheus-enhanced.jpg" alt="Orpheus and Eurydice in New York cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Olena Boryshpolets</span>
+          <span class="translator">tr. Oleksandr Fraz&eacute;-Fraz&eacute;nko</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9781939419828" target="_blank" rel="noopener">
+          <img src="https://images.booksense.com/images/828/419/9781939419828.jpg" alt="Rituals of Restlessness cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Yaghoub Yadali</span>
+          <span class="translator">tr. Sara Khalili</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9780811217071" target="_blank" rel="noopener">
+          <img src="Senselessness.jpg" alt="Senselessness cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Horacio Castellanos Moya</span>
+          <span class="translator">tr. Katherine Silver</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9780674302662" target="_blank" rel="noopener">
+          <img src="https://images.booksense.com/images/662/302/9780674302662.jpg" alt="Signals of Being cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Volodymyr Rafeyenko</span>
+          <span class="translator">tr. Mark Andryczyk</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9780900575181" target="_blank" rel="noopener">
+          <img src="Something%20Evergreen.jpg" alt="Something Evergreen Called Life cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Rania Mamoun</span>
+          <span class="translator">tr. Yasmine Seale</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9780811226073" target="_blank" rel="noopener">
+          <img src="https://images.booksense.com/images/073/226/9780811226073.jpg" alt="The Teeth of the Comb cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Osama Alomar</span>
+          <span class="translator">tr. C.J. Collins</span>
+        </a>
+        <a href="https://cityofasylumbooks.org/book/9781502745804" target="_blank" rel="noopener">
+          <img src="https://images.booksense.com/images/804/745/9781502745804.jpg" alt="The Thunder of Deep Thought cover" loading="lazy" onerror="this.style.visibility='hidden'">
+          <span class="author">Huang Xiang</span>
+          <span class="translator">tr. Teresa Zimmerman-Liu</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="pub-feature">
+      <a class="pub-cover" href="https://cityofasylum.org/wp-content/uploads/2022/09/Pittsburgh_Live-Ability-1.pdf#page=5" target="_blank">
+        <img src="Pittsburgh-LiveAbility.jpg" alt="Pittsburgh Live/Ability cover">
+      </a>
+      <h3>Pittsburgh Live/Ability</h3>
+      <p>What is it like to live in Pittsburgh with a disability? The creative culmination of two years of work between 11 multilingual, multiply disabled, and multiply abled Pittsburgh writers and 11 Pittsburghers with disabilities.</p>
+      <p><a href="https://cityofasylum.org/wp-content/uploads/2022/09/Pittsburgh_Live-Ability-1.pdf#page=5" target="_blank"><strong>Free online PDF</strong></a> (133 pages, also downloadable)</p>
+      <p style="font-size:.85rem;color:var(--muted);margin-top:.5rem;">Also available on Spotify, Anchor, Amazon, and Apple.</p>
+      <div style="clear:both;"></div>
+    </div>
+  </div>
+</section>
 
 <!-- PRESS -->
 <section class="content-section" id="press">
   <div class="container">
-    <span class="section-eyebrow">In the News</span>
+    <span class="section-eyebrow" style="color:var(--red);">In the News</span>
     <h2 class="section-title">Selected Press</h2>
+    <div class="press-controls">
+      <button class="press-sort-btn active" data-sort="oldest">Oldest</button>
+      <button class="press-sort-btn" data-sort="newest">Newest</button>
+      <button class="press-sort-btn" data-sort="national">National</button>
+      <button class="press-sort-btn" data-sort="local">Local</button>
+    </div>
     <div class="press-list">
       <div class="press-item">
         <div class="press-year">2004</div>
@@ -309,7 +653,7 @@ a:hover { color: var(--red-dark); }
       </div>
       <div class="press-item">
         <div class="press-year">2026</div>
-        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/opinion/insight/2026/02/08/polariation-democracy-division-arts-literature-city-asylum-r-h-reese/stories/202602080049" target="_blank">Pittsburgh Post-Gazette &mdash; Polarization, Democracy, Division, Arts, Literature</a></div>
+        <div></div><div><a class='press-link' href='/media-archive#' target='_blank'>Empowered by Meg Ryan Features City of Asylum</a> <em style="font-size:.75rem;color:var(--muted);">(link to come)</em></div>
       </div>
       <div class="press-item">
         <div class="press-year">2026</div>
@@ -317,294 +661,222 @@ a:hover { color: var(--red-dark); }
       </div>
       <div class="press-item">
         <div class="press-year">2026</div>
-        <div></div><div><a class="press-link" href="media-archive.html#" target="_blank">Empowered by Meg Ryan Features City of Asylum</a> <em style="font-size:.75rem;color:var(--muted);">(link to come)</em></div>
+        <div><img class="press-logo" src="https://www.google.com/s2/favicons?sz=64&domain=post-gazette.com" alt="post-gazette.com logo" loading="lazy" onerror="this.style.visibility='hidden'"></div><div><a class="press-link" href="https://www.post-gazette.com/opinion/insight/2026/02/08/polariation-democracy-division-arts-literature-city-asylum-r-h-reese/stories/202602080049" target="_blank">Pittsburgh Post-Gazette &mdash; Polarization, Democracy, Division, Arts, Literature</a></div>
       </div>
+    </div>
+    <div class="press-toggle-wrap">
+      <button class="press-toggle press-more" type="button">Show more &darr;</button>
+      <button class="press-toggle press-less" type="button" hidden>Show less &uarr;</button>
     </div>
   </div>
   <script>
+    // Italicize headline portion after the em-dash
     document.querySelectorAll('#press .press-link').forEach(function(a){
       var text = a.innerHTML;
       var idx = text.indexOf('—');
       if (idx === -1) return;
       a.innerHTML = text.substring(0, idx + 1) + '<em>' + text.substring(idx + 1) + '</em>';
     });
+
+    // Sort + reveal controls
+    (function(){
+      var listEl = document.querySelector('#press .press-list');
+      var items = Array.prototype.slice.call(listEl.querySelectorAll('.press-item'));
+      var moreBtn = document.querySelector('#press .press-more');
+      var lessBtn = document.querySelector('#press .press-less');
+      var sortBtns = document.querySelectorAll('#press .press-sort-btn');
+      var INITIAL = 6, STEP = 6;
+      var currentSort = 'oldest';
+      var visible = INITIAL;
+
+      items.forEach(function(el){
+        var year = parseInt((el.querySelector('.press-year')||{}).textContent, 10) || 0;
+        var text = (el.querySelector('.press-link')||{}).textContent || '';
+        var isLocal = /Post-Gazette|Pittsburgh Magazine|Mayor/i.test(text);
+        el.setAttribute('data-year', year);
+        el.setAttribute('data-locale', isLocal ? 'local' : 'national');
+      });
+
+      function render(){
+        var filtered = items.slice();
+        if (currentSort === 'national') filtered = filtered.filter(function(el){ return el.getAttribute('data-locale') === 'national'; });
+        else if (currentSort === 'local') filtered = filtered.filter(function(el){ return el.getAttribute('data-locale') === 'local'; });
+        if (currentSort === 'oldest') filtered.sort(function(a,b){ return (+a.getAttribute('data-year')) - (+b.getAttribute('data-year')); });
+        else filtered.sort(function(a,b){ return (+b.getAttribute('data-year')) - (+a.getAttribute('data-year')); });
+        // Reorder DOM
+        filtered.forEach(function(el){ listEl.appendChild(el); });
+        // Hide items not in the filtered set
+        items.forEach(function(el){ el.hidden = filtered.indexOf(el) === -1 || filtered.indexOf(el) >= visible; });
+        moreBtn.hidden = visible >= filtered.length;
+        lessBtn.hidden = visible <= INITIAL;
+      }
+
+      moreBtn.addEventListener('click', function(){ visible += STEP; render(); });
+      lessBtn.addEventListener('click', function(){
+        visible = INITIAL;
+        render();
+        document.querySelector('#press').scrollIntoView({behavior:'smooth', block:'start'});
+      });
+      sortBtns.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          sortBtns.forEach(function(b){ b.classList.remove('active'); });
+          btn.classList.add('active');
+          currentSort = btn.getAttribute('data-sort');
+          visible = INITIAL;
+          render();
+        });
+      });
+
+      render();
+    })();
   </script>
 </section>
 
-<!-- VIDEO -->
-<section class="content-section" id="video">
-  <div class="container">
-    <span class="section-eyebrow">Watch</span>
-    <h2 class="section-title">Selected Video</h2>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem;">
-
-      <div>
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
-          <a href="https://www.youtube.com/watch?v=ygTOMBLj3Kg" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/ygTOMBLj3Kg/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
-        </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Sanctuary: The Writers of City of Asylum (2019)</p>
-      </div>
-
-      <div>
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
-          <a href="https://www.youtube.com/watch?v=IsMl4hDv0DQ" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/IsMl4hDv0DQ/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
-        </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">What City of Asylum Has Meant to Me (Andr&eacute;s Franco, Executive Director)</p>
-      </div>
-
-      <div>
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
-          <a href="https://www.youtube.com/watch?v=9wXb1E7e6WY" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/9wXb1E7e6WY/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
-        </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Why Do We Use Alphabets Across Our Projects?</p>
-      </div>
-
-      <div>
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
-          <a href="https://www.youtube.com/watch?v=D1TaEZXlPk8" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/D1TaEZXlPk8/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
-        </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Hospitality, Architecture to Programming</p>
-      </div>
-
-      <div>
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
-          <a href="https://www.youtube.com/watch?v=voSFP6z5R_4" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/voSFP6z5R_4/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
-        </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Celebrating 15 Years with City of Asylum (2019)</p>
-      </div>
-
-      <div>
-        <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;background:var(--charcoal);">
-          <video controls preload="metadata" style="position:absolute;top:0;left:0;width:100%;height:100%;">
-            <source src="Pittsburgh-Defends-Freedom.mp4" type="video/mp4">
-            Your browser does not support inline video. <a href="Pittsburgh-Defends-Freedom.mp4" download>Download the video</a>.
-          </video>
-        </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Pittsburgh Defends Freedom of Creative Expression, Annual Ceremony at City of Asylum</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- PHOTOS -->
-<section class="content-section" id="photos">
-  <div class="container">
-    <span class="section-eyebrow">Browse</span>
-    <h2 class="section-title">Selected Photos</h2>
-    <div class="photo-carousel-wrapper">
-      <button class="pc-btn prev" id="pc-prev" aria-label="Previous">&larr;</button>
-      <div class="photo-carousel-track" id="pc-track"></div>
-      <button class="pc-btn next" id="pc-next" aria-label="Next">&rarr;</button>
-    </div>
-    <div class="pc-dots" id="pc-dots"></div>
-    <div style="margin-top:2.5rem;">
-      <div style="font-weight:700;text-align:center;margin-bottom:.5rem;color:var(--text-dark);">Alphabet City Kickoff with Mayor and County Commissioner&mdash;Let Construction Begin! (2015)</div>
-      <a href="AC%20Press%20conf.jpg" target="_blank" rel="noopener" style="display:block;overflow:hidden;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.15);">
-        <img src="AC%20Press%20conf.jpg" alt="Alphabet City Kickoff with Mayor and County Commissioner — Let Construction Begin!" loading="lazy" style="width:100%;height:auto;display:block;">
-      </a>
-    </div>
-  </div>
-</section>
-
-<script>
-(function() {
-  var photos = [
-    { src:"ASL%202.jpg",                                                                                            caption:"ASL Program Series" },
-    { src:"Burma%20Rosensteel_20090924_9499.jpg",                                                                    caption:"17 Burmese Monks in Residence During G-20 (2009)" },
-    { src:"Micro2.png",                                                                                              caption:"A (micro) History of World Economics Danced<br>Pascal Rambert (2015)" },
-    { src:"wallenda.jpg",                                                                                            caption:"Flying Wallendas &amp; Audio of Salman Rushdie Reading from <em>The Ground Beneath Her Feet</em> (Jazz Poetry 2011)" },
-    { src:"SvetlanaYoungcrop.JPG",                                                                                   caption:"Nobel Laureate Svetlana Alexievich Meets with Young Pittsburgh Authors (2016)" },
-    { src:"Poetry%20reading%20(Cave%20Canem%20poets)%20on%20closed%20street%20(C)%20Renee%20Rosensteel.jpg",        caption:"Pre-Alphabet City, Cave Canem Poetry Reading (2011)" },
-    { src:"PHotos%20History/Cave%20canems%202013%20group.jpg",                                                        caption:"Annual Workshops of Cave Canem Poets and Faculty (2013)" },
-    { src:"2%20Alley%20set%20up%20w%20chairs%20Rosensteel_20090912_1095.jpg",                                       caption:"Setup for Jazz Poetry on Sampsonia Way (2009)" },
-    { src:"Naturalization.jpg",                                                                                      caption:"Alphabet City Officially Opened January 13, 2017 with a Naturalization Ceremony" },
-    { src:"Jasiri.jpg",                                                                                              caption:"Jasiri X with Melong Band, Exiled Voices of China (2013)" },
-    { src:"PHotos%20History/Randy.jpg",                                                                               caption:"Writers in the Gardens Finale at Randyland (2010)" }
-  ];
-
-  var track = document.getElementById('pc-track');
-  photos.forEach(function(p) {
-    track.insertAdjacentHTML('beforeend',
-      '<div class="photo-carousel-card">' +
-        '<div class="pc-caption">' + p.caption + '</div>' +
-        '<a href="https://coa-website-may-10.netlify.app/' + p.src + '" target="_blank" rel="noopener">' +
-          '<img src="https://coa-website-may-10.netlify.app/' + p.src + '" alt="' + p.caption.replace(/<[^>]+>/g,'').replace(/&[a-z]+;/g,'') + '" loading="lazy">' +
-        '</a>' +
-      '</div>'
-    );
-  });
-
-  var page = 0;
-  var perPage = window.innerWidth <= 768 ? 1 : 2;
-  var totalPages = Math.ceil(photos.length / perPage);
-  var prevBtn = document.getElementById('pc-prev');
-  var nextBtn = document.getElementById('pc-next');
-  var dotsContainer = document.getElementById('pc-dots');
-
-  for (var d = 0; d < totalPages; d++) {
-    var dot = document.createElement('button');
-    dot.className = 'pc-dot' + (d === 0 ? ' active' : '');
-    dot.dataset.page = d;
-    dot.setAttribute('aria-label', 'Page ' + (d + 1));
-    dotsContainer.appendChild(dot);
-  }
-
-  function update() {
-    var card = track.querySelector('.photo-carousel-card');
-    if (!card) return;
-    var cardWidth = card.offsetWidth;
-    var gap = 20; // 1.25rem
-    var offset = page * perPage * (cardWidth + gap);
-    track.style.transform = 'translateX(-' + offset + 'px)';
-    prevBtn.disabled = page === 0;
-    nextBtn.disabled = page >= totalPages - 1;
-    dotsContainer.querySelectorAll('.pc-dot').forEach(function(dot, i) {
-      dot.classList.toggle('active', i === page);
-    });
-  }
-
-  prevBtn.addEventListener('click', function() { if (page > 0) { page--; update(); } });
-  nextBtn.addEventListener('click', function() { if (page < totalPages - 1) { page++; update(); } });
-  dotsContainer.addEventListener('click', function(e) {
-    if (e.target.classList.contains('pc-dot')) { page = parseInt(e.target.dataset.page); update(); }
-  });
-  window.addEventListener('resize', function() {
-    perPage = window.innerWidth <= 768 ? 1 : 2;
-    totalPages = Math.ceil(photos.length / perPage);
-    if (page >= totalPages) page = totalPages - 1;
-    // Rebuild dots
-    dotsContainer.innerHTML = '';
-    for (var d = 0; d < totalPages; d++) {
-      var dot = document.createElement('button');
-      dot.className = 'pc-dot' + (d === page ? ' active' : '');
-      dot.dataset.page = d;
-      dotsContainer.appendChild(dot);
-    }
-    update();
-  });
-  update();
-})();
-</script>
-
-<!-- PUBLICATIONS -->
-<section class="content-section" id="publications">
-  <div class="container">
-    <span class="section-eyebrow">Read</span>
-    <h2 class="section-title">Selected Publications</h2>
-
-    <div class="pub-feature" style="display:grid;grid-template-columns:240px 1fr;gap:2rem;align-items:center;">
-      <a href="https://cityofasylum.org/wp-content/uploads/2022/09/Pittsburgh_Live-Ability-1.pdf" target="_blank" style="display:block;">
-        <img src="Pittsburgh-LiveAbility.jpg" alt="Pittsburgh Live/Ability cover" style="width:100%;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.15);">
-      </a>
-      <div>
-        <h3>Pittsburgh Live/Ability</h3>
-        <p>What is it like to live in Pittsburgh with a disability? The creative culmination of two years of work between 11 multilingual, multiply disabled, and multiply abled Pittsburgh writers and 11 Pittsburghers with disabilities.</p>
-        <p><a href="https://cityofasylum.org/wp-content/uploads/2022/09/Pittsburgh_Live-Ability-1.pdf" target="_blank"><strong>Free online PDF</strong></a> (133 pages, also downloadable)</p>
-        <p style="font-size:.85rem;color:var(--muted);margin-top:.5rem;">Also available on Spotify, Anchor, Amazon, and Apple.</p>
-      </div>
-    </div>
-
-    <div class="book-gallery" style="display:grid;grid-template-columns:repeat(7,1fr);gap:.75rem;margin-top:3rem;margin-bottom:2rem;">
-      <a href="https://cityofasylumbooks.org/book/9781939419996" target="_blank" rel="noopener" title="The Conspiracy" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Conspiracy.jpg" alt="The Conspiracy cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/product/exile-poems-labyrinth-homesickness" target="_blank" rel="noopener" title="Exile Poems" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://cityofasylum.org/wp-content/uploads/2022/05/ExilePoems_rectangle-e1652287873992.jpeg" alt="Exile Poems cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9781494221799" target="_blank" rel="noopener" title="Generation Zero" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/799/221/9781494221799.jpg" alt="Generation Zero cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9781905233380" target="_blank" rel="noopener" title="In Search of Fat" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/380/233/9781905233380.jpg" alt="In Search of Fat cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9781557290960" target="_blank" rel="noopener" title="A Lifetime is a Promise to Keep" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Lifetime.jpg" alt="A Lifetime is a Promise to Keep cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9781502759559" target="_blank" rel="noopener" title="Night Birds and Other Stories" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/559/759/9781502759559.jpg" alt="Night Birds cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9798282281446" target="_blank" rel="noopener" title="Nothing is Under Control" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/446/281/9798282281446.jpg" alt="Nothing is Under Control cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9798990473300" target="_blank" rel="noopener" title="Orpheus and Eurydice in New York" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Orpheus.jpg" alt="Orpheus and Eurydice in New York cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9781939419828" target="_blank" rel="noopener" title="Rituals of Restlessness" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/828/419/9781939419828.jpg" alt="Rituals of Restlessness cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9780811217071" target="_blank" rel="noopener" title="Senselessness" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Senselessness.jpg" alt="Senselessness cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9780674302662" target="_blank" rel="noopener" title="Signals of Being" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/662/302/9780674302662.jpg" alt="Signals of Being cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9780900575181" target="_blank" rel="noopener" title="Something Evergreen Called Life" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="Something%20Evergreen.jpg" alt="Something Evergreen Called Life cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9780811226073" target="_blank" rel="noopener" title="The Teeth of the Comb &amp; Other Stories" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/073/226/9780811226073.jpg" alt="The Teeth of the Comb cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-      <a href="https://cityofasylumbooks.org/book/9781502745804" target="_blank" rel="noopener" title="The Thunder of Deep Thought" style="display:block;aspect-ratio:2/3;background:#eee;overflow:hidden;border-radius:3px;box-shadow:0 2px 10px rgba(0,0,0,.2);"><img src="https://images.booksense.com/images/804/745/9781502745804.jpg" alt="The Thunder of Deep Thought cover" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;"></a>
-    </div>
-
-    <div class="book-list">
-      <h3>Selected Books by City of Asylum exiled writers-in-residence:<br>all available in City of Asylum <a href="https://cityofasylumbooks.org/" target="_blank" rel="noopener">Bookstore</a></h3>
-      <ul>
-        <li><img class="book-cover" src="Conspiracy.jpg" alt="The Conspiracy cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781939419996" target="_blank" rel="noopener"><em>The Conspiracy</em></a> &mdash; Israel Centeno, tr. Guillermo Parra</span></li>
-        <li><img class="book-cover" src="https://cityofasylum.org/wp-content/uploads/2022/05/ExilePoems_rectangle-e1652287873992.jpeg" alt="Exile Poems cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/product/exile-poems-labyrinth-homesickness" target="_blank" rel="noopener"><em>Exile Poems</em></a> &mdash; Tuhin Das, tr. Arunava Sinha</span></li>
-        <li><img class="book-cover" src="https://images.booksense.com/images/799/221/9781494221799.jpg" alt="Generation Zero cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781494221799" target="_blank" rel="noopener"><em>Generation Zero: An Anthology of New Cuban Fiction</em></a> &mdash; ed. Orlando Pardo</span></li>
-        <li><img class="book-cover" src="https://images.booksense.com/images/380/233/9781905233380.jpg" alt="In Search of Fat cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781905233380" target="_blank" rel="noopener"><em>In Search of Fat</em></a> &mdash; Bewketu Seyoum, tr. Chris Beckett</span></li>
-        <li><img class="book-cover" src="Lifetime.jpg" alt="A Lifetime is a Promise to Keep cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781557290960" target="_blank" rel="noopener"><em>A Lifetime is a Promise to Keep</em></a> &mdash; Huang Xiang, tr. Michelle Yeh</span></li>
-        <li><img class="book-cover" src="https://images.booksense.com/images/559/759/9781502759559.jpg" alt="Night Birds cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781502759559" target="_blank" rel="noopener"><em>Night Birds and Other Stories</em></a> &mdash; Khet Mar, tr. Maung Maung Myint</span></li>
-        <li><img class="book-cover" src="https://images.booksense.com/images/446/281/9798282281446.jpg" alt="Nothing is Under Control cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9798282281446" target="_blank" rel="noopener"><em>Nothing is Under Control</em></a> &mdash; Oleksandr Fraze-Frazenko</span></li>
-        <li><img class="book-cover" src="Orpheus.jpg" alt="Orpheus and Eurydice in New York cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9798990473300" target="_blank" rel="noopener"><em>Orpheus and Eurydice in New York</em></a> &mdash; Olena Boryshpolets, tr. Oleksandr Fraze-Frazenko</span></li>
-        <li><img class="book-cover" src="https://images.booksense.com/images/828/419/9781939419828.jpg" alt="Rituals of Restlessness cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781939419828" target="_blank" rel="noopener"><em>Rituals of Restlessness</em></a> &mdash; Yaghoub Yadali, tr. Sara Khalili</span></li>
-        <li><img class="book-cover" src="Senselessness.jpg" alt="Senselessness cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9780811217071" target="_blank" rel="noopener"><em>Senselessness</em></a> &mdash; Horacio Castellanos Moya, tr. Katherine Silver</span></li>
-        <li><img class="book-cover" src="https://images.booksense.com/images/662/302/9780674302662.jpg" alt="Signals of Being cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9780674302662" target="_blank" rel="noopener"><em>Signals of Being, or Verbum Caro Factum Est: A Play in Three Acts</em></a> &mdash; Volodymyr Rafeyenko, tr. Mark Andryczyk</span></li>
-        <li><img class="book-cover" src="Something%20Evergreen.jpg" alt="Something Evergreen Called Life cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9780900575181" target="_blank" rel="noopener"><em>Something Evergreen Called Life</em></a> &mdash; Rania Mamoun, tr. Yasmine Seale</span></li>
-        <li><img class="book-cover" src="https://images.booksense.com/images/073/226/9780811226073.jpg" alt="The Teeth of the Comb cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9780811226073" target="_blank" rel="noopener"><em>The Teeth of the Comb &amp; Other Stories</em></a> &mdash; Osama Alomar, tr. C.J. Collins</span></li>
-        <li><img class="book-cover" src="https://images.booksense.com/images/804/745/9781502745804.jpg" alt="The Thunder of Deep Thought cover" loading="lazy" onerror="this.style.visibility='hidden'"><span><a href="https://cityofasylumbooks.org/book/9781502745804" target="_blank" rel="noopener"><em>The Thunder of Deep Thought</em></a> &mdash; Huang Xiang, tr. Teresa Zimmerman-Liu</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
-
 <!-- ARCHIVE -->
-<section class="content-section" id="archive">
+<section class="content-section" id="archive" style="background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),url('03Alphas30.jpg') top center/825px auto repeat,var(--cream);">
   <div class="container">
-    <span class="section-eyebrow">Explore</span>
+    <span class="section-eyebrow" style="color:var(--red);">Explore</span>
     <h2 class="section-title">Archive</h2>
     <div class="archive-grid">
       <div class="archive-card">
         <h3>Vimeo</h3>
-        <a class="archive-link" href="https://vimeo.com/cityofasylum/videos" target="_blank">vimeo.com/cityofasylum</a>
+        <a class="archive-link" href="https://vimeo.com/cityofasylum/videos" target="_blank">City of Asylum &bull; Vimeo</a>
         <p>900+ videos featuring literary readings, concerts, and other performances at Alphabet City. Includes City of Asylum and partner programs.</p>
       </div>
       <div class="archive-card">
         <h3>YouTube Channel</h3>
-        <a class="archive-link" href="https://www.youtube.com/user/coapgh" target="_blank">youtube.com/user/coapgh</a>
+        <a class="archive-link" href="https://www.youtube.com/user/coapgh" target="_blank">City of Asylum &bull; YouTube</a>
         <p>283 videos of pre-Alphabet City concerts and readings, plus video interviews from <em>Sampsonia Way Magazine</em>.</p>
       </div>
       <div class="archive-card">
         <h3><em>Sampsonia Way Magazine</em></h3>
-        <a class="archive-link" href="http://archive.sampsoniaway.org/" target="_blank">archive.sampsoniaway.org</a>
+        <a class="archive-link" href="http://archive.sampsoniaway.org/" target="_blank">City of Asylum &bull; Sampsonia Way</a>
         <p>City of Asylum's online magazine for literature, free speech, and social justice (2009&ndash;2021).</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Lightbox modal -->
+<div id="lightbox" class="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+  <span class="lightbox-counter" id="lightbox-counter"></span>
+  <button class="lightbox-btn lightbox-close" type="button" aria-label="Close">&times;</button>
+  <button class="lightbox-btn lightbox-prev" type="button" aria-label="Previous photo">&lsaquo;</button>
+  <button class="lightbox-btn lightbox-next" type="button" aria-label="Next photo">&rsaquo;</button>
+  <div class="lightbox-img-wrap"><img id="lightbox-img" src="" alt=""></div>
+  <div class="lightbox-caption" id="lightbox-caption"></div>
+</div>
+<script>
+(function(){
+  var box = document.getElementById('lightbox');
+  var img = document.getElementById('lightbox-img');
+  var cap = document.getElementById('lightbox-caption');
+  var counter = document.getElementById('lightbox-counter');
+  var closeBtn = box.querySelector('.lightbox-close');
+  var prevBtn = box.querySelector('.lightbox-prev');
+  var nextBtn = box.querySelector('.lightbox-next');
+  var items = [];
+  var current = 0;
+  var prevFocus = null;
+
+  function gather(){
+    var anchors = document.querySelectorAll('a[data-lightbox]');
+    items = Array.from(anchors).map(function(a){
+      return { src: a.href, caption: a.dataset.caption || (a.querySelector('img') && a.querySelector('img').alt) || '' };
+    });
+    anchors.forEach(function(a, i){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        open(i);
+      });
+    });
+  }
+  function show(){
+    var it = items[current];
+    img.src = it.src;
+    img.alt = it.caption.replace(/<[^>]+>/g,'');
+    cap.innerHTML = it.caption;
+    var multi = items.length > 1;
+    prevBtn.hidden = !multi;
+    nextBtn.hidden = !multi;
+    counter.textContent = multi ? ((current + 1) + ' / ' + items.length) : '';
+  }
+  function open(i){
+    prevFocus = document.activeElement;
+    current = i;
+    show();
+    box.hidden = false;
+    document.body.style.overflow = 'hidden';
+    closeBtn.focus();
+  }
+  function close(){
+    box.hidden = true;
+    document.body.style.overflow = '';
+    img.src = '';
+    if (prevFocus && prevFocus.focus) prevFocus.focus();
+  }
+  function prev(){ current = (current - 1 + items.length) % items.length; show(); }
+  function next(){ current = (current + 1) % items.length; show(); }
+
+  closeBtn.addEventListener('click', close);
+  prevBtn.addEventListener('click', prev);
+  nextBtn.addEventListener('click', next);
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){
+    if (box.hidden) return;
+    if (e.key === 'Escape') close();
+    else if (e.key === 'ArrowLeft') prev();
+    else if (e.key === 'ArrowRight') next();
+  });
+  // Swipe
+  var startX = 0;
+  box.addEventListener('touchstart', function(e){ startX = e.touches[0].clientX; }, {passive: true});
+  box.addEventListener('touchend', function(e){
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 60) (dx > 0 ? prev : next)();
+  });
+
+  gather();
+})();
+</script>
+
 <footer class="site-footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class='nav-logo' href='index.html' style='margin-bottom:.5rem'>
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:70px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+        <a class='nav-logo' href='/' style='margin-bottom:.5rem'>
           <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
+          <img src="xCofA_Logo_RGB.png" alt="City of Asylum" style="height:70px;">
         </a>
         <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href='about.html'>About Us</a>
-        <a href='writers.html'>Writers &amp; Residencies</a>
-        <a href='free-arts.html'>Free Arts &amp; Culture</a>
-        <a href='media-archive.html'>Media &amp; Archive</a>
+        <a href='/about'>About Us</a>
+        <a href='/writers'>Writers &amp; Residencies</a>
+        <a href='/free-arts' style='color:var(--red);font-weight:700;'>Free Programs &amp; Tix</a>
+        <a href='/media-archive'>Media &amp; Archive</a>
       </div>
       <div class="footer-col">
         <h4>Visit</h4>
-        <a href='free-arts.html'>Alphabet City</a>
-        <a href='bookstore-restaurant.html'>Bookstore</a>
-        <a href='bookstore-restaurant.html'>Restaurant</a>
-        <a href='about.html#directions'>Directions</a>
+        <a href='/free-arts'>Alphabet City</a>
+        <a href='/bookstore-restaurant'>Bookstore</a>
+        <a href='/bookstore-restaurant'>Restaurant</a>
+        <a href='/about#directions'>Directions</a>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
-        <a href='donate.html'>Donate</a>
-        <a href='about.html#inquiries'>Volunteer</a>
-        <a href='about.html#inquiries'>Free Tour</a>
-        <a href='about.html#inquiries'>Book a Writer</a>
-        <a href='about.html#inquiries'>Contact Us</a>
+        <a href='/donate' style='background:var(--red);color:var(--white);font-weight:700;padding:.4rem 1rem;border-radius:6px;display:inline-block;margin-top:.15rem;'>Donate</a>
+        <a href='/about#inquiries'>Volunteer</a>
+        <a href='/about#inquiries'>Free Tour</a>
+        <a href='/about#inquiries'>Book a Writer</a>
+        <a href='/about#inquiries'>Contact Us</a>
       </div>
     </div>
+        <p class="coa-footer-mission">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
-      <a href="media-archive.html#" onclick="document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';return false;">Privacy Policy</a>
+      <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -622,7 +894,7 @@ a:hover { color: var(--red-dark); }
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">3. Sharing Your Information</h4>
     <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We value your trust. We do not sell, rent, or trade our subscriber list with third parties. We only share information with trusted service providers like our email platforms, who help us send our communications and are legally bound to keep your data secure.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">4. Opting Out</h4>
-    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">Most emails include an &ldquo;Unsubscribe&rdquo; link at the bottom. You can also contact us at <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a> to ask us to update or delete your information from our records.</p>
+    <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">Most emails include an &ldquo;Unsubscribe&rdquo; link at the bottom. You can also contact us at <a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a> to ask us to update or delete your information from our records.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">5. Security</h4>
     <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We take reasonable steps to protect your data from unauthorized access. However, no method of online transmission is 100% secure, and providing your information is at your own risk.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">6. Contact Us</h4>
@@ -631,7 +903,7 @@ a:hover { color: var(--red-dark); }
     40 W. North Avenue<br>
     Pittsburgh, PA 15212<br>
     Phone: 412-435-1110<br>
-    Email: <a href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a></p>
+    Email: <a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org" style="color:var(--gold);">contact@cityofasylumpittsburgh.org</a></p>
   </div>
 </div>
 <script>document.addEventListener('keydown',function(e){if(e.key==='Escape'){var m=document.getElementById('privacy-modal');if(m&&m.style.display==='flex'){m.style.display='none';document.body.style.overflow='';}}});</script>
@@ -645,5 +917,87 @@ document.querySelectorAll('.nav-dropdown a').forEach(function(a) {
 });
 </script>
 <script src="mobile.js?v=3" defer></script>
+<!-- Smart email chooser: intercepts mailto: clicks and offers Gmail / Outlook / default / copy -->
+<div id="mail-chooser" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;max-width:380px;width:100%;border-radius:12px;padding:1.5rem;box-shadow: 0 1px 3px rgba(0,0,0,.06);">
+    <h3 id="mc-title" style="margin:0 0 .25rem;font-family:var(--serif);font-size:1.2rem;color:var(--text-dark);">Send email to</h3>
+    <p id="mc-addr" style="margin:0 0 1.25rem;font-size:.95rem;color:var(--muted);word-break:break-all;"></p>
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <a id="mc-gmail" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Gmail (web)</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-outlook" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Outlook (web)</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-yahoo" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Yahoo Mail</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-default" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>My default email app</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <button id="mc-copy" type="button" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;border:none;cursor:pointer;font-family:inherit;width:100%;">
+        <span id="mc-copy-label">Copy email address</span><span aria-hidden="true">&rsaquo;</span>
+      </button>
+    </div>
+    <button id="mc-close" type="button" style="margin-top:1rem;width:100%;padding:.65rem;border:1px solid var(--border);border-radius:8px;background:white;color:var(--muted);font-size:.9rem;cursor:pointer;font-family:inherit;">Cancel</button>
+  </div>
+</div>
+<script>
+(function(){
+  var box = document.getElementById('mail-chooser');
+  var addrEl = document.getElementById('mc-addr');
+  var gmail = document.getElementById('mc-gmail');
+  var outlook = document.getElementById('mc-outlook');
+  var yahoo = document.getElementById('mc-yahoo');
+  var def = document.getElementById('mc-default');
+  var copyBtn = document.getElementById('mc-copy');
+  var copyLabel = document.getElementById('mc-copy-label');
+  var closeBtn = document.getElementById('mc-close');
+  var currentAddr = '';
+
+  function open(addr){
+    currentAddr = addr;
+    addrEl.textContent = addr;
+    gmail.href = 'https://mail.google.com/mail/?view=cm&to=' + encodeURIComponent(addr);
+    outlook.href = 'https://outlook.live.com/owa/?path=/mail/action/compose&to=' + encodeURIComponent(addr);
+    yahoo.href = 'https://compose.mail.yahoo.com/?to=' + encodeURIComponent(addr);
+    def.href = 'mailto:' + addr;
+    copyLabel.textContent = 'Copy email address';
+    box.style.display = 'flex';
+  }
+  function close(){ box.style.display = 'none'; }
+
+  document.querySelectorAll('a.smart-mail').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      open(a.href.replace(/^mailto:/, ''));
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.style.display === 'flex') close(); });
+
+  // After picking a web option, close the chooser
+  [gmail, outlook, yahoo, def].forEach(function(el){ el.addEventListener('click', function(){ setTimeout(close, 100); }); });
+
+  copyBtn.addEventListener('click', function(){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(currentAddr).then(function(){
+        copyLabel.textContent = 'Copied ✓';
+        setTimeout(close, 700);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = currentAddr;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); copyLabel.textContent = 'Copied ✓'; setTimeout(close, 700); } catch(_) {}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+
 </body>
 </html>

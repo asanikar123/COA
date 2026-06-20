@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About Us &mdash; City of Asylum</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 
 :root {
-  --deep:#0f1419;--charcoal:#1a1f2e;--slate:#2d3548;
-  --red:#c23b2e;--red-dark:#8b1a1a;--gold:#c9a227;--gold-light:#e0c660;
-  --green:#2e7d32;--cream:#f5f0e8;--warm-white:#faf8f5;--white:#ffffff;
-  --muted:#6b7280;--text-dark:#1a1a1a;--text-body:#3d3d3d;--border:#e5e7eb;
+  --deep:#1c1a17;--charcoal:#2a2724;--slate:#54504a;
+  --red:#9c3f33;--red-dark:#7d3028;--gold:#6b6155;--gold-light:#8a7f70;
+  --green:#54504a;--cream:#f4efe7;--warm-white:#faf8f3;--white:#ffffff;
+  --muted:#7a7268;--text-dark:#1c1a17;--text-body:#37332e;--border:#e4ddd0;
   --serif:'Playfair Display',Georgia,serif;--sans:'Inter','Segoe UI',sans-serif;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
@@ -22,24 +22,28 @@ a{color:var(--red);text-decoration:none;transition:color .2s}
 a:hover{color:var(--red-dark)}
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
 
-.site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
+.site-nav{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:none}
 .nav-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:98px}
-.nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
-.nav-logo img{height:70px;width:auto}
-.nav-logo span{font-family:var(--sans);font-weight:700;font-size:1.15rem;line-height:1.1;}
-.nav-links{display:flex;align-items:center;gap:.25rem;flex-wrap:nowrap}
-.nav-links a{white-space:nowrap;color:rgba(255,255,255,.8);font-size:.875rem;font-weight:500;padding:.5rem .35rem;border-radius:6px;transition:all .2s}
-.nav-links a:hover{color:var(--white);background:rgba(255,255,255,.08)}
+.nav-logo{display:flex;align-items:center;gap:.1rem;color:var(--text-dark);text-decoration:none}
+.nav-logo img{height:70px;width:auto;margin-left:0.0625in}
+.nav-logo span{font-family:var(--sans);font-weight:700;font-size:1.15rem;line-height:1.1;text-align:right;}
+.nav-links{display:flex;align-items:center;gap:1.75rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap;color:var(--text-dark);font-size:.875rem;font-weight:500;padding:.5rem .35rem;border-radius:6px;transition:all .2s}
+.nav-item > a{display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important}
+.nav-chevron{margin-left:0!important;line-height:1;font-size:.75rem!important}
+.nav-links a:hover{color:var(--red);background:rgba(0,0,0,.05)}
 .nav-links a.active{color:var(--gold)}
 .nav-donate{background:var(--red)!important;color:var(--white)!important;font-weight:700!important;padding:.55rem 1.4rem!important;border-radius:6px}
 .nav-item:last-child .nav-dropdown{left:auto;right:0}
-.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.6rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{transform:rotate(180deg)}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.5)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:rgba(255,255,255,.65)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--gold)!important;background:rgba(255,255,255,.05)!important;padding-left:1.5rem!important}
+.nav-item{position:relative;display:inline-flex;align-items:center}.nav-chevron{font-size:.75rem;margin-left:.25rem;opacity:.55;transition:transform .2s;pointer-events:none}.nav-item:hover .nav-chevron{}.nav-dropdown{position:absolute;top:100%;left:0;background:var(--white);border:1px solid rgba(0,0,0,.1);border-top:2px solid var(--gold);border-radius:0 0 10px 10px;min-width:210px;padding:.5rem 0;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(0);transition:none;z-index:300;box-shadow:0 10px 32px rgba(0,0,0,.15)}.nav-item:hover .nav-dropdown,.nav-item:focus-within .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}.nav-dropdown a{display:block!important;padding:.55rem 1.2rem!important;color:var(--text-dark)!important;font-size:.8rem!important;font-weight:500!important;border-radius:0!important;white-space:nowrap;background:transparent!important;transition:color .15s,padding-left .15s,background .15s!important}.nav-dropdown a:hover{color:var(--red)!important;background:rgba(0,0,0,.04)!important;padding-left:1.5rem!important}
+.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:column;align-items:center;gap:2px;line-height:1.1!important;text-align:left}
+.nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 
 /* PAGE HERO */
-.page-hero{background:var(--deep);padding:5rem 0 4rem;position:relative;overflow:hidden}
-.page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.page-hero h1{font-family:var(--serif);font-size:3.8rem;font-weight:900;color:var(--white);margin-bottom:1rem;max-width:none}
-.page-hero p{color:rgba(255,255,255,.65);font-size:1.15rem;max-width:650px;line-height:1.8}
+.page-hero{background:var(--warm-white);padding:5rem 0 4rem;position:relative;overflow:hidden}
+.page-hero .eyebrow{display:block;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem}
+.page-hero h1{font-family:var(--serif);font-size:3rem;font-weight:900;color:var(--text-dark);margin-bottom:1rem;max-width:none}
+.page-hero p{color:var(--text-body);font-size:1.15rem;max-width:650px;line-height:1.8}
 
 /* MISSION SECTION */
 .mission-section{padding:5rem 0;background:var(--white)}
@@ -52,11 +56,12 @@ a:hover{color:var(--red-dark)}
 .mission-card h3{font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--text-dark);margin-bottom:.75rem}
 .mission-card p{font-size:.95rem;color:var(--muted);line-height:1.7}
 .section-eyebrow{display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem}
-.section-title{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.5rem}
+.section-title{font-family:var(--serif);font-size:2.25rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.5rem;line-height:1.18}
+@media(max-width:768px){.section-title{font-size:1.7rem}}
 .section-sub{text-align:center;color:var(--muted);max-width:650px;margin:0 auto}
 
 /* TIMELINE */
-.timeline-section{padding:6rem 0;background:linear-gradient(rgba(255,255,255,.40),rgba(255,255,255,.40)), url('03Alphas30.jpg') top center/825px auto repeat, var(--cream);}
+.timeline-section{padding:6rem 0 1.75rem;background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)), url('03Alphas30.jpg') top center/825px auto repeat, var(--cream);}
 .timeline{max-width:800px;margin:3rem auto 0;position:relative}
 .timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--border);transform:translateX(-50%)}
 .timeline-item{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-bottom:3rem;position:relative}
@@ -73,48 +78,77 @@ a:hover{color:var(--red-dark)}
 .timeline-content{padding-left:2rem}
 .timeline-content h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
 .timeline-content p{font-size:.9rem;color:var(--muted);line-height:1.7}
+.tl-extra[hidden]{display:none!important}
+.timeline-toggle-wrap{text-align:center;margin:2rem 0 1rem;position:relative;z-index:5}
+.timeline-toggle{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-family:var(--sans);font-size:.85rem;font-weight:700;letter-spacing:.04em;padding:.75rem 1.75rem;border-radius:8px;border:0;cursor:pointer;transition:background .2s,transform .15s}
+.timeline-toggle[hidden]{display:none}
+.timeline-toggle:hover{background:var(--gold-light);}
+.timeline-toggle-chev{font-size:.7rem;transition:transform .25s}
+.timeline-toggle[aria-expanded="true"] .timeline-toggle-chev{transform:rotate(180deg)}
+/* collapsed photo-strip: show first 5 photos sized to fill, hide the rest */
+.timeline.collapsed .photo-strip .hp{height:calc((100% - 4*0.0625in)/5)!important}
+.timeline.collapsed .photo-strip .hp:nth-child(n+6){display:none!important}
 
 /* FOUNDERS */
-.founders-section{padding:6rem 0;background:var(--deep);color:var(--white)}
+.founders-section{padding:6rem 0;background:var(--warm-white);color:var(--text-body)}
 .founders-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
-.founders-img{border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(0,0,0,.4)}
+.founders-img{border-radius:16px;overflow:hidden;box-shadow: 0 1px 3px rgba(0,0,0,.06);}
 .founders-img img{width:100%;display:block}
-.founders-text h2{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--white);margin-bottom:1.25rem}
-.founders-text p{color:rgba(255,255,255,.7);font-size:1.05rem;line-height:1.8;margin-bottom:1rem}
+.founders-text h2{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--text-dark);margin-bottom:1.25rem}
+.founders-text p{color:var(--text-body);font-size:1.05rem;line-height:1.8;margin-bottom:1rem}
 .founders-text .quote-block{
   border-left:3px solid var(--gold);padding-left:1.25rem;margin:1.5rem 0;
-  font-family:var(--serif);font-style:italic;font-size:1.15rem;color:rgba(255,255,255,.85);line-height:1.7;
+  font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--text-body);line-height:1.7;
 }
 
 /* WHAT MAKES US DIFFERENT */
-.different-section{padding:5rem 0;background:var(--white)}
-.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto}
-.diff-card{background:var(--warm-white);border:1px solid var(--border);border-radius:12px;padding:2rem;display:flex;flex-direction:column;gap:.75rem}
-.diff-card-header{display:flex;align-items:center;gap:1rem}
+.different-section{padding:2.75rem 0 5rem;background:var(--white)}
+.diff-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:calc(1in/4);max-width:900px;margin-left:auto;margin-right:auto}
+.diff-card{background:var(--white);border: 3px solid var(--red);border-radius:16px;padding:2rem;display:flex;flex-direction:column;gap:.75rem}
+.diff-card-header{display:flex;align-items:center;justify-content:flex-start;gap:1rem}
 .diff-icon{flex-shrink:0;width:48px;height:48px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;font-size:1.3rem}
-.diff-card h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--text-dark);margin:0}
-.diff-card p{font-size:.875rem;color:var(--muted);line-height:1.6;margin:0}
+.diff-card h4{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--gold);text-transform:uppercase;text-align:left;width:100%;line-height:1.1;margin:0}
+.diff-card p{font-size:.875rem;color:var(--text-body);line-height:1.6;margin:0}
 
 /* STAFF/TEAM */
-.staff-section{padding:5rem 0;background:var(--cream)}
-.staff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto}
-.staff-card{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:2rem;text-align:center}
-.staff-card .staff-icon{width:96px;height:96px;border-radius:50%;background:var(--deep);color:var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.4rem;font-weight:700;margin:0 auto 1rem;overflow:hidden}
-.staff-card .staff-icon img{width:100%;height:100%;object-fit:cover;display:block}
-.staff-card h4{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:.35rem}
-.staff-card p{font-size:.875rem;color:var(--muted);line-height:1.5}
+.staff-section{padding:5rem 0 calc(5rem - 1in/4);background:var(--cream)}
+.staff-list{list-style:none;margin:2.5rem auto 0;padding:0;max-width:1000px;display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem 2rem}
+.staff-list li{font-size:.95rem;line-height:1.4;color:var(--text-body);padding:.55rem 0;border-bottom:1px solid var(--border);text-align:left}
+.staff-list .staff-name{font-family:var(--serif);font-weight:700;color:var(--text-dark);display:block}
+.staff-list .staff-role{color:var(--muted);font-size:.85rem;display:block;margin-top:.1rem}
+
+.bus-tabs { display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 1rem; }
+.bus-tab {
+  flex: 1 1 auto; min-width: 0;
+  background: var(--gold); border: 1px solid var(--border); border-radius: 8px;
+  padding: .65rem 1rem; cursor: pointer;
+  font-family: var(--serif); font-weight: 700; font-size: .95rem;
+  color: var(--deep); white-space: nowrap;
+  transition: background .15s, border-color .15s, color .15s;
+}
+.bus-tab:hover { border-color: var(--gold); color: var(--red); }
+.bus-tab.active  { background: var(--deep); color: var(--white); border-color: var(--deep); }
+.bus-tab:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.bus-panel { padding: 1rem 1.25rem; background: var(--white); border-radius: 8px; border: 1px solid var(--border); color:var(--text-body); }
+.bus-panel p { margin-bottom: .65rem; font-size: .98rem; }
+.bus-panel p:last-child { margin-bottom: 0; }
+@media (max-width: 768px) {
+  .bus-tab { flex: 1 1 calc(50% - .25rem); white-space: normal; font-size: .9rem; padding: .55rem .75rem; }
+}
 
 @media(max-width:768px){
-  .staff-grid{grid-template-columns:1fr}
+  .staff-list{grid-template-columns:1fr}
 }
 
 /* CTA */
-.about-cta{padding:5rem 0;background:linear-gradient(135deg,var(--red) 0%,var(--red-dark) 100%);text-align:center;color:var(--white)}
+.about-cta{padding:5rem 0;background:var(--red);text-align:center;color:var(--white)}
 .about-cta h2{font-family:var(--serif);font-size:2.2rem;font-weight:700;margin-bottom:1rem}
 .about-cta p{font-size:1.05rem;opacity:.9;max-width:550px;margin:0 auto 2rem}
 .btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:var(--gold);color:var(--deep);font-weight:700;padding:.9rem 2rem;border-radius:8px;font-size:1rem;transition:all .25s}
-.btn-gold:hover{background:var(--gold-light);transform:translateY(-2px);color:var(--deep)}
+.btn-gold:hover{background:var(--gold-light);color:var(--deep)}
 
+/* GOLD STANDARD: bright #9c3f33 on dark regions; muted --gold (#6b6155) stays on light. */
+.hero,.page-hero,.founders-text,.diff-card,.mission-card,.subscribe,.dir-panel,.site-footer,#privacy-modal{--gold:#9c3f33;--gold-light:#9c3f33;}
 .site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:4rem 0 2rem;color:rgba(255,255,255,.5)}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
 .footer-brand p{font-size:.9rem;line-height:1.7;max-width:280px;margin-top:.75rem}
@@ -128,19 +162,26 @@ a:hover{color:var(--red-dark)}
   .page-hero h1{font-size:2.2rem}
   .mission-grid,.diff-grid{grid-template-columns:1fr}
   .founders-grid{grid-template-columns:1fr}
-  .timeline-item{grid-template-columns:1fr;gap:.5rem}
+  .timeline-item{display:block;grid-template-columns:none;gap:0;margin-bottom:0.75rem;padding-left:1.5rem;cursor:pointer}
   .timeline::before{left:0}
   .timeline-item::after{left:0}
-  .timeline-year{text-align:left;padding-right:0;padding-left:1.5rem}
-  .timeline-content{padding-left:1.5rem}
+  .timeline-year{display:inline;padding:0;text-align:left;font-size:1.1rem;margin-right:.4rem}
+  .timeline-content{display:inline;padding:0}
+  .timeline-content h3{display:inline;font-size:1rem;margin:0}
+  .photo-strip{display:none!important}
+  .timeline-content p{display:none;padding:0;margin:0;font-size:.88rem}
+  .timeline-item.expanded .timeline-content p{display:block;margin-top:.35rem;padding-left:0}
+  .timeline-content h3::after{content:' \25BE';color:#000;font-size:1.2em;font-weight:400;margin-left:.35rem;opacity:1}
+  .timeline-item.expanded .timeline-content h3::after{content:' \25B4'}
   .footer-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
+  .footer-grid > div:nth-child(2){margin-top:8.35rem}
 }
 
 
 /* BOARD */
-.board-section{padding:5rem 0;background:linear-gradient(rgba(255,255,255,.40),rgba(255,255,255,.40)), url('03Alphas30.jpg') top center/825px auto repeat, var(--white);}
-.board-group{max-width:800px;margin:2rem auto 0;text-align:center}
+.board-section{padding:calc(5rem - 1in/4) 0 5rem;background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)), url('03Alphas30.jpg') top center/825px auto repeat, var(--white);}
+.board-group{max-width:800px;margin:2rem auto 0;text-align:left}
 .board-group h3{font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--text-dark);margin:2.5rem 0 1rem;padding-top:1.5rem;border-top:1px solid var(--border)}
 .board-group h3:first-child{border-top:none;padding-top:0}
 .board-officers{margin-bottom:1.5rem}
@@ -150,31 +191,40 @@ a:hover{color:var(--red-dark)}
 .board-members span{white-space:nowrap}
 
 /* JOBS */
-.jobs-section{padding:5rem 0;background:var(--cream)}
-.jobs-inner{max-width:700px;margin:0 auto;text-align:center}
+.jobs-section{padding:3.5rem 0 2rem;background:var(--cream)}
+.job-list:has(.job-item) .no-jobs-placeholder{display:none}
+.jobs-inner{max-width:700px;margin:0 auto;text-align:left}
 .jobs-inner p{font-size:1.05rem;color:var(--text-body);line-height:1.8;margin-bottom:1rem}
 
 /* SUBSCRIBE */
-.subscribe-section{padding:5rem 0;background:var(--charcoal);color:var(--white);text-align:center}
-.subscribe-section h2{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--white);margin-bottom:.75rem}
-.subscribe-section p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:600px;margin:0 auto 2rem}
+.subscribe-section{padding:5rem 0;background:var(--cream);color:var(--text-body);text-align:left}
+.subscribe-section h2{font-family:var(--serif);font-size:2rem;font-weight:700;color:var(--text-dark);margin-bottom:.75rem}
+.subscribe-section p{color:var(--text-body);font-size:1.05rem;max-width:600px;margin:0 auto 2rem}
 .subscribe-options{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-bottom:2rem}
-.subscribe-option{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:.6rem 1.25rem;color:rgba(255,255,255,.8);font-size:.9rem;cursor:pointer;transition:all .2s;user-select:none}
-.subscribe-option:hover{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3)}
-.subscribe-option.active{background:var(--gold) !important;color:var(--deep) !important;border-color:var(--gold) !important;font-weight:600}
-.subscribe-form{display:flex;gap:.75rem;max-width:624px;margin:0 auto}
-.subscribe-form input{flex:1;padding:.85rem 1.25rem;border-radius:8px;border:1px solid rgba(255,255,255,.15);background:rgba(255,255,255,.06);color:var(--white);font-size:.95rem;font-family:var(--sans)}
-.subscribe-form input::placeholder{color:rgba(255,255,255,.35)}
-.subscribe-form button{background:var(--gold);color:var(--deep);font-weight:700;padding:.85rem 1.5rem;border-radius:8px;border:none;cursor:pointer;font-family:var(--sans);font-size:.9rem}
+.subscribe-option{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.6rem 1.25rem;color:var(--text-body);font-size:.9rem;cursor:pointer;transition:all .2s;user-select:none}
+.subscribe-option:hover{background:var(--cream);border-color:var(--muted)}
+.subscribe-option.active{background:var(--gold) !important;color:var(--white) !important;border-color:var(--gold) !important;font-weight:600}
+.subscribe-form{display:flex;gap:.75rem;max-width:624px;margin:0 auto;justify-content:center}
+.subscribe-form input{flex:1;padding:.85rem 1.25rem;border-radius:8px;border:1px solid var(--border);background:var(--white);color:var(--text-body);font-size:.95rem;font-family:var(--sans)}
+.subscribe-form input::placeholder{color:var(--muted)}
+.subscribe-form button,.subscribe-form .subscribe-btn{background:var(--gold);color:var(--white);font-weight:700;padding:.85rem 1.75rem;border-radius:8px;border:none;cursor:pointer;font-family:var(--sans);font-size:.95rem;text-decoration:none;display:inline-block;max-width:100%;box-sizing:border-box}
 
 /* MISSION TEXT */
 .mission-text{max-width:820px;margin:0 auto;padding:0 2rem}
 .mission-text p{font-size:1.1rem;color:var(--text-body);line-height:1.8;margin-bottom:1.5rem}
 
 @media(max-width:768px){
-  .staff-grid{grid-template-columns:1fr}
+  .staff-list{grid-template-columns:1fr;margin-top:calc(2.5rem - 1in/32)}
+  .staff-list li{padding:.35rem 0}
   .diff-grid{grid-template-columns:1fr}
   .subscribe-form{flex-direction:column}
+  .board-section{padding-bottom:3rem}
+  .jobs-section{padding-top:2.5rem}
+  /* Board 2-per-line layout: bullets aligned in center column, names flow to either side */
+  .board-members{display:grid;grid-template-columns:1fr auto 1fr;gap:.35rem .5rem;justify-content:center}
+  .board-members > :nth-child(4n){display:none}            /* hide line-end separator */
+  .board-members > :nth-child(4n+1){text-align:right}      /* first name in pair */
+  .board-members > :nth-child(4n+3){text-align:left}       /* second name in pair */
 }
 </style>
 <link rel="stylesheet" href="mobile.css?v=3">
@@ -183,324 +233,627 @@ a:hover{color:var(--red-dark)}
 
 <nav class="site-nav">
   <div class="nav-inner">
-    <a class='nav-logo' href='index.html'>
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#0f1419;">
-      <span>City of Asylum</span>
+    <a class='nav-logo' href='/'>
+      <span>City of<br>Asylum</span>
+      <img src="xCofA_Logo_RGB.png" alt="City of Asylum">
     </a>
             <div class="nav-links">
+      <!-- TWO-LINE-NAV 2026-05-31: applied <br> in multi-word nav labels for vertical stacking. Revert by removing each <br> from nav link text. -->
+      <!-- ADDED 2026-05-31: explicit Home link (revert by removing this line) -->
+      <a href='/' style='line-height:1;display:inline-block;'>Home</a>
       <div class="nav-item">
-        <a class='active' href='about.html' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
+        <a class='active' href='/about' style='line-height:1;display:inline-block;'>About<br>Us <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='about.html'>Our Mission</a>
-          <a href='about.html#history'>History</a>
-          <a href='about.html#model'>Our Model</a>
-          <a href='about.html#staff'>Staff</a>
-          <a href='about.html#board'>Board of Directors</a>
-          <a href='about.html#jobs'>Jobs</a>
-          <a href='about.html#subscribe'>Subscribe</a>
-          <a href='about.html#inquiries'>Other Inquiries</a>
-          <a href='about.html#directions'>Directions</a>
+          <a href='/about'>Our Mission</a>
+          <a href='/about#history'>History</a>
+          <a href='/about#model'>Our Model</a>
+          <a href='/about#staff'>Staff</a>
+          <a href='/about#board'>Board of Directors</a>
+          <a href='/about#jobs'>Jobs</a>
+          <a href='/about#subscribe'>Subscribe</a>
+          <a href='/about#inquiries'>Other Inquiries</a>
+          <a href='/about#directions'>Directions</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='writers.html' style='line-height:1;display:inline-block;'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <a href='/writers'>Writers<br>&amp; Residencies <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='writers.html#residency-program'>Residency Program</a>
-          <a href='writers.html#writers-in-residence'>City of Asylum Writers</a>
+          <a href='/writers#residency-program'>Residency Program</a>
+          <a href='/writers#writers-in-residence'>City of Asylum Writers</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='free-arts.html' style='line-height:1;display:inline-block;'>Free Arts &amp; Culture <span class="nav-chevron">&#9662;</span></a>
+        <a href='/free-arts' style='line-height:1;display:inline-block;color:var(--red);font-weight:700;'>Free Programs<br>&amp; Tix <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='free-arts.html#what-we-host'>What We Host</a>
-          <a href='free-arts.html#why-free'>Why Our Programs Are Free</a>
-          <a href='events.html'>Upcoming Programs</a>
-          <a href="https://cityofasylum.org/programs/" target="_blank" rel="noopener">Full Calendar</a>
+          <a href='/free-arts#what-we-host'>What We Host</a>
+          <a href='/free-arts#why-free'>Why Our Programs Are Free</a>
+          <a href='/programs/'>Upcoming Programs</a>
+          <a href='/programs/'>Full Calendar</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='campus.html' style='line-height:1;display:inline-block;'>Community Building <span class="nav-chevron">&#9662;</span></a>
+        <a href='/campus'>Community<br>Building <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='campus.html'>Community as Campus</a>
-          <a href='campus.html#how-it-grew'>How It Grew</a>
-          <a href='campus.html#whats-here'>What&#8217;s Here Now</a>
-          <a href='campus.html#walking-tour'>Walking Tour App</a>
-          <a href='campus.html#becoming'>Starting a New City</a>
+          <a href='/campus'>Community as Campus</a>
+          <a href='/campus#how-it-grew'>How It Grew</a>
+          <a href='/campus#whats-here'>What&#8217;s Here Now</a>
+          <a href='/campus#walking-tour'>Walking Tour App</a>
+          <a href='/campus#becoming'>Starting a New City</a>
         </div>
       </div>
       <div class="nav-item">
-        <a href='media-archive.html' style='line-height:1;display:inline-block;'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <a href='/media-archive'>Media<br>&amp; Archive <span class="nav-chevron">&#9662;</span></a>
         <div class="nav-dropdown">
-          <a href='media-archive.html#press'>Selected Press</a>
-          <a href='media-archive.html#video'>Selected Video &amp; Photos</a>
-          <a href='media-archive.html#publications'>Selected Books</a>
-          <a href='media-archive.html#archive'>Media Archive</a>
+          <a href='/media-archive#video'>Selected Video &amp; Photos</a>
+          <a href='/media-archive#publications'>Selected Books</a>
+          <a href='/media-archive#press'>Selected Press</a>
+          <a href='/media-archive#archive'>Media Archive</a>
         </div>
       </div>
 
-      <a href='bookstore-restaurant.html' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <a href='/bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore<br>&amp; Restaurant</a>
       <div class="nav-item">
-        <a class='nav-donate' href='donate.html'>Donate</a>
+        <a class='nav-donate' href='/donate'>Donate</a>
         <div class="nav-dropdown">
-          <a href='donate.html#other-ways'>Other Ways to Help</a>
-          <a href='donate.html#foundations'>Foundations</a>
+          <a href='/donate#other-ways'>Other Ways to Help</a>
+          <a href='/donate#foundations'>Foundations</a>
         </div>
       </div>
     </div>
   </div>
 </nav>
 
-<!-- HERO / MISSION -->
-<section class="page-hero" id="mission">
-  <div style="position:absolute;inset:0;"><img src="PHotos%20History/Alley1.JPG" alt="" style="width:100%;height:100%;object-fit:cover;display:block;filter:brightness(.724) saturate(.7);"></div>
-  <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(26,31,46,.6) 50%, rgba(15,20,25,.75) 100%);"></div>
+<!-- HERO (4x12 band, photo left / black right — designer master 390) -->
+<style>
+.hero { margin: 0 0.25in; border-top: 3px solid var(--gold); display: grid; grid-template-columns: 75.8fr 24.2fr; height: 4in; }
+.hero-photo { overflow: hidden; }
+.hero-photo img { width:100%; height:100%; object-fit:cover; display:block; }
+.hero-panel { position: relative; background: var(--deep); color: var(--white); overflow: hidden; }
+.hero-eyebrow { position:absolute; top:0.2in; right:0.25in; font-size:.6rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--white); white-space:nowrap; }
+.hero h1 { position:absolute; left:0.25in; top:0.85in; margin:0; text-align:left; font-family:var(--sans); font-weight:700; line-height:1.12; color:var(--white); font-size: clamp(1rem, 2.8vw, 2.2rem); white-space:nowrap; }
+.hero h1 em { font-family:var(--serif); font-style:italic; color:#9c3f33; }
+.hero-logo { position:absolute; right:0.25in; bottom:0.15in; width:0.8in; height:auto; }
+@media (max-width:768px){
+  .hero { grid-template-columns: 1fr; height:auto; }
+  .hero-photo { height:240px; }
+  .hero-panel { padding: 2rem 1.25rem 1.5rem; overflow:visible; }
+  .hero-eyebrow, .hero h1, .hero-logo { position:static; text-align:left; white-space:normal; width:auto; }
+  .hero-eyebrow { display:block; margin-bottom:.75rem; letter-spacing:.08em; font-size:.56rem; }
+  .hero h1 { font-size: clamp(1.4rem, 6vw, 2rem); margin:0 0 .75rem; }
+  .hero-logo { width:1in; }
+}
+</style>
+<section class="hero" id="mission">
+  <div class="hero-photo"><img src="390AboutHero.jpg" alt="City of Asylum community"></div>
+  <div class="hero-panel">
+    <span class="hero-eyebrow">About City of Asylum</span>
+    <h1>A grassroots<br>safe haven<br>built <em>by<br>community</em></h1>
+  </div>
+</section>
+<section style="display:none;">
+  <div style="position:absolute;inset:0;"><img src="02HeroAlleyAboutUs.jpg" alt="" style="width:100%;height:100%;object-fit:cover;object-position:center -1in;display:block;"></div>
+  <!-- EXPERIMENT 2026-05-30: dark overlay removed so the photo shows through. To revert, restore the line below.
+       <div style="position:absolute;inset:0;background:linear-gradient(135deg, rgba(15,20,25,.85) 0%, rgba(26,31,46,.6) 50%, rgba(15,20,25,.75) 100%);"></div>
+  -->
   <div class="container" style="position:relative;z-index:2;">
-    <span class="eyebrow">Our Mission</span>
-    <h1 style="font-family:var(--serif);font-size:3.8rem;font-weight:900;line-height:1.1;color:var(--white);margin-bottom:1.5rem;">A grassroots safe haven,<span style="display:block;text-align:left;color:var(--gold);font-style:italic;">built by community.</span></h1>
-    <p style="margin:0 0 1rem;text-align:left;color:rgba(255,255,255,.75);font-size:1.25rem;font-weight:700;line-height:1.7;white-space:nowrap;"><span style="display:block;">City of Asylum builds a just community by protecting and celebrating</span><span style="display:block;">freedom of creative expression.</span></p>
-    <ul style="margin-top:1rem;color:rgba(255,255,255,.8);font-size:1.05rem;line-height:1.8;padding:0;list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;">
-      <li style="position:relative;padding-left:1.25rem;"><span style="position:absolute;left:0;top:0;">&bull;</span>We provide <span style="color:var(--gold);font-weight:700;">sanctuary</span> to endangered literary writers and artists, so that they can continue to create and their voices are not silenced.</li>
-      <li style="position:relative;padding-left:1.25rem;"><span style="position:absolute;left:0;top:0;">&bull;</span>We offer a broad range of free literary, arts, and humanities programs in a <span style="color:var(--gold);font-weight:700;">community setting</span> to build social equity through cultural exchange.</li>
-      <li style="position:relative;padding-left:1.25rem;"><span style="position:absolute;left:0;top:0;">&bull;</span>And by transforming blighted properties into homes for our programs, we <span style="color:var(--gold);font-weight:700;">anchor neighborhood</span> economic development.</li>
-    </ul>
+    <span class="eyebrow" style="display:inline-block;font-size:.67rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#fff;background:rgba(0,0,0,.55);padding:.4rem calc(1rem - 1in/16);border-radius:4px;border:1px solid rgba(201,162,39,.5);margin-bottom:1.5rem;position:relative;top:calc(-1in/2);">ABOUT US</span>
+    <h1 style="font-family:'PT Serif',Georgia,serif;font-weight:700;font-size:48pt;line-height:130%;color:var(--white);max-width:none;margin-bottom:1.5rem;"><span style="display:inline-block;transform:scale(1.192, 1.3);transform-origin:left center;">A grassroots safe haven,</span><span style="display:block;text-align:left;color:#fff;font-style:italic;font-weight:700;font-size:40pt;"><span style="display:inline-block;transform:scale(1.192, 1.3);transform-origin:left center;">built by community.</span></span></h1>
   </div>
 </section>
 
-<!-- TIMELINE / HISTORY -->
-<div id="history">
-<!-- TIMELINE -->
-<section class="timeline-section">
+<!-- MOVED 2026-05-30: eyebrow + intro band + 3 cards relocated out of the hero. Alphabet-pattern bg matches the home page's Writer Spotlights section. -->
+<section style="padding:calc(1in/16) 0 calc(13in/8 - 3in/4) 0;background:var(--warm-white);margin-top:0;position:relative;z-index:1;">
   <div class="container">
-    <span class="section-eyebrow">Our History</span>
-    <h2 class="section-title">22 Years of Protecting and Celebrating<br>Freedom of Creative Expression</h2>
-    <div class="timeline" id="our-history-timeline">
-      <!-- Photo strip: 20 slots (1 per timeline row), each 1/20 of timeline height with 1/16in gaps. -->
-      <div class="photo-strip" style="position:absolute;top:0;bottom:0;display:flex;flex-direction:column;overflow:visible;z-index:2;">
-        <img class="hp" src="PHotos%20History/Rushdie%20Pitt.png" alt="1997 — Salman Rushdie at Pitt" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/HX%20scaffold.JPG" alt="2004 — Huang Xiang on scaffold" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/Parade.jpg" alt="2005 — Parade" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/Thad3.jpg" alt="2006 — Thad" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/Test%20HCM1.JPG" alt="2007 — HCM 1" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/test%20HCM4.JPG" alt="2009 — HCM 4" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/324%20Cropped.JPG" alt="2010 — 324 (Pittsburgh-Burma House)" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/320%20cropped.JPG" alt="2012 — 320 (Jazz House)" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/Iran%20.jpg" alt="2012 — Exiled Voices of Iran festival" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/SOS4.JPG" alt="SOS 4" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/ROW1.JPG" alt="2014 — River of Words" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/arg5.JPG" alt="arg5" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/ICORN%20.JPG" alt="ICORN" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/Grand%20Opening.jpg" alt="Grand Opening" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/Show%20logo%204.jpg" alt="Show logo" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/show%20abby.jpg" alt="Show Abby" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-top:-0.4375in;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/comma3.JPG" alt="Comma" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/Gainey.jpg" alt="Gainey" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/icorn%205.PNG" alt="ICORN 5" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
-        <img class="hp" src="PHotos%20History/Torrea%20silhouette.jpg" alt="Torrea (anonymized)" style="display:block;height:calc((100% - 19*0.0625in)/20);width:auto;max-width:none;border-radius:3px;margin-bottom:0.0625in;align-self:flex-end;flex-shrink:0;">
+    <p style="margin:0;color:var(--text-body);line-height:1.7;"><span style="display:block;padding:0.9em 0.75em;">
+      <span style="display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.6rem;">Our Mission</span>
+      <span style="display:block;text-align:center;font-size:1.25rem;font-weight:700;color:var(--text-dark);">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</span>
+    </span></p>
+    <!-- mission cards (home-page pillar style) moved here below the mission statement 2026-06-04 -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:2rem;margin-top:calc(2rem - 1in/4);">
+      <div style="background:var(--white);border: 3px solid var(--red);border-radius:16px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;">
+        <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--red);text-transform:uppercase;text-align:center;margin-bottom:.75rem;">Protect</h3>
+        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">We provide <span style="color:var(--red);">sanctuary</span> to endangered literary writers and artists, so that they can continue to create and their voices are not silenced.</p>
       </div>
-      <script>
-      (function alignAboutPhotoStrip(){
-        function setup(){
-          var timeline = document.getElementById('our-history-timeline');
-          if(!timeline) return;
-          var strip = timeline.querySelector('.photo-strip');
-          if(!strip) return;
-          var firstImg = strip.querySelector('img');
-          if(!firstImg) return;
-          function apply(){
-            var firstYear = timeline.querySelector('.timeline-year');
-            if(!firstYear) return;
-            var range = document.createRange();
-            range.selectNodeContents(firstYear);
-            var yearRect = range.getBoundingClientRect();
-            var tlRect = timeline.getBoundingClientRect();
-            var halfInchPx = 24; // 0.25in at 96dpi
-            var rightOffset = tlRect.right - yearRect.left + halfInchPx;
-            strip.style.right = rightOffset + 'px';
-            strip.style.left = 'auto';
-            strip.style.width = firstImg.offsetWidth + 'px';
-          }
-          if(firstImg.complete && firstImg.naturalWidth){ apply(); }
-          else { firstImg.addEventListener('load', apply); }
-          window.addEventListener('resize', apply);
-        }
-        if(document.readyState === 'loading'){
-          document.addEventListener('DOMContentLoaded', setup);
-        } else { setup(); }
-      })();
-      </script>
-      <div class="timeline-item">
-        <div class="timeline-year">1997</div>
-        <div class="timeline-content">
-          <h3>A Spark in the Audience</h3>
-          <p>Diane Samuels and Henry Reese attend a Salman Rushdie talk at the University of Pittsburgh. He mentions the Cities of Asylum network in Europe, and an idea is born.</p>
-        </div>
+      <div style="background:var(--white);border: 3px solid var(--red);border-radius:16px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;">
+        <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--red);text-transform:uppercase;text-align:center;margin-bottom:.75rem;">Celebrate</h3>
+        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">We offer a broad range of free literary, arts, and humanities <span style="color:var(--red);">programs</span> in a community setting to build social equity through cultural exchange.</p>
       </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2004</div>
-        <div class="timeline-content">
-          <h3>First Writer Arrives</h3>
-          <p>First Writer arrives. Chinese poet Huang Xiang paints calligraphies of his poetry on the fa&ccedil;ade of his Sampsonia Way residency house. His "House Poem" inspires our "house publication" project.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2005</div>
-        <div class="timeline-content">
-          <h3>First Jazz Poetry Concert</h3>
-          <p>Huang Xiang collaborates with saxophonist/composer Oliver Lake, who curates and plays in Jazz Poetry for the next 15 years.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2006</div>
-        <div class="timeline-content">
-          <h3>A Growing Safe Haven</h3>
-          <p>Winged House&mdash;a collaboration between artist Thaddeus Mosley, Laura Jean McLaughlin, Bob Ziller, and Nobel Literature Laureate Wole Soyinka&mdash;is created as the residence of our second writer. Sampsonia Way begins its transformation into a literary corridor.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2007</div>
-        <div class="timeline-content">
-          <h3>Our First Reading</h3>
-          <p>Horacio Castellanos Moya, the second writer-in-residence, presents his novel <em>Senselessness</em> in the founders' home, the first of 73 programs in their house.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2009</div>
-        <div class="timeline-content">
-          <h3>Pittsburgh-Burma House</h3>
-          <p>Text in Burmese by Khet Mar, our third writer-in-residence, and with art by her husband Than Htay Maung.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2010</div>
-        <div class="timeline-content">
-          <h3>Jazz House</h3>
-          <p>Created by Oliver Lake and executed by Than Htay Maung. In addition to text and art, it incorporates sound.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2012</div>
-        <div class="timeline-content">
-          <h3>Our First Festival</h3>
-          <p>"Exiled Voices of Iran," to prepare Pittsburgh for Iranian author Yaghoub Yadali, our next writer-in-residence. Finale was a concert by The Casualty Process, an Iranian electronica rock band in exile.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2013</div>
-        <div class="timeline-content">
-          <h3>Free Arts Programming Expands</h3>
-          <p>"Summer on Sampsonia" is launched in a tent on vacant lots. It quickly becomes a community space that helps us shape our future.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2014</div>
-        <div class="timeline-content">
-          <h3>A River of Words</h3>
-          <p>140 neighbors each mount and protect a word on their facades, honoring our protection of writers. A project of writer-in-residence Israel Centeno and Venezuelan artists Carolina Arnal and Gisela Romero.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2015</div>
-        <div class="timeline-content">
-          <h3>Alphabet Reading Garden</h3>
-          <p>Landscape architect Joel Le Gall and artist Laura Jean McLaughlin help City of Asylum transform the site of a nuisance bar into a park for the community.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2015</div>
-        <div class="timeline-content">
-          <h3>International Recognition</h3>
-          <p>City of Asylum Pittsburgh chosen as the U.S. headquarters for the 90-city International Cities of Refuge Network.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2017</div>
-        <div class="timeline-content">
-          <h3>Alphabet City Opens</h3>
-          <p>City of Asylum opens its permanent home at 40 W. North Avenue — Alphabet City — a cultural hub with a stage, bookstore, and restaurant.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2020</div>
-        <div class="timeline-content">
-          <h3>Responding to COVID</h3>
-          <p>City of Asylum creates "The Show Must Go On(line) Pittsburgh," streaming our programming and hosting 21 other Pittsburgh arts organizations. We now stream all programs.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2021</div>
-        <div class="timeline-content">
-          <h3>Comma House</h3>
-          <p>Created by Bangladeshi writer-in-residence Tuhin Das.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2022</div>
-        <div class="timeline-content">
-          <h3>Ukrainian Fellowship Launched</h3>
-          <p>In response to Russia's invasion of Ukraine, City of Asylum creates a special fellowship bringing three Ukrainian writers to Pittsburgh.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2024</div>
-        <div class="timeline-content">
-          <h3>UNESCO City of Literature</h3>
-          <p>Mayor Ed Gainey selects City of Asylum to lead and organize Pittsburgh's application.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2025</div>
-        <div class="timeline-content">
-          <h3>Bridges Creative Summit</h3>
-          <p>City of Asylum hosts writers and leaders of the 90-city International Cities of Refuge Network in Pittsburgh.</p>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="timeline-year">2026</div>
-        <div class="timeline-content">
-          <h3>Newest Writer Arrives</h3>
-          <p>Arrival of most recent endangered writer, who remains anonymous for their safety.</p>
-        </div>
+      <div style="background:var(--white);border: 3px solid var(--red);border-radius:16px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;">
+        <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--red);text-transform:uppercase;text-align:center;margin-bottom:.75rem;word-spacing:.25em;">Build Community</h3>
+        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">And by transforming abandoned properties into homes for our programs, we anchor <span style="color:var(--red);">neighborhood</span> economic development.</p>
       </div>
     </div>
   </div>
-  <div style="text-align:center;padding:2rem 1rem 1rem;margin-top:-0.5in;position:relative;z-index:2;">
-    <p style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:#000;margin:0;">&ldquo;City of Asylum Pittsburgh is a model&rdquo; &mdash; Salman Rushdie</p>
-  </div>
 </section>
-</div>
+
+<!-- HISTORY CAROUSEL -->
+<section class="history-carousel-section" id="history" style="padding:calc(4rem - 1in/2) 0 4rem;background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)), url('03Alphas30.jpg') top center/825px auto repeat, var(--cream);">
+  <style>
+    .history-carousel-wrap{max-width:900px;margin:0 auto;position:relative;padding:0 4rem;}
+    .history-carousel{display:flex;flex-direction:column;gap:1.25rem;}
+    .history-card{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;background:var(--white);border: 3px solid var(--red);border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.08);align-items:stretch;}
+    .history-card-photo{background:var(--charcoal);overflow:hidden;}
+    .history-card-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    .history-card-body{padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:center;}
+    .history-card-year{font-family:var(--serif);font-size:2.25rem;font-weight:900;color:var(--red);line-height:1;margin-bottom:.5rem;}
+    .history-card-body h3{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;}
+    .history-card-body p{font-size:.97rem;color:var(--text-body);line-height:1.65;}
+    /* ===== 1-up poster (mirrors How It Grew) ===== */
+    .history-carousel{flex-direction:column;align-items:stretch;gap:1.25rem;}
+    .history-carousel .history-card{flex:0 0 auto;}
+    .history-carousel .history-card.poster{display:flex;flex-direction:row;align-items:stretch;}
+    .history-carousel .history-card.poster .history-card-photo{flex:0 0 auto;aspect-ratio:auto;background:transparent;overflow:hidden;}
+    .history-carousel .history-card.poster .history-card-photo:empty{display:none;}
+    .history-carousel .history-card.poster .history-card-photo img{display:block;width:100%;height:auto;}
+    .history-carousel .history-card.poster.port .history-card-photo{width:40%;}                /* portrait: natural, taller */
+    .history-carousel .history-card.poster.land .history-card-photo{width:56%;}                /* landscape: natural */
+    .history-carousel .history-card.poster.fill .history-card-photo{width:46%;background:var(--charcoal);align-self:stretch;}   /* landscape: fill edge-to-edge, copy drives height */
+    .history-carousel .history-card.poster.fill .history-card-photo img{width:100%;height:100%;object-fit:cover;}
+    .history-carousel .history-card.poster .history-card-body{flex:1;}
+    /* "See more"/"See less" — inline text the JS appends after truncating the copy to a whole word */
+    .history-carousel .hc-more{display:inline;background:none;border:0;padding:0;margin:0;font:inherit;font-weight:700;color:var(--red);cursor:pointer;text-decoration:underline;text-underline-offset:2px;white-space:nowrap;}
+    .history-carousel .hc-more:hover{color:var(--red-dark);}
+    /* 2024 (idx16, mayor) photo is mainly text — beige wash, like 2013 on How It Grew */
+    .history-carousel .history-card[data-idx="16"] .history-card-photo{position:relative;}
+    .history-carousel .history-card[data-idx="16"] .history-card-photo::after{content:"";position:absolute;inset:0;background:rgba(245,240,232,.42);pointer-events:none;}
+    /* 2017 (idx12): DESKTOP shrink the left photo (46% -> 37.3%) so more copy fits; mobile resets to full width below */
+    .history-carousel .history-card.poster.fill[data-idx="12"] .history-card-photo{width:37.3%;}
+    /* show the WHOLE poster scaled down (contain) instead of cover-cropping, so the shrink is visible */
+    .history-carousel .history-card.poster.fill[data-idx="12"] .history-card-photo img{object-fit:contain;}
+    @media (max-width:900px){   /* stack below 900 so the side-by-side copy column is never cramped */
+      .history-carousel .history-card.poster{flex-direction:column;}
+      .history-carousel .history-card.poster.port .history-card-photo,
+      .history-carousel .history-card.poster.land .history-card-photo,
+      .history-carousel .history-card.poster.fill .history-card-photo{width:100%;}
+      .history-carousel .history-card.poster.fill[data-idx="12"] .history-card-photo{width:100%;}   /* 2017: full width on mobile (override the desktop shrink, fill the picture area) */
+      .history-carousel .history-card.poster .history-card-photo img,
+      .history-carousel .history-card.poster.fill .history-card-photo img{width:100%;height:auto;}
+    }
+    .history-carousel-nav{position:absolute;top:0;width:48px;height:48px;border-radius:50%;background:var(--white);border:0;font-size:1.5rem;color:var(--deep);box-shadow: 0 1px 3px rgba(0,0,0,.06);cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:5;transition:transform .2s,background .2s;}   /* static, aligned with the red year band */
+    .history-carousel-nav:hover{background:var(--gold);}
+    .history-carousel-prev{left:0;}
+    .history-carousel-next{right:0;}
+    .history-carousel .history-card.hidden{display:none !important;}
+    .history-carousel-counter{text-align:center;margin-top:1rem;font-size:.85rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;font-weight:600;}
+    .history-carousel-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#fff;border:2px solid var(--red);color:#000;padding:.65rem 1.25rem;border-radius:8px;margin-bottom:1rem;font-size:.85rem;}
+    .history-carousel-bar-status{display:flex;align-items:center;gap:.5rem;font-weight:600;letter-spacing:.04em;}
+    .history-carousel-bar-status::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);animation:hcPulse 1.6s ease-in-out infinite;}
+    .history-carousel-bar.paused .history-carousel-bar-status::before{animation:none;background:var(--muted);}
+    @keyframes hcPulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+    .history-carousel-playpause{background:var(--gold);color:var(--deep);border:0;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:6px;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:.35rem;}
+    .history-carousel-playpause:hover{background:var(--gold-light);}
+    @media (max-width:768px){
+      .history-card{grid-template-columns:1fr;}
+      .history-card-photo{aspect-ratio:16/10;}
+      .history-carousel-wrap{padding:0 3rem;}
+    }
+  </style>
+  <div class="container">
+    <span class="section-eyebrow" style="color:var(--red);">Our History</span>
+    <h2 class="section-title" style="margin-bottom:.4rem;line-height:1.1;">22 Years of Protecting and Celebrating<br>Freedom of Creative Expression</h2>
+    <p style="text-align:center;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.05rem;margin:0 0 1.5rem;">A 90-second pictorial history.</p>
+    <div class="history-carousel-bar" id="history-carousel-bar">
+      <span class="history-carousel-bar-status" id="history-carousel-bar-status">Auto-advancing every 6 seconds</span>
+      <button type="button" class="history-carousel-playpause" id="history-carousel-playpause" aria-label="Pause auto-advance">&#9208; Pause</button>
+    </div>
+    <div class="history-carousel-wrap">
+      <button type="button" class="history-carousel-nav history-carousel-prev" aria-label="Previous" onclick="historyCarouselGo(-1, true)">&#9664;</button>
+      <button type="button" class="history-carousel-nav history-carousel-next" aria-label="Next" onclick="historyCarouselGo(1, true)">&#9654;</button>
+      <div class="history-carousel" id="history-carousel">
+      <div class="history-card poster land fill" data-idx="0">
+        <div class="history-card-photo"><img src="PHotos%20History/Rushdie%20Pitt.png" alt="1997 — Salman Rushdie at Pitt"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">1997</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">A Spark in the Audience</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Diane Samuels and Henry Reese attend a Salman Rushdie talk at the University of Pittsburgh. He mentions the Cities of Asylum network in Europe, and an idea is born.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="1">
+        <div class="history-card-photo"><img src="PHotos%20History/HX%20scaffold.JPG" alt="2004 — Huang Xiang on scaffold"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2004</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">First Writer Arrives</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;"><strong>City of Asylum officially launches.</strong> Poet Huang Xiang paints calligraphies of his poetry on the fa&ccedil;ade of his Sampsonia Way residency house. His "House Poem" inspires our "house publication" project.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="2">
+        <div class="history-card-photo"><img src="PHotos%20History/Parade.jpg" alt="2005 — Parade"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2005</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">First Jazz Poetry Concert</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Huang Xiang collaborates with saxophonist / composer Oliver Lake, who curates and plays in Jazz Poetry for the next 15 years.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster port" data-idx="3">
+        <div class="history-card-photo"><img src="PHotos%20History/Thad3.jpg" alt="2006 — Thad"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2006</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">A Growing Safe Haven</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Winged House&mdash;a collaboration between artists Thaddeus Mosley, Laura Jean McLaughlin, Bob Ziller, and Nobel Literature Laureate Wole Soyinka&mdash;is created as the residence of our second writer. Sampsonia Way begins its transformation into a literary corridor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="4">
+        <div class="history-card-photo"><img src="PHotos%20History/Test%20HCM1.JPG" alt="2007 — HCM 1"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2007</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Our First Reading</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Horacio Castellanos Moya, the second writer-in-residence, presents his novel <em>Senselessness</em> in the founders' home, the first of 73 programs in their house.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster port" data-idx="5">
+        <div class="history-card-photo"><img src="324Replacement.jpg" alt="2009 — HP 324 Pittsburgh-Burma House"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2009</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Pittsburgh-Burma House</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Text in Burmese by Khet Mar, our third writer-in-residence, and with art by her husband Than Htay Maung.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land" data-idx="6">
+        <div class="history-card-photo"><img src="320Replacement.jpg" alt="2010 — HP 320 Jazz House"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2010</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Jazz House</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Created by Oliver Lake and executed by Than Htay Maung. In addition to text and art, it incorporates sound.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="7">
+        <div class="history-card-photo"><img src="PHotos%20History/Iran%20.jpg" alt="2012 — Exiled Voices of Iran festival"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2012</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Our First Festival</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">"Exiled Voices of Iran," to prepare Pittsburgh for Iranian author Yaghoub Yadali, our next writer-in-residence. Finale was a concert by The Casualty Process, an Iranian electronica rock band in exile.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="8">
+        <div class="history-card-photo"><img src="PHotos%20History/SOS4.JPG" alt="SOS 4"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2013</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Free Arts Programs Increase</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">"Summer on Sampsonia" is launched in a tent on vacant lots. It quickly becomes a community space that helps us shape our future.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="9">
+        <div class="history-card-photo"><img src="PHotos%20History/ROW1.JPG" alt="2014 — River of Words"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2014</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">A River of Words</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">140 neighbors each mount and protect a word on their facades, honoring our protection of writers. A project of writer-in-residence Israel Centeno and Venezuelan artists Carolina Arnal and Gisela Romero.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="10">
+        <div class="history-card-photo"><img src="PHotos%20History/arg5.JPG" alt="arg5"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2015</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Alphabet Reading Garden</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Landscape architect Joel Le Gall and artists Laura Jean McLaughlin and Diane Samuels help City of Asylum transform the site of a nuisance bar into a park for the community.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="11">
+        <div class="history-card-photo"><img src="PHotos%20History/ICORN%20.JPG" alt="ICORN"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2015</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">International Recognition</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">City of Asylum Pittsburgh chosen as U.S. headquarters for the 90-city International Cities of Refuge Network.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="12">
+        <div class="history-card-photo"><img src="PHotos%20History/Grand%20Opening.jpg" alt="Grand Opening"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2017</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Alphabet City Opens</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">City of Asylum opens its permanent home at 40 W. North Avenue — Alphabet City — a cultural hub with a stage, bookstore, and restaurant.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="13">
+        <div class="history-card-photo"><img src="PHotos%20History/Show%20logo%204.jpg" alt="Show logo"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2020</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Responding to COVID</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">City of Asylum creates "The Show Must Go On(line) Pittsburgh," streaming our programming and hosting 21 other Pittsburgh arts organizations. We now livestream all programs.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster port" data-idx="14">
+        <div class="history-card-photo"><img src="PHotos%20History/comma3.JPG" alt="Comma"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2021</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Comma House</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Created by Bangladeshi writer-in-residence Tuhin Das. Installed by Thomas Herman.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="15">
+        <div class="history-card-photo"><img src="Ukrainian%20Colors.JPG" alt="Ukrainian colors — Ukrainian Fellowship 2022"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2022</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Ukrainian Fellowship Begins</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">In response to Russia's invasion of Ukraine, City of Asylum creates a special fellowship bringing three Ukrainian writers to Pittsburgh.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="16">
+        <div class="history-card-photo"><img src="PHotos%20History/Gainey.jpg" alt="Gainey"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2024</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">UNESCO City of Literature</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Mayor Ed Gainey selects City of Asylum to lead and organize Pittsburgh's application. U.S. withdrawal from UNESCO renders application moot.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster land fill" data-idx="17">
+        <div class="history-card-photo"><img src="PHotos%20History/icorn%205.jpg" alt="ICORN 5"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2025</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Bridges Creative Summit</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">City of Asylum hosts writers and leaders of the 90-city International Cities of Refuge Network in Pittsburgh.</p>
+          </div>
+        </div>
+      </div>
+      <div class="history-card poster port" data-idx="18">
+        <div class="history-card-photo"><img src="PHotos%20History/Torrea%20silhouette.jpg" alt="Torrea (anonymized)"></div>
+        <div class="history-card-body" style="padding:0;justify-content:flex-start;">
+          <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
+            <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2026</span>
+          </div>
+          <div class="hc-pad" style="padding:1.25rem 1.75rem 1.75rem;">
+            <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);margin-bottom:.6rem;line-height:1.25;">Newest Writer Arrives</h3>
+            <p class="hc-copy" style="font-size:.97rem;color:var(--text-body);line-height:1.65;">Arrival of most recent endangered writer, who remains anonymous for their safety.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div class="history-carousel-counter" id="history-carousel-counter">1-2 of 19</div>
+    <p style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:#000;margin:1rem 0 0;text-align:center;">&ldquo;City of Asylum Pittsburgh is a model&rdquo; &mdash; Salman Rushdie</p>
+  </div>
+  <script>
+    (function(){
+      var cards = document.querySelectorAll('#history-carousel .history-card');
+      var counter = document.getElementById('history-carousel-counter');
+      var ppBtn = document.getElementById('history-carousel-playpause');
+      var bar = document.getElementById('history-carousel-bar');
+      var barStatus = document.getElementById('history-carousel-bar-status');
+      var wrap = document.querySelector('.history-carousel-wrap');
+      var current = 0;
+      var step = 1;
+      var autoMs = 5000;
+      var advanceCount = 0;
+      var ramp = [2200, 2800, 3500, 4200];   // snappy start, then settle to autoMs
+      function gapFor(){ return advanceCount < ramp.length ? ramp[advanceCount] : autoMs; }
+      var timer = null;
+      var firstFire = null;
+      var paused = false;
+      var hoverPaused = false;
+      function render(){
+        cards.forEach(function(c,i){
+          c.classList.toggle('hidden', i < current || i >= current + step);
+        });
+        var last = Math.min(current + step, cards.length);
+        counter.textContent = (current+1) + (last > current+1 ? '-' + last : '') + ' of ' + cards.length;
+        fitCopy();
+      }
+      function escHTML(t){ var d=document.createElement('div'); d.textContent=t; return d.innerHTML; }
+      function clampLinesFor(card){
+        if (window.innerWidth <= 900) return 4;          // mobile/stacked: keep See more (clamp to 4)
+        return 0;                                        // desktop: show full copy, no See more (designer OK with all lengths)
+      }
+      // Truncate the visible card's copy to the nearest whole word + inline "… See more" (no overlay/fade)
+      function fitCopy(){
+        var card = document.querySelector('#history-carousel .history-card:not(.hidden)');
+        if (!card) return;
+        var copy = card.querySelector('.hc-copy');
+        if (!copy) return;
+        if (copy.getAttribute('data-full') == null){
+          copy.setAttribute('data-full', copy.innerHTML);
+          copy.setAttribute('data-text', copy.textContent.replace(/\s+/g,' ').trim());
+        }
+        var fullHTML = copy.getAttribute('data-full');
+        var fullText = copy.getAttribute('data-text');
+        var moreBtn = '… <button type="button" class="hc-more" onclick="historyCardToggle(this)">See more</button>';
+        if (card.classList.contains('expanded')){
+          copy.innerHTML = fullHTML + ' <button type="button" class="hc-more" onclick="historyCardToggle(this)">See less</button>';
+          return;
+        }
+        var lines = clampLinesFor(card);
+        copy.innerHTML = fullHTML;
+        if (lines === 0) return;                         // portrait/desktop: show everything
+        var lh = parseFloat(getComputedStyle(copy).lineHeight) || 20;
+        var maxH = lh * lines + lh * 0.35;
+        if (copy.scrollHeight <= maxH) return;           // already fits in N lines
+        var words = fullText.split(' ');
+        var lo = 1, hi = words.length - 1, best = 1;
+        while (lo <= hi){
+          var mid = (lo + hi) >> 1;
+          copy.innerHTML = escHTML(words.slice(0, mid).join(' ')) + moreBtn;
+          if (copy.scrollHeight <= maxH){ best = mid; lo = mid + 1; } else { hi = mid - 1; }
+        }
+        copy.innerHTML = escHTML(words.slice(0, best).join(' ')) + moreBtn;
+      }
+      var resizeT;
+      window.addEventListener('resize', function(){ clearTimeout(resizeT); resizeT = setTimeout(fitCopy, 150); });
+      window.addEventListener('load', fitCopy);   // re-fit once fonts/images settle
+      function advance(){
+        current = current + step;
+        if (current >= cards.length) current = 0;
+        render();
+      }
+      function updateBar(){
+        if (paused){
+          bar.classList.add('paused');
+          barStatus.textContent = 'Paused';
+          ppBtn.innerHTML = '&#9654; Play';
+          ppBtn.setAttribute('aria-label','Resume auto-advance');
+        } else {
+          bar.classList.remove('paused');
+          barStatus.textContent = 'Auto-advancing';
+          ppBtn.innerHTML = '&#9208; Pause';
+          ppBtn.setAttribute('aria-label','Pause auto-advance');
+        }
+      }
+      function startTimer(){
+        stopTimer();
+        if (paused || hoverPaused) return;
+        timer = setTimeout(function tick(){
+          if (paused || hoverPaused || document.querySelector('#history-carousel .history-card.expanded')) { timer = null; return; }
+          advance();
+          advanceCount++;
+          timer = setTimeout(tick, gapFor());
+        }, gapFor());
+      }
+      function stopTimer(){
+        if (firstFire) { clearTimeout(firstFire); firstFire = null; }
+        if (timer) { clearTimeout(timer); timer = null; }
+      }
+      window.historyCarouselGo = function(delta, userClick){
+        if (userClick){ paused = true; updateBar(); }
+        current = current + step * (delta > 0 ? 1 : -1);
+        if (current >= cards.length) current = 0;
+        if (current < 0) current = Math.max(0, cards.length - step);
+        render();
+        startTimer();
+      };
+      ppBtn.addEventListener('click', function(){
+        paused = !paused;
+        if (!paused) {
+          document.querySelectorAll('#history-carousel .history-card.expanded').forEach(function(c){
+            c.classList.remove('expanded');
+            var b = c.querySelector('.hc-more'); if (b) b.textContent = 'See more';
+          });
+        }
+        updateBar();
+        startTimer();
+      });
+      wrap.addEventListener('mouseenter', function(){ hoverPaused = true; stopTimer(); });
+      wrap.addEventListener('mouseleave', function(){ hoverPaused = false; startTimer(); });
+      // scroll-away: pause once the carousel scrolls ~2.25in out of view
+      if ('IntersectionObserver' in window) {
+        var hasBeenSeen = false;
+        var io = new IntersectionObserver(function(entries){
+          if (entries[0].isIntersecting) { hasBeenSeen = true; }
+          else if (hasBeenSeen && !paused) { paused = true; updateBar(); stopTimer(); }
+        }, { rootMargin: '216px 0px' });
+        io.observe(wrap);
+      }
+      // click-away: if playing and you click >~3in (288px) outside the carousel, pause
+      document.addEventListener('click', function(e){
+        if (paused) return;
+        var r = wrap.getBoundingClientRect();
+        var dx = Math.max(r.left - e.clientX, 0, e.clientX - r.right);
+        var dy = Math.max(r.top - e.clientY, 0, e.clientY - r.bottom);
+        if (Math.sqrt(dx*dx + dy*dy) > 288) { paused = true; updateBar(); stopTimer(); }
+      });
+      // See more / See less: expand a card's copy; any interaction pauses, and an open card blocks auto-advance
+      window.historyCardToggle = function(btn){
+        var card = btn.closest('.history-card');
+        card.classList.toggle('expanded');
+        paused = true; updateBar(); stopTimer();
+        fitCopy();
+      };
+      render();
+      paused = true;   // load ready-to-play: start paused, user presses Play
+      updateBar();
+      startTimer();
+    })();
+  </script>
+</section>
 
 <!-- WHAT MAKES US DIFFERENT -->
 <!-- WHAT MAKES US DIFFERENT -->
-<section class="different-section" id="model">
+<!-- EXPERIMENT 2026-05-30: background image "01 map A model like no other.jpg" inserted behind the diff cards (mirrors the home-page treatment of inserting an image behind the pillar + writers cards).
+     To revert: remove the inline `style` attribute below so the section returns to its default white background from .different-section. -->
+<section class="different-section" id="model" style="background:var(--warm-white);padding-top:calc(2.75rem - 1in/4);">
   <div class="container">
-    <span class="section-eyebrow">What Makes Us Different</span>
-    <h2 class="section-title">A Model Like No Other</h2>
-    <p class="section-sub">What sets City of Asylum apart from every other safe haven in the world.</p>
+    <span class="section-eyebrow" style="color:var(--red);">What Makes Us Different</span>
+    <h2 class="section-title" style="margin-top:calc(-1in/4);margin-bottom:calc(1.5rem - 1in/4);position:relative;top:calc(1in/4);">A Model Like No Other</h2>
+    <p class="section-sub" style="color:#000;font-weight:700;font-size:110%;margin-top:calc(3rem - 1in/4 + 3in/32);">What sets City of Asylum apart from every other safe haven in the world.</p>
     <div class="diff-grid">
       <div class="diff-card">
         <div class="diff-card-header">
-          <div class="diff-icon">⏳</div>
-          <h4>Long-Term, Not Temporary</h4>
+          <h4>Long-Term,<span style="display:block;text-align:right;margin-right:calc(1.5em + 1in/4);word-spacing:.2em;">Not Temporary</span></h4>
         </div>
         <p>Other safe haven cities provide emergency relief. We commit to three years or more of protection&mdash;and helping writers build a new life in exile if they cannot return to their country safely.</p>
       </div>
       <div class="diff-card">
         <div class="diff-card-header">
-          <div class="diff-icon">🌱</div>
-          <h4>Grassroots, Not Government</h4>
+          <h4>Grassroots,<span style="display:block;text-align:right;margin-right:calc(3in/16);">Not Government</span></h4>
         </div>
         <p>Our exiled writer residency program is entirely community-supported, unlike other cities in the International Cities of Refuge Network.</p>
       </div>
       <div class="diff-card">
         <div class="diff-card-header">
-          <div class="diff-icon">📖</div>
           <h4>Every Writer Creates</h4>
         </div>
         <p>Every writer has written and published while in residence&mdash;most a full-length work&mdash;and re-established their careers despite exile.</p>
       </div>
       <div class="diff-card">
         <div class="diff-card-header">
-          <div class="diff-icon">🤝</div>
           <h4>Community Integration</h4>
         </div>
         <p>Writers live in the community as neighbors. They become part of the cultural fabric, through school visits, community readings, and university partnerships.</p>
@@ -512,107 +865,38 @@ a:hover{color:var(--red-dark)}
 <!-- STAFF -->
 <section class="staff-section" id="staff">
   <div class="container">
-    <span class="section-eyebrow">Our Team</span>
-    <h2 class="section-title">Staff</h2>
-    <div class="staff-grid">
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/04/Emily-1024x1024.png" alt="Emily Cook"></div>
-        <h4>Emily Cook</h4>
-        <p>Institutional Partnerships Manager</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/13-1024x1024.png" alt="Tuhin Das"></div>
-        <h4>Tuhin Das</h4>
-        <p>Accountant</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/06/Untitled-design-1024x1024.png" alt="Hannah East"></div>
-        <h4>Hannah East</h4>
-        <p>Chief Operating Officer</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/11-1024x1024.png" alt="Dylan Falk"></div>
-        <h4>Dylan Falk</h4>
-        <p>Development &amp; Database Manager</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/05/MG_1957-edited-scaled.jpeg" alt="Andr&eacute;s Franco"></div>
-        <h4>Andr&eacute;s Franco</h4>
-        <p>Executive Director</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/6-1024x1024.png" alt="Alexis Jabour"></div>
-        <h4>Alexis Jabour</h4>
-        <p>Community Engagement Manager</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/04/Kino-1024x1024.png" alt="K. Kino"></div>
-        <h4>K. Kino</h4>
-        <p>Production Coordinator</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/04/Darin-1024x1024.png" alt="Darin Lee"></div>
-        <h4>Darin Lee</h4>
-        <p>Director of Public Programming</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/1-1024x1024.png" alt="Rania Mamoun"></div>
-        <h4>Rania Mamoun</h4>
-        <p>Residency Assistant</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/5-1024x1024.png" alt="Caeley McCagh"></div>
-        <h4>Caeley McCagh</h4>
-        <p>Special Projects Manager</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2026/04/Jenna-1024x1024.png" alt="Jenna Peng"></div>
-        <h4>Jenna Peng</h4>
-        <p>Program Coordinator</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/3-1024x1024.png" alt="Kate Rempe"></div>
-        <h4>Kate Rempe</h4>
-        <p>Content Marketing Coordinator</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/10-1024x1024.png" alt="Catherine Skolnicki"></div>
-        <h4>Catherine Skolnicki</h4>
-        <p>Residency Manager</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="https://cityofasylum.org/wp-content/uploads/2025/02/12-1024x1024.png" alt="Phoenix Tefel"></div>
-        <h4>Phoenix Tefel</h4>
-        <p>Bookstore Manager</p>
-      </div>
-
-    </div>
+    <span class="section-eyebrow" style="color:var(--red);">Our Team</span>
+    <h2 class="section-title" style="margin-bottom:calc(.5rem - 1in/8);">Staff</h2>
+    <ul class="staff-list">
+      <li><span class="staff-name">Emily Cook</span><span class="staff-role">Institutional Partnerships Manager</span></li>
+      <li><span class="staff-name">Tuhin Das</span><span class="staff-role">Accountant</span></li>
+      <li><span class="staff-name">Hannah East</span><span class="staff-role">Chief Operating Officer</span></li>
+      <li><span class="staff-name">Dylan Falk</span><span class="staff-role">Development &amp; Database Manager</span></li>
+      <li><span class="staff-name">Andr&eacute;s Franco</span><span class="staff-role">Executive Director</span></li>
+      <li><span class="staff-name">Alexis Jabour</span><span class="staff-role">Community Engagement Manager</span></li>
+      <li><span class="staff-name">K. Kino</span><span class="staff-role">Production Coordinator</span></li>
+      <li><span class="staff-name">Darin Lee</span><span class="staff-role">Director of Public Programming</span></li>
+      <li><span class="staff-name">Rania Mamoun</span><span class="staff-role">Residency Assistant</span></li>
+      <li><span class="staff-name">Caeley McCagh</span><span class="staff-role">Special Projects Manager</span></li>
+      <li><span class="staff-name">Jenna Peng</span><span class="staff-role">Program Coordinator</span></li>
+      <li><span class="staff-name">Kate Rempe</span><span class="staff-role">Content Marketing Coordinator</span></li>
+      <li><span class="staff-name">Catherine Skolnicki</span><span class="staff-role">Residency Manager</span></li>
+      <li><span class="staff-name">Phoenix Tefel</span><span class="staff-role">Bookstore Manager</span></li>
+    </ul>
 
     <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--text-dark);text-align:center;margin-top:3rem;">Curatorial Advisors</h3>
-    <div class="staff-grid" style="grid-template-columns:repeat(3,1fr);max-width:750px;margin-top:1.5rem;">
-      <div class="staff-card">
-        <div class="staff-icon"><img src="Anderson%20Tepper.png" alt="Anderson Tepper"></div>
-        <h4>Anderson Tepper</h4>
-        <p>World Literature</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon">?</div>
-        <h4>Name To Come</h4>
-        <p>Poetry</p>
-      </div>
-      <div class="staff-card">
-        <div class="staff-icon"><img src="Oliver%20Lake.jpg" alt="Oliver Lake" style="object-position:top;transform:scale(1.08) translateX(10%);"></div>
-        <h4>Oliver Lake</h4>
-        <p>Emeritus Jazz Curator</p>
-      </div>
-    </div>
+    <ul class="staff-list" style="max-width:650px;margin-top:1.25rem;">
+      <li><span class="staff-name">Anderson Tepper</span><span class="staff-role">World Literature</span></li>
+      <li><span class="staff-name">Name To Come</span><span class="staff-role">Poetry</span></li>
+      <li><span class="staff-name">Oliver Lake</span><span class="staff-role">Emeritus Jazz Curator</span></li>
+    </ul>
   </div>
 </section>
 
 <!-- BOARD -->
 <section class="board-section" id="board">
   <div class="container">
-    <span class="section-eyebrow">City of Asylum Governance</span>
+    <span class="section-eyebrow" style="color:var(--red);">City of Asylum Governance</span>
     <h2 class="section-title">Board of Directors</h2>
     <style>
     .board-name{cursor:pointer;color:var(--text-body);transition:color .2s}
@@ -628,37 +912,33 @@ a:hover{color:var(--red-dark)}
         <div class="board-bio" id="bio-lackner"><strong>Anne Billiet Lackner</strong> is a native of Belgium and former lawyer. She is the Honorary Consul of Belgium and co-founder of The Lackner Group, Inc., a software company for trust and estate administration. She is a member of the external advisory board at the University of Pittsburgh&rsquo;s EU Center of Excellence/European Studies Center.</div>
         <p><strong class="board-name" onclick="toggleBio('bio-talerico')">Barbara Talerico</strong>, Secretary</p>
         <div class="board-bio" id="bio-talerico"><strong>Barbara Talerico</strong> retired from BNY Mellon as Information Technology Project Manager. She is a former Certified Financial Planner with 16 years of volunteer service including Past President of Allegheny City Central Association and Mexican War Streets Society.</div>
-        <p><strong class="board-name" onclick="toggleBio('bio-ohanlon')">Charles F. O&rsquo;Hanlon III</strong>, Treasurer</p>
-        <div class="board-bio" id="bio-ohanlon"><strong>Charles F. O&rsquo;Hanlon III</strong> is an independent consultant to the biotechnology and pharmaceutical industry. He is the former President and CEO of Celsense, Inc. and previously spent 29 years in commercial banking and financial services.</div>
+        <p><strong class="board-name" onclick="toggleBio('bio-finegold')">David Finegold</strong>, Treasurer</p>
+        <div class="board-bio" id="bio-finegold"><strong>David Finegold</strong> is a program officer for Golub Capital&rsquo;s impact philanthropy and Chief Sustainability Officer for Torrgreen. He is the founding Executive Director of National College Transfer Network and former President of Chatham University.</div>
       </div>
       <div class="board-members">
         <span class="board-name" onclick="toggleBio('bio-bednarek')">Heather Bednarek*</span> <span>&middot;</span>
         <span class="board-name" onclick="toggleBio('bio-dunham')">Craig Dunham</span> <span>&middot;</span>
-        <span class="board-name" onclick="toggleBio('bio-finegold')">David Finegold</span> <span>&middot;</span>
-        <span class="board-name" onclick="toggleBio('bio-hinniker')">Alexandra Hinniker</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-hinniker')">Alexandra Hiniker</span> <span>&middot;</span>
         <span class="board-name" onclick="toggleBio('bio-moorer')">Gwendolyn Moorer*</span> <span>&middot;</span>
         <span class="board-name" onclick="toggleBio('bio-peris')">Irina Peris</span> <span>&middot;</span>
         <span class="board-name" onclick="toggleBio('bio-phillips')">Caryl Phillips</span> <span>&middot;</span>
-        <span class="board-name" onclick="toggleBio('bio-reese')">Henry Reese* (Co-Founder)</span> <span>&middot;</span>
-        <span class="board-name" onclick="toggleBio('bio-samuels')">Diane Samuels* (Co-Founder)</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-reese')">Henry Reese*&dagger;</span> <span>&middot;</span>
+        <span class="board-name" onclick="toggleBio('bio-samuels')">Diane Samuels*&dagger;</span> <span>&middot;</span>
         <span class="board-name" onclick="toggleBio('bio-sarbaugh')">Janet Sarbaugh</span> <span>&middot;</span>
-        <span class="board-name" onclick="toggleBio('bio-sharma')">Akhil Sharma</span> <span>&middot;</span>
         <span class="board-name" onclick="toggleBio('bio-simmonds')">Lea Simonds</span> <span>&middot;</span>
         <span class="board-name" onclick="toggleBio('bio-young')">Damon Young*</span> <span>&middot;</span>
-        <span>Sandra Kniess* (Emeritus)</span>
+        <span style="line-height:1.2;">Sandra Kniess*<span style="display:block;font-size:.78em;color:var(--muted);font-style:italic;line-height:1;margin-top:0;">(Emeritus)</span></span>
       </div>
-      <p style="text-align:center;font-size:.85rem;color:var(--muted);margin-top:1rem;font-style:italic;">* Northside Resident</p>
+      <p style="text-align:center;font-size:.85rem;color:var(--muted);margin-top:1rem;margin-bottom:-0.0625in;font-style:italic;">* Northside Resident<br>&dagger; Co-Founder</p>
       <div id="bio-bednarek" class="board-bio"><strong>Heather Bednarek</strong> is senior counsel at Highmark Inc. and lead attorney for Affordable Care Act implementation. She is a member of the Carnegie Museum of Natural History Advisory Board and past chair of the Allegheny County Bar Association Health Law Section.</div>
       <div id="bio-dunham" class="board-bio"><strong>Craig Dunham</strong> has three decades managing commercial, residential, hospitality, sports, and institutional projects. He holds a Master&rsquo;s Degree in Architecture from Southern California Institute of Architecture and is the founder of Dunham reGroup LLC and former Pittsburgh Penguins SVP.</div>
-      <div id="bio-finegold" class="board-bio"><strong>David Finegold</strong> is a program officer for Golub Capital&rsquo;s impact philanthropy and Chief Sustainability Officer for Torrgreen. He is the founding Executive Director of National College Transfer Network and former President of Chatham University.</div>
-      <div id="bio-hinniker" class="board-bio"><strong>Alexandra Hinniker</strong> is Director of Sustainability Initiative at Carnegie Mellon University and on the steering committee of the university&rsquo;s and the U.S. steering committee of Artists and Scholars at Risk. Previously, she oversaw New York City&rsquo;s Global Goals program at the Mayor&rsquo;s Office for International Affairs. She served as Representative to the United Nations, focusing on the protection of civilians in Syria, Iraq, and South Sudan.</div>
+      <div id="bio-hinniker" class="board-bio"><strong>Alexandra Hiniker</strong> is Director of Sustainability Initiative at Carnegie Mellon University and on the steering committee of the university&rsquo;s and the U.S. steering committee of Artists and Scholars at Risk. Previously, she oversaw New York City&rsquo;s Global Goals program at the Mayor&rsquo;s Office for International Affairs. She served as Representative to the United Nations, focusing on the protection of civilians in Syria, Iraq, and South Sudan.</div>
       <div id="bio-moorer" class="board-bio"><strong>Gwendolyn Moorer</strong> is a Northside resident, Financial Systems and Project Manager at City of Pittsburgh, owner of a Northside Rita&rsquo;s Water Ices franchise, and Development Board member of Central Northside Neighborhood Council.</div>
       <div id="bio-peris" class="board-bio"><strong>Irina Peris</strong> is a bilingual immigrant from the former Soviet Union, volunteer Russian-language teacher at Carnegie Library of Pittsburgh, and board member of International Poetry Forum.</div>
       <div id="bio-phillips" class="board-bio"><strong>Caryl Phillips</strong> is a St. Kittian-born English novelist, playwright, and screenwriter. His awards include the Martin Luther King Memorial Prize, Guggenheim Fellowship, and James Tait Black Memorial Prize. He has been Professor of English at Yale University for over 20 years and is a member of the American Academy of Arts and Sciences.</div>
       <div id="bio-reese" class="board-bio"><strong>Henry Reese</strong> is an entrepreneur and co-founder of City of Asylum. He is former principal in Reese Brothers and Communications &amp; Commerce, former Treasurer of Cave Canem, and Board member of International Cities of Refuge Network.</div>
       <div id="bio-samuels" class="board-bio"><strong>Diane Samuels</strong> is a visual artist with studio and public art practices. Her permanent site-specific artworks include <em>Luminous Manuscript</em>, <em>Lines of Sight</em>, and <em>The Alphabet Garden</em>. She was formerly on the boards of Carnegie Museum of Art, Mattress Factory Museum, and the National Holocaust Museum at Seton Hill University. She also created <em>Pandemic: Albert Camus, Frantz Fanon, and Rania Mamoun</em>, a monumental artwork opposite Alphabet City on the Malta Building.</div>
       <div id="bio-sarbaugh" class="board-bio"><strong>Janet Sarbaugh</strong> is retired Vice President for Creativity Programs at The Heinz Endowments. Her board service includes Chorus America, Americans for the Arts, and Grantmakers in the Arts.</div>
-      <div id="bio-sharma" class="board-bio"><strong>Akhil Sharma</strong> is the author of <em>A Life of Adventure and Delight</em>, <em>An Obedient Father</em>, and <em>Family Life</em>. He is a winner of the IMPAC International Dublin Literary Award, The Folio Prize, and PEN/Hemingway Prize. He is the Adele Schiff Professor at Duke University.</div>
       <div id="bio-simmonds" class="board-bio"><strong>Juliet Lea Hillman Simonds</strong> is Chair of The Hillman Family Foundations, Trustee of Carnegie Museums of Pittsburgh and Carnegie Mellon University, and board member of National Poetry Series and Pittsburgh Chamber Music Society.</div>
       <div id="bio-young" class="board-bio"><strong>Damon Young</strong> is a Pittsburgh author and Northside resident, winner of the Thurber Prize for American Humor, founder of VerySmartBrothas blog, contributing columnist for the Washington Post and New York Times, and inaugural writer-in-residence at the University of Pittsburgh.</div>
       <script>
@@ -680,9 +960,18 @@ a:hover{color:var(--red-dark)}
       });
       // Close popups when scrolling away
       window.addEventListener('scroll', closeAllPopups);
+      // Close popups when clicking anywhere outside an open bio or its trigger name
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.board-name') || e.target.closest('.board-bio')) return;
+        closeAllPopups();
+      });
+      // Close popups on Escape
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeAllPopups();
+      });
       </script>
 
-      <h3>Founding North American Board</h3>
+      <h3 style="border-top-color:var(--red);">Founding North American Board</h3>
       <div class="board-members">
         <span>Russell Banks</span> <span>&middot;</span>
         <span>Dionne Brand</span> <span>&middot;</span>
@@ -695,7 +984,7 @@ a:hover{color:var(--red-dark)}
         <span>Richard Wiley</span>
       </div>
 
-      <h3>Advisory Board</h3>
+      <h3 style="border-top-color:var(--red);">Advisory Board</h3>
       <div class="board-members">
         <span>Pheeroan akLaff</span> <span>&middot;</span>
         <span>Mia Alvar</span> <span>&middot;</span>
@@ -725,12 +1014,36 @@ a:hover{color:var(--red-dark)}
 <!-- JOBS -->
 <section class="jobs-section" id="jobs">
   <div class="container">
-    <span class="section-eyebrow">Careers</span>
+    <span class="section-eyebrow" style="color:var(--red);">Careers</span>
     <h2 class="section-title">Jobs</h2>
     <div class="jobs-inner">
-      <p>Job openings are posted on this page, with links to full job descriptions and application instructions.</p>
-      <p style="font-weight:600;color:var(--text-dark);">Currently there are no openings.</p>
-      <p style="font-size:.95rem;color:var(--muted);font-style:italic;">We are committed to the value of diversity and the importance of writers and artists in building our organization. Applications and inquiries will be treated confidentially.</p>
+      <!-- ============================================================
+           HAVE OPENINGS: edit the <ul> below. Duplicate the <li> for
+                          each additional posting. Link the title to a
+                          PDF in this folder (or an external URL).
+           NO OPENINGS:   comment out the entire <ul> below and
+                          uncomment the <p>Currently there are no
+                          openings.</p> line further down.
+           ============================================================ -->
+
+      <ul class="job-list" style="list-style:none;padding:0;margin:0 auto 1.5rem;text-align:left;max-width:560px;">
+        <li class="job-item" style="padding:1rem 0;border-bottom:1px solid var(--border);">
+          <a href="Astronaut.pdf" onclick="alert('Add job description in pdf');return false;" style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:1.05rem;text-decoration:none;">Astronaut &rarr;</a>
+          <p style="font-size:.92rem;color:var(--muted);margin:.25rem 0 0;">Help City of Asylum expand ICORN to the moon. Full-time moon-based. Apply by June 2400.</p>
+        </li>
+        <li class="job-item" style="padding:1rem 0;border-bottom:1px solid var(--border);">
+          <span style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:1.05rem;">No Jobs Available Message</span>
+          <p style="font-size:.92rem;color:var(--muted);margin:.25rem 0 0;">an appropriate message will appear automatically when no jobs are open</p>
+        </li>
+        <li class="no-jobs-placeholder" style="padding:1rem 0;border-bottom:1px solid var(--border);">
+          <span style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:1.05rem;">No Jobs Available Currently</span>
+        </li>
+        <!-- Duplicate the <li> above for each additional job. -->
+      </ul>
+
+      <!-- <p style="font-weight:600;color:var(--text-dark);">Currently there are no openings.</p> -->
+
+      <p style="font-size:.95rem;color:var(--muted);font-style:italic;">Applications and inquiries will be treated confidentially.</p>
     </div>
   </div>
 </section>
@@ -753,28 +1066,30 @@ a:hover{color:var(--red-dark)}
       }
     });
     </script>
-    <form class="subscribe-form" onsubmit="event.preventDefault()">
-      <input type="email" placeholder="Enter your email">
-      <button type="submit">Sign Up</button>
-    </form>
-    <p style="font-size:.85rem;color:rgba(255,255,255,.55);max-width:500px;margin:1.5rem auto 0;line-height:1.6;">For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="about.html#" onclick="document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';return false;" style="color:var(--gold);text-decoration:underline;cursor:pointer;">Privacy Policy</a>.</p>
+    <div class="subscribe-form">
+      <a class="smart-mail subscribe-btn" href="mailto:contact@cityofasylumpittsburgh.org">Subscribe &rarr;</a>
+    </div>
+    <p style="font-size:.85rem;color:rgba(255,255,255,.55);max-width:500px;margin:1.5rem auto 0;line-height:1.6;">For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';" style="color:var(--gold);text-decoration:underline;cursor:pointer;">Privacy Policy</a>.</p>
   </div>
 </section>
 
 <!-- OTHER INQUIRIES -->
 <section style="padding:5rem 0;background:var(--warm-white);" id="inquiries">
   <div class="container">
-    <span class="section-eyebrow">Contact</span>
+    <span class="section-eyebrow" style="color:var(--red);">Contact</span>
     <h2 class="section-title">Other Inquiries</h2>
     <div style="max-width:600px;margin:2rem auto 0;font-size:1.05rem;line-height:2;color:var(--text-body);">
-      <p><strong>General Inquiries:</strong> <a href="mailto:contact@cityofasylumpittsburgh.org">contact@cityofasylumpittsburgh.org</a></p>
-      <p><strong>Performer Inquiries:</strong> <a href="mailto:dlee@cityofasylum.org">dlee@cityofasylum.org</a></p>
-      <p><strong>Volunteer:</strong> <a href="mailto:ajabour@cityofasylumpittsburgh.org">ajabour@cityofasylumpittsburgh.org</a></p>
-      <p><strong>Free Tour:</strong> <em>(contact to come)</em></p>
-      <p><strong>Book a Writer for Your Organization:</strong> <em>(contact to come)</em></p>
-      <p><strong>Residency Inquiries:</strong> <a href="https://www.icorn.org/apply" target="_blank">icorn.org/apply</a></p>
-      <p><strong>Interest in Starting a City of Asylum:</strong> <em>(contact to come)</em></p>
-      <p><strong>Foundations Contact:</strong> <a href="mailto:afranco@cityofasylum.org">afranco@cityofasylum.org</a></p>
+      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>General Inquiries &rarr;</strong></a></p>
+      <p><a class="smart-mail" href="mailto:dlee@cityofasylum.org"><strong>Performer Inquiries &rarr;</strong></a></p>
+      <p><a class="smart-mail" href="mailto:ajabour@cityofasylumpittsburgh.org"><strong>Volunteer &rarr;</strong></a></p>
+      <!-- TODO: replace mailto with specific contact when known -->
+      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Free Tour &rarr;</strong></a> <em style="color:var(--muted);font-size:.85rem;">(contact to come)</em></p>
+      <!-- TODO: replace mailto with specific contact when known -->
+      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Book a Writer for Your Organization &rarr;</strong></a> <em style="color:var(--muted);font-size:.85rem;">(contact to come)</em></p>
+      <p><a href="https://www.icorn.org/apply" target="_blank" rel="noopener"><strong>Residency Inquiries &rarr;</strong></a></p>
+      <!-- TODO: replace mailto with specific contact when known -->
+      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Interest in Starting a City of Asylum &rarr;</strong></a> <em style="color:var(--muted);font-size:.85rem;">(contact to come)</em></p>
+      <p><a class="smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org"><strong>Contact for Foundations &rarr;</strong></a></p>
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
         <p style="font-weight:700;color:var(--text-dark);">City of Asylum</p>
         <p>40 W. North Avenue<br>Pittsburgh, PA 15212<br>Phone: 412-435-1110</p>
@@ -783,43 +1098,202 @@ a:hover{color:var(--red-dark)}
   </div>
 </section>
 
+<!-- Smart email chooser: intercepts mailto: clicks and offers Gmail / Outlook / default / copy -->
+<div id="mail-chooser" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:white;max-width:380px;width:100%;border-radius:12px;padding:1.5rem;box-shadow: 0 1px 3px rgba(0,0,0,.06);">
+    <h3 id="mc-title" style="margin:0 0 .25rem;font-family:var(--serif);font-size:1.2rem;color:var(--text-dark);">Send email to</h3>
+    <p id="mc-addr" style="margin:0 0 1.25rem;font-size:.95rem;color:var(--muted);word-break:break-all;"></p>
+    <div style="display:flex;flex-direction:column;gap:.5rem;">
+      <a id="mc-gmail" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Gmail (web)</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-outlook" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Outlook (web)</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-yahoo" target="_blank" rel="noopener" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>Open in Yahoo Mail</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <a id="mc-default" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;">
+        <span>My default email app</span><span aria-hidden="true">&rsaquo;</span>
+      </a>
+      <button id="mc-copy" type="button" style="display:flex;align-items:center;justify-content:space-between;padding:.75rem 1rem;border-radius:8px;background:#f4efe7;color:var(--text-dark);text-decoration:none;font-weight:600;font-size:.95rem;border:none;cursor:pointer;font-family:inherit;width:100%;">
+        <span id="mc-copy-label">Copy email address</span><span aria-hidden="true">&rsaquo;</span>
+      </button>
+    </div>
+    <button id="mc-close" type="button" style="margin-top:1rem;width:100%;padding:.65rem;border:1px solid var(--border);border-radius:8px;background:white;color:var(--muted);font-size:.9rem;cursor:pointer;font-family:inherit;">Cancel</button>
+  </div>
+</div>
+<script>
+(function(){
+  var box = document.getElementById('mail-chooser');
+  var addrEl = document.getElementById('mc-addr');
+  var gmail = document.getElementById('mc-gmail');
+  var outlook = document.getElementById('mc-outlook');
+  var yahoo = document.getElementById('mc-yahoo');
+  var def = document.getElementById('mc-default');
+  var copyBtn = document.getElementById('mc-copy');
+  var copyLabel = document.getElementById('mc-copy-label');
+  var closeBtn = document.getElementById('mc-close');
+  var currentAddr = '';
+
+  function open(addr){
+    currentAddr = addr;
+    addrEl.textContent = addr;
+    gmail.href = 'https://mail.google.com/mail/?view=cm&to=' + encodeURIComponent(addr);
+    outlook.href = 'https://outlook.live.com/owa/?path=/mail/action/compose&to=' + encodeURIComponent(addr);
+    yahoo.href = 'https://compose.mail.yahoo.com/?to=' + encodeURIComponent(addr);
+    def.href = 'mailto:' + addr;
+    copyLabel.textContent = 'Copy email address';
+    box.style.display = 'flex';
+  }
+  function close(){ box.style.display = 'none'; }
+
+  document.querySelectorAll('a.smart-mail').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      open(a.href.replace(/^mailto:/, ''));
+    });
+  });
+
+  closeBtn.addEventListener('click', close);
+  box.addEventListener('click', function(e){ if (e.target === box) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && box.style.display === 'flex') close(); });
+
+  // After picking a web option, close the chooser
+  [gmail, outlook, yahoo, def].forEach(function(el){ el.addEventListener('click', function(){ setTimeout(close, 100); }); });
+
+  copyBtn.addEventListener('click', function(){
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(currentAddr).then(function(){
+        copyLabel.textContent = 'Copied ✓';
+        setTimeout(close, 700);
+      });
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = currentAddr;
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); copyLabel.textContent = 'Copied ✓'; setTimeout(close, 700); } catch(_) {}
+      document.body.removeChild(ta);
+    }
+  });
+})();
+</script>
+
 <!-- DIRECTIONS -->
-<section style="padding:5rem 0;background:var(--cream);" id="directions">
+<section style="padding:5rem 0;background:var(--red);" id="directions">
   <div class="container">
-    <span class="section-eyebrow">Visit</span>
-    <h2 class="section-title">Directions to Alphabet City</h2>
-    <div style="max-width:700px;margin:2rem auto 0;font-size:1.05rem;line-height:1.8;color:var(--text-body);">
-      <p style="font-weight:700;color:var(--text-dark);font-size:1.15rem;">40 W. North Avenue, Pittsburgh, PA 15212</p>
-      <p style="color:var(--muted);margin-bottom:2rem;">(next to the Garden Theater)<br>For hours, see <a href='bookstore-restaurant.html'>Bookstore and Restaurant</a></p>
+    <span class="section-eyebrow" style="color:#000;">Visit</span>
+    <h2 class="section-title" style="color:#fff;">Directions to Alphabet City</h2>
+    <div style="max-width:700px;margin:2rem auto 0;font-size:1.05rem;line-height:1.8;color:#fff;">
+      <p style="font-weight:700;color:#fff;font-size:1.15rem;">40 W. North Avenue, Pittsburgh, PA 15212</p>
+      <p style="color:#fff;margin-bottom:2rem;">(next to the Garden Theater)<br>For hours, see <a href='/bookstore-restaurant' style='color:#000;text-decoration:underline;'>Bookstore and Restaurant</a></p>
 
-      <h3 style="font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text-dark);margin-bottom:.75rem;">Car</h3>
-      <p>In addition to on-street parking, there is parking at the Federal North Garage (1307 Federal St.)</p>
+      <style>
+      .dir-toggle{display:inline-block;background:var(--gold);border:1px solid var(--border);border-radius:8px;padding:.65rem 1rem;cursor:pointer;font-family:var(--serif);font-weight:700;font-size:.95rem;color:var(--deep);transition:background .15s,border-color .15s,color .15s;margin-bottom:.75rem;}
+      .dir-toggle:hover{border-color:var(--gold);color:var(--red);}
+      .dir-toggle.active{background:var(--deep);color:var(--white);border-color:var(--deep);}
+      .dir-panel{padding:1rem 1.25rem;background:var(--white);border-radius:8px;border:1px solid var(--border);color:var(--text-body);margin-bottom:.75rem;}
+      .dir-panel p{margin:0;font-size:.98rem;}
+      </style>
+      <button type="button" class="dir-toggle" aria-expanded="false">Car</button>
+      <div class="dir-panel" hidden>
+        <p>In addition to on-street parking, there is parking at the Federal North Garage (1307 Federal St.)</p>
+      </div>
+      <script>
+      document.addEventListener('DOMContentLoaded', function(){
+        var pairs = [];
+        document.querySelectorAll('.dir-toggle').forEach(function(btn){
+          var panel = btn.nextElementSibling;
+          if(!panel || !panel.classList.contains('dir-panel')) return;
+          pairs.push({btn:btn, panel:panel});
+          btn.addEventListener('click', function(){
+            var open = panel.hidden; panel.hidden = !open;
+            btn.classList.toggle('active', open);
+            btn.setAttribute('aria-expanded', String(open));
+          });
+        });
+        function closePair(p){ p.panel.hidden = true; p.btn.classList.remove('active'); p.btn.setAttribute('aria-expanded','false'); }
+        // Click anywhere outside an open button/panel closes it
+        document.addEventListener('click', function(e){
+          pairs.forEach(function(p){
+            if(p.panel.hidden) return;
+            if(p.btn.contains(e.target) || p.panel.contains(e.target)) return;
+            closePair(p);
+          });
+        });
+        // Escape closes any open panel
+        document.addEventListener('keydown', function(e){
+          if(e.key === 'Escape') pairs.forEach(closePair);
+        });
+      });
+      </script>
 
-      <h3 style="font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text-dark);margin-top:2rem;margin-bottom:.75rem;">Bike</h3>
-      <p>Healthy Ride Pittsburgh station at the corner of Federal &amp; North Avenue, approximately one block away.</p>
-      <p style="margin-top:.75rem;"><a href="https://bikepgh.org/resources/maps-guides-more/map-routes/" target="_blank" style="color:var(--red);">Bike route map &rarr;</a></p>
-
-      <h3 style="font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--text-dark);margin-top:2rem;margin-bottom:.75rem;">Bus</h3>
-      <p style="margin-bottom:1.5rem;"><a href="https://www.rideprt.org/schedule-finder/" target="_blank" style="color:var(--red);">PRT Schedule Finder &rarr;</a></p>
-      <div style="margin-bottom:1.5rem;">
-        <p><strong>From the East End:</strong><br>From various points in East End, catch 54C or 54D to North Ave at Federal St, walk 1 min to 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
-        <p style="margin-top:.5rem;">Or&hellip; P1 EAST BUSWAY to Downtown: then proceed to get on 16 BRIGHTON TO AVALON LOOP, Bus Stop: Liberty Ave at 6th St. Get off at the stop W. North Ave at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+      <button type="button" class="dir-toggle" aria-expanded="false" style="margin-top:1.25rem;">Bike</button>
+      <div class="dir-panel" hidden>
+        <p>Healthy Ride Pittsburgh station at the corner of Federal &amp; North Avenue, approximately one block away.</p>
+        <p style="margin-top:.75rem;"><a href="https://bikepgh.org/resources/maps-guides-more/map-routes/" target="_blank" style="color:var(--gold);">Bike route map &rarr;</a></p>
       </div>
 
-      <div style="margin-bottom:1.5rem;">
-        <p><strong>From Downtown:</strong><br>8 PERRYSVILLE TO WEST VIEW: Bus stop: 7th St at Penn Ave, Get off at North Ave. at Federal St., Walk to 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
-        <p style="margin-top:.5rem;">Or&hellip; 16 BRIGHTON TO AVALON LOOP: Bus Stop: Liberty Ave at 6th St, Get off at the stop W. North Ave at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
-        <p style="margin-top:.5rem;">Or&hellip; 13 BELLEVUE TO WEST VIEW: Bus Stop: Liberty Ave at 6th St, Get off at the stop W. North Ave at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+      <button type="button" class="dir-toggle" aria-expanded="false" style="margin-top:1.25rem;">Bus</button>
+      <div class="dir-panel" hidden>
+      <p style="margin-bottom:1rem;"><a href="https://www.rideprt.org/schedule-finder/" target="_blank" rel="noopener" style="color:var(--gold);">PRT Schedule Finder &rarr;</a></p>
+      <div class="bus-routes">
+        <div class="bus-tabs" role="tablist">
+          <button type="button" class="bus-tab" data-route="east-end" aria-expanded="false">From the East End</button>
+          <button type="button" class="bus-tab" data-route="downtown" aria-expanded="false">From Downtown</button>
+          <button type="button" class="bus-tab" data-route="north-hills" aria-expanded="false">From North Hills</button>
+          <button type="button" class="bus-tab" data-route="southside" aria-expanded="false">From the Southside</button>
+        </div>
+        <div class="bus-panel" data-route="east-end" hidden>
+          <p>From various points in East End, catch 54C or 54D to North Ave. at Federal St., walk 1 min to 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+          <p>Or&hellip; P1 EAST BUSWAY to Downtown: then proceed to get on 16 BRIGHTON TO AVALON LOOP, Bus Stop: Liberty Ave. at 6th St. Get off at the stop W. North Ave. at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+        </div>
+        <div class="bus-panel" data-route="downtown" hidden>
+          <p>8 PERRYSVILLE TO WEST VIEW: Bus stop: 7th St. at Penn Ave., Get off at North Ave. at Federal St., Walk to 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+          <p>Or&hellip; 16 BRIGHTON TO AVALON LOOP: Bus Stop: Liberty Ave. at 6th St., Get off at the stop W. North Ave. at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+          <p>Or&hellip; 13 BELLEVUE TO WEST VIEW: Bus Stop: Liberty Ave. at 6th St., Get off at the stop W. North Ave. at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+        </div>
+        <div class="bus-panel" data-route="north-hills" hidden>
+          <p>12 MCKNIGHT ROAD: Get off downtown at the Bus Stop: Liberty Ave. at 7th St., then proceed to get on 16 BRIGHTON TO AVALON LOOP, Bus Stop: Liberty Ave. at 6th St. Get off at the stop W. North Ave. at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
+        </div>
+        <div class="bus-panel" data-route="southside" hidden>
+          <p>Routes 54C or 54D to North Ave. at Federal St.</p>
+          <p>Or&hellip; 48 ARLINGTON: Get off downtown at Sixth Ave. at Smithfield St., then proceed to get on any northside bus such as: 16 BRIGHTON TO AVALON LOOP: Bus Stop: Liberty Ave. at 6th St., Get off at W. North Ave. at Reddour St. directly in front of Alphabet City.</p>
+        </div>
       </div>
-
-      <div style="margin-bottom:1.5rem;">
-        <p><strong>From North Hills:</strong><br>12 MCKNIGHT ROAD: Get off downtown at the Bus Stop: Liberty Ave at 7th St, then proceed to get on 16 BRIGHTON TO AVALON LOOP, Bus Stop: Liberty Ave at 6th St. Get off at the stop W. North Ave at Reddour St. directly in front of Alphabet City, 40 W. North Avenue &ndash; Pittsburgh, PA 15212.</p>
       </div>
-
-      <div style="margin-bottom:1.5rem;">
-        <p><strong>From the Southside:</strong><br>Routes 54C or 54D to North Ave at Federal St.</p>
-        <p style="margin-top:.5rem;">Or&hellip; 48 ARLINGTON: Get off downtown at Sixth Ave at Smithfield St, then proceed to get on any northside bus such as: 16 BRIGHTON TO AVALON LOOP: Bus Stop: Liberty Ave at 6th St, Get off at W. North Ave at Reddour St. directly in front of Alphabet City.</p>
-      </div>
+      <script>
+        (function(){
+          var tabs = document.querySelectorAll('.bus-tab');
+          var panels = document.querySelectorAll('.bus-panel');
+          var container = document.querySelector('.bus-routes');
+          function closeAll(){
+            tabs.forEach(function(t){ t.classList.remove('active'); t.setAttribute('aria-expanded','false'); });
+            panels.forEach(function(p){ p.hidden = true; });
+          }
+          tabs.forEach(function(tab){
+            tab.addEventListener('click', function(){
+              var route = tab.dataset.route;
+              var wasActive = tab.classList.contains('active');
+              closeAll();
+              if (!wasActive) {
+                tab.classList.add('active');
+                tab.setAttribute('aria-expanded','true');
+                document.querySelector('.bus-panel[data-route="' + route + '"]').hidden = false;
+              }
+            });
+          });
+          // Close when clicking anywhere outside the bus-routes block
+          document.addEventListener('click', function(e){
+            if (!container.contains(e.target)) closeAll();
+          });
+          // Close on Escape
+          document.addEventListener('keydown', function(e){
+            if (e.key === 'Escape') closeAll();
+          });
+        })();
+      </script>
 
     </div>
   </div>
@@ -830,38 +1304,39 @@ a:hover{color:var(--red-dark)}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a class='nav-logo' href='index.html' style='margin-bottom:.5rem'>
-          <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="height:70px;clip-path:inset(0 7% 7% 0);background:#0f1419;">
+        <a class='nav-logo' href='/' style='margin-bottom:.5rem'>
           <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
+          <img src="xCofA_Logo_RGB.png" alt="City of Asylum" style="height:70px;">
         </a>
         <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
-        <a href='about.html'>About Us</a>
-        <a href='writers.html'>Writers &amp; Residencies</a>
-        <a href='free-arts.html'>Free Arts &amp; Culture</a>
-        <a href='media-archive.html'>Media &amp; Archive</a>
+        <a href='/about'>About Us</a>
+        <a href='/writers'>Writers &amp; Residencies</a>
+        <a href='/free-arts' style='color:var(--red);font-weight:700;'>Free Programs &amp; Tix</a>
+        <a href='/media-archive'>Media &amp; Archive</a>
       </div>
       <div class="footer-col">
         <h4>Visit</h4>
-        <a href='free-arts.html'>Alphabet City</a>
-        <a href='bookstore-restaurant.html'>Bookstore</a>
-        <a href='bookstore-restaurant.html'>Restaurant</a>
-        <a href='about.html#directions'>Directions</a>
+        <a href='/free-arts'>Alphabet City</a>
+        <a href='/bookstore-restaurant'>Bookstore</a>
+        <a href='/bookstore-restaurant'>Restaurant</a>
+        <a href='/about#directions'>Directions</a>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
-        <a href='donate.html'>Donate</a>
-        <a href='about.html#inquiries'>Volunteer</a>
-        <a href='about.html#inquiries'>Free Tour</a>
-        <a href='about.html#inquiries'>Book a Writer</a>
-        <a href='about.html#inquiries'>Contact Us</a>
+        <a href='/donate' style='background:var(--red);color:var(--white);font-weight:700;padding:.4rem 1rem;border-radius:6px;display:inline-block;margin-top:.15rem;'>Donate</a>
+        <a href='/about#inquiries'>Volunteer</a>
+        <a href='/about#inquiries'>Free Tour</a>
+        <a href='/about#inquiries'>Book a Writer</a>
+        <a href='/about#inquiries'>Contact Us</a>
       </div>
     </div>
+        <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:calc(-3in/8) 0 1.5rem;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
-      <a href='index.html' style='color:var(--gold);'>Return to Home</a>
+      <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';">Privacy Policy</a>
     </div>
   </div>
 </footer>
@@ -905,7 +1380,7 @@ document.querySelectorAll('.nav-dropdown a').forEach(function(a) {
 <!-- Photo lightbox -->
 <div id="photo-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
   <button type="button" aria-label="Close" id="photo-lightbox-close" style="position:absolute;top:20px;right:24px;width:44px;height:44px;border:none;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;">&times;</button>
-  <img id="photo-lightbox-img" src="about.html" alt="" style="max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow:0 12px 60px rgba(0,0,0,.5);cursor:default;">
+  <img id="photo-lightbox-img" src="about.html" alt="" style="max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow: 0 1px 3px rgba(0,0,0,.06);cursor:default;">
 </div>
 <script>
 (function(){
