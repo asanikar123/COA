@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Rodrigo Hasbún | The Invisible Years &mdash; City of Asylum</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
   --deep:#1c1a17;--charcoal:#2a2724;--slate:#54504a;
@@ -13,8 +14,8 @@
   --muted:#7a7268;--text-dark:#1c1a17;--text-body:#37332e;--border:#e4ddd0;
   --serif:'Playfair Display',Georgia,serif;
   --sans:'Inter','Segoe UI',sans-serif;
-  /* Program-detail-page hero/footer — TEST: darker-than-process-blue */
-  --program-bg:#1a4d7e;
+  /* Program-detail-page hero/footer fallback behind the curtain photo */
+  --program-bg:#1c1a17;
 }
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
@@ -24,40 +25,74 @@ a{color:var(--red);text-decoration:none;transition:color .2s}
 a:hover{color:var(--red-dark)}
 .container{max-width:1200px;margin:0 auto;padding:0 2rem}
 
-/* Navigation */
-.site-nav{position:sticky;top:0;z-index:100;background:var(--deep);border-bottom:3px solid var(--gold)}
-.nav-inner{max-width:1440px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem}
-.nav-logo{display:flex;align-items:center;gap:.75rem;color:var(--white);text-decoration:none}
-.nav-logo img{height:60px;width:auto;display:block}
-.nav-logo span{font-family:var(--sans);font-weight:700;font-size:1.15rem}
-.nav-links{display:flex;align-items:center;gap:1rem}
-.nav-links a{color:rgba(255,255,255,.85);font-size:.9rem;font-weight:500}
-.nav-links a:hover{color:var(--gold)}
-.nav-donate{background:var(--red);color:var(--white)!important;font-weight:700;padding:.55rem 1.4rem;border-radius:6px}
+/* ─── NAV ─── */
+.site-nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: none;   /* gold band removed */
+}
+.nav-inner {
+  max-width: 1440px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 98px;
+}
+.nav-logo { display: flex; align-items: center; gap: .1rem; color: var(--text-dark); text-decoration: none; }
+.nav-logo img { height: 70px; width: auto; margin-left: 0.0625in; }
+.nav-logo span { font-family:var(--sans); font-weight: 700; font-size: 1.15rem; letter-spacing: .02em; line-height:1.1; text-align:right;}
+.nav-links{display:flex;align-items:center;gap:1rem;flex-wrap:nowrap}
+.nav-links a{white-space:nowrap;
+  color: var(--text-dark); font-size: .875rem; font-weight: 500;
+  padding: .5rem .35rem; border-radius: 6px; transition: all .2s;
+}
+.nav-item > a{display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important}
+.nav-chevron{margin-left:0!important;line-height:1;font-size:.75rem!important}
+.nav-links a:hover { color: var(--red); background: rgba(0,0,0,.05); }
+.nav-donate {
+  background: var(--red) !important; color: var(--white) !important;
+  font-weight: 700 !important; padding: .55rem 1.4rem !important; border-radius: 6px;
+}
+.nav-donate:hover { background: var(--red-dark) !important; }
 
-/* Hamburger button — hidden on desktop, shown on mobile */
-.nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.8rem;line-height:1;cursor:pointer;padding:.3rem .55rem;border-radius:5px}
-.nav-toggle:hover{background:rgba(255,255,255,.08)}
-
-@media (max-width:700px){
-  .nav-toggle{display:inline-block}
-  .nav-links{
-    display:none;
-    position:absolute;
-    top:100%;
-    left:0;
-    right:0;
-    background:var(--deep);
-    flex-direction:column;
-    align-items:flex-start;
-    gap:.25rem;
-    padding:.75rem 1.25rem 1rem;
-    border-top:1px solid rgba(255,255,255,.12);
-    box-shadow: 0 1px 3px rgba(0,0,0,.06);
-  }
-  .nav-links.open{display:flex}
-  .nav-links a{width:100%;padding:.6rem .25rem;font-size:1rem}
-  .nav-links .nav-donate{width:auto;margin-top:.25rem}
+/* ─── NAV DROPDOWNS ─── */
+.nav-item { position: relative; display: inline-flex; align-items: center; }
+.nav-chevron { font-size: .75rem; margin-left: .25rem; opacity: .55; transition: transform .2s; pointer-events: none; }
+.nav-item:hover .nav-chevron { transform: rotate(180deg); }
+.nav-dropdown {
+  position: absolute; top: calc(100% + 6px); left: 0;
+  background: var(--white);
+  border: 1px solid rgba(255,255,255,.12); border-top: 2px solid var(--gold);
+  border-radius: 0 0 10px 10px;
+  min-width: 210px; padding: .5rem 0;
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity .2s, transform .2s, visibility .2s;
+  z-index: 300;
+  box-shadow: 0 10px 32px rgba(0,0,0,.15);
+}
+.nav-item:hover .nav-dropdown,
+.nav-item:focus-within .nav-dropdown {
+  opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0);
+}.nav-dropdown::before{content:"";position:absolute;top:-8px;left:0;right:0;height:8px;background:transparent;}
+.nav-dropdown a {
+  display: block !important; padding: .55rem 1.2rem !important;
+  color: var(--text-dark) !important; font-size: .8rem !important;
+  font-weight: 500 !important; border-radius: 0 !important;
+  white-space: nowrap; background: transparent !important;
+  transition: color .15s, padding-left .15s, background .15s !important;
+}
+.nav-dropdown a:hover {
+  color: var(--red) !important;
+  background: rgba(0,0,0,.04) !important;
+  padding-left: 1.5rem !important;
+}
+.nav-dropdown-light { background: var(--white) !important; border:1px solid rgba(0,0,0,.1) !important; border-top:2px solid var(--gold) !important; box-shadow:0 10px 32px rgba(0,0,0,.15) !important; }
+.nav-dropdown-light a { color: var(--text-dark) !important; }
+.nav-dropdown-light a:hover { color: var(--red) !important; background: rgba(0,0,0,.04) !important;
+}
+.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important;text-align:center;white-space:normal;text-wrap:balance;font-size:.82rem}
+.nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
 }
 
 /* Hero */
@@ -69,7 +104,7 @@ a:hover{color:var(--red-dark)}
   padding: 3.5rem 0 2.25rem;
   color: var(--white);
 }
-.program-hero .eyebrow{display:block;font-size:1.55rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.program-hero .eyebrow{display:block;font-size:1rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .program-hero h1{font-family:var(--serif);font-size:2.8rem;font-weight:900;line-height:1.15;margin-bottom:1.25rem;max-width:880px;color:var(--white)}
 .program-hero h1 em{font-style:italic;font-weight:700}
 .program-hero .meta{font-size:1.05rem;color:rgba(255,255,255,.75);margin-bottom:2rem}
@@ -78,7 +113,7 @@ a:hover{color:var(--red-dark)}
   /* Smaller program title on mobile */
   .program-hero h1{font-size:1.8rem}
   /* Keep eyebrow at the smaller mobile size */
-  .program-hero .eyebrow{font-size:1.25rem}
+  .program-hero .eyebrow{font-size:.9rem}
 }
 .hero-tickets{display:flex;align-items:flex-start;gap:.75rem;flex-wrap:wrap;flex:1 1 auto}
 .hero-actions{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
@@ -93,8 +128,8 @@ a:hover{color:var(--red-dark)}
 .btn-gold:hover{background:var(--gold-light);color:var(--deep)!important}
 /* Smaller in-body ticket buttons (mirrors of the hero buttons, above "About the Author") */
 .body-tickets{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.5rem;justify-content:center}
-.btn-red-sm{display:inline-block;background:var(--gold);color:#000!important;font-weight:700;padding:.35rem .9rem;border-radius:5px;font-size:.95rem;text-align:center}
-.btn-red-sm:hover{background:var(--gold-light);color:#000!important}
+.btn-red-sm{display:inline-block;background:var(--red);color:var(--white)!important;font-weight:700;padding:.35rem .9rem;border-radius:5px;font-size:.95rem;text-align:center}
+.btn-red-sm:hover{background:var(--red-dark);color:var(--white)!important}
 .order-group{margin-left:auto;display:flex;flex-direction:column;align-items:flex-end;gap:.4rem;max-width:280px}
 .order-group .order-note{font-size:.78rem;color:rgba(255,255,255,.72);font-style:italic;line-height:1.35;text-align:right}
 @media (max-width:640px){.order-group{margin-left:0;align-items:flex-start}.order-group .order-note{text-align:left}}
@@ -102,9 +137,7 @@ a:hover{color:var(--red-dark)}
 /* Main body */
 .program-body{
   padding:2.75rem 0 4rem;
-  background:
-    url('images/just-curtains.jpg') top center / 100% auto no-repeat,
-    var(--warm-white);
+  background:var(--warm-white);
 }
 .two-col{display:grid;grid-template-columns:1fr 320px;gap:3rem;align-items:start}
 @media (max-width:900px){
@@ -128,19 +161,19 @@ a:hover{color:var(--red-dark)}
 .content-col em{font-style:italic}
 .content-col strong{font-weight:700;color:var(--deep)}
 
-/* Make text-heavy sections into opaque cards so they read over the body background photo */
+/* Description card — ivory/white-with-border treatment, matching .performers and sidebar cards */
 .content-col .description{
-  background:#000;
-  border:1px solid #000;
+  background:var(--white);
+  border:1px solid var(--border);
   border-radius:10px;
   padding:1.4rem 1.5rem 1.2rem;
-  color:var(--white);
+  color:var(--text-body);
 }
-.content-col .description h2{color:var(--white);border-bottom-color:var(--gold)}
-.content-col .description p{color:var(--white);font-size:1.1rem}
+.content-col .description h2{color:var(--deep);border-bottom-color:var(--gold)}
+.content-col .description p{color:var(--text-body);font-size:1.1rem}
 .content-col .description p + p{text-indent:2em}
-.content-col .description strong{color:var(--white)}
-.content-col .description em{color:var(--white)}
+.content-col .description strong{color:var(--deep)}
+.content-col .description em{color:var(--text-body)}
 /* Orange accent text — coordinates with warm orange backgrounds.
    Adjust the hex below if you want a different shade. */
 .text-orange{color:#ea580c!important}
@@ -156,24 +189,15 @@ a:hover{color:var(--red-dark)}
 }
 
 .quotes{margin-bottom:1rem!important}
-.quotes blockquote{background:transparent;border:none;padding:.5rem 0;margin-bottom:.4rem;font-family:var(--sans);font-style:normal;font-weight:400;font-size:1.1rem;line-height:1.5;color:var(--white);}
+.quotes blockquote{background:transparent;border:none;padding:.5rem 0;margin-bottom:.4rem;font-family:var(--sans);font-style:normal;font-weight:400;font-size:1.1rem;line-height:1.5;color:var(--text-body);}
 .quotes blockquote:last-child{margin-bottom:0}
-.quotes cite{font-style:normal;font-family:var(--sans);font-size:1.1rem;font-weight:400;color:rgba(255,255,255,.95);white-space:nowrap;}
+.quotes cite{font-style:normal;font-family:var(--sans);font-size:1.1rem;font-weight:400;color:var(--muted);white-space:nowrap;}
 /* Override the generic `.content-col strong` dark color when bold appears inside quotes */
 .content-col .quotes strong, .content-col .quotes em{color:inherit;font-weight:700}
 .quotes cite.orphan{display:block;text-align:right}
 
-/* Mobile only: drop the body background photo; instead put the photo
-   inside each quote box, at natural size, cropped to the box. */
 @media (max-width:600px){
   .program-body{background:var(--warm-white)}
-  .quotes blockquote{
-    background:url('images/just-curtains.jpg') center center / cover no-repeat #1a4d7e;
-    padding:.85rem 1rem;
-    border-radius:8px;
-    overflow:hidden;
-    margin-bottom:.6rem;
-  }
 }
 .why-chose{margin-top:0!important;margin-bottom:1.25rem!important}
 
@@ -199,6 +223,9 @@ a:hover{color:var(--red-dark)}
 .performers .performer:nth-of-type(even) .performer-photo-wrap{float:right;margin:0 0 .6rem 1.25rem}
 .performers .performer:nth-of-type(even) .performer-text{text-align:right}
 .performers .performer-photo{width:200px;height:200px;object-fit:cover;border-radius:8px;display:block}
+/* Photo-less performer: intentional centered name-card so the missing headshot reads as deliberate */
+.performers .performer--no-photo{border-top:1px solid var(--border);padding-top:1.25rem;text-align:center}
+.performers .performer--no-photo .performer-text{max-width:640px;margin:0 auto}
 .performers h4{font-family:var(--serif);font-weight:700;font-size:1.2rem;color:var(--deep);margin-bottom:.4rem}
 .performers .performer-role{font-family:var(--sans);font-weight:400;font-style:italic;color:var(--muted);font-size:.9rem}
 @media (max-width:600px){
@@ -273,36 +300,92 @@ a:hover{color:var(--red-dark)}
 .share-btn:active{transform:translateY(0)}
 
 /* Site footer */
-.site-footer{background:#000;color:rgba(255,255,255,.7);padding:.3rem 0;font-size:.85rem}
+.site-footer{background:#000;color:rgba(255,255,255,.7);padding:1.25rem 0;font-size:.85rem}
 .site-footer .container{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .site-footer .footer-logo img{height:100px;width:auto;display:block}
 .site-footer .footer-text{flex:1;text-align:center;min-width:200px}
 .site-footer a{color:var(--gold)}
 </style>
+<link rel="stylesheet" href="../mobile.css?v=3">
+<script src="../mobile.js?v=3" defer></script>
 </head>
 <body>
 
+<!-- ═══════ NAVIGATION ═══════ -->
 <nav class="site-nav">
   <div class="nav-inner">
     <a class='nav-logo' href='/'>
-      <img src="https://cityofasylum.org/wp-content/uploads/2023/08/cropped-cropped-CofA_Logo_RGB-1.webp" alt="City of Asylum" style="clip-path:inset(0 7% 7% 0);background:#1c1a17;">
-      <span>City of Asylum</span>
+      <span>City of<br>Asylum</span>
+      <img src="../xCofA_Logo_RGB.png" alt="City of Asylum">
     </a>
-    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">&#9776;</button>
-    <div class="nav-links" id="nav-links">
+            <div class="nav-links">
       <a href='/'>Home</a>
-      <a href='/programs/'>Programs</a>
-      <a class='subscribe-stub' href='/about#subscribe'>Subscribe</a>
-      <a class='nav-donate' href='/donate'>Donate</a>
+      <div class="nav-item">
+        <a href='/about'>About Us <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown nav-dropdown-light">
+          <a href='/about'>Our Mission</a>
+          <a href='/about#history'>History</a>
+          <a href='/about#model'>Our Model</a>
+          <a href='/about#staff'>Staff</a>
+          <a href='/about#board'>Board of Directors</a>
+          <a href='/about#jobs'>Jobs</a>
+          <a href='/about#subscribe'>Subscribe</a>
+          <a href='/about#inquiries'>Other Inquiries</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href='/writers'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='/writers#residency-program'>Residency Program</a>
+          <a href='/writers#writers-in-residence'>City of Asylum Writers</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href='/free-arts' style='line-height:1;display:inline-block;color:var(--red);font-weight:700;'>Free Programs &amp; Tix <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='/free-arts#what-we-host'>What We Host</a>
+          <a href='/free-arts#why-free'>Why Our Programs Are Free</a>
+          <a href='/programs/'>Upcoming Programs</a>
+          <a href='/programs/'>Full Calendar</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href='/campus'>Community Building <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='/campus'>Community as Campus</a>
+          <a href='/campus#how-it-grew'>How It Grew</a>
+          <a href='/campus#whats-here'>What&#8217;s Here Now</a>
+          <a href='/campus#walking-tour'>Walking Tour App</a>
+          <a href='/campus#becoming'>Starting a New City</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href='/media-archive'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='/media-archive#video'>Selected Video &amp; Photos</a>
+          <a href='/media-archive#publications'>Selected Books</a>
+          <a href='/media-archive#press'>Selected Press</a>
+          <a href='/media-archive#archive'>Media Archive</a>
+        </div>
+      </div>
+
+      <a href='/bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <div class="nav-item">
+        <a class='nav-donate' href='/donate'>Donate</a>
+        <div class="nav-dropdown">
+          <a href='/donate#other-ways'>Other Ways to Help</a>
+          <a href='/donate#foundations'>Foundations</a>
+        </div>
+      </div>
     </div>
   </div>
 </nav>
 
 <section class="program-hero">
   <div class="container">
-    <span class="eyebrow">World Literature with Anderson Tepper…and the Author</span>
+    <span class="eyebrow">World Literature with Anderson Tepper</span>
     <h1>Rodrigo Hasbún | <em>The Invisible Years</em></h1>
-    <p class="meta">June 30, 2026 &middot; 7:03<span class="start-ampm"> PM</span> – 8:18 PM</p>
+    <p class="meta">June 30, 2026 &middot; 7:00<span class="start-ampm"> PM</span> – 8:15 PM</p>
     <div class="hero-actions">
       <div class="hero-tickets"><a class="btn-red" href="https://cityofasylum.my.salesforce-sites.com/ticket/#/instances/a0FPa0000047Al7MAE" target="_blank" rel="noopener">Free In-Person Tickets &rarr;</a><a class="btn-red" href="https://cityofasylum.my.salesforce-sites.com/ticket/#/instances/a0FPa0000047AtBMAU" target="_blank" rel="noopener">Free Livestream Tickets &rarr;</a><div class="order-group"><a class="btn-gold" href="https://cityofasylumbooks.org/search?q=invisible%20years" target="_blank" rel="noopener">Order the book now &rarr;</a></div></div>
       
@@ -317,34 +400,35 @@ a:hover{color:var(--red-dark)}
     <div class="two-col">
       <div class="content-col">
 
-        <section class="quotes"><blockquote>&ldquo;“Hasbún crafts striking set pieces . . . This one hits hard.”&rdquo; <cite>&mdash; — <em>Publishers Weekly</em></cite></blockquote><blockquote>&ldquo;“Hasbún has written a fun and tender book about the passing of time and the stories scars are made of, beautifully translated by the great Lily Meyer.”&rdquo; <cite>&mdash; — <em>The New York Times</em></cite></blockquote></section>
+        <section class="quotes"><blockquote>&ldquo;Hasbún crafts striking set pieces . . . This one hits hard.&rdquo; <cite>&mdash; <em>Publishers Weekly</em></cite></blockquote><blockquote>&ldquo;Hasbún has written a fun and tender book about the passing of time and the stories scars are made of, beautifully translated by the great Lily Meyer.&rdquo; <cite>&mdash; <em>The New York Times</em></cite></blockquote></section>
 
         
 
-        <section class="why-chose"><h3>Why I chose this book</h3><p><em>in a sentence or two why he chose this book. anderson tepper explains in a sentence or two why he chose this book.anderson tepper explains in a sentence or two why he chose this book.</em>— <strong>Anderson Tepper</strong></p></section>
+        <!-- "Why I chose this book" hidden until Anderson Tepper's real rationale copy is supplied. Placeholder text removed so it is not shipped. -->
+        <section class="why-chose" style="display:none"><h3>Why I chose this book</h3><p><em></em>— <strong>Anderson Tepper</strong></p></section>
 
         <section class="description">
           <h2>About the Book</h2>
-          <p>Andrea and Julián haven’t seen one another in twenty-one years—not since that tragic, fateful night their senior year of high school that marked their group of friends forever. A shocking phone call brings the two together again in Houston, where they begin to unravel the truth of that year, picking open long scabbed-over wounds from their upper-class adolescence in 1990s Bolivia and the scandal that ripped them apart. Unveiling their story and the inspiration that brought it to life in this new book</p>
-<p>The Invisible Years, Rodrigo introduces us to a writer, Julián, unhappy in his career and his marriage, who has been novelizing the past for his next book, trying to make meaning of the events that changed the course of their lives forever. “I’d thought that writing about that time would free me, relieve the burden of the invisible years,” he writes, “but often it seems that it’s done the reverse.”</p>
+          <p>Andrea and Julián haven’t seen one another in twenty-one years—not since that tragic, fateful night their senior year of high school that marked their group of friends forever. A shocking phone call brings the two together again in Houston, where they begin to unravel the truth of that year, picking open long scabbed-over wounds from their upper-class adolescence in 1990s Bolivia and the scandal that ripped them apart.</p>
+<p>In <em>The Invisible Years</em>, Rodrigo introduces us to a writer, Julián, unhappy in his career and his marriage, who has been novelizing the past for his next book, trying to make meaning of the events that changed the course of their lives forever. “I’d thought that writing about that time would free me, relieve the burden of the invisible years,” he writes, “but often it seems that it’s done the reverse.”</p>
 <p>Juxtaposing the naïve invincibility of adolescence with the grasping uncertainties of adulthood, The Invisible Years deftly weaves a coming-of-age tale that leaves the reader hanging on every word, even as they know how the cards fall in the end.</p>
           <div class="special-notes-inline"><p>Following the program, there will be a book signing. Everyone is invited to stay for an informal social with complimentary food and drinks—a chance to meet other book lovers</p></div>
         </section>
 
         <div class="body-tickets"><a class="btn-red-sm" href="https://cityofasylum.my.salesforce-sites.com/ticket/#/instances/a0FPa0000047Al7MAE" target="_blank" rel="noopener">Free In-Person Tickets &rarr;</a><a class="btn-red-sm" href="https://cityofasylum.my.salesforce-sites.com/ticket/#/instances/a0FPa0000047AtBMAU" target="_blank" rel="noopener">Free Livestream Tickets &rarr;</a></div>
 
-        <section class="performers"><h2>About the Author</h2><div class="performer"><div class="performer-photo-wrap"><img class="performer-photo" src="images/hasbun.jpg" alt="Photo of Rodrigo Hasbún"><span class="performer-photo-credit">Photo: Deep Vellum</span></div><div class="performer-text"><h4>Rodrigo Hasbún <span class="performer-role">&mdash; Author</span></h4><p>Rodrigo Hasbún is a Bolivian writer and screenwriter. He is the author of eight works of fiction and nonfiction, including the novel Affections (Simon &amp; Schuster), which received an English PEN Award and has been translated into twelve languages. Named one of Granta’s Best Young Spanish-Language Novelists in 2010, Hasbún’s short stories have appeared in Granta, McSweeney’s, Zoetrope: All-Story, Words Without Borders, and elsewhere. He lives and works in Houston.</p></div></div><div class="performer"><div class="performer-photo-wrap"><img class="performer-photo" src="images/anderson-tepper.jpg" alt="Photo of Anderson Tepper"></div><div class="performer-text"><h4>Anderson Tepper <span class="performer-role">&mdash; Moderator</span></h4><p>Anderson Tepper is City of Asylum’s Curator of World Literature. He is a guest curator of PEN America’s World Voices Festival and a longstanding member of the Brooklyn Book Festival’s Literary Council and international committee. Formerly of <em>Vanity Fair</em>, his writing on books and authors has appeared in <em>The New York Times</em>, <em>The Los Angeles Times</em>, <em>The Atlantic</em>, and <em>World Literature Today</em>, among other publications. Anderson also serves on City of Asylum&#x27;s Advisory Board.</p></div></div><div class="performer"><div class="performer-text"><h4>Lily Meyer <span class="performer-role">&mdash; Translator</span></h4><p>Lily Meyer is a translator, a critic, and the author of the novels <em>The End of Romance</em>and <em>Short Wa</em>r. She is a staff writer at <em>The Atlantic</em>. Her translations include Claudia Ulloa Donoso&#x27;s <em>Little Bird</em> and <em>Ice for Martians</em>, Abraham Jimenez Enoa&#x27;s <em>The Hidden Island</em>.</p></div></div></section>
+        <section class="performers"><h2>About the Author</h2><div class="performer"><div class="performer-photo-wrap"><img class="performer-photo" src="images/hasbun.jpg" alt="Photo of Rodrigo Hasbún"><span class="performer-photo-credit">Photo: Deep Vellum</span></div><div class="performer-text"><h4>Rodrigo Hasbún <span class="performer-role">&mdash; Author</span></h4><p>Rodrigo Hasbún is a Bolivian writer and screenwriter. He is the author of eight works of fiction and nonfiction, including the novel Affections (Simon &amp; Schuster), which received an English PEN Award and has been translated into twelve languages. Named one of Granta’s Best Young Spanish-Language Novelists in 2010, Hasbún’s short stories have appeared in Granta, McSweeney’s, Zoetrope: All-Story, Words Without Borders, and elsewhere. He lives and works in Houston.</p></div></div><div class="performer"><div class="performer-photo-wrap"><img class="performer-photo" src="images/anderson-tepper.jpg" alt="Photo of Anderson Tepper"></div><div class="performer-text"><h4>Anderson Tepper <span class="performer-role">&mdash; Moderator</span></h4><p>Anderson Tepper is City of Asylum’s Curator of World Literature. He is a guest curator of PEN America’s World Voices Festival and a longstanding member of the Brooklyn Book Festival’s Literary Council and international committee. Formerly of <em>Vanity Fair</em>, his writing on books and authors has appeared in <em>The New York Times</em>, <em>The Los Angeles Times</em>, <em>The Atlantic</em>, and <em>World Literature Today</em>, among other publications. Anderson also serves on City of Asylum&#x27;s Advisory Board.</p></div></div><div class="performer performer--no-photo"><div class="performer-text"><h4>Lily Meyer <span class="performer-role">&mdash; Translator</span></h4><p>Lily Meyer is a translator, a critic, and the author of the novels <em>The End of Romance</em> and <em>Short War</em>. She is a staff writer at <em>The Atlantic</em>. Her translations include Claudia Ulloa Donoso&#x27;s <em>Little Bird</em> and <em>Ice for Martians</em>, Abraham Jimenez Enoa&#x27;s <em>The Hidden Island</em>.</p></div></div></section>
 
       </div>
 
       <aside class="meta-col">
-        <figure class="hero-image"><img src="images/hasbun-book.jpg" alt=""></figure>
+        <figure class="hero-image"><img src="images/hasbun-book.jpg" alt="Cover of The Invisible Years by Rodrigo Hasbún"></figure>
 
         <div class="details-box">
           <h3>Details</h3>
           <dl>
             <dt>Date</dt><dd>June 30, 2026</dd>
-            <dt>Time</dt><dd>7:03 PM – 8:18 PM</dd>
+            <dt>Time</dt><dd>7:00 PM – 8:15 PM</dd>
             <dt>Category</dt><dd>Reading</dd>
           </dl>
         </div>
@@ -368,8 +452,8 @@ a:hover{color:var(--red-dark)}
 
         
 
-        <div class="info-card cucina-card"><div class="info-body"><p>Cucina Alfabeto is closed on Mondays and Tuesdays.</p></div></div>
-        <div class="info-card accommodations-card"><h3>Accommodations</h3><div class="info-body"><p>All floors of Alphabet City are wheelchair accessible and there is a reserved parking spot. Thanks to the generous support of RAD, we also have hearing assistive systems available for all programs, by advance request.</p><p>If you have questions or are in need of accommodations:</p></div><a class="btn-gold" href="mailto:ajabour@cityofasylumpittsburgh.org?subject=Accessibility%20Request">Accessibility Request &rarr;</a></div>
+        <div class="info-card cucina-card"><h3>Make a Night of It</h3><div class="info-body"><p>Cucina Alfabeto, our on-site restaurant at Alphabet City, serves Italian fare before and after programs—a perfect way to round out your evening.</p><p>Please note: Cucina Alfabeto is closed on Mondays and Tuesdays.</p></div></div>
+        <div class="info-card accommodations-card"><h3>Accommodations</h3><div class="info-body"><p>All floors of Alphabet City are wheelchair accessible and there is a reserved parking spot. Thanks to the generous support of RAD, we also have hearing assistive systems available for all programs, by advance request.</p><p>If you have questions or need accommodations, contact us:</p></div><a class="btn-gold" href="mailto:ajabour@cityofasylumpittsburgh.org?subject=Accessibility%20Request">Accessibility Request &rarr;</a></div>
         <section class="share-block"><h4>Share this</h4><div class="share-links"><a href="#" class="share-btn" data-share="facebook" aria-label="Share on Facebook" title="Share on Facebook"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a><a href="#" class="share-btn" data-share="x" aria-label="Share on X" title="Share on X"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="#" class="share-btn" data-share="linkedin" aria-label="Share on LinkedIn" title="Share on LinkedIn"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.063 2.063 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a><a href="#" class="share-btn" data-share="email" aria-label="Share on Email" title="Share on Email"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a></div></section>
       </aside>
     </div>
@@ -398,71 +482,8 @@ a:hover{color:var(--red-dark)}
   </div>
 </div>
 
-<!-- Subscribe stub popup -->
-<div id="subscribe-stub-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.55);z-index:1000;align-items:center;justify-content:center;padding:1rem;">
-  <div style="background:white;border-radius:10px;padding:1.5rem 1.75rem;max-width:420px;width:100%;font-family:var(--sans);">
-    <h3 style="margin:0 0 .75rem;font-family:var(--serif);font-size:1.2rem;color:var(--deep);">Subscribe</h3>
-    <p style="margin:0 0 1rem;font-size:.95rem;line-height:1.5;color:#37332e;">This will connect to the subscribe form on the About page, where you'll be able to choose topics (All, Literary Programs, Concerts, Bookstore) before sending. Coming soon.</p>
-    <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
-      <a href='/about#subscribe' id='subscribe-stub-go' style='background:var(--red);color:white;font-weight:700;padding:.55rem 1rem;border-radius:6px;text-decoration:none;font-size:.9rem;'>Go to Subscribe page</a>
-      <button id="subscribe-stub-close" type="button" style="background:none;border:none;color:#7a7268;cursor:pointer;font-family:inherit;font-size:.9rem;padding:.55rem 1rem;">Close</button>
-    </div>
-  </div>
-</div>
-
-
 <script>
 (function(){
-  // Mobile nav hamburger toggle with proper close behaviors
-  var toggle = document.querySelector('.nav-toggle');
-  var navLinks = document.getElementById('nav-links');
-  if (toggle && navLinks) {
-    function setOpen(open) {
-      navLinks.classList.toggle('open', open);
-      toggle.setAttribute('aria-expanded', String(open));
-      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-    }
-    // Hamburger button: toggle
-    toggle.addEventListener('click', function(e){
-      e.stopPropagation();  // don't trigger the "click outside" handler
-      setOpen(!navLinks.classList.contains('open'));
-    });
-    // Tap a link: close (so it doesn't stay open after navigating)
-    navLinks.querySelectorAll('a').forEach(function(a){
-      a.addEventListener('click', function(){ setOpen(false); });
-    });
-    // Tap anywhere outside the open menu: close
-    document.addEventListener('click', function(e){
-      if (!navLinks.classList.contains('open')) return;
-      if (navLinks.contains(e.target) || toggle.contains(e.target)) return;
-      setOpen(false);
-    });
-    // Escape key: close
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && navLinks.classList.contains('open')) setOpen(false);
-    });
-  }
-
-  // Subscribe stub popup (temporary — full topic-selection flow to come later)
-  var subModal = document.getElementById('subscribe-stub-modal');
-  var subClose = document.getElementById('subscribe-stub-close');
-  if (subModal) {
-    function closeSub(){ subModal.style.display = 'none'; }
-    document.querySelectorAll('a.subscribe-stub').forEach(function(link){
-      link.addEventListener('click', function(e){
-        e.preventDefault();
-        subModal.style.display = 'flex';
-      });
-    });
-    if (subClose) subClose.addEventListener('click', closeSub);
-    subModal.addEventListener('click', function(e){
-      if (e.target === subModal) closeSub();
-    });
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape' && subModal.style.display === 'flex') closeSub();
-    });
-  }
-
   // Smart-mail popup chooser (Gmail / Outlook / Yahoo / Default app)
   var mailChooser = document.getElementById('mail-chooser');
   var mailOptions = document.getElementById('mail-options');

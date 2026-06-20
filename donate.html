@@ -178,7 +178,6 @@ a:hover{color:var(--red-dark)}
   .trust-grid,.other-grid{grid-template-columns:1fr}
   .footer-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
-  .footer-grid > div:nth-child(2){margin-top:8.35rem}
 }
 </style>
 <link rel="stylesheet" href="mobile.css?v=3">
@@ -192,8 +191,6 @@ a:hover{color:var(--red-dark)}
       <img src="xCofA_Logo_RGB.png" alt="City of Asylum">
     </a>
             <div class="nav-links">
-      <!-- TWO-LINE-NAV 2026-05-31: applied <br> in multi-word nav labels for vertical stacking. Revert by removing each <br> from nav link text. -->
-      <!-- ADDED 2026-05-31: explicit Home link (revert by removing this line) -->
       <a href='/' style='line-height:1;display:inline-block;'>Home</a>
       <div class="nav-item">
         <a href='/about'>About Us <span class="nav-chevron">&#9662;</span></a>
@@ -267,16 +264,17 @@ a:hover{color:var(--red-dark)}
 .dhero-logo{position:absolute;left:0.33in;bottom:0.15in;width:0.94in;height:auto;}
 .dhero-photo{overflow:hidden;position:relative;}
 .dhero-photo img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
-/* TEST: video play button over the donate hero photo (Huang Xiang, opening day) */
-.dhero-play{position:absolute;left:19%;top:82%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;border:2px solid #9c3f33;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:0 0 0 3px;cursor:pointer;z-index:3;box-shadow: 0 1px 3px rgba(0,0,0,.06);transition:background .2s,transform .2s;}
+/* Video play button centered over the donate hero photo (Huang Xiang, opening day) */
+.dhero-play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:54px;height:54px;border-radius:50%;border:2px solid #9c3f33;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:0 0 0 3px;cursor:pointer;z-index:3;box-shadow: 0 1px 3px rgba(0,0,0,.06);transition:background .2s,transform .2s;}
 .dhero-play:hover{background:rgba(0,0,0,.8);}
 .dhero-play:focus-visible{outline:3px solid #9c3f33;outline-offset:2px;}
+.dhero-caption{position:absolute;left:0;right:0;bottom:.6rem;margin:0;text-align:center;font-family:var(--sans);font-size:.7rem;font-weight:600;letter-spacing:.04em;color:#fff;text-shadow:0 1px 4px rgba(0,0,0,.7);z-index:3;pointer-events:none;}
 .dh-video-modal{position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:2rem;}
 .dh-video-modal[hidden]{display:none;}
 .dh-video-inner{position:relative;max-width:900px;width:100%;}
 .dh-video-inner video{width:100%;max-height:80vh;border-radius:8px;background:#000;display:block;}
 .dh-video-close{position:absolute;top:-2.6rem;right:0;background:none;border:0;color:#fff;font-size:2.2rem;line-height:1;cursor:pointer;}
-@media(max-width:768px){.dhero-play{left:24%;top:66%;width:46px;height:46px;}}
+@media(max-width:768px){.dhero-play{left:50%;top:50%;width:46px;height:46px;}.dhero-caption{font-size:.62rem;}}
 @media(max-width:768px){
   .dhero{grid-template-columns:1fr;height:auto;}
   .dhero-panel{padding:2rem 1.25rem 1.5rem;overflow:visible;}
@@ -293,17 +291,13 @@ a:hover{color:var(--red-dark)}
   <div class="dhero-panel">
     <span class="dhero-eyebrow">Support Our Mission</span>
     <h1>You make it possible for silenced<br>writers <em>to speak again<br>&hellip;and to be heard.</em></h1>
-    <p class="dhero-sub">City of Asylum's support comes from people<br>who believe creative freedom is a human right and fundamental to our democracy.</p>
+    <p class="dhero-sub">City of Asylum's support comes from people who believe creative freedom<br>is a human right and fundamental to our democracy.</p>
     <img class="dhero-logo" src="xCofA_Logo_RGB.png" alt="City of Asylum">
   </div>
-  <div class="dhero-photo"><img src="991DonateHero.jpg" alt="A City of Asylum writer-in-residence at the calligraphy house"><button type="button" class="dhero-play" onclick="openDhVideo()" aria-label="Play video: the poet speaking on opening day"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button></div>
+  <div class="dhero-photo"><img src="991DonateHero.jpg" alt="A City of Asylum writer-in-residence at the calligraphy house"><button type="button" class="dhero-play" onclick="openDhVideo()" aria-label="Play video: the poet speaking on opening day"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff"><path d="M8 5v14l11-7z"/></svg></button><p class="dhero-caption">Watch: the poet on opening day</p></div>
 </section>
 
 <section class="donate-main">
-  <!-- TODO (donation page — planning notes, 2026-06-06):
-       1. Add MATCHING GRANT information (matching-gift / employer-match, or a matching-grant campaign).
-       2. Decide whether donors can enter their data in a clean form on THIS website and then
-          hand off to DonorBox for final validation/payment — vs. linking straight out to DonorBox. -->
   <div class="container">
     <div class="donate-layout">
       <!-- Why Donate -->
@@ -321,7 +315,7 @@ a:hover{color:var(--red-dark)}
           <div style="background:var(--warm-white);border-radius:12px;padding:1.5rem;border-left: 3px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,.06);">
             <div style="color:var(--text-dark);font-weight:600;line-height:1.4;">Connects Pittsburgh and the World as One Community</div>
           </div>
-          <div style="background:var(--warm-white);border-radius:12px;padding:1.5rem;border-left: 1px solid var(--border);box-shadow:0 2px 12px rgba(0,0,0,.06);">
+          <div style="background:var(--warm-white);border-radius:12px;padding:1.5rem;border-left: 3px solid var(--red);box-shadow:0 2px 12px rgba(0,0,0,.06);">
             <div style="margin-top:.5rem;font-family:var(--serif);font-style:italic;color:var(--text-dark);font-weight:600;line-height:1.4;">&ldquo;City of Asylum Pittsburgh is a model&rdquo; <span style="font-style:normal;">&mdash; Salman Rushdie</span></div>
           </div>
         </div>
@@ -363,7 +357,7 @@ a:hover{color:var(--red-dark)}
         </div>
         <div class="memorial-row">
           <label class="memorial-label"><span class="mem-q-desktop">Is your donation in memory or honor?</span><span class="mem-q-mobile">My donation is in honor/memory</span><input type="checkbox" id="memorial-check"> <span class="mem-yes">Yes</span></label>
-          <div id="memorial-note" class="memorial-note" hidden>Information will be added when donation process finalized.</div>
+          <div id="memorial-note" class="memorial-note" hidden>Tell us who you&rsquo;d like to honor &mdash; you can add their name and an optional notification recipient at checkout.</div>
         </div>
         <script>
           (function(){
@@ -400,7 +394,6 @@ a:hover{color:var(--red-dark)}
             if (customInput) customInput.addEventListener('input', updateFeesTotal);
           })();
         </script>
-        <p style="margin-top:.5rem;margin-bottom:1rem;font-size:.85rem;color:var(--muted);font-style:italic;text-align:center;">All donations are appreciated.</p>
         <button class="donate-btn">Donate Now &rarr;</button>
         <p class="form-note">City of Asylum is a 501(c)(3).<br>All donations are tax deductible<br>to the full extent of the law.<br>EIN: 20-2810099</p>
       </div>
@@ -417,16 +410,19 @@ a:hover{color:var(--red-dark)}
     <div class="other-grid">
       <div class="other-card">
         <h4>Gifts of Stock / IRA / Planned Giving</h4>
-        <p>We accept gifts of stock, tax-free IRA transfers,<br>and planned giving.<span style="display:block;height:10pt;"></span>Call 412-435-1110 or email Andr&eacute;s Franco:</p>
+        <p>We accept gifts of stock, tax-free IRA transfers, and planned giving.</p>
+        <p>Call 412-435-1110 or email Andr&eacute;s Franco:</p>
         <a class="btn-gold-lg smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org">COA Executive Director &rarr;</a>
       </div>
       <div class="other-card">
         <h4>Donate by Mail</h4>
-        <p>Please make check payable to '<span style="white-space:nowrap;">City of Asylum</span>'<span style="display:block;height:10pt;"></span>City of Asylum<br>40 W. North Avenue<br>Pittsburgh, PA 15212-4710</p>
+        <p>Please make check payable to &lsquo;<span style="white-space:nowrap;">City of Asylum</span>&rsquo;.</p>
+        <p>City of Asylum<br>40 W. North Avenue<br>Pittsburgh, PA 15212-4710</p>
       </div>
       <div class="other-card">
         <h4>Volunteer</h4>
-        <p>Help at our programs and in the bookstore or maintaining the Alphabet Reading Garden.<span style="display:block;height:10pt;"></span>Call 412-435-1110 Ext 206 or email Alexis Jabour:</p>
+        <p>Help at our programs and in the bookstore or maintaining the Alphabet Reading Garden.</p>
+        <p>Call 412-435-1110 Ext 206 or email Alexis Jabour:</p>
         <a class="btn-gold-lg smart-mail" href="mailto:ajabour@cityofasylumpittsburgh.org">Volunteer Director &rarr;</a>
       </div>
     </div>
@@ -437,7 +433,8 @@ a:hover{color:var(--red-dark)}
 <section style="padding:calc(5rem - 1in/16) 0 calc(5rem - 1in/16);background:var(--red);color:var(--white);text-align:center;" id="foundations">
   <div class="container">
     <h2 class="section-title" style="font-size:1.8rem;color:#000;">Foundations Also Help Make This Work Possible</h2>
-    <p style="font-size:1.1rem;color:rgba(255,255,255,.85);max-width:none;margin:1rem auto 2.5rem;">Please consider investing in City of Asylum's mission. <a class="btn-gold-lg smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org" style='padding:.75rem 1.75rem;color:#000;'>COA Executive Director &rarr;</a></p>
+    <p style="font-size:1.1rem;color:rgba(255,255,255,.85);max-width:none;margin:1rem auto 1.25rem;">Please consider investing in City of Asylum's mission.</p>
+    <p style="margin:0 auto 2.5rem;"><a class="btn-gold-lg smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org" style='padding:.75rem 1.75rem;color:#000;'>Discuss a foundation gift &rarr;</a></p>
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1rem;max-width:860px;margin-left:auto;margin-right:auto;">
       <span class="partner-name">Benter Foundation</span><span class="partner-sep">·</span>
       <span class="partner-name">Buhl Foundation</span><span class="partner-sep">·</span>
@@ -532,7 +529,7 @@ a:hover{color:var(--red-dark)}
         <a href='/about#inquiries'>Contact Us</a>
       </div>
     </div>
-        <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:calc(-3in/8) 0 1.5rem;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
+        <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:1.5rem 0;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
       <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';">Privacy Policy</a>
@@ -545,7 +542,6 @@ a:hover{color:var(--red-dark)}
   <div style="max-width:700px;width:100%;text-align:left;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem 2.5rem;position:relative;">
     <button type="button" aria-label="Close" onclick="document.getElementById('privacy-modal').style.display='none';document.body.style.overflow='';" style="position:absolute;top:.5rem;right:.75rem;background:transparent;border:0;color:rgba(255,255,255,.7);font-size:1.75rem;line-height:1;cursor:pointer;padding:.25rem .5rem;">&times;</button>
     <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:0 0 1.5rem;">Privacy Policy for City of Asylum Pittsburgh</h3>
-    <p style="font-size:.85rem;color:var(--red);font-style:italic;margin-bottom:1.5rem;">(This is stubbed in; current policy requested)</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">1. Information We Collect</h4>
     <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We only collect information that you voluntarily provide to us. For our email subscriber list, this typically includes your name and email address.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">2. How We Use Your Information</h4>

@@ -45,7 +45,6 @@ a:hover { color: var(--red-dark); }
 /* ─── NAV ─── */
 .site-nav {
   position: sticky; top: 0; z-index: 100;
-  /* EXPERIMENT 2026-05-31: white nav bar test. To revert, restore background: var(--white); */
   background: var(--white);
   border-bottom: none;   /* gold band removed */
 }
@@ -103,7 +102,6 @@ a:hover { color: var(--red-dark); }
   background: rgba(0,0,0,.04) !important;
   padding-left: 1.5rem !important;
 }
-/* EXPERIMENT 2026-05-31: light-theme dropdown variant (applied only to About Us as a test) */
 .nav-dropdown-light { background: var(--white) !important; border:1px solid rgba(0,0,0,.1) !important; border-top:2px solid var(--gold) !important; box-shadow:0 10px 32px rgba(0,0,0,.15) !important; }
 .nav-dropdown-light a { color: var(--text-dark) !important; }
 .nav-dropdown-light a:hover { color: var(--red) !important; background: rgba(0,0,0,.04) !important;
@@ -569,7 +567,6 @@ a:hover { color: var(--red-dark); }
   .hero-stat-row { flex-wrap: wrap; gap: 1.5rem; }
   .nav-links { display: none; }
   .wm-map-container { height: 400px; }
-  .footer-grid > div:nth-child(2){margin-top:8.35rem}
 }
 </style>
 <link rel="stylesheet" href="mobile.css?v=3">
@@ -584,8 +581,6 @@ a:hover { color: var(--red-dark); }
       <img src="xCofA_Logo_RGB.png" alt="City of Asylum">
     </a>
             <div class="nav-links">
-      <!-- TWO-LINE-NAV 2026-05-31: applied <br> in multi-word nav labels for vertical stacking. Revert by removing each <br> from nav link text. -->
-      <!-- ADDED 2026-05-31: explicit Home link. Gold styling indicates current page (only on index.html). -->
       <a href='/' style='line-height:1;display:inline-block;color:var(--gold);font-weight:700;'>Home</a>
       <div class="nav-item">
         <a href='/about'>About Us <span class="nav-chevron">&#9662;</span></a>
@@ -661,11 +656,8 @@ a:hover { color: var(--red-dark); }
   </div>
 </section>
 
-<!-- EXPERIMENT 2026-05-30: new home-page background covering Pillars + Writer Spotlights.
-     To revert: delete this opening <div>, the closing </div> after writers-section,
-     and restore `background:var(--white)` on pillars-section + remove the inline
-     `background:transparent` from writers-section. -->
-<div style="background:transparent;"><!-- black panel bg + alphabet pattern removed 2026-06-04; was url('BlackBackground letters.jpg'), then #000 -->
+<!-- Home-page background wrapper covering Pillars + Writer Spotlights -->
+<div style="background:transparent;">
 
 <!-- ═══════ THREE PILLARS ═══════ -->
 <section class="pillars-section" style="padding:0.25in 1.25rem 0;background:transparent;">
@@ -708,7 +700,7 @@ a:hover { color: var(--red-dark); }
 </section>
 
 </div>
-<!-- /EXPERIMENT 2026-05-30: end home-page background wrapper -->
+<!-- /Home-page background wrapper -->
 <script>
 (function() {
   var writers = [
@@ -909,7 +901,7 @@ a:hover { color: var(--red-dark); }
         <a href='/about#inquiries'>Contact Us</a>
       </div>
     </div>
-    <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:calc(-3in/8) 0 1.5rem;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
+    <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:1.5rem 0;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
       <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';">Privacy Policy</a>
@@ -922,7 +914,6 @@ a:hover { color: var(--red-dark); }
   <div style="max-width:700px;width:100%;text-align:left;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem 2.5rem;position:relative;">
     <button type="button" aria-label="Close" onclick="document.getElementById('privacy-modal').style.display='none';document.body.style.overflow='';" style="position:absolute;top:.5rem;right:.75rem;background:transparent;border:0;color:rgba(255,255,255,.7);font-size:1.75rem;line-height:1;cursor:pointer;padding:.25rem .5rem;">&times;</button>
     <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:0 0 1.5rem;">Privacy Policy for City of Asylum Pittsburgh</h3>
-    <p style="font-size:.85rem;color:var(--red);font-style:italic;margin-bottom:1.5rem;">(This is stubbed in; current policy requested)</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">1. Information We Collect</h4>
     <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We only collect information that you voluntarily provide to us. For our email subscriber list, this typically includes your name and email address.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">2. How We Use Your Information</h4>

@@ -175,7 +175,7 @@ a:hover{color:var(--red-dark)}
   .timeline-item.expanded .timeline-content h3::after{content:' \25B4'}
   .footer-grid{grid-template-columns:1fr 1fr}
   .nav-links{display:none}
-  .footer-grid > div:nth-child(2){margin-top:8.35rem}
+  .footer-brand{grid-column:1 / -1}
 }
 
 
@@ -238,8 +238,6 @@ a:hover{color:var(--red-dark)}
       <img src="xCofA_Logo_RGB.png" alt="City of Asylum">
     </a>
             <div class="nav-links">
-      <!-- TWO-LINE-NAV 2026-05-31: applied <br> in multi-word nav labels for vertical stacking. Revert by removing each <br> from nav link text. -->
-      <!-- ADDED 2026-05-31: explicit Home link (revert by removing this line) -->
       <a href='/' style='line-height:1;display:inline-block;'>Home</a>
       <div class="nav-item">
         <a class='active' href='/about' style='line-height:1;display:inline-block;'>About Us <span class="nav-chevron">&#9662;</span></a>
@@ -352,15 +350,15 @@ a:hover{color:var(--red-dark)}
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:2rem;margin-top:calc(2rem - 1in/4);">
       <div style="background:var(--white);border: 3px solid var(--red);border-radius:16px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;">
         <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--red);text-transform:uppercase;text-align:center;margin-bottom:.75rem;">Protect</h3>
-        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">We provide <span style="color:var(--red);">sanctuary</span> to endangered literary writers and artists, so that they can continue to create and their voices are not silenced.</p>
+        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">We provide sanctuary to endangered literary writers and artists, so that they can continue to create and their voices are not silenced.</p>
       </div>
       <div style="background:var(--white);border: 3px solid var(--red);border-radius:16px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;">
         <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--red);text-transform:uppercase;text-align:center;margin-bottom:.75rem;">Celebrate</h3>
-        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">We offer a broad range of free literary, arts, and humanities <span style="color:var(--red);">programs</span> in a community setting to build social equity through cultural exchange.</p>
+        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">We offer a broad range of free literary, arts, and humanities programs in a community setting to build social equity through cultural exchange.</p>
       </div>
       <div style="background:var(--white);border: 3px solid var(--red);border-radius:16px;padding:2.5rem 2rem;text-align:center;display:flex;flex-direction:column;">
         <h3 style="font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--red);text-transform:uppercase;text-align:center;margin-bottom:.75rem;word-spacing:.25em;">Build Community</h3>
-        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">And by transforming abandoned properties into homes for our programs, we anchor <span style="color:var(--red);">neighborhood</span> economic development.</p>
+        <p style="color:var(--text-body);font-weight:400;line-height:1.7;font-size:.95rem;margin:0;flex:1;">And by transforming abandoned properties into homes for our programs, we anchor neighborhood economic development.</p>
       </div>
     </div>
   </div>
@@ -417,9 +415,8 @@ a:hover{color:var(--red-dark)}
     .history-carousel-counter{text-align:center;margin-top:1rem;font-size:.85rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;font-weight:600;}
     .history-carousel-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#fff;border:2px solid var(--red);color:#000;padding:.65rem 1.25rem;border-radius:8px;margin-bottom:1rem;font-size:.85rem;}
     .history-carousel-bar-status{display:flex;align-items:center;gap:.5rem;font-weight:600;letter-spacing:.04em;}
-    .history-carousel-bar-status::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);animation:hcPulse 1.6s ease-in-out infinite;}
-    .history-carousel-bar.paused .history-carousel-bar-status::before{animation:none;background:var(--muted);}
-    @keyframes hcPulse{0%,100%{opacity:1;}50%{opacity:.35;}}
+    .history-carousel-bar-status::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);}
+    .history-carousel-bar.paused .history-carousel-bar-status::before{background:var(--muted);}
     .history-carousel-playpause{background:var(--gold);color:var(--deep);border:0;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:6px;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:.35rem;}
     .history-carousel-playpause:hover{background:var(--gold-light);}
     @media (max-width:768px){
@@ -433,7 +430,7 @@ a:hover{color:var(--red-dark)}
     <h2 class="section-title" style="margin-bottom:.4rem;line-height:1.1;">22 Years of Protecting and Celebrating<br>Freedom of Creative Expression</h2>
     <p style="text-align:center;font-family:var(--serif);font-style:italic;color:var(--muted);font-size:1.05rem;margin:0 0 1.5rem;">A 90-second pictorial history.</p>
     <div class="history-carousel-bar" id="history-carousel-bar">
-      <span class="history-carousel-bar-status" id="history-carousel-bar-status">Auto-advancing every 6 seconds</span>
+      <span class="history-carousel-bar-status" id="history-carousel-bar-status">Auto-advancing</span>
       <button type="button" class="history-carousel-playpause" id="history-carousel-playpause" aria-label="Pause auto-advance">&#9208; Pause</button>
     </div>
     <div class="history-carousel-wrap">
@@ -537,7 +534,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="history-card poster land fill" data-idx="8">
-        <div class="history-card-photo"><img src="PHotos%20History/SOS4.JPG" alt="SOS 4"></div>
+        <div class="history-card-photo"><img src="PHotos%20History/SOS4.JPG" alt="Summer on Sampsonia tent, 2013"></div>
         <div class="history-card-body" style="padding:0;justify-content:flex-start;">
           <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
             <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2013</span>
@@ -561,7 +558,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="history-card poster land fill" data-idx="10">
-        <div class="history-card-photo"><img src="PHotos%20History/arg5.JPG" alt="arg5"></div>
+        <div class="history-card-photo"><img src="PHotos%20History/arg5.JPG" alt="Alphabet Reading Garden, 2015"></div>
         <div class="history-card-body" style="padding:0;justify-content:flex-start;">
           <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
             <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2015</span>
@@ -573,7 +570,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="history-card poster land fill" data-idx="11">
-        <div class="history-card-photo"><img src="PHotos%20History/ICORN%20.JPG" alt="ICORN"></div>
+        <div class="history-card-photo"><img src="PHotos%20History/ICORN%20.JPG" alt="International Cities of Refuge Network, 2015"></div>
         <div class="history-card-body" style="padding:0;justify-content:flex-start;">
           <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
             <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2015</span>
@@ -597,7 +594,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="history-card poster land fill" data-idx="13">
-        <div class="history-card-photo"><img src="PHotos%20History/Show%20logo%204.jpg" alt="Show logo"></div>
+        <div class="history-card-photo"><img src="PHotos%20History/Show%20logo%204.jpg" alt="The Show Must Go On(line) Pittsburgh, 2020"></div>
         <div class="history-card-body" style="padding:0;justify-content:flex-start;">
           <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
             <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2020</span>
@@ -609,7 +606,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="history-card poster port" data-idx="14">
-        <div class="history-card-photo"><img src="PHotos%20History/comma3.JPG" alt="Comma"></div>
+        <div class="history-card-photo"><img src="PHotos%20History/comma3.JPG" alt="Comma House, 2021"></div>
         <div class="history-card-body" style="padding:0;justify-content:flex-start;">
           <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
             <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2021</span>
@@ -633,7 +630,7 @@ a:hover{color:var(--red-dark)}
         </div>
       </div>
       <div class="history-card poster land fill" data-idx="16">
-        <div class="history-card-photo"><img src="PHotos%20History/Gainey.jpg" alt="Gainey"></div>
+        <div class="history-card-photo"><img src="PHotos%20History/Gainey.jpg" alt="Mayor Ed Gainey, UNESCO City of Literature, 2024"></div>
         <div class="history-card-body" style="padding:0;justify-content:flex-start;">
           <div style="background:var(--red);padding:.6rem 1.75rem;display:flex;align-items:center;">
             <span style="font-family:var(--serif);font-size:1.75rem;font-weight:900;color:var(--white);letter-spacing:.08em;line-height:1;">2024</span>
@@ -825,24 +822,21 @@ a:hover{color:var(--red-dark)}
 </section>
 
 <!-- WHAT MAKES US DIFFERENT -->
-<!-- WHAT MAKES US DIFFERENT -->
-<!-- EXPERIMENT 2026-05-30: background image "01 map A model like no other.jpg" inserted behind the diff cards (mirrors the home-page treatment of inserting an image behind the pillar + writers cards).
-     To revert: remove the inline `style` attribute below so the section returns to its default white background from .different-section. -->
 <section class="different-section" id="model" style="background:var(--warm-white);padding-top:calc(2.75rem - 1in/4);">
   <div class="container">
     <span class="section-eyebrow" style="color:var(--red);">What Makes Us Different</span>
     <h2 class="section-title" style="margin-top:calc(-1in/4);margin-bottom:calc(1.5rem - 1in/4);position:relative;top:calc(1in/4);">A Model Like No Other</h2>
-    <p class="section-sub" style="color:#000;font-weight:700;font-size:110%;margin-top:calc(3rem - 1in/4 + 3in/32);">What sets City of Asylum apart from every other safe haven in the world.</p>
+    <p class="section-sub" style="color:#000;font-weight:700;font-size:110%;margin-top:calc(3rem - 1in/4 + 3in/32);">Four things that set our residency apart from other safe-haven cities.</p>
     <div class="diff-grid">
       <div class="diff-card">
         <div class="diff-card-header">
-          <h4>Long-Term,<span style="display:block;text-align:right;margin-right:calc(1.5em + 1in/4);word-spacing:.2em;">Not Temporary</span></h4>
+          <h4>Long-Term, Not Temporary</h4>
         </div>
         <p>Other safe haven cities provide emergency relief. We commit to three years or more of protection&mdash;and helping writers build a new life in exile if they cannot return to their country safely.</p>
       </div>
       <div class="diff-card">
         <div class="diff-card-header">
-          <h4>Grassroots,<span style="display:block;text-align:right;margin-right:calc(3in/16);">Not Government</span></h4>
+          <h4>Grassroots, Not Government</h4>
         </div>
         <p>Our exiled writer residency program is entirely community-supported, unlike other cities in the International Cities of Refuge Network.</p>
       </div>
@@ -887,7 +881,6 @@ a:hover{color:var(--red-dark)}
     <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--text-dark);text-align:center;margin-top:3rem;">Curatorial Advisors</h3>
     <ul class="staff-list" style="max-width:650px;margin-top:1.25rem;">
       <li><span class="staff-name">Anderson Tepper</span><span class="staff-role">World Literature</span></li>
-      <li><span class="staff-name">Name To Come</span><span class="staff-role">Poetry</span></li>
       <li><span class="staff-name">Oliver Lake</span><span class="staff-role">Emeritus Jazz Curator</span></li>
     </ul>
   </div>
@@ -1027,14 +1020,6 @@ a:hover{color:var(--red-dark)}
            ============================================================ -->
 
       <ul class="job-list" style="list-style:none;padding:0;margin:0 auto 1.5rem;text-align:left;max-width:560px;">
-        <li class="job-item" style="padding:1rem 0;border-bottom:1px solid var(--border);">
-          <a href="Astronaut.pdf" onclick="alert('Add job description in pdf');return false;" style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:1.05rem;text-decoration:none;">Astronaut &rarr;</a>
-          <p style="font-size:.92rem;color:var(--muted);margin:.25rem 0 0;">Help City of Asylum expand ICORN to the moon. Full-time moon-based. Apply by June 2400.</p>
-        </li>
-        <li class="job-item" style="padding:1rem 0;border-bottom:1px solid var(--border);">
-          <span style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:1.05rem;">No Jobs Available Message</span>
-          <p style="font-size:.92rem;color:var(--muted);margin:.25rem 0 0;">an appropriate message will appear automatically when no jobs are open</p>
-        </li>
         <li class="no-jobs-placeholder" style="padding:1rem 0;border-bottom:1px solid var(--border);">
           <span style="font-family:var(--serif);font-weight:700;color:var(--text-dark);font-size:1.05rem;">No Jobs Available Currently</span>
         </li>
@@ -1059,16 +1044,31 @@ a:hover{color:var(--red-dark)}
       <div class="subscribe-option">Concerts</div>
       <div class="subscribe-option">Bookstore</div>
     </div>
-    <script>
-    document.getElementById('sub-options').addEventListener('click', function(e) {
-      if (e.target.classList.contains('subscribe-option')) {
-        e.target.classList.toggle('active');
-      }
-    });
-    </script>
     <div class="subscribe-form">
-      <a class="smart-mail subscribe-btn" href="mailto:contact@cityofasylumpittsburgh.org">Subscribe &rarr;</a>
+      <a class="smart-mail subscribe-btn" id="subscribe-btn" href="mailto:contact@cityofasylumpittsburgh.org?subject=Subscribe&body=Please%20add%20me%20to%20your%20mailing%20list%20for%3A%20All">Subscribe &rarr;</a>
     </div>
+    <script>
+    (function(){
+      var opts = document.getElementById('sub-options');
+      var btn = document.getElementById('subscribe-btn');
+      function refreshMailto(){
+        var sel = [];
+        opts.querySelectorAll('.subscribe-option.active').forEach(function(o){ sel.push(o.textContent.trim()); });
+        if (!sel.length) sel = ['All'];
+        var topics = sel.join(', ');
+        btn.setAttribute('href', 'mailto:contact@cityofasylumpittsburgh.org?subject=' +
+          encodeURIComponent('Subscribe: ' + topics) +
+          '&body=' + encodeURIComponent('Please add me to your mailing list for: ' + topics));
+      }
+      opts.addEventListener('click', function(e) {
+        if (e.target.classList.contains('subscribe-option')) {
+          e.target.classList.toggle('active');
+          refreshMailto();
+        }
+      });
+      refreshMailto();
+    })();
+    </script>
     <p style="font-size:.85rem;color:rgba(255,255,255,.55);max-width:500px;margin:1.5rem auto 0;line-height:1.6;">For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';" style="color:var(--gold);text-decoration:underline;cursor:pointer;">Privacy Policy</a>.</p>
   </div>
 </section>
@@ -1082,13 +1082,10 @@ a:hover{color:var(--red-dark)}
       <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>General Inquiries &rarr;</strong></a></p>
       <p><a class="smart-mail" href="mailto:dlee@cityofasylum.org"><strong>Performer Inquiries &rarr;</strong></a></p>
       <p><a class="smart-mail" href="mailto:ajabour@cityofasylumpittsburgh.org"><strong>Volunteer &rarr;</strong></a></p>
-      <!-- TODO: replace mailto with specific contact when known -->
-      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Free Tour &rarr;</strong></a> <em style="color:var(--muted);font-size:.85rem;">(contact to come)</em></p>
-      <!-- TODO: replace mailto with specific contact when known -->
-      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Book a Writer for Your Organization &rarr;</strong></a> <em style="color:var(--muted);font-size:.85rem;">(contact to come)</em></p>
+      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Free Tour &rarr;</strong></a></p>
+      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Book a Writer for Your Organization &rarr;</strong></a></p>
       <p><a href="https://www.icorn.org/apply" target="_blank" rel="noopener"><strong>Residency Inquiries &rarr;</strong></a></p>
-      <!-- TODO: replace mailto with specific contact when known -->
-      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Interest in Starting a City of Asylum &rarr;</strong></a> <em style="color:var(--muted);font-size:.85rem;">(contact to come)</em></p>
+      <p><a class="smart-mail" href="mailto:contact@cityofasylumpittsburgh.org"><strong>Interest in Starting a City of Asylum &rarr;</strong></a></p>
       <p><a class="smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org"><strong>Contact for Foundations &rarr;</strong></a></p>
       <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--border);">
         <p style="font-weight:700;color:var(--text-dark);">City of Asylum</p>
@@ -1333,7 +1330,7 @@ a:hover{color:var(--red-dark)}
         <a href='/about#inquiries'>Contact Us</a>
       </div>
     </div>
-        <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:calc(-3in/8) 0 1.5rem;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
+        <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:1.5rem 0;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
       <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';">Privacy Policy</a>
@@ -1346,7 +1343,6 @@ a:hover{color:var(--red-dark)}
   <div style="max-width:700px;width:100%;text-align:left;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem 2.5rem;position:relative;">
     <button type="button" aria-label="Close" onclick="document.getElementById('privacy-modal').style.display='none';document.body.style.overflow='';" style="position:absolute;top:.5rem;right:.75rem;background:transparent;border:0;color:rgba(255,255,255,.7);font-size:1.75rem;line-height:1;cursor:pointer;padding:.25rem .5rem;">&times;</button>
     <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:var(--white);margin:0 0 1.5rem;">Privacy Policy for City of Asylum Pittsburgh</h3>
-    <p style="font-size:.85rem;color:var(--red);font-style:italic;margin-bottom:1.5rem;">(This is stubbed in; current policy requested)</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">1. Information We Collect</h4>
     <p style="font-size:.9rem;color:rgba(255,255,255,.7);margin-bottom:1.25rem;">We only collect information that you voluntarily provide to us. For our email subscriber list, this typically includes your name and email address.</p>
     <h4 style="font-family:var(--serif);font-size:1rem;color:var(--gold);margin-bottom:.5rem;">2. How We Use Your Information</h4>
@@ -1380,7 +1376,7 @@ document.querySelectorAll('.nav-dropdown a').forEach(function(a) {
 <!-- Photo lightbox -->
 <div id="photo-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
   <button type="button" aria-label="Close" id="photo-lightbox-close" style="position:absolute;top:20px;right:24px;width:44px;height:44px;border:none;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;">&times;</button>
-  <img id="photo-lightbox-img" src="about.html" alt="" style="max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow: 0 1px 3px rgba(0,0,0,.06);cursor:default;">
+  <img id="photo-lightbox-img" src="" alt="" style="max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow: 0 1px 3px rgba(0,0,0,.06);cursor:default;">
 </div>
 <script>
 (function(){
