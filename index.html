@@ -17,11 +17,11 @@
   --deep: #1c1a17;
   --charcoal: #2a2724;
   --slate: #54504a;
-  --red: #9c3f33;
-  --red-dark: #7d3028;
+  --red: #8a6a12;
+  --red-dark: #6f5510;
   --gold: #6b6155;
   --gold-light: #8a7f70;
-  --accent-gold: #9c3f33;
+  --accent-gold: #e0a417;
   --cream: #f4efe7;
   --warm-white: #faf8f3;
   --white: #ffffff;
@@ -36,7 +36,7 @@
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 110px; }
-body { font-family: var(--sans); color: var(--text-body); line-height: 1.7; background: var(--warm-white); }
+body { font-family: var(--sans); color: var(--text-body); line-height: 1.55; background: var(--white); }
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--red); text-decoration: none; transition: color .2s; }
 a:hover { color: var(--red-dark); }
@@ -49,13 +49,13 @@ a:hover { color: var(--red-dark); }
   border-bottom: none;   /* gold band removed */
 }
 .nav-inner {
-  max-width: 1440px; margin: 0 auto;
+  max-width: 1760px; margin: 0 auto;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 2rem; height: 98px;
 }
 .nav-logo { display: flex; align-items: center; gap: .1rem; color: var(--text-dark); text-decoration: none; }
-.nav-logo img { height: 70px; width: auto; margin-left: 0.0625in; }
-.nav-logo span { font-family:var(--sans); font-weight: 700; font-size: 1.15rem; letter-spacing: .02em; line-height:1.1; text-align:right;}
+.nav-logo img { height: 84px; width: auto; margin-left: 0.0625in; }
+.nav-logo span { font-family:var(--sans); font-weight: 700; font-size: 1.35rem; letter-spacing: .02em; line-height:1.1; text-align:right;}
 .nav-links{display:flex;align-items:center;gap:1rem;flex-wrap:nowrap}
 .nav-links a{white-space:nowrap;
   color: var(--text-dark); font-size: .875rem; font-weight: 500;
@@ -65,10 +65,10 @@ a:hover { color: var(--red-dark); }
 .nav-chevron{margin-left:0!important;line-height:1;font-size:.75rem!important}
 .nav-links a:hover { color: var(--red); background: rgba(0,0,0,.05); }
 .nav-donate {
-  background: var(--red) !important; color: var(--white) !important;
+  background: #e0a417 !important; color: #1c1a17 !important;
   font-weight: 700 !important; padding: .55rem 1.4rem !important; border-radius: 6px;
 }
-.nav-donate:hover { background: var(--red-dark) !important; }
+.nav-donate:hover { background: #c98f0e !important; }
 
 /* ─── NAV DROPDOWNS ─── */
 .nav-item { position: relative; display: inline-flex; align-items: center; }
@@ -106,61 +106,53 @@ a:hover { color: var(--red-dark); }
 .nav-dropdown-light a { color: var(--text-dark) !important; }
 .nav-dropdown-light a:hover { color: var(--red) !important; background: rgba(0,0,0,.04) !important;
 }
-.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important;text-align:center;white-space:normal;text-wrap:balance;font-size:.82rem}
+.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important;text-align:center;white-space:normal;text-wrap:balance;font-size:1.05rem}
 .nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 
 /* GOLD STANDARD: gold-on-dark renders bright #f5d23a; gold-on-light keeps muted --gold (#c9a227).
    Scope the bright value onto the dark regions so every var(--gold) inside them goes bright. */
 /* gold-on-dark toggle removed for plain palette */
-/* ─── HERO (split: black text panel + adjacent photo, no text over the photo) ─── */
+/* ─── HERO (photo left, text right; photo width = max(260px, left gutter) for alignment at wide viewports) ─── */
 .hero {
-  margin: 0 0.25in;   /* ~1/4in white border each side; band goes edge to edge */
-  border-top: 3px solid var(--accent-gold);   /* gold band caps the hero only (not the side margins) */
-  display: grid;
-  grid-template-columns: 70.7fr 29.3fr;   /* DESIGNER MASTER split: black 70.7% | photo 29.3% */
-  height: 4in;   /* 4in band */
+  display: flex;
+  align-items: stretch;
+  min-height: 440px;
+  background: var(--deep);
 }
-.hero-panel {
-  position: relative;
-  background: var(--deep); color: var(--white);
+.hero-photo {
+  flex-shrink: 0;
+  width: calc((100vw - 1200px) / 2);
+  min-width: 260px;
   overflow: hidden;
+  order: -1;
 }
-.hero-eyebrow {   /* top-left, per master */
-  position: absolute; top: 0.25in; left: 0.27in;
-  font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
-  color: var(--gold); white-space: nowrap;   /* gold eyebrow (bright via .hero scope) */
+.hero-photo img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; display: block; }
+.hero-panel {
+  flex: 1;
+  padding: 3.5rem 2rem;
+  display: flex; flex-direction: column; justify-content: flex-start;
+  color: var(--white);
+  box-sizing: border-box;
 }
-.hero h1 {   /* right-aligned, ends ~1/4in from the photo; large per master */
-  position: absolute; right: 0.23in; top: 1.12in;
-  margin: 0; text-align: right; white-space: nowrap;
-  font-family: var(--sans); font-weight: 700;
-  font-size: clamp(1.4rem, 4vw, 3.4rem); line-height: 1.06; color: var(--white);
+.hero-eyebrow {
+  font-size: .82rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+  color: var(--accent-gold); margin-bottom: .6rem;
 }
-.hero h1 em { font-family: var(--serif); font-style: italic; color: var(--accent-gold); }
-.hero-sub {   /* lower-left, 1/8in right of the logo, top aligned to logo caps */
-  position: absolute; left: 1.335in; top: calc(3.18in - 1in/64);
-  text-align: left; white-space: nowrap;
-  font-family: var(--sans); font-size: 1.05rem; line-height: 1.4;   /* matches .section-subtitle ("We work at the intersection...") */
-  color: rgba(255,255,255,.85);
+.hero h1 {
+  margin: 0 0 1.75rem; font-family: var(--sans); font-weight: 800;
+  font-size: clamp(2.5rem, 3.5vw, 4rem); line-height: 1.05; color: var(--white);
 }
-.hero-logo {   /* bottom-left, per master (City of Asylum mark) */
-  position: absolute; left: 0.27in; bottom: 0.15in;
-  width: 0.94in; height: auto;
+.hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 700; color: var(--accent-gold); white-space: nowrap; }
+.hero-sub {
+  font-family: var(--sans); font-size: 1.1rem; line-height: 1.55; color: rgba(255,255,255,.82); white-space: nowrap;
 }
-.hero-photo { overflow: hidden; }
-.hero-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-@media (max-width: 768px) {   /* mobile: stack to one column */
-  .hero { grid-template-columns: 1fr; height: auto; }
-  .hero-panel { padding: 2rem 1.25rem 1.5rem; overflow: visible; }
-  .hero-photo { height: 240px; }
-  .hero-eyebrow, .hero h1, .hero-sub, .hero-logo {
-    position: static; text-align: left; white-space: normal; width: auto;
-    overflow-wrap: break-word;
-  }
-  .hero-eyebrow { display: block; margin-bottom: .75rem; letter-spacing: .08em; font-size: .56rem; }
-  .hero h1 { font-size: clamp(1.15rem, 5vw, 1.7rem); line-height: 1.18; margin: 0 0 .75rem; }
-  .hero-sub { margin: 0 0 1.25rem; font-size: .8rem; }
-  .hero-logo { display: none; }
+@media (max-width: 768px) {
+  .hero { flex-direction: column; min-height: 0; }
+  .hero-photo { width: 100%; min-width: 0; height: 240px; }
+  .hero-photo img { object-position: top center; }
+  .hero-panel { padding: 1.75rem 1.25rem; max-width: none; }
+  .hero h1 { font-size: clamp(1.5rem, 6vw, 2.1rem); margin-bottom: 1rem; }
+  .hero-sub { font-size: .95rem; }
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn {
@@ -169,14 +161,14 @@ a:hover { color: var(--red-dark); }
   padding: .9rem 2rem; border-radius: 8px; border: none; cursor: pointer;
   transition: all .25s;
 }
-.btn-primary { background: var(--red); color: var(--white); }
-.btn-primary:hover { background: var(--red-dark); color: var(--white); }
+.btn-primary { background: #e0a417; color: #1c1a17; }
+.btn-primary:hover { background: #c98f0e; color: #1c1a17; }
 .btn-secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.3); }
 .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
 .btn-sm { font-size: .85rem; padding: .6rem 1.5rem; }
 .hero-stat-row {
   display: flex; gap: 3rem; margin-top: 4rem;
-  padding-top: 2rem; border-top: 1px solid rgba(255,255,255,.12);
+  padding-top: 2rem;
 }
 .hero-stat { text-align: left; }
 .hero-stat .num { font-family: var(--serif); font-size: 2.2rem; font-weight: 900; color: var(--gold); }
@@ -193,27 +185,28 @@ a:hover { color: var(--red-dark); }
   color: var(--gold); margin-bottom: .75rem;
 }
 .section-title {
-  font-family: var(--serif); font-size: 2.25rem; font-weight: 700;
-  color: var(--text-dark); text-align: center; margin-bottom: 1rem; line-height: 1.18;
+  font-family: var(--sans); font-size: 2.25rem; font-weight: 800;
+  color: var(--text-dark); text-align: left; margin-bottom: 1rem; line-height: 1.18;
 }
 @media(max-width:768px){ .section-title { font-size: 1.7rem; } }
 .section-subtitle {
-  text-align: center; color: var(--muted); font-size: 1.05rem;
-  max-width: 650px; margin: 0 auto 3.5rem;
+  text-align: left; color: var(--muted); font-size: 1rem;
+  max-width: 650px; margin: 0 0 3.5rem;
 }
 .pillar-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
-  max-width: 1200px; margin: 0 auto; padding: 0 2rem;
 }
 .pillar-card {
-  background: var(--white);
-  border: 1px solid var(--border);
-  border-radius: 16px;
-  padding: 2.5rem 2rem;
-  text-align: center;
-  transition: transform .3s, box-shadow .3s;
+  background: rgba(224,164,23,.13);
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.07);
+  border-right: 1px solid rgba(0,0,0,.07);
+  border-radius: 12px;
+  padding: 2.75rem 2rem;
+  text-align: left;
+  transition: transform .3s;
 }
-.pillar-card:hover { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.pillar-card:hover { }
 .pillar-icon {
   width: 64px; height: 64px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
@@ -223,10 +216,10 @@ a:hover { color: var(--red-dark); }
 .pillar-card:nth-child(2) .pillar-icon { background: var(--cream); }
 .pillar-card:nth-child(3) .pillar-icon { background: var(--cream); }
 .pillar-card h3 {
-  font-family: var(--serif); font-size: 1.35rem; font-weight: 700;
-  color: var(--text-dark); margin-bottom: .75rem; text-transform: uppercase;
+  font-family: var(--sans); font-size: 2.1rem; font-weight: 800;
+  color: var(--text-dark); margin-bottom: .75rem; text-align: left;
 }
-.pillar-card p { font-size: .95rem; color: var(--text-body); line-height: 1.7; font-weight: 400; }
+.pillar-card p { font-size: .95rem; color: var(--text-body); line-height: 1.6; font-weight: 400; }
 
 /* ─── WRITER SPOTLIGHTS CAROUSEL ─── */
 .writers-section {
@@ -235,28 +228,26 @@ a:hover { color: var(--red-dark); }
 }
 .carousel-wrapper {
   position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
   padding: 0 3.5rem;
   overflow: hidden;
+  box-sizing: border-box;
 }
 .carousel-track {
   display: flex;
   gap: 1.5rem;
 }
 .writer-card-home {
-  flex: 0 0 calc((100% - 3rem) / 3);
+  flex: 0 0 calc((100% - 6rem) / 5);
   background: var(--white);
   border-radius: 16px;
   overflow: hidden;
-  border: 1px solid var(--border);
   transition: transform .3s, box-shadow .3s;
 }
 .writer-card-home:hover { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
 .wc-img { position: relative; height: 280px; overflow: hidden; }
 .wc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
-/* Black border on spotlight photos */
-.writer-card-home .wc-img { border: 1px solid var(--border); box-sizing: border-box; border-radius: 16px 16px 0 0; }
+.writer-card-home .wc-img { border-radius: 16px 16px 0 0; }
 .writer-card-home:hover .wc-img img { transform: none; }
 .wc-bio-overlay {
   position: absolute; inset: 0; z-index: 3;
@@ -291,7 +282,7 @@ a:hover { color: var(--red-dark); }
   padding: .3rem .75rem; border-radius: 16px; letter-spacing: .04em;
 }
 .wc-body { padding: 1.5rem; background: var(--white); }
-.wc-body h3 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; color: var(--text-dark); margin-bottom: .25rem; }
+.wc-body h3 { font-family: var(--sans); font-size: 1.2rem; font-weight: 700; color: var(--text-dark); margin-bottom: .25rem; }
 .wc-role { font-size: .8rem; color: var(--red); font-weight: 600; margin-bottom: .75rem; }
 .wc-bio { font-size: .875rem; color: var(--muted); line-height: 1.65; }
 .wc-initials {
@@ -356,10 +347,10 @@ a:hover { color: var(--red-dark); }
 .origin-img img { width: 100%; height: 100%; object-fit: cover; display: block; min-height: 480px; }
 .origin-text .section-eyebrow { text-align: left; }
 .origin-text h2 {
-  font-family: var(--serif); font-size: 2.2rem; font-weight: 700;
+  font-family: var(--sans); font-size: 2.2rem; font-weight: 800;
   color: var(--text-dark); margin-bottom: 1.5rem; text-align: left;
 }
-.origin-text p { color: var(--text-body); font-size: 1.05rem; line-height: 1.8; margin-bottom: 1.25rem; }
+.origin-text p { color: var(--text-body); font-size: .95rem; line-height: 1.6; margin-bottom: 1.25rem; }
 .origin-text .btn { margin-top: 1rem; }
 
 /* ─── IMPACT NUMBERS ─── */
@@ -387,7 +378,7 @@ a:hover { color: var(--red-dark); }
   text-align: center; color: var(--white);
 }
 .donate-cta h2 {
-  font-family: var(--serif); font-size: 2.4rem; font-weight: 700; margin-bottom: 1rem;
+  font-family: var(--sans); font-size: 2.4rem; font-weight: 800; margin-bottom: 1rem; text-align: left;
 }
 .donate-cta p { font-size: 1.1rem; opacity: .9; max-width: 600px; margin: 0 auto 2rem; }
 .btn-gold {
@@ -409,7 +400,7 @@ a:hover { color: var(--red-dark); }
 }
 .event-card {
   border-radius: 16px; overflow: hidden;
-  background: var(--warm-white); border: 1px solid var(--border);
+  background: var(--warm-white);
   transition: transform .3s, box-shadow .3s;
 }
 .event-card:hover { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
@@ -420,7 +411,7 @@ a:hover { color: var(--red-dark); }
   text-transform: uppercase; letter-spacing: .08em; margin-bottom: .5rem;
 }
 .event-card h4 {
-  font-family: var(--serif); font-size: 1.1rem; font-weight: 700;
+  font-family: var(--sans); font-size: 1.1rem; font-weight: 700;
   color: var(--text-dark); line-height: 1.4; margin-bottom: .5rem;
 }
 .event-card p { font-size: .85rem; color: var(--muted); }
@@ -437,7 +428,7 @@ a:hover { color: var(--red-dark); }
 .visit-img { border-radius: 16px; overflow: hidden; }
 .visit-img img { width: 100%; display: block; }
 .visit-text h2 {
-  font-family: var(--serif); font-size: 2rem; font-weight: 700;
+  font-family: var(--sans); font-size: 2rem; font-weight: 800;
   color: var(--text-dark); margin-bottom: 1rem;
 }
 .visit-text p { font-size: 1rem; color: var(--muted); margin-bottom: .75rem; }
@@ -449,7 +440,7 @@ a:hover { color: var(--red-dark); }
   background: var(--cream);
   text-align: center; color: var(--text-body);
 }
-.newsletter h2 { font-family: var(--serif); font-size: 1.8rem; font-weight: 700; margin-bottom: .5rem; }
+.newsletter h2 { font-family: var(--sans); font-size: 1.8rem; font-weight: 800; margin-bottom: .5rem; text-align: left; }
 .newsletter p { color: var(--text-body); margin-bottom: 1.5rem; }
 .newsletter-form {
   display: flex; gap: .75rem;
@@ -470,7 +461,6 @@ a:hover { color: var(--red-dark); }
 /* ─── FOOTER ─── */
 .site-footer  {
   background: var(--deep);
-  border-top: 1px solid rgba(255,255,255,.08);
   padding: 4rem 0 2rem;
   color: rgba(255,255,255,.5);
 }
@@ -480,13 +470,12 @@ a:hover { color: var(--red-dark); }
 }
 .footer-brand p { font-size: .9rem; line-height: 1.7; max-width: 280px; margin-top: .75rem; }
 .footer-col h4 {
-  font-family: var(--serif); font-size: 1rem; font-weight: 700;
+  font-family: var(--sans); font-size: 1rem; font-weight: 800;
   color: var(--white); margin-bottom: 1rem;
 }
 .footer-col a { display: block; color: rgba(255,255,255,.5); font-size: .875rem; padding: .25rem 0; }
 .footer-col a:hover { color: var(--gold); }
 .footer-bottom {
-  border-top: 1px solid rgba(255,255,255,.08);
   padding-top: 1.5rem;
   display: flex; justify-content: space-between; align-items: center;
   font-size: .8rem;
@@ -497,11 +486,8 @@ a:hover { color: var(--red-dark); }
 .origin-quote {
   font-family: var(--serif); font-style: italic; font-size: 1.2rem;
   color: var(--text-dark); line-height: 1.75;
-  border-left: 3px solid var(--red);
-  padding: 1.25rem 1.5rem;
+  padding: 1.25rem 0;
   margin: 1.75rem 0;
-  background: var(--white);
-  border-radius: 0 8px 8px 0;
 }
 .origin-quote cite {
   display: block; font-style: normal;
@@ -514,7 +500,6 @@ a:hover { color: var(--red-dark); }
 .writers-map-section  { padding: 6rem 0; background: var(--warm-white); }
 .wm-panel {
   margin-top: 3rem; border-radius: 20px; overflow: hidden;
-  border: 1px solid var(--border); box-shadow: 0 1px 3px rgba(0,0,0,.06);
 }
 .wm-map-container { height: 600px; position: relative; }
 #wm-map { width: 100%; height: 100%; }
@@ -522,7 +507,7 @@ a:hover { color: var(--red-dark); }
 .wm-slide { flex: 1; transition: opacity .35s ease, transform .35s ease; }
 .wm-slide.wm-out { opacity: 0; transform: translateY(12px); }
 .wm-writer {
-  font-family: var(--serif); font-size: 2rem; font-weight: 700;
+  font-family: var(--sans); font-size: 2rem; font-weight: 800;
   color: var(--text-dark); margin-bottom: .5rem; line-height: 1.2;
 }
 .wm-country-tag { display: flex; align-items: center; gap: .6rem; margin-bottom: 1.5rem; }
@@ -531,7 +516,7 @@ a:hover { color: var(--red-dark); }
 .wm-note { font-size: .95rem; color: var(--text-body); line-height: 1.82; }
 .wm-controls {
   display: flex; align-items: center; gap: .85rem;
-  margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);
+  margin-top: 2.5rem; padding-top: 1.5rem;
 }
 .wm-btn {
   width: 38px; height: 38px; border-radius: 50%;
@@ -648,11 +633,10 @@ a:hover { color: var(--red-dark); }
   <div class="hero-panel">
     <span class="hero-eyebrow">The World's Largest Safe Haven for Exiled Writers</span>
     <h1>When writers are silenced,<br>we give them <em>a home in exile.</em></h1>
-    <p class="hero-sub">City of Asylum works at the<br>intersection of human rights, literature, and community.</p>
-    <img class="hero-logo" src="xCofA_Logo_RGB.png" alt="City of Asylum">
+    <p class="hero-sub">City of Asylum works at the intersection of human rights, literature, and community.</p>
   </div>
   <div class="hero-photo">
-    <img src="290HeroHomePage.jpg" alt="City of Asylum">
+    <img src="hero-writer-new.jpg" alt="City of Asylum">
   </div>
 </section>
 
@@ -660,25 +644,25 @@ a:hover { color: var(--red-dark); }
 <div style="background:transparent;">
 
 <!-- ═══════ THREE PILLARS ═══════ -->
-<section class="pillars-section" style="padding:0.25in 1.25rem 0;background:transparent;">
-  <div class="container">
+<section class="pillars-section" style="padding:0.25in 0 0;background:transparent;">
+  <div class="container" style="padding-left:0;padding-right:0;">
     <div>
-      <p class="home-intro-statement" style="font-family:var(--sans);text-align:center;color:#000;font-size:1.15rem;font-weight:700;max-width:none;white-space:nowrap;margin:-0.125in auto 1.25rem;padding-top:calc(1in/6);line-height:1.35;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
+      <p class="home-intro-statement" style="font-family:var(--sans);text-align:left;color:var(--text-dark);font-size:1.6rem;font-weight:800;max-width:none;white-space:nowrap;margin:0 0 1.25rem;padding-top:calc(1in/6);padding-left:2rem;line-height:1.35;">City of Asylum builds a just community<br>by protecting and celebrating freedom of creative expression.</p>
       <div class="pillar-grid" style="margin-top:1rem;">
         <div class="pillar-card" style="display:flex;flex-direction:column;">
           <h3>Protect</h3>
           <p style="flex:1;">We provide a safe haven for writers (and their families) living in exile under threat of persecution — a house, a living stipend, legal support, medical benefits, and the freedom to keep writing and publishing.</p>
-          <div style="text-align:center;margin-top:1rem;"><a class='btn btn-primary btn-sm' href='/writers'>Exiled Writer Residencies &rarr;</a></div>
+          <div style="text-align:left;margin-top:1rem;"><a class='btn btn-primary btn-sm' href='/writers'>Exiled Writer Residencies &rarr;</a></div>
         </div>
         <div class="pillar-card" style="display:flex;flex-direction:column;">
           <h3>Celebrate</h3>
           <p style="flex:1;">Through free literary readings, concerts, films, and festivals, we celebrate the power of creative expression and build cultural bridges that connect people.</p>
-          <div style="text-align:center;margin-top:1rem;"><a class='btn btn-primary btn-sm' href='/free-arts'>Free Programs &rarr;</a></div>
+          <div style="text-align:left;margin-top:1rem;"><a class='btn btn-primary btn-sm' href='/free-arts'>Free Programs &rarr;</a></div>
         </div>
         <div class="pillar-card" style="display:flex;flex-direction:column;">
-          <h3 style="word-spacing:.25em;">Build Community</h3>
+          <h3>Build Community</h3>
           <p style="flex:1;">By converting abandoned properties into globally-focused cultural spaces, our neighborhood has become a home for creative freedom, where Pittsburgh comes to meet the world.</p>
-          <div style="text-align:center;margin-top:1rem;"><a class='btn btn-primary btn-sm' href='/campus'>Community &rarr;</a></div>
+          <div style="text-align:left;margin-top:1rem;"><a class='btn btn-primary btn-sm' href='/campus'>Community &rarr;</a></div>
         </div>
       </div>
     </div>
@@ -686,10 +670,10 @@ a:hover { color: var(--red-dark); }
 </section>
 
 <!-- ═══════ WRITER SPOTLIGHTS CAROUSEL ═══════ -->
-<section class="writers-section" style="background:transparent;">
+<section class="writers-section" style="background:transparent;padding-top:4rem;">
   <div class="container">
-    <h2 class="section-title" style="color:#000;margin-top:calc(1in/2);">The Human Stories Behind Our Mission</h2>
-    <p class="section-subtitle" style="color:#000;font-weight:700;margin-top:calc(-1in/4);margin-bottom:calc(3.5rem - 1in/4);">Every writer at City of Asylum carries a story of courage. Here are a few.</p>
+    <h2 class="section-title" style="margin-top:0;margin-bottom:.25rem;">The Human Stories Behind Our Mission</h2>
+    <p class="section-subtitle" style="margin-top:.2rem;margin-bottom:1.25rem;">Every writer at City of Asylum carries a story of courage. Here are a few.</p>
   </div>
   <div class="carousel-wrapper">
     <button class="carousel-btn prev" id="carousel-prev" aria-label="Previous">&larr;</button>
