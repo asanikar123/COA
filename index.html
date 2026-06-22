@@ -108,7 +108,7 @@ a:hover { color: var(--red-dark); }
 .nav-dropdown-light a { color: var(--text-dark) !important; }
 .nav-dropdown-light a:hover { color: var(--red) !important; background: rgba(0,0,0,.04) !important;
 }
-.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important;text-align:center;white-space:normal;text-wrap:balance;font-size:1.05rem}
+.nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important;text-align:center;white-space:nowrap;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 
 /* GOLD STANDARD: gold-on-dark renders bright #f5d23a; gold-on-light keeps muted --gold (#c9a227).
@@ -131,23 +131,24 @@ a:hover { color: var(--red-dark); }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
 .hero-panel {
   flex: 1;
-  padding: 3.5rem 2rem;
-  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  padding: 3.5rem 3rem;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
   color: var(--white);
   box-sizing: border-box;
-  text-align: center;
+  text-align: left;
 }
 .hero-eyebrow {
   font-size: .82rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
   color: var(--accent-gold); margin-bottom: .6rem;
 }
 .hero h1 {
-  margin: 0 0 1.75rem; font-family: var(--sans); font-weight: 800;
+  margin: 0 0 1.75rem 1.25rem; font-family: var(--sans); font-weight: 800;
   font-size: clamp(2.5rem, 3.5vw, 4rem); line-height: 1.05; color: var(--white);
 }
 .hero h1 em { font-family: var(--serif); font-style: italic; font-weight: 700; color: var(--accent-gold); white-space: nowrap; }
+.hero-h1-l2 { display: inline-block; margin-left: 2.5rem; }
 .hero-sub {
-  font-family: var(--sans); font-size: 1.1rem; line-height: 1.55; color: rgba(255,255,255,.82); white-space: nowrap;
+  font-family: var(--sans); font-size: 1.1rem; line-height: 1.55; color: rgba(255,255,255,.82); white-space: nowrap; margin-left: 1.25rem;
 }
 @media (max-width: 768px) {
   .hero { flex-direction: column; min-height: 0; }
@@ -636,7 +637,7 @@ a:hover { color: var(--red-dark); }
 <section class="hero">
   <div class="hero-panel">
     <span class="hero-eyebrow">The World's Largest Safe Haven for Exiled Writers</span>
-    <h1>When writers are silenced,<br>we give them <em>a home in exile.</em></h1>
+    <h1>When writers are silenced,<br><span class="hero-h1-l2">we give them <em>a home in exile.</em></span></h1>
     <p class="hero-sub">City of Asylum works at the intersection of human rights, literature, and community.</p>
   </div>
   <div class="hero-photo">
