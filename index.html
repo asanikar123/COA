@@ -237,6 +237,11 @@
 }
 .icorn-badge img { width: 70%; height: auto; filter: invert(1); }
 .donate-content { padding: 0 3rem 0 var(--rail-gap); }
+/* Wide screens: center the Our Story / Donate split bands so they aren't
+   stranded on the left with a big empty right gutter (matches .container). */
+@media (min-width: 1600px) {
+  .origin-grid, .donate-row { max-width: 1120px; margin-left: auto; margin-right: auto; }
+}
 .donate-cta h2 {
   font-family: var(--sans); font-size: 1.9rem; font-weight: 800; margin: 0 0 .6rem; text-align: left;
   color: var(--coa-red); line-height: 1.15;
