@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City of Asylum — Design Style Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<!-- The live design system — this page renders the REAL tokens & components -->
+<link rel="stylesheet" href="design-system.css">
+<style>
+  /* Style-guide chrome only — not part of the design system */
+  body { background: var(--warm-white); }
+  .sg-wrap { max-width: 1040px; margin: 0 auto; padding: 0 2rem 6rem; }
+  .sg-masthead {
+    background: var(--deep); color: var(--white);
+    padding: 4rem 0 3.5rem; margin-bottom: 3.5rem;
+  }
+  .sg-masthead .sg-inner { max-width: 1040px; margin: 0 auto; padding: 0 2rem; }
+  .sg-kicker { font-size: .8rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase; color: var(--accent-gold); }
+  .sg-masthead h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(2.2rem, 4vw, 3.4rem); line-height: 1.05; margin: .6rem 0 .8rem; }
+  .sg-masthead p { color: rgba(255,255,255,.72); max-width: 640px; font-size: 1.05rem; line-height: 1.6; }
+  .sg-meta { margin-top: 1.6rem; display: flex; gap: 2.5rem; flex-wrap: wrap; font-size: .8rem; color: rgba(255,255,255,.5); }
+  .sg-meta b { color: rgba(255,255,255,.85); font-weight: 600; display: block; text-transform: uppercase; letter-spacing: .08em; font-size: .68rem; margin-bottom: .2rem; }
+
+  .sg-section { margin-bottom: 4rem; }
+  .sg-section > h2 {
+    font-family: var(--sans); font-weight: 800; font-size: 1.6rem; color: var(--text-dark);
+    padding-bottom: .6rem; border-bottom: 2px solid var(--border); margin-bottom: .4rem;
+  }
+  .sg-section > .sg-lead { color: var(--muted); font-size: .95rem; margin-bottom: 1.6rem; max-width: 720px; }
+  .sg-num { color: var(--accent-gold); font-weight: 800; margin-right: .5rem; }
+
+  /* Swatches */
+  .sg-swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 1rem; margin-bottom: 1.5rem; }
+  .sg-swatch { border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--white); }
+  .sg-chip { height: 84px; }
+  .sg-swatch .sg-body { padding: .6rem .75rem .75rem; }
+  .sg-swatch .sg-name { font-weight: 700; font-size: .82rem; color: var(--text-dark); }
+  .sg-swatch .sg-hex { font-size: .72rem; color: var(--muted); font-family: ui-monospace, Menlo, monospace; margin-top: .1rem; }
+  .sg-swatch .sg-use { font-size: .7rem; color: var(--muted); margin-top: .35rem; line-height: 1.4; }
+  .sg-grouplabel { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin: 1.2rem 0 .8rem; }
+
+  /* Type specimens */
+  .sg-type-row { padding: 1rem 0; border-bottom: 1px dashed var(--border); }
+  .sg-type-row:last-child { border-bottom: none; }
+  .sg-type-meta { font-size: .72rem; color: var(--muted); font-family: ui-monospace, Menlo, monospace; margin-bottom: .5rem; }
+
+  .sg-demo { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 2rem; }
+  .sg-demo + .sg-demo { margin-top: 1rem; }
+  .sg-row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .sg-note { font-size: .8rem; color: var(--muted); margin-top: 1rem; }
+
+  /* Rail diagram */
+  .sg-rail-fig { background: var(--deep); border-radius: 14px; overflow: hidden; display: flex; min-height: 230px; position: relative; }
+  .sg-rail-photo { width: 30%; background: linear-gradient(135deg, #6f5510, #2a2724); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,.5); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; }
+  .sg-rail-text { flex: 1; padding: 2rem 2rem 2rem 2.2rem; color: var(--white); position: relative; }
+  .sg-rail-text .l { background: rgba(255,255,255,.85); height: 13px; border-radius: 3px; margin-bottom: .7rem; }
+  .sg-rail-text .l.eyebrow { width: 120px; height: 8px; background: var(--accent-gold); }
+  .sg-rail-text .l.h { height: 22px; width: 70%; }
+  .sg-rail-text .l.h2 { width: 55%; }
+  .sg-rail-text .l.body { background: rgba(255,255,255,.4); width: 80%; height: 9px; }
+  .sg-rail-text .l.body.s { width: 65%; }
+  .sg-rail-edge { position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: var(--coa-red); }
+  .sg-rail-edge::after { content: "shared left edge — every line starts here"; position: absolute; top: 6px; left: 8px; font-size: .66rem; color: #ff8aa0; white-space: nowrap; letter-spacing: .04em; }
+
+  /* Full-bleed demo so nav/footer render edge-to-edge like the live site */
+  .sg-fullbleed { position: relative; left: 50%; width: 100vw; transform: translateX(-50%); border-radius: 0; border: none; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); overflow: hidden; }
+  .sg-footnote { font-size: .82rem; color: var(--muted); border-left: 3px solid var(--accent-gold); padding: .4rem 0 .4rem 1rem; margin-top: 1.2rem; }
+  code { font-family: ui-monospace, Menlo, monospace; font-size: .85em; background: rgba(0,0,0,.05); padding: .1rem .35rem; border-radius: 4px; color: var(--coa-red-dark); }
+</style>
+</head>
+<body>
+
+<div class="sg-masthead">
+  <div class="sg-inner">
+    <span class="sg-kicker">Design System · v1</span>
+    <h1>City of Asylum<br>Visual Style Guide</h1>
+    <p>The shared language for every page of the site — colors, type, components, and the layout principle that keeps it all aligned. This page renders the live system, so what you approve here is exactly what ships.</p>
+    <div class="sg-meta">
+      <div><b>Status</b>For design review</div>
+      <div><b>Source</b>design-system.css</div>
+      <div><b>Reference page</b>Homepage (index.html)</div>
+    </div>
+  </div>
+</div>
+
+<div class="sg-wrap">
+
+  <!-- 1. THE RAIL -->
+  <section class="sg-section">
+    <h2><span class="sg-num">01</span>The Rail — our layout principle</h2>
+    <p class="sg-lead">The site is built on a <b>left rail</b>, not a centered column. A fixed-width left column holds full-bleed imagery; <b>every line of text on the page shares one vertical left edge</b>. Headlines, body copy, eyebrows, quotes, and buttons all begin on that line, flush beneath the hero text.</p>
+    <div class="sg-rail-fig">
+      <div class="sg-rail-photo">Image rail</div>
+      <div class="sg-rail-text">
+        <div class="sg-rail-edge"></div>
+        <div class="l eyebrow"></div>
+        <div class="l h"></div>
+        <div class="l h h2"></div>
+        <div class="l body" style="margin-top:1.1rem"></div>
+        <div class="l body s"></div>
+      </div>
+    </div>
+    <p class="sg-footnote">At a 1440px screen this shared edge lands at ~437px. It is enforced by offsetting content with <code>margin-left: var(--rail)</code>. The footer is the one intentional exception — it re-centers full width.</p>
+  </section>
+
+  <!-- 2. COLOR -->
+  <section class="sg-section">
+    <h2><span class="sg-num">02</span>Color</h2>
+    <p class="sg-lead">A warm, literary palette. Red is reserved for primary calls-to-action; gold for accents and emphasis.</p>
+
+    <div class="sg-grouplabel">Brand &amp; action</div>
+    <div class="sg-swatch-grid">
+      <div class="sg-swatch"><div class="sg-chip" style="background:#CC1333"></div><div class="sg-body"><div class="sg-name">Donate Red</div><div class="sg-hex">#CC1333 · --coa-red</div><div class="sg-use">Primary CTA buttons</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#a8102a"></div><div class="sg-body"><div class="sg-name">Red (dark)</div><div class="sg-hex">#a8102a · --coa-red-dark</div><div class="sg-use">CTA hover</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#e0a417"></div><div class="sg-body"><div class="sg-name">Accent Gold</div><div class="sg-hex">#e0a417 · --accent-gold</div><div class="sg-use">Eyebrows, nav Donate, emphasis</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#6b6155"></div><div class="sg-body"><div class="sg-name">Gold (muted)</div><div class="sg-hex">#6b6155 · --gold</div><div class="sg-use">Quote attributions, labels</div></div></div>
+    </div>
+
+    <div class="sg-grouplabel">Ink &amp; text</div>
+    <div class="sg-swatch-grid">
+      <div class="sg-swatch"><div class="sg-chip" style="background:#1c1a17"></div><div class="sg-body"><div class="sg-name">Deep</div><div class="sg-hex">#1c1a17 · --deep</div><div class="sg-use">Hero/footer bg, headings</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#37332e"></div><div class="sg-body"><div class="sg-name">Body</div><div class="sg-hex">#37332e · --text-body</div><div class="sg-use">Paragraph text</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#7a7268"></div><div class="sg-body"><div class="sg-name">Muted</div><div class="sg-hex">#7a7268 · --muted</div><div class="sg-use">Subtitles, captions</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#8a6a12"></div><div class="sg-body"><div class="sg-name">Link</div><div class="sg-hex">#8a6a12 · --red</div><div class="sg-use">Inline links</div></div></div>
+    </div>
+
+    <div class="sg-grouplabel">Surfaces</div>
+    <div class="sg-swatch-grid">
+      <div class="sg-swatch"><div class="sg-chip" style="background:#ffffff"></div><div class="sg-body"><div class="sg-name">White</div><div class="sg-hex">#ffffff · --white</div><div class="sg-use">Base surface</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#faf8f3"></div><div class="sg-body"><div class="sg-name">Warm White</div><div class="sg-hex">#faf8f3 · --warm-white</div><div class="sg-use">Alt section bg</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#f4efe7"></div><div class="sg-body"><div class="sg-name">Cream</div><div class="sg-hex">#f4efe7 · --cream</div><div class="sg-use">Section bg, cards</div></div></div>
+      <div class="sg-swatch"><div class="sg-chip" style="background:#e4ddd0"></div><div class="sg-body"><div class="sg-name">Border</div><div class="sg-hex">#e4ddd0 · --border</div><div class="sg-use">Hairlines, outlines</div></div></div>
+    </div>
+  </section>
+
+  <!-- 3. TYPOGRAPHY -->
+  <section class="sg-section">
+    <h2><span class="sg-num">03</span>Typography</h2>
+    <p class="sg-lead"><b>Inter</b> carries all UI and headings. <b>Playfair Display</b> appears only as italic emphasis and pull quotes.</p>
+    <div class="sg-demo">
+      <div class="sg-type-row">
+        <div class="sg-type-meta">Hero headline · Inter 800 · clamp(2.5rem–4rem)</div>
+        <div style="font-family:var(--sans);font-weight:800;font-size:3rem;line-height:1.05;color:var(--text-dark)">When writers are silenced, <em style="font-family:var(--serif);font-style:italic;font-weight:700;color:var(--accent-gold)">a home in exile.</em></div>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-meta">Section title · .section-title · Inter 800 · 2.25rem</div>
+        <div class="section-title" style="margin:0">Born from a Single Moment of Inspiration</div>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-meta">Eyebrow · .section-eyebrow · 0.75rem · tracked uppercase</div>
+        <span class="section-eyebrow" style="margin:0">Our Story</span>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-meta">Body · 1rem · line-height 1.55</div>
+        <p style="max-width:640px;color:var(--text-body)">City of Asylum works at the intersection of human rights, literature, and community — protecting persecuted writers and celebrating creative freedom from Pittsburgh's Northside.</p>
+      </div>
+      <div class="sg-type-row">
+        <div class="sg-type-meta">Pull quote · Playfair Display italic</div>
+        <p style="font-family:var(--serif);font-style:italic;font-size:1.2rem;color:var(--accent-gold);max-width:640px">“When I came to Pittsburgh and people discovered me, they dug me out of the earth and I became alive.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. BUTTONS -->
+  <section class="sg-section">
+    <h2><span class="sg-num">04</span>Buttons</h2>
+    <p class="sg-lead">Red is the primary CTA. Gold is secondary/promotional. Outline is tertiary.</p>
+    <div class="sg-demo">
+      <div class="sg-row">
+        <a class="btn-gold" href="#">Donate Now</a>
+        <a class="btn btn-primary" href="#">Primary action</a>
+        <a class="btn btn-secondary" href="#">Read our full history &rarr;</a>
+        <a class="btn btn-primary btn-sm" href="#">Small button</a>
+        <a class="nav-donate" href="#" style="display:inline-block">Donate (nav pill)</a>
+      </div>
+      <div class="sg-note"><code>.btn-gold</code> primary CTA · <code>.btn-primary</code> gold · <code>.btn-secondary</code> outline · <code>.btn-sm</code> compact · <code>.nav-donate</code> nav pill</div>
+    </div>
+  </section>
+
+  <!-- 5. NAV -->
+  <section class="sg-section">
+    <h2><span class="sg-num">05</span>Navigation</h2>
+    <p class="sg-lead">Sticky white bar, 98px tall. Logo sits flush to the page's left edge; uppercase items with hover dropdowns; the gold Donate pill anchors the right. Identical on every page.</p>
+    <div class="sg-demo sg-fullbleed" style="padding:0">
+      <nav class="site-nav" style="position:relative">
+        <div class="nav-inner">
+          <a class="nav-logo" href="#"><img src="xCofA_Logo_RGB.png" alt="City of Asylum"></a>
+          <div class="nav-links">
+            <a href="#" style="color:var(--gold);font-weight:700;">Home</a>
+            <div class="nav-item"><a href="#">About Us <span class="nav-chevron">&#9662;</span></a></div>
+            <div class="nav-item"><a href="#">Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a></div>
+            <div class="nav-item"><a href="#" style="color:var(--red);font-weight:700;">Free Programs &amp; Tix <span class="nav-chevron">&#9662;</span></a></div>
+            <div class="nav-item"><a href="#">Community Building <span class="nav-chevron">&#9662;</span></a></div>
+            <div class="nav-item"><a href="#">Media &amp; Archive <span class="nav-chevron">&#9662;</span></a></div>
+            <a href="#">Bookstore &amp; Restaurant</a>
+            <a class="nav-donate" href="#">Donate</a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 6. FOOTER -->
+  <section class="sg-section">
+    <h2><span class="sg-num">06</span>Footer</h2>
+    <p class="sg-lead">Dark, four columns. Brand blurb at left, three link columns, and a <b>red</b> Donate button under Support. Identical on every page.</p>
+    <div class="sg-demo sg-fullbleed" style="padding:0">
+      <footer class="site-footer" style="padding-top:3rem">
+        <div class="container">
+          <div class="footer-grid">
+            <div class="footer-brand">
+              <a class="nav-logo" href="#" style="margin-bottom:.5rem"><img src="xCofA_Logo_RGB.png" alt="City of Asylum" style="height:70px;"></a>
+              <p>Protecting and celebrating freedom of creative expression since 2004.<br>The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+            </div>
+            <div class="footer-col"><h4>Explore</h4><a href="#">About Us</a><a href="#">Writers &amp; Residencies</a><a href="#" style="color:var(--red);font-weight:700;">Free Programs &amp; Tix</a><a href="#">Media &amp; Archive</a></div>
+            <div class="footer-col"><h4>Visit</h4><a href="#">Alphabet City</a><a href="#">Bookstore</a><a href="#">Restaurant</a><a href="#">Directions</a></div>
+            <div class="footer-col"><h4>Support</h4><a href="#" style="background:var(--coa-red);color:var(--white);font-weight:700;padding:.5rem 1.4rem;border-radius:6px;display:inline-block;margin-top:.15rem;text-transform:uppercase;letter-spacing:.03em;">Donate</a><a href="#">Volunteer</a><a href="#">Contact Us</a></div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </section>
+
+</div>
+</body>
+</html>
