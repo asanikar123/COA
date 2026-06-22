@@ -45,7 +45,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--red); text-decoration: none; transition: color .2s; }
 a:hover { color: var(--red-dark); }
 .container { max-width: 1120px; margin-left: var(--rail); margin-right: auto; padding: 0 2rem 0 var(--rail-gap); }
-.donate-cta .container, .site-footer .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.site-footer .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 @media (max-width: 900px) { .container { margin-left: auto; padding: 0 1.25rem; } }
 
 /* ─── NAV ─── */
@@ -342,7 +342,9 @@ a:hover { color: var(--red-dark); }
   .wc-bio-toggle { display: flex; }
   .writers-section { padding: 2.5rem 0 4rem; }
   .origin  { padding-top: 2rem !important; }
-  .donate-row { flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important; }
+  .donate-row { grid-template-columns: 1fr !important; }
+  .donate-logos { padding: 0 1.25rem; }
+  .donate-content { padding: 1.5rem 1.25rem 0; }
   .donate-logo-coa, .icorn-badge { height: 92px !important; }
   .icorn-badge { width: 92px !important; }
 }
@@ -393,15 +395,15 @@ a:hover { color: var(--red-dark); }
   background: var(--white);
   text-align: left; color: var(--text-dark);
 }
-.donate-row { display: flex; align-items: center; gap: 2.5rem; }
-.donate-logos { flex: 0 0 auto; display: flex; gap: 1rem; align-items: flex-start; }
+.donate-row { display: grid; grid-template-columns: var(--rail) 1fr; align-items: center; }
+.donate-logos { display: flex; gap: 1rem; align-items: flex-start; padding-left: 2rem; }
 .donate-logo-coa { height: 163px; width: auto; display: block; }
 .icorn-badge {
   width: 152px; height: 152px; flex: 0 0 auto; background: #000; border-radius: 4px;
   display: inline-flex; align-items: center; justify-content: center;
 }
 .icorn-badge img { width: 70%; height: auto; filter: invert(1); }
-.donate-content { flex: 1; min-width: 0; }
+.donate-content { padding: 0 3rem 0 var(--rail-gap); }
 .donate-cta h2 {
   font-family: var(--sans); font-size: 1.9rem; font-weight: 800; margin: 0 0 .6rem; text-align: left;
   color: var(--coa-red); line-height: 1.15;
@@ -863,17 +865,15 @@ a:hover { color: var(--red-dark); }
 
 <!-- ═══════ DONATE CTA ═══════ -->
 <section class="donate-cta">
-  <div class="container">
-    <div class="donate-row">
-      <div class="donate-logos">
-        <img class="donate-logo-coa" src="xCofA_Logo_RGB.png" alt="City of Asylum logo">
-        <span class="icorn-badge"><img src="ICORN%20LOGO.png" alt="ICORN logo"></span>
-      </div>
-      <div class="donate-content">
-        <h2>Your Donation Makes the Difference!</h2>
-        <p>City of Asylum is funded by individuals and foundations, unlike every other city in the 90-city International Cities of Refuge Network. All other Cities are primarily government funded.</p>
-        <a class='btn-gold' href='donate'>Donate Now</a>
-      </div>
+  <div class="donate-row">
+    <div class="donate-logos">
+      <img class="donate-logo-coa" src="xCofA_Logo_RGB.png" alt="City of Asylum logo">
+      <span class="icorn-badge"><img src="ICORN%20LOGO.png" alt="ICORN logo"></span>
+    </div>
+    <div class="donate-content">
+      <h2>Your Donation Makes the Difference!</h2>
+      <p>City of Asylum is funded by individuals and foundations, unlike every other city in the 90-city International Cities of Refuge Network. All other Cities are primarily government funded.</p>
+      <a class='btn-gold' href='donate'>Donate Now</a>
     </div>
   </div>
 </section>
