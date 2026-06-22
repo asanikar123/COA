@@ -34,6 +34,8 @@
   --border: #e4ddd0;
   --serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --sans: 'Inter', 'Segoe UI', Calibri, Arial, sans-serif;
+  --rail: clamp(320px, 27vw, 500px);   /* hero photo column + content left offset */
+  --rail-gap: 3rem;                     /* gap between photo and text */
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,7 +44,9 @@ body { font-family: var(--sans); color: var(--text-body); line-height: 1.55; bac
 img { max-width: 100%; height: auto; display: block; }
 a { color: var(--red); text-decoration: none; transition: color .2s; }
 a:hover { color: var(--red-dark); }
-.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.container { max-width: 1120px; margin-left: var(--rail); margin-right: auto; padding: 0 2rem 0 var(--rail-gap); }
+.origin .container, .donate-cta .container, .site-footer .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+@media (max-width: 900px) { .container { margin-left: auto; padding: 0 1.25rem; } }
 
 /* ─── NAV ─── */
 .site-nav {
@@ -123,7 +127,7 @@ a:hover { color: var(--red-dark); }
 }
 .hero-photo {
   flex-shrink: 0;
-  width: calc((100vw - 1200px) / 2 - 3.5rem);
+  width: var(--rail);
   min-width: 0;
   overflow: hidden;
   order: -1;
@@ -131,7 +135,7 @@ a:hover { color: var(--red-dark); }
 .hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center 25%; display: block; }
 .hero-panel {
   flex: 1;
-  padding: 3.5rem 3rem 3.5rem 3.5rem;
+  padding: 3.5rem 3rem 3.5rem var(--rail-gap);
   display: flex; flex-direction: column; justify-content: center; align-items: flex-start;
   color: var(--white);
   box-sizing: border-box;
@@ -650,9 +654,9 @@ a:hover { color: var(--red-dark); }
 
 <!-- ═══════ THREE PILLARS ═══════ -->
 <section class="pillars-section" style="padding:0.25in 0 0;background:transparent;">
-  <div class="container" style="padding-left:0;padding-right:0;">
+  <div class="container">
     <div>
-      <p class="home-intro-statement" style="font-family:var(--sans);text-align:left;color:var(--text-dark);font-size:1.6rem;font-weight:800;max-width:none;white-space:nowrap;margin:0 0 1.25rem;padding-top:calc(1in/6);padding-left:2rem;line-height:1.35;">City of Asylum builds a just community<br>by protecting and celebrating freedom of creative expression.</p>
+      <p class="home-intro-statement" style="font-family:var(--sans);text-align:left;color:var(--text-dark);font-size:1.6rem;font-weight:800;max-width:none;white-space:nowrap;margin:0 0 1.25rem;padding-top:calc(1in/6);line-height:1.35;">City of Asylum builds a just community<br>by protecting and celebrating freedom of creative expression.</p>
       <div class="pillar-grid" style="margin-top:1rem;">
         <div class="pillar-card" style="display:flex;flex-direction:column;">
           <h3>Protect</h3>
