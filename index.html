@@ -19,6 +19,8 @@
   --slate: #54504a;
   --red: #8a6a12;
   --red-dark: #6f5510;
+  --coa-red: #CC1333;
+  --coa-red-dark: #a8102a;
   --gold: #6b6155;
   --gold-light: #8a7f70;
   --accent-gold: #e0a417;
@@ -54,8 +56,8 @@ a:hover { color: var(--red-dark); }
   padding: 0 2rem; height: 98px;
 }
 .nav-logo { display: flex; align-items: center; gap: .1rem; color: var(--text-dark); text-decoration: none; }
-.nav-logo img { height: 84px; width: auto; margin-left: 0.0625in; }
-.nav-logo span { font-family:var(--sans); font-weight: 700; font-size: 1.35rem; letter-spacing: .02em; line-height:1.1; text-align:right;}
+.nav-logo img { height: 96px; width: auto; margin-left: 0.0625in; }
+.nav-logo span { display: none; }
 .nav-links{display:flex;align-items:center;gap:1rem;flex-wrap:nowrap}
 .nav-links a{white-space:nowrap;
   color: var(--text-dark); font-size: .875rem; font-weight: 500;
@@ -163,8 +165,8 @@ a:hover { color: var(--red-dark); }
 }
 .btn-primary { background: #e0a417; color: #1c1a17; }
 .btn-primary:hover { background: #c98f0e; color: #1c1a17; }
-.btn-secondary { background: transparent; color: var(--white); border: 2px solid rgba(255,255,255,.3); }
-.btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+.btn-secondary { background: transparent; color: var(--text-dark); border: 2px solid var(--border); }
+.btn-secondary:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
 .btn-sm { font-size: .85rem; padding: .6rem 1.5rem; }
 .hero-stat-row {
   display: flex; gap: 3rem; margin-top: 4rem;
@@ -374,20 +376,21 @@ a:hover { color: var(--red-dark); }
 /* ─── DONATE CTA ─── */
 .donate-cta {
   padding: 1.5rem 0 3rem;
-  background: var(--red);
-  text-align: center; color: var(--white);
+  background: var(--white);
+  text-align: left; color: var(--text-dark);
 }
 .donate-cta h2 {
   font-family: var(--sans); font-size: 2.4rem; font-weight: 800; margin-bottom: 1rem; text-align: left;
+  color: var(--coa-red);
 }
-.donate-cta p { font-size: 1.1rem; opacity: .9; max-width: 600px; margin: 0 auto 2rem; }
+.donate-cta p { font-size: 1.1rem; color: var(--text-body); max-width: 700px; margin: 0 0 2rem; }
 .btn-gold {
-  background: var(--white); color: var(--red); font-weight: 700;
+  background: var(--coa-red); color: var(--white); font-weight: 700;
   padding: 1rem 2.5rem; border-radius: 8px; font-size: 1.1rem;
   display: inline-flex; align-items: center; gap: .5rem;
   transition: all .25s; border: none; cursor: pointer;
 }
-.btn-gold:hover { background: var(--cream); color: var(--red); }
+.btn-gold:hover { background: var(--coa-red-dark); color: var(--white); }
 
 /* ─── EVENTS PREVIEW ─── */
 .events-preview {
@@ -485,14 +488,14 @@ a:hover { color: var(--red-dark); }
 /* ─── ORIGIN QUOTE ─── */
 .origin-quote {
   font-family: var(--serif); font-style: italic; font-size: 1.2rem;
-  color: var(--text-dark); line-height: 1.75;
+  color: var(--accent-gold); line-height: 1.75;
   padding: 1.25rem 0;
   margin: 1.75rem 0;
 }
 .origin-quote cite {
   display: block; font-style: normal;
   font-size: .8rem; font-family: var(--sans);
-  color: var(--muted); letter-spacing: .06em; text-transform: uppercase;
+  color: var(--gold); letter-spacing: .06em; text-transform: uppercase;
   margin-top: .75rem; font-weight: 600;
 }
 
@@ -838,12 +841,12 @@ a:hover { color: var(--red-dark); }
 <!-- ═══════ DONATE CTA ═══════ -->
 <section class="donate-cta">
   <div class="container">
-    <div class="icorn-intro" style="display:flex;align-items:flex-start;gap:2rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.25);">
+    <div class="icorn-intro" style="display:flex;align-items:flex-start;gap:2rem;margin-bottom:3rem;padding-bottom:2rem;border-bottom:1px solid var(--border);">
       <div class="logo-pair">
-        <img src="CofA_Logo_RGB.jpg" alt="City of Asylum logo" style="flex:0 0 auto;height:140px;width:auto;clip-path:inset(0 7% 7% 0);background:#0f1419;margin-top:-.4rem;margin-left:.5in;">
-        <img src="ICORN%20LOGO.png" alt="ICORN logo" style="flex:0 0 auto;width:130px;height:auto;filter:invert(1);margin-top:-.4rem;">
+        <img src="xCofA_Logo_RGB.png" alt="City of Asylum logo" style="flex:0 0 auto;height:120px;width:auto;margin-top:-.4rem;">
+        <img src="ICORN%20LOGO.png" alt="ICORN logo" style="flex:0 0 auto;width:130px;height:auto;margin-top:-.4rem;">
       </div>
-      <p style="flex:1;font-family:var(--sans);font-size:1.05rem;font-weight:400;line-height:1.7;color:rgba(255,255,255,.85);margin:-.8rem 0 0 0;text-align:left;">City of Asylum Pittsburgh is the U.S. hub city of the International Cities of Refuge Network (ICORN) &mdash; a global network of over 90 cities across Europe and the Americas that provide safe haven for persecuted writers, artists, and journalists. 10% of all writers protected in the ICORN network are in Pittsburgh.</p>
+      <p style="flex:1;font-family:var(--sans);font-size:1.05rem;font-weight:400;line-height:1.7;color:var(--text-body);margin:-.8rem 0 0 0;text-align:left;">City of Asylum Pittsburgh is the U.S. hub city of the International Cities of Refuge Network (ICORN) &mdash; a global network of over 90 cities across Europe and the Americas that provide safe haven for persecuted writers, artists, and journalists. 10% of all writers protected in the ICORN network are in Pittsburgh.</p>
     </div>
     <h2>Your Donation Makes the Difference</h2>
     <p>City of Asylum is funded by individuals and foundations, unlike every other city in the 90-city International Cities of Refuge Network. All other Cities are primarily government funded.</p>
