@@ -163,13 +163,17 @@ a:hover { color: var(--red-dark); }
 .hero-sub {
   font-family: var(--sans); font-size: 1.1rem; line-height: 1.55; color: rgba(255,255,255,.82); white-space: nowrap; margin-left: 6.5rem;
 }
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .hero { flex-direction: column; min-height: 0; }
   .hero-photo { width: 100%; min-width: 0; height: 240px; }
   .hero-photo img { object-position: top center; }
   .hero-panel { padding: 1.75rem 1.25rem; max-width: none; }
-  .hero h1 { font-size: clamp(1.5rem, 6vw, 2.1rem); margin-bottom: 1rem; }
-  .hero-sub { font-size: .95rem; }
+  /* reset the desktop cascade so text wraps and fits narrow screens */
+  .hero h1 { font-size: clamp(1.5rem, 6vw, 2.1rem); margin: 0 0 1rem 0; }
+  .hero-h1-l2 { display: inline; margin-left: 0; }
+  .hero h1 em { white-space: normal; }
+  .hero-eyebrow { margin-left: 0; }
+  .hero-sub { font-size: .95rem; margin-left: 0; white-space: normal; }
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .btn {
@@ -392,9 +396,9 @@ a:hover { color: var(--red-dark); }
 }
 .donate-row { display: flex; align-items: center; gap: 2.5rem; }
 .donate-logos { flex: 0 0 auto; display: flex; gap: 1rem; align-items: center; }
-.donate-logo-coa { height: 132px; width: auto; display: block; border-radius: 4px; }
+.donate-logo-coa { height: 152px; width: auto; display: block; border-radius: 4px; }
 .icorn-badge {
-  width: 132px; height: 132px; flex: 0 0 auto; background: #000; border-radius: 4px;
+  width: 152px; height: 152px; flex: 0 0 auto; background: #000; border-radius: 4px;
   display: inline-flex; align-items: center; justify-content: center;
 }
 .icorn-badge img { width: 70%; height: auto; filter: invert(1); }
@@ -903,7 +907,7 @@ a:hover { color: var(--red-dark); }
       </div>
       <div class="footer-col">
         <h4>Support</h4>
-        <a href='donate' style='background:var(--red);color:var(--white);font-weight:700;padding:.4rem 1rem;border-radius:6px;display:inline-block;margin-top:.15rem;'>Donate</a>
+        <a href='donate' style='background:var(--coa-red);color:var(--white);font-weight:700;padding:.5rem 1.4rem;border-radius:6px;display:inline-block;margin-top:.15rem;text-transform:uppercase;letter-spacing:.03em;'>Donate</a>
         <a href='about#inquiries'>Volunteer</a>
         <a href='about#inquiries'>Free Tour</a>
         <a href='about#inquiries'>Book a Writer</a>
