@@ -55,10 +55,10 @@ a:hover { color: var(--red-dark); }
   border-bottom: none;   /* gold band removed */
 }
 .nav-inner {
-  max-width: 1440px; margin: 0 auto;
+  max-width: none; margin: 0;
   display: flex; align-items: center; justify-content: space-between;
   gap: 2rem;
-  padding: 0 2rem; height: 98px;
+  padding: 0 2rem 0 0; height: 98px;
 }
 .nav-logo { display: flex; align-items: center; gap: .1rem; color: var(--text-dark); text-decoration: none; }
 .nav-logo img { height: 96px; width: auto; margin-left: 0.0625in; }
@@ -118,7 +118,7 @@ a:hover { color: var(--red-dark); }
 .nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 /* Shrink the nav so all items + Donate fit on smaller laptops without overflow */
 @media (min-width: 769px) and (max-width: 1400px) {
-  .nav-inner { padding: 0 1.25rem; }
+  .nav-inner { padding: 0 1.25rem 0 0; }
   .nav-links { gap: .4rem; }
   .nav-links a { padding: .5rem .25rem; }
   .nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){font-size:.74rem;letter-spacing:.02em}
@@ -890,7 +890,7 @@ a:hover { color: var(--red-dark); }
           <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
           <img src="xCofA_Logo_RGB.png" alt="City of Asylum" style="height:70px;">
         </a>
-        <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+        <p>Protecting and celebrating freedom of creative expression since 2004.<br>The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
