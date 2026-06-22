@@ -45,7 +45,7 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--red); text-decoration: none; transition: color .2s; }
 a:hover { color: var(--red-dark); }
 .container { max-width: 1120px; margin-left: var(--rail); margin-right: auto; padding: 0 2rem 0 var(--rail-gap); }
-.origin .container, .donate-cta .container, .site-footer .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.donate-cta .container, .site-footer .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 @media (max-width: 900px) { .container { margin-left: auto; padding: 0 1.25rem; } }
 
 /* ─── NAV ─── */
@@ -342,8 +342,6 @@ a:hover { color: var(--red-dark); }
   .wc-bio-toggle { display: flex; }
   .writers-section { padding: 2.5rem 0 4rem; }
   .origin  { padding-top: 2rem !important; }
-  .origin-img { min-height: calc(480px - 13in/8) !important; height: calc(480px - 13in/8) !important; max-height: calc(480px - 13in/8) !important; }
-  .origin-img img { min-height: calc(480px - 13in/8) !important; height: calc(480px - 13in/8) !important; object-fit: cover !important; object-position: 50% 100% !important; }
   .donate-row { flex-direction: column !important; align-items: flex-start !important; gap: 1.5rem !important; }
   .donate-logo-coa, .icorn-badge { height: 92px !important; }
   .icorn-badge { width: 92px !important; }
@@ -352,17 +350,17 @@ a:hover { color: var(--red-dark); }
 
 /* ─── ORIGIN STORY ─── */
 .origin  {
-  padding: calc(6rem - 1in/2) 0 4.5rem;
+  padding: 3rem 0;
   background: var(--cream);
   color: var(--text-body);
 }
-.origin .container { max-width: 1080px; }
 .origin-grid {
-  display: grid; grid-template-columns: 300px 1fr; gap: 3rem;
+  display: grid; grid-template-columns: var(--rail) 1fr; gap: 0;
   align-items: start;
 }
-.origin-img { border-radius: 16px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-.origin-img img { width: 100%; height: auto; display: block; }
+.origin-img { padding: 0 2rem; }
+.origin-img img { width: 100%; height: auto; display: block; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
+.origin-text { padding: 0 3rem 0 var(--rail-gap); max-width: 700px; }
 .origin-text .section-eyebrow { text-align: left; margin-bottom: .4rem; }
 .origin-text h2 {
   font-family: var(--sans); font-size: 1.75rem; font-weight: 800;
@@ -576,6 +574,8 @@ a:hover { color: var(--red-dark); }
   .writer-spotlight { grid-template-columns: 1fr; }
   .writer-img { min-height: 300px; }
   .origin-grid, .visit-inner { grid-template-columns: 1fr; }
+  .origin-img { padding: 0 1.25rem; }
+  .origin-text { padding: 1.5rem 1.25rem 0; }
   .impact-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .hero-stat-row { flex-wrap: wrap; gap: 1.5rem; }
@@ -839,23 +839,21 @@ a:hover { color: var(--red-dark); }
 
 <!-- ═══════ ORIGIN STORY ═══════ -->
 <section class="origin">
-  <div class="container">
-    <div class="origin-grid">
-      <div class="origin-img">
-        <img src="408%20Closeup%201.jpg" alt="Calligraphy detail on the House Poem facade, 408 Sampsonia Way" onerror="this.style.opacity='0'">
-      </div>
-      <div class="origin-text">
-          <span class="section-eyebrow">Our Story</span>
-          <h2>Born from a Single Moment of Inspiration</h2>
-          <p>At a talk by Salman Rushdie in Pittsburgh in 1997, Diane Samuels and Henry Reese learned about the Cities of Asylum network in Europe — cities that protected writers whose lives were in danger.</p>
-                    <p>They were immediately drawn to this mission and they wrote Cities of Asylum in Europe.</p>
-          <p>In 2004, Huang Xiang arrived — a Chinese poet who had been imprisoned for twelve years and tortured because of his writing. He painted his poetry in massive calligraphy across the facade of his new home on Sampsonia Way. That single act of creative defiance defined everything that came after at City of Asylum.</p>
-          <blockquote class="origin-quote">
-            "In China I was like a fossil, because I was buried underground. When I came to Pittsburgh and people discovered me, they dug me out of the earth and I became alive…."
-            <cite>— Huang Xiang</cite>
-          </blockquote>
-          <a class='btn btn-secondary' href='about'>Read Our Full History &rarr;</a>
-      </div>
+  <div class="origin-grid">
+    <div class="origin-img">
+      <img src="408%20Closeup%201.jpg" alt="Calligraphy detail on the House Poem facade, 408 Sampsonia Way" onerror="this.style.opacity='0'">
+    </div>
+    <div class="origin-text">
+      <span class="section-eyebrow">Our Story</span>
+      <h2>Born from a Single Moment of Inspiration</h2>
+      <p>At a talk by Salman Rushdie in Pittsburgh in 1997, Diane Samuels and Henry Reese learned about the Cities of Asylum network in Europe — cities that protected writers whose lives were in danger.</p>
+      <p>They were immediately drawn to this mission and they wrote Cities of Asylum in Europe.</p>
+      <p>In 2004, Huang Xiang arrived — a Chinese poet who had been imprisoned for twelve years and tortured because of his writing. He painted his poetry in massive calligraphy across the facade of his new home on Sampsonia Way. That single act of creative defiance defined everything that came after at City of Asylum.</p>
+      <blockquote class="origin-quote">
+        "In China I was like a fossil, because I was buried underground. When I came to Pittsburgh and people discovered me, they dug me out of the earth and I became alive…."
+        <cite>— Huang Xiang</cite>
+      </blockquote>
+      <a class='btn btn-secondary' href='about'>Read Our Full History &rarr;</a>
     </div>
   </div>
 </section>
