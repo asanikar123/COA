@@ -13,44 +13,11 @@
 .container { max-width:1200px; margin:0 auto; padding:0 2rem; }
 body { background: var(--warm-white); }
 
-/* PROGRAM DESCRIPTION */
-.program-intro { padding: 2rem 0 calc(5rem - 1in/4); margin-top: 0; background: var(--warm-white); position: relative; z-index: 1; }
-.program-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
-.program-text h2 {
-  font-family:var(--serif); font-size:2rem; font-weight:700;
-  color:var(--text-dark); margin-bottom:1rem;
-}
-.program-text p { font-size:1.05rem; color:var(--text-body); margin-bottom:1rem; line-height:1.8; }
-.program-highlights {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: calc(1in/16);
-}
-.highlight-box {
-  background: var(--white);
-  border-radius: 16px; padding: 1.25rem 1.5rem;
-  border: 1px solid var(--border);
-}
-.highlight-box strong { display: block; text-align:center; font-family:var(--serif); font-size:1.1rem; color:var(--red); text-transform:uppercase; margin-bottom:.25rem; }
-.highlight-box span { font-size:.85rem; color:var(--text-body); }
-
-/* UKRAINE FELLOWSHIP */
-.ukraine-section {
-  padding: calc(4rem - 1in/2) 0; background: #FFFBEB;
-  border-top: 1px solid #FDE68A; border-bottom: 1px solid #FDE68A;
-}
-.ukraine-inner {
-  display: flex; align-items: center; gap: 2rem;
-  max-width: 900px; margin: 0 auto;
-}
-.ukraine-flag { font-size: 3rem; flex-shrink: 0; }
-.ukraine-inner h3 {
-  font-family:var(--serif); font-size:1.4rem; font-weight:700;
-  color:var(--text-dark); margin-bottom:.5rem;
-}
-.ukraine-inner p { font-size:.95rem; color:var(--text-body); }
+/* PROGRAM HIGHLIGHTS: 4-up on wide screens via the shared feature-grid */
+.program-highlights { grid-template-columns: repeat(4, 1fr); }
 
 /* WRITERS GRID */
-.writers-grid-section { padding: calc(6rem - 1in/2) 0 calc(6rem - 1in/2); background: linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)), url('03Alphas30.jpg') top center/825px auto repeat, var(--warm-white); }
-.sort-row { display:flex; align-items:center; justify-content:center; gap:.5rem; margin-bottom:2rem; flex-wrap:wrap; }
+.sort-row { display:flex; align-items:center; justify-content:flex-start; gap:.5rem; margin-bottom:2rem; flex-wrap:wrap; }
 .sort-label { font-size:.8rem; font-weight:600; color:var(--muted); text-transform:uppercase; letter-spacing:.1em; }
 .sort-pill {
   padding:.35rem 1rem; border-radius:16px;
@@ -78,8 +45,8 @@ body { background: var(--warm-white); }
 .current-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-bottom: 4.5rem; }
 .alumni-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
 
-.writers-subhead { font-family:var(--serif); font-size:1.5rem; font-weight:700; color:var(--text-dark); text-align:center; margin-bottom:.4rem; }
-.writers-subhead-note { text-align:center; color:var(--muted); font-size:.9rem; margin-bottom:2rem; }
+.writers-subhead { font-family:var(--sans); font-size:1.5rem; font-weight:800; color:var(--text-dark); text-align:left; margin:2.5rem 0 .4rem; }
+.writers-subhead-note { text-align:left; color:var(--muted); font-size:.9rem; margin-bottom:2rem; }
 
 /* compact alumni card variant */
 .writer-card.compact { cursor: pointer; }
@@ -150,11 +117,12 @@ body { background: var(--warm-white); }
 .writer-card-body p { font-size:.875rem; color:var(--muted); line-height:1.65; }
 
 /* COMMUNITY */
-.community-section  { padding: calc(5rem - 1in/2) 0 calc(5rem - 3in/8); background: var(--coa-red); color: var(--white); text-align: center; }
-.community-section h2 { font-family:var(--serif); font-size:2rem; font-weight:700; margin-bottom:1rem; }
-.community-section p { color:rgba(255,255,255,.65); font-size:1.05rem; max-width:650px; margin:0 auto 2rem; }
-.community-section .btn-gold-lg { display:inline-block; max-width:100%; background:var(--white); color:var(--coa-red); font-weight:700; padding:.9rem 2rem; border-radius:8px; font-size:1rem; text-decoration:none; transition:background .2s, transform .2s; }
-.community-section .btn-gold-lg:hover { background:var(--cream);  }
+.community-section p { color:var(--text-body); font-size:1.05rem; max-width:650px; margin:0 0 2rem; }
+.community-section .cta-actions { display:flex; flex-wrap:wrap; gap:1rem; }
+.community-section .btn-gold-lg { display:inline-block; max-width:100%; background:var(--accent-gold); color:var(--deep); font-weight:700; padding:.9rem 2rem; border-radius:8px; font-size:1rem; text-decoration:none; transition:background .2s, transform .2s; }
+.community-section .btn-gold-lg:hover { background:#c98f0e; }
+.community-section .btn-gold-lg.btn-outline { background:transparent; color:var(--text-dark); border:2px solid var(--border); }
+.community-section .btn-gold-lg.btn-outline:hover { border-color:var(--accent-gold); color:var(--accent-gold); background:transparent; }
 
 @media (max-width: 768px) {
   .d-only-br { display: none; }
@@ -162,8 +130,6 @@ body { background: var(--warm-white); }
   /* Swap Social Services (6th) and Long-term Safety (7th) on mobile to balance row lengths */
   .program-highlights > *:nth-child(6) { order: 2; }
   .program-highlights > *:nth-child(7) { order: 1; }
-  .program-highlights > *:nth-child(8) { order: 3; }
-  .program-grid { grid-template-columns:1fr; }
   .current-grid { grid-template-columns:1fr; gap:1.5rem; margin-bottom:3rem; }
   .alumni-grid { grid-template-columns:repeat(2, 1fr); gap:1rem; }
   .writer-card.compact .writer-card-img { height: 200px; }
@@ -264,68 +230,71 @@ body { background: var(--warm-white); }
 </section>
 
 <!-- PROGRAM HIGHLIGHTS -->
-<section class="program-intro" id="residency-program">
+<section class="section section--white program-intro" id="residency-program">
   <div class="container">
-    <h2 class="matches-hero-h1" style="display:none !important;font-family:'PT Serif',Georgia,serif !important;font-weight:700 !important;font-style:italic !important;font-size:40pt !important;line-height:130% !important;color:#9c3f33 !important;max-width:none !important;-webkit-text-stroke:1.5px #000 !important;text-stroke:1.5px #000 !important;"><span style="display:inline-block;transform:scale(1.192, 1.3);transform-origin:left center;">But at City of Asylum, those voices<br>are heard.</span></h2>
-    <p style="margin:0;line-height:1.7;"><span style="display:block;padding:0.9em 0.75em;">
-      <span style="display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);">Our residency program provides</span>
-    </span></p>
-    <div class="program-highlights">
-      <div class="highlight-box">
-        <strong>Safe Home</strong>
-        <span>In one of our 7 houses on Sampsonia Way, Pittsburgh</span>
+    <div class="section-head">
+      <span class="section-eyebrow">The Exiled Writer Residency Program</span>
+      <h2 class="section-title">What Our Residency Provides</h2>
+      <p class="section-subtitle">More than emergency relief &mdash; a safe home, a livelihood, and a path forward for endangered writers and their families.</p>
+    </div>
+    <div class="feature-grid program-highlights">
+      <div class="feature-card">
+        <h3>Safe Home</h3>
+        <p>In one of our 7 houses on Sampsonia Way, Pittsburgh.</p>
       </div>
-      <div class="highlight-box">
-        <strong>Living Stipend</strong>
-        <span>Financial support for three years or more</span>
+      <div class="feature-card">
+        <h3>Living Stipend</h3>
+        <p>Financial support for three years or more.</p>
       </div>
-      <div class="highlight-box">
-        <strong>Legal Counsel</strong>
-        <span>Immigration and legal support for writers and families, when necessary</span>
+      <div class="feature-card">
+        <h3>Legal Counsel</h3>
+        <p>Immigration and legal support for writers and families, when necessary.</p>
       </div>
-      <div class="highlight-box">
-        <strong>Medical Benefits</strong>
-        <span>Healthcare for writers and families during their residency</span>
+      <div class="feature-card">
+        <h3>Medical Benefits</h3>
+        <p>Healthcare for writers and families during their residency.</p>
       </div>
-      <div class="highlight-box">
-        <strong>Career Support</strong>
-        <span>Translation and publishing, next step planning</span>
+      <div class="feature-card">
+        <h3>Career Support</h3>
+        <p>Translation and publishing, next step planning.</p>
       </div>
-      <div class="highlight-box">
-        <strong>Social Services</strong>
-        <span>A full-time residency manager coordinates individual needs and community integration</span>
+      <div class="feature-card">
+        <h3>Social Services</h3>
+        <p>A full-time residency manager coordinates individual needs and community integration.</p>
       </div>
-      <div class="highlight-box">
-        <strong>Long-term Safety</strong>
-        <span>More than emergency support.</span>
-      </div>
-      <div style="padding:1.25rem 1.5rem;display:flex;align-items:center;background:var(--cream);border-left:3px solid var(--gold);border-radius:0;align-self:start;">
-        <p style="font-family:var(--serif);font-style:italic;font-size:.9rem;color:var(--muted);line-height:1.5;margin:0;font-weight:700;">&ldquo;I admire what <span style="white-space:nowrap;">[City of Asylum]</span> has done to accommodate the writers to an extraordinary degree after their residency is up.&rdquo;<br><span style="font-style:normal;font-size:.8rem;font-weight:600;color:var(--text-dark);">&mdash; <span style="white-space:nowrap;">Russell Banks</span></span><br><span style="font-style:normal;font-size:.75rem;color:var(--muted);"><span style="white-space:nowrap;">Author, President</span> International <span style="white-space:nowrap;">Parliament of Writers</span></span></p>
+      <div class="feature-card">
+        <h3>Long-term Safety</h3>
+        <p>More than emergency support &mdash; we help writers build a new life in exile.</p>
       </div>
     </div>
+    <blockquote class="pullquote">
+      &ldquo;I admire what [City of Asylum] has done to accommodate the writers to an extraordinary degree after their residency is up.&rdquo;
+      <cite>Russell Banks &mdash; Author, President, International Parliament of Writers</cite>
+    </blockquote>
   </div>
 </section>
 
 <!-- UKRAINE FELLOWSHIP -->
-<section class="ukraine-section">
+<section class="section section--cream ukraine-section">
   <div class="container">
-    <div class="ukraine-inner">
-      <div>
-        <h3>Ukrainian Writers Fellowship</h3>
-        <p>In response to the 2022 invasion of Ukraine, City of Asylum launched a fellowship enabling three Ukrainian writers to come to Pittsburgh, so they can continue to research, write, and publish despite the ongoing war.</p>
-      </div>
+    <div class="section-head">
+      <span class="section-eyebrow">A Special Fellowship</span>
+      <h2 class="section-title">Ukrainian Writers Fellowship</h2>
+      <p class="section-subtitle">In response to the 2022 invasion of Ukraine, City of Asylum launched a fellowship enabling three Ukrainian writers to come to Pittsburgh, so they can continue to research, write, and publish despite the ongoing war.</p>
     </div>
   </div>
 </section>
 
 <!-- WRITERS GRID -->
-<section class="writers-grid-section" id="writers-in-residence">
+<section class="section section--warm writers-grid-section" id="writers-in-residence">
   <div class="container">
-    <span class="section-eyebrow" style="display:block;text-align:center;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem;">City of Asylum Writers</span>
-    <h2 style="font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);text-align:center;margin-bottom:.75rem;">22 Writers. 19 Countries. One Safe Haven.</h2>
-    <p style="text-align:center;color:var(--muted);font-size:1rem;max-width:600px;margin:0 auto 3rem;">Read the writers’ stories&mdash;what they fled, what they created,<br class="d-only-br"> and how City of Asylum changed their lives.</p>
+    <div class="section-head">
+      <span class="section-eyebrow">City of Asylum Writers</span>
+      <h2 class="section-title">22 Writers. 19 Countries. One Safe Haven.</h2>
+      <p class="section-subtitle">Read the writers&rsquo; stories&mdash;what they fled, what they created, and how City of Asylum changed their lives.</p>
+    </div>
 
-    <h3 class="writers-subhead" style="margin-top:calc(-5in/32);">Currently in Residence</h3>
+    <h3 class="writers-subhead">Currently in Residence</h3>
     <p class="writers-subhead-note">Writers we are protecting right now.</p>
 
     <div class="current-grid" id="current-grid">
@@ -794,12 +763,17 @@ body { background: var(--warm-white); }
 </script>
 
 <!-- DONATE CTA -->
-<section class="community-section">
+<section class="section section--cream community-section">
   <div class="container">
-    <h2>Making a home, and part of a community</h2>
+    <div class="section-head">
+      <span class="section-eyebrow">Get Involved</span>
+      <h2 class="section-title">Making a home, and part of a community</h2>
+    </div>
     <p>City of Asylum writers are available for talks and readings at schools and community groups throughout Pittsburgh &mdash; and beyond &mdash; in partnerships with universities, arts institutions, and literary festivals.</p>
-    <div><a class='btn-gold-lg' href='donate'>Support a Writer's Residency&nbsp;&rarr;</a></div>
-    <div style="margin-top:1rem;"><a class='btn-gold-lg' href='about#inquiries'>Book a Writer for Your Organization&nbsp;&rarr;</a></div>
+    <div class="cta-actions">
+      <a class='btn-gold-lg' href='donate'>Support a Writer's Residency&nbsp;&rarr;</a>
+      <a class='btn-gold-lg btn-outline' href='about#inquiries'>Book a Writer for Your Organization&nbsp;&rarr;</a>
+    </div>
   </div>
 </section>
 

@@ -75,7 +75,50 @@ Defined in `:root` (`design-system.css`). Use the variables, never raw hex.
 
 ---
 
-## 4. Spacing & density
+## 4. Block library — build EVERY section from these
+
+Tokens and chrome aren't enough on their own: pages drift when each section is
+hand-rolled. The homepage is really a small kit of repeatable blocks. Build every
+interior section from these shared classes (all in `design-system.css`); never
+invent a one-off section style. `about.html` is the reference implementation.
+
+**Section scaffold** — wrap each section:
+```html
+<section class="section section--cream">      <!-- --white / --cream / --warm, alternating -->
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Eyebrow</span>   <!-- gold, left -->
+      <h2 class="section-title">Title</h2>           <!-- sans 800, left -->
+      <p class="section-subtitle">Optional subtitle</p>
+    </div>
+    … block …
+  </div>
+</section>
+```
+
+**Content blocks** — pick the one that fits the content:
+
+| Block | Class | Use for |
+|---|---|---|
+| Statement | `.lead-statement` | A big bold left sentence (mission statement) |
+| Feature cards | `.feature-grid` › `.feature-card` (`h3`+`p`) | Sets of text/info tiles (Protect/Celebrate/Build, "A Model Like No Other") — **cream cards, never red-outlined** |
+| Split | `.split` › `.split-media` + `.split-text` | Image beside prose (Our Story) |
+| Stat row | `.stat-row` › `.stat` (`.stat-num`/`.stat-label`) | Big numbers + labels |
+| Roster | `.roster` › `.roster-item` (`.name`/`.role`) | People **with** roles (Staff, Board officers) |
+| Name list | `.name-list` › `li` | Simple name runs (Founding/Advisory boards) — auto dot dividers |
+| Definition list | `.def-list` › `.def-item` (`.def-meta`/`h4`/`p`) | Titled rows (Jobs, FAQ, contact) |
+| Pull quote | `.pullquote` (+ `cite`) | Serif italic gold quote |
+
+**Rules that make it cohere:**
+- Eyebrows are **gold**, never red. Headings are **sans, left** — never serif, never centered.
+- **Left-align** section text; centering is only for self-contained widget internals.
+- Backgrounds alternate `--white` / `--cream` / `--warm-white`. **No** decorative
+  letter-pattern image backgrounds and **no** full `--coa-red` section bands.
+- No inch-based margin hacks (`calc(-1in/4)` etc.). Use the scaffold's spacing.
+
+---
+
+## 5. Spacing & density
 
 - Section vertical rhythm: major sections `~6rem` top/bottom; compact content
   blocks (like "Our Story") are tightened so a text column fits within its

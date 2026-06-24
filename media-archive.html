@@ -7,63 +7,48 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="design-system.css?v=2">
 <style>
-/* CONTENT SECTIONS */
-.content-section { padding: 3rem 0; background: var(--warm-white); }
-.content-section:nth-child(even) { background: var(--cream); }
-
 /* Press List */
-.press-list { max-width: 900px; margin: 0 auto; }
+.press-list { max-width: 900px; margin: 0; }
 .press-item { display: grid; grid-template-columns: 50px 80px 1fr; gap: .75rem; padding: .35rem 0; border-bottom: 1px solid var(--border); align-items: center; }
 .press-year { font-family: var(--serif); font-size: 1rem; font-weight: 700; color: var(--gold); }
 .press-logo { width: 72px; height: 28px; object-fit: contain; object-position: left center; background: #fff; }
 .press-link { color: var(--text-dark); font-size: .85rem; word-break: break-word; line-height: 1.3; }
 .press-link:hover { color: var(--red); text-decoration: underline; }
-.press-controls { display:flex; gap:.5rem; flex-wrap:wrap; justify-content:center; margin:1rem 0 1.75rem; }
+.press-controls { display:flex; gap:.5rem; flex-wrap:wrap; justify-content:flex-start; margin:0 0 1.75rem; }
 .press-sort-btn { background:transparent; border:1px solid var(--border); color:var(--text-dark); padding:.4rem .9rem; border-radius:6px; font-size:.85rem; cursor:pointer; font-family:var(--sans); }
 .press-sort-btn:hover { background:var(--cream); }
 .press-sort-btn.active { background:var(--deep); color:var(--white); border-color:var(--deep); }
-.press-toggle-wrap { text-align:center; margin-top:1.5rem; }
+.press-toggle-wrap { text-align:left; margin-top:1.5rem; }
 .press-toggle { background:transparent; border:1px solid var(--border); color:var(--text-dark); padding:.5rem 1.2rem; border-radius:6px; font-size:.9rem; cursor:pointer; font-family:var(--sans); margin:0 .25rem; }
 .press-toggle:hover { background:var(--cream); }
 .press-toggle[hidden] { display:none; }
 .press-item[hidden] { display:none; }
 
-/* Placeholder */
-.placeholder-box { max-width: 700px; margin: 0 auto; padding: 3rem; background: rgba(0,0,0,.03); border: 2px dashed rgba(0,0,0,.15); border-radius: 12px; text-align: center; color: var(--muted); font-style: italic; }
-
 /* Publications */
-.pub-feature { max-width: 900px; margin: 0 auto 3rem; background: var(--white); border-radius: 12px; padding: calc(2rem - 1in/16) 2rem calc(2rem - 3in/16); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
-.pub-feature h3 { font-family: var(--serif); font-size: 1.4rem; color: var(--text-dark); margin-bottom: .75rem; }
+.pub-feature { max-width: 900px; margin: 0 0 1rem; background: rgba(224,164,23,.13); border-bottom: 1px solid rgba(0,0,0,.07); border-right: 1px solid rgba(0,0,0,.07); border-radius: 12px; padding: 2.25rem 1.9rem; }
+.pub-feature h3 { font-family: var(--sans); font-weight: 800; font-size: 1.4rem; color: var(--text-dark); margin-bottom: .75rem; text-align: left; }
 .pub-feature p { color: var(--text-body); font-size: .95rem; line-height: 1.7; margin-bottom: .75rem; }
 .pub-feature a { color: var(--red); font-weight: 600; }
 .pub-cover { float: left; width: 150px; margin: 0 1.75rem .85rem 0; display: block; }
 .pub-cover img { width: 100%; border-radius: 6px; box-shadow: 0 4px 16px rgba(0,0,0,.15); display: block; }
-.book-list { max-width: 900px; margin: 0 auto; }
-.book-list h3 { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: #000; line-height: 1.35; margin-bottom: 1rem; text-align: center; }
+.book-list { max-width: 900px; margin: 0; }
+.book-list h3 { font-family: var(--sans); font-size: 1.15rem; font-weight: 700; color: var(--text-dark); line-height: 1.35; margin-bottom: 1rem; text-align: left; }
 /* Recurring gold mission line shown near the footer on every page */
 .coa-footer-mission { text-align: center; color: var(--gold); font-size: .875rem; padding: .25rem 0; margin: 1.5rem 0; }
 .book-list ul { list-style: none; padding: 0; }
 .book-list li { padding: .75rem 1rem; border-bottom: 1px solid var(--border); font-size: .95rem; color: var(--text-body); display:flex; align-items:center; gap:.75rem; }
 .book-list li img.book-cover { width:42px; height:auto; flex:0 0 auto; border-radius:2px; box-shadow:0 1px 4px rgba(0,0,0,.18); }
-.book-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:1.75rem .65rem; max-width:1300px; margin:2rem auto 0; }
+.book-grid { display:grid; grid-template-columns:repeat(7,1fr); gap:1.75rem .65rem; max-width:1300px; margin:2rem 0 0; }
 .book-grid a { display:flex; flex-direction:column; align-items:center; text-align:center; text-decoration:none; color:inherit; transition:transform .2s; }
 .book-grid a:hover {  }
 .book-grid img { width:100%; height:auto; border-radius:2px; box-shadow: 0 1px 3px rgba(0,0,0,.06); margin-bottom:.5rem; transition:box-shadow .2s; }
 .book-grid a:hover img { box-shadow: 0 1px 3px rgba(0,0,0,.06); }
-.book-grid-hint { text-align:center; font-size:.9rem; color:var(--muted); font-style:italic; margin:.75rem auto 0; }
+.book-grid-hint { text-align:left; font-size:.9rem; color:var(--muted); font-style:italic; margin:.75rem 0 0; }
 .book-grid .author { font-size:.78rem; font-weight:600; color:var(--text-dark); line-height:1.25; }
 .book-grid .translator { font-size:.72rem; color:var(--muted); line-height:1.25; margin-top:.1rem; }
 @media (max-width: 768px) {
   .book-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem .5rem; }
 }
-
-/* Archive */
-.archive-grid { max-width: 1000px; margin: 0 auto; display: grid; gap: 1.5rem; }
-.archive-card { background: var(--white); border-radius: 12px; padding: 1.5rem 2rem; border: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,.06); }
-.archive-card h3 { font-family: var(--serif); font-size: 1.25rem; color: var(--text-dark); margin-bottom: .25rem; }
-.archive-card a.archive-link { display:inline-block; margin-top:.4rem; background:var(--coa-red); color:var(--white); font-weight:600; font-size:.85rem; padding:.5rem 1.1rem; border-radius:8px; text-decoration:none; word-break:break-word; transition:background .2s; }
-.archive-card a.archive-link:hover { background:var(--coa-red-dark); color:var(--white); }
-.archive-card p { color: var(--text-body); font-size: .9rem; margin-top: .5rem; line-height: 1.6; }
 
 /* Dark-region gold: keep the bright accent on the footer + privacy modal */
 .site-footer,#privacy-modal{--gold:var(--accent-gold);--gold-light:var(--accent-gold);}
@@ -208,45 +193,48 @@
 
 
 <!-- VIDEO -->
-<section class="content-section" id="video" style="background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),url('03Alphas30.jpg') top center/825px auto repeat,var(--warm-white);">
+<section class="section section--white" id="video">
   <div class="container">
-    <span class="section-eyebrow">Watch</span>
-    <h2 class="section-title">6 Short Videos<span style="display:block;font-family:var(--sans);font-size:.95rem;font-weight:400;color:var(--muted);margin-top:.4rem;letter-spacing:0;text-transform:none;">Selected from the<br class="m-only-br"> City of Asylum On-Demand Archive</span></h2>
-    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:2rem;">
+    <div class="section-head">
+      <span class="section-eyebrow">Watch</span>
+      <h2 class="section-title">6 Short Videos</h2>
+      <p class="section-subtitle">Selected from the City of Asylum On-Demand Archive.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;">
 
       <div>
         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
           <a href="https://www.youtube.com/watch?v=ygTOMBLj3Kg" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/ygTOMBLj3Kg/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
         </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Sanctuary: The Writers of City of Asylum (2019)</p>
+        <p style="font-family:var(--sans);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Sanctuary: The Writers of City of Asylum (2019)</p>
       </div>
 
       <div>
         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
           <a href="https://www.youtube.com/watch?v=IsMl4hDv0DQ" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/IsMl4hDv0DQ/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:69.6%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
         </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">What City of Asylum Has Meant to Me (Andr&eacute;s Franco, Executive Director)</p>
+        <p style="font-family:var(--sans);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">What City of Asylum Has Meant to Me (Andr&eacute;s Franco, Executive Director)</p>
       </div>
 
       <div>
         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
           <a href="https://www.youtube.com/watch?v=9wXb1E7e6WY" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/9wXb1E7e6WY/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
         </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Why Do We Use Alphabets Across Our Projects?</p>
+        <p style="font-family:var(--sans);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Why Do We Use Alphabets Across Our Projects?</p>
       </div>
 
       <div>
         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
           <a href="https://www.youtube.com/watch?v=D1TaEZXlPk8" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/D1TaEZXlPk8/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
         </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Hospitality, Architecture to Programming</p>
+        <p style="font-family:var(--sans);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Hospitality, Architecture to Programming</p>
       </div>
 
       <div>
         <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:12px;">
           <a href="https://www.youtube.com/watch?v=voSFP6z5R_4" target="_blank" rel="noopener" style="position:absolute;top:0;left:0;width:100%;height:100%;display:block;background:#000;"><img src="https://img.youtube.com/vi/voSFP6z5R_4/hqdefault.jpg" alt="" style="width:100%;height:100%;object-fit:cover;display:block;"><span style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;background:rgba(0,0,0,.75);border-radius:10px;display:flex;align-items:center;justify-content:center;"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M8 5v14l11-7z"/></svg></span></a>
         </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Celebrating 15 Years with City of Asylum (2019)</p>
+        <p style="font-family:var(--sans);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Celebrating 15 Years with City of Asylum (2019)</p>
       </div>
 
       <div>
@@ -256,7 +244,7 @@
             Your browser does not support inline video. <a href="Pittsburgh-Defends-Freedom.mp4" download>Download the video</a>.
           </video>
         </div>
-        <p style="font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Pittsburgh Defends Freedom of Creative Expression, Annual Ceremony at City of Asylum</p>
+        <p style="font-family:var(--sans);font-size:1rem;font-weight:700;color:var(--text-dark);margin-top:.75rem;">Pittsburgh Defends Freedom of Creative Expression, Annual Ceremony at City of Asylum</p>
       </div>
 
     </div>
@@ -264,11 +252,13 @@
 </section>
 
 <!-- PHOTOS -->
-<section class="content-section" id="photos">
+<section class="section section--cream" id="photos">
   <div class="container">
-    <span class="section-eyebrow">Browse</span>
-    <h2 class="section-title">Selected Photos</h2>
-    <p style="text-align:center;font-size:.875rem;color:var(--muted);margin:0 auto 1.5rem;">Tap a photo to enlarge.</p>
+    <div class="section-head">
+      <span class="section-eyebrow">Browse</span>
+      <h2 class="section-title">Selected Photos</h2>
+      <p class="section-subtitle">Tap a photo to enlarge.</p>
+    </div>
     <div class="photo-carousel-wrapper">
       <button class="pc-btn prev" id="pc-prev" aria-label="Previous">&larr;</button>
       <div class="photo-carousel-track" id="pc-track"></div>
@@ -276,7 +266,7 @@
     </div>
     <div class="pc-dots" id="pc-dots"></div>
     <div class="kickoff-feature" style="margin-top:2.5rem;">
-      <div style="font-weight:700;text-align:center;margin-bottom:.5rem;color:var(--text-dark);">Alphabet City Kickoff with Mayor and County Commissioner&mdash;Let Construction Begin! (2015)</div>
+      <div style="font-weight:700;text-align:left;margin-bottom:.5rem;color:var(--text-dark);">Alphabet City Kickoff with Mayor and County Commissioner&mdash;Let Construction Begin! (2015)</div>
       <a href="AC%20Press%20conf.jpg" data-lightbox data-caption="Alphabet City Kickoff with Mayor and County Commissioner — Let Construction Begin! (2015)" style="display:block;overflow:hidden;border-radius:6px;box-shadow:0 4px 16px rgba(0,0,0,.15);">
         <img src="AC%20Press%20conf.jpg" alt="Alphabet City Kickoff with Mayor and County Commissioner — Let Construction Begin!" loading="lazy" style="width:100%;height:auto;display:block;">
       </a>
@@ -371,10 +361,12 @@
 </script>
 
 <!-- PUBLICATIONS -->
-<section class="content-section" id="publications" style="padding-top:calc(3rem - 1in/4);background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),url('03Alphas30.jpg') top center/825px auto repeat,var(--cream);">
+<section class="section section--white" id="publications">
   <div class="container">
-    <span class="section-eyebrow">Read</span>
-    <h2 class="section-title">Selected Publications</h2>
+    <div class="section-head">
+      <span class="section-eyebrow">Read</span>
+      <h2 class="section-title">Selected Publications</h2>
+    </div>
 
 <!-- The original double-row book gallery (covers only) was removed from this spot.
      Markup preserved in book-gallery-backup.html if it needs to be restored. -->
@@ -468,10 +460,12 @@
 </section>
 
 <!-- PRESS -->
-<section class="content-section" id="press">
+<section class="section section--cream" id="press">
   <div class="container">
-    <span class="section-eyebrow">In the News</span>
-    <h2 class="section-title">Selected Press</h2>
+    <div class="section-head">
+      <span class="section-eyebrow">In the News</span>
+      <h2 class="section-title">Selected Press</h2>
+    </div>
     <div class="press-controls">
       <button class="press-sort-btn active" data-sort="oldest">Oldest</button>
       <button class="press-sort-btn" data-sort="newest">Newest</button>
@@ -649,25 +643,27 @@
 </section>
 
 <!-- ARCHIVE -->
-<section class="content-section" id="archive" style="background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),url('03Alphas30.jpg') top center/825px auto repeat,var(--cream);">
+<section class="section section--white" id="archive">
   <div class="container">
-    <span class="section-eyebrow">Explore</span>
-    <h2 class="section-title">Archive</h2>
-    <div class="archive-grid">
-      <div class="archive-card">
+    <div class="section-head">
+      <span class="section-eyebrow">Explore</span>
+      <h2 class="section-title">Archive</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card">
         <h3>Vimeo</h3>
-        <a class="archive-link" href="https://vimeo.com/cityofasylum/videos" target="_blank">City of Asylum &bull; Vimeo</a>
         <p>900+ videos featuring literary readings, concerts, and other performances at Alphabet City. Includes City of Asylum and partner programs.</p>
+        <a class="feature-link" href="https://vimeo.com/cityofasylum/videos" target="_blank">City of Asylum &bull; Vimeo &rarr;</a>
       </div>
-      <div class="archive-card">
+      <div class="feature-card">
         <h3>YouTube Channel</h3>
-        <a class="archive-link" href="https://www.youtube.com/user/coapgh" target="_blank">City of Asylum &bull; YouTube</a>
         <p>283 videos of pre-Alphabet City concerts and readings, plus video interviews from <em>Sampsonia Way Magazine</em>.</p>
+        <a class="feature-link" href="https://www.youtube.com/user/coapgh" target="_blank">City of Asylum &bull; YouTube &rarr;</a>
       </div>
-      <div class="archive-card">
+      <div class="feature-card">
         <h3><em>Sampsonia Way Magazine</em></h3>
-        <a class="archive-link" href="http://archive.sampsoniaway.org/" target="_blank">City of Asylum &bull; Sampsonia Way</a>
         <p>City of Asylum's online magazine for literature, free speech, and social justice (2009&ndash;2021).</p>
+        <a class="feature-link" href="http://archive.sampsoniaway.org/" target="_blank">City of Asylum &bull; Sampsonia Way &rarr;</a>
       </div>
     </div>
   </div>

@@ -14,18 +14,7 @@
 .donate-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
 
 /* LEFT: Why donate */
-.why-donate h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--text-dark);margin-bottom:1.25rem}
 .why-donate p{font-size:1rem;color:var(--text-body);margin-bottom:1rem;line-height:1.8}
-.impact-list{list-style:none;margin:2rem 0}
-.impact-list li{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(--border)}
-.impact-list li:last-child{border-bottom:none}
-.impact-amt{
-  flex-shrink:0;width:72px;height:72px;border-radius:50%;
-  background:var(--cream);display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-weight:900;font-size:1.1rem;color:var(--coa-red);
-}
-.impact-desc strong{display:block;font-family:var(--serif);font-size:1.05rem;color:var(--text-dark);margin-bottom:.15rem}
-.impact-desc span{font-size:.9rem;color:var(--muted)}
 
 /* RIGHT: Donation form mockup */
 .donate-form-card{
@@ -75,30 +64,11 @@
 .donate-btn:hover{background:var(--coa-red-dark);}
 .form-note{text-align:center;font-size:.8rem;color:var(--muted);margin-top:1rem}
 
-/* TRUST SECTION */
-.trust-section{padding:4rem 0;background:var(--cream)}
-.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:left}
-.trust-item .trust-icon{font-size:2rem;margin-bottom:.75rem}
-.trust-item h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--text-dark);margin-bottom:.35rem}
-.trust-item p{font-size:.85rem;color:var(--muted)}
+/* OTHER WAYS — feature-card body tweaks (long emails wrap cleanly) */
+.other-card p{word-break:break-word;overflow-wrap:anywhere}
 
-/* OTHER WAYS */
-.other-ways{padding:calc(5rem - 3in/4) 0 5rem;background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),url('03Alphas30.jpg') top center/825px auto repeat,var(--white)}
-.other-grid{display:grid;grid-template-columns:1.15fr 0.7fr 1.15fr;gap:1.25rem;margin-top:2.5rem;align-items:stretch}
-.other-card p{word-break:break-word;overflow-wrap:anywhere;font-size:.82rem}
-.other-card{background:var(--warm-white);border:3px solid var(--gold);border-radius:16px;padding:1.25rem 1rem;text-align:center;transition:transform .3s}
-.other-card:hover{}
-.other-card .icon{font-size:2rem;margin-bottom:1rem}
-.other-card h4{font-family:var(--serif);font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
-.other-card p{font-size:.875rem;color:var(--muted);margin-bottom:1rem}
-.other-card a{font-weight:600;font-size:.85rem;display:inline-flex;align-items:center;gap:.3rem}
-
-/* Page-specific partner list + section-heading color overrides */
-.partner-name{font-family:var(--serif);color:#5a5048;font-size:1rem}
-.partner-sep{color:var(--muted)}
-#foundations .section-title{color:#000;text-align:center}
-#foundations .partner-name{color:rgba(255,255,255,.88)}
-#foundations .partner-sep{color:rgba(255,255,255,.45)}
+/* FOUNDATIONS — simple partner name run */
+.partner-name{color:var(--text-body);font-size:.95rem}
 
 @media(max-width:768px){
   .mem-q-desktop{display:none}
@@ -108,7 +78,6 @@
   .donate-form-card{position:static;order:1}
   .why-donate{order:2;padding:1rem 2rem 3rem}
   .donate-logo-row{display:none !important}
-  .trust-grid,.other-grid{grid-template-columns:1fr}
 }
 </style>
 <link rel="stylesheet" href="mobile.css?v=3">
@@ -213,21 +182,24 @@
     <div class="donate-layout">
       <!-- Why Donate -->
       <div class="why-donate">
-        <h2>Why Your Support Matters</h2>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-top:2rem;">
-          <div style="background:var(--warm-white);border-radius:12px;padding:1.5rem;border-left: 3px solid var(--coa-red);box-shadow:0 2px 12px rgba(0,0,0,.06);">
-            <div style="font-family:var(--serif);font-size:2.2rem;font-weight:900;color:var(--coa-red);line-height:1;">7</div>
-            <div style="margin-top:.5rem;color:var(--text-dark);font-weight:600;line-height:1.4;">Safe homes and support for exiled writers-in-residence and their families</div>
+        <span class="section-eyebrow">Your Impact</span>
+        <h2 class="section-title" style="font-size:1.8rem;">Why Your Support Matters</h2>
+        <div class="stat-row" style="grid-template-columns:1fr 1fr;margin-top:2rem;">
+          <div class="stat">
+            <div class="stat-num">7</div>
+            <div class="stat-label" style="text-transform:none;letter-spacing:0;font-size:.9rem;color:var(--text-dark);font-weight:600;line-height:1.4;margin-top:.5rem;">Safe homes and support for exiled writers-in-residence and their families</div>
           </div>
-          <div style="background:var(--warm-white);border-radius:12px;padding:1.5rem;border-left: 3px solid var(--coa-red);box-shadow:0 2px 12px rgba(0,0,0,.06);">
-            <div style="font-family:var(--serif);font-size:2.2rem;font-weight:900;color:var(--coa-red);line-height:1;">120+</div>
-            <div style="margin-top:.5rem;color:var(--text-dark);font-weight:600;line-height:1.4;">Free arts and culture programs annually<br><span style="font-size:.75em;font-weight:400;">live at Alphabet City and streamed to the world</span></div>
+          <div class="stat">
+            <div class="stat-num">120+</div>
+            <div class="stat-label" style="text-transform:none;letter-spacing:0;font-size:.9rem;color:var(--text-dark);font-weight:600;line-height:1.4;margin-top:.5rem;">Free arts and culture programs annually<br><span style="font-size:.85em;font-weight:400;color:var(--muted);">live at Alphabet City and streamed to the world</span></div>
           </div>
-          <div style="background:var(--warm-white);border-radius:12px;padding:1.5rem;border-left: 3px solid var(--coa-red);box-shadow:0 2px 12px rgba(0,0,0,.06);">
-            <div style="color:var(--text-dark);font-weight:600;line-height:1.4;">Connects Pittsburgh and the World as One Community</div>
+        </div>
+        <div class="feature-grid" style="grid-template-columns:1fr 1fr;margin-top:1.25rem;">
+          <div class="feature-card">
+            <p style="color:var(--text-dark);font-weight:600;line-height:1.4;">Connects Pittsburgh and the World as One Community</p>
           </div>
-          <div style="background:var(--warm-white);border-radius:12px;padding:1.5rem;border-left: 3px solid var(--coa-red);box-shadow:0 2px 12px rgba(0,0,0,.06);">
-            <div style="margin-top:.5rem;font-family:var(--serif);font-style:italic;color:var(--text-dark);font-weight:600;line-height:1.4;">&ldquo;City of Asylum Pittsburgh is a model&rdquo; <span style="font-style:normal;">&mdash; Salman Rushdie</span></div>
+          <div class="feature-card">
+            <p class="pullquote" style="font-size:1.05rem;margin:0;">&ldquo;City of Asylum Pittsburgh is a model&rdquo;<cite>Salman Rushdie</cite></p>
           </div>
         </div>
         <div class="donate-logo-row" style="width:100%;display:flex;justify-content:center;margin-top:2rem;">
@@ -314,70 +286,75 @@
 
 
 <!-- OTHER WAYS TO SUPPORT -->
-<section class="other-ways" id="other-ways">
+<section class="section section--cream" id="other-ways">
   <div class="container">
-    <span class="section-eyebrow" style="color:var(--coa-red);">More Ways to Help</span>
-    <h2 class="section-title" style="font-size:1.8rem;">Other Ways to Support City of Asylum</h2>
-    <div class="other-grid">
-      <div class="other-card">
-        <h4>Gifts of Stock / IRA / Planned Giving</h4>
+    <div class="section-head">
+      <span class="section-eyebrow">More Ways to Help</span>
+      <h2 class="section-title">Other Ways to Support City of Asylum</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-card other-card">
+        <h3>Gifts of Stock / IRA / Planned Giving</h3>
         <p>We accept gifts of stock, tax-free IRA transfers, and planned giving.</p>
         <p>Call 412-435-1110 or email Andr&eacute;s Franco:</p>
-        <a class="btn-gold-lg smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org">COA Executive Director &rarr;</a>
+        <a class="feature-link smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org">COA Executive Director &rarr;</a>
       </div>
-      <div class="other-card">
-        <h4>Donate by Mail</h4>
+      <div class="feature-card other-card">
+        <h3>Donate by Mail</h3>
         <p>Please make check payable to &lsquo;<span style="white-space:nowrap;">City of Asylum</span>&rsquo;.</p>
         <p>City of Asylum<br>40 W. North Avenue<br>Pittsburgh, PA 15212-4710</p>
       </div>
-      <div class="other-card">
-        <h4>Volunteer</h4>
+      <div class="feature-card other-card">
+        <h3>Volunteer</h3>
         <p>Help at our programs and in the bookstore or maintaining the Alphabet Reading Garden.</p>
         <p>Call 412-435-1110 Ext 206 or email Alexis Jabour:</p>
-        <a class="btn-gold-lg smart-mail" href="mailto:ajabour@cityofasylumpittsburgh.org">Volunteer Director &rarr;</a>
+        <a class="feature-link smart-mail" href="mailto:ajabour@cityofasylumpittsburgh.org">Volunteer Director &rarr;</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SUPPORTED BY -->
-<section style="padding:calc(5rem - 1in/16) 0 calc(5rem - 1in/16);background:var(--coa-red);color:var(--white);text-align:center;" id="foundations">
+<section class="section section--warm" id="foundations">
   <div class="container">
-    <h2 class="section-title" style="font-size:1.8rem;color:#000;">Foundations Also Help Make This Work Possible</h2>
-    <p style="font-size:1.1rem;color:rgba(255,255,255,.85);max-width:none;margin:1rem auto 1.25rem;">Please consider investing in City of Asylum's mission.</p>
-    <p style="margin:0 auto 2.5rem;"><a class="btn-gold-lg smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org" style='padding:.75rem 1.75rem;color:#000;'>Discuss a foundation gift &rarr;</a></p>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1rem;max-width:860px;margin-left:auto;margin-right:auto;">
-      <span class="partner-name">Benter Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Buhl Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Buncher Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Drue and HJ Heinz Trust</span><span class="partner-sep">·</span>
-      <span class="partner-name">Eden Hall Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Educational Foundation of America</span><span class="partner-sep">·</span>
-      <span class="partner-name">FISA Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Ford Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Hansen Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Hawthornden Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Heinz Endowments</span><span class="partner-sep">·</span>
-      <span class="partner-name">Hillman Family Foundations</span><span class="partner-sep">·</span>
-      <span class="partner-name">Irene C. Shea Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Opportunity Fund</span><span class="partner-sep">·</span>
-      <span class="partner-name">Paul D. Schurgot Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Pennsylvania Council on the Arts</span><span class="partner-sep">·</span>
-      <span class="partner-name">Posner Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">QueeQueeg Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Roy A. Hunt Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">Sidney E. Frank Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">The Pittsburgh Foundation</span><span class="partner-sep">·</span>
-      <span class="partner-name">W.I. Patterson Charitable Fund</span><span class="partner-sep">·</span>
-      <span class="partner-name">Anonymous Foundations</span>
+    <div class="section-head">
+      <span class="section-eyebrow">Foundation Partners</span>
+      <h2 class="section-title">Foundations Also Help Make This Work Possible</h2>
+      <p class="section-subtitle">Please consider investing in City of Asylum's mission.</p>
     </div>
-    <h3 style="font-family:var(--serif);font-size:1.4rem;font-weight:700;color:#000;text-align:center;margin-top:3rem;">Other Support of Alphabet City Programs</h3>
-    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:.6rem 1rem;margin-top:calc(1.5rem - 1in/16);max-width:860px;margin-left:auto;margin-right:auto;">
-      <span class="partner-name">Americans for the Arts</span><span class="partner-sep">·</span>
-      <span class="partner-name">Mid-Atlantic Arts</span><span class="partner-sep">·</span>
-      <span class="partner-name">Pennsylvania Council on the Arts</span><span class="partner-sep">·</span>
-      <span class="partner-name">RAD</span>
-    </div>
+    <p style="margin:0 0 2.5rem;"><a class="btn-gold smart-mail" href="mailto:afranco@cityofasylumpittsburgh.org">Discuss a foundation gift &rarr;</a></p>
+    <ul class="name-list" style="max-width:860px;">
+      <li class="partner-name">Benter Foundation</li>
+      <li class="partner-name">Buhl Foundation</li>
+      <li class="partner-name">Buncher Foundation</li>
+      <li class="partner-name">Drue and HJ Heinz Trust</li>
+      <li class="partner-name">Eden Hall Foundation</li>
+      <li class="partner-name">Educational Foundation of America</li>
+      <li class="partner-name">FISA Foundation</li>
+      <li class="partner-name">Ford Foundation</li>
+      <li class="partner-name">Hansen Foundation</li>
+      <li class="partner-name">Hawthornden Foundation</li>
+      <li class="partner-name">Heinz Endowments</li>
+      <li class="partner-name">Hillman Family Foundations</li>
+      <li class="partner-name">Irene C. Shea Foundation</li>
+      <li class="partner-name">Opportunity Fund</li>
+      <li class="partner-name">Paul D. Schurgot Foundation</li>
+      <li class="partner-name">Pennsylvania Council on the Arts</li>
+      <li class="partner-name">Posner Foundation</li>
+      <li class="partner-name">QueeQueeg Foundation</li>
+      <li class="partner-name">Roy A. Hunt Foundation</li>
+      <li class="partner-name">Sidney E. Frank Foundation</li>
+      <li class="partner-name">The Pittsburgh Foundation</li>
+      <li class="partner-name">W.I. Patterson Charitable Fund</li>
+      <li class="partner-name">Anonymous Foundations</li>
+    </ul>
+    <h3 style="font-family:var(--sans);font-size:1.15rem;font-weight:800;color:var(--text-dark);margin-top:3rem;margin-bottom:1.1rem;">Other Support of Alphabet City Programs</h3>
+    <ul class="name-list" style="max-width:860px;">
+      <li class="partner-name">Americans for the Arts</li>
+      <li class="partner-name">Mid-Atlantic Arts</li>
+      <li class="partner-name">Pennsylvania Council on the Arts</li>
+      <li class="partner-name">RAD</li>
+    </ul>
   </div>
 </section>
 

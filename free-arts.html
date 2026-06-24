@@ -8,19 +8,7 @@
 <link rel="stylesheet" href="design-system.css?v=2">
 <style>
 
-/* PROGRAM TYPES */
-.program-types{padding:6rem 0;background:var(--white)}
-.type-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:2rem}
-.type-card{background:var(--white);border: 1px solid var(--border);border-radius:16px;padding:2.5rem 1.75rem;text-align:center;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
-.type-card::before{content:none}
-.type-card:nth-child(1)::before{background:var(--red)}
-.type-card:nth-child(2)::before{background:var(--gold)}
-.type-card:nth-child(3)::before{background:var(--green)}
-.type-card:nth-child(4)::before{background:var(--indigo)}
-.type-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08)}
-.type-icon{font-size:2rem;margin-bottom:1rem}
-.type-card h3{font-family:var(--serif);font-size:1.35rem;font-weight:700;color:var(--text-dark);text-transform:uppercase;margin-bottom:.75rem}
-.type-card p{font-size:.9rem;color:var(--text-body);line-height:1.7;font-weight:400}
+/* PROGRAM TYPES — now uses shared .feature-grid / .feature-card */
 
 /* UPCOMING EVENTS */
 .event-listing{display:block;padding:.2rem .5rem;margin:.1rem -.5rem;border-radius:4px;color:var(--text-dark);text-decoration:none;transition:background .15s,color .15s}.event-listing:hover{background:var(--cream)}.event-listing:hover .event-listing-date{color:var(--red-dark)}.event-listing-date{color:var(--red);margin-right:.4rem;font-weight:700;text-decoration:underline dotted;text-underline-offset:3px}.event-listing span{color:var(--text-dark)}
@@ -52,45 +40,14 @@
 .event-subhead.main{margin-top:0}
 .event-subhead.sub{margin-top:.75rem}
 
-/* FLAGSHIP FESTIVALS */
-.festivals{padding:6rem 0;background:var(--white)}
-.festival-feature{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:1200px;margin:0 auto 3rem;background:var(--warm-white);border-radius:20px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.08);border:1px solid var(--border)}
-.festival-feature:nth-child(even) .festival-img{order:2}
-.festival-feature:nth-child(even) .festival-text{order:1}
-.festival-img{position:relative;min-height:400px;background:var(--charcoal)}
-.festival-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.festival-badge{position:absolute;top:1.5rem;left:1.5rem;background:var(--red);color:var(--white);font-size:.7rem;font-weight:700;padding:.4rem 1rem;border-radius:20px;letter-spacing:.06em;text-transform:uppercase}
-.festival-text{padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:center}
-.festival-text h3{font-family:var(--serif);font-size:1.8rem;font-weight:700;color:var(--text-dark);margin-bottom:.5rem}
-.festival-when{font-size:.85rem;color:var(--gold);font-weight:600;margin-bottom:1.25rem;letter-spacing:.03em}
-.festival-text p{font-size:.95rem;color:var(--muted);line-height:1.8;margin-bottom:1rem}
-.festival-highlights{list-style:none;padding:0;margin:1rem 0 1.5rem}
-.festival-highlights li{font-size:.9rem;color:var(--text-body);padding:.35rem 0;padding-left:1.5rem;position:relative}
-.festival-highlights li::before{content:'✦';position:absolute;left:0;color:var(--gold);font-size:.75rem}
-
-/* VENUE SECTION */
-.venue{padding:6rem 0;background:var(--warm-white);color:var(--text-body)}
-.venue-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
-.venue-img{border-radius:16px;overflow:hidden;box-shadow: 0 1px 3px rgba(0,0,0,.06);}
-.venue-img img{width:100%;display:block}
-.venue-text .section-eyebrow{text-align:left}
-.venue-text h2{font-family:var(--serif);font-size:2.2rem;font-weight:700;color:var(--text-dark);margin-bottom:1.5rem;text-align:left}
-.venue-text p{color:var(--text-body);font-size:1.05rem;line-height:1.8;margin-bottom:1.25rem}
-.venue-features{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:1.5rem}
-.venue-feat{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:1.25rem}
-.venue-feat h4{font-family:var(--serif);font-size:1rem;font-weight:700;color:var(--gold);margin-bottom:.35rem}
-.venue-feat p{font-size:.85rem;color:var(--muted);line-height:1.5}
-
 /* COMMUNITY CTA */
-.community-cta{padding:calc(6rem - 1in/2) 0 calc(6rem - 3in/4);background:var(--red);text-align:center;color:var(--white)}
-.community-cta h2{font-family:var(--serif);font-size:2.4rem;font-weight:700;margin-bottom:1rem}
-.community-cta p{font-size:1.1rem;opacity:.9;max-width:600px;margin:0 auto 2rem}
+.community-cta{padding:5.5rem 0;background:var(--warm-white);text-align:left;color:var(--text-body)}
+.community-cta p{font-size:1.05rem;color:var(--muted);max-width:600px;margin:1.5rem 0 0}
 
 /* NEWSLETTER */
-.newsletter{padding:4rem 0;background:var(--cream);text-align:center;color:var(--text-body)}
-.newsletter h2{font-family:var(--serif);font-size:1.8rem;font-weight:700;margin-bottom:.5rem}
-.newsletter p{color:var(--text-body);margin-bottom:1.5rem}
-.newsletter-form{display:flex;gap:.75rem;max-width:480px;margin:0 auto;justify-content:center}
+.newsletter{padding:5.5rem 0;background:var(--cream);text-align:left;color:var(--text-body)}
+.newsletter p{color:var(--text-body);margin-bottom:1.5rem;max-width:640px}
+.newsletter-form{display:flex;gap:.75rem;max-width:480px;margin:0;justify-content:flex-start}
 .newsletter-form input{flex:1;padding:.85rem 1.25rem;border-radius:8px;border:1px solid var(--border);background:var(--white);color:var(--text-body);font-size:.95rem;font-family:var(--sans)}
 .newsletter-form input::placeholder{color:var(--muted)}
 .newsletter-form button,.newsletter-form .subscribe-btn{background:var(--red);color:var(--white);font-weight:700;padding:.85rem 1.75rem;border-radius:8px;border:none;cursor:pointer;font-family:var(--sans);font-size:.95rem;text-decoration:none;display:inline-block}
@@ -103,22 +60,15 @@
 .event-card h4 br{display:none}
 
 @media(max-width:768px){
-  .type-grid{grid-template-columns:1fr}
-  .type-card{padding-top:1.75rem;padding-bottom:1.75rem}
   .events-grid{grid-template-columns:1fr}
-  .festival-feature{grid-template-columns:1fr}
-  .festival-img{min-height:280px}
-  .venue-grid{grid-template-columns:1fr}
-  .venue-features{grid-template-columns:1fr}
 }
 
 
 /* ===== Why Free section styles ===== */
-.why-free { background: var(--warm-white); padding: calc(5rem - 3in/8) 0 calc(5rem - 1in/3 - 1in/4); }
-.why-free-inner { max-width: 820px; margin: 0 auto; padding: 0 2rem; }
+.why-free-inner { max-width: 820px; margin: 0; }
 .why-free-inner p { font-size: 1.1rem; color: var(--text-body); line-height: 1.8; margin-bottom: 1.5rem; }
-.stats-section { background: var(--warm-white); color: var(--text-body); padding: calc(5rem - 5in/8) 0 calc(5rem - 9in/8); }
-.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+.why-free-inner p:last-child { margin-bottom: 0; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
 .stat-card { text-align: center; padding: 2rem 1.5rem; background: var(--white); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,.06); }
 .stat-number { font-family: var(--serif); font-size: 3.5rem; font-weight: 900; color: var(--gold); line-height: 1; margin-bottom: 1rem; }
 .stat-label { font-size: .9rem; color: var(--text-dark); line-height: 1.5; max-width: 220px; margin: 0 auto; }
@@ -221,63 +171,66 @@
 </section>
 
 <!-- 2. WHAT WE HOST -->
-<section id="what-we-host" style="padding:calc(1in/4) 0 3rem;background:var(--warm-white);">
+<section class="section section--warm" id="what-we-host">
   <div class="container">
-    <span class="section-eyebrow" style="color:var(--red);">What We Host</span>
-    <h2 class="section-title" style="margin-bottom:0;">Pittsburgh's Living Room to the World</h2>
-    <img src="Margot%20Jefferson%20Reading.jpg" alt="Margot Jefferson reading at Alphabet City" style="width:100%;margin:1.5rem 0;border-radius:8px;display:block;">
-    <p style="font-family:var(--serif);font-size:1.56rem;font-weight:600;color:var(--text-dark);text-align:center;margin-bottom:1rem;">Live in Alphabet City...and streamed free everywhere.</p>
-    <p class="section-subtitle" style="margin-bottom:calc(3rem - 1in/4);">Our programming bridges cultures through four creative pillars &mdash; each one free, open to the public, and grounded in the belief that art builds understanding.</p>
-    <div class="type-grid">
-      <div class="type-card">
+    <div class="section-head">
+      <span class="section-eyebrow">What We Host</span>
+      <h2 class="section-title">Pittsburgh's Living Room to the World</h2>
+      <p class="section-subtitle">Our programming bridges cultures through four creative pillars &mdash; each one free, open to the public, and grounded in the belief that art builds understanding.</p>
+    </div>
+    <img src="Margot%20Jefferson%20Reading.jpg" alt="Margot Jefferson reading at Alphabet City" style="width:100%;margin:0 0 1.75rem;border-radius:12px;display:block;">
+    <p class="lead-statement" style="margin-bottom:2.25rem;">Live in Alphabet City&hellip;and streamed free everywhere.</p>
+    <div class="feature-grid">
+      <div class="feature-card">
         <h3>Literary Readings</h3>
         <p>Acclaimed and emerging writers in all genres, with a special focus on authors in translation. Over 225 different authors from 76 countries have done readings at City of Asylum.</p>
       </div>
-      <div class="type-card">
+      <div class="feature-card">
         <h3>Music &amp; Performance</h3>
         <p>National and international jazz groups on tour, world music, a bit of classical/new music, and Thursday Night Jazz by Pittsburgh's finest musicians debuting new work.</p>
       </div>
-      <div class="type-card">
-        <h3 style="margin-left:-1.75rem;margin-right:-1.75rem;white-space:nowrap;">A Home for<br>Other Nonprofits</h3>
+      <div class="feature-card">
+        <h3>A Home for Other Nonprofits</h3>
         <p>At no cost we provide Alphabet City performance space to arts organizations who share our mission and have no facility of their own. A potpourri of film, poetry, storytelling, and surprises.</p>
       </div>
-      <div class="type-card">
-        <h3>Unique to<br>City of Asylum</h3>
+      <div class="feature-card">
+        <h3>Unique to City of Asylum</h3>
         <p>Multi-lingual Jazz-Poetry collaborations, Allegheny County Poet Laureate &amp; Youth Poet Laureate programs, Festivals, ASL Poetry and more.</p>
       </div>
     </div>
-    <div style="text-align:center;margin-top:2.5rem;">
+    <div style="margin-top:2.5rem;">
       <a class='btn btn-primary' href='free-arts#upcoming'>Upcoming Free Programs &rarr;</a>
     </div>
   </div>
 </section>
 
-<!-- WHY JAZZ — alphabet pattern retained below the Upcoming Free Programs button (2026-06-04) -->
-<section style="padding:3rem 0 calc(6rem - 3in/8 - 1in/8 - 1in/6);background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)),url('03Alphas30.jpg') top center/825px auto repeat;">
+<!-- WHY JAZZ -->
+<section class="section section--cream">
   <div class="container">
-    <div style="max-width:760px;margin:0 auto;text-align:center;">
-      <h3 style="font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--red);margin-bottom:.75rem;">Why jazz in addition to literary readings?</h3>
-      <p style="font-size:1rem;line-height:1.7;color:var(--text-body);margin:0;">Jazz is about giving voice to each individual in an evolving but coherent ensemble framework. In many ways it is a model of the community we envision. Jazz has also been the music associated with civil rights and freedom in the U.S.</p>
+    <div class="section-head">
+      <span class="section-eyebrow">Why jazz in addition to literary readings?</span>
     </div>
+    <p class="lead-statement">Jazz is about giving voice to each individual in an evolving but coherent ensemble framework. In many ways it is a model of the community we envision. Jazz has also been the music associated with civil rights and freedom in the U.S.</p>
   </div>
 </section>
 
 <!-- 3. WHY OUR PROGRAMS ARE FREE -->
-<section class="why-free" id="why-free">
+<section class="section section--white" id="why-free">
   <div class="container">
-    <span class="section-eyebrow" style="color:var(--red);">Why Our Programs Are Free</span>
-    <h2 class="section-title">Giving Voice and <em style="color:#a78519;">Opening Ears</em></h2>
-    <p class="section-subtitle" style="text-align:left;margin-bottom:0;">Removing barriers to creative expression &mdash;</p>
-    <p class="section-subtitle" style="text-align:right;margin-top:0;">so everyone can listen, learn, and belong.</p>
-  </div>
-  <div class="why-free-inner" style="margin-top:calc(-2rem + 1in/32);">
-    <p style="margin-top:0;">At Alphabet City, we remove barriers of access. Artists on our stage are paid, but tickets to every program are free. There are no reserved seats or dress codes, and there are many accommodations for those living with disabilities.</p>
-    <p>When people from all walks of life are in the audience, the experience bridges social and cultural differences and builds community, along with the joy of the art.</p>
-    <p>Our revenue comes from mission-based donations in campaigns &mdash; not ticket sales &mdash; support that is purposeful rather than transactional.</p>
+    <div class="section-head">
+      <span class="section-eyebrow">Why Our Programs Are Free</span>
+      <h2 class="section-title">Giving Voice and Opening Ears</h2>
+      <p class="section-subtitle">Removing barriers to creative expression &mdash; so everyone can listen, learn, and belong.</p>
+    </div>
+    <div class="why-free-inner">
+      <p>At Alphabet City, we remove barriers of access. Artists on our stage are paid, but tickets to every program are free. There are no reserved seats or dress codes, and there are many accommodations for those living with disabilities.</p>
+      <p>When people from all walks of life are in the audience, the experience bridges social and cultural differences and builds community, along with the joy of the art.</p>
+      <p>Our revenue comes from mission-based donations in campaigns &mdash; not ticket sales &mdash; support that is purposeful rather than transactional.</p>
+    </div>
   </div>
 </section>
 
-<section class="stats-section">
+<section class="section section--cream stats-section">
   <div class="container">
     <div class="stats-grid">
       <div class="stat-card">
@@ -297,19 +250,22 @@
         <div class="stat-label">our audience diversity compared to a national benchmark</div>
       </div>
     </div>
-    <div style="max-width:800px;margin:calc(3rem - 1in/2) auto 0;text-align:center;padding:0 2rem 1.5rem;border-top:1px solid var(--border);padding-top:2.5rem;">
-      <p style="font-family:var(--serif);font-style:italic;font-size:1.05rem;line-height:1.6;color:var(--text-body);margin-bottom:.75rem;">&ldquo;In the same way we need to go to the gym to exercise our physical bodies, we need gyms for democracy &mdash; places where we can develop the habits and skills to engage people who are different from us, to learn habits of tolerance.&rdquo;</p>
-      <p style="font-size:.85rem;color:var(--gold);font-weight:600;">&mdash; Hahrie Han, Director, SNF Agora Institute &amp; MacArthur Fellow</p>
+    <div style="margin-top:3rem;padding-top:2.5rem;border-top:1px solid var(--border);">
+      <blockquote class="pullquote">&ldquo;In the same way we need to go to the gym to exercise our physical bodies, we need gyms for democracy &mdash; places where we can develop the habits and skills to engage people who are different from us, to learn habits of tolerance.&rdquo;
+        <cite>Hahrie Han, Director, SNF Agora Institute &amp; MacArthur Fellow</cite>
+      </blockquote>
     </div>
   </div>
 </section>
 
-<!-- 4. COMING UP -->
+<!-- 4. COMING UP (photo-backed section; white header text for legibility over the dark image) -->
 <section class="upcoming" id="upcoming">
   <div class="container">
-    <span class="section-eyebrow">Coming Up</span>
-    <h2 class="section-title" style="color:#fff;">Upcoming Programs</h2>
-    <p class="section-subtitle" style="color:#fff;font-weight:400;">Tickets to programs are free and open to all&mdash;whether in-person at Alphabet City or via livestream or on-demand. Held at Alphabet City, 40 W. North Avenue, Pittsburgh, PA 15212-4710. Alphabet City is an accessible facility.</p>
+    <div class="section-head">
+      <span class="section-eyebrow" style="color:var(--accent-gold);">Coming Up</span>
+      <h2 class="section-title" style="color:#fff;">Upcoming Programs</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,.85);font-weight:400;">Tickets to programs are free and open to all&mdash;whether in-person at Alphabet City or via livestream or on-demand. Held at Alphabet City, 40 W. North Avenue, Pittsburgh, PA 15212-4710. Alphabet City is an accessible facility.</p>
+    </div>
     <div class="events-grid">
       <!-- {{coa-upcoming-preview-start}} -->
 <div class="event-card">
@@ -394,10 +350,13 @@
 <!-- 5. NEVER MISS A PROGRAM -->
 <section class="newsletter">
   <div class="container">
-    <h2>Never Miss a Program</h2>
-    <p>Get our weekly events email &mdash; readings, concerts, films, and festivals delivered to your inbox.</p>
+    <div class="section-head">
+      <span class="section-eyebrow">Stay Connected</span>
+      <h2 class="section-title">Never Miss a Program</h2>
+      <p class="section-subtitle">Get our weekly events email &mdash; readings, concerts, films, and festivals delivered to your inbox.</p>
+    </div>
     <p style="color:var(--text-body);font-size:.95rem;margin-bottom:1.5rem;">Choose the topics that interest you. You may select more than one.</p>
-    <div class="subscribe-options" id="sub-options-arts" role="group" aria-label="Subscription topics" style="display:flex;flex-wrap:wrap;justify-content:center;gap:1rem;margin-bottom:2rem;">
+    <div class="subscribe-options" id="sub-options-arts" role="group" aria-label="Subscription topics" style="display:flex;flex-wrap:wrap;justify-content:flex-start;gap:1rem;margin-bottom:2rem;">
       <button type="button" class="subscribe-option active" aria-pressed="true" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.6rem 1.25rem;color:var(--text-body);font-size:.9rem;cursor:pointer;user-select:none;font-family:inherit;appearance:none;-webkit-appearance:none;">All</button>
       <button type="button" class="subscribe-option" aria-pressed="false" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.6rem 1.25rem;color:var(--text-body);font-size:.9rem;cursor:pointer;user-select:none;font-family:inherit;appearance:none;-webkit-appearance:none;">Literary Programs</button>
       <button type="button" class="subscribe-option" aria-pressed="false" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:.6rem 1.25rem;color:var(--text-body);font-size:.9rem;cursor:pointer;user-select:none;font-family:inherit;appearance:none;-webkit-appearance:none;">Concerts</button>
@@ -436,7 +395,7 @@
     <div class="newsletter-form">
       <a class="smart-mail subscribe-btn" id="subscribe-link-arts" href="mailto:contact@cityofasylumpittsburgh.org">Subscribe &rarr;</a>
     </div>
-    <p style="font-size:.85rem;color:var(--muted);max-width:500px;margin:1.5rem auto 0;line-height:1.6;">For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';" style="color:var(--red);text-decoration:underline;cursor:pointer;">Privacy Policy</a>.</p>
+    <p style="font-size:.85rem;color:var(--muted);max-width:500px;margin:1.5rem 0 0;line-height:1.6;">For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy, please review our <a href="#" onclick="event.preventDefault();document.getElementById('privacy-modal').style.display='flex';document.body.style.overflow='hidden';" style="color:var(--red);text-decoration:underline;cursor:pointer;">Privacy Policy</a>.</p>
 
     <div id="privacy-modal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.75);z-index:1000;align-items:flex-start;justify-content:center;padding:3rem 1rem;overflow-y:auto;" onclick="if(event.target===this){this.style.display='none';document.body.style.overflow='';}">
       <div style="max-width:700px;width:100%;text-align:left;background:var(--deep);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem 2.5rem;position:relative;">
@@ -468,9 +427,12 @@
 <!-- 6. EVERY PROGRAM CTA -->
 <section class="community-cta">
   <div class="container">
-    <h2>Every Program Is Free.<br>Your Support Makes That Possible.</h2>
+    <div class="section-head">
+      <span class="section-eyebrow">Support Our Mission</span>
+      <h2 class="section-title">Every Program Is Free. Your Support Makes That Possible.</h2>
+    </div>
     <a class='btn-gold' href='donate'>Donate Now &rarr;</a>
-    <p style="font-size:.85rem;opacity:.75;margin-top:.75rem;">All donations are tax deductible to the full extent of the law.</p>
+    <p style="font-size:.85rem;color:var(--muted);margin-top:1rem;">All donations are tax deductible to the full extent of the law.</p>
   </div>
 </section>
 
