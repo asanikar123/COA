@@ -56,6 +56,11 @@ body{line-height:1.7;background:var(--warm-white)}
 .location-card h3{font-family:var(--sans);font-size:1.4rem;font-weight:800;color:var(--text-dark);line-height:1.15;margin-bottom:.35rem}
 .location-address{font-size:.8rem;font-weight:600;color:var(--gold);letter-spacing:.03em;margin-bottom:1rem}
 .location-card p{font-size:.95rem;color:var(--text-body);line-height:1.6}
+.campus-map-embed{margin:1.75rem 0 2.5rem}
+.campus-map-link{display:inline-block;margin-top:.7rem;font-weight:700;font-size:.82rem;color:var(--coa-red);text-transform:uppercase;letter-spacing:.04em}
+.campus-map-link:hover{color:var(--coa-red-dark)}
+.location-dir{display:inline-block;margin-top:.4rem;font-weight:700;font-size:.8rem;color:var(--coa-red);text-transform:uppercase;letter-spacing:.04em;transition:color .15s}
+.location-dir:hover{color:var(--coa-red-dark)}
 .location-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem}
 .location-tags span{font-size:.75rem;font-weight:600;color:var(--text-dark);background:var(--cream);padding:.3rem .75rem;border-radius:20px}
 
@@ -635,46 +640,29 @@ body{line-height:1.7;background:var(--warm-white)}
     <h2 class="section-title">A Bricks and Mortar Campus<br>Built by Freedom of Creative Expression</h2>
     <p class="section-subtitle">Spaces and public art across Pittsburgh's Central Northside, all open to the public.</p>
 
-    <ul class="map-addresses-mobile">
-      <li><strong>Alphabet Reading Garden:</strong> 1406-1410 Monterey St.</li>
-      <li><strong>House Publications:</strong> 308-408 Sampsonia Way</li>
-      <li><strong>Alphabet City:</strong> 40 W. North Ave.</li>
-    </ul>
-    <div class="map-wrap" id="mw">
-      <img src="Map%20Test%20%202.jpg" alt="Northside campus map: Alphabet Reading Garden, House Poem, Winged House, Pittsburgh-Burma House, Jazz House, and Comma House along Sampsonia Way, with Alphabet City at 40 W. North Avenue">
+    <!-- Interactive campus map -->
+    <div class="campus-map-embed">
+      <iframe
+        src="https://www.openstreetmap.org/export/embed.html?bbox=-80.0140%2C40.4505%2C-80.0035%2C40.4585&layer=mapnik&marker=40.4540%2C-80.0098"
+        width="100%" height="440" style="border:0;border-radius:12px;display:block;"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Map of the City of Asylum campus on Pittsburgh's Northside Central neighborhood"></iframe>
+      <a class="campus-map-link" href="https://www.google.com/maps/search/?api=1&query=Sampsonia+Way,+Pittsburgh,+PA+15212" target="_blank" rel="noopener">Open in Google Maps &rarr;</a>
     </div>
-
-    <!-- Map photo lightbox -->
-    <div id="map-lightbox" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;align-items:center;justify-content:center;cursor:pointer;">
-      <button type="button" aria-label="Close" id="map-lightbox-close" style="position:absolute;top:20px;right:24px;width:44px;height:44px;border:none;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font-size:28px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:inherit;">&times;</button>
-      <img id="map-lightbox-img" src="campus.html" alt="" style="max-width:92vw;max-height:92vh;object-fit:contain;border-radius:8px;box-shadow: 0 1px 3px rgba(0,0,0,.06);cursor:default;">
-    </div>
-    <script>
-    (function(){
-      var box = document.getElementById('map-lightbox');
-      var img = document.getElementById('map-lightbox-img');
-      var btn = document.getElementById('map-lightbox-close');
-      function close(){ box.style.display = 'none'; img.src = ''; }
-      box.addEventListener('click', function(e){ if (e.target === box) close(); });
-      btn.addEventListener('click', close);
-      img.addEventListener('click', function(e){ e.stopPropagation(); });
-      document.addEventListener('keydown', function(e){
-        if (e.key === 'Escape' && box.style.display === 'flex') close();
-      });
-    })();
-    </script>
 
     <div class="locations-grid">
       <div class="location-card">
         <h3>Alphabet City</h3>
         <div class="location-address">40 W. North Avenue</div>
         <p>The cultural heart of the campus &mdash; a <a href='free-arts'>performance space</a>, independent <a href='bookstore-restaurant'>bookstore</a>, and the Cucina Alfabeto <a href='bookstore-restaurant'>restaurant</a>, all under one roof. Available for private event rental (20 to 150 guests).</p>
-        <img src="alphabet-city-web.jpg" alt="Alphabet City exterior" style="width:100%;margin-top:1rem;border-radius:8px;display:block;">
+        <a class="location-dir" href="https://www.google.com/maps/dir/?api=1&destination=40+W+North+Ave,+Pittsburgh,+PA+15212" target="_blank" rel="noopener">Get directions &rarr;</a>
+        <img src="alphabet-city-web.jpg" alt="Alphabet City exterior" loading="lazy" style="width:100%;margin-top:1rem;border-radius:8px;display:block;">
       </div>
       <div class="location-card">
         <h3>Sampsonia Way House Publications</h3>
         <div class="location-address">408 &ndash; 308 Sampsonia Way</div>
         <p>A walkable outdoor gallery featuring 5 collaborations between exiled writers and visual artists. Each house facade tells a story of resilience and creative freedom.</p>
+        <a class="location-dir" href="https://www.google.com/maps/dir/?api=1&destination=Sampsonia+Way,+Pittsburgh,+PA+15212" target="_blank" rel="noopener">Get directions &rarr;</a>
         <div style="width:85%;margin:1rem auto 0;">
           <img src="HousePublicationsStrip.jpg" alt="The five Sampsonia Way house publications" style="width:100%;height:auto;border-radius:8px;display:block;">
           <div style="display:flex;align-items:flex-start;margin-top:.55rem;font-family:var(--serif);color:var(--text-dark);line-height:1.18;text-align:center;">
@@ -690,7 +678,8 @@ body{line-height:1.7;background:var(--warm-white)}
         <h3>Alphabet Reading Garden</h3>
         <div class="location-address">1406 &ndash; 1410 Monterey Street<br>(2 minute walk from House Publications)</div>
         <p>A public green space where a nuisance bar once stood. Plants whose names span A to Z, pavers incised with handwritten letters from 70 different writing systems contributed by neighbors, and seating areas.</p>
-        <img src="reading-garden-web.jpg" alt="Alphabet Reading Garden" style="width:100%;margin-top:1rem;border-radius:8px;display:block;">
+        <a class="location-dir" href="https://www.google.com/maps/dir/?api=1&destination=1406+Monterey+St,+Pittsburgh,+PA+15212" target="_blank" rel="noopener">Get directions &rarr;</a>
+        <img src="reading-garden-web.jpg" alt="Alphabet Reading Garden" loading="lazy" style="width:100%;margin-top:1rem;border-radius:8px;display:block;">
       </div>
       <div class="location-card">
         <h3>River of Words</h3>
