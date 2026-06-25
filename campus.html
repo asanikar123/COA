@@ -199,11 +199,11 @@ body{line-height:1.7;background:var(--warm-white)}
 </section>
 
 <!-- HISTORY CAROUSEL (Community Building) -->
-<section class="campus-carousel-section" id="how-it-grew" style="padding:4rem 0 3rem;background:linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)), url('03Alphas30.jpg') top center/825px auto repeat, var(--cream);">
+<section class="campus-carousel-section" id="how-it-grew" style="padding:4rem 0 3rem;background:var(--cream);">
   <style>
     .campus-carousel-wrap{max-width:900px;margin:0 auto;position:relative;padding:0 4rem;}
     .campus-carousel{display:flex;flex-direction:column;gap:1.25rem;}
-    .campus-carousel .history-card{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;background:var(--white);border: 3px solid var(--red);border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,.08);align-items:stretch;}
+    .campus-carousel .history-card{display:grid;grid-template-columns:1fr 1.2fr;gap:2rem;background:var(--white);border:1px solid var(--border);border-radius:16px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.06);align-items:stretch;}
     .campus-carousel .history-card-photo{background:var(--charcoal);overflow:hidden;}
     .campus-carousel .history-card-photo img{width:100%;height:100%;object-fit:cover;display:block;}
     .campus-carousel .history-card-body{padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:center;}
@@ -262,12 +262,29 @@ body{line-height:1.7;background:var(--warm-white)}
       .campus-carousel .history-card-photo{aspect-ratio:16/10;}
       .campus-carousel-wrap{padding:0 3rem;}
     }
+    /* ─── VIEW TOGGLE (slideshow ⇆ browse-all) ─── */
+    .campus-view-toggle{display:inline-flex;gap:.25rem;background:var(--cream);border:1px solid var(--border);border-radius:9px;padding:.25rem;margin-bottom:1rem;}
+    .cv-btn{background:transparent;border:0;font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--muted);padding:.5rem 1.1rem;border-radius:6px;cursor:pointer;transition:background .15s,color .15s;}
+    .cv-btn:hover{color:var(--text-dark);}
+    .cv-btn.active{background:var(--white);color:var(--text-dark);box-shadow:0 1px 3px rgba(0,0,0,.06);}
+    /* Browse-all timeline mode: show every card stacked, hide slideshow chrome */
+    .campus-carousel.timeline-view{display:flex;flex-direction:column;gap:1.25rem;}
+    .campus-carousel.timeline-view .history-card{flex:none !important;width:100% !important;align-self:stretch;}
+    .campus-carousel.timeline-view .history-card.hidden{display:flex !important;}
+    .campus-carousel-section.browse .campus-carousel-bar,
+    .campus-carousel-section.browse .campus-carousel-nav,
+    .campus-carousel-section.browse .campus-carousel-counter{display:none !important;}
+    .campus-carousel-section.browse .campus-carousel-wrap{padding:0 !important;}
   </style>
   <div class="container">
     <div class="section-head">
       <span class="section-eyebrow">How It Grew</span>
       <h2 class="section-title" style="margin-bottom:.4rem;">From One House to a Neighborhood</h2>
       <p class="section-subtitle" style="margin-bottom:0;">Our history in a minute.</p>
+    </div>
+    <div class="campus-view-toggle" role="tablist" aria-label="History view">
+      <button type="button" class="cv-btn active" id="cv-slideshow" role="tab" aria-selected="true">&#9654;&nbsp; Slideshow</button>
+      <button type="button" class="cv-btn" id="cv-timeline" role="tab" aria-selected="false">&#9776;&nbsp; Browse all</button>
     </div>
     <div class="campus-carousel-bar" id="campus-carousel-bar">
       <span class="campus-carousel-bar-status" id="campus-carousel-bar-status">Auto-advancing every 6 seconds</span>
@@ -495,6 +512,7 @@ body{line-height:1.7;background:var(--warm-white)}
       var firstFire = null;
       var paused = false;
       var hoverPaused = false;
+      var timelineMode = false;
       function render(){
         cards.forEach(function(c,i){
           c.classList.toggle('hidden', i < current || i >= current + step);
@@ -563,7 +581,7 @@ body{line-height:1.7;background:var(--warm-white)}
       }
       function startTimer(){
         stopTimer();
-        if (paused || hoverPaused) return;
+        if (paused || hoverPaused || timelineMode) return;
         timer = setTimeout(function tick(){
           if (paused || hoverPaused || document.querySelector('#campus-carousel .history-card.expanded')) { timer = null; return; }
           advance();
@@ -625,6 +643,30 @@ body{line-height:1.7;background:var(--warm-white)}
         paused = true; updateBar(); stopTimer();   // any See more/less interaction pauses and stays paused until Play
         fitCopy();
       };
+      // ─── VIEW TOGGLE: slideshow ⇆ browse-all timeline ───
+      var carouselEl = document.getElementById('campus-carousel');
+      var sectionEl = document.getElementById('how-it-grew');
+      var btnSlide = document.getElementById('cv-slideshow');
+      var btnList = document.getElementById('cv-timeline');
+      function setView(mode){
+        var browse = (mode === 'timeline');
+        timelineMode = browse;
+        sectionEl.classList.toggle('browse', browse);
+        carouselEl.classList.toggle('timeline-view', browse);
+        if (btnSlide){ btnSlide.classList.toggle('active', !browse); btnSlide.setAttribute('aria-selected', String(!browse)); }
+        if (btnList){ btnList.classList.toggle('active', browse); btnList.setAttribute('aria-selected', String(browse)); }
+        if (browse){
+          stopTimer();
+          cards.forEach(function(c){ c.classList.remove('hidden'); });   // reveal every entry
+        } else {
+          paused = true;     // back to slideshow, ready-to-play (paused)
+          render();          // restore single-card view
+          updateBar();
+        }
+      }
+      if (btnSlide) btnSlide.addEventListener('click', function(){ setView('slideshow'); });
+      if (btnList)  btnList.addEventListener('click', function(){ setView('timeline'); });
+
       render();
       paused = true;   // load ready-to-play: start paused, user presses Play
       updateBar();
