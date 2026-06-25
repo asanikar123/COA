@@ -5,12 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bookstore &amp; Restaurant &mdash; City of Asylum</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="design-system.css?v=2">
+<link rel="stylesheet" href="design-system.css?v=3">
 <style>
 /* TWO-COLUMN VENUE CARDS — built on the shared .feature-card (cream) treatment.
    Two side-by-side cards (Bookstore + Restaurant), each holding prose, an info
    box, action links, media, and people-with-roles. */
-.venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; }
+.venue-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: stretch; margin-left: -2rem; width: calc(100% + 2rem); }
+@media (max-width: 900px) { .venue-grid { margin-left: 0; width: 100%; } }
 .venue-card { display: flex; flex-direction: column; }
 .venue-card h3 { font-family: var(--sans); font-weight: 800; color: var(--text-dark); font-size: 1.6rem; line-height: 1.15; margin-bottom: 1rem; }
 .venue-card p { font-size: 1rem; line-height: 1.7; color: var(--text-body); margin-bottom: 1rem; }
