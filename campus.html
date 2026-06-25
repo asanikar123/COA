@@ -62,6 +62,8 @@ body{line-height:1.7;background:var(--warm-white)}
 .campus-map-embed{margin:1.75rem 0 2.5rem}
 #campus-map{height:440px;border-radius:12px;overflow:hidden;z-index:0}
 @media (max-width:768px){ #campus-map{height:340px} }
+.campus-map-label{background:var(--white);border:1px solid var(--border);border-radius:5px;padding:1px 7px;font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--text-dark);box-shadow:0 1px 3px rgba(0,0,0,.18);white-space:nowrap}
+.campus-map-label.leaflet-tooltip-top::before{border-top-color:var(--white)}
 .campus-map-link{display:inline-block;margin-top:.7rem;font-weight:700;font-size:.82rem;color:var(--coa-red);text-transform:uppercase;letter-spacing:.04em}
 .campus-map-link:hover{color:var(--coa-red-dark)}
 .location-dir{display:inline-block;margin-top:.4rem;font-weight:700;font-size:.8rem;color:var(--coa-red);text-transform:uppercase;letter-spacing:.04em;transition:color .15s}
@@ -696,14 +698,22 @@ body{line-height:1.7;background:var(--warm-white)}
     (function(){
       var el = document.getElementById('campus-map');
       if (!el || typeof L === 'undefined') return;
+      function dirLink(addr){ return 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(addr + ', Pittsburgh, PA 15212'); }
+      function dirHTML(addr){ return '<a href="' + dirLink(addr) + '" target="_blank" rel="noopener">Directions &rarr;</a>'; }
+      // The five Sampsonia Way houses sit on one short block (geocoded from their real
+      // addresses) — grouped into one labeled pin, matching the "House Publications"
+      // card. Each house keeps its exact address + directions in the popup.
+      var houses = [
+        ['House Poem','408 Sampsonia Way'], ['Winged House','402 Sampsonia Way'],
+        ['Pittsburgh-Burma House','324 Sampsonia Way'], ['Jazz House','320 Sampsonia Way'],
+        ['Comma House','308 Sampsonia Way']
+      ];
+      var housePopup = '<strong>Sampsonia Way House Publications</strong><br>Five painted house facades:'
+        + houses.map(function(h){ return '<br>&bull; ' + h[0] + ' (' + h[1].split(' ')[0] + ') &mdash; ' + dirHTML(h[1]); }).join('');
       var locations = [
-        { name:'Alphabet City',            addr:'40 W. North Ave.',        ll:[40.45378, -80.00975] },
-        { name:'House Poem',               addr:'408 Sampsonia Way',       ll:[40.45560, -80.00936] },
-        { name:'Winged House',             addr:'402 Sampsonia Way',       ll:[40.45558, -80.00919] },
-        { name:'Pittsburgh-Burma House',   addr:'324 Sampsonia Way',       ll:[40.45554, -80.00889] },
-        { name:'Jazz House',               addr:'320 Sampsonia Way',       ll:[40.45552, -80.00878] },
-        { name:'Comma House',              addr:'308 Sampsonia Way',       ll:[40.45549, -80.00861] },
-        { name:'Alphabet Reading Garden',  addr:'1406–1410 Monterey St.',  ll:[40.45500, -80.01010] }
+        { name:'Alphabet City',           ll:[40.455453, -80.007084], popup:'<strong>Alphabet City</strong><br>40 W. North Ave.<br>' + dirHTML('40 West North Avenue') },
+        { name:'House Publications',       ll:[40.457042, -80.011486], popup:housePopup },
+        { name:'Alphabet Reading Garden',  ll:[40.456774, -80.013295], popup:'<strong>Alphabet Reading Garden</strong><br>1406&ndash;1410 Monterey St.<br>' + dirHTML('1406 Monterey Street') }
       ];
       var map = L.map(el, { scrollWheelZoom:false });
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -711,14 +721,12 @@ body{line-height:1.7;background:var(--warm-white)}
       }).addTo(map);
       var group = L.featureGroup();
       locations.forEach(function(loc){
-        var dir = 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(loc.addr + ', Pittsburgh, PA 15212');
-        L.marker(loc.ll).addTo(group).bindPopup(
-          '<strong>' + loc.name + '</strong><br>' + loc.addr +
-          '<br><a href="' + dir + '" target="_blank" rel="noopener">Directions &rarr;</a>'
-        );
+        L.marker(loc.ll).addTo(group)
+          .bindTooltip(loc.name, { permanent:true, direction:'top', offset:[0,-6], className:'campus-map-label' })
+          .bindPopup(loc.popup);
       });
       group.addTo(map);
-      map.fitBounds(group.getBounds().pad(0.18));
+      map.fitBounds(group.getBounds().pad(0.25));
     })();
     </script>
 
