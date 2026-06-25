@@ -256,14 +256,12 @@ body{line-height:1.7;background:var(--warm-white)}
     .campus-carousel-prev{left:0;}
     .campus-carousel-next{right:0;}
     .campus-carousel .history-card.hidden{display:none;}
-    .campus-carousel-counter{text-align:center;margin-top:1rem;font-size:.85rem;color:var(--muted);letter-spacing:.05em;text-transform:uppercase;font-weight:600;}
-    .campus-carousel-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;background:#fff;border:2px solid var(--red);color:#000;padding:.65rem 1.25rem;border-radius:8px;margin:0 auto 1rem;font-size:.85rem;max-width:900px;}
-    .campus-carousel-bar-status{display:flex;align-items:center;gap:.5rem;font-weight:600;letter-spacing:.04em;}
-    .campus-carousel-bar-status::before{content:'';display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gold);animation:ccPulse 1.6s ease-in-out infinite;}
-    .campus-carousel-bar.paused .campus-carousel-bar-status::before{animation:none;background:var(--muted);}
-    @keyframes ccPulse{0%,100%{opacity:1;}50%{opacity:.35;}}
-    .campus-carousel-playpause{background:var(--gold);color:var(--deep);border:0;font-size:.8rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;padding:.45rem 1rem;border-radius:6px;cursor:pointer;transition:background .2s;display:inline-flex;align-items:center;gap:.35rem;}
-    .campus-carousel-playpause:hover{background:var(--gold-light);}
+    /* One tidy control row: view toggle (left), play/pause + counter (right) */
+    .campus-controls{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.1rem;}
+    .campus-controls-right{display:flex;align-items:center;gap:.85rem;}
+    .campus-playpause{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--text-dark);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;line-height:1;transition:border-color .15s,color .15s;}
+    .campus-playpause:hover{border-color:var(--gold);color:var(--gold);}
+    .campus-counter{font-size:.78rem;color:var(--muted);letter-spacing:.04em;font-weight:600;white-space:nowrap;}
     @media (max-width:768px){
       .campus-carousel .history-card{grid-template-columns:1fr;}
       .campus-carousel .history-card-photo{aspect-ratio:16/10;}
@@ -278,9 +276,8 @@ body{line-height:1.7;background:var(--warm-white)}
     .campus-carousel.timeline-view{display:flex;flex-direction:column;gap:1.25rem;}
     .campus-carousel.timeline-view .history-card{flex:none !important;width:100% !important;align-self:stretch;}
     .campus-carousel.timeline-view .history-card.hidden{display:flex !important;}
-    .campus-carousel-section.browse .campus-carousel-bar,
-    .campus-carousel-section.browse .campus-carousel-nav,
-    .campus-carousel-section.browse .campus-carousel-counter{display:none !important;}
+    .campus-carousel-section.browse .campus-controls-right,
+    .campus-carousel-section.browse .campus-carousel-nav{display:none !important;}
     .campus-carousel-section.browse .campus-carousel-wrap{padding:0 !important;}
   </style>
   <div class="container">
@@ -289,13 +286,15 @@ body{line-height:1.7;background:var(--warm-white)}
       <h2 class="section-title" style="margin-bottom:.4rem;">From One House to a Neighborhood</h2>
       <p class="section-subtitle" style="margin-bottom:0;">Our history in a minute.</p>
     </div>
-    <div class="campus-view-toggle" role="tablist" aria-label="History view">
-      <button type="button" class="cv-btn active" id="cv-slideshow" role="tab" aria-selected="true">&#9654;&nbsp; Slideshow</button>
-      <button type="button" class="cv-btn" id="cv-timeline" role="tab" aria-selected="false">&#9776;&nbsp; Browse all</button>
-    </div>
-    <div class="campus-carousel-bar" id="campus-carousel-bar">
-      <span class="campus-carousel-bar-status" id="campus-carousel-bar-status">Auto-advancing every 6 seconds</span>
-      <button type="button" class="campus-carousel-playpause" id="campus-carousel-playpause" aria-label="Pause auto-advance">&#9208; Pause</button>
+    <div class="campus-controls">
+      <div class="campus-view-toggle" role="tablist" aria-label="History view">
+        <button type="button" class="cv-btn active" id="cv-slideshow" role="tab" aria-selected="true">&#9654;&nbsp; Slideshow</button>
+        <button type="button" class="cv-btn" id="cv-timeline" role="tab" aria-selected="false">&#9776;&nbsp; Browse all</button>
+      </div>
+      <div class="campus-controls-right" id="campus-controls-right">
+        <button type="button" class="campus-playpause" id="campus-carousel-playpause" aria-label="Pause auto-advance">&#9208;</button>
+        <span class="campus-counter" id="campus-carousel-counter">1 of 15</span>
+      </div>
     </div>
     <div class="campus-carousel-wrap">
       <button type="button" class="campus-carousel-nav campus-carousel-prev" aria-label="Previous" onclick="campusCarouselGo(-1, true)">&#9664;</button>
@@ -499,15 +498,12 @@ body{line-height:1.7;background:var(--warm-white)}
       </div>
       </div>
     </div>
-    <div class="campus-carousel-counter" id="campus-carousel-counter">1-2 of 15</div>
   </div>
   <script>
     (function(){
       var cards = document.querySelectorAll('#campus-carousel .history-card');
       var counter = document.getElementById('campus-carousel-counter');
       var ppBtn = document.getElementById('campus-carousel-playpause');
-      var bar = document.getElementById('campus-carousel-bar');
-      var barStatus = document.getElementById('campus-carousel-bar-status');
       var wrap = document.querySelector('.campus-carousel-wrap');
       var current = 0;
       var step = 1;
@@ -575,14 +571,10 @@ body{line-height:1.7;background:var(--warm-white)}
       }
       function updateBar(){
         if (paused){
-          bar.classList.add('paused');
-          barStatus.textContent = 'Paused';
-          ppBtn.innerHTML = '&#9654; Play';
+          ppBtn.innerHTML = '&#9654;';
           ppBtn.setAttribute('aria-label','Resume auto-advance');
         } else {
-          bar.classList.remove('paused');
-          barStatus.textContent = 'Auto-advancing';
-          ppBtn.innerHTML = '&#9208; Pause';
+          ppBtn.innerHTML = '&#9208;';
           ppBtn.setAttribute('aria-label','Pause auto-advance');
         }
       }
