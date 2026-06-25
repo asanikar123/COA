@@ -4,112 +4,30 @@
 <meta charset="utf-8">
 <title>Programs — City of Asylum</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="../design-system.css?v=3">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root {
-  --red: #9c3f33;
-  --gold: #6b6155;
-  --deep: #1c1a17;
-  --cream: #f6f1e8;
-  --page: #faf8f3;
-  --muted: #7a7268;
-  --border: #e4ddd0;
-  --white: #fff;
+/* PAGE-LOCAL: keep the listing's own warm page tone + dark band hero color */
+:root { --program-bg: var(--deep); }
+body { background: var(--warm-white); }
+
+/* This listing is a full-width slider + filter + multi-column grid, so it uses a
+   centered 1200px column rather than the shared rail offset. Override the shared
+   .container (which left-pins content to the rail) for this page only. The footer
+   keeps the shared centered container via its own .site-footer .container rule. */
+.container { max-width: 1200px; margin-left: auto; margin-right: auto; padding: 0 1.25rem; }
+.main-container { padding-top: 1.5rem; padding-bottom: 4rem; }
+
+/* LISTING HERO — dark band, gold eyebrow, sans-800 white headline (harmonized with about.html) */
+.programs-hero {
+  background: var(--program-bg);
+  color: var(--white);
+  padding: 3rem 0 2.5rem;
 }
-* { box-sizing: border-box; }
-body {
-  margin: 0;
-  background: var(--page);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  color: var(--deep);
-  line-height: 1.5;
-}
-a { color: var(--red); text-decoration: none; }
-a:hover { text-decoration: underline; }
-.page-header {
-  /* Curtains backdrop with a 40% black overlay so the curtain color shows at ~60% intensity */
-  background:
-    linear-gradient(rgba(0,0,0,.4), rgba(0,0,0,.4)),
-    url('images/just-curtains.jpg') center/cover;
-  color: white;
-  padding: 1rem 1.25rem;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-}
-/* Match the .nav-logo pattern from coa-site-mobile2/index.html so visitors recognize it */
-.nav-logo {
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  color: white;
-  text-decoration: none;
-  flex-shrink: 0;
-}
-.nav-logo img {
-  height: 70px;
-  width: auto;
-  clip-path: inset(0 7% 7% 0);
-  background: #1c1a17;
-}
-.nav-logo span {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: .02em;
-  line-height: 1.1;
-}
-.page-header .header-text {
-  flex: 1;
-  text-align: center;
-}
-.page-header .header-address {
-  flex-shrink: 0;
-  color: white;
-  font-size: .9rem;
-  font-weight: 600;
-  line-height: 1.35;
-  text-align: right;
-}
-/* "Home" button so visitors can get back to the main City of Asylum site/menu */
-.page-header .header-home {
-  flex-shrink: 0;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: .8rem;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  border: 1.5px solid rgba(255,255,255,.7);
-  border-radius: 6px;
-  padding: .5rem .95rem;
-  white-space: nowrap;
-  transition: background .2s, color .2s;
-}
-.page-header .header-home:hover { background: #fff; color: #1c1a17; }
-.page-header h1 {
-  margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 2rem;
-  letter-spacing: .02em;
-}
-.page-header .tagline {
-  margin: .35rem 0 0 0;
-  color: var(--gold);
-  font-size: .95rem;
-  font-weight: 800;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
-@media (max-width: 700px) {
-  .page-header { flex-direction: column; gap: .65rem; padding: 1rem; }
-  .page-header .header-address { text-align: center; }
-  .nav-logo img { height: 56px; }
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 1.25rem 4rem;
-}
+.programs-hero .hero-eyebrow { color: var(--accent-gold); font-size: .82rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; margin-bottom: .6rem; }
+.programs-hero h1 { font-family: var(--sans); font-weight: 800; font-size: clamp(2rem, 3.5vw, 3rem); line-height: 1.08; color: var(--white); margin-bottom: .75rem; }
+.programs-hero .hero-sub { color: rgba(255,255,255,.82); font-size: 1.05rem; }
+.programs-hero .hero-address { color: rgba(255,255,255,.6); font-size: .9rem; line-height: 1.5; margin-top: 1rem; }
 
 /* Slider */
 .slider {
@@ -178,7 +96,7 @@ a:hover { text-decoration: underline; }
 }
 .slide-badge {
   display: inline-block;
-  background: var(--gold);
+  background: var(--accent-gold);
   color: var(--deep);
   font-size: .72rem;
   font-weight: 700;
@@ -197,8 +115,9 @@ a:hover { text-decoration: underline; }
 }
 .slide-title {
   margin: 0;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 1.85rem;
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: 1.75rem;
   line-height: 1.15;
 }
 .slide-title a { color: var(--deep); }
@@ -234,7 +153,7 @@ a:hover { text-decoration: underline; }
   cursor: pointer;
   padding: 0;
 }
-.slider-dot.active { background: var(--red); border-color: var(--red); }
+.slider-dot.active { background: var(--accent-gold); border-color: var(--accent-gold); }
 .slider-arrow {
   position: absolute;
   top: 50%;
@@ -309,10 +228,11 @@ a:hover { text-decoration: underline; }
   border-bottom: 1px solid var(--border);
 }
 .section-heading {
-  font-family: Georgia, serif;
+  font-family: var(--sans);
+  font-weight: 800;
   font-size: 1.5rem;
   margin: 0;
-  color: var(--deep);
+  color: var(--text-dark);
 }
 .return-btn {
   background: var(--cream);
@@ -416,17 +336,18 @@ a:hover { text-decoration: underline; }
 }
 .card-title {
   margin: .3rem 0 .5rem;
-  font-family: Georgia, serif;
+  font-family: var(--sans);
+  font-weight: 800;
   font-size: 1.15rem;
   line-height: 1.22;
 }
-.card-title a { color: var(--deep); }
-.card-title a:hover { color: var(--red); text-decoration: none; }
+.card-title a { color: var(--text-dark); }
+.card-title a:hover { color: var(--accent-gold); text-decoration: none; }
 /* {br} in program titles is for the detail-page hero — card grid wraps naturally */
 .card-title br { display: none; }
 .card-blurb {
   margin: 0 0 .85rem;
-  color: #444;
+  color: var(--text-body);
   font-size: .9rem;
   flex: 1;        /* take remaining height so action buttons sit at the bottom */
 }
@@ -446,7 +367,9 @@ a:hover { text-decoration: underline; }
   text-transform: uppercase;
 }
 
-/* Buttons */
+/* Buttons — listing-local sizing. Reserve = gold primary CTA (matches site language);
+   secondary = quiet cream/outline "Learn more". (These intentionally override the
+   larger shared .btn from design-system.css for the compact card/slider context.) */
 .btn {
   display: inline-block;
   padding: .5rem .9rem;
@@ -456,13 +379,13 @@ a:hover { text-decoration: underline; }
   text-decoration: none;
   border: none;
   cursor: pointer;
-  font-family: inherit;
+  font-family: var(--sans);
 }
 .btn:hover { text-decoration: none; }
-.btn-primary { background: var(--red); color: white; }
-.btn-primary:hover { background: #a32d23; }
+.btn-primary { background: var(--accent-gold); color: var(--deep); }
+.btn-primary:hover { background: #c98f0e; color: var(--deep); }
 .btn-secondary { background: var(--cream); color: var(--deep); border: 1px solid var(--border); }
-.btn-secondary:hover { background: #ebe5d4; }
+.btn-secondary:hover { background: #ebe5d4; color: var(--deep); }
 .btn-lg { padding: .7rem 1.2rem; font-size: .95rem; }
 .btn-sm { padding: .35rem .7rem; font-size: .78rem; }
 
@@ -516,29 +439,93 @@ a:hover { text-decoration: underline; }
   box-shadow: 0 1px 3px rgba(0,0,0,.06);
 }
 </style>
+<link rel="stylesheet" href="../mobile.css?v=3">
 </head>
 <body>
 
-<header class="page-header">
-  <a class='nav-logo' href='../'>
-    <img src="../CofA_Logo_RGB.jpg" alt="City of Asylum">
-    <span>City of Asylum</span>
-  </a>
-  <a class='header-home' href='../free-arts'>&larr; Return to Free Programs &amp; Tix</a>
-  <div class="header-text">
+<!-- ═══════ NAVIGATION ═══════ -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a class='nav-logo' href='../'>
+      <span>City of<br>Asylum</span>
+      <img src="../xCofA_Logo_RGB.png" alt="City of Asylum">
+    </a>
+            <div class="nav-links">
+      <a href='../'>Home</a>
+      <div class="nav-item">
+        <a href='../about'>About Us <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown nav-dropdown-light">
+          <a href='../about'>Our Mission</a>
+          <a href='../about#history'>History</a>
+          <a href='../about#model'>Our Model</a>
+          <a href='../about#staff'>Staff</a>
+          <a href='../about#board'>Board of Directors</a>
+          <a href='../about#jobs'>Jobs</a>
+          <a href='../about#subscribe'>Subscribe</a>
+          <a href='../about#inquiries'>Other Inquiries</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href='../writers'>Writers &amp; Residencies <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='../writers#residency-program'>Residency Program</a>
+          <a href='../writers#writers-in-residence'>City of Asylum Writers</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href='../free-arts' style='line-height:1;display:inline-block;color:var(--coa-red);font-weight:700;'>Free Programs &amp; Tix <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='../free-arts#what-we-host'>What We Host</a>
+          <a href='../free-arts#why-free'>Why Our Programs Are Free</a>
+          <a href='../programs/'>Upcoming Programs</a>
+          <a href='../programs/'>Full Calendar</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href='../campus'>Community Building <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown">
+          <a href='../campus'>Community as Campus</a>
+          <a href='../campus#how-it-grew'>How It Grew</a>
+          <a href='../campus#whats-here'>What&#8217;s Here Now</a>
+          <a href='../campus#walking-tour'>Walking Tour App</a>
+          <a href='../campus#becoming'>Starting a New City</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href='../media-archive'>Media &amp; Archive <span class="nav-chevron">&#9662;</span></a>
+        <div class="nav-dropdown nav-dropdown-right">
+          <a href='../media-archive#video'>Selected Video &amp; Photos</a>
+          <a href='../media-archive#publications'>Selected Books</a>
+          <a href='../media-archive#press'>Selected Press</a>
+          <a href='../media-archive#archive'>Media Archive</a>
+        </div>
+      </div>
+
+      <a href='../bookstore-restaurant' style='line-height:1;display:inline-block;'>Bookstore &amp; Restaurant</a>
+      <div class="nav-item">
+        <a class='nav-donate' href='../donate'>Donate</a>
+        <div class="nav-dropdown nav-dropdown-right">
+          <a href='../donate#other-ways'>Other Ways to Help</a>
+          <a href='../donate#foundations'>Foundations</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- LISTING HERO — dark band harmonized with about.html (gold eyebrow, sans-800 headline) -->
+<section class="programs-hero">
+  <div class="container">
+    <span class="hero-eyebrow">Free Programs &amp; Tickets</span>
     <h1>Programs at Alphabet City</h1>
-    <div class="tagline">In-Person &amp; Livestreamed, All FREE</div>
+    <p class="hero-sub">In-Person &amp; Livestreamed &mdash; All FREE</p>
+    <p class="hero-address">Alphabet City &middot; 40 W. North Avenue &middot; Pittsburgh, PA 15212 USA</p>
   </div>
-  <div class="header-address">
-    Alphabet City<br>
-    40 W. North Avenue<br>
-    Pittsburgh, PA 15212 USA
-  </div>
-</header>
+</section>
 
-<div class="container">
+<div class="container main-container">
 
-  
+
     <section class="slider" aria-label="Featured programs">
       
     <div class="slide" data-idx="0" data-date="2026-10-09" >
@@ -1091,37 +1078,22 @@ Together, we aim…</p>
 })();
 </script>
 
-<!-- SITE FOOTER — self-contained (scoped styles, ../ paths) so it matches the other pages without depending on their CSS vars / privacy modal -->
-<style>
-  .site-footer{background:var(--deep);border-top:1px solid rgba(255,255,255,.08);padding:4rem 1.5rem 2rem;color:rgba(255,255,255,.5);position:relative;z-index:2;font-family:'Inter','Segoe UI',sans-serif;}
-  .site-footer .footer-inner{max-width:1200px;margin:0 auto;}
-  .site-footer .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:2.5rem;}
-  .site-footer .footer-brand img{height:64px;display:block;margin-bottom:.6rem;}
-  .site-footer .footer-brand .fb-name{color:#fff;font-weight:700;font-size:1.05rem;}
-  .site-footer .footer-brand p{font-size:.9rem;line-height:1.7;max-width:280px;margin:.5rem 0 0;}
-  .site-footer .footer-col h4{font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:700;color:#fff;margin:0 0 1rem;}
-  .site-footer .footer-col a{display:block;color:rgba(255,255,255,.5);font-size:.875rem;padding:.25rem 0;text-decoration:none;}
-  .site-footer .footer-col a:hover{color:#9c3f33;}
-  .site-footer .footer-mission{text-align:center;color:#9c3f33;font-size:.875rem;margin:0 0 1.5rem;}
-  .site-footer .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:1.5rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-size:.8rem;}
-  .site-footer .footer-bottom a{color:rgba(255,255,255,.4);text-decoration:none;}
-  @media(max-width:768px){.site-footer .footer-grid{grid-template-columns:1fr 1fr;gap:2rem;}}
-</style>
+<!-- SITE FOOTER — uses the shared design-system footer styles (../ paths for this subdirectory) -->
 <footer class="site-footer">
-  <div class="footer-inner">
+  <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href='../' style='text-decoration:none;display:inline-block;'>
-          <img src="../xCofA_Logo_RGB.png" alt="City of Asylum">
-          <span class="fb-name">City of Asylum</span>
+        <a class='nav-logo' href='../' style='margin-bottom:.5rem'>
+          <span style="color:#fff;font-family:var(--sans);font-weight:700;">City of Asylum</span>
+          <img src="../xCofA_Logo_RGB.png" alt="City of Asylum" style="height:70px;">
         </a>
-        <p>Protecting and celebrating freedom of creative expression since 2004. The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
+        <p>Protecting and celebrating freedom of creative expression since 2004.<br>The world&rsquo;s largest safe haven for exiled writers, based in Pittsburgh, PA.</p>
       </div>
       <div class="footer-col">
         <h4>Explore</h4>
         <a href='../about'>About Us</a>
         <a href='../writers'>Writers &amp; Residencies</a>
-        <a href='../free-arts'>Free Programs &amp; Tix</a>
+        <a href='../free-arts' style='color:var(--coa-red);font-weight:700;'>Free Programs &amp; Tix</a>
         <a href='../media-archive'>Media &amp; Archive</a>
       </div>
       <div class="footer-col">
@@ -1133,12 +1105,12 @@ Together, we aim…</p>
       </div>
       <div class="footer-col">
         <h4>Support</h4>
-        <a href='../donate' style='background:var(--red);color:#fff;font-weight:700;padding:.4rem 1rem;border-radius:6px;display:inline-block;margin-top:.15rem;'>Donate</a>
+        <a href='../donate' style='background:var(--coa-red);color:var(--white);font-weight:700;padding:.5rem 1.4rem;border-radius:6px;display:inline-block;margin-top:.15rem;text-transform:uppercase;letter-spacing:.03em;'>Donate</a>
         <a href='../about#inquiries'>Volunteer</a>
         <a href='../about#inquiries'>Contact Us</a>
       </div>
     </div>
-    <p class="footer-mission">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
+    <p style="text-align:center;color:var(--gold);font-size:.875rem;padding:.25rem 0;margin:1.5rem 0;">City of Asylum builds a just community by protecting and celebrating freedom of creative expression.</p>
     <div class="footer-bottom">
       <span>&copy; 2026 City of Asylum. All rights reserved. 501(c)(3) EIN: 20-2810099</span>
       <a href='../'>City of Asylum Home &rarr;</a>
