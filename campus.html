@@ -256,11 +256,12 @@ body{line-height:1.7;background:var(--warm-white)}
     .campus-carousel-prev{left:0;}
     .campus-carousel-next{right:0;}
     .campus-carousel .history-card.hidden{display:none;}
-    /* One tidy control row: view toggle (left), play/pause + counter (right) */
-    .campus-controls{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:1.1rem;}
-    .campus-controls-right{display:flex;align-items:center;gap:.85rem;}
-    .campus-playpause{width:34px;height:34px;border-radius:50%;border:1px solid var(--border);background:var(--white);color:var(--text-dark);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;line-height:1;transition:border-color .15s,color .15s;}
-    .campus-playpause:hover{border-color:var(--gold);color:var(--gold);}
+    /* One tidy control row, all grouped to the left: view toggle, then a
+       labeled Play/Pause pill (NOT a round icon, so it never reads as an arrow),
+       then the counter. */
+    .campus-controls{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;margin-bottom:1.1rem;}
+    .campus-playpause{display:inline-flex;align-items:center;gap:.45rem;background:transparent;border:1px solid var(--border);border-radius:7px;padding:.42rem .9rem;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.02em;color:var(--text-body);cursor:pointer;transition:border-color .15s,color .15s;}
+    .campus-playpause:hover{border-color:var(--gold);color:var(--text-dark);}
     .campus-counter{font-size:.78rem;color:var(--muted);letter-spacing:.04em;font-weight:600;white-space:nowrap;}
     @media (max-width:768px){
       .campus-carousel .history-card{grid-template-columns:1fr;}
@@ -276,7 +277,8 @@ body{line-height:1.7;background:var(--warm-white)}
     .campus-carousel.timeline-view{display:flex;flex-direction:column;gap:1.25rem;}
     .campus-carousel.timeline-view .history-card{flex:none !important;width:100% !important;align-self:stretch;}
     .campus-carousel.timeline-view .history-card.hidden{display:flex !important;}
-    .campus-carousel-section.browse .campus-controls-right,
+    .campus-carousel-section.browse .campus-playpause,
+    .campus-carousel-section.browse .campus-counter,
     .campus-carousel-section.browse .campus-carousel-nav{display:none !important;}
     .campus-carousel-section.browse .campus-carousel-wrap{padding:0 !important;}
   </style>
@@ -288,13 +290,11 @@ body{line-height:1.7;background:var(--warm-white)}
     </div>
     <div class="campus-controls">
       <div class="campus-view-toggle" role="tablist" aria-label="History view">
-        <button type="button" class="cv-btn active" id="cv-slideshow" role="tab" aria-selected="true">&#9654;&nbsp; Slideshow</button>
-        <button type="button" class="cv-btn" id="cv-timeline" role="tab" aria-selected="false">&#9776;&nbsp; Browse all</button>
+        <button type="button" class="cv-btn active" id="cv-slideshow" role="tab" aria-selected="true">Slideshow</button>
+        <button type="button" class="cv-btn" id="cv-timeline" role="tab" aria-selected="false">Browse all</button>
       </div>
-      <div class="campus-controls-right" id="campus-controls-right">
-        <button type="button" class="campus-playpause" id="campus-carousel-playpause" aria-label="Pause auto-advance">&#9208;</button>
-        <span class="campus-counter" id="campus-carousel-counter">1 of 15</span>
-      </div>
+      <button type="button" class="campus-playpause" id="campus-carousel-playpause" aria-label="Resume auto-advance">&#9654; Play</button>
+      <span class="campus-counter" id="campus-carousel-counter">1 of 15</span>
     </div>
     <div class="campus-carousel-wrap">
       <button type="button" class="campus-carousel-nav campus-carousel-prev" aria-label="Previous" onclick="campusCarouselGo(-1, true)">&#9664;</button>
@@ -571,10 +571,10 @@ body{line-height:1.7;background:var(--warm-white)}
       }
       function updateBar(){
         if (paused){
-          ppBtn.innerHTML = '&#9654;';
+          ppBtn.innerHTML = '&#9654; Play';
           ppBtn.setAttribute('aria-label','Resume auto-advance');
         } else {
-          ppBtn.innerHTML = '&#9208;';
+          ppBtn.innerHTML = '&#9208; Pause';
           ppBtn.setAttribute('aria-label','Pause auto-advance');
         }
       }
