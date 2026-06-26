@@ -12,7 +12,8 @@
 
 /* UPCOMING EVENTS */
 .event-listing{display:block;padding:.2rem .5rem;margin:.1rem -.5rem;border-radius:4px;color:var(--text-dark);text-decoration:none;transition:background .15s,color .15s}.event-listing:hover{background:var(--cream)}.event-listing:hover .event-listing-date{color:var(--red-dark)}.event-listing-date{color:var(--red);margin-right:.4rem;font-weight:700;text-decoration:underline dotted;text-underline-offset:3px}.event-listing span{color:var(--text-dark)}
-.upcoming{padding:calc(6rem - 1in/2) 0 calc(6rem - 5in/8);background:url('programs/just%20curtains.jpg') center center/cover no-repeat,var(--cream)}
+.upcoming{padding:5.5rem 0;background:linear-gradient(rgba(20,18,15,.55),rgba(20,18,15,.55)),url('programs/just%20curtains.jpg') center center/cover no-repeat,var(--charcoal)}
+@media(max-width:768px){.upcoming{padding:3rem 0}}
 .events-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:2rem}
 .event-card{border-radius:16px;overflow:hidden;background:var(--white);border:3px solid var(--gold);transition:transform .3s,box-shadow .3s}
 .event-card:hover{box-shadow:0 12px 40px rgba(0,0,0,.08)}
@@ -26,7 +27,7 @@
 .event-tag{position:absolute;top:1rem;left:1rem;background:rgba(15,20,25,.8);color:var(--white);font-size:.7rem;font-weight:700;padding:.3rem .75rem;border-radius:20px;letter-spacing:.05em;text-transform:uppercase}
 .event-body{padding:1.5rem}
 .event-date{font-size:.75rem;font-weight:700;color:var(--red);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.5rem}
-.event-body h4{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--text-dark);line-height:1.4;margin-bottom:.5rem}
+.event-body h4{font-family:var(--sans);font-size:1.15rem;font-weight:700;color:var(--text-dark);line-height:1.4;margin-bottom:.5rem}
 .event-body p{font-size:.875rem;color:var(--muted);line-height:1.6}
 .event-meta{display:flex;align-items:center;gap:.75rem;margin-top:1rem;font-size:.8rem;color:var(--muted)}
 .event-meta span{display:flex;align-items:center;gap:.3rem}
