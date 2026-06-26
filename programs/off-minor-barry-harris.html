@@ -178,6 +178,9 @@ body{line-height:1.7;background:var(--warm-white)}
   display:block;
   object-fit:cover;
 }
+/* the left half is the series LOGO — contain it (on the show's dark backdrop) so
+   the wordmark isn't cover-cropped; only the right photo should cover-fill */
+.splash-combined .splash-left{object-fit:contain;background:var(--deep);}
 @media (max-width:600px){
   .splash-combined{aspect-ratio:2/1}
 }

@@ -175,6 +175,9 @@ body { background: var(--warm-white); }
 @media (max-width: 720px) {
   .slide { grid-template-columns: 1fr; height: auto; }
   .slide-img-link { height: 220px; }
+  /* slide stacks (image over text) — keep the arrows centered on the 220px image
+     instead of the slide midpoint, where they overlapped the title/eyebrow */
+  .slider-arrow { top: 110px; }
   .slide-content { padding: 1.25rem 1.25rem 2.5rem; }
   .slide-title { font-size: 1.5rem; }
   /* Hide the Featured badge on mobile — it pushed the series eyebrow off the visible area */
