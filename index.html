@@ -234,7 +234,11 @@
   text-align: left; color: var(--text-dark);
 }
 .donate-row { display: grid; grid-template-columns: var(--rail) 1fr; align-items: center; }
-.donate-logos { display: flex; gap: 1rem; align-items: flex-start; padding-left: 2rem; }
+/* the container drops its rail margin at 900px, so collapse these two-column bands
+   the moment that happens — otherwise 769-900px keeps a fixed 320px rail column
+   inside a full-width section and cramps the copy */
+@media (max-width: 900px) { .origin-grid, .donate-row { grid-template-columns: 1fr !important; } }
+.donate-logos { display: flex; gap: 1rem; align-items: center; padding-left: 2rem; }
 .donate-logo-coa { height: 163px; width: auto; display: block; }
 .icorn-badge {
   width: 152px; height: 152px; flex: 0 0 auto; background: #000; border-radius: 4px;
@@ -487,7 +491,7 @@
 <section class="pillars-section" style="padding:0.25in 0 0;background:transparent;">
   <div class="container">
     <div>
-      <p class="home-intro-statement" style="font-family:var(--sans);text-align:left;color:var(--text-dark);font-size:1.6rem;font-weight:800;max-width:none;white-space:nowrap;margin:0 0 1.25rem;padding-top:calc(1in/6);line-height:1.35;">City of Asylum builds a just community<br>by protecting and celebrating freedom of creative expression.</p>
+      <p class="home-intro-statement" style="font-family:var(--sans);text-align:left;color:var(--text-dark);font-size:1.6rem;font-weight:800;max-width:none;margin:0 0 1.25rem;padding-top:calc(1in/6);line-height:1.35;">City of Asylum builds a just community<br>by protecting and celebrating freedom of creative expression.</p>
       <div class="pillar-grid" style="margin-top:1rem;">
         <div class="pillar-card" style="display:flex;flex-direction:column;">
           <h3>Protect</h3>
