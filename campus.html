@@ -260,7 +260,7 @@ body{line-height:1.7;background:var(--warm-white)}
        labeled Play/Pause pill (NOT a round icon, so it never reads as an arrow),
        then the counter. */
     .campus-controls{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;margin-bottom:1.1rem;}
-    .campus-playpause{display:inline-flex;align-items:center;gap:.45rem;background:transparent;border:1px solid var(--border);border-radius:7px;padding:.42rem .9rem;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.02em;color:var(--text-body);cursor:pointer;transition:border-color .15s,color .15s;}
+    .campus-playpause{display:inline-flex;align-items:center;justify-content:center;gap:.45rem;min-height:42px;background:transparent;border:1px solid var(--border);border-radius:9px;padding:0 1.1rem;font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.02em;color:var(--text-body);cursor:pointer;transition:border-color .15s,color .15s;}
     .campus-playpause:hover{border-color:var(--gold);color:var(--text-dark);}
     .campus-counter{font-size:.78rem;color:var(--muted);letter-spacing:.04em;font-weight:600;white-space:nowrap;}
     @media (max-width:768px){
@@ -269,7 +269,7 @@ body{line-height:1.7;background:var(--warm-white)}
       .campus-carousel-wrap{padding:0 3rem;}
     }
     /* ─── VIEW TOGGLE (slideshow ⇆ browse-all) ─── */
-    .campus-view-toggle{display:inline-flex;gap:.25rem;background:var(--cream);border:1px solid var(--border);border-radius:9px;padding:.25rem;margin-bottom:1rem;}
+    .campus-view-toggle{display:inline-flex;gap:.25rem;background:var(--cream);border:1px solid var(--border);border-radius:9px;padding:.25rem;}
     .cv-btn{background:transparent;border:0;font-family:var(--sans);font-size:.82rem;font-weight:700;letter-spacing:.02em;color:var(--muted);padding:.5rem 1.1rem;border-radius:6px;cursor:pointer;transition:background .15s,color .15s;}
     .cv-btn:hover{color:var(--text-dark);}
     .cv-btn.active{background:var(--white);color:var(--text-dark);box-shadow:0 1px 3px rgba(0,0,0,.06);}
