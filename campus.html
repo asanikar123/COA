@@ -62,6 +62,8 @@ body{line-height:1.7;background:var(--warm-white)}
 .campus-map-embed{margin:1.75rem 0 2.5rem}
 #campus-map{height:440px;border-radius:12px;overflow:hidden;z-index:0}
 @media (max-width:768px){ #campus-map{height:340px} }
+/* the 5-up house-address strip is cramped on phones — full width + smaller labels */
+@media (max-width:768px){ .hp-strip{width:100% !important} .hp-strip span{font-size:.72rem !important} .hp-strip strong{font-size:.95rem !important} }
 .campus-map-label{background:var(--white);border:1px solid var(--border);border-radius:5px;padding:1px 7px;font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--text-dark);box-shadow:0 1px 3px rgba(0,0,0,.18);white-space:nowrap}
 .campus-map-label.leaflet-tooltip-top::before{border-top-color:var(--white)}
 .campus-map-link{display:inline-block;margin-top:.7rem;font-weight:700;font-size:.82rem;color:var(--coa-red);text-transform:uppercase;letter-spacing:.04em}
@@ -750,7 +752,7 @@ body{line-height:1.7;background:var(--warm-white)}
         <div class="location-address">408 &ndash; 308 Sampsonia Way</div>
         <p>A walkable outdoor gallery featuring 5 collaborations between exiled writers and visual artists. Each house facade tells a story of resilience and creative freedom.</p>
         <a class="location-dir" href="https://www.google.com/maps/dir/?api=1&destination=Sampsonia+Way,+Pittsburgh,+PA+15212" target="_blank" rel="noopener">Get directions &rarr;</a>
-        <div style="width:85%;margin:1rem auto 0;">
+        <div class="hp-strip" style="width:85%;margin:1rem auto 0;">
           <img src="HousePublicationsStrip.jpg" alt="The five Sampsonia Way house publications" style="width:100%;height:auto;border-radius:8px;display:block;">
           <div style="display:flex;align-items:flex-start;margin-top:.55rem;font-family:var(--serif);color:var(--text-dark);line-height:1.18;text-align:center;">
             <div style="flex:18.4 1 0;"><strong style="font-size:1.05rem;">408</strong><br><span style="font-size:.85rem;">House Poem</span></div>
