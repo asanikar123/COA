@@ -31,6 +31,9 @@
   .hero-h1-l2 { display: inline; margin-left: 0; }
   .hero-eyebrow { margin-left: 0; font-size: .72rem; letter-spacing: .04em; }
   .hero-sub { font-size: .9rem; margin-left: 0; white-space: normal; }
+  /* show the full-figure hero photo on mobile instead of a 240px crop */
+  .hero-photo { height: auto; }
+  .hero-photo img { height: auto; }
 }
 .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
 .hero-stat-row {
@@ -50,6 +53,8 @@
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
   margin-left: -2rem; width: calc(100% + 2rem);
 }
+/* mobile: drop the rail bleed so cards center (placed after the base rule to win) */
+@media (max-width: 900px) { .pillar-grid { margin-left: 0; width: 100%; } }
 .pillar-card {
   background: rgba(224,164,23,.13);
   border: none;
