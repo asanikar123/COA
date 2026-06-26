@@ -35,7 +35,7 @@ body{line-height:1.7;background:var(--warm-white)}
   flex: 1 1 auto; min-width: 0;
   background: var(--gold); border: 1px solid var(--border); border-radius: 8px;
   padding: .65rem 1rem; cursor: pointer;
-  font-family: var(--serif); font-weight: 700; font-size: .95rem;
+  font-family: var(--sans); font-weight: 700; font-size: .95rem;
   color: var(--deep); white-space: nowrap;
   transition: background .15s, border-color .15s, color .15s;
 }
@@ -269,6 +269,29 @@ body{line-height:1.7;background:var(--warm-white)}
       .history-card-photo{aspect-ratio:16/10;}
       .history-carousel-wrap{padding:0 3rem;}
     }
+    /* ── Bring this carousel in line with the fixed "How It Grew" on campus.html ──
+       (cards/year/heading + the portrait-void fix + a lighter control bar) ── */
+    .history-carousel .history-card{border:1px solid var(--border);box-shadow:0 1px 3px rgba(0,0,0,.06);}
+    /* gold serif year with no red band; sans-800 heading (headings are never serif) */
+    .history-carousel .history-card-body > div:first-child{background:transparent !important;padding:1.5rem 1.75rem 0 !important;}
+    .history-carousel .history-card-body > div:first-child span{color:var(--accent-gold) !important;}
+    .history-carousel .history-card-body h3{font-family:var(--sans) !important;font-weight:800 !important;}
+    .history-carousel .hc-pad{padding-top:.45rem !important;}
+    /* portrait / lone-landscape void fix (desktop): bound height, cover-fill the photo, center copy */
+    @media (min-width:901px){
+      .history-carousel .history-card.poster.port,
+      .history-carousel .history-card.poster.land:not(.fill){min-height:380px;}
+      .history-carousel .history-card.poster.port .history-card-photo,
+      .history-carousel .history-card.poster.land:not(.fill) .history-card-photo{align-self:stretch;position:relative;background:var(--charcoal);}
+      .history-carousel .history-card.poster.port .history-card-photo img,
+      .history-carousel .history-card.poster.land:not(.fill) .history-card-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+      .history-carousel .history-card.poster.port .history-card-body,
+      .history-carousel .history-card.poster.land:not(.fill) .history-card-body{justify-content:center !important;}
+    }
+    /* lighter control bar — drop the heavy red box for the same neutral chrome as campus */
+    .history-carousel-bar{border:1px solid var(--border) !important;background:var(--cream) !important;border-radius:9px;}
+    .history-carousel-playpause{background:transparent !important;color:var(--text-body) !important;border:1px solid var(--border) !important;border-radius:7px !important;text-transform:none !important;letter-spacing:.02em;font-weight:700;}
+    .history-carousel-playpause:hover{border-color:var(--gold) !important;color:var(--text-dark) !important;background:transparent !important;}
   </style>
   <div class="container">
     <span class="section-eyebrow">Our History</span>
