@@ -16,7 +16,7 @@
 .mobile-menu   { display: none; }
 .mobile-backdrop { display: none; }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
 
   /* ---- Hamburger button (appended into .nav-inner, pushed to the right) ---- */
   .mobile-toggle {
@@ -101,6 +101,6 @@
 }
 
 /* Belt-and-suspenders: never show the mobile scaffold on desktop. */
-@media (min-width: 769px) {
+@media (min-width: 1201px) {
   .mobile-toggle, .mobile-menu, .mobile-backdrop { display: none !important; }
 }

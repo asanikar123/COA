@@ -128,14 +128,16 @@ a:hover { color: var(--red-dark); }
 .nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){display:inline-flex!important;flex-direction:row;align-items:center;gap:.3rem;line-height:1.2!important;text-align:center;white-space:nowrap;font-size:.82rem;text-transform:uppercase;letter-spacing:.04em;font-weight:600}
 .nav-links > a:not(.nav-donate)::after{content:'\25BE';font-size:.6rem;opacity:0;line-height:1}
 /* Shrink nav so all items + Donate fit on smaller laptops without overflow */
-@media (min-width: 769px) and (max-width: 1400px) {
+@media (min-width: 1201px) and (max-width: 1400px) {
   .nav-inner { padding: 0 1.25rem 0 0; }
   .nav-links { gap: .4rem; }
   .nav-links a { padding: .5rem .25rem; }
   .nav-links > a:not(.nav-donate),.nav-links > .nav-item > a:not(.nav-donate){font-size:.74rem;letter-spacing:.02em}
   .nav-logo img { height: 80px; }
 }
-@media (max-width: 768px) { .nav-links { display: none; } }
+/* The 7-item desktop nav needs ~1130px+ to fit; below that it overflowed the
+   viewport. Switch to the hamburger up to 1200px (mobile.css matches). */
+@media (max-width: 1200px) { .nav-links { display: none; } }
 
 /* ─── BUTTONS ─── */
 .btn {

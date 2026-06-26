@@ -10,7 +10,7 @@
 <meta name="description" content="City of Asylum is the world's largest safe haven for exiled writers. We protect persecuted writers and celebrate creative freedom from Pittsburgh's Northside.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="design-system.css?v=3">
+<link rel="stylesheet" href="design-system.css?v=4">
 
 <style>
 /* ═══════ HOMEPAGE-SPECIFIC STYLES ═══════
@@ -25,6 +25,14 @@
 .hero h1 em { white-space: nowrap; }   /* homepage's short "a home in exile." stays on one line */
 .hero-h1-l2 { display: inline-block; margin-left: 7rem; }
 .hero-sub { margin-left: 6.5rem; white-space: nowrap; }
+/* Below ~1300px the panel is too narrow for the indented, nowrap cascade — the
+   un-wrappable subtitle forced the hero wider than the viewport. Release the
+   cascade indents + nowrap until there's room for them again. */
+@media (max-width: 1300px) {
+  .hero h1 { margin-left: 0; }
+  .hero-h1-l2 { margin-left: 0; }
+  .hero-sub { margin-left: 0; white-space: normal; }
+}
 @media (max-width: 900px) {
   /* reset the desktop cascade; size heading so each line fits on one row */
   .hero h1 { font-size: clamp(1.25rem, 5.4vw, 1.7rem); margin: 0 0 1rem 0; }
@@ -398,7 +406,7 @@
   .wm-map-container { height: 400px; }
 }
 </style>
-<link rel="stylesheet" href="mobile.css?v=3">
+<link rel="stylesheet" href="mobile.css?v=4">
 </head>
 <body>
 
