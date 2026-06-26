@@ -239,6 +239,21 @@ body{line-height:1.7;background:var(--warm-white)}
     .campus-carousel .history-card[data-idx="7"] .history-card-photo{position:relative;}
     .campus-carousel .history-card[data-idx="7"] .history-card-photo::after{content:"";position:absolute;inset:0;background:rgba(245,240,232,.42);pointer-events:none;}
     .campus-carousel .history-card.poster .history-card-body{flex:1;}
+    /* portrait + lone-landscape cards: their photo ran at natural height, so a tall
+       photo stretched the card while the top-aligned copy left a void below. Bound
+       the height, cover-fill the photo, and center the copy (desktop side-by-side). */
+    @media (min-width:901px){
+      .campus-carousel .history-card.poster.port,
+      .campus-carousel .history-card.poster.land:not(.fill){min-height:380px;}
+      .campus-carousel .history-card.poster.port .history-card-photo,
+      .campus-carousel .history-card.poster.land:not(.fill) .history-card-photo{align-self:stretch;position:relative;background:var(--charcoal);}
+      /* absolute so the photo's natural height doesn't drive the card height (it would
+         re-introduce the void); the column stretches to the card and the photo covers it */
+      .campus-carousel .history-card.poster.port .history-card-photo img,
+      .campus-carousel .history-card.poster.land:not(.fill) .history-card-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;}
+      .campus-carousel .history-card.poster.port .history-card-body,
+      .campus-carousel .history-card.poster.land:not(.fill) .history-card-body{justify-content:center !important;}
+    }
     /* 2022 (idx14): no photo — shrink card to fit copy so the line break after the em dash sets the margin (desktop only) */
     @media (min-width:901px){
       .campus-carousel .history-card[data-idx="14"]{align-self:center;width:fit-content;}
