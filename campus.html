@@ -704,7 +704,7 @@ body{line-height:1.7;background:var(--warm-white)}
         + houses.map(function(h){ return '<br>&bull; ' + h[0] + ' (' + h[1].split(' ')[0] + ') &mdash; ' + dirHTML(h[1]); }).join('');
       var locations = [
         { name:'Alphabet City',           ll:[40.455453, -80.007084], popup:'<strong>Alphabet City</strong><br>40 W. North Ave.<br>' + dirHTML('40 West North Avenue') },
-        { name:'House Publications',       ll:[40.457042, -80.011486], popup:housePopup },
+        { name:'House Publications',       ll:[40.457042, -80.011486], dir:'bottom', popup:housePopup },
         { name:'Alphabet Reading Garden',  ll:[40.456774, -80.013295], popup:'<strong>Alphabet Reading Garden</strong><br>1406&ndash;1410 Monterey St.<br>' + dirHTML('1406 Monterey Street') }
       ];
       var map = L.map(el, { scrollWheelZoom:false });
@@ -714,7 +714,7 @@ body{line-height:1.7;background:var(--warm-white)}
       var group = L.featureGroup();
       locations.forEach(function(loc){
         L.marker(loc.ll).addTo(group)
-          .bindTooltip(loc.name, { permanent:true, direction:'top', offset:[0,-6], className:'campus-map-label' })
+          .bindTooltip(loc.name, { permanent:true, direction:loc.dir||'top', offset:(loc.dir==='bottom'?[0,12]:[0,-6]), className:'campus-map-label' })
           .bindPopup(loc.popup);
       });
       group.addTo(map);
