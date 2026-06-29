@@ -138,6 +138,13 @@ a:hover { color: var(--red-dark); }
 /* The 7-item desktop nav needs ~1130px+ to fit; below that it overflowed the
    viewport. Switch to the hamburger up to 1200px (mobile.css matches). */
 @media (max-width: 1200px) { .nav-links { display: none; } }
+/* Below 900px the hero stacks and its headline sits at the container edge
+   (1.25rem). Pull the logo onto that same rail so the logo and hero text
+   share one left edge on mobile (the 0.0625in img nudge is desktop-only). */
+@media (max-width: 900px) {
+  .nav-inner { padding-left: 1.25rem; }
+  .nav-logo img { margin-left: 0; }
+}
 
 /* ─── BUTTONS ─── */
 .btn {

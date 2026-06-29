@@ -393,9 +393,13 @@
 @media (max-width: 768px) {
   .hero h1 { font-size: 2.4rem; }
   .pillar-grid, .events-grid { grid-template-columns: 1fr; }
-  .pillar-grid { padding: 0 1rem; gap: 1.25rem; }
+  /* Cards span the container edge; their content is inset by the card's 1.5rem
+     padding. Indent the intro heading by that same 1.5rem so "Protect" (and the
+     other card titles) line up with the heading above — matching the desktop
+     rail where card content sits flush under the heading. */
+  .pillar-grid { padding: 0; gap: 1.25rem; }
   .pillar-card { padding: 2rem 1.5rem; }
-  .home-intro-statement { white-space: normal !important; font-size: 1rem; padding-left: 1rem; padding-right: 1rem; }
+  .home-intro-statement { white-space: normal !important; font-size: 1rem; padding-left: 1.5rem; padding-right: 1rem; }
   .writer-spotlight { grid-template-columns: 1fr; }
   .writer-img { min-height: 300px; }
   .origin-grid, .visit-inner { grid-template-columns: 1fr; }
