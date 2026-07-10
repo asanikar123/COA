@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="City of Asylum">
+  <rect width="120" height="120" rx="26" fill="#1c1a17"/>
+  <defs><clipPath id="fav"><path d="M30 96 L30 56 L60 30 L90 56 L90 96 Z"/></clipPath></defs>
+  <g clip-path="url(#fav)">
+    <g stroke="#f4efe7" stroke-width="4" stroke-linecap="round">
+      <line x1="40" y1="54" x2="80" y2="54"/><line x1="40" y1="64" x2="70" y2="64"/></g>
+    <path d="M52 96 L52 78 Q60 71 68 78 L68 96 Z" fill="#CC1333"/>
+  </g>
+  <path d="M30 96 L30 56 L60 30 L90 56 L90 96 Z" fill="none" stroke="#f4efe7" stroke-width="5.5" stroke-linejoin="round"/>
+</svg>
